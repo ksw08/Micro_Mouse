@@ -1,0 +1,68 @@
+---- gUint16SensorSelect Matches (106 in 5 files) ----
+main.asm (main):DW$90	.dwtag  DW_TAG_variable, DW_AT_name("gUint16SensorSelect"), DW_AT_symbol_name("_gUint16SensorSelect")
+main.asm (main):;*** 61	-----------------------    gUint16SensorSelect = 0u;
+main.c (main):	gUint16SensorSelect = 0;
+main.c (main):        if(gUint16SensorSelect == 0) 
+sensor.asm (main):DW$26	.dwtag  DW_TAG_variable, DW_AT_name("gUint16SensorSelect"), DW_AT_symbol_name("_gUint16SensorSelect")
+sensor.asm (main):;*** 91	-----------------------    (*C$1).ADCCHSELSEQ1.all = C$2[gUint16SensorSelect];
+sensor.asm (main):;*** 92	-----------------------    (*C$1).ADCCHSELSEQ2.all = C$2[gUint16SensorSelect];
+sensor.asm (main):;*** 93	-----------------------    (*C$1).ADCCHSELSEQ3.all = C$2[gUint16SensorSelect];
+sensor.asm (main):;*** 94	-----------------------    (*C$1).ADCCHSELSEQ4.all = C$2[gUint16SensorSelect];
+sensor.asm (main):;*** 98	-----------------------    if ( gUint16SensorSelect >= 6u ) goto g3;
+sensor.asm (main):;*** 100	-----------------------    GpioDataRegs.GPASET.all |= SensorShoot[gUint16SensorSelect];
+sensor.asm (main):;*** 116	-----------------------    GpioDataRegs.GPACLEAR.all |= SensorShoot[gUint16SensorSelect];
+sensor.asm (main):;*** 160	-----------------------    (C$3[(long)gUint16SensorSelect]).Uint16Value = SenSum>>8;
+sensor.asm (main):;*** 166	-----------------------    (C$3[(long)gUint16SensorSelect]).q17LPFOutDataYet = (C$3[(long)gUint16SensorSelect]).q17LPFOutData;
+sensor.asm (main):;*** 167	-----------------------    (C$3[(long)gUint16SensorSelect]).q17LPFOutData = __IQxmpy(32715568L, (C$3[(long)gUint16SensorSelect]).q17LPFInData+((long)(C$3[(long)gUint16SensorSelect]).Uint16Value<<17), 2)-__IQxmpy((-1008310656L), (C$3[(long)gUint16SensorSelect]).q17LPFOutData, 2);
+sensor.asm (main):;*** 169	-----------------------    (K$22[(long)gUint16SensorSelect]).q17LPFInData = (long)(K$22[(long)gUint16SensorSelect]).Uint16Value<<17;
+sensor.asm (main):;*** 171	-----------------------    buff = (K$22[(long)gUint16SensorSelect]).q17LPFOutData;
+sensor.asm (main):;*** 174	-----------------------    (K$22[(long)gUint16SensorSelect]).q17LPFInDataDiff = (K$22[(long)gUint16SensorSelect]).q17LPFOutData-(K$22[(long)gUint16SensorSelect]).q17LPFOutDataYet;
+sensor.asm (main):;*** 175	-----------------------    (K$22[(long)gUint16SensorSelect]).q17LPFOutDataDiff = __IQxmpy(78339832L, (K$22[(long)gUint16SensorSelect]).q17LPFInDataDiff+(K$22[(long)gUint16SensorSelect]).q17LPFInDataDiffYet, 2)-__IQxmpy((-917062144L), (K$22[(long)gUint16SensorSelect]).q17LPFOutDataDiff, 2);
+sensor.asm (main):;*** 178	-----------------------    (K$22[(long)gUint16SensorSelect]).q17LPFInDataDiffYet = (K$22[(long)gUint16SensorSelect]).q17LPFInDataDiff;
+sensor.asm (main):;*** 181	-----------------------    if ( !gUint16SensorSelect ) goto g12;
+sensor.asm (main):;*** 181	-----------------------    if ( gUint16SensorSelect == 5u ) goto g12;
+sensor.asm (main):;*** 186	-----------------------    (K$22[(long)gUint16SensorSelect]).q17PositionYet = (K$22[(long)gUint16SensorSelect]).q17Position;
+sensor.asm (main):;*** 188	-----------------------    if ( buff >= (K$22[(long)gUint16SensorSelect]).q17MidVal ) goto g8;
+sensor.asm (main):;*** 192	-----------------------    (K$22[(long)gUint16SensorSelect]).q17Position = __IQmpy((K$22[(long)gUint16SensorSelect]).q17LowCoefficient, _IQ17sqrt(buff-(K$22[(long)gUint16SensorSelect]).q17MinVal), 17)+67108864L;
+sensor.asm (main):;*** 189	-----------------------    (K$22[(long)gUint16SensorSelect]).q17Position = __IQmpy((K$22[(long)gUint16SensorSelect]).q17HighCoefficient, _IQ17sqrt(buff-(K$22[(long)gUint16SensorSelect]).q17MidVal), 17)+33554432L;
+sensor.asm (main):;*** 189	-----------------------    if ( (K$22[(long)gUint16SensorSelect]).q17Position >= 0L ) goto g11;
+sensor.asm (main):;*** 196	-----------------------    (K$22[(long)gUint16SensorSelect]).q17Position = 0L;
+sensor.asm (main):;*** 198	-----------------------    (K$22[(long)gUint16SensorSelect]).q17PositionDiff = (K$22[(long)gUint16SensorSelect]).q17Position-(K$22[(long)gUint16SensorSelect]).q17PositionYet;
+sensor.asm (main):;*** 198	-----------------------    if ( (T$1 = ++gUint16SensorSelect) >= 6u ) goto g13;
+sensor.asm (main):;*** 182	-----------------------    frontsentable(gUint16SensorSelect, buff);
+sensor.asm (main):;*** 182	-----------------------    if ( (T$2 = ++gUint16SensorSelect) < 6u ) goto g15;
+sensor.asm (main):;*** 207	-----------------------    gUint16SensorSelect = 0u;
+sensor.c (main):	AdcRegs.ADCCHSELSEQ1.all = SensorSEQ[gUint16SensorSelect];	//a0, a1, a2, a3, a4, a5
+sensor.c (main):	AdcRegs.ADCCHSELSEQ2.all = SensorSEQ[gUint16SensorSelect];
+sensor.c (main):	AdcRegs.ADCCHSELSEQ3.all = SensorSEQ[gUint16SensorSelect];
+sensor.c (main):	AdcRegs.ADCCHSELSEQ4.all = SensorSEQ[gUint16SensorSelect];
+sensor.c (main):	if( gUint16SensorSelect < 6 )
+sensor.c (main):		GpioDataRegs.GPASET.all |= SensorShoot[ gUint16SensorSelect ];	//gpio 0,1,2,3,4,5
+sensor.c (main):		GpioDataRegs.GPACLEAR.all |= SensorShoot[ gUint16SensorSelect ];
+sensor.c (main):    /*if(ADChanelCnt == 0 && gUint16SensorSelect == 0) 
+sensor.c (main):    else if(ADChanelCnt == 1 && gUint16SensorSelect == 0)
+sensor.c (main):    else if(ADChanelCnt == 2 && gUint16SensorSelect == 0) 
+sensor.c (main):		g_sen[ gUint16SensorSelect ].Uint16Value= SenSum >> 8;//16, 센서의 평균값 추출
+sensor.c (main):		g_sen[ gUint16SensorSelect ].q17LPFOutDataYet = g_sen[ gUint16SensorSelect ].q17LPFOutData; // 한 틱 전 lpf 필터 이후 센서값
+sensor.c (main):		g_sen[ gUint16SensorSelect ].q17LPFOutData = _IQ17mpyIQX( SENSOR_Kb, 30, g_sen[ gUint16SensorSelect ].q17LPFInData + QUP( g_sen[ gUint16SensorSelect ].Uint16Value, 17 ), 17 ) 
+sensor.c (main):										 - _IQ17mpyIQX( SENSOR_Ka, 30, g_sen[ gUint16SensorSelect ].q17LPFOutData, 17 ); // 과거 센서값 + 현재 센서값 - 과거 out값
+sensor.c (main):		g_sen[ gUint16SensorSelect ].q17LPFInData = QUP( g_sen[ gUint16SensorSelect ].Uint16Value, 17 ); // 센서의 평균값
+sensor.c (main):		buff = g_sen[ gUint16SensorSelect ].q17LPFOutData; // 버퍼에 저장
+sensor.c (main):		g_sen[ gUint16SensorSelect ].q17LPFInDataDiff = g_sen[ gUint16SensorSelect ].q17LPFOutData - g_sen[ gUint16SensorSelect ].q17LPFOutDataYet; // 한틱 간격 센서값 차이
+sensor.c (main):		g_sen[ gUint16SensorSelect ].q17LPFOutDataDiff = _IQ17mpyIQX( SENSOR_Kb_DIFF, 30, g_sen[ gUint16SensorSelect ].q17LPFInDataDiff + g_sen[ gUint16SensorSelect ].q17LPFInDataDiffYet, 17 ) 
+sensor.c (main):											 			- _IQ17mpyIQX( SENSOR_Ka_DIFF, 30, g_sen[ gUint16SensorSelect ].q17LPFOutDataDiff, 17 ); //현재와 과거 한 틱 간격 센서값 합 - 과거 out
+sensor.c (main):		g_sen[ gUint16SensorSelect ].q17LPFInDataDiffYet = g_sen[ gUint16SensorSelect ].q17LPFInDataDiff;
+sensor.c (main):		if( ( gUint16SensorSelect == 0 ) || ( gUint16SensorSelect == 5 ) )
+sensor.c (main):		    frontsentable( gUint16SensorSelect, buff );
+sensor.c (main):			g_sen[ gUint16SensorSelect ].q17PositionYet = g_sen[ gUint16SensorSelect ].q17Position;
+sensor.c (main):			if( buff >= g_sen[ gUint16SensorSelect ].q17MidVal ) // 중앙보다 더 벽에 붙음
+sensor.c (main):				g_sen[ gUint16SensorSelect ].q17Position = _IQ17mpy( g_sen[ gUint16SensorSelect ].q17HighCoefficient, _IQ17sqrt( buff - g_sen[ gUint16SensorSelect ].q17MidVal ) ) + _IQ17( 256.0 );
+sensor.c (main):                //g_sen[ gUint16SensorSelect ].q17Position = _IQ17mpy( g_sen[ gUint16SensorSelect ].q17HighCoefficient, ( buff - g_sen[ gUint16SensorSelect ].q17MidVal ) ) + _IQ17( 256.0 );
+sensor.c (main):				g_sen[ gUint16SensorSelect ].q17Position = _IQ17mpy( g_sen[ gUint16SensorSelect ].q17LowCoefficient, _IQ17sqrt( buff - g_sen[ gUint16SensorSelect ].q17MinVal ) ) + _IQ17( 512.0 );
+sensor.c (main):                //g_sen[ gUint16SensorSelect ].q17Position = _IQ17mpy( g_sen[ gUint16SensorSelect ].q17LowCoefficient, ( buff - g_sen[ gUint16SensorSelect ].q17MinVal ) ) + _IQ17( 512.0 );
+sensor.c (main):			if( g_sen[ gUint16SensorSelect ].q17Position < 0 )
+sensor.c (main):				g_sen[ gUint16SensorSelect ].q17Position = 0;
+sensor.c (main):			g_sen[ gUint16SensorSelect ].q17PositionDiff = g_sen[ gUint16SensorSelect ].q17Position - g_sen[ gUint16SensorSelect ].q17PositionYet;
+sensor.c (main):		if( ++gUint16SensorSelect  >= 6 )
+sensor.c (main):			gUint16SensorSelect  = 0;
+Variable.h (main):									gUint16SensorSelect,
