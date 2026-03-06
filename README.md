@@ -4,7 +4,7 @@
   <img src="https://img.shields.io/badge/Language-C%20%2F%20C%2B%2B-000000?style=for-the-badge&logo=c&logoColor=white" />
   <img src="https://img.shields.io/badge/Compiler-TI_cl2000-e63946?style=for-the-badge&logo=texas-instruments&logoColor=white" />
   <img src="https://img.shields.io/badge/MCU-TMS320F2809-000000?style=for-the-badge&logo=microchip&logoColor=white" />
-  <img src="https://img.shields.io/badge/Award-Best_of_Best-e63946?style=for-the-badge&logo=github-sponsors&logoColor=white" />
+  <img src="https://img.shields.io/badge/Award-1st_Prize-e63946?style=for-the-badge&logoColor=white" />
 </p>
 
 ## 🚀 Project Overview
@@ -14,8 +14,8 @@
 
 ## 📸 Technical Showcase
 <p align="center">
-  <img src="mouse.jpg" width="45%" alt="Real Robot" />
-  <img src="mouseassem.png" width="45%" alt="SolidWorks Modeling" />
+  <img src="mouse.jpg" height="300" />
+  <img src="mouseassem.png" height="300" />
   <br>
   <em>Real Robot Performance & SolidWorks 3D Modeling</em>
 </p>
