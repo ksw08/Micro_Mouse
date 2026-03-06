@@ -1,10 +1,10 @@
-
+<p align="center"><img src="https://capsule-render.vercel.app/render?type=soft&color=auto&height=250&section=header&text=Micromouse&subText=Path%20to%20Excellence&fontSize=80&subFontSize=30&animation=fadeIn" /></p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Language-C%20%2F%20C%2B%2B-00599C?style=for-the-badge&logo=c&logoColor=white" />
-  <img src="https://img.shields.io/badge/Compiler-TI_cl2000-red?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/MCU-TMS320F2809-blue?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Award-1st_Prize-gold?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Compiler-TI_cl2000-red?style=for-the-badge&logo=texas-instruments&logoColor=white" />
+  <img src="https://img.shields.io/badge/MCU-TMS320F2809-blue?style=for-the-badge&logo=microchip&logoColor=white" />
+  <img src="https://img.shields.io/badge/Award-1st_Prize-gold?style=for-the-badge&logo=github-sponsors&logoColor=white" />
 </p>
 
 ## 🚀 Project Overview
