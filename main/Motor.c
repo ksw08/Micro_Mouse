@@ -51,7 +51,7 @@
 #define ANGLE_ADJ_RATIO		_IQ(2.5)
 
 
-#define M_CAL_POS_KP_MIN	_IQ26(0.11) // 0.32 // 0.24 // 0.11
+#define M_CAL_POS_KP_MIN	_IQ26(0.32) // 0.32 // 0.24 // 0.11
 //#define M_CAL_POS_KP_DIFF	_IQ26(0.0002)
 
 #define M_CAL_POS_KD_MAX	_IQ26(15.0) // 15.0
@@ -465,15 +465,15 @@ void Position_PID(void)
 			q17RightPos = pRFS->q17Position - _IQ17(250.0);
 
 			if(pRFS->q17Position < _IQ17(50.0))
-				q17RightPos = _IQ17mpy(q17RightPos, _IQ17(1.5));		//1.35
+				q17RightPos = _IQ17mpy(q17RightPos, _IQ17(1.35));		//1.35
 
 			else if(pRFS->q17Position < _IQ17(100.0))
-				q17RightPos = _IQ17mpy(q17RightPos, _IQ17(2.0));		//1.5
+				q17RightPos = _IQ17mpy(q17RightPos, _IQ17(1.5));		//1.5
 
 			else if(pRFS->q17Position < _IQ17(200.0))
-				q17RightPos = _IQ17mpy(q17RightPos, _IQ17(2.0));		//1.8
+				q17RightPos = _IQ17mpy(q17RightPos, _IQ17(1.0));		//1.8
 			else
-				q17RightPos = _IQ17mpy(q17RightPos, _IQ17(4.0));		//1.4			
+				q17RightPos = _IQ17mpy(q17RightPos, _IQ17(1.4));		//1.4			
 		}
 		else
 			q17RightPos = _IQ17(250.0);
@@ -512,93 +512,95 @@ void Position_PID(void)
 		}
 	}
 
+
+	if(gDiagDirectAdjState != ON)
+	{
 	//위 보정과 같이사용
-	if(gRPosWallF && gLPosWallF)//양쪽 벽이 있을 경우....
-	{	
-		q17Position = (q17RightPos + q17LeftPos) >> 1;
-		DiffAdjFOn = OFF;
-	}
-	else if(gRPosWallF && !gLPosWallF)// 오른쪽 벽 보정...왼쪽 벽이 없을 경우..
-	{
-		q17Position = q17RightPos; 
-		DiffAdjFOn = OFF;
-	}
-	else if(!gRPosWallF && gLPosWallF)//왼쪽 벽 보정...오른쪽 벽이 없을 경우..
-	{
-		q17Position = q17LeftPos; 
-		DiffAdjFOn = OFF;
-	}
-	else // 벽 둘다없을 시 위의 가지벽, 백턴에서 만든 포지션 사용
-	{
-
-		if(DiffAdjFOn == ON)
-		{
-			//가지벽 보정후 당기기...
-			if(q17Position > _IQ17(0.0))
-			{
-				q17Position -= _IQ17(0.16);
-			}
-			else if(q17Position < _IQ17(0.0))
-			{
-				q17Position += _IQ17(0.16);
-			}
-			
-			if(_IQ17abs(q17Position) < _IQ17(0.2))
-			{
-				q17Position = _IQ17(0.0);
-			
-				DiffAdjFOn = OFF;
-			}
-
+		if(gRPosWallF && gLPosWallF)//양쪽 벽이 있을 경우....
+		{	
+			q17Position = (q17RightPos + q17LeftPos) >> 1;
+			DiffAdjFOn = OFF;
 		}
+		else if(gRPosWallF && !gLPosWallF)// 오른쪽 벽 보정...왼쪽 벽이 없을 경우..
+		{
+			q17Position = q17RightPos; 
+			DiffAdjFOn = OFF;
+		}
+		else if(!gRPosWallF && gLPosWallF)//왼쪽 벽 보정...오른쪽 벽이 없을 경우..
+		{
+			q17Position = q17LeftPos; 
+			DiffAdjFOn = OFF;
+		}
+		else // 벽 둘다없을 시 위의 가지벽, 백턴에서 만든 포지션 사용
+		{
+
+			if(DiffAdjFOn == ON)
+			{
+				//가지벽 보정후 당기기...
+				if(q17Position > _IQ17(0.0))
+				{
+					q17Position -= _IQ17(0.16);
+				}
+				else if(q17Position < _IQ17(0.0))
+				{
+					q17Position += _IQ17(0.16);
+				}
+			
+				if(_IQ17abs(q17Position) < _IQ17(0.2))
+				{
+					q17Position = _IQ17(0.0);
+					DiffAdjFOn = OFF;
+				}
+
+			}
 		
-		// 앞벽 밀기... 및 당기기...
-		if(gFrontSensorPull == ON)
-		{
-			if((pLFS->q17Position < _IQ17(250.0)) && (pRFS->q17Position < _IQ17(250.0)))
+			// 앞벽 밀기... 및 당기기...
+			if(gFrontSensorPull == ON)
 			{
+				if((pLFS->q17Position < _IQ17(250.0)) && (pRFS->q17Position < _IQ17(250.0)))
+				{
                 
-			}
-			else if(pLFS->q17Position < _IQ17(250.0))
-			{
-				q17Position = _IQ17(250.0) - pLFS->q17Position;
+				}
+				else if(pLFS->q17Position < _IQ17(250.0))
+				{
+					q17Position = _IQ17(250.0) - pLFS->q17Position;
 
-			}
-			else if(pRFS->q17Position < _IQ17(250.0))
-			{
-				q17Position = pRFS->q17Position - _IQ17(250.0);
+				}
+				else if(pRFS->q17Position < _IQ17(250.0))
+				{
+					q17Position = pRFS->q17Position - _IQ17(250.0);
+		
+				}
+				else
+				{
 	
-			}
-			else
-			{
+				}
 
+				q17Position = _IQ17mpy(q17Position, _IQ17(0.9));
 			}
 
-			q17Position = _IQ17mpy(q17Position, _IQ17(0.9));
-		}
-
-		if(DiffAdjFOn == OFF)
-		{
-			if(q17Position > _IQ17(0.0))
+			if(DiffAdjFOn == OFF)
 			{
-				q17Position -= _IQ17(0.45);
+				if(q17Position > _IQ17(0.0))
+				{
+					q17Position -= _IQ17(0.45);
+				}
+				else if(q17Position < _IQ17(0.0))
+				{
+					q17Position += _IQ17(0.45);
+				}
+			
+				if(_IQ17abs(q17Position) < _IQ17(0.5))
+				{
+					q17Position = _IQ17(0.0);
+				}
 			}
-			else if(q17Position < _IQ17(0.0))
+			if(!gDiagDirectAdjState && gNowPollMode)
 			{
-				q17Position += _IQ17(0.45);
+				q17Position = (pRDS->q17Position - pLDS->q17Position) >> 1;
 			}
 			
-			if(_IQ17abs(q17Position) < _IQ17(0.5))
-			{
-				q17Position = _IQ17(0.0);
-			}
 		}
-		if(!gDiagDirectAdjState && gNowPollMode)
-		{
-			q17Position = (pRDS->q17Position - pLDS->q17Position) >> 1;
-		}
-			
-	}
 
 
 	if(_IQ17abs(q17Position) > _IQ17(256))
@@ -607,6 +609,7 @@ void Position_PID(void)
 			q17Position  = _IQ17(256);
 		else
 			q17Position = _IQ17(-256);
+	}
 	}
 #if 0
 	if( gAngleDirectflag == ON )  //angle compenstaion ON
@@ -702,6 +705,12 @@ void Position_PID(void)
 		L_Motor.q26posadjrate = _IQ26mpyIQX(q30PosAdjAccelDiff, 30, (_IQ17(256) + q17PosPidOutTerm), 17) + q26PosAdjAccelRef;
 	}
 
+	//if(R_Motor.q26posadjrate < _IQ26(0.92) || L_Motor.q26posadjrate < _IQ26(0.92))
+	//{
+		//모터 과도한 역회전 방지 제한 코드
+		//R_Motor.q26posadjrate = L_Motor.q26posadjrate = _IQ26(1);
+	//}
+
 	if(gPosAdjF == OFF)
 	{
 		R_Motor.q26posadjrate = L_Motor.q26posadjrate = _IQ26(1);
@@ -751,7 +760,7 @@ void position_pid_slec(_iq17 usrvel)
 	else if((_IQ17(2000) <= usrvel) && (usrvel < _IQ17(2500)))
 	{
 		M_POS_KP = _IQ26(0.6); 
-		M_POS_KD = _IQ26(1.0); // 7.0
+		M_POS_KD = _IQ26(0.3); // 7.0
 		M_POS_KI = _IQ26(0.00005);
 
 		M_CAL_POS_KP_DIFF = _IQ26(0.0002);
@@ -761,7 +770,7 @@ void position_pid_slec(_iq17 usrvel)
 	else if((_IQ17(2500) <= usrvel) && (usrvel <= _IQ17(3000)))
 	{
 		M_POS_KP = _IQ26(1.0);
-		M_POS_KD = _IQ26(4.0); 
+		M_POS_KD = _IQ26(0.5); 
 		M_POS_KI = _IQ26(0.00005);
 
 		M_CAL_POS_KP_DIFF = _IQ26(0.0002);
@@ -825,8 +834,8 @@ interrupt void MotorTimer( void )
 	L_Motor.Q17Current_Velocity = _IQ17mpyIQX( QUP( L_Motor.i16QepVal , 21 ), 21, PULSE_TO_VEL, 26);
     
     //position pid select
-    if(R_Motor.Q17Current_Velocity >= L_Motor.Q17Current_Velocity) position_pid_slec(R_Motor.Q17Current_Velocity);
-    else if(R_Motor.Q17Current_Velocity < L_Motor.Q17Current_Velocity) position_pid_slec(L_Motor.Q17Current_Velocity);
+    if(R_Motor.Q17User_Velocity>= L_Motor.Q17User_Velocity) position_pid_slec(R_Motor.Q17User_Velocity);
+    else if(R_Motor.Q17User_Velocity < L_Motor.Q17User_Velocity) position_pid_slec(L_Motor.Q17User_Velocity); // q17currentvelocity
 
 	//남은 거리 확인
 	if( ( _IQ17abs( R_Motor.Q17Remaning_Disatance ) <= R_Motor.Q17StopDistance ) && !( R_Motor.Stop_Flag ) )
@@ -1050,8 +1059,6 @@ void PositionAdjustDiffVal(_iq30 DecelRate, _iq30 AccelRate)
 
 	q26PosAdjDecelRef = ((int32)1 << 26) - (DecelRate >> 4);
 	q26PosAdjAccelRef = ((int32)1 << 26) - (AccelRate >> 4);
-
-	//TxPrintf("\n%f  %f  %f  %f\n",_IQ30toF(q30PosAdjAccelDiff),_IQ30toF(q30PosAdjDecelDiff),_IQ26toF(q26PosAdjAccelRef),_IQ26toF(q26PosAdjDecelRef));
 }
 
 
@@ -1164,6 +1171,7 @@ void Move_to_Move(int16 AccVel, int16 DecVel, int16 Dis)
 volatile TurnInfoVariable *pTurnTable;
 
 const volatile TurnInfoVariable TurnTable[5][20] = 
+	//edge | sensor | in time | in error | acc time | turn time | out time | right acc | left acc |right acc vel | left acc vel | reference vel | edge 0 | edge 1 | edge2  | edge3 | edge | fedge| Gyro
 	{
 		//=============================TurnSpeed 600=============================
 		
@@ -1172,7 +1180,7 @@ const volatile TurnInfoVariable TurnTable[5][20] =
 			{NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0},
 			//R90		1 
 			//                              연속턴o   연속턴x		217
-			{&RSideEdge, &RSS, 30, 110, 110, 221, 6 , 6000 , 6000 , _IQ(270.0), _IQ(930.0), _IQ(600), 161, 135, 0, 0,&L45, &LFS, 0},	//135
+			{&RSideEdge, &RSS, 30, 110, 110, 221, 8 , 6000 , 6000 , _IQ(270.0), _IQ(930.0), _IQ(600), 159, 135, 0, 0,&L45, &LFS, 0},	//135 161
 			//B 		2
 			{NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0},
 			//L90		3								69
@@ -1200,45 +1208,54 @@ const volatile TurnInfoVariable TurnTable[5][20] =
 				//S 		0
 				{NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0},
 				//R90		1//134
-				{&RSideEdge, &RSS , 15, 49, 100, 150, 10,8000 , 8000, _IQ(400.0), _IQ(1200.0), _IQ(800), 130, 125, 117, 0, &L45, &LFS, 0},	//118
+				{&RSideEdge, &RSS , 15, 40, 100, 145, 10,8000 , 8000, _IQ(400.0), _IQ(1200.0), _IQ(800), 130, 112, 125, 0, &L45, &LFS, 0},	
 				//B 		2
 				{NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0},
 				//L90		3 //136
-				{&LSideEdge, &LSS , 15, 30, 100, 164, 10,8000, 8000, _IQ(1200.0), _IQ(400.0), _IQ(800), 147, 140, 132, 0, &R45, &RFS, 0},	//80
+				{&LSideEdge, &LSS , 15, 35, 100, 150, 10,8000, 8000, _IQ(1200.0), _IQ(400.0), _IQ(800), 138, 124, 132, 0, &R45, &RFS, 0},	
 				
 			/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 		
 				//R180		4
-				{&RSideEdge, &RSS, 30 , 0 , 80, 589, 10 , 8000 , 8000 , _IQ(480.0), _IQ(1120.0), _IQ(800), 272, 297, 286, 0, &LSS, &LFS, 0},
+				{&RSideEdge, &RSS, 30 , 0 , 78, 600, 10 , 8000 , 8000 , _IQ(488.0), _IQ(1112.0), _IQ(800), 561, 465, 502, 0, &LSS, &LFS, 0},
 				//L180		5
-				{&LSideEdge, &LSS, 30 , 0 , 80, 590, 10 , 8000 , 8000 , _IQ(1120.0), _IQ(480.0), _IQ(800), 274, 289, 273, 322, &RSS, &RFS, 0},
+				{&LSideEdge, &LSS, 30 , 0 , 82, 589, 10 , 8000 , 8000 , _IQ(1128.0), _IQ(472.0), _IQ(800), 538, 455, 489, 322, &RSS, &RFS, 0},
 			///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-			/////////(frontwallstate1 x, frontwallstate2 x, turnwallstate x -> 0	)	(frontwallstate1 x, frontwallstate2 x, turnwallstate o -> 1)		(frontwallstate1 x, frontwallstate2 o -> 2)
-				//R135IN	6
-				{&RDiagEdge, &R45 , 160	, 0  , 93 , 327 , 10 , 8000 , 8000 , _IQ(428.0), _IQ(1172.0), _IQ(800), 237, 229, 242, 255, &LSS, &L45, 0},	//O		251	
+
+			///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
+				//R135IN	
+				{&RDiagEdge, &R45 , 160	, 0  , 93 , 327 , 10 , 8000 , 8000 , _IQ(428.0), _IQ(1172.0), _IQ(800), 237, 230, 242, 249, &LSS, &LFS, 0},	//3: 255
 				//L135IN		7
-				{&LDiagEdge, &L45 , 153 , 0   , 93 , 340 , 10 , 8000 , 8000 , _IQ(1172.0), _IQ(428.0), _IQ(800), 234, 223, 236, 245, &RSS, &R45, 0}, 	//O	243
+				{&LDiagEdge, &L45 , 153 , 0   , 85 , 332 , 10 , 8000 , 8000 , _IQ(1172.0), _IQ(428.0), _IQ(800), 245, 234, 252, 242, &RSS, &RFS, 0}, 	
 				//R45IN 	8
-				{&RDiagEdge, &R45 , 80 , 0	 , 70, 120 , 0 , 8000, 8000, _IQ(520.0), _IQ(1080.0), _IQ(800), 35 , 56, 0 , 0	, &LFS, &RFS, 0},	//O
+				{&RDiagEdge, &R45 , 80 , 0	 , 70, 120 , 0 , 8000, 8000, _IQ(520.0), _IQ(1080.0), _IQ(800), 35 , 56, 0 , 0	, &LFS, &RFS, 0},	
 				//L45IN 	9
-				{&LDiagEdge, &L45 , 90 , 0	 , 70 , 120 , 0 , 8000, 8000, _IQ(1080.0), _IQ(520.0), _IQ(800), 33 , 56, 0 , 0	, &RFS, &LFS, 0},	//O
-					///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+				{&LDiagEdge, &L45 , 90 , 0	 , 70 , 120 , 0 , 8000, 8000, _IQ(1080.0), _IQ(520.0), _IQ(800), 33 , 56, 0 , 0	, &RFS, &LFS, 0},	
+			///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				
-					// FRONT X, SIDE X -> u16EdgeTick0	,	FRONT X, SIDE O ->u16EdgeTick1	,	FRONT O, SIDE X ->u16EdgeTick2	,	FRONT O, SIDE O -> u16EdgeTick3
+			///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				//R135OUT 10		127
-				{&RSideEdge, &RSS , 62 , 0  , 95, 317 , 3 , 8000 , 8000 , _IQ(420.0), _IQ(1180.0), _IQ(800), 217, 273, 273, 263, &L45, &LFS, 0},	//O
+				{&RSideEdge, &RSS , 62 , 0  , 95, 308 , 3 , 8000 , 8000 , _IQ(420.0), _IQ(1180.0), _IQ(800), 220, 264, 273, 273, &L45, &LFS, 0},	
 				//L135OUT 11			114
-				{&LSideEdge, &LSS , 62, 0  , 95, 313 , 3 , 8000 , 8000 , _IQ(1180.0), _IQ(420.0), _IQ(800), 241, 272, 269, 269, &R45, &RFS, 0},	//O
+				{&LSideEdge, &LSS , 62, 0  , 101, 293 , 3 , 8000 , 8000 , _IQ(1204.0), _IQ(396.0), _IQ(800), 262, 265, 260, 260, &R45, &RFS, 0},	
 				//R45OUT 12
-				{&RSideEdge, &RSS , 105 , 0  , 70 , 117 , 0 , 8000, 8000, _IQ(520.0), _IQ(1080.0), _IQ(800), 74 , 56, 13  , 0	, &LSS, &LFS, 0},	//0
+				{&RSideEdge, &RSS , 105 , 0  , 70 , 117 , 0 , 8000, 8000, _IQ(520.0), _IQ(1080.0), _IQ(800), 74 , 56, 13  , 0	, &LSS, &LFS, 0},	
 				//L45OUT 13
-				{&LSideEdge, &LSS , 85 , 0	, 70 , 120, 0 , 8000, 8000, _IQ(1080.0), _IQ(520.0), _IQ(800), 87 , 58 , 12  , 0  , &RSS, &RFS, 0},	//0
-				///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-					// FRONT X, SIDE X -> u16EdgeTick0	,	FRONT X, SIDE O ->u16EdgeTick1	,	FRONT O ->u16EdgeTick2
+				{&LSideEdge, &LSS , 85 , 0	, 70 , 120, 0 , 8000, 8000, _IQ(1080.0), _IQ(520.0), _IQ(800), 87 , 58 , 12  , 0  , &RSS, &RFS, 0},	
+			///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			
+			///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				//RD90 14
 				{&RSideEdge, &RSS , 9 , 0 , 95, 187 , 5 , 8000 , 8000 , _IQ(420.0), _IQ(1180.0), _IQ(800), 129 , 0, 103, 0  , &LSS, &RFS, 0},	//0 49 47 48		105 105 104
 				//LD90 15
-				{&LSideEdge, &LSS , 5 , 0 , 95, 185 , 5 , 8000 , 8000 , _IQ(1180.0), _IQ(420.0), _IQ(800), 136 , 0, 107, 0  , &RSS, &LFS, 0},	//0 37 41 			101 100
+				{&LSideEdge, &LSS , 5 , 0 , 95, 185 , 5 , 8000 , 8000 , _IQ(1180.0), _IQ(420.0), _IQ(800), 136 , 0, 104, 0  , &RSS, &LFS, 0},	//0 37 41 			101 100
+
 				
+				//RD90 14
+				//{&RSideEdge, &R45 , 125 , 0 , 100, 147 , 0 , 8000 , 8000 , _IQ(400.0), _IQ(1200.0), _IQ(800), 137 , 0, 87, 0  , &LSS, &RFS, 0},	//132 95
+				//LD90 15
+				//{&LSideEdge, &L45 , 138 , 0 , 100, 149 , 0 , 8000 , 8000 , _IQ(1200.0), _IQ(400.0), _IQ(800), 130 , 0, 110, 0  , &RSS, &LFS, 0},	
+			///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			
 				{NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0},
 				{NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0},
 				{NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0},
@@ -1247,52 +1264,55 @@ const volatile TurnInfoVariable TurnTable[5][20] =
 			},
 
 		
-			//=============================TurnSpeed 900=============================
+			//=============================TurnSpeed 1000/ smooth 900=============================
 			{	
 				//S 		0
 				{NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0},
 				//R90		1
-				{&RSideEdge, &RSS , 10, 65, 100, 190, 0,7500 , 7500, _IQ(375.0), _IQ(1125.0), _IQ(750), 0, 135, 147, 0, &L45, &LSS, &LFS}, //0172
+				{&RSideEdge, &RSS , 20 , 0, 90, 150, 1,9000 , 9000, _IQ(595.0), _IQ(1405.0), _IQ(1000), 0, 135, 147, 0, &L45, &LSS, &LFS}, 
 				//B 		2
 				{NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0},
 				//L90		3
-				{&LSideEdge, &LSS , 10, 70, 100, 195, 0,7500 , 7500, _IQ(1125.0), _IQ(375.0), _IQ(750), 0, 147, 154, 0, &R45, &RSS, &RFS}, //0
+				{&LSideEdge, &LSS , 25,  0,100, 120, 1,10000 , 10000, _IQ(1500.0), _IQ(500.0), _IQ(1000), 0, 147, 154, 0, &R45, &RSS, &RFS}, 
 				
 			/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 			
 				//R180		4
-				{&RDiagEdge, &R45 , 15 , 0	 , 81 , 374 , 0   , 11000 , 11000 , _IQ(710.0), _IQ(1690.0), _IQ(1200), 286, 287, 347, 338, &L45, &LFS, 0},//	O
+				{&RDiagEdge, &R45 , 15 , 0	 , 81 , 374 , 0   , 11000 , 11000 , _IQ(710.0), _IQ(1690.0), _IQ(1200), 286, 287, 347, 338, &L45, &LFS, 0},
 				//L180		5
-				{&LDiagEdge, &L45 , 10 , 0	 , 81 , 375 , 0   , 11000 , 11000 , _IQ(1690.0), _IQ(710.0), _IQ(1200), 280, 290, 337, 297, &R45, &RFS, 0},//	O
+				{&LDiagEdge, &L45 , 10 , 0	 , 81 , 375 , 0   , 11000 , 11000 , _IQ(1690.0), _IQ(710.0), _IQ(1200), 280, 290, 337, 297, &R45, &RFS, 0},
 			///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-			/////////(frontwallstate1 x, frontwallstate2 x, turnwallstate x -> 0	)	(frontwallstate1 x, frontwallstate2 x, turnwallstate o -> 1)		(frontwallstate1 x, frontwallstate2 o -> 2)
+			
+			///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				//R135IN	6
-				{&RDiagEdge, &R45 , 42  , 0	 , 89 , 215 , 0 , 11000 , 11000 , _IQ(650.0), _IQ(1750.0), _IQ(1200), 0, 107, 149, 185, &LFS, &RFS, 0},		// 	O
+				{&RDiagEdge, &R45 , 42  , 0	 , 89 , 215 , 0 , 11000 , 11000 , _IQ(650.0), _IQ(1750.0), _IQ(1200), 0, 107, 149, 185, &LFS, &RFS, 0},		
 				//L135IN		7
-				{&LDiagEdge, &L45 , 31	, 0   , 89 , 218 , 0 , 11000 , 11000 , _IQ(1750.5), _IQ(650.5), _IQ(1200), 0, 148, 146, 184, &RFS, &LFS, 0}, 	//O148
+				{&LDiagEdge, &L45 , 31	, 0   , 89 , 218 , 0 , 11000 , 11000 , _IQ(1750.5), _IQ(650.5), _IQ(1200), 0, 148, 146, 184, &RFS, &LFS, 0}, 	
 				
-				//R45IN 	8								  40
-				{&RDiagEdge, &R45 , 10 , 0	 , 65 , 60 , 0 , 13000, 13000, _IQ(760.0), _IQ(1640.0), _IQ(1200), 0 , 35, 0 , 0  , NULL, &RFS, 0},	//O
+				//R45IN 	8								
+				{&RDiagEdge, &R45 , 10 , 0	 , 65 , 60 , 0 , 13000, 13000, _IQ(760.0), _IQ(1640.0), _IQ(1200), 0 , 35, 0 , 0  , NULL, &RFS, 0},
 				//L45IN 	9
-				{&LDiagEdge, &L45 , 3 , 0	 , 65 , 63 , 0, 13000, 13000, _IQ(1640.0), _IQ(760.0), _IQ(1200), 0 , 32, 0 , 0  , NULL, &LFS, 0},	//O
-					///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+				{&LDiagEdge, &L45 , 3 , 0	 , 65 , 63 , 0, 13000, 13000, _IQ(1640.0), _IQ(760.0), _IQ(1200), 0 , 32, 0 , 0  , NULL, &LFS, 0},
+			///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				
-					// FRONT X, SIDE X -> u16EdgeTick0	,	FRONT X, SIDE O ->u16EdgeTick1	,	FRONT O, SIDE X ->u16EdgeTick2	,	FRONT O, SIDE O -> u16EdgeTick3
+			///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				//R135OUT 10
-				{&RDiagEdge, &R45 , 23 ,0	 , 95, 223 , 30 , 11000 , 11000 , _IQ(680.0), _IQ(1720.0), _IQ(1200), 197, 196, 195, 83, &L45, &RFS, 0},	//O
+				{&RDiagEdge, &R45 , 23 ,0	 , 95, 223 , 30 , 11000 , 11000 , _IQ(680.0), _IQ(1720.0), _IQ(1200), 197, 196, 195, 83, &L45, &RFS, 0},
 				//L135OUT 11
-				{&LDiagEdge, &L45 , 26 , 0	 , 95, 226 , 20 , 11000 , 11000 , _IQ(1720.0), _IQ(680.0), _IQ(1200), 196, 197, 191, 86, &R45, &LFS, 0},	//O
+				{&LDiagEdge, &L45 , 26 , 0	 , 95, 226 , 20 , 11000 , 11000 , _IQ(1720.0), _IQ(680.0), _IQ(1200), 196, 197, 191, 86, &R45, &LFS, 0},	
 					
 				//R45OUT 12
-				{&RSideEdge, &RSS , 36 , 0	 , 62 , 100 , 0 , 11000, 11000, _IQ(859.0), _IQ(1541.0), _IQ(1200), 37 , 63 , 0	, 0 , &L45, &LFS, 0},	//O
+				{&RSideEdge, &RSS , 36 , 0	 , 62 , 100 , 0 , 11000, 11000, _IQ(859.0), _IQ(1541.0), _IQ(1200), 37 , 63 , 0	, 0 , &L45, &LFS, 0},	
 				//L45OUT 13
-				{&LSideEdge, &LSS , 36 , 0	 , 62 , 106, 0 , 11000, 11000, _IQ(1541.0), _IQ(859.0), _IQ(1200), 37 , 36 , 0  , 0	, &R45, &RFS, 0},	//O
-				///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-					// FRONT X, SIDE X -> u16EdgeTick0	,	FRONT X, SIDE O ->u16EdgeTick1	,	FRONT O ->u16EdgeTick2
+				{&LSideEdge, &LSS , 36 , 0	 , 62 , 106, 0 , 11000, 11000, _IQ(1541.0), _IQ(859.0), _IQ(1200), 37 , 36 , 0  , 0	, &R45, &RFS, 0},	
+			///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			
+			///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				//RD90 14
-				{&RDiagEdge, &R45 , 17 , 0	 , 86, 151 , 1 , 11000 , 11000 , _IQ(727.0), _IQ(1673.0), _IQ(1200), 106 , 0, 124, 0	, &LSS, &RFS, 0},	//O
+				{&RDiagEdge, &R45 , 17 , 0	 , 86, 151 , 1 , 11000 , 11000 , _IQ(727.0), _IQ(1673.0), _IQ(1200), 106 , 0, 124, 0	, &LSS, &RFS, 0},
 				//LD90 15
-				{&LDiagEdge, &L45 , 21 , 0	 , 86, 153 , 1 , 11000 , 11000 , _IQ(1673.0), _IQ(727.0), _IQ(1200), 101 , 0, 120, 0	, &RSS, &LFS, 0},	//O
-				
+				{&LDiagEdge, &L45 , 21 , 0	 , 86, 153 , 1 , 11000 , 11000 , _IQ(1673.0), _IQ(727.0), _IQ(1200), 101 , 0, 120, 0	, &RSS, &LFS, 0},	
+			///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			
 				{NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0},
 				{NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0},
 				{NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0},
@@ -1301,7 +1321,7 @@ const volatile TurnInfoVariable TurnTable[5][20] =
 			},
 
 					
-		//=============================TurnSpeed 1000=============================
+		//=============================TurnSpeed 1200=============================
 		{	
 			//S 		0
 			{NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0},
@@ -1507,27 +1527,27 @@ void BlockStraight(void)
 					R_Motor.Q17Decel_Velocity = L_Motor.Q17Decel_Velocity = _IQ17(800.0);	
 				}
 		}
-		else if(gUserTurnSpeed == SMOOTH1200)
+		else if(gUserTurnSpeed == SMOOTH1000)
 		{
 
 			if((NextDir == R180) || (NextDir == L180))
 			{
-				gUserSpeed = 1200;
-				gUserTurnSpeed = SMOOTH1200;
+				gUserSpeed = 1000;
+				gUserTurnSpeed = SMOOTH1000;
 				if(RunBlockCnt == 1)
 				{
-					R_Motor.Q17User_Velocity = L_Motor.Q17User_Velocity = _IQ17(1200.0);
-					R_Motor.Q17Decel_Velocity = L_Motor.Q17Decel_Velocity = _IQ17(1200.0);	
+					R_Motor.Q17User_Velocity = L_Motor.Q17User_Velocity = _IQ17(1000.0);
+					R_Motor.Q17Decel_Velocity = L_Motor.Q17Decel_Velocity = _IQ17(1000.0);	
 				}
 			}
 			else
 			{
-				gUserSpeed = 700;
-				gUserTurnSpeed = SMOOTH1200;
+				gUserSpeed = 1000;
+				gUserTurnSpeed = SMOOTH1000;
 				if(RunBlockCnt == 1)
 				{
-					R_Motor.Q17User_Velocity = L_Motor.Q17User_Velocity = _IQ17(700.0);
-					R_Motor.Q17Decel_Velocity = L_Motor.Q17Decel_Velocity = _IQ17(700.0);	
+					R_Motor.Q17User_Velocity = L_Motor.Q17User_Velocity = _IQ17(1000.0);
+					R_Motor.Q17Decel_Velocity = L_Motor.Q17Decel_Velocity = _IQ17(1000.0);	
 				}
 			}
 		}
@@ -1904,8 +1924,8 @@ void SmoothTurn(void)
 			{
 				if(JapanGoal == ON)
 				{
-                    if(!(KnowBlockPath[gPathBufferHead].Position == 0x77) || !(KnowBlockPath[gPathBufferHead].Position == 0x77) || 
-                       !(KnowBlockPath[gPathBufferHead].Position == 0x77) || !(KnowBlockPath[gPathBufferHead].Position == 0x77))
+                    if(!(KnowBlockPath[gPathBufferHead].Position == 0x34) || !(KnowBlockPath[gPathBufferHead].Position == 0x78) || 
+                       !(KnowBlockPath[gPathBufferHead].Position == 0x87) || !(KnowBlockPath[gPathBufferHead].Position == 0x88))
                        JapanGoal = OFF;
                        
                     while((pLFS->q17Position + pRFS->q17Position)/_IQ17(2.0) > _IQ17(155.0));
@@ -2025,7 +2045,7 @@ void SmoothTurn(void)
 	//straight section.			턴 직진 구간  (턴 탈출)
 	//RLED_ON;
 	for( g_u16motortic = 0 ; g_u16motortic < pTurnTable->u16TurnOutTime ; );
-    RLED_OFF;
+    //RLED_OFF;
 	
 #ifdef SMOOTH_TURN_TEST 
 
@@ -2084,19 +2104,19 @@ void SmoothTurn(void)
 			{
 				Move_to_Move(gUserSpeed,gUserSpeed, ((int16)172));
 			}
-            if(KnowBlockPath[0].Position == 0x77 || KnowBlockPath[0].Position == 0x78 || KnowBlockPath[0].Position == 0x87 ||
+            if(KnowBlockPath[0].Position == 0x34 || KnowBlockPath[0].Position == 0x78 || KnowBlockPath[0].Position == 0x87 ||
             KnowBlockPath[0].Position == 0x88) TURNBFSTRT = ON; // if goal 도착시 분류
 			gBlockToBlock = TURN2BTURN;
 			break;
 
 		default:
-			break; 
+			break;
 
 	}
 	
 #endif
 //LLED_OFF;
-RLED_OFF;
+//RLED_OFF;
 
 }
 
@@ -2158,7 +2178,7 @@ void BackTurn(void)
 				gBackTurnFrontAdjState = ON;
 				gEdgeDiffAdjustFlag = OFF;
 				R_Motor.Q17User_Velocity = L_Motor.Q17User_Velocity = _IQ17(50);
-				//gFrontSensorPull = ON;
+				gFrontSensorPull = ON;
 				gAngleDirectflag == OFF;
 			}
 			else;
@@ -2188,6 +2208,7 @@ void BackTurn(void)
  
 		}
 		else
+		{
 
             if(TURNBFSTRT != ON)
             {
@@ -2200,6 +2221,7 @@ void BackTurn(void)
                 TURNBFSTRT = OFF;
                 //RLED_ON;
             }
+		}
 	}
 
 	RightPosition = pRSS->q17Position;
@@ -2298,7 +2320,7 @@ void BackTurn(void)
 	 accelcheck++;
 #endif
 
-#if 0 //diag test
+#ifdef SMOOTH_TURN_TEST//diag test
 if(g_usertestdir == 1)
     Direction = 4;
 else
@@ -2307,7 +2329,7 @@ else
 MouseDir = 0;
 #endif
 
-#if 0 //diag test
+#ifdef SMOOTH_TURN_TEST //diag test
  
  if(Direction == 4) // right turn
 	 {gTURN_cnt+=1;}
@@ -2322,7 +2344,7 @@ MouseDir = 0;
 	 pTurnTable = (TurnInfoVariable *)&TurnTable[gUserTurnSpeed][Direction];
  
 	 //앞벽의 유무...
-#if 0 //보정벽 변환 이전
+#if 1 //보정벽 변환 이전
 	 WallInfo = gMazeMap[Position] & 0x0f;
 	 FrontWallState = WallInfo & WallTable[MouseDir][0];
  
@@ -2333,6 +2355,8 @@ MouseDir = 0;
  
 	 FSideWallState = WallInfo & WallTable[ MouseDir ][ 0 ];
 #endif
+
+#if 0
 ///////////// 보정벽 변환 이후(이게 맞다)
      WallInfo = gMazeMap[Position] & 0x0f;
      if(Direction == R180)
@@ -2347,8 +2371,9 @@ MouseDir = 0;
 
      idx = ( Direction == R180) ? 2 : 1;
 	 FrontWallState = WallInfo & WallTable[ MouseDir ][ idx ];
+#endif
 
-#if 0 //DIAG TEST
+#ifdef SMOOTH_TURN_TEST //DIAG TEST
  
 	 FrontWallState = ON;
 	 FSideWallState = ON;
@@ -2361,7 +2386,7 @@ MouseDir = 0;
 	 gPosAdjF = OFF;
  
 	 //Turn In(intime)
-	 //RLED_ON;
+	 RLED_ON;
 	 for(; pTurnTable->pTurnInEdge->u16WallFallTick < pTurnTable->u16TurnInTime;);
 
 
@@ -2371,14 +2396,14 @@ MouseDir = 0;
 	 L_Motor.Q17User_Velocity = pTurnTable->q17LeftVelocity;
  
 	 //turn accel section.
-	 //LLED_ON;
+	 LLED_ON;
 	 for( g_u16motortic = 0 ; g_u16motortic < pTurnTable->u16TurnAccTime ; );
  
 	 //Turn Uniform Section 등속
-	 //RLED_OFF;
+	 RLED_OFF;
 	 for( g_u16motortic = 0 ; g_u16motortic < ( pTurnTable->u16TurnTime ) ; )
 	 { 
-#if 0 // diag test
+#ifdef SMOOTH_TURN_TEST // diag test
 		 q17testfdiff[ g_u16motortic ] = pTurnTable->pTurnFEdgeSen->q17LPFOutDataDiff;
 		 gtesttick[ g_u16motortic ] = g_u16motortic;
 		 q17testfposition[ g_u16motortic ] = pTurnTable->pTurnFEdgeSen->q17Position;
@@ -2388,19 +2413,19 @@ MouseDir = 0;
 #endif
 	 
  
-#if 1 //보정
+#ifdef TURN_ADJUST//보정
 
 		 if( FSideWallState == OFF )
-		 {
+		 {//fside 없으면 무조건 폴대 없어지는 시점
  
 			 if( ( TurnEdge == OFF ) && 
-                 ( g_u16motortic > ( pTurnTable->u16EdgeTick0  - 20)) && 
-                 ( pTurnTable->pTurnEdgeSen->q17Position > _IQ(510.0) ) &&
-                 ( pTurnTable->pTurnEdgeSen->q17LPFOutDataDiff < _IQ(0.0) ))
+                 ( g_u16motortic > ( pTurnTable->u16EdgeTick0  - 30)) && 
+                 ( pTurnTable->pTurnFEdgeSen->q17Position > _IQ(249.0) ) &&
+                 ( pTurnTable->pTurnFEdgeSen->q17LPFOutDataDiff < _IQ(0.0) )) // frontwall on, frontsidewall off
 			 {
 				 TurnEdge = ON;
 				 g_u16motortic = pTurnTable->u16EdgeTick0;
-                 RLED_ON;
+                 //RLED_ON;
 			 }
  
 		 }		 
@@ -2409,18 +2434,24 @@ MouseDir = 0;
 
             Edgetick = ( FrontWallState == OFF ) ? ( pTurnTable->u16EdgeTick1 ) : ( pTurnTable->u16EdgeTick2 );
             
-			 if( ( TurnEdge == OFF ) &&
-				 ( g_u16motortic > Edgetick - 40 ) &&
-				 ( pTurnTable->pTurnEdgeSen->q17LPFOutDataDiff < _IQ(0.0) ) &&
-				 ( pTurnTable->pTurnEdgeSen->q17Position < _IQ(210.0) ) )
+			 if( ( TurnEdge == OFF ) && (FrontWallState == OFF)&&
+				 ( g_u16motortic > Edgetick - 30 ) &&
+				 ( pTurnTable->pTurnFEdgeSen->q17LPFOutDataDiff > _IQ(0.0) ) &&
+				 ( pTurnTable->pTurnFEdgeSen->q17Position < _IQ(250.0) ) )
 			 {
 				 TurnEdge = ON;
 				 g_u16motortic = Edgetick;
-                 if(Edgetick == pTurnTable->u16EdgeTick1)
-                    LLED_ON;
-                 //else
-                    //RLED_ON;
-			 }				 
+			 }
+
+
+			 if( ( TurnEdge == OFF ) && (FrontWallState == ON)&&
+				 ( g_u16motortic > Edgetick - 30 ) &&
+				 ( pTurnTable->pTurnFEdgeSen->q17LPFOutDataDiff < _IQ(0.0) ) &&
+				 ( pTurnTable->pTurnFEdgeSen->q17Position < _IQ(150.0) ) )
+			 {
+				 TurnEdge = ON;
+				 g_u16motortic = Edgetick;
+			 }	
 		 }
 		
  		
@@ -2430,24 +2461,25 @@ MouseDir = 0;
 	 R_Motor.Q17User_Velocity = L_Motor.Q17User_Velocity = pTurnTable->q17RefVel; //탈출속도 넣어줌
  
 	 //turn decel section.
-	 //LLED_OFF;
+	 LLED_OFF;
 	 for( g_u16motortic = 0 ; (g_u16motortic < pTurnTable->u16TurnAccTime) ;);//&& (_IQabs(GyroVar.q17real_val) >= _IQ(180)) ; )
  
 	 R_Motor.i32Accel = L_Motor.i32Accel = (int32)gUserAccel;
+	 
 	 //straight section.
-	 //RLED_ON;
+	 RLED_ON;
 	 for( g_u16motortic = 0 ; g_u16motortic < pTurnTable->u16TurnOutTime ; );
      RLED_OFF;
      LLED_OFF;
 
-#if 0 // diag test
+#ifdef SMOOTH_TURN_TEST // diag test
 
 if(gTURN_cnt == gTURN_MENU)
 {
 	MoveStop(_IQ(0),_IQ(0),_IQ(0),_IQ(0));
     
 	while(SW_RIGHT == OFF);
-	for( print_cnt = 0 ; print_cnt < 450 ; print_cnt++	)
+	for( print_cnt = 0 ; print_cnt < 610 ; print_cnt++	)
 	{
 		TxPrintf("\n tick : %d\t pTurnEdgeSen : %4.2f\t pTurndiff : %4.2f\t pTurnFEdgeSen : %4.2f\t pTurnFdiff : %4.2f",gtesttick[ print_cnt ], _IQ17toF(q17testposition[ print_cnt ]), _IQ17toF(q17testdiff[ print_cnt ])
 																																		, _IQ17toF(q17testfposition[ print_cnt ]),_IQ17toF(q17testfdiff[ print_cnt ]));
@@ -2479,7 +2511,6 @@ void Diag45_135TurnIn(void)
 	 Uint16  Position;
 	 Uint16  TurnEdge = OFF;
 	 Uint16  EdgeTick = 0;
- //  Uint16  Temp = 0;
 	 Uint16  NextDir;
 	 Uint16  WallInfo;
 	 Uint16  NextPos;
@@ -2489,15 +2520,10 @@ void Diag45_135TurnIn(void)
 	 Uint16  idx;
 	 Uint16  index = 0;	
 	 Uint16	 test_index = 0;
-	// Uint16  Angle_rel = 0;
-	 //_iq17	 Angle_cut[2] = {_IQ(135),_IQ(45)};
- //  Uint16  print_cnt = 0;
 	 volatile Uint16 *pEdgeCnt = NULL;
- //  _iq17	 q17diff_val = _IQ(0.0);
 	 gBackTurnFrontAdjState = OFF;
 	 gDiagDirectAdjState = OFF;
 	 gEdgeDiffAdjustFlag = OFF;
-	// gGyroLowSpeed = OFF;
 	 gAngleDirectflag = ON;
 	 gNowPollMode = OFF;
 
@@ -2511,7 +2537,7 @@ void Diag45_135TurnIn(void)
 #endif
 
 
-#if 0 // diag test
+#ifdef SMOOTH_TURN_TEST // diag test
 
     //135IN test
     if(g_usertestdir == 1) Direction = 6; 
@@ -2590,7 +2616,7 @@ else ;
 	 TurnWallState = WallInfo & WallTable[ MouseDir ][ idx ];
 
 	 
-#if 0 //diag test
+#ifdef SMOOTH_TURN_TEST//diag test
 	 FrontWallState = OFF;
 	 FrontWallState2 = OFF;
 	 TurnWallState = ON;		
@@ -2606,7 +2632,7 @@ else ;
 	 else
 	 {
 		 pEdgeCnt = &( pTurnTable->pTurnInEdge->u16WallFallTick );			 //벽 떨어지는 틱.
-		 while( pTurnTable->pTurnInSensor->q17Position < _IQ(510.0) );	 //벽이 떨어질 때까지 기다림.	 
+		 while( pTurnTable->pTurnInSensor->q17Position < _IQ(510.0) );	 //벽이 떨어질 때까지 기다림.
 
 	 }
  
@@ -2623,7 +2649,6 @@ else ;
 		 }
 	
 
-	// GyroVar.q17real_val = _IQ(0);
 	 R_Motor.i32Accel = pTurnTable->i32RightAccel;
 	 L_Motor.i32Accel = pTurnTable->i32LeftAccel;
 	 R_Motor.Q17User_Velocity = pTurnTable->q17RightVelocity;
@@ -2637,7 +2662,7 @@ else ;
 	 //turn uniform section.
 	 for( g_u16motortic = 0 ; g_u16motortic < pTurnTable->u16TurnTime; )
 	 {
-#if 0 //diag test
+#ifdef SMOOTH_TURN_TEST//diag test
 		 q17testfdiff[ g_u16motortic ] = pTurnTable->pTurnFEdgeSen->q17LPFOutDataDiff;
 		 gtesttick[ g_u16motortic ] = g_u16motortic;
 		 q17testfposition[ g_u16motortic ] = pTurnTable->pTurnFEdgeSen->q17Position;
@@ -2647,7 +2672,7 @@ else ;
 #endif
  
 	 
-#if 1 //보정
+#ifdef TURN_ADJUST//보정
 		if(gUserTurnSpeed < 3)
 		{
 			if( Direction == R135IN || Direction == L135IN )
@@ -2655,11 +2680,11 @@ else ;
 
 				 if( FrontWallState == OFF ) //FrontWallState == OFF
 				 {
-			 		if(FrontWallState2 == OFF)
+			 		if(FrontWallState2 == OFF) //F1OFF, F2 OFF
 			 		{
 
 						 if( ( TurnEdge == OFF ) &&
-							 ( g_u16motortic > pTurnTable->u16EdgeTick0 - 30 ) &&
+							 ( g_u16motortic > pTurnTable->u16EdgeTick0 - 25 ) &&
 							 ( pTurnTable->pTurnEdgeSen->q17LPFOutDataDiff < _IQ(0.0) ) && 
 							 (pTurnTable->pTurnEdgeSen->q17Position >  _IQ(510.0) ))
 						 {
@@ -2668,7 +2693,7 @@ else ;
 						 }
                          //RLED_ON;
 			 		}
-                    else if(FrontWallState2 != OFF) //frontwallstate2 == on
+                    else if(FrontWallState2 != OFF) //F1 OFF, F2 ON
                     {
                         if( ( TurnEdge == OFF ) &&
 							( g_u16motortic > pTurnTable->u16EdgeTick1 - 30 ) &&
@@ -2684,7 +2709,7 @@ else ;
 			    }
 			    else //FrontWallState == ON
 			    {
-			        if(FrontWallState2 == OFF)
+			        if(FrontWallState2 == OFF) // F1 ON, F2 OFF
 			 	    {
 
 						 if( ( TurnEdge == OFF ) &&
@@ -2698,7 +2723,7 @@ else ;
                          //RLED_ON;
                          
 			 	    }
-                    else if(FrontWallState2 != OFF)
+                    else if(FrontWallState2 != OFF) //F1 ON, F2 ON
                     {
                         if( ( TurnEdge == OFF ) &&
 							 ( g_u16motortic > pTurnTable->u16EdgeTick3 - 30 ) &&
@@ -2751,7 +2776,7 @@ else ;
 	 //RLED_OFF;
      //LLED_OFF;
      
-#if 0// diag test
+#ifdef SMOOTH_TURN_TEST// diag test
 	 
 	 if(gTURN_cnt == gTURN_MENU)
 	 {
@@ -2807,13 +2832,8 @@ void Diag45_135TurnOut(void)
 	 Uint16  Position;
 	 Uint16  MouseDir;
 	 Uint16  NextDir;
- //  Uint16  NextPos;
 	 Uint16  WallInfo;
 	 Uint16  EdgeTick;
-	// Uint16  Angle_ref = 0;
-	// _iq17	 Angle_cut[2] = {_IQ(135),_IQ(45)};
- //  Uint16  idx;
- //  Uint16  print_cnt;
  
 	 
 	 gBackTurnFrontAdjState = OFF;
@@ -2831,15 +2851,15 @@ void Diag45_135TurnOut(void)
 	 accelcheck++;
 #endif
 
-#if 0 // diag test
+#ifdef SMOOTH_TURN_TEST// diag test
 
 	//135OUT test
-    if(g_usertestdir == 1) Direction = 10; 
-    else if(g_usertestdir == 3) Direction = 11;
+    //if(g_usertestdir == 1) Direction = 10; 
+    //else if(g_usertestdir == 3) Direction = 11;
 
     //45OUT test
-    //if(g_usertestdir == 1) Direction = 12; 
-    //else if(g_usertestdir == 3) Direction = 13;
+    if(g_usertestdir == 1) Direction = 12; 
+    else if(g_usertestdir == 3) Direction = 13;
     
 	MouseDir = 0;
 
@@ -2880,11 +2900,6 @@ else ;
 	 
 	 DiagFWallState = WallInfo & WallTable[MouseDir][0];
  
-//	 if( ( Direction == L135OUT ) || ( Direction == R135OUT ) )
-	//	 Angle_ref = 0;
-	// else
-	//	 Angle_ref = 1;
- 
 	 if((Direction == R135OUT) || (Direction == R45OUT))
 		 WallInfo = gMazeMap[Position + gMoveTable[(R + MouseDir) & 0x03]] & 0x0f;
 	 else
@@ -2892,7 +2907,7 @@ else ;
 	 
 	 DiagFSideWallState = WallInfo & WallTable[MouseDir][0];
  
-#if 0	//diag test		//////앞벽 존재할경우만 하면됨...........45Dgree
+#ifdef SMOOTH_TURN_TEST//diag test		//////앞벽 존재할경우만 하면됨...........45Dgree
 	 DiagFWallState = ON;
 	 DiagFSideWallState = ON;
 	 gPosAdjF = OFF;
@@ -2907,7 +2922,6 @@ else ;
 		 else if( InEdgeUp == ON && pTurnTable->pTurnInSensor->q17LPFOutDataDiff < _IQ(0.0)) 
 			 break;
 		 else;
-         //TxPrintf("%3.1f   %f\n", _IQtoF(pTurnTable->pTurnInSensor->q17Position),_IQtoF(g_sen[2].q17LPFOutDataDiff));
 	 }
 
 	 //RLED_ON;
@@ -2931,7 +2945,7 @@ else ;
 	 //RLED_OFF;
 	 for( g_u16motortic = 0 ; g_u16motortic < ( pTurnTable->u16TurnTime ) ; )
 	 {
-#if 0 // diag test
+#ifdef SMOOTH_TURN_TEST// diag test
 		 q17testfdiff[ g_u16motortic ] = pTurnTable->pTurnFEdgeSen->q17LPFOutDataDiff;
 		 gtesttick[ g_u16motortic ] = g_u16motortic;
 		 q17testfposition[ g_u16motortic ] = pTurnTable->pTurnFEdgeSen->q17Position;
@@ -2940,7 +2954,7 @@ else ;
 
 #endif
  
-#if 1 //Turn adjust
+#ifdef TURN_ADJUST //Turn adjust
 		 if( Direction == R45OUT || Direction == L45OUT )
 		 {
 			 if( DiagFSideWallState == OFF )
@@ -2984,34 +2998,36 @@ else ;
 		 }
 		 else	//	135TURN
 		 {
-			 if( DiagFWallState == OFF )
+			 if( DiagFWallState == OFF ) //F1 OFF
 			 {
  
-				 if( ( TurnEdgeUp == OFF ) && (DiagFSideWallState == OFF) &&
+				 if( ( TurnEdgeUp == OFF ) &&
 					 ( g_u16motortic > pTurnTable->u16EdgeTick0 - 30 ) &&
-					 ( pTurnTable->pTurnFEdgeSen->q17LPFOutDataDiff > _IQ(0.0)) &&
-					 ( pTurnTable->pTurnFEdgeSen->q17Position < _IQ(250.0) ))
+					 ( pTurnTable->pTurnEdgeSen->q17LPFOutDataDiff > _IQ(0.0)) &&
+					 ( pTurnTable->pTurnEdgeSen->q17Position < _IQ(510.0) ))
 				 {
 					 TurnEdgeUp = ON;
 					 g_u16motortic = pTurnTable->u16EdgeTick0;
                      //RLED_ON;
 				 } 
-                 else if( ( TurnEdgeUp == OFF ) && (DiagFSideWallState != OFF) &&
-					 ( g_u16motortic > pTurnTable->u16EdgeTick1 - 30 ) &&
-					 ( pTurnTable->pTurnEdgeSen->q17LPFOutDataDiff > _IQ(0.0)) &&
-					 ( pTurnTable->pTurnEdgeSen->q17Position < _IQ(510.0) ))
+
+			 }
+			 else //DF ON
+			 {
+				 if( ( TurnEdgeUp == OFF ) && (DiagFSideWallState == OFF) && //DF ON, DFS OFF
+					 ( g_u16motortic > pTurnTable->u16EdgeTick1 - 30 ) && 
+					 ( pTurnTable->pTurnEdgeSen->q17LPFOutDataDiff < _IQ(0.0)) &&
+					 ( pTurnTable->pTurnEdgeSen->q17Position < _IQ(130.0)))
 				 {
 					 TurnEdgeUp = ON;
 					 g_u16motortic = pTurnTable->u16EdgeTick1;
                      //RLED_ON;
-				 }			 
-			 }
-			 else
-			 {
-				 if( ( TurnEdgeUp == OFF ) &&
+				 }
+
+				 if( ( TurnEdgeUp == OFF ) && (DiagFSideWallState != OFF) && //DF ON, DFS ON
 					 ( g_u16motortic > pTurnTable->u16EdgeTick2 - 30 ) && 
 					 ( pTurnTable->pTurnEdgeSen->q17LPFOutDataDiff < _IQ(0.0)) &&
-					 ( pTurnTable->pTurnEdgeSen->q17Position < _IQ(140.0)))
+					 ( pTurnTable->pTurnEdgeSen->q17Position < _IQ(130.0)))
 				 {
 					 TurnEdgeUp = ON;
 					 g_u16motortic = pTurnTable->u16EdgeTick2;
@@ -3035,9 +3051,10 @@ else ;
 	 //turnout section
 	 //RLED_ON;
 	 for( g_u16motortic = 0 ; g_u16motortic < ( pTurnTable->u16TurnOutTime ) ; );
-    //RLED_OFF;
+     //RLED_OFF;
      //LLED_OFF;
-#if 0 //diag test
+	 
+#ifdef SMOOTH_TURN_TEST//diag test
 	 MoveStop(_IQ(0),_IQ(0),_IQ(0),_IQ(0));
 	 while(SW_RIGHT == OFF);
 	 for( print_cnt = 0 ; print_cnt < 450 ; print_cnt++  )
@@ -3069,7 +3086,6 @@ void Diag90Turn(void)
  {
 	 Uint16  InEdgeUp = OFF;
 	 Uint16  TurnEdge = OFF;
- //  Uint16  TurnEdgeUp = OFF;
 	 Uint16  Direction;
 	 Uint16  Position;
 	 Uint16  MouseDir;
@@ -3080,8 +3096,6 @@ void Diag90Turn(void)
 	 Uint16  EdgeTick;
      Uint16  nextpos;
      Uint16  wallidx;
- //  Uint16  print_cnt;
- //  Uint16  Temp = 0;
 	 int32	 idx;
  
 	 gPosAdjF = ON;
@@ -3091,7 +3105,6 @@ void Diag90Turn(void)
 	 gDiagDirectAdjState = ON;
 	 gDiagTurnOutAdjF = ON;
 	 gNowPollMode = OFF;
-	// gGyroLowSpeed = OFF;
 
 #if 1
 	
@@ -3104,7 +3117,7 @@ void Diag90Turn(void)
 #endif
 
 
-#if 0 //diag test
+#ifdef SMOOTH_TURN_TEST //diag test
 
     if(g_usertestdir == 1) Direction = 14; 
     else if(g_usertestdir == 3) Direction = 15;
@@ -3114,7 +3127,7 @@ void Diag90Turn(void)
 #endif	
 
 
-#if 0 //diag test
+#ifdef SMOOTH_TURN_TEST //diag test
 	 
 	 
 	 if(Direction == 14) //RD90
@@ -3146,7 +3159,7 @@ void Diag90Turn(void)
 	 SideWall = WallInfo & WallTable[ MouseDir ][ idx ]; //옆벽의 유무...
 
  
-#if 0 //diag test
+#ifdef SMOOTH_TURN_TEST //diag test
 	 FrontWallState = ON;
 	 SideWall = OFF;
 	 gPosAdjF = OFF;
@@ -3164,7 +3177,7 @@ void Diag90Turn(void)
 		 else;
 	 }
 
-     //RLED_ON;
+     RLED_ON;
 	 for( g_u16motortic = 0 ; g_u16motortic < ( pTurnTable->u16TurnInTime ) ; )
 	 {
  
@@ -3178,16 +3191,16 @@ void Diag90Turn(void)
 	 L_Motor.Q17User_Velocity = pTurnTable->q17LeftVelocity;
  
 	 //turn accel section.
-	 //LLED_ON;
+	 LLED_ON;
 	 for( g_u16motortic = 0 ; g_u16motortic < ( pTurnTable->u16TurnAccTime ) ; );	 
  
 	 gAngleDirectflag = ON; // 사용 안함
  
 	 //turn uniform section.
-	 //RLED_OFF;
+	 RLED_OFF;
 	 for( g_u16motortic = 0 ; g_u16motortic < ( pTurnTable->u16TurnTime ) ; )
 	 {
-#if 0 //diag test
+#ifdef SMOOTH_TURN_TEST //diag test
 				 q17testfdiff[ g_u16motortic ] = pTurnTable->pTurnFEdgeSen->q17LPFOutDataDiff;
 				 gtesttick[ g_u16motortic ] = g_u16motortic;
 				 q17testfposition[ g_u16motortic ] = pTurnTable->pTurnFEdgeSen->q17Position;
@@ -3196,7 +3209,7 @@ void Diag90Turn(void)
 
 #endif
  
-#if 1 // 보정
+#ifdef TURN_ADJUST// 보정
 		
 			 if( FrontWallState == OFF )
 			 {
@@ -3204,7 +3217,8 @@ void Diag90Turn(void)
 
 				if( ( TurnEdge == OFF ) &&
 					( g_u16motortic > EdgeTick - 25 ) &&
-					( pTurnTable->pTurnFEdgeSen->q17LPFOutDataDiff < _IQ(0.0)))
+					( pTurnTable->pTurnFEdgeSen->q17LPFOutDataDiff < _IQ(0.0)) &&
+					( pTurnTable->pTurnFEdgeSen->q17LPFOutData > _IQ(249.0)))
 				{
 					TurnEdge = ON;
 					g_u16motortic = EdgeTick;
@@ -3231,7 +3245,7 @@ void Diag90Turn(void)
 	 R_Motor.Q17User_Velocity = L_Motor.Q17User_Velocity = pTurnTable->q17RefVel;
  
 	 //turn decel section.
-	 //LLED_OFF;
+	 LLED_OFF;
 	 for( g_u16motortic = 0 ; (g_u16motortic < ( pTurnTable->u16TurnAccTime )) ;)//&& (_IQabs(GyroVar.q17real_val) >= _IQ(90)) ; )
 	 {
 		// if(_IQabs(GyroVar.q17real_val) >= _IQ(90))
@@ -3241,10 +3255,10 @@ void Diag90Turn(void)
 	 R_Motor.i32Accel = L_Motor.i32Accel = pTurnTable->i32RightAccel;
  
 	 //straight section.
-	 //RLED_ON;
+	 RLED_ON;
 	 for( g_u16motortic = 0 ; g_u16motortic < ( pTurnTable->u16TurnOutTime ) ; );
-     //RLED_OFF;
-#if 0 //diag test
+     RLED_OFF;
+#ifdef SMOOTH_TURN_TEST //diag test
 
 if(gTURN_cnt == gTURN_MENU)
 {
@@ -3315,6 +3329,7 @@ void DiagBlockRun(void)
 	 RunBlockCnt = KnowBlockPath[gPathBufferHead].PathCnt;
 	 NextDir = KnowBlockPath[gPathBufferHead + 1].PathState;
  #endif
+
  
 	 DiagInDis = _IQ17(20.0);
  
@@ -3497,14 +3512,14 @@ void straight_test(void)
 	//M_POS_KD = pidtest;
 	Delay(2500000);
 	
-	L_Motor.i32Accel = R_Motor.i32Accel = 8000;
+	L_Motor.i32Accel = R_Motor.i32Accel = 7000;
 	MoveStop( _IQ17(0.0) , _IQ17(0.0) , _IQ17(0.0) , _IQ17(0.0) );	 //0상 제어 시작.
 	VFDPrintf("GO    !!");
 
 	while( SW_RIGHT == OFF);
 	Delay(2500000);
 
-	Accel_test = 600;
+	Accel_test = 1800;
 	
 	while(1)
 	{	
@@ -3520,6 +3535,7 @@ void straight_test(void)
 			//TxPrintf("%4f      %4f\n", _IQ17toF(R_Motor.q17pidoutterm),_IQ17toF(L_Motor.q17pidoutterm));
             //TxPrintf("%f   %f\n", _IQtoF(g_sen[2].q17LPFOutDataDiff),_IQtoF(g_sen[3].q17LPFOutDataDiff));
 			//TxPrintf("%4f\n",_IQ17toF(L_Motor.Q17Current_Velocity));
+			TxPrintf("%3.1f\n",_IQ17toF(q17PosPidOutTerm));
 			
 			if((pRFS->q17Position < _IQ17(60)) || (pLFS->q17Position < _IQ17(60)))
 			{
@@ -3537,7 +3553,7 @@ void straight_test(void)
 				gBackTurnFrontAdjState = ON;
 				gEdgeDiffAdjustFlag = OFF;
 			}
-			else if(L_Motor.Q17Distace_Sum > _IQ17(1900.0))
+			else if(L_Motor.Q17Distace_Sum > _IQ17(2000.0))
 			{
 				R_Motor.i32Accel = L_Motor.i32Accel = 5000;
 				L_Motor.Q17User_Velocity = _IQ17(200);
@@ -3575,7 +3591,7 @@ void straight_test(void)
 			}
 		if(Accel_test < 2000)
             {
-			    R_Motor.i32Accel = L_Motor.i32Accel = 8000;
+			    R_Motor.i32Accel = L_Motor.i32Accel = 7000;
 			}
 		else if(Accel_test >=2000)
             {
@@ -3822,10 +3838,10 @@ void Smooth_Turn_TEST(void)
    InitMotor(&L_Motor);
    InitMotor(&R_Motor);
 
-   gPosAdjF = ON; //직진 진입 시에만 사용
-   gUserTurnSpeed = SMOOTH850; //SMOOTH600;
-   gUserAccel = 8000; //7000;
-   gUint16user_speed = 800; //600;
+   //gPosAdjF = ON; //직진 진입 시에만 사용
+   gUserTurnSpeed = SMOOTH850;//SMOOTH1000; //SMOOTH600;
+   gUserAccel = 8000;//8000; //7000;
+   gUint16user_speed = 800;//800; //600;
    gBlockToBlock = TURN2STRT; //use only in smoothturn
    L_Motor.i32Accel = R_Motor.i32Accel = gUserAccel;
 
@@ -3862,13 +3878,13 @@ void Smooth_Turn_TEST(void)
          
          while(1)
          {
-            if( (L_Motor.Q17Distace_Sum > _IQ17(140.0)) || (R_Motor.Q17Distace_Sum > _IQ17(140.0)) )
+            if( (L_Motor.Q17Distace_Sum > _IQ17(30.0)) || (R_Motor.Q17Distace_Sum > _IQ17(30.0)) ) //140
              {
-               SmoothTurn();
+               //SmoothTurn();
                //Diag180Turn();
                //Diag45_135TurnIn();
                //Diag45_135TurnOut();
-               //Diag90Turn();
+               Diag90Turn();
              }
          }
          
@@ -3883,13 +3899,13 @@ void Smooth_Turn_TEST(void)
 
          while(1)
          {
-            if( (L_Motor.Q17Distace_Sum > _IQ17(140.0)) || (R_Motor.Q17Distace_Sum > _IQ17(140.0)) )
+            if( (L_Motor.Q17Distace_Sum > _IQ17(30.0)) || (R_Motor.Q17Distace_Sum > _IQ17(30.0)) ) //140
             {
-               SmoothTurn();
+               //SmoothTurn();
                //Diag180Turn();
                //Diag45_135TurnIn();
                //Diag45_135TurnOut();
-               //Diag90Turn();
+               Diag90Turn();
             }
          }
 

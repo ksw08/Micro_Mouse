@@ -28,7 +28,6 @@ char menu_name [4][3][9] =
 	"qepget", "Smthtest", " Search "	
 };
 
-
 void reset_menu (void)
 {
 	g_int16_menu_x = 0;

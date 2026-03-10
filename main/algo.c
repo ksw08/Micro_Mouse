@@ -132,7 +132,7 @@ void InitWeight(void) // 가운데 부분 무게값 및 벽 방향 설정
 	{
 
 		//LSB 무게값 : 16, 현재방향 :4, 전방향 : 4, 블럭수 : 6, 연속블럭종류 : 2, MSB
-		gMapValue[0x77].Divide.Weight = 0;
+		gMapValue[0x34].Divide.Weight = 0;
 		gMapValue[0x78].Divide.Weight = 0;
 		gMapValue[0x88].Divide.Weight = 0;
 		gMapValue[0x87].Divide.Weight = 0;
@@ -142,12 +142,12 @@ void InitWeight(void) // 가운데 부분 무게값 및 벽 방향 설정
 		//gMapValue[0x88].Divide.NowVector = DIR_E;
 		//gMapValue[0x87].Divide.NowVector = DIR_S;
 
-		gMapflag[0x77] = ON;
+		gMapflag[0x34] = ON;
 		gMapflag[0x78] = ON;
 		gMapflag[0x88] = ON;
 		gMapflag[0x87] = ON;
 
-		Que[0] = 0x77;
+		Que[0] = 0x34;
 		Que[1] = 0x78;
 		Que[2] = 0x88;
 		Que[3] = 0x87;
@@ -648,7 +648,7 @@ void SmoothRun(void)
 {
 
 	Uint16	RunCnt = 0;
-	Uint16	Turnarr[4] = {SMOOTH600, SMOOTH850, SMOOTH1200, SMOOTH1300};
+	Uint16	Turnarr[4] = {SMOOTH600, SMOOTH850, SMOOTH1000, SMOOTH1300};
 	Uint16 TurnType = 0;
 	int i = 0;
 	g_uint16_pwm_flag = 1;
@@ -699,6 +699,7 @@ void SmoothRun(void)
 	}
 
     Delay(0x100000);
+	InitAlgorithm();
     
     while(TRUE)
 	{
@@ -747,7 +748,7 @@ void SmoothRun(void)
 
 	Delay(0x300000);
 
-	InitAlgorithm();
+	//InitAlgorithm();
 
 	InitMotor(&R_Motor);
 	InitMotor(&L_Motor);
@@ -908,8 +909,8 @@ void RunPath90Make(void)
 
 	//골 찾기(둘중 하나 비면 거기가 골임) > Goal[0]에 저장
 	cnt = 0;
-	if(!(gMazeMap[0x77] & DIR_W) || !(gMazeMap[0x77] & DIR_S))
-		Goal[cnt++] = 0x77;
+	if(!(gMazeMap[0x34] & DIR_W) || !(gMazeMap[0x34] & DIR_S))
+		Goal[cnt++] = 0x34;
 
 	if(!(gMazeMap[0x78] & DIR_W) || !(gMazeMap[0x78] & DIR_N))
 		Goal[cnt++] = 0x78;
@@ -1410,8 +1411,8 @@ void RunPathMake(void)
 
 	//골 찾기
 	cnt = 0;
-	if(!(gMazeMap[0x77] & DIR_W) || !(gMazeMap[0x77] & DIR_S))
-		Goal[cnt++] = 0x77;
+	if(!(gMazeMap[0x34] & DIR_W) || !(gMazeMap[0x34] & DIR_S))
+		Goal[cnt++] = 0x34;
 
 	if(!(gMazeMap[0x78] & DIR_W) || !(gMazeMap[0x78] & DIR_N))
 		Goal[cnt++] = 0x78;
@@ -2019,7 +2020,7 @@ void RunPathMake(void)
 
 void directvelacc_change(void){
 	int cnt = 0;
-	Uint16 vel = 1800;
+	Uint16 vel = 1500;
 	Uint16 acc = 7000;
 
     VFDPrintf("Direcvel");
@@ -2084,7 +2085,7 @@ void directvelacc_change(void){
 
 void diagvelacc_change(void){
 	int cnt = 0;
-    Uint16 vel = 1000;
+    Uint16 vel = 1200;
 	Uint16 acc = 7000;
 
     VFDPrintf("Diag_vel");

@@ -1,6 +1,6 @@
 ;***************************************************************
 ;* TMS320C2000 C/C++ Codegen                         PC v4.1.3 *
-;* Date/Time created: Tue Aug 19 17:11:17 2025                 *
+;* Date/Time created: Tue Mar 10 21:03:43 2026                 *
 ;***************************************************************
 	.compiler_opts --mem_model:code=flat --mem_model:data=large --silicon_version=28 
 FP	.set	XAR2
@@ -248,8 +248,8 @@ DW$32	.dwtag  DW_TAG_variable, DW_AT_name("menu_name"), DW_AT_symbol_name("_menu
 	.dwattr DW$32, DW_AT_location[DW_OP_addr _menu_name]
 	.dwattr DW$32, DW_AT_type(*DW$T$54)
 	.dwattr DW$32, DW_AT_external(0x01)
-;	C:\algo\Compiler\bin\opt2000.exe C:\Users\kimsy\AppData\Local\Temp\TI00810 C:\Users\kimsy\AppData\Local\Temp\TI0084 
-;	C:\algo\Compiler\bin\ac2000.exe --keep_unneeded_types -D_INLINE -DLARGE_MODEL -IC:\algo\include --version=28 --keep_unneeded_types --mem_model:code=flat --mem_model:data=large -m --i_output_file C:\Users\kimsy\AppData\Local\Temp\TI0082 --template_info_file C:\Users\kimsy\AppData\Local\Temp\TI0086 --object_file menu.obj --embed_opts 10 --call_assumptions=0 --mem_model:code=flat --mem_model:data=large --opt_for_speed --opt_level=3 --optimizer_comments --optimizer_interlist --program_level_compile 
+;	C:\algo\Compiler\bin\opt2000.exe C:\Users\KSY\AppData\Local\Temp\TI50010 C:\Users\KSY\AppData\Local\Temp\TI5004 
+;	C:\algo\Compiler\bin\ac2000.exe --keep_unneeded_types -D_INLINE -DLARGE_MODEL -IC:\algo\include --version=28 --keep_unneeded_types --mem_model:code=flat --mem_model:data=large -m --i_output_file C:\Users\KSY\AppData\Local\Temp\TI5002 --template_info_file C:\Users\KSY\AppData\Local\Temp\TI5006 --object_file menu.obj --embed_opts 10 --call_assumptions=0 --mem_model:code=flat --mem_model:data=large --opt_for_speed --opt_level=3 --optimizer_comments --optimizer_interlist --program_level_compile 
 	.sect	".text"
 	.global	_reset_menu
 
@@ -257,9 +257,9 @@ DW$33	.dwtag  DW_TAG_subprogram, DW_AT_name("reset_menu"), DW_AT_symbol_name("_r
 	.dwattr DW$33, DW_AT_low_pc(_reset_menu)
 	.dwattr DW$33, DW_AT_high_pc(0x00)
 	.dwattr DW$33, DW_AT_begin_file("menu.c")
-	.dwattr DW$33, DW_AT_begin_line(0x20)
+	.dwattr DW$33, DW_AT_begin_line(0x1f)
 	.dwattr DW$33, DW_AT_begin_column(0x06)
-	.dwpsn	"menu.c",33,1
+	.dwpsn	"menu.c",32,1
 
 	.dwfde DW$CIE
 
@@ -279,23 +279,23 @@ DW$33	.dwtag  DW_TAG_subprogram, DW_AT_name("reset_menu"), DW_AT_symbol_name("_r
 ;*                                                             *
 ;***************************************************************
 _reset_menu:
-;*** 34	-----------------------    g_int16_menu_x = 0;
-;*** 35	-----------------------    g_int16_menu_y = 0;
-;*** 35	-----------------------    return;
+;*** 33	-----------------------    g_int16_menu_x = 0;
+;*** 34	-----------------------    g_int16_menu_y = 0;
+;*** 34	-----------------------    return;
 	.dwcfa	0x1d, -2
 	.dwcfa	0x1c, 26, 0
 	.dwcfa	0x09, 40, 26
-	.dwpsn	"menu.c",34,2
+	.dwpsn	"menu.c",33,2
         MOVW      DP,#_g_int16_menu_x
-        MOV       @_g_int16_menu_x,#0   ; |34| 
-	.dwpsn	"menu.c",35,2
+        MOV       @_g_int16_menu_x,#0   ; |33| 
+	.dwpsn	"menu.c",34,2
         MOVW      DP,#_g_int16_menu_y
-        MOV       @_g_int16_menu_y,#0   ; |35| 
-	.dwpsn	"menu.c",36,1
+        MOV       @_g_int16_menu_y,#0   ; |34| 
+	.dwpsn	"menu.c",35,1
         LRETR
         ; return occurs
 	.dwattr DW$33, DW_AT_end_file("menu.c")
-	.dwattr DW$33, DW_AT_end_line(0x24)
+	.dwattr DW$33, DW_AT_end_line(0x23)
 	.dwattr DW$33, DW_AT_end_column(0x01)
 	.dwendentry
 	.dwendtag DW$33
@@ -307,9 +307,9 @@ DW$34	.dwtag  DW_TAG_subprogram, DW_AT_name("error_page"), DW_AT_symbol_name("_e
 	.dwattr DW$34, DW_AT_low_pc(_error_page)
 	.dwattr DW$34, DW_AT_high_pc(0x00)
 	.dwattr DW$34, DW_AT_begin_file("menu.c")
-	.dwattr DW$34, DW_AT_begin_line(0x58)
+	.dwattr DW$34, DW_AT_begin_line(0x57)
 	.dwattr DW$34, DW_AT_begin_column(0x06)
-	.dwpsn	"menu.c",89,1
+	.dwpsn	"menu.c",88,1
 
 	.dwfde DW$CIE
 
@@ -329,31 +329,31 @@ DW$34	.dwtag  DW_TAG_subprogram, DW_AT_name("error_page"), DW_AT_symbol_name("_e
 ;*                                                             *
 ;***************************************************************
 _error_page:
-;*** 90	-----------------------    TxPrintf("error");
-;*** 91	-----------------------    VFDPrintf("_error__");
-;*** 91	-----------------------    return;
+;*** 89	-----------------------    TxPrintf("error");
+;*** 90	-----------------------    VFDPrintf("_error__");
+;*** 90	-----------------------    return;
 	.dwcfa	0x1d, -2
 	.dwcfa	0x1c, 26, 0
 	.dwcfa	0x09, 40, 26
         ADDB      SP,#2
 	.dwcfa	0x1d, -4
+	.dwpsn	"menu.c",89,2
+        MOVL      XAR4,#FSL1            ; |89| 
+        MOVL      *-SP[2],XAR4          ; |89| 
+        LCR       #_TxPrintf            ; |89| 
+        ; call occurs [#_TxPrintf] ; |89| 
 	.dwpsn	"menu.c",90,2
-        MOVL      XAR4,#FSL1            ; |90| 
+        MOVL      XAR4,#FSL2            ; |90| 
         MOVL      *-SP[2],XAR4          ; |90| 
-        LCR       #_TxPrintf            ; |90| 
-        ; call occurs [#_TxPrintf] ; |90| 
-	.dwpsn	"menu.c",91,2
-        MOVL      XAR4,#FSL2            ; |91| 
-        MOVL      *-SP[2],XAR4          ; |91| 
-        LCR       #_VFDPrintf           ; |91| 
-        ; call occurs [#_VFDPrintf] ; |91| 
-	.dwpsn	"menu.c",92,1
+        LCR       #_VFDPrintf           ; |90| 
+        ; call occurs [#_VFDPrintf] ; |90| 
+	.dwpsn	"menu.c",91,1
         SUBB      SP,#2
 	.dwcfa	0x1d, -2
         LRETR
         ; return occurs
 	.dwattr DW$34, DW_AT_end_file("menu.c")
-	.dwattr DW$34, DW_AT_end_line(0x5c)
+	.dwattr DW$34, DW_AT_end_line(0x5b)
 	.dwattr DW$34, DW_AT_end_column(0x01)
 	.dwendentry
 	.dwendtag DW$34
@@ -365,9 +365,9 @@ DW$35	.dwtag  DW_TAG_subprogram, DW_AT_name("SetpPathFuntion"), DW_AT_symbol_nam
 	.dwattr DW$35, DW_AT_low_pc(_SetpPathFuntion)
 	.dwattr DW$35, DW_AT_high_pc(0x00)
 	.dwattr DW$35, DW_AT_begin_file("menu.c")
-	.dwattr DW$35, DW_AT_begin_line(0x3d)
+	.dwattr DW$35, DW_AT_begin_line(0x3c)
 	.dwattr DW$35, DW_AT_begin_column(0x06)
-	.dwpsn	"menu.c",62,1
+	.dwpsn	"menu.c",61,1
 
 	.dwfde DW$CIE
 
@@ -387,30 +387,30 @@ DW$35	.dwtag  DW_TAG_subprogram, DW_AT_name("SetpPathFuntion"), DW_AT_symbol_nam
 ;*                                                             *
 ;***************************************************************
 _SetpPathFuntion:
-;*** 63	-----------------------    C$1 = &pPathFuntion[0];
-;*** 63	-----------------------    *C$1 = &BlockStraight;
-;*** 64	-----------------------    C$1[1] = C$4 = &SmoothTurn;
-;*** 65	-----------------------    C$1[2] = &BackTurn;
-;*** 66	-----------------------    C$1[3] = C$4;
-;*** 67	-----------------------    C$1[4] = C$7 = &Diag180Turn;
-;*** 68	-----------------------    C$1[5] = C$7;
-;*** 69	-----------------------    C$1[6] = C$3 = &Diag45_135TurnIn;
-;*** 70	-----------------------    C$1[7] = C$3;
-;*** 71	-----------------------    C$1[8] = C$3;
-;*** 72	-----------------------    C$1[9] = C$3;
-;*** 73	-----------------------    C$1[10] = C$6 = &Diag45_135TurnOut;
-;*** 74	-----------------------    C$1[11] = C$6;
-;*** 75	-----------------------    C$1[12] = C$6;
-;*** 76	-----------------------    C$1[13] = C$6;
-;*** 77	-----------------------    C$1[14] = C$5 = &Diag90Turn;
-;*** 78	-----------------------    C$1[15] = C$5;
-;*** 79	-----------------------    C$1[16] = C$4;
-;*** 80	-----------------------    C$1[17] = C$3;
-;*** 81	-----------------------    C$1[18] = C$3;
-;*** 82	-----------------------    C$1[19] = NULL;
-;*** 83	-----------------------    C$1[20] = C$2 = &DiagBlockRun;
-;*** 84	-----------------------    C$1[21] = C$2;
-;*** 84	-----------------------    return;
+;*** 62	-----------------------    C$1 = &pPathFuntion[0];
+;*** 62	-----------------------    *C$1 = &BlockStraight;
+;*** 63	-----------------------    C$1[1] = C$4 = &SmoothTurn;
+;*** 64	-----------------------    C$1[2] = &BackTurn;
+;*** 65	-----------------------    C$1[3] = C$4;
+;*** 66	-----------------------    C$1[4] = C$7 = &Diag180Turn;
+;*** 67	-----------------------    C$1[5] = C$7;
+;*** 68	-----------------------    C$1[6] = C$3 = &Diag45_135TurnIn;
+;*** 69	-----------------------    C$1[7] = C$3;
+;*** 70	-----------------------    C$1[8] = C$3;
+;*** 71	-----------------------    C$1[9] = C$3;
+;*** 72	-----------------------    C$1[10] = C$6 = &Diag45_135TurnOut;
+;*** 73	-----------------------    C$1[11] = C$6;
+;*** 74	-----------------------    C$1[12] = C$6;
+;*** 75	-----------------------    C$1[13] = C$6;
+;*** 76	-----------------------    C$1[14] = C$5 = &Diag90Turn;
+;*** 77	-----------------------    C$1[15] = C$5;
+;*** 78	-----------------------    C$1[16] = C$4;
+;*** 79	-----------------------    C$1[17] = C$3;
+;*** 80	-----------------------    C$1[18] = C$3;
+;*** 81	-----------------------    C$1[19] = NULL;
+;*** 82	-----------------------    C$1[20] = C$2 = &DiagBlockRun;
+;*** 83	-----------------------    C$1[21] = C$2;
+;*** 83	-----------------------    return;
 	.dwcfa	0x1d, -2
 	.dwcfa	0x1c, 26, 0
 	.dwcfa	0x09, 40, 26
@@ -442,83 +442,83 @@ DW$41	.dwtag  DW_TAG_variable, DW_AT_name("C$6"), DW_AT_symbol_name("C$6")
 DW$42	.dwtag  DW_TAG_variable, DW_AT_name("C$7"), DW_AT_symbol_name("C$7")
 	.dwattr DW$42, DW_AT_type(*DW$T$34)
 	.dwattr DW$42, DW_AT_location[DW_OP_reg14]
+	.dwpsn	"menu.c",62,2
+        MOVL      XAR5,#_BlockStraight  ; |62| 
+        MOVL      XAR4,#_pPathFuntion   ; |62| 
+        MOVL      *+XAR4[0],XAR5        ; |62| 
 	.dwpsn	"menu.c",63,2
-        MOVL      XAR5,#_BlockStraight  ; |63| 
-        MOVL      XAR4,#_pPathFuntion   ; |63| 
-        MOVL      *+XAR4[0],XAR5        ; |63| 
+        MOVL      XAR7,#_SmoothTurn     ; |63| 
+        MOVL      *+XAR4[2],XAR7        ; |63| 
 	.dwpsn	"menu.c",64,2
-        MOVL      XAR7,#_SmoothTurn     ; |64| 
-        MOVL      *+XAR4[2],XAR7        ; |64| 
+        MOVL      XAR5,#_BackTurn       ; |64| 
+        MOVL      *+XAR4[4],XAR5        ; |64| 
 	.dwpsn	"menu.c",65,2
-        MOVL      XAR5,#_BackTurn       ; |65| 
-        MOVL      *+XAR4[4],XAR5        ; |65| 
+        MOVL      *+XAR4[6],XAR7        ; |65| 
 	.dwpsn	"menu.c",66,2
-        MOVL      *+XAR4[6],XAR7        ; |66| 
+        MOVB      XAR0,#8               ; |66| 
+        MOVL      XAR5,#_Diag180Turn    ; |66| 
+        MOVL      *+XAR4[AR0],XAR5      ; |66| 
 	.dwpsn	"menu.c",67,2
-        MOVB      XAR0,#8               ; |67| 
-        MOVL      XAR5,#_Diag180Turn    ; |67| 
+        MOVB      XAR0,#10              ; |67| 
         MOVL      *+XAR4[AR0],XAR5      ; |67| 
 	.dwpsn	"menu.c",68,2
-        MOVB      XAR0,#10              ; |68| 
+        MOVB      XAR0,#12              ; |68| 
+        MOVL      XAR5,#_Diag45_135TurnIn ; |68| 
         MOVL      *+XAR4[AR0],XAR5      ; |68| 
 	.dwpsn	"menu.c",69,2
-        MOVB      XAR0,#12              ; |69| 
-        MOVL      XAR5,#_Diag45_135TurnIn ; |69| 
+        MOVB      XAR0,#14              ; |69| 
         MOVL      *+XAR4[AR0],XAR5      ; |69| 
 	.dwpsn	"menu.c",70,2
-        MOVB      XAR0,#14              ; |70| 
+        MOVB      XAR0,#16              ; |70| 
         MOVL      *+XAR4[AR0],XAR5      ; |70| 
 	.dwpsn	"menu.c",71,2
-        MOVB      XAR0,#16              ; |71| 
+        MOVB      XAR0,#18              ; |71| 
         MOVL      *+XAR4[AR0],XAR5      ; |71| 
 	.dwpsn	"menu.c",72,2
-        MOVB      XAR0,#18              ; |72| 
-        MOVL      *+XAR4[AR0],XAR5      ; |72| 
+        MOVL      XAR6,#_Diag45_135TurnOut ; |72| 
+        MOVB      XAR0,#20              ; |72| 
+        MOVL      *+XAR4[AR0],XAR6      ; |72| 
 	.dwpsn	"menu.c",73,2
-        MOVL      XAR6,#_Diag45_135TurnOut ; |73| 
-        MOVB      XAR0,#20              ; |73| 
+        MOVB      XAR0,#22              ; |73| 
         MOVL      *+XAR4[AR0],XAR6      ; |73| 
 	.dwpsn	"menu.c",74,2
-        MOVB      XAR0,#22              ; |74| 
+        MOVB      XAR0,#24              ; |74| 
         MOVL      *+XAR4[AR0],XAR6      ; |74| 
 	.dwpsn	"menu.c",75,2
-        MOVB      XAR0,#24              ; |75| 
+        MOVB      XAR0,#26              ; |75| 
         MOVL      *+XAR4[AR0],XAR6      ; |75| 
 	.dwpsn	"menu.c",76,2
-        MOVB      XAR0,#26              ; |76| 
+        MOVB      XAR0,#28              ; |76| 
+        MOVL      XAR6,#_Diag90Turn     ; |76| 
         MOVL      *+XAR4[AR0],XAR6      ; |76| 
 	.dwpsn	"menu.c",77,2
-        MOVB      XAR0,#28              ; |77| 
-        MOVL      XAR6,#_Diag90Turn     ; |77| 
+        MOVB      XAR0,#30              ; |77| 
         MOVL      *+XAR4[AR0],XAR6      ; |77| 
 	.dwpsn	"menu.c",78,2
-        MOVB      XAR0,#30              ; |78| 
-        MOVL      *+XAR4[AR0],XAR6      ; |78| 
+        MOVB      XAR0,#32              ; |78| 
+        MOVL      *+XAR4[AR0],XAR7      ; |78| 
 	.dwpsn	"menu.c",79,2
-        MOVB      XAR0,#32              ; |79| 
-        MOVL      *+XAR4[AR0],XAR7      ; |79| 
+        MOVB      XAR0,#34              ; |79| 
+        MOVL      *+XAR4[AR0],XAR5      ; |79| 
 	.dwpsn	"menu.c",80,2
-        MOVB      XAR0,#34              ; |80| 
+        MOVB      XAR0,#36              ; |80| 
         MOVL      *+XAR4[AR0],XAR5      ; |80| 
 	.dwpsn	"menu.c",81,2
-        MOVB      XAR0,#36              ; |81| 
-        MOVL      *+XAR4[AR0],XAR5      ; |81| 
-	.dwpsn	"menu.c",82,2
         MOVB      ACC,#0
-        MOVB      XAR0,#38              ; |82| 
-        MOVL      *+XAR4[AR0],ACC       ; |82| 
+        MOVB      XAR0,#38              ; |81| 
+        MOVL      *+XAR4[AR0],ACC       ; |81| 
+	.dwpsn	"menu.c",82,2
+        MOVB      XAR0,#40              ; |82| 
+        MOVL      XAR5,#_DiagBlockRun   ; |82| 
+        MOVL      *+XAR4[AR0],XAR5      ; |82| 
 	.dwpsn	"menu.c",83,2
-        MOVB      XAR0,#40              ; |83| 
-        MOVL      XAR5,#_DiagBlockRun   ; |83| 
+        MOVB      XAR0,#42              ; |83| 
         MOVL      *+XAR4[AR0],XAR5      ; |83| 
-	.dwpsn	"menu.c",84,2
-        MOVB      XAR0,#42              ; |84| 
-        MOVL      *+XAR4[AR0],XAR5      ; |84| 
-	.dwpsn	"menu.c",86,1
+	.dwpsn	"menu.c",85,1
         LRETR
         ; return occurs
 	.dwattr DW$35, DW_AT_end_file("menu.c")
-	.dwattr DW$35, DW_AT_end_line(0x56)
+	.dwattr DW$35, DW_AT_end_line(0x55)
 	.dwattr DW$35, DW_AT_end_column(0x01)
 	.dwendentry
 	.dwendtag DW$35
@@ -530,9 +530,9 @@ DW$43	.dwtag  DW_TAG_subprogram, DW_AT_name("Menu_Show"), DW_AT_symbol_name("_Me
 	.dwattr DW$43, DW_AT_low_pc(_Menu_Show)
 	.dwattr DW$43, DW_AT_high_pc(0x00)
 	.dwattr DW$43, DW_AT_begin_file("menu.c")
-	.dwattr DW$43, DW_AT_begin_line(0x5d)
+	.dwattr DW$43, DW_AT_begin_line(0x5c)
 	.dwattr DW$43, DW_AT_begin_column(0x06)
-	.dwpsn	"menu.c",94,1
+	.dwpsn	"menu.c",93,1
 
 	.dwfde DW$CIE
 
@@ -552,38 +552,38 @@ DW$43	.dwtag  DW_TAG_subprogram, DW_AT_name("Menu_Show"), DW_AT_symbol_name("_Me
 ;*                                                             *
 ;***************************************************************
 _Menu_Show:
-;*** 95	-----------------------    Delay(50000uL);
-;*** 96	-----------------------    VFDPrintf((char *)((long)g_int16_menu_y*27L+(long)g_int16_menu_x*9L+&menu_name));
-;*** 96	-----------------------    return;
+;*** 94	-----------------------    Delay(50000uL);
+;*** 95	-----------------------    VFDPrintf((char *)((long)g_int16_menu_y*27L+(long)g_int16_menu_x*9L+&menu_name));
+;*** 95	-----------------------    return;
 	.dwcfa	0x1d, -2
 	.dwcfa	0x1c, 26, 0
 	.dwcfa	0x09, 40, 26
         ADDB      SP,#2
 	.dwcfa	0x1d, -4
-	.dwpsn	"menu.c",95,2
+	.dwpsn	"menu.c",94,2
         MOV       ACC,#3125 << 4
-        LCR       #_Delay               ; |95| 
-        ; call occurs [#_Delay] ; |95| 
-	.dwpsn	"menu.c",96,2
+        LCR       #_Delay               ; |94| 
+        ; call occurs [#_Delay] ; |94| 
+	.dwpsn	"menu.c",95,2
         MOVW      DP,#_g_int16_menu_y
-        MOV       T,@_g_int16_menu_y    ; |96| 
+        MOV       T,@_g_int16_menu_y    ; |95| 
         MOVW      DP,#_g_int16_menu_x
-        MPYB      P,T,#27               ; |96| 
-        MOV       T,@_g_int16_menu_x    ; |96| 
-        MOVL      XAR4,#_menu_name      ; |96| 
-        MPYB      ACC,T,#9              ; |96| 
+        MPYB      P,T,#27               ; |95| 
+        MOV       T,@_g_int16_menu_x    ; |95| 
+        MOVL      XAR4,#_menu_name      ; |95| 
+        MPYB      ACC,T,#9              ; |95| 
         ADDL      ACC,P
         ADDL      XAR4,ACC
-        MOVL      *-SP[2],XAR4          ; |96| 
-        LCR       #_VFDPrintf           ; |96| 
-        ; call occurs [#_VFDPrintf] ; |96| 
-	.dwpsn	"menu.c",97,1
+        MOVL      *-SP[2],XAR4          ; |95| 
+        LCR       #_VFDPrintf           ; |95| 
+        ; call occurs [#_VFDPrintf] ; |95| 
+	.dwpsn	"menu.c",96,1
         SUBB      SP,#2
 	.dwcfa	0x1d, -2
         LRETR
         ; return occurs
 	.dwattr DW$43, DW_AT_end_file("menu.c")
-	.dwattr DW$43, DW_AT_end_line(0x61)
+	.dwattr DW$43, DW_AT_end_line(0x60)
 	.dwattr DW$43, DW_AT_end_column(0x01)
 	.dwendentry
 	.dwendtag DW$43
@@ -595,9 +595,9 @@ DW$44	.dwtag  DW_TAG_subprogram, DW_AT_name("Menu_Selection"), DW_AT_symbol_name
 	.dwattr DW$44, DW_AT_low_pc(_Menu_Selection)
 	.dwattr DW$44, DW_AT_high_pc(0x00)
 	.dwattr DW$44, DW_AT_begin_file("menu.c")
-	.dwattr DW$44, DW_AT_begin_line(0x63)
+	.dwattr DW$44, DW_AT_begin_line(0x62)
 	.dwattr DW$44, DW_AT_begin_column(0x06)
-	.dwpsn	"menu.c",100,1
+	.dwpsn	"menu.c",99,1
 
 	.dwfde DW$CIE
 
@@ -617,9 +617,9 @@ DW$44	.dwtag  DW_TAG_subprogram, DW_AT_name("Menu_Selection"), DW_AT_symbol_name
 ;*                                                             *
 ;***************************************************************
 _Menu_Selection:
-;*** 95	-----------------------    Delay(50000uL);  // [25]
-;*** 96	-----------------------    VFDPrintf((char *)((long)g_int16_menu_y*27L+(long)g_int16_menu_x*9L+&menu_name));  // [25]
-;*** 96	-----------------------    if ( !(*(&GpioDataRegs+1)&0x8000u) ) goto g13;  // [25]
+;*** 94	-----------------------    Delay(50000uL);  // [25]
+;*** 95	-----------------------    VFDPrintf((char *)((long)g_int16_menu_y*27L+(long)g_int16_menu_x*9L+&menu_name));  // [25]
+;*** 95	-----------------------    if ( !(*(&GpioDataRegs+1)&0x8000u) ) goto g13;  // [25]
 	.dwcfa	0x1d, -2
 	.dwcfa	0x1c, 26, 0
 	.dwcfa	0x09, 40, 26
@@ -632,166 +632,166 @@ _Menu_Selection:
 DW$45	.dwtag  DW_TAG_variable, DW_AT_name("K$14"), DW_AT_symbol_name("K$14")
 	.dwattr DW$45, DW_AT_type(*DW$T$38)
 	.dwattr DW$45, DW_AT_location[DW_OP_reg10]
-	.dwpsn	"menu.c",95,2
+	.dwpsn	"menu.c",94,2
         MOV       ACC,#3125 << 4
-        LCR       #_Delay               ; |95| 
-        ; call occurs [#_Delay] ; |95| 
-	.dwpsn	"menu.c",96,2
+        LCR       #_Delay               ; |94| 
+        ; call occurs [#_Delay] ; |94| 
+	.dwpsn	"menu.c",95,2
         MOVW      DP,#_g_int16_menu_y
-        MOV       T,@_g_int16_menu_y    ; |96| 
+        MOV       T,@_g_int16_menu_y    ; |95| 
         MOVW      DP,#_g_int16_menu_x
-        MPYB      P,T,#27               ; |96| 
-        MOV       T,@_g_int16_menu_x    ; |96| 
-        MOVL      XAR4,#_menu_name      ; |96| 
-        MPYB      ACC,T,#9              ; |96| 
+        MPYB      P,T,#27               ; |95| 
+        MOV       T,@_g_int16_menu_x    ; |95| 
+        MOVL      XAR4,#_menu_name      ; |95| 
+        MPYB      ACC,T,#9              ; |95| 
         ADDL      ACC,P
         ADDL      XAR4,ACC
-        MOVL      *-SP[2],XAR4          ; |96| 
-        LCR       #_VFDPrintf           ; |96| 
-        ; call occurs [#_VFDPrintf] ; |96| 
+        MOVL      *-SP[2],XAR4          ; |95| 
+        LCR       #_VFDPrintf           ; |95| 
+        ; call occurs [#_VFDPrintf] ; |95| 
         MOVW      DP,#_GpioDataRegs+1
-        TBIT      @_GpioDataRegs+1,#15  ; |96| 
-        BF        L4,NTC                ; |96| 
-        ; branchcc occurs ; |96| 
-;*** 117	-----------------------    if ( !(*(&GpioDataRegs+1)&0x4000u) ) goto g8;
-	.dwpsn	"menu.c",117,7
-        TBIT      @_GpioDataRegs+1,#14  ; |117| 
-        BF        L3,NTC                ; |117| 
-        ; branchcc occurs ; |117| 
-;*** 131	-----------------------    if ( *&GpioDataRegs&0x4000u ) goto g18;
+        TBIT      @_GpioDataRegs+1,#15  ; |95| 
+        BF        L4,NTC                ; |95| 
+        ; branchcc occurs ; |95| 
+;*** 116	-----------------------    if ( !(*(&GpioDataRegs+1)&0x4000u) ) goto g8;
+	.dwpsn	"menu.c",116,7
+        TBIT      @_GpioDataRegs+1,#14  ; |116| 
+        BF        L3,NTC                ; |116| 
+        ; branchcc occurs ; |116| 
+;*** 130	-----------------------    if ( *&GpioDataRegs&0x4000u ) goto g18;
 ;***  	-----------------------    #pragma LOOP_FLAGS(4096u)
-	.dwpsn	"menu.c",131,7
-        TBIT      @_GpioDataRegs,#14    ; |131| 
-        BF        L5,TC                 ; |131| 
-        ; branchcc occurs ; |131| 
+	.dwpsn	"menu.c",130,7
+        TBIT      @_GpioDataRegs,#14    ; |130| 
+        BF        L5,TC                 ; |130| 
+        ; branchcc occurs ; |130| 
 L1:    
 DW$L$_Menu_Selection$4$B:
 ;***	-----------------------g5:
-;*** 133	-----------------------    if ( !(*&GpioDataRegs&0x4000u) ) goto g5;
-	.dwpsn	"menu.c",133,9
-        TBIT      @_GpioDataRegs,#14    ; |133| 
-        BF        L1,NTC                ; |133| 
-        ; branchcc occurs ; |133| 
+;*** 132	-----------------------    if ( !(*&GpioDataRegs&0x4000u) ) goto g5;
+	.dwpsn	"menu.c",132,9
+        TBIT      @_GpioDataRegs,#14    ; |132| 
+        BF        L1,NTC                ; |132| 
+        ; branchcc occurs ; |132| 
 DW$L$_Menu_Selection$4$E:
-;*** 134	-----------------------    Delay(50000uL);
+;*** 133	-----------------------    Delay(50000uL);
 ;***  	-----------------------    #pragma LOOP_FLAGS(5120u)
 ;***  	-----------------------    K$14 = &menu_positon;
-	.dwpsn	"menu.c",134,3
+	.dwpsn	"menu.c",133,3
         MOV       ACC,#3125 << 4
-        LCR       #_Delay               ; |134| 
-        ; call occurs [#_Delay] ; |134| 
+        LCR       #_Delay               ; |133| 
+        ; call occurs [#_Delay] ; |133| 
         MOVL      XAR3,#_menu_positon
 L2:    
 DW$L$_Menu_Selection$6$B:
 ;***	-----------------------g7:
-;*** 137	-----------------------    (*K$14[3*(long)g_int16_menu_y+(long)g_int16_menu_x])();
-;*** 135	-----------------------    goto g7;
+;*** 136	-----------------------    (*K$14[3*(long)g_int16_menu_y+(long)g_int16_menu_x])();
+;*** 134	-----------------------    goto g7;
 ;***	-----------------------g8:
 ;***  	-----------------------    #pragma LOOP_FLAGS(4096u)
-	.dwpsn	"menu.c",137,4
+	.dwpsn	"menu.c",136,4
         MOVW      DP,#_g_int16_menu_y
         SETC      SXM
-        MOV       T,@_g_int16_menu_y    ; |137| 
-        MOVL      XAR4,XAR3             ; |137| 
+        MOV       T,@_g_int16_menu_y    ; |136| 
+        MOVL      XAR4,XAR3             ; |136| 
         MOVW      DP,#_g_int16_menu_x
-        MPYB      P,T,#6                ; |137| 
-        MOV       ACC,@_g_int16_menu_x << 1 ; |137| 
+        MPYB      P,T,#6                ; |136| 
+        MOV       ACC,@_g_int16_menu_x << 1 ; |136| 
         ADDL      ACC,P
         ADDL      XAR4,ACC
-        MOVL      XAR7,*+XAR4[0]        ; |137| 
-        LCR       *XAR7                 ; |137| 
-        ; call occurs [XAR7] ; |137| 
-	.dwpsn	"menu.c",135,9
-        BF        L2,UNC                ; |135| 
-        ; branch occurs ; |135| 
+        MOVL      XAR7,*+XAR4[0]        ; |136| 
+        LCR       *XAR7                 ; |136| 
+        ; call occurs [XAR7] ; |136| 
+	.dwpsn	"menu.c",134,9
+        BF        L2,UNC                ; |134| 
+        ; branch occurs ; |134| 
 DW$L$_Menu_Selection$6$E:
 L3:    
 DW$L$_Menu_Selection$7$B:
 ;***	-----------------------g9:
-;*** 119	-----------------------    if ( !(*(&GpioDataRegs+1)&0x4000u) ) goto g9;
-	.dwpsn	"menu.c",119,9
-        TBIT      @_GpioDataRegs+1,#14  ; |119| 
-        BF        L3,NTC                ; |119| 
-        ; branchcc occurs ; |119| 
+;*** 118	-----------------------    if ( !(*(&GpioDataRegs+1)&0x4000u) ) goto g9;
+	.dwpsn	"menu.c",118,9
+        TBIT      @_GpioDataRegs+1,#14  ; |118| 
+        BF        L3,NTC                ; |118| 
+        ; branchcc occurs ; |118| 
 DW$L$_Menu_Selection$7$E:
-;*** 120	-----------------------    Delay(50000uL);
-;*** 121	-----------------------    --g_int16_menu_x;
-;*** 123	-----------------------    if ( g_int16_menu_x >= 0 ) goto g18;
-	.dwpsn	"menu.c",120,3
+;*** 119	-----------------------    Delay(50000uL);
+;*** 120	-----------------------    --g_int16_menu_x;
+;*** 122	-----------------------    if ( g_int16_menu_x >= 0 ) goto g18;
+	.dwpsn	"menu.c",119,3
         MOV       ACC,#3125 << 4
-        LCR       #_Delay               ; |120| 
-        ; call occurs [#_Delay] ; |120| 
-	.dwpsn	"menu.c",121,3
+        LCR       #_Delay               ; |119| 
+        ; call occurs [#_Delay] ; |119| 
+	.dwpsn	"menu.c",120,3
         MOVW      DP,#_g_int16_menu_x
-        DEC       @_g_int16_menu_x      ; |121| 
-	.dwpsn	"menu.c",123,3
-        MOV       AL,@_g_int16_menu_x   ; |123| 
-        BF        L5,GEQ                ; |123| 
-        ; branchcc occurs ; |123| 
-;*** 125	-----------------------    g_int16_menu_x = 2;
-;*** 126	-----------------------    --g_int16_menu_y;
-;*** 128	-----------------------    if ( g_int16_menu_y >= 0 ) goto g18;
+        DEC       @_g_int16_menu_x      ; |120| 
+	.dwpsn	"menu.c",122,3
+        MOV       AL,@_g_int16_menu_x   ; |122| 
+        BF        L5,GEQ                ; |122| 
+        ; branchcc occurs ; |122| 
+;*** 124	-----------------------    g_int16_menu_x = 2;
+;*** 125	-----------------------    --g_int16_menu_y;
+;*** 127	-----------------------    if ( g_int16_menu_y >= 0 ) goto g18;
+	.dwpsn	"menu.c",124,4
+        MOV       @_g_int16_menu_x,#2   ; |124| 
 	.dwpsn	"menu.c",125,4
-        MOV       @_g_int16_menu_x,#2   ; |125| 
-	.dwpsn	"menu.c",126,4
         MOVW      DP,#_g_int16_menu_y
-        DEC       @_g_int16_menu_y      ; |126| 
-	.dwpsn	"menu.c",128,4
-        MOV       AL,@_g_int16_menu_y   ; |128| 
-        BF        L5,GEQ                ; |128| 
-        ; branchcc occurs ; |128| 
-;*** 128	-----------------------    g_int16_menu_y = 3;
-;*** 128	-----------------------    goto g18;
+        DEC       @_g_int16_menu_y      ; |125| 
+	.dwpsn	"menu.c",127,4
+        MOV       AL,@_g_int16_menu_y   ; |127| 
+        BF        L5,GEQ                ; |127| 
+        ; branchcc occurs ; |127| 
+;*** 127	-----------------------    g_int16_menu_y = 3;
+;*** 127	-----------------------    goto g18;
 ;***	-----------------------g13:
 ;***  	-----------------------    #pragma LOOP_FLAGS(4096u)
-	.dwpsn	"menu.c",128,27
-        MOV       @_g_int16_menu_y,#3   ; |128| 
-        BF        L5,UNC                ; |128| 
-        ; branch occurs ; |128| 
+	.dwpsn	"menu.c",127,27
+        MOV       @_g_int16_menu_y,#3   ; |127| 
+        BF        L5,UNC                ; |127| 
+        ; branch occurs ; |127| 
 L4:    
 DW$L$_Menu_Selection$11$B:
 ;***	-----------------------g14:
-;*** 105	-----------------------    if ( !(*(&GpioDataRegs+1)&0x8000u) ) goto g14;
-	.dwpsn	"menu.c",105,9
-        TBIT      @_GpioDataRegs+1,#15  ; |105| 
-        BF        L4,NTC                ; |105| 
-        ; branchcc occurs ; |105| 
+;*** 104	-----------------------    if ( !(*(&GpioDataRegs+1)&0x8000u) ) goto g14;
+	.dwpsn	"menu.c",104,9
+        TBIT      @_GpioDataRegs+1,#15  ; |104| 
+        BF        L4,NTC                ; |104| 
+        ; branchcc occurs ; |104| 
 DW$L$_Menu_Selection$11$E:
-;*** 106	-----------------------    Delay(50000uL);
-;*** 107	-----------------------    ++g_int16_menu_x;
-;*** 109	-----------------------    if ( g_int16_menu_x < 3 ) goto g18;
-	.dwpsn	"menu.c",106,3
+;*** 105	-----------------------    Delay(50000uL);
+;*** 106	-----------------------    ++g_int16_menu_x;
+;*** 108	-----------------------    if ( g_int16_menu_x < 3 ) goto g18;
+	.dwpsn	"menu.c",105,3
         MOV       ACC,#3125 << 4
-        LCR       #_Delay               ; |106| 
-        ; call occurs [#_Delay] ; |106| 
-	.dwpsn	"menu.c",107,3
+        LCR       #_Delay               ; |105| 
+        ; call occurs [#_Delay] ; |105| 
+	.dwpsn	"menu.c",106,3
         MOVW      DP,#_g_int16_menu_x
-        INC       @_g_int16_menu_x      ; |107| 
-	.dwpsn	"menu.c",109,3
-        MOV       AL,@_g_int16_menu_x   ; |109| 
-        CMPB      AL,#3                 ; |109| 
-        BF        L5,LT                 ; |109| 
-        ; branchcc occurs ; |109| 
-;*** 111	-----------------------    g_int16_menu_x = 0;
-;*** 112	-----------------------    ++g_int16_menu_y;
-;*** 114	-----------------------    if ( g_int16_menu_y != 4 ) goto g18;
+        INC       @_g_int16_menu_x      ; |106| 
+	.dwpsn	"menu.c",108,3
+        MOV       AL,@_g_int16_menu_x   ; |108| 
+        CMPB      AL,#3                 ; |108| 
+        BF        L5,LT                 ; |108| 
+        ; branchcc occurs ; |108| 
+;*** 110	-----------------------    g_int16_menu_x = 0;
+;*** 111	-----------------------    ++g_int16_menu_y;
+;*** 113	-----------------------    if ( g_int16_menu_y != 4 ) goto g18;
+	.dwpsn	"menu.c",110,4
+        MOV       @_g_int16_menu_x,#0   ; |110| 
 	.dwpsn	"menu.c",111,4
-        MOV       @_g_int16_menu_x,#0   ; |111| 
-	.dwpsn	"menu.c",112,4
         MOVW      DP,#_g_int16_menu_y
-        INC       @_g_int16_menu_y      ; |112| 
-	.dwpsn	"menu.c",114,4
-        MOV       AL,@_g_int16_menu_y   ; |114| 
-        CMPB      AL,#4                 ; |114| 
-        BF        L5,NEQ                ; |114| 
-        ; branchcc occurs ; |114| 
-;*** 114	-----------------------    g_int16_menu_y = 0;
+        INC       @_g_int16_menu_y      ; |111| 
+	.dwpsn	"menu.c",113,4
+        MOV       AL,@_g_int16_menu_y   ; |113| 
+        CMPB      AL,#4                 ; |113| 
+        BF        L5,NEQ                ; |113| 
+        ; branchcc occurs ; |113| 
+;*** 113	-----------------------    g_int16_menu_y = 0;
 ;***	-----------------------g18:
 ;***  	-----------------------    return;
-	.dwpsn	"menu.c",114,28
-        MOV       @_g_int16_menu_y,#0   ; |114| 
+	.dwpsn	"menu.c",113,28
+        MOV       @_g_int16_menu_y,#0   ; |113| 
 L5:    
-	.dwpsn	"menu.c",140,1
+	.dwpsn	"menu.c",139,1
         SUBB      SP,#2
 	.dwcfa	0x1d, -4
         MOVL      XAR3,*--SP
@@ -801,10 +801,10 @@ L5:
         ; return occurs
 
 DW$46	.dwtag  DW_TAG_loop
-	.dwattr DW$46, DW_AT_name("C:\algo\main\menu.asm:L4:1:1755591077")
+	.dwattr DW$46, DW_AT_name("C:\algo\main\menu.asm:L4:1:1773144223")
 	.dwattr DW$46, DW_AT_begin_file("menu.c")
-	.dwattr DW$46, DW_AT_begin_line(0x69)
-	.dwattr DW$46, DW_AT_end_line(0x80)
+	.dwattr DW$46, DW_AT_begin_line(0x68)
+	.dwattr DW$46, DW_AT_end_line(0x7f)
 DW$47	.dwtag  DW_TAG_loop_range
 	.dwattr DW$47, DW_AT_low_pc(DW$L$_Menu_Selection$11$B)
 	.dwattr DW$47, DW_AT_high_pc(DW$L$_Menu_Selection$11$E)
@@ -812,10 +812,10 @@ DW$47	.dwtag  DW_TAG_loop_range
 
 
 DW$48	.dwtag  DW_TAG_loop
-	.dwattr DW$48, DW_AT_name("C:\algo\main\menu.asm:L3:1:1755591077")
+	.dwattr DW$48, DW_AT_name("C:\algo\main\menu.asm:L3:1:1773144223")
 	.dwattr DW$48, DW_AT_begin_file("menu.c")
-	.dwattr DW$48, DW_AT_begin_line(0x77)
-	.dwattr DW$48, DW_AT_end_line(0x87)
+	.dwattr DW$48, DW_AT_begin_line(0x76)
+	.dwattr DW$48, DW_AT_end_line(0x86)
 DW$49	.dwtag  DW_TAG_loop_range
 	.dwattr DW$49, DW_AT_low_pc(DW$L$_Menu_Selection$7$B)
 	.dwattr DW$49, DW_AT_high_pc(DW$L$_Menu_Selection$7$E)
@@ -823,10 +823,10 @@ DW$49	.dwtag  DW_TAG_loop_range
 
 
 DW$50	.dwtag  DW_TAG_loop
-	.dwattr DW$50, DW_AT_name("C:\algo\main\menu.asm:L2:1:1755591077")
+	.dwattr DW$50, DW_AT_name("C:\algo\main\menu.asm:L2:1:1773144223")
 	.dwattr DW$50, DW_AT_begin_file("menu.c")
-	.dwattr DW$50, DW_AT_begin_line(0x87)
-	.dwattr DW$50, DW_AT_end_line(0x8a)
+	.dwattr DW$50, DW_AT_begin_line(0x86)
+	.dwattr DW$50, DW_AT_end_line(0x89)
 DW$51	.dwtag  DW_TAG_loop_range
 	.dwattr DW$51, DW_AT_low_pc(DW$L$_Menu_Selection$6$B)
 	.dwattr DW$51, DW_AT_high_pc(DW$L$_Menu_Selection$6$E)
@@ -834,17 +834,17 @@ DW$51	.dwtag  DW_TAG_loop_range
 
 
 DW$52	.dwtag  DW_TAG_loop
-	.dwattr DW$52, DW_AT_name("C:\algo\main\menu.asm:L1:1:1755591077")
+	.dwattr DW$52, DW_AT_name("C:\algo\main\menu.asm:L1:1:1773144223")
 	.dwattr DW$52, DW_AT_begin_file("menu.c")
-	.dwattr DW$52, DW_AT_begin_line(0x85)
-	.dwattr DW$52, DW_AT_end_line(0x85)
+	.dwattr DW$52, DW_AT_begin_line(0x84)
+	.dwattr DW$52, DW_AT_end_line(0x84)
 DW$53	.dwtag  DW_TAG_loop_range
 	.dwattr DW$53, DW_AT_low_pc(DW$L$_Menu_Selection$4$B)
 	.dwattr DW$53, DW_AT_high_pc(DW$L$_Menu_Selection$4$E)
 	.dwendtag DW$52
 
 	.dwattr DW$44, DW_AT_end_file("menu.c")
-	.dwattr DW$44, DW_AT_end_line(0x8c)
+	.dwattr DW$44, DW_AT_end_line(0x8b)
 	.dwattr DW$44, DW_AT_end_column(0x01)
 	.dwendentry
 	.dwendtag DW$44
@@ -856,9 +856,9 @@ DW$54	.dwtag  DW_TAG_subprogram, DW_AT_name("Initmenu"), DW_AT_symbol_name("_Ini
 	.dwattr DW$54, DW_AT_low_pc(_Initmenu)
 	.dwattr DW$54, DW_AT_high_pc(0x00)
 	.dwattr DW$54, DW_AT_begin_file("menu.c")
-	.dwattr DW$54, DW_AT_begin_line(0x2a)
+	.dwattr DW$54, DW_AT_begin_line(0x29)
 	.dwattr DW$54, DW_AT_begin_column(0x06)
-	.dwpsn	"menu.c",43,1
+	.dwpsn	"menu.c",42,1
 
 	.dwfde DW$CIE
 
@@ -878,20 +878,20 @@ DW$54	.dwtag  DW_TAG_subprogram, DW_AT_name("Initmenu"), DW_AT_symbol_name("_Ini
 ;*                                                             *
 ;***************************************************************
 _Initmenu:
-;*** 44	-----------------------    C$1 = &menu_positon[0];
-;*** 44	-----------------------    *C$1 = &error_page;
-;*** 45	-----------------------    C$1[1] = &Sensor_Checking;
-;*** 46	-----------------------    C$1[2] = &position_view;
-;*** 48	-----------------------    *((void (*(*)[3])())C$1+6L) = &SideSensorSet;
-;*** 49	-----------------------    *((void (*(*)[3])())C$1+8L) = &straight_test;
-;*** 50	-----------------------    *((void (*(*)[3])())C$1+10L) = NULL;
-;*** 52	-----------------------    *((void (*(*)[3])())C$1+12L) = &mpid_change;
-;*** 53	-----------------------    *((void (*(*)[3])())C$1+14L) = &BackTurnTest;
-;*** 54	-----------------------    *((void (*(*)[3])())C$1+16L) = &SmoothRun;
-;*** 56	-----------------------    *((void (*(*)[3])())C$1+18L) = &qepget;
-;*** 57	-----------------------    *((void (*(*)[3])())C$1+20L) = &Smooth_Turn_TEST;
-;*** 58	-----------------------    *((void (*(*)[3])())C$1+22L) = &SearchMaze;
-;*** 58	-----------------------    return;
+;*** 43	-----------------------    C$1 = &menu_positon[0];
+;*** 43	-----------------------    *C$1 = &error_page;
+;*** 44	-----------------------    C$1[1] = &Sensor_Checking;
+;*** 45	-----------------------    C$1[2] = &position_view;
+;*** 47	-----------------------    *((void (*(*)[3])())C$1+6L) = &SideSensorSet;
+;*** 48	-----------------------    *((void (*(*)[3])())C$1+8L) = &straight_test;
+;*** 49	-----------------------    *((void (*(*)[3])())C$1+10L) = NULL;
+;*** 51	-----------------------    *((void (*(*)[3])())C$1+12L) = &mpid_change;
+;*** 52	-----------------------    *((void (*(*)[3])())C$1+14L) = &BackTurnTest;
+;*** 53	-----------------------    *((void (*(*)[3])())C$1+16L) = &SmoothRun;
+;*** 55	-----------------------    *((void (*(*)[3])())C$1+18L) = &qepget;
+;*** 56	-----------------------    *((void (*(*)[3])())C$1+20L) = &Smooth_Turn_TEST;
+;*** 57	-----------------------    *((void (*(*)[3])())C$1+22L) = &SearchMaze;
+;*** 57	-----------------------    return;
 	.dwcfa	0x1d, -2
 	.dwcfa	0x1c, 26, 0
 	.dwcfa	0x09, 40, 26
@@ -899,56 +899,56 @@ _Initmenu:
 DW$55	.dwtag  DW_TAG_variable, DW_AT_name("C$1"), DW_AT_symbol_name("C$1")
 	.dwattr DW$55, DW_AT_type(*DW$T$39)
 	.dwattr DW$55, DW_AT_location[DW_OP_reg12]
+	.dwpsn	"menu.c",43,2
+        MOVL      XAR5,#_error_page     ; |43| 
+        MOVL      XAR4,#_menu_positon   ; |43| 
+        MOVL      *+XAR4[0],XAR5        ; |43| 
 	.dwpsn	"menu.c",44,2
-        MOVL      XAR5,#_error_page     ; |44| 
-        MOVL      XAR4,#_menu_positon   ; |44| 
-        MOVL      *+XAR4[0],XAR5        ; |44| 
+        MOVL      XAR5,#_Sensor_Checking ; |44| 
+        MOVL      *+XAR4[2],XAR5        ; |44| 
 	.dwpsn	"menu.c",45,2
-        MOVL      XAR5,#_Sensor_Checking ; |45| 
-        MOVL      *+XAR4[2],XAR5        ; |45| 
-	.dwpsn	"menu.c",46,2
-        MOVL      XAR5,#_position_view  ; |46| 
-        MOVL      *+XAR4[4],XAR5        ; |46| 
+        MOVL      XAR5,#_position_view  ; |45| 
+        MOVL      *+XAR4[4],XAR5        ; |45| 
+	.dwpsn	"menu.c",47,2
+        MOVL      XAR5,#_SideSensorSet  ; |47| 
+        MOVL      *+XAR4[6],XAR5        ; |47| 
 	.dwpsn	"menu.c",48,2
-        MOVL      XAR5,#_SideSensorSet  ; |48| 
-        MOVL      *+XAR4[6],XAR5        ; |48| 
+        MOVB      XAR0,#8               ; |48| 
+        MOVL      XAR5,#_straight_test  ; |48| 
+        MOVL      *+XAR4[AR0],XAR5      ; |48| 
 	.dwpsn	"menu.c",49,2
-        MOVB      XAR0,#8               ; |49| 
-        MOVL      XAR5,#_straight_test  ; |49| 
-        MOVL      *+XAR4[AR0],XAR5      ; |49| 
-	.dwpsn	"menu.c",50,2
         MOVB      ACC,#0
-        MOVB      XAR0,#10              ; |50| 
-        MOVL      *+XAR4[AR0],ACC       ; |50| 
+        MOVB      XAR0,#10              ; |49| 
+        MOVL      *+XAR4[AR0],ACC       ; |49| 
+	.dwpsn	"menu.c",51,2
+        MOVB      XAR0,#12              ; |51| 
+        MOVL      XAR5,#_mpid_change    ; |51| 
+        MOVL      *+XAR4[AR0],XAR5      ; |51| 
 	.dwpsn	"menu.c",52,2
-        MOVB      XAR0,#12              ; |52| 
-        MOVL      XAR5,#_mpid_change    ; |52| 
+        MOVB      XAR0,#14              ; |52| 
+        MOVL      XAR5,#_BackTurnTest   ; |52| 
         MOVL      *+XAR4[AR0],XAR5      ; |52| 
 	.dwpsn	"menu.c",53,2
-        MOVB      XAR0,#14              ; |53| 
-        MOVL      XAR5,#_BackTurnTest   ; |53| 
+        MOVB      XAR0,#16              ; |53| 
+        MOVL      XAR5,#_SmoothRun      ; |53| 
         MOVL      *+XAR4[AR0],XAR5      ; |53| 
-	.dwpsn	"menu.c",54,2
-        MOVB      XAR0,#16              ; |54| 
-        MOVL      XAR5,#_SmoothRun      ; |54| 
-        MOVL      *+XAR4[AR0],XAR5      ; |54| 
+	.dwpsn	"menu.c",55,2
+        MOVB      XAR0,#18              ; |55| 
+        MOVL      XAR5,#_qepget         ; |55| 
+        MOVL      *+XAR4[AR0],XAR5      ; |55| 
 	.dwpsn	"menu.c",56,2
-        MOVB      XAR0,#18              ; |56| 
-        MOVL      XAR5,#_qepget         ; |56| 
+        MOVB      XAR0,#20              ; |56| 
+        MOVL      XAR5,#_Smooth_Turn_TEST ; |56| 
         MOVL      *+XAR4[AR0],XAR5      ; |56| 
 	.dwpsn	"menu.c",57,2
-        MOVB      XAR0,#20              ; |57| 
-        MOVL      XAR5,#_Smooth_Turn_TEST ; |57| 
+        MOVB      XAR0,#22              ; |57| 
+        MOVL      XAR5,#_SearchMaze     ; |57| 
         MOVL      *+XAR4[AR0],XAR5      ; |57| 
-	.dwpsn	"menu.c",58,2
-        MOVB      XAR0,#22              ; |58| 
-        MOVL      XAR5,#_SearchMaze     ; |58| 
-        MOVL      *+XAR4[AR0],XAR5      ; |58| 
-	.dwpsn	"menu.c",59,1
+	.dwpsn	"menu.c",58,1
         LRETR
         ; return occurs
 	.dwattr DW$54, DW_AT_end_file("menu.c")
-	.dwattr DW$54, DW_AT_end_line(0x3b)
+	.dwattr DW$54, DW_AT_end_line(0x3a)
 	.dwattr DW$54, DW_AT_end_column(0x01)
 	.dwendentry
 	.dwendtag DW$54

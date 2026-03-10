@@ -1,6 +1,6 @@
 ;***************************************************************
 ;* TMS320C2000 C/C++ Codegen                         PC v4.1.3 *
-;* Date/Time created: Tue Aug 19 17:11:17 2025                 *
+;* Date/Time created: Tue Mar 10 21:03:42 2026                 *
 ;***************************************************************
 	.compiler_opts --mem_model:code=flat --mem_model:data=large --silicon_version=28 
 FP	.set	XAR2
@@ -81,11 +81,11 @@ DW$21	.dwtag  DW_TAG_formal_parameter, DW_AT_type(*DW$T$122)
 	.dwendtag DW$20
 
 
-DW$22	.dwtag  DW_TAG_subprogram, DW_AT_name("initsensor"), DW_AT_symbol_name("_initsensor")
+DW$22	.dwtag  DW_TAG_subprogram, DW_AT_name("SensorOff"), DW_AT_symbol_name("_SensorOff")
 	.dwattr DW$22, DW_AT_declaration(0x01)
 	.dwattr DW$22, DW_AT_external(0x01)
 
-DW$23	.dwtag  DW_TAG_subprogram, DW_AT_name("SensorOff"), DW_AT_symbol_name("_SensorOff")
+DW$23	.dwtag  DW_TAG_subprogram, DW_AT_name("initsensor"), DW_AT_symbol_name("_initsensor")
 	.dwattr DW$23, DW_AT_declaration(0x01)
 	.dwattr DW$23, DW_AT_external(0x01)
 
@@ -107,28 +107,28 @@ DW$27	.dwtag  DW_TAG_formal_parameter, DW_AT_type(*DW$T$117)
 DW$28	.dwtag  DW_TAG_subprogram, DW_AT_name("ResetSensorVariable"), DW_AT_symbol_name("_ResetSensorVariable")
 	.dwattr DW$28, DW_AT_declaration(0x01)
 	.dwattr DW$28, DW_AT_external(0x01)
-	.global	_Flag_Left
-_Flag_Left:	.usect	".ebss",1,1,0
-DW$29	.dwtag  DW_TAG_variable, DW_AT_name("Flag_Left"), DW_AT_symbol_name("_Flag_Left")
-	.dwattr DW$29, DW_AT_location[DW_OP_addr _Flag_Left]
+	.global	_gSearch
+_gSearch:	.usect	".ebss",1,1,0
+DW$29	.dwtag  DW_TAG_variable, DW_AT_name("gSearch"), DW_AT_symbol_name("_gSearch")
+	.dwattr DW$29, DW_AT_location[DW_OP_addr _gSearch]
 	.dwattr DW$29, DW_AT_type(*DW$T$142)
 	.dwattr DW$29, DW_AT_external(0x01)
-	.global	_accelcheck
-_accelcheck:	.usect	".ebss",1,1,0
-DW$30	.dwtag  DW_TAG_variable, DW_AT_name("accelcheck"), DW_AT_symbol_name("_accelcheck")
-	.dwattr DW$30, DW_AT_location[DW_OP_addr _accelcheck]
+	.global	_Flag_Left
+_Flag_Left:	.usect	".ebss",1,1,0
+DW$30	.dwtag  DW_TAG_variable, DW_AT_name("Flag_Left"), DW_AT_symbol_name("_Flag_Left")
+	.dwattr DW$30, DW_AT_location[DW_OP_addr _Flag_Left]
 	.dwattr DW$30, DW_AT_type(*DW$T$142)
 	.dwattr DW$30, DW_AT_external(0x01)
-	.global	_gMouseDir
-_gMouseDir:	.usect	".ebss",1,1,0
-DW$31	.dwtag  DW_TAG_variable, DW_AT_name("gMouseDir"), DW_AT_symbol_name("_gMouseDir")
-	.dwattr DW$31, DW_AT_location[DW_OP_addr _gMouseDir]
+	.global	_gBlockToBlock
+_gBlockToBlock:	.usect	".ebss",1,1,0
+DW$31	.dwtag  DW_TAG_variable, DW_AT_name("gBlockToBlock"), DW_AT_symbol_name("_gBlockToBlock")
+	.dwattr DW$31, DW_AT_location[DW_OP_addr _gBlockToBlock]
 	.dwattr DW$31, DW_AT_type(*DW$T$142)
 	.dwattr DW$31, DW_AT_external(0x01)
-	.global	_gPathBufferHead
-_gPathBufferHead:	.usect	".ebss",1,1,0
-DW$32	.dwtag  DW_TAG_variable, DW_AT_name("gPathBufferHead"), DW_AT_symbol_name("_gPathBufferHead")
-	.dwattr DW$32, DW_AT_location[DW_OP_addr _gPathBufferHead]
+	.global	_gDiagSpeedLimit
+_gDiagSpeedLimit:	.usect	".ebss",1,1,0
+DW$32	.dwtag  DW_TAG_variable, DW_AT_name("gDiagSpeedLimit"), DW_AT_symbol_name("_gDiagSpeedLimit")
+	.dwattr DW$32, DW_AT_location[DW_OP_addr _gDiagSpeedLimit]
 	.dwattr DW$32, DW_AT_type(*DW$T$142)
 	.dwattr DW$32, DW_AT_external(0x01)
 	.global	_gDiagtest
@@ -137,386 +137,384 @@ DW$33	.dwtag  DW_TAG_variable, DW_AT_name("gDiagtest"), DW_AT_symbol_name("_gDia
 	.dwattr DW$33, DW_AT_location[DW_OP_addr _gDiagtest]
 	.dwattr DW$33, DW_AT_type(*DW$T$142)
 	.dwattr DW$33, DW_AT_external(0x01)
-	.global	_gSearch
-_gSearch:	.usect	".ebss",1,1,0
-DW$34	.dwtag  DW_TAG_variable, DW_AT_name("gSearch"), DW_AT_symbol_name("_gSearch")
-	.dwattr DW$34, DW_AT_location[DW_OP_addr _gSearch]
+	.global	_gPathBufferHead
+_gPathBufferHead:	.usect	".ebss",1,1,0
+DW$34	.dwtag  DW_TAG_variable, DW_AT_name("gPathBufferHead"), DW_AT_symbol_name("_gPathBufferHead")
+	.dwattr DW$34, DW_AT_location[DW_OP_addr _gPathBufferHead]
 	.dwattr DW$34, DW_AT_type(*DW$T$142)
 	.dwattr DW$34, DW_AT_external(0x01)
-	.global	_gBlockToBlock
-_gBlockToBlock:	.usect	".ebss",1,1,0
-DW$35	.dwtag  DW_TAG_variable, DW_AT_name("gBlockToBlock"), DW_AT_symbol_name("_gBlockToBlock")
-	.dwattr DW$35, DW_AT_location[DW_OP_addr _gBlockToBlock]
+	.global	_accelcheck
+_accelcheck:	.usect	".ebss",1,1,0
+DW$35	.dwtag  DW_TAG_variable, DW_AT_name("accelcheck"), DW_AT_symbol_name("_accelcheck")
+	.dwattr DW$35, DW_AT_location[DW_OP_addr _accelcheck]
 	.dwattr DW$35, DW_AT_type(*DW$T$142)
 	.dwattr DW$35, DW_AT_external(0x01)
-	.global	_gSearchType
-_gSearchType:	.usect	".ebss",1,1,0
-DW$36	.dwtag  DW_TAG_variable, DW_AT_name("gSearchType"), DW_AT_symbol_name("_gSearchType")
-	.dwattr DW$36, DW_AT_location[DW_OP_addr _gSearchType]
-	.dwattr DW$36, DW_AT_type(*DW$T$142)
-	.dwattr DW$36, DW_AT_external(0x01)
 	.global	_gSearchEndState
 _gSearchEndState:	.usect	".ebss",1,1,0
-DW$37	.dwtag  DW_TAG_variable, DW_AT_name("gSearchEndState"), DW_AT_symbol_name("_gSearchEndState")
-	.dwattr DW$37, DW_AT_location[DW_OP_addr _gSearchEndState]
-	.dwattr DW$37, DW_AT_type(*DW$T$142)
-	.dwattr DW$37, DW_AT_external(0x01)
-	.global	_gPathWeightState
-_gPathWeightState:	.usect	".ebss",1,1,0
-DW$38	.dwtag  DW_TAG_variable, DW_AT_name("gPathWeightState"), DW_AT_symbol_name("_gPathWeightState")
-	.dwattr DW$38, DW_AT_location[DW_OP_addr _gPathWeightState]
-	.dwattr DW$38, DW_AT_type(*DW$T$142)
-	.dwattr DW$38, DW_AT_external(0x01)
-	.global	_gMousePosition
-_gMousePosition:	.usect	".ebss",1,1,0
-DW$39	.dwtag  DW_TAG_variable, DW_AT_name("gMousePosition"), DW_AT_symbol_name("_gMousePosition")
-	.dwattr DW$39, DW_AT_location[DW_OP_addr _gMousePosition]
-	.dwattr DW$39, DW_AT_type(*DW$T$142)
-	.dwattr DW$39, DW_AT_external(0x01)
-	.global	_gMouseYetDir
-_gMouseYetDir:	.usect	".ebss",1,1,0
-DW$40	.dwtag  DW_TAG_variable, DW_AT_name("gMouseYetDir"), DW_AT_symbol_name("_gMouseYetDir")
-	.dwattr DW$40, DW_AT_location[DW_OP_addr _gMouseYetDir]
-	.dwattr DW$40, DW_AT_type(*DW$T$142)
-	.dwattr DW$40, DW_AT_external(0x01)
-	.global	_gAlgoState
-_gAlgoState:	.usect	".ebss",1,1,0
-DW$41	.dwtag  DW_TAG_variable, DW_AT_name("gAlgoState"), DW_AT_symbol_name("_gAlgoState")
-	.dwattr DW$41, DW_AT_location[DW_OP_addr _gAlgoState]
-	.dwattr DW$41, DW_AT_type(*DW$T$142)
-	.dwattr DW$41, DW_AT_external(0x01)
+DW$36	.dwtag  DW_TAG_variable, DW_AT_name("gSearchEndState"), DW_AT_symbol_name("_gSearchEndState")
+	.dwattr DW$36, DW_AT_location[DW_OP_addr _gSearchEndState]
+	.dwattr DW$36, DW_AT_type(*DW$T$142)
+	.dwattr DW$36, DW_AT_external(0x01)
 	.global	_gMouseYetPosition
 _gMouseYetPosition:	.usect	".ebss",1,1,0
-DW$42	.dwtag  DW_TAG_variable, DW_AT_name("gMouseYetPosition"), DW_AT_symbol_name("_gMouseYetPosition")
-	.dwattr DW$42, DW_AT_location[DW_OP_addr _gMouseYetPosition]
+DW$37	.dwtag  DW_TAG_variable, DW_AT_name("gMouseYetPosition"), DW_AT_symbol_name("_gMouseYetPosition")
+	.dwattr DW$37, DW_AT_location[DW_OP_addr _gMouseYetPosition]
+	.dwattr DW$37, DW_AT_type(*DW$T$142)
+	.dwattr DW$37, DW_AT_external(0x01)
+	.global	_gAlgoState
+_gAlgoState:	.usect	".ebss",1,1,0
+DW$38	.dwtag  DW_TAG_variable, DW_AT_name("gAlgoState"), DW_AT_symbol_name("_gAlgoState")
+	.dwattr DW$38, DW_AT_location[DW_OP_addr _gAlgoState]
+	.dwattr DW$38, DW_AT_type(*DW$T$142)
+	.dwattr DW$38, DW_AT_external(0x01)
+	.global	_gMouseYetDir
+_gMouseYetDir:	.usect	".ebss",1,1,0
+DW$39	.dwtag  DW_TAG_variable, DW_AT_name("gMouseYetDir"), DW_AT_symbol_name("_gMouseYetDir")
+	.dwattr DW$39, DW_AT_location[DW_OP_addr _gMouseYetDir]
+	.dwattr DW$39, DW_AT_type(*DW$T$142)
+	.dwattr DW$39, DW_AT_external(0x01)
+	.global	_gMouseDir
+_gMouseDir:	.usect	".ebss",1,1,0
+DW$40	.dwtag  DW_TAG_variable, DW_AT_name("gMouseDir"), DW_AT_symbol_name("_gMouseDir")
+	.dwattr DW$40, DW_AT_location[DW_OP_addr _gMouseDir]
+	.dwattr DW$40, DW_AT_type(*DW$T$142)
+	.dwattr DW$40, DW_AT_external(0x01)
+	.global	_gSearchType
+_gSearchType:	.usect	".ebss",1,1,0
+DW$41	.dwtag  DW_TAG_variable, DW_AT_name("gSearchType"), DW_AT_symbol_name("_gSearchType")
+	.dwattr DW$41, DW_AT_location[DW_OP_addr _gSearchType]
+	.dwattr DW$41, DW_AT_type(*DW$T$142)
+	.dwattr DW$41, DW_AT_external(0x01)
+	.global	_gMousePosition
+_gMousePosition:	.usect	".ebss",1,1,0
+DW$42	.dwtag  DW_TAG_variable, DW_AT_name("gMousePosition"), DW_AT_symbol_name("_gMousePosition")
+	.dwattr DW$42, DW_AT_location[DW_OP_addr _gMousePosition]
 	.dwattr DW$42, DW_AT_type(*DW$T$142)
 	.dwattr DW$42, DW_AT_external(0x01)
-	.global	_print_cnt
-_print_cnt:	.usect	".ebss",1,1,0
-DW$43	.dwtag  DW_TAG_variable, DW_AT_name("print_cnt"), DW_AT_symbol_name("_print_cnt")
-	.dwattr DW$43, DW_AT_location[DW_OP_addr _print_cnt]
-	.dwattr DW$43, DW_AT_type(*DW$T$142)
-	.dwattr DW$43, DW_AT_external(0x01)
 	.global	_gFrontPosition
 _gFrontPosition:	.usect	".ebss",1,1,0
-DW$44	.dwtag  DW_TAG_variable, DW_AT_name("gFrontPosition"), DW_AT_symbol_name("_gFrontPosition")
-	.dwattr DW$44, DW_AT_location[DW_OP_addr _gFrontPosition]
-	.dwattr DW$44, DW_AT_type(*DW$T$142)
-	.dwattr DW$44, DW_AT_external(0x01)
-	.global	_turnflag
-_turnflag:	.usect	".ebss",1,1,0
-DW$45	.dwtag  DW_TAG_variable, DW_AT_name("turnflag"), DW_AT_symbol_name("_turnflag")
-	.dwattr DW$45, DW_AT_location[DW_OP_addr _turnflag]
-	.dwattr DW$45, DW_AT_type(*DW$T$142)
-	.dwattr DW$45, DW_AT_external(0x01)
-	.global	_gTURN_cnt
-_gTURN_cnt:	.usect	".ebss",1,1,0
-DW$46	.dwtag  DW_TAG_variable, DW_AT_name("gTURN_cnt"), DW_AT_symbol_name("_gTURN_cnt")
-	.dwattr DW$46, DW_AT_location[DW_OP_addr _gTURN_cnt]
-	.dwattr DW$46, DW_AT_type(*DW$T$142)
-	.dwattr DW$46, DW_AT_external(0x01)
-	.global	_gDIR_cnt
-_gDIR_cnt:	.usect	".ebss",1,1,0
-DW$47	.dwtag  DW_TAG_variable, DW_AT_name("gDIR_cnt"), DW_AT_symbol_name("_gDIR_cnt")
-	.dwattr DW$47, DW_AT_location[DW_OP_addr _gDIR_cnt]
-	.dwattr DW$47, DW_AT_type(*DW$T$142)
-	.dwattr DW$47, DW_AT_external(0x01)
-	.global	_chooseturnspeed
-_chooseturnspeed:	.usect	".ebss",1,1,0
-DW$48	.dwtag  DW_TAG_variable, DW_AT_name("chooseturnspeed"), DW_AT_symbol_name("_chooseturnspeed")
-	.dwattr DW$48, DW_AT_location[DW_OP_addr _chooseturnspeed]
-	.dwattr DW$48, DW_AT_type(*DW$T$142)
-	.dwattr DW$48, DW_AT_external(0x01)
+DW$43	.dwtag  DW_TAG_variable, DW_AT_name("gFrontPosition"), DW_AT_symbol_name("_gFrontPosition")
+	.dwattr DW$43, DW_AT_location[DW_OP_addr _gFrontPosition]
+	.dwattr DW$43, DW_AT_type(*DW$T$142)
+	.dwattr DW$43, DW_AT_external(0x01)
 	.global	_gTURN_MENU
 _gTURN_MENU:	.usect	".ebss",1,1,0
-DW$49	.dwtag  DW_TAG_variable, DW_AT_name("gTURN_MENU"), DW_AT_symbol_name("_gTURN_MENU")
-	.dwattr DW$49, DW_AT_location[DW_OP_addr _gTURN_MENU]
+DW$44	.dwtag  DW_TAG_variable, DW_AT_name("gTURN_MENU"), DW_AT_symbol_name("_gTURN_MENU")
+	.dwattr DW$44, DW_AT_location[DW_OP_addr _gTURN_MENU]
+	.dwattr DW$44, DW_AT_type(*DW$T$142)
+	.dwattr DW$44, DW_AT_external(0x01)
+	.global	_chooseturnspeed
+_chooseturnspeed:	.usect	".ebss",1,1,0
+DW$45	.dwtag  DW_TAG_variable, DW_AT_name("chooseturnspeed"), DW_AT_symbol_name("_chooseturnspeed")
+	.dwattr DW$45, DW_AT_location[DW_OP_addr _chooseturnspeed]
+	.dwattr DW$45, DW_AT_type(*DW$T$142)
+	.dwattr DW$45, DW_AT_external(0x01)
+	.global	_gDIR_cnt
+_gDIR_cnt:	.usect	".ebss",1,1,0
+DW$46	.dwtag  DW_TAG_variable, DW_AT_name("gDIR_cnt"), DW_AT_symbol_name("_gDIR_cnt")
+	.dwattr DW$46, DW_AT_location[DW_OP_addr _gDIR_cnt]
+	.dwattr DW$46, DW_AT_type(*DW$T$142)
+	.dwattr DW$46, DW_AT_external(0x01)
+	.global	_gDIR
+_gDIR:	.usect	".ebss",1,1,0
+DW$47	.dwtag  DW_TAG_variable, DW_AT_name("gDIR"), DW_AT_symbol_name("_gDIR")
+	.dwattr DW$47, DW_AT_location[DW_OP_addr _gDIR]
+	.dwattr DW$47, DW_AT_type(*DW$T$142)
+	.dwattr DW$47, DW_AT_external(0x01)
+	.global	_print_cnt
+_print_cnt:	.usect	".ebss",1,1,0
+DW$48	.dwtag  DW_TAG_variable, DW_AT_name("print_cnt"), DW_AT_symbol_name("_print_cnt")
+	.dwattr DW$48, DW_AT_location[DW_OP_addr _print_cnt]
+	.dwattr DW$48, DW_AT_type(*DW$T$142)
+	.dwattr DW$48, DW_AT_external(0x01)
+	.global	_gTURN_cnt
+_gTURN_cnt:	.usect	".ebss",1,1,0
+DW$49	.dwtag  DW_TAG_variable, DW_AT_name("gTURN_cnt"), DW_AT_symbol_name("_gTURN_cnt")
+	.dwattr DW$49, DW_AT_location[DW_OP_addr _gTURN_cnt]
 	.dwattr DW$49, DW_AT_type(*DW$T$142)
 	.dwattr DW$49, DW_AT_external(0x01)
-	.global	_gDirectSpeedLimit
-_gDirectSpeedLimit:	.usect	".ebss",1,1,0
-DW$50	.dwtag  DW_TAG_variable, DW_AT_name("gDirectSpeedLimit"), DW_AT_symbol_name("_gDirectSpeedLimit")
-	.dwattr DW$50, DW_AT_location[DW_OP_addr _gDirectSpeedLimit]
-	.dwattr DW$50, DW_AT_type(*DW$T$142)
-	.dwattr DW$50, DW_AT_external(0x01)
 	.global	_gUserDirectAccel
 _gUserDirectAccel:	.usect	".ebss",1,1,0
-DW$51	.dwtag  DW_TAG_variable, DW_AT_name("gUserDirectAccel"), DW_AT_symbol_name("_gUserDirectAccel")
-	.dwattr DW$51, DW_AT_location[DW_OP_addr _gUserDirectAccel]
+DW$50	.dwtag  DW_TAG_variable, DW_AT_name("gUserDirectAccel"), DW_AT_symbol_name("_gUserDirectAccel")
+	.dwattr DW$50, DW_AT_location[DW_OP_addr _gUserDirectAccel]
+	.dwattr DW$50, DW_AT_type(*DW$T$142)
+	.dwattr DW$50, DW_AT_external(0x01)
+	.global	_gUserAccel
+_gUserAccel:	.usect	".ebss",1,1,0
+DW$51	.dwtag  DW_TAG_variable, DW_AT_name("gUserAccel"), DW_AT_symbol_name("_gUserAccel")
+	.dwattr DW$51, DW_AT_location[DW_OP_addr _gUserAccel]
 	.dwattr DW$51, DW_AT_type(*DW$T$142)
 	.dwattr DW$51, DW_AT_external(0x01)
-	.global	_gDiagSpeedLimit
-_gDiagSpeedLimit:	.usect	".ebss",1,1,0
-DW$52	.dwtag  DW_TAG_variable, DW_AT_name("gDiagSpeedLimit"), DW_AT_symbol_name("_gDiagSpeedLimit")
-	.dwattr DW$52, DW_AT_location[DW_OP_addr _gDiagSpeedLimit]
-	.dwattr DW$52, DW_AT_type(*DW$T$142)
-	.dwattr DW$52, DW_AT_external(0x01)
-	.global	_gUserSpeed
-_gUserSpeed:	.usect	".ebss",1,1,0
-DW$53	.dwtag  DW_TAG_variable, DW_AT_name("gUserSpeed"), DW_AT_symbol_name("_gUserSpeed")
-	.dwattr DW$53, DW_AT_location[DW_OP_addr _gUserSpeed]
-	.dwattr DW$53, DW_AT_type(*DW$T$142)
-	.dwattr DW$53, DW_AT_external(0x01)
-	.global	_gUserTurnSpeed
-_gUserTurnSpeed:	.usect	".ebss",1,1,0
-DW$54	.dwtag  DW_TAG_variable, DW_AT_name("gUserTurnSpeed"), DW_AT_symbol_name("_gUserTurnSpeed")
-	.dwattr DW$54, DW_AT_location[DW_OP_addr _gUserTurnSpeed]
-	.dwattr DW$54, DW_AT_type(*DW$T$142)
-	.dwattr DW$54, DW_AT_external(0x01)
 	.global	_gUserDiagAccel
 _gUserDiagAccel:	.usect	".ebss",1,1,0
-DW$55	.dwtag  DW_TAG_variable, DW_AT_name("gUserDiagAccel"), DW_AT_symbol_name("_gUserDiagAccel")
-	.dwattr DW$55, DW_AT_location[DW_OP_addr _gUserDiagAccel]
+DW$52	.dwtag  DW_TAG_variable, DW_AT_name("gUserDiagAccel"), DW_AT_symbol_name("_gUserDiagAccel")
+	.dwattr DW$52, DW_AT_location[DW_OP_addr _gUserDiagAccel]
+	.dwattr DW$52, DW_AT_type(*DW$T$142)
+	.dwattr DW$52, DW_AT_external(0x01)
+	.global	_gUserTurnSpeed
+_gUserTurnSpeed:	.usect	".ebss",1,1,0
+DW$53	.dwtag  DW_TAG_variable, DW_AT_name("gUserTurnSpeed"), DW_AT_symbol_name("_gUserTurnSpeed")
+	.dwattr DW$53, DW_AT_location[DW_OP_addr _gUserTurnSpeed]
+	.dwattr DW$53, DW_AT_type(*DW$T$142)
+	.dwattr DW$53, DW_AT_external(0x01)
+	.global	_turnflag
+_turnflag:	.usect	".ebss",1,1,0
+DW$54	.dwtag  DW_TAG_variable, DW_AT_name("turnflag"), DW_AT_symbol_name("_turnflag")
+	.dwattr DW$54, DW_AT_location[DW_OP_addr _turnflag]
+	.dwattr DW$54, DW_AT_type(*DW$T$142)
+	.dwattr DW$54, DW_AT_external(0x01)
+	.global	_gDirectSpeedLimit
+_gDirectSpeedLimit:	.usect	".ebss",1,1,0
+DW$55	.dwtag  DW_TAG_variable, DW_AT_name("gDirectSpeedLimit"), DW_AT_symbol_name("_gDirectSpeedLimit")
+	.dwattr DW$55, DW_AT_location[DW_OP_addr _gDirectSpeedLimit]
 	.dwattr DW$55, DW_AT_type(*DW$T$142)
 	.dwattr DW$55, DW_AT_external(0x01)
+	.global	_gUserSpeed
+_gUserSpeed:	.usect	".ebss",1,1,0
+DW$56	.dwtag  DW_TAG_variable, DW_AT_name("gUserSpeed"), DW_AT_symbol_name("_gUserSpeed")
+	.dwattr DW$56, DW_AT_location[DW_OP_addr _gUserSpeed]
+	.dwattr DW$56, DW_AT_type(*DW$T$142)
+	.dwattr DW$56, DW_AT_external(0x01)
 	.global	_backturn_cnt
 _backturn_cnt:	.usect	".ebss",1,1,0
-DW$56	.dwtag  DW_TAG_variable, DW_AT_name("backturn_cnt"), DW_AT_symbol_name("_backturn_cnt")
-	.dwattr DW$56, DW_AT_location[DW_OP_addr _backturn_cnt]
-	.dwattr DW$56, DW_AT_type(*DW$T$138)
-	.dwattr DW$56, DW_AT_external(0x01)
-	.global	_g_int16_menu_y
-_g_int16_menu_y:	.usect	".ebss",1,1,0
-DW$57	.dwtag  DW_TAG_variable, DW_AT_name("g_int16_menu_y"), DW_AT_symbol_name("_g_int16_menu_y")
-	.dwattr DW$57, DW_AT_location[DW_OP_addr _g_int16_menu_y]
+DW$57	.dwtag  DW_TAG_variable, DW_AT_name("backturn_cnt"), DW_AT_symbol_name("_backturn_cnt")
+	.dwattr DW$57, DW_AT_location[DW_OP_addr _backturn_cnt]
 	.dwattr DW$57, DW_AT_type(*DW$T$138)
 	.dwattr DW$57, DW_AT_external(0x01)
+	.global	_g_int16_menu_y
+_g_int16_menu_y:	.usect	".ebss",1,1,0
+DW$58	.dwtag  DW_TAG_variable, DW_AT_name("g_int16_menu_y"), DW_AT_symbol_name("_g_int16_menu_y")
+	.dwattr DW$58, DW_AT_location[DW_OP_addr _g_int16_menu_y]
+	.dwattr DW$58, DW_AT_type(*DW$T$138)
+	.dwattr DW$58, DW_AT_external(0x01)
 	.global	_TURNBFSTRT
 _TURNBFSTRT:	.usect	".ebss",1,1,0
-DW$58	.dwtag  DW_TAG_variable, DW_AT_name("TURNBFSTRT"), DW_AT_symbol_name("_TURNBFSTRT")
-	.dwattr DW$58, DW_AT_location[DW_OP_addr _TURNBFSTRT]
-	.dwattr DW$58, DW_AT_type(*DW$T$39)
-	.dwattr DW$58, DW_AT_external(0x01)
+DW$59	.dwtag  DW_TAG_variable, DW_AT_name("TURNBFSTRT"), DW_AT_symbol_name("_TURNBFSTRT")
+	.dwattr DW$59, DW_AT_location[DW_OP_addr _TURNBFSTRT]
+	.dwattr DW$59, DW_AT_type(*DW$T$39)
+	.dwattr DW$59, DW_AT_external(0x01)
 	.global	_JapanGoal
 _JapanGoal:	.usect	".ebss",1,1,0
-DW$59	.dwtag  DW_TAG_variable, DW_AT_name("JapanGoal"), DW_AT_symbol_name("_JapanGoal")
-	.dwattr DW$59, DW_AT_location[DW_OP_addr _JapanGoal]
-	.dwattr DW$59, DW_AT_type(*DW$T$142)
-	.dwattr DW$59, DW_AT_external(0x01)
-	.global	_adccnt
-_adccnt:	.usect	".ebss",1,1,0
-DW$60	.dwtag  DW_TAG_variable, DW_AT_name("adccnt"), DW_AT_symbol_name("_adccnt")
-	.dwattr DW$60, DW_AT_location[DW_OP_addr _adccnt]
+DW$60	.dwtag  DW_TAG_variable, DW_AT_name("JapanGoal"), DW_AT_symbol_name("_JapanGoal")
+	.dwattr DW$60, DW_AT_location[DW_OP_addr _JapanGoal]
 	.dwattr DW$60, DW_AT_type(*DW$T$142)
 	.dwattr DW$60, DW_AT_external(0x01)
-	.global	_g_usertestdir
-_g_usertestdir:	.usect	".ebss",1,1,0
-DW$61	.dwtag  DW_TAG_variable, DW_AT_name("g_usertestdir"), DW_AT_symbol_name("_g_usertestdir")
-	.dwattr DW$61, DW_AT_location[DW_OP_addr _g_usertestdir]
+	.global	_adccnt
+_adccnt:	.usect	".ebss",1,1,0
+DW$61	.dwtag  DW_TAG_variable, DW_AT_name("adccnt"), DW_AT_symbol_name("_adccnt")
+	.dwattr DW$61, DW_AT_location[DW_OP_addr _adccnt]
 	.dwattr DW$61, DW_AT_type(*DW$T$142)
 	.dwattr DW$61, DW_AT_external(0x01)
+	.global	_g_usertestdir
+_g_usertestdir:	.usect	".ebss",1,1,0
+DW$62	.dwtag  DW_TAG_variable, DW_AT_name("g_usertestdir"), DW_AT_symbol_name("_g_usertestdir")
+	.dwattr DW$62, DW_AT_location[DW_OP_addr _g_usertestdir]
+	.dwattr DW$62, DW_AT_type(*DW$T$142)
+	.dwattr DW$62, DW_AT_external(0x01)
 	.global	_g_int16_menu_x
 _g_int16_menu_x:	.usect	".ebss",1,1,0
-DW$62	.dwtag  DW_TAG_variable, DW_AT_name("g_int16_menu_x"), DW_AT_symbol_name("_g_int16_menu_x")
-	.dwattr DW$62, DW_AT_location[DW_OP_addr _g_int16_menu_x]
-	.dwattr DW$62, DW_AT_type(*DW$T$138)
-	.dwattr DW$62, DW_AT_external(0x01)
-DW$63	.dwtag  DW_TAG_variable, DW_AT_name("RamfuncsLoadStart1"), DW_AT_symbol_name("_RamfuncsLoadStart1")
-	.dwattr DW$63, DW_AT_type(*DW$T$19)
-	.dwattr DW$63, DW_AT_declaration(0x01)
+DW$63	.dwtag  DW_TAG_variable, DW_AT_name("g_int16_menu_x"), DW_AT_symbol_name("_g_int16_menu_x")
+	.dwattr DW$63, DW_AT_location[DW_OP_addr _g_int16_menu_x]
+	.dwattr DW$63, DW_AT_type(*DW$T$138)
 	.dwattr DW$63, DW_AT_external(0x01)
-DW$64	.dwtag  DW_TAG_variable, DW_AT_name("RamfuncsRunStart"), DW_AT_symbol_name("_RamfuncsRunStart")
+DW$64	.dwtag  DW_TAG_variable, DW_AT_name("RamfuncsLoadStart1"), DW_AT_symbol_name("_RamfuncsLoadStart1")
 	.dwattr DW$64, DW_AT_type(*DW$T$19)
 	.dwattr DW$64, DW_AT_declaration(0x01)
 	.dwattr DW$64, DW_AT_external(0x01)
-DW$65	.dwtag  DW_TAG_variable, DW_AT_name("RamfuncsRunStart1"), DW_AT_symbol_name("_RamfuncsRunStart1")
+DW$65	.dwtag  DW_TAG_variable, DW_AT_name("RamfuncsRunStart"), DW_AT_symbol_name("_RamfuncsRunStart")
 	.dwattr DW$65, DW_AT_type(*DW$T$19)
 	.dwattr DW$65, DW_AT_declaration(0x01)
 	.dwattr DW$65, DW_AT_external(0x01)
-DW$66	.dwtag  DW_TAG_variable, DW_AT_name("RamfuncsLoadStart"), DW_AT_symbol_name("_RamfuncsLoadStart")
+DW$66	.dwtag  DW_TAG_variable, DW_AT_name("RamfuncsRunStart1"), DW_AT_symbol_name("_RamfuncsRunStart1")
 	.dwattr DW$66, DW_AT_type(*DW$T$19)
 	.dwattr DW$66, DW_AT_declaration(0x01)
 	.dwattr DW$66, DW_AT_external(0x01)
+DW$67	.dwtag  DW_TAG_variable, DW_AT_name("RamfuncsLoadStart"), DW_AT_symbol_name("_RamfuncsLoadStart")
+	.dwattr DW$67, DW_AT_type(*DW$T$19)
+	.dwattr DW$67, DW_AT_declaration(0x01)
+	.dwattr DW$67, DW_AT_external(0x01)
 	.global	_turnstate
 _turnstate:	.usect	".ebss",1,1,0
-DW$67	.dwtag  DW_TAG_variable, DW_AT_name("turnstate"), DW_AT_symbol_name("_turnstate")
-	.dwattr DW$67, DW_AT_location[DW_OP_addr _turnstate]
-	.dwattr DW$67, DW_AT_type(*DW$T$39)
-	.dwattr DW$67, DW_AT_external(0x01)
-DW$68	.dwtag  DW_TAG_variable, DW_AT_name("RamfuncsLoadEnd1"), DW_AT_symbol_name("_RamfuncsLoadEnd1")
-	.dwattr DW$68, DW_AT_type(*DW$T$19)
-	.dwattr DW$68, DW_AT_declaration(0x01)
+DW$68	.dwtag  DW_TAG_variable, DW_AT_name("turnstate"), DW_AT_symbol_name("_turnstate")
+	.dwattr DW$68, DW_AT_location[DW_OP_addr _turnstate]
+	.dwattr DW$68, DW_AT_type(*DW$T$39)
 	.dwattr DW$68, DW_AT_external(0x01)
-DW$69	.dwtag  DW_TAG_variable, DW_AT_name("RamfuncsLoadEnd"), DW_AT_symbol_name("_RamfuncsLoadEnd")
+DW$69	.dwtag  DW_TAG_variable, DW_AT_name("RamfuncsLoadEnd1"), DW_AT_symbol_name("_RamfuncsLoadEnd1")
 	.dwattr DW$69, DW_AT_type(*DW$T$19)
 	.dwattr DW$69, DW_AT_declaration(0x01)
 	.dwattr DW$69, DW_AT_external(0x01)
+DW$70	.dwtag  DW_TAG_variable, DW_AT_name("RamfuncsLoadEnd"), DW_AT_symbol_name("_RamfuncsLoadEnd")
+	.dwattr DW$70, DW_AT_type(*DW$T$19)
+	.dwattr DW$70, DW_AT_declaration(0x01)
+	.dwattr DW$70, DW_AT_external(0x01)
 	.global	_gTurnWeightVal
 _gTurnWeightVal:	.usect	".ebss",1,1,0
-DW$70	.dwtag  DW_TAG_variable, DW_AT_name("gTurnWeightVal"), DW_AT_symbol_name("_gTurnWeightVal")
-	.dwattr DW$70, DW_AT_location[DW_OP_addr _gTurnWeightVal]
-	.dwattr DW$70, DW_AT_type(*DW$T$142)
-	.dwattr DW$70, DW_AT_external(0x01)
-	.global	_gDiagWeightVal
-_gDiagWeightVal:	.usect	".ebss",1,1,0
-DW$71	.dwtag  DW_TAG_variable, DW_AT_name("gDiagWeightVal"), DW_AT_symbol_name("_gDiagWeightVal")
-	.dwattr DW$71, DW_AT_location[DW_OP_addr _gDiagWeightVal]
+DW$71	.dwtag  DW_TAG_variable, DW_AT_name("gTurnWeightVal"), DW_AT_symbol_name("_gTurnWeightVal")
+	.dwattr DW$71, DW_AT_location[DW_OP_addr _gTurnWeightVal]
 	.dwattr DW$71, DW_AT_type(*DW$T$142)
 	.dwattr DW$71, DW_AT_external(0x01)
-	.global	_DiagLike
-_DiagLike:	.usect	".ebss",1,1,0
-DW$72	.dwtag  DW_TAG_variable, DW_AT_name("DiagLike"), DW_AT_symbol_name("_DiagLike")
-	.dwattr DW$72, DW_AT_location[DW_OP_addr _DiagLike]
+	.global	_gDiagWeightVal
+_gDiagWeightVal:	.usect	".ebss",1,1,0
+DW$72	.dwtag  DW_TAG_variable, DW_AT_name("gDiagWeightVal"), DW_AT_symbol_name("_gDiagWeightVal")
+	.dwattr DW$72, DW_AT_location[DW_OP_addr _gDiagWeightVal]
 	.dwattr DW$72, DW_AT_type(*DW$T$142)
 	.dwattr DW$72, DW_AT_external(0x01)
-	.global	_gBlockRunException
-_gBlockRunException:	.usect	".ebss",1,1,0
-DW$73	.dwtag  DW_TAG_variable, DW_AT_name("gBlockRunException"), DW_AT_symbol_name("_gBlockRunException")
-	.dwattr DW$73, DW_AT_location[DW_OP_addr _gBlockRunException]
+	.global	_DiagLike
+_DiagLike:	.usect	".ebss",1,1,0
+DW$73	.dwtag  DW_TAG_variable, DW_AT_name("DiagLike"), DW_AT_symbol_name("_DiagLike")
+	.dwattr DW$73, DW_AT_location[DW_OP_addr _DiagLike]
 	.dwattr DW$73, DW_AT_type(*DW$T$142)
 	.dwattr DW$73, DW_AT_external(0x01)
-	.global	_gUserAccel
-_gUserAccel:	.usect	".ebss",1,1,0
-DW$74	.dwtag  DW_TAG_variable, DW_AT_name("gUserAccel"), DW_AT_symbol_name("_gUserAccel")
-	.dwattr DW$74, DW_AT_location[DW_OP_addr _gUserAccel]
+	.global	_gBlockRunException
+_gBlockRunException:	.usect	".ebss",1,1,0
+DW$74	.dwtag  DW_TAG_variable, DW_AT_name("gBlockRunException"), DW_AT_symbol_name("_gBlockRunException")
+	.dwattr DW$74, DW_AT_location[DW_OP_addr _gBlockRunException]
 	.dwattr DW$74, DW_AT_type(*DW$T$142)
 	.dwattr DW$74, DW_AT_external(0x01)
-	.global	_DirectLike
-_DirectLike:	.usect	".ebss",1,1,0
-DW$75	.dwtag  DW_TAG_variable, DW_AT_name("DirectLike"), DW_AT_symbol_name("_DirectLike")
-	.dwattr DW$75, DW_AT_location[DW_OP_addr _DirectLike]
+	.global	_gPathWeightState
+_gPathWeightState:	.usect	".ebss",1,1,0
+DW$75	.dwtag  DW_TAG_variable, DW_AT_name("gPathWeightState"), DW_AT_symbol_name("_gPathWeightState")
+	.dwattr DW$75, DW_AT_location[DW_OP_addr _gPathWeightState]
 	.dwattr DW$75, DW_AT_type(*DW$T$142)
 	.dwattr DW$75, DW_AT_external(0x01)
-	.global	_gDirectWeightVal
-_gDirectWeightVal:	.usect	".ebss",1,1,0
-DW$76	.dwtag  DW_TAG_variable, DW_AT_name("gDirectWeightVal"), DW_AT_symbol_name("_gDirectWeightVal")
-	.dwattr DW$76, DW_AT_location[DW_OP_addr _gDirectWeightVal]
+	.global	_DirectLike
+_DirectLike:	.usect	".ebss",1,1,0
+DW$76	.dwtag  DW_TAG_variable, DW_AT_name("DirectLike"), DW_AT_symbol_name("_DirectLike")
+	.dwattr DW$76, DW_AT_location[DW_OP_addr _DirectLike]
 	.dwattr DW$76, DW_AT_type(*DW$T$142)
 	.dwattr DW$76, DW_AT_external(0x01)
-	.global	_dir_cnt
-_dir_cnt:	.usect	".ebss",1,1,0
-DW$77	.dwtag  DW_TAG_variable, DW_AT_name("dir_cnt"), DW_AT_symbol_name("_dir_cnt")
-	.dwattr DW$77, DW_AT_location[DW_OP_addr _dir_cnt]
+	.global	_gDirectWeightVal
+_gDirectWeightVal:	.usect	".ebss",1,1,0
+DW$77	.dwtag  DW_TAG_variable, DW_AT_name("gDirectWeightVal"), DW_AT_symbol_name("_gDirectWeightVal")
+	.dwattr DW$77, DW_AT_location[DW_OP_addr _gDirectWeightVal]
 	.dwattr DW$77, DW_AT_type(*DW$T$142)
 	.dwattr DW$77, DW_AT_external(0x01)
-	.global	_wall_cnt
-_wall_cnt:	.usect	".ebss",1,1,0
-DW$78	.dwtag  DW_TAG_variable, DW_AT_name("wall_cnt"), DW_AT_symbol_name("_wall_cnt")
-	.dwattr DW$78, DW_AT_location[DW_OP_addr _wall_cnt]
+	.global	_dir_cnt
+_dir_cnt:	.usect	".ebss",1,1,0
+DW$78	.dwtag  DW_TAG_variable, DW_AT_name("dir_cnt"), DW_AT_symbol_name("_dir_cnt")
+	.dwattr DW$78, DW_AT_location[DW_OP_addr _dir_cnt]
 	.dwattr DW$78, DW_AT_type(*DW$T$142)
 	.dwattr DW$78, DW_AT_external(0x01)
-	.global	_testsen
-_testsen:	.usect	".ebss",1,1,0
-DW$79	.dwtag  DW_TAG_variable, DW_AT_name("testsen"), DW_AT_symbol_name("_testsen")
-	.dwattr DW$79, DW_AT_location[DW_OP_addr _testsen]
+	.global	_wall_cnt
+_wall_cnt:	.usect	".ebss",1,1,0
+DW$79	.dwtag  DW_TAG_variable, DW_AT_name("wall_cnt"), DW_AT_symbol_name("_wall_cnt")
+	.dwattr DW$79, DW_AT_location[DW_OP_addr _wall_cnt]
 	.dwattr DW$79, DW_AT_type(*DW$T$142)
 	.dwattr DW$79, DW_AT_external(0x01)
-	.global	_turn1300no
-_turn1300no:	.usect	".ebss",1,1,0
-DW$80	.dwtag  DW_TAG_variable, DW_AT_name("turn1300no"), DW_AT_symbol_name("_turn1300no")
-	.dwattr DW$80, DW_AT_location[DW_OP_addr _turn1300no]
+	.global	_testsen
+_testsen:	.usect	".ebss",1,1,0
+DW$80	.dwtag  DW_TAG_variable, DW_AT_name("testsen"), DW_AT_symbol_name("_testsen")
+	.dwattr DW$80, DW_AT_location[DW_OP_addr _testsen]
 	.dwattr DW$80, DW_AT_type(*DW$T$142)
 	.dwattr DW$80, DW_AT_external(0x01)
-	.global	_Likecnt
-_Likecnt:	.usect	".ebss",1,1,0
-DW$81	.dwtag  DW_TAG_variable, DW_AT_name("Likecnt"), DW_AT_symbol_name("_Likecnt")
-	.dwattr DW$81, DW_AT_location[DW_OP_addr _Likecnt]
+	.global	_turn1300no
+_turn1300no:	.usect	".ebss",1,1,0
+DW$81	.dwtag  DW_TAG_variable, DW_AT_name("turn1300no"), DW_AT_symbol_name("_turn1300no")
+	.dwattr DW$81, DW_AT_location[DW_OP_addr _turn1300no]
 	.dwattr DW$81, DW_AT_type(*DW$T$142)
 	.dwattr DW$81, DW_AT_external(0x01)
-	.global	_search
-_search:	.usect	".ebss",1,1,0
-DW$82	.dwtag  DW_TAG_variable, DW_AT_name("search"), DW_AT_symbol_name("_search")
-	.dwattr DW$82, DW_AT_location[DW_OP_addr _search]
+	.global	_Likecnt
+_Likecnt:	.usect	".ebss",1,1,0
+DW$82	.dwtag  DW_TAG_variable, DW_AT_name("Likecnt"), DW_AT_symbol_name("_Likecnt")
+	.dwattr DW$82, DW_AT_location[DW_OP_addr _Likecnt]
 	.dwattr DW$82, DW_AT_type(*DW$T$142)
 	.dwattr DW$82, DW_AT_external(0x01)
-	.global	_gNowPollMode
-_gNowPollMode:	.usect	".ebss",1,1,0
-DW$83	.dwtag  DW_TAG_variable, DW_AT_name("gNowPollMode"), DW_AT_symbol_name("_gNowPollMode")
-	.dwattr DW$83, DW_AT_location[DW_OP_addr _gNowPollMode]
+	.global	_search
+_search:	.usect	".ebss",1,1,0
+DW$83	.dwtag  DW_TAG_variable, DW_AT_name("search"), DW_AT_symbol_name("_search")
+	.dwattr DW$83, DW_AT_location[DW_OP_addr _search]
 	.dwattr DW$83, DW_AT_type(*DW$T$142)
 	.dwattr DW$83, DW_AT_external(0x01)
-	.global	_gPosAdjF
-_gPosAdjF:	.usect	".ebss",1,1,0
-DW$84	.dwtag  DW_TAG_variable, DW_AT_name("gPosAdjF"), DW_AT_symbol_name("_gPosAdjF")
-	.dwattr DW$84, DW_AT_location[DW_OP_addr _gPosAdjF]
+	.global	_gNowPollMode
+_gNowPollMode:	.usect	".ebss",1,1,0
+DW$84	.dwtag  DW_TAG_variable, DW_AT_name("gNowPollMode"), DW_AT_symbol_name("_gNowPollMode")
+	.dwattr DW$84, DW_AT_location[DW_OP_addr _gNowPollMode]
 	.dwattr DW$84, DW_AT_type(*DW$T$142)
 	.dwattr DW$84, DW_AT_external(0x01)
-	.global	_gFrontSensorPull
-_gFrontSensorPull:	.usect	".ebss",1,1,0
-DW$85	.dwtag  DW_TAG_variable, DW_AT_name("gFrontSensorPull"), DW_AT_symbol_name("_gFrontSensorPull")
-	.dwattr DW$85, DW_AT_location[DW_OP_addr _gFrontSensorPull]
-	.dwattr DW$85, DW_AT_type(*DW$T$142)
+
+DW$85	.dwtag  DW_TAG_subprogram, DW_AT_name("FrontSensorValueCall"), DW_AT_symbol_name("_FrontSensorValueCall")
+	.dwattr DW$85, DW_AT_type(*DW$T$10)
+	.dwattr DW$85, DW_AT_declaration(0x01)
 	.dwattr DW$85, DW_AT_external(0x01)
-	.global	_gBackTurnFrontAdjState
-_gBackTurnFrontAdjState:	.usect	".ebss",1,1,0
-DW$86	.dwtag  DW_TAG_variable, DW_AT_name("gBackTurnFrontAdjState"), DW_AT_symbol_name("_gBackTurnFrontAdjState")
-	.dwattr DW$86, DW_AT_location[DW_OP_addr _gBackTurnFrontAdjState]
-	.dwattr DW$86, DW_AT_type(*DW$T$142)
+
+DW$86	.dwtag  DW_TAG_subprogram, DW_AT_name("InitAlgorithmVariable"), DW_AT_symbol_name("_InitAlgorithmVariable")
+	.dwattr DW$86, DW_AT_type(*DW$T$10)
+	.dwattr DW$86, DW_AT_declaration(0x01)
 	.dwattr DW$86, DW_AT_external(0x01)
-	.global	_gEdgeDiffAdjustFlag
-_gEdgeDiffAdjustFlag:	.usect	".ebss",1,1,0
-DW$87	.dwtag  DW_TAG_variable, DW_AT_name("gEdgeDiffAdjustFlag"), DW_AT_symbol_name("_gEdgeDiffAdjustFlag")
-	.dwattr DW$87, DW_AT_location[DW_OP_addr _gEdgeDiffAdjustFlag]
+	.global	_gLPosWallF
+_gLPosWallF:	.usect	".ebss",1,1,0
+DW$87	.dwtag  DW_TAG_variable, DW_AT_name("gLPosWallF"), DW_AT_symbol_name("_gLPosWallF")
+	.dwattr DW$87, DW_AT_location[DW_OP_addr _gLPosWallF]
 	.dwattr DW$87, DW_AT_type(*DW$T$142)
 	.dwattr DW$87, DW_AT_external(0x01)
 
-DW$88	.dwtag  DW_TAG_subprogram, DW_AT_name("InitAlgorithmVariable"), DW_AT_symbol_name("_InitAlgorithmVariable")
+DW$88	.dwtag  DW_TAG_subprogram, DW_AT_name("SideSensorValueCall"), DW_AT_symbol_name("_SideSensorValueCall")
 	.dwattr DW$88, DW_AT_type(*DW$T$10)
 	.dwattr DW$88, DW_AT_declaration(0x01)
 	.dwattr DW$88, DW_AT_external(0x01)
-
-DW$89	.dwtag  DW_TAG_subprogram, DW_AT_name("SetpPathFuntion"), DW_AT_symbol_name("_SetpPathFuntion")
-	.dwattr DW$89, DW_AT_type(*DW$T$10)
-	.dwattr DW$89, DW_AT_declaration(0x01)
+	.global	_gFrontSensorPull
+_gFrontSensorPull:	.usect	".ebss",1,1,0
+DW$89	.dwtag  DW_TAG_variable, DW_AT_name("gFrontSensorPull"), DW_AT_symbol_name("_gFrontSensorPull")
+	.dwattr DW$89, DW_AT_location[DW_OP_addr _gFrontSensorPull]
+	.dwattr DW$89, DW_AT_type(*DW$T$142)
 	.dwattr DW$89, DW_AT_external(0x01)
-	.global	_gUint16SensorSelect
-_gUint16SensorSelect:	.usect	".ebss",1,1,0
-DW$90	.dwtag  DW_TAG_variable, DW_AT_name("gUint16SensorSelect"), DW_AT_symbol_name("_gUint16SensorSelect")
-	.dwattr DW$90, DW_AT_location[DW_OP_addr _gUint16SensorSelect]
+	.global	_gBackTurnFrontAdjState
+_gBackTurnFrontAdjState:	.usect	".ebss",1,1,0
+DW$90	.dwtag  DW_TAG_variable, DW_AT_name("gBackTurnFrontAdjState"), DW_AT_symbol_name("_gBackTurnFrontAdjState")
+	.dwattr DW$90, DW_AT_location[DW_OP_addr _gBackTurnFrontAdjState]
 	.dwattr DW$90, DW_AT_type(*DW$T$142)
 	.dwattr DW$90, DW_AT_external(0x01)
-	.global	_gMovestate
-_gMovestate:	.usect	".ebss",1,1,0
-DW$91	.dwtag  DW_TAG_variable, DW_AT_name("gMovestate"), DW_AT_symbol_name("_gMovestate")
-	.dwattr DW$91, DW_AT_location[DW_OP_addr _gMovestate]
-	.dwattr DW$91, DW_AT_type(*DW$T$142)
+
+DW$91	.dwtag  DW_TAG_subprogram, DW_AT_name("SetpPathFuntion"), DW_AT_symbol_name("_SetpPathFuntion")
+	.dwattr DW$91, DW_AT_type(*DW$T$10)
+	.dwattr DW$91, DW_AT_declaration(0x01)
 	.dwattr DW$91, DW_AT_external(0x01)
-	.global	_gMouseHead
-_gMouseHead:	.usect	".ebss",1,1,0
-DW$92	.dwtag  DW_TAG_variable, DW_AT_name("gMouseHead"), DW_AT_symbol_name("_gMouseHead")
-	.dwattr DW$92, DW_AT_location[DW_OP_addr _gMouseHead]
-	.dwattr DW$92, DW_AT_type(*DW$T$207)
+	.global	_gPosAdjF
+_gPosAdjF:	.usect	".ebss",1,1,0
+DW$92	.dwtag  DW_TAG_variable, DW_AT_name("gPosAdjF"), DW_AT_symbol_name("_gPosAdjF")
+	.dwattr DW$92, DW_AT_location[DW_OP_addr _gPosAdjF]
+	.dwattr DW$92, DW_AT_type(*DW$T$142)
 	.dwattr DW$92, DW_AT_external(0x01)
-	.global	_Flag_Chaetering
-_Flag_Chaetering:	.usect	".ebss",1,1,0
-DW$93	.dwtag  DW_TAG_variable, DW_AT_name("Flag_Chaetering"), DW_AT_symbol_name("_Flag_Chaetering")
-	.dwattr DW$93, DW_AT_location[DW_OP_addr _Flag_Chaetering]
-	.dwattr DW$93, DW_AT_type(*DW$T$142)
-	.dwattr DW$93, DW_AT_external(0x01)
 	.global	_gRPosWallF
 _gRPosWallF:	.usect	".ebss",1,1,0
-DW$94	.dwtag  DW_TAG_variable, DW_AT_name("gRPosWallF"), DW_AT_symbol_name("_gRPosWallF")
-	.dwattr DW$94, DW_AT_location[DW_OP_addr _gRPosWallF]
+DW$93	.dwtag  DW_TAG_variable, DW_AT_name("gRPosWallF"), DW_AT_symbol_name("_gRPosWallF")
+	.dwattr DW$93, DW_AT_location[DW_OP_addr _gRPosWallF]
+	.dwattr DW$93, DW_AT_type(*DW$T$142)
+	.dwattr DW$93, DW_AT_external(0x01)
+	.global	_gUint16SensorSelect
+_gUint16SensorSelect:	.usect	".ebss",1,1,0
+DW$94	.dwtag  DW_TAG_variable, DW_AT_name("gUint16SensorSelect"), DW_AT_symbol_name("_gUint16SensorSelect")
+	.dwattr DW$94, DW_AT_location[DW_OP_addr _gUint16SensorSelect]
 	.dwattr DW$94, DW_AT_type(*DW$T$142)
 	.dwattr DW$94, DW_AT_external(0x01)
-	.global	_gLPosWallF
-_gLPosWallF:	.usect	".ebss",1,1,0
-DW$95	.dwtag  DW_TAG_variable, DW_AT_name("gLPosWallF"), DW_AT_symbol_name("_gLPosWallF")
-	.dwattr DW$95, DW_AT_location[DW_OP_addr _gLPosWallF]
+	.global	_gMovestate
+_gMovestate:	.usect	".ebss",1,1,0
+DW$95	.dwtag  DW_TAG_variable, DW_AT_name("gMovestate"), DW_AT_symbol_name("_gMovestate")
+	.dwattr DW$95, DW_AT_location[DW_OP_addr _gMovestate]
 	.dwattr DW$95, DW_AT_type(*DW$T$142)
 	.dwattr DW$95, DW_AT_external(0x01)
-	.global	_g_u16motortic
-_g_u16motortic:	.usect	".ebss",1,1,0
-DW$96	.dwtag  DW_TAG_variable, DW_AT_name("g_u16motortic"), DW_AT_symbol_name("_g_u16motortic")
-	.dwattr DW$96, DW_AT_location[DW_OP_addr _g_u16motortic]
-	.dwattr DW$96, DW_AT_type(*DW$T$142)
+	.global	_gMouseHead
+_gMouseHead:	.usect	".ebss",1,1,0
+DW$96	.dwtag  DW_TAG_variable, DW_AT_name("gMouseHead"), DW_AT_symbol_name("_gMouseHead")
+	.dwattr DW$96, DW_AT_location[DW_OP_addr _gMouseHead]
+	.dwattr DW$96, DW_AT_type(*DW$T$207)
 	.dwattr DW$96, DW_AT_external(0x01)
-	.global	_gStopcount
-_gStopcount:	.usect	".ebss",1,1,0
-DW$97	.dwtag  DW_TAG_variable, DW_AT_name("gStopcount"), DW_AT_symbol_name("_gStopcount")
-	.dwattr DW$97, DW_AT_location[DW_OP_addr _gStopcount]
+	.global	_Flag_Chaetering
+_Flag_Chaetering:	.usect	".ebss",1,1,0
+DW$97	.dwtag  DW_TAG_variable, DW_AT_name("Flag_Chaetering"), DW_AT_symbol_name("_Flag_Chaetering")
+	.dwattr DW$97, DW_AT_location[DW_OP_addr _Flag_Chaetering]
 	.dwattr DW$97, DW_AT_type(*DW$T$142)
 	.dwattr DW$97, DW_AT_external(0x01)
-	.global	_gTurnState
-_gTurnState:	.usect	".ebss",1,1,0
-DW$98	.dwtag  DW_TAG_variable, DW_AT_name("gTurnState"), DW_AT_symbol_name("_gTurnState")
-	.dwattr DW$98, DW_AT_location[DW_OP_addr _gTurnState]
-	.dwattr DW$98, DW_AT_type(*DW$T$205)
+	.global	_g_u16motortic
+_g_u16motortic:	.usect	".ebss",1,1,0
+DW$98	.dwtag  DW_TAG_variable, DW_AT_name("g_u16motortic"), DW_AT_symbol_name("_g_u16motortic")
+	.dwattr DW$98, DW_AT_location[DW_OP_addr _g_u16motortic]
+	.dwattr DW$98, DW_AT_type(*DW$T$142)
 	.dwattr DW$98, DW_AT_external(0x01)
-	.global	_g_uint16_pwm_flag
-_g_uint16_pwm_flag:	.usect	".ebss",1,1,0
-DW$99	.dwtag  DW_TAG_variable, DW_AT_name("g_uint16_pwm_flag"), DW_AT_symbol_name("_g_uint16_pwm_flag")
-	.dwattr DW$99, DW_AT_location[DW_OP_addr _g_uint16_pwm_flag]
+	.global	_gStopcount
+_gStopcount:	.usect	".ebss",1,1,0
+DW$99	.dwtag  DW_TAG_variable, DW_AT_name("gStopcount"), DW_AT_symbol_name("_gStopcount")
+	.dwattr DW$99, DW_AT_location[DW_OP_addr _gStopcount]
 	.dwattr DW$99, DW_AT_type(*DW$T$142)
 	.dwattr DW$99, DW_AT_external(0x01)
 
@@ -524,239 +522,239 @@ DW$100	.dwtag  DW_TAG_subprogram, DW_AT_name("Initmenu"), DW_AT_symbol_name("_In
 	.dwattr DW$100, DW_AT_type(*DW$T$10)
 	.dwattr DW$100, DW_AT_declaration(0x01)
 	.dwattr DW$100, DW_AT_external(0x01)
-	.global	_g_uint16_position_cnt
-_g_uint16_position_cnt:	.usect	".ebss",1,1,0
-DW$101	.dwtag  DW_TAG_variable, DW_AT_name("g_uint16_position_cnt"), DW_AT_symbol_name("_g_uint16_position_cnt")
-	.dwattr DW$101, DW_AT_location[DW_OP_addr _g_uint16_position_cnt]
-	.dwattr DW$101, DW_AT_type(*DW$T$142)
-	.dwattr DW$101, DW_AT_external(0x01)
 	.global	_g_uint16_setting_cnt
 _g_uint16_setting_cnt:	.usect	".ebss",1,1,0
-DW$102	.dwtag  DW_TAG_variable, DW_AT_name("g_uint16_setting_cnt"), DW_AT_symbol_name("_g_uint16_setting_cnt")
-	.dwattr DW$102, DW_AT_location[DW_OP_addr _g_uint16_setting_cnt]
-	.dwattr DW$102, DW_AT_type(*DW$T$142)
-	.dwattr DW$102, DW_AT_external(0x01)
-	.global	_test_flag
-_test_flag:	.usect	".ebss",1,1,0
-DW$103	.dwtag  DW_TAG_variable, DW_AT_name("test_flag"), DW_AT_symbol_name("_test_flag")
-	.dwattr DW$103, DW_AT_location[DW_OP_addr _test_flag]
-	.dwattr DW$103, DW_AT_type(*DW$T$142)
-	.dwattr DW$103, DW_AT_external(0x01)
-	.global	_gDIR
-_gDIR:	.usect	".ebss",1,1,0
-DW$104	.dwtag  DW_TAG_variable, DW_AT_name("gDIR"), DW_AT_symbol_name("_gDIR")
-	.dwattr DW$104, DW_AT_location[DW_OP_addr _gDIR]
-	.dwattr DW$104, DW_AT_type(*DW$T$142)
-	.dwattr DW$104, DW_AT_external(0x01)
-	.global	_gSecondRunGoal
-_gSecondRunGoal:	.usect	".ebss",1,1,0
-DW$105	.dwtag  DW_TAG_variable, DW_AT_name("gSecondRunGoal"), DW_AT_symbol_name("_gSecondRunGoal")
-	.dwattr DW$105, DW_AT_location[DW_OP_addr _gSecondRunGoal]
-	.dwattr DW$105, DW_AT_type(*DW$T$142)
-	.dwattr DW$105, DW_AT_external(0x01)
-	.global	_gFisrtBlockDiagF
-_gFisrtBlockDiagF:	.usect	".ebss",1,1,0
-DW$106	.dwtag  DW_TAG_variable, DW_AT_name("gFisrtBlockDiagF"), DW_AT_symbol_name("_gFisrtBlockDiagF")
-	.dwattr DW$106, DW_AT_location[DW_OP_addr _gFisrtBlockDiagF]
-	.dwattr DW$106, DW_AT_type(*DW$T$142)
-	.dwattr DW$106, DW_AT_external(0x01)
+DW$101	.dwtag  DW_TAG_variable, DW_AT_name("g_uint16_setting_cnt"), DW_AT_symbol_name("_g_uint16_setting_cnt")
+	.dwattr DW$101, DW_AT_location[DW_OP_addr _g_uint16_setting_cnt]
+	.dwattr DW$101, DW_AT_type(*DW$T$142)
+	.dwattr DW$101, DW_AT_external(0x01)
 	.global	_g_uint16_sensor_cnt
 _g_uint16_sensor_cnt:	.usect	".ebss",1,1,0
-DW$107	.dwtag  DW_TAG_variable, DW_AT_name("g_uint16_sensor_cnt"), DW_AT_symbol_name("_g_uint16_sensor_cnt")
-	.dwattr DW$107, DW_AT_location[DW_OP_addr _g_uint16_sensor_cnt]
+DW$102	.dwtag  DW_TAG_variable, DW_AT_name("g_uint16_sensor_cnt"), DW_AT_symbol_name("_g_uint16_sensor_cnt")
+	.dwattr DW$102, DW_AT_location[DW_OP_addr _g_uint16_sensor_cnt]
+	.dwattr DW$102, DW_AT_type(*DW$T$142)
+	.dwattr DW$102, DW_AT_external(0x01)
+	.global	_g_uint16_position_cnt
+_g_uint16_position_cnt:	.usect	".ebss",1,1,0
+DW$103	.dwtag  DW_TAG_variable, DW_AT_name("g_uint16_position_cnt"), DW_AT_symbol_name("_g_uint16_position_cnt")
+	.dwattr DW$103, DW_AT_location[DW_OP_addr _g_uint16_position_cnt]
+	.dwattr DW$103, DW_AT_type(*DW$T$142)
+	.dwattr DW$103, DW_AT_external(0x01)
+	.global	_gFisrtBlockDiagF
+_gFisrtBlockDiagF:	.usect	".ebss",1,1,0
+DW$104	.dwtag  DW_TAG_variable, DW_AT_name("gFisrtBlockDiagF"), DW_AT_symbol_name("_gFisrtBlockDiagF")
+	.dwattr DW$104, DW_AT_location[DW_OP_addr _gFisrtBlockDiagF]
+	.dwattr DW$104, DW_AT_type(*DW$T$142)
+	.dwattr DW$104, DW_AT_external(0x01)
+	.global	_test_flag
+_test_flag:	.usect	".ebss",1,1,0
+DW$105	.dwtag  DW_TAG_variable, DW_AT_name("test_flag"), DW_AT_symbol_name("_test_flag")
+	.dwattr DW$105, DW_AT_location[DW_OP_addr _test_flag]
+	.dwattr DW$105, DW_AT_type(*DW$T$142)
+	.dwattr DW$105, DW_AT_external(0x01)
+	.global	_g_uint16_pwm_flag
+_g_uint16_pwm_flag:	.usect	".ebss",1,1,0
+DW$106	.dwtag  DW_TAG_variable, DW_AT_name("g_uint16_pwm_flag"), DW_AT_symbol_name("_g_uint16_pwm_flag")
+	.dwattr DW$106, DW_AT_location[DW_OP_addr _g_uint16_pwm_flag]
+	.dwattr DW$106, DW_AT_type(*DW$T$142)
+	.dwattr DW$106, DW_AT_external(0x01)
+	.global	_gSecondRunGoal
+_gSecondRunGoal:	.usect	".ebss",1,1,0
+DW$107	.dwtag  DW_TAG_variable, DW_AT_name("gSecondRunGoal"), DW_AT_symbol_name("_gSecondRunGoal")
+	.dwattr DW$107, DW_AT_location[DW_OP_addr _gSecondRunGoal]
 	.dwattr DW$107, DW_AT_type(*DW$T$142)
 	.dwattr DW$107, DW_AT_external(0x01)
-	.global	_gDiagTurnOutAdjF
-_gDiagTurnOutAdjF:	.usect	".ebss",1,1,0
-DW$108	.dwtag  DW_TAG_variable, DW_AT_name("gDiagTurnOutAdjF"), DW_AT_symbol_name("_gDiagTurnOutAdjF")
-	.dwattr DW$108, DW_AT_location[DW_OP_addr _gDiagTurnOutAdjF]
-	.dwattr DW$108, DW_AT_type(*DW$T$142)
-	.dwattr DW$108, DW_AT_external(0x01)
-	.global	_gUint16user_speed
-_gUint16user_speed:	.usect	".ebss",1,1,0
-DW$109	.dwtag  DW_TAG_variable, DW_AT_name("gUint16user_speed"), DW_AT_symbol_name("_gUint16user_speed")
-	.dwattr DW$109, DW_AT_location[DW_OP_addr _gUint16user_speed]
-	.dwattr DW$109, DW_AT_type(*DW$T$142)
-	.dwattr DW$109, DW_AT_external(0x01)
-	.global	_gDiagTurnOutLEdgeAdjF
-_gDiagTurnOutLEdgeAdjF:	.usect	".ebss",1,1,0
-DW$110	.dwtag  DW_TAG_variable, DW_AT_name("gDiagTurnOutLEdgeAdjF"), DW_AT_symbol_name("_gDiagTurnOutLEdgeAdjF")
-	.dwattr DW$110, DW_AT_location[DW_OP_addr _gDiagTurnOutLEdgeAdjF]
-	.dwattr DW$110, DW_AT_type(*DW$T$142)
-	.dwattr DW$110, DW_AT_external(0x01)
-	.global	_gDiagDirectAdjState
-_gDiagDirectAdjState:	.usect	".ebss",1,1,0
-DW$111	.dwtag  DW_TAG_variable, DW_AT_name("gDiagDirectAdjState"), DW_AT_symbol_name("_gDiagDirectAdjState")
-	.dwattr DW$111, DW_AT_location[DW_OP_addr _gDiagDirectAdjState]
-	.dwattr DW$111, DW_AT_type(*DW$T$142)
-	.dwattr DW$111, DW_AT_external(0x01)
-	.global	_gDiagTurnOutREdgeAdjF
-_gDiagTurnOutREdgeAdjF:	.usect	".ebss",1,1,0
-DW$112	.dwtag  DW_TAG_variable, DW_AT_name("gDiagTurnOutREdgeAdjF"), DW_AT_symbol_name("_gDiagTurnOutREdgeAdjF")
-	.dwattr DW$112, DW_AT_location[DW_OP_addr _gDiagTurnOutREdgeAdjF]
-	.dwattr DW$112, DW_AT_type(*DW$T$142)
-	.dwattr DW$112, DW_AT_external(0x01)
-	.global	_gUint16speedcnt
-_gUint16speedcnt:	.usect	".ebss",1,1,0
-DW$113	.dwtag  DW_TAG_variable, DW_AT_name("gUint16speedcnt"), DW_AT_symbol_name("_gUint16speedcnt")
-	.dwattr DW$113, DW_AT_location[DW_OP_addr _gUint16speedcnt]
-	.dwattr DW$113, DW_AT_type(*DW$T$142)
-	.dwattr DW$113, DW_AT_external(0x01)
-	.global	_gDiffAdjCnt
-_gDiffAdjCnt:	.usect	".ebss",1,1,0
-DW$114	.dwtag  DW_TAG_variable, DW_AT_name("gDiffAdjCnt"), DW_AT_symbol_name("_gDiffAdjCnt")
-	.dwattr DW$114, DW_AT_location[DW_OP_addr _gDiffAdjCnt]
-	.dwattr DW$114, DW_AT_type(*DW$T$142)
-	.dwattr DW$114, DW_AT_external(0x01)
 	.global	_gAngleDirectflag
 _gAngleDirectflag:	.usect	".ebss",1,1,0
-DW$115	.dwtag  DW_TAG_variable, DW_AT_name("gAngleDirectflag"), DW_AT_symbol_name("_gAngleDirectflag")
-	.dwattr DW$115, DW_AT_location[DW_OP_addr _gAngleDirectflag]
+DW$108	.dwtag  DW_TAG_variable, DW_AT_name("gAngleDirectflag"), DW_AT_symbol_name("_gAngleDirectflag")
+	.dwattr DW$108, DW_AT_location[DW_OP_addr _gAngleDirectflag]
+	.dwattr DW$108, DW_AT_type(*DW$T$142)
+	.dwattr DW$108, DW_AT_external(0x01)
+	.global	_gDiagDirectAdjState
+_gDiagDirectAdjState:	.usect	".ebss",1,1,0
+DW$109	.dwtag  DW_TAG_variable, DW_AT_name("gDiagDirectAdjState"), DW_AT_symbol_name("_gDiagDirectAdjState")
+	.dwattr DW$109, DW_AT_location[DW_OP_addr _gDiagDirectAdjState]
+	.dwattr DW$109, DW_AT_type(*DW$T$142)
+	.dwattr DW$109, DW_AT_external(0x01)
+	.global	_gDiagTurnOutREdgeAdjF
+_gDiagTurnOutREdgeAdjF:	.usect	".ebss",1,1,0
+DW$110	.dwtag  DW_TAG_variable, DW_AT_name("gDiagTurnOutREdgeAdjF"), DW_AT_symbol_name("_gDiagTurnOutREdgeAdjF")
+	.dwattr DW$110, DW_AT_location[DW_OP_addr _gDiagTurnOutREdgeAdjF]
+	.dwattr DW$110, DW_AT_type(*DW$T$142)
+	.dwattr DW$110, DW_AT_external(0x01)
+	.global	_gEdgeDiffAdjustFlag
+_gEdgeDiffAdjustFlag:	.usect	".ebss",1,1,0
+DW$111	.dwtag  DW_TAG_variable, DW_AT_name("gEdgeDiffAdjustFlag"), DW_AT_symbol_name("_gEdgeDiffAdjustFlag")
+	.dwattr DW$111, DW_AT_location[DW_OP_addr _gEdgeDiffAdjustFlag]
+	.dwattr DW$111, DW_AT_type(*DW$T$142)
+	.dwattr DW$111, DW_AT_external(0x01)
+	.global	_gDiffAdjCnt
+_gDiffAdjCnt:	.usect	".ebss",1,1,0
+DW$112	.dwtag  DW_TAG_variable, DW_AT_name("gDiffAdjCnt"), DW_AT_symbol_name("_gDiffAdjCnt")
+	.dwattr DW$112, DW_AT_location[DW_OP_addr _gDiffAdjCnt]
+	.dwattr DW$112, DW_AT_type(*DW$T$142)
+	.dwattr DW$112, DW_AT_external(0x01)
+	.global	_gTurnState
+_gTurnState:	.usect	".ebss",1,1,0
+DW$113	.dwtag  DW_TAG_variable, DW_AT_name("gTurnState"), DW_AT_symbol_name("_gTurnState")
+	.dwattr DW$113, DW_AT_location[DW_OP_addr _gTurnState]
+	.dwattr DW$113, DW_AT_type(*DW$T$205)
+	.dwattr DW$113, DW_AT_external(0x01)
+	.global	_gUint16user_speed
+_gUint16user_speed:	.usect	".ebss",1,1,0
+DW$114	.dwtag  DW_TAG_variable, DW_AT_name("gUint16user_speed"), DW_AT_symbol_name("_gUint16user_speed")
+	.dwattr DW$114, DW_AT_location[DW_OP_addr _gUint16user_speed]
+	.dwattr DW$114, DW_AT_type(*DW$T$142)
+	.dwattr DW$114, DW_AT_external(0x01)
+	.global	_gUint16speedcnt
+_gUint16speedcnt:	.usect	".ebss",1,1,0
+DW$115	.dwtag  DW_TAG_variable, DW_AT_name("gUint16speedcnt"), DW_AT_symbol_name("_gUint16speedcnt")
+	.dwattr DW$115, DW_AT_location[DW_OP_addr _gUint16speedcnt]
 	.dwattr DW$115, DW_AT_type(*DW$T$142)
 	.dwattr DW$115, DW_AT_external(0x01)
-	.global	_utimetick
-_utimetick:	.usect	".ebss",2,1,1
-DW$116	.dwtag  DW_TAG_variable, DW_AT_name("utimetick"), DW_AT_symbol_name("_utimetick")
-	.dwattr DW$116, DW_AT_location[DW_OP_addr _utimetick]
-	.dwattr DW$116, DW_AT_type(*DW$T$162)
+	.global	_gDiagTurnOutAdjF
+_gDiagTurnOutAdjF:	.usect	".ebss",1,1,0
+DW$116	.dwtag  DW_TAG_variable, DW_AT_name("gDiagTurnOutAdjF"), DW_AT_symbol_name("_gDiagTurnOutAdjF")
+	.dwattr DW$116, DW_AT_location[DW_OP_addr _gDiagTurnOutAdjF]
+	.dwattr DW$116, DW_AT_type(*DW$T$142)
 	.dwattr DW$116, DW_AT_external(0x01)
+	.global	_gDiagTurnOutLEdgeAdjF
+_gDiagTurnOutLEdgeAdjF:	.usect	".ebss",1,1,0
+DW$117	.dwtag  DW_TAG_variable, DW_AT_name("gDiagTurnOutLEdgeAdjF"), DW_AT_symbol_name("_gDiagTurnOutLEdgeAdjF")
+	.dwattr DW$117, DW_AT_location[DW_OP_addr _gDiagTurnOutLEdgeAdjF]
+	.dwattr DW$117, DW_AT_type(*DW$T$142)
+	.dwattr DW$117, DW_AT_external(0x01)
 	.global	_fasttime
 _fasttime:	.usect	".ebss",2,1,1
-DW$117	.dwtag  DW_TAG_variable, DW_AT_name("fasttime"), DW_AT_symbol_name("_fasttime")
-	.dwattr DW$117, DW_AT_location[DW_OP_addr _fasttime]
-	.dwattr DW$117, DW_AT_type(*DW$T$173)
-	.dwattr DW$117, DW_AT_external(0x01)
-	.global	_q17Position
-_q17Position:	.usect	".ebss",2,1,1
-DW$118	.dwtag  DW_TAG_variable, DW_AT_name("q17Position"), DW_AT_symbol_name("_q17Position")
-	.dwattr DW$118, DW_AT_location[DW_OP_addr _q17Position]
-	.dwattr DW$118, DW_AT_type(*DW$T$155)
+DW$118	.dwtag  DW_TAG_variable, DW_AT_name("fasttime"), DW_AT_symbol_name("_fasttime")
+	.dwattr DW$118, DW_AT_location[DW_OP_addr _fasttime]
+	.dwattr DW$118, DW_AT_type(*DW$T$173)
 	.dwattr DW$118, DW_AT_external(0x01)
-	.global	_gRunTime
-_gRunTime:	.usect	".ebss",2,1,1
-DW$119	.dwtag  DW_TAG_variable, DW_AT_name("gRunTime"), DW_AT_symbol_name("_gRunTime")
-	.dwattr DW$119, DW_AT_location[DW_OP_addr _gRunTime]
-	.dwattr DW$119, DW_AT_type(*DW$T$176)
-	.dwattr DW$119, DW_AT_external(0x01)
-	.global	_q17RightPos
-_q17RightPos:	.usect	".ebss",2,1,1
-DW$120	.dwtag  DW_TAG_variable, DW_AT_name("q17RightPos"), DW_AT_symbol_name("_q17RightPos")
-	.dwattr DW$120, DW_AT_location[DW_OP_addr _q17RightPos]
-	.dwattr DW$120, DW_AT_type(*DW$T$155)
-	.dwattr DW$120, DW_AT_external(0x01)
-	.global	_seq2
-_seq2:	.usect	".ebss",2,1,1
-DW$121	.dwtag  DW_TAG_variable, DW_AT_name("seq2"), DW_AT_symbol_name("_seq2")
-	.dwattr DW$121, DW_AT_location[DW_OP_addr _seq2]
-	.dwattr DW$121, DW_AT_type(*DW$T$173)
-	.dwattr DW$121, DW_AT_external(0x01)
-	.global	_seq0
-_seq0:	.usect	".ebss",2,1,1
-DW$122	.dwtag  DW_TAG_variable, DW_AT_name("seq0"), DW_AT_symbol_name("_seq0")
-	.dwattr DW$122, DW_AT_location[DW_OP_addr _seq0]
-	.dwattr DW$122, DW_AT_type(*DW$T$173)
-	.dwattr DW$122, DW_AT_external(0x01)
-	.global	_gUserTimeCnt
-_gUserTimeCnt:	.usect	".ebss",2,1,1
-DW$123	.dwtag  DW_TAG_variable, DW_AT_name("gUserTimeCnt"), DW_AT_symbol_name("_gUserTimeCnt")
-	.dwattr DW$123, DW_AT_location[DW_OP_addr _gUserTimeCnt]
-	.dwattr DW$123, DW_AT_type(*DW$T$173)
-	.dwattr DW$123, DW_AT_external(0x01)
-	.global	_seq1
-_seq1:	.usect	".ebss",2,1,1
-DW$124	.dwtag  DW_TAG_variable, DW_AT_name("seq1"), DW_AT_symbol_name("_seq1")
-	.dwattr DW$124, DW_AT_location[DW_OP_addr _seq1]
-	.dwattr DW$124, DW_AT_type(*DW$T$173)
-	.dwattr DW$124, DW_AT_external(0x01)
-	.global	_q17PosPidOutTerm
-_q17PosPidOutTerm:	.usect	".ebss",2,1,1
-DW$125	.dwtag  DW_TAG_variable, DW_AT_name("q17PosPidOutTerm"), DW_AT_symbol_name("_q17PosPidOutTerm")
-	.dwattr DW$125, DW_AT_location[DW_OP_addr _q17PosPidOutTerm]
-	.dwattr DW$125, DW_AT_type(*DW$T$155)
-	.dwattr DW$125, DW_AT_external(0x01)
-	.global	_q17PosIntegralTerm
-_q17PosIntegralTerm:	.usect	".ebss",2,1,1
-DW$126	.dwtag  DW_TAG_variable, DW_AT_name("q17PosIntegralTerm"), DW_AT_symbol_name("_q17PosIntegralTerm")
-	.dwattr DW$126, DW_AT_location[DW_OP_addr _q17PosIntegralTerm]
-	.dwattr DW$126, DW_AT_type(*DW$T$155)
-	.dwattr DW$126, DW_AT_external(0x01)
-	.global	_ftimedata
-_ftimedata:	.usect	".ebss",2,1,1
-DW$127	.dwtag  DW_TAG_variable, DW_AT_name("ftimedata"), DW_AT_symbol_name("_ftimedata")
-	.dwattr DW$127, DW_AT_location[DW_OP_addr _ftimedata]
-	.dwattr DW$127, DW_AT_type(*DW$T$164)
-	.dwattr DW$127, DW_AT_external(0x01)
-	.global	_q30PosAdjAccelDiff
-_q30PosAdjAccelDiff:	.usect	".ebss",2,1,1
-DW$128	.dwtag  DW_TAG_variable, DW_AT_name("q30PosAdjAccelDiff"), DW_AT_symbol_name("_q30PosAdjAccelDiff")
-	.dwattr DW$128, DW_AT_location[DW_OP_addr _q30PosAdjAccelDiff]
-	.dwattr DW$128, DW_AT_type(*DW$T$160)
-	.dwattr DW$128, DW_AT_external(0x01)
-	.global	_FALLDIFF
-_FALLDIFF:	.usect	".ebss",2,1,1
-DW$129	.dwtag  DW_TAG_variable, DW_AT_name("FALLDIFF"), DW_AT_symbol_name("_FALLDIFF")
-	.dwattr DW$129, DW_AT_location[DW_OP_addr _FALLDIFF]
-	.dwattr DW$129, DW_AT_type(*DW$T$155)
-	.dwattr DW$129, DW_AT_external(0x01)
-	.global	_q17LeftPos
-_q17LeftPos:	.usect	".ebss",2,1,1
-DW$130	.dwtag  DW_TAG_variable, DW_AT_name("q17LeftPos"), DW_AT_symbol_name("_q17LeftPos")
-	.dwattr DW$130, DW_AT_location[DW_OP_addr _q17LeftPos]
-	.dwattr DW$130, DW_AT_type(*DW$T$155)
-	.dwattr DW$130, DW_AT_external(0x01)
 	.global	_wallcnt
 _wallcnt:	.usect	".ebss",2,1,1
-DW$131	.dwtag  DW_TAG_variable, DW_AT_name("wallcnt"), DW_AT_symbol_name("_wallcnt")
-	.dwattr DW$131, DW_AT_location[DW_OP_addr _wallcnt]
-	.dwattr DW$131, DW_AT_type(*DW$T$173)
-	.dwattr DW$131, DW_AT_external(0x01)
-	.global	_q17PosProportionTerm
-_q17PosProportionTerm:	.usect	".ebss",2,1,1
-DW$132	.dwtag  DW_TAG_variable, DW_AT_name("q17PosProportionTerm"), DW_AT_symbol_name("_q17PosProportionTerm")
-	.dwattr DW$132, DW_AT_location[DW_OP_addr _q17PosProportionTerm]
-	.dwattr DW$132, DW_AT_type(*DW$T$155)
-	.dwattr DW$132, DW_AT_external(0x01)
-	.global	_q17PositionErrSum
-_q17PositionErrSum:	.usect	".ebss",2,1,1
-DW$133	.dwtag  DW_TAG_variable, DW_AT_name("q17PositionErrSum"), DW_AT_symbol_name("_q17PositionErrSum")
-	.dwattr DW$133, DW_AT_location[DW_OP_addr _q17PositionErrSum]
-	.dwattr DW$133, DW_AT_type(*DW$T$155)
-	.dwattr DW$133, DW_AT_external(0x01)
+DW$119	.dwtag  DW_TAG_variable, DW_AT_name("wallcnt"), DW_AT_symbol_name("_wallcnt")
+	.dwattr DW$119, DW_AT_location[DW_OP_addr _wallcnt]
+	.dwattr DW$119, DW_AT_type(*DW$T$173)
+	.dwattr DW$119, DW_AT_external(0x01)
+	.global	_gRunTime
+_gRunTime:	.usect	".ebss",2,1,1
+DW$120	.dwtag  DW_TAG_variable, DW_AT_name("gRunTime"), DW_AT_symbol_name("_gRunTime")
+	.dwattr DW$120, DW_AT_location[DW_OP_addr _gRunTime]
+	.dwattr DW$120, DW_AT_type(*DW$T$176)
+	.dwattr DW$120, DW_AT_external(0x01)
+	.global	_utimetick
+_utimetick:	.usect	".ebss",2,1,1
+DW$121	.dwtag  DW_TAG_variable, DW_AT_name("utimetick"), DW_AT_symbol_name("_utimetick")
+	.dwattr DW$121, DW_AT_location[DW_OP_addr _utimetick]
+	.dwattr DW$121, DW_AT_type(*DW$T$162)
+	.dwattr DW$121, DW_AT_external(0x01)
+	.global	_q30PosAdjAccelDiff
+_q30PosAdjAccelDiff:	.usect	".ebss",2,1,1
+DW$122	.dwtag  DW_TAG_variable, DW_AT_name("q30PosAdjAccelDiff"), DW_AT_symbol_name("_q30PosAdjAccelDiff")
+	.dwattr DW$122, DW_AT_location[DW_OP_addr _q30PosAdjAccelDiff]
+	.dwattr DW$122, DW_AT_type(*DW$T$160)
+	.dwattr DW$122, DW_AT_external(0x01)
+	.global	_q30PosAdjDecelDiff
+_q30PosAdjDecelDiff:	.usect	".ebss",2,1,1
+DW$123	.dwtag  DW_TAG_variable, DW_AT_name("q30PosAdjDecelDiff"), DW_AT_symbol_name("_q30PosAdjDecelDiff")
+	.dwattr DW$123, DW_AT_location[DW_OP_addr _q30PosAdjDecelDiff]
+	.dwattr DW$123, DW_AT_type(*DW$T$160)
+	.dwattr DW$123, DW_AT_external(0x01)
+	.global	_gUserTimeCnt
+_gUserTimeCnt:	.usect	".ebss",2,1,1
+DW$124	.dwtag  DW_TAG_variable, DW_AT_name("gUserTimeCnt"), DW_AT_symbol_name("_gUserTimeCnt")
+	.dwattr DW$124, DW_AT_location[DW_OP_addr _gUserTimeCnt]
+	.dwattr DW$124, DW_AT_type(*DW$T$173)
+	.dwattr DW$124, DW_AT_external(0x01)
+	.global	_g_U32Chaetering
+_g_U32Chaetering:	.usect	".ebss",2,1,1
+DW$125	.dwtag  DW_TAG_variable, DW_AT_name("g_U32Chaetering"), DW_AT_symbol_name("_g_U32Chaetering")
+	.dwattr DW$125, DW_AT_location[DW_OP_addr _g_U32Chaetering]
+	.dwattr DW$125, DW_AT_type(*DW$T$173)
+	.dwattr DW$125, DW_AT_external(0x01)
+	.global	_q17Position
+_q17Position:	.usect	".ebss",2,1,1
+DW$126	.dwtag  DW_TAG_variable, DW_AT_name("q17Position"), DW_AT_symbol_name("_q17Position")
+	.dwattr DW$126, DW_AT_location[DW_OP_addr _q17Position]
+	.dwattr DW$126, DW_AT_type(*DW$T$155)
+	.dwattr DW$126, DW_AT_external(0x01)
+	.global	_q17PosIntegralTerm
+_q17PosIntegralTerm:	.usect	".ebss",2,1,1
+DW$127	.dwtag  DW_TAG_variable, DW_AT_name("q17PosIntegralTerm"), DW_AT_symbol_name("_q17PosIntegralTerm")
+	.dwattr DW$127, DW_AT_location[DW_OP_addr _q17PosIntegralTerm]
+	.dwattr DW$127, DW_AT_type(*DW$T$155)
+	.dwattr DW$127, DW_AT_external(0x01)
 	.global	_q17PosDerivativeTerm
 _q17PosDerivativeTerm:	.usect	".ebss",2,1,1
-DW$134	.dwtag  DW_TAG_variable, DW_AT_name("q17PosDerivativeTerm"), DW_AT_symbol_name("_q17PosDerivativeTerm")
-	.dwattr DW$134, DW_AT_location[DW_OP_addr _q17PosDerivativeTerm]
+DW$128	.dwtag  DW_TAG_variable, DW_AT_name("q17PosDerivativeTerm"), DW_AT_symbol_name("_q17PosDerivativeTerm")
+	.dwattr DW$128, DW_AT_location[DW_OP_addr _q17PosDerivativeTerm]
+	.dwattr DW$128, DW_AT_type(*DW$T$155)
+	.dwattr DW$128, DW_AT_external(0x01)
+	.global	_ftimedata
+_ftimedata:	.usect	".ebss",2,1,1
+DW$129	.dwtag  DW_TAG_variable, DW_AT_name("ftimedata"), DW_AT_symbol_name("_ftimedata")
+	.dwattr DW$129, DW_AT_location[DW_OP_addr _ftimedata]
+	.dwattr DW$129, DW_AT_type(*DW$T$164)
+	.dwattr DW$129, DW_AT_external(0x01)
+	.global	_q17PosPidOutTerm
+_q17PosPidOutTerm:	.usect	".ebss",2,1,1
+DW$130	.dwtag  DW_TAG_variable, DW_AT_name("q17PosPidOutTerm"), DW_AT_symbol_name("_q17PosPidOutTerm")
+	.dwattr DW$130, DW_AT_location[DW_OP_addr _q17PosPidOutTerm]
+	.dwattr DW$130, DW_AT_type(*DW$T$155)
+	.dwattr DW$130, DW_AT_external(0x01)
+	.global	_q17LeftPos
+_q17LeftPos:	.usect	".ebss",2,1,1
+DW$131	.dwtag  DW_TAG_variable, DW_AT_name("q17LeftPos"), DW_AT_symbol_name("_q17LeftPos")
+	.dwattr DW$131, DW_AT_location[DW_OP_addr _q17LeftPos]
+	.dwattr DW$131, DW_AT_type(*DW$T$155)
+	.dwattr DW$131, DW_AT_external(0x01)
+	.global	_q17RightPos
+_q17RightPos:	.usect	".ebss",2,1,1
+DW$132	.dwtag  DW_TAG_variable, DW_AT_name("q17RightPos"), DW_AT_symbol_name("_q17RightPos")
+	.dwattr DW$132, DW_AT_location[DW_OP_addr _q17RightPos]
+	.dwattr DW$132, DW_AT_type(*DW$T$155)
+	.dwattr DW$132, DW_AT_external(0x01)
+	.global	_q17PosProportionTerm
+_q17PosProportionTerm:	.usect	".ebss",2,1,1
+DW$133	.dwtag  DW_TAG_variable, DW_AT_name("q17PosProportionTerm"), DW_AT_symbol_name("_q17PosProportionTerm")
+	.dwattr DW$133, DW_AT_location[DW_OP_addr _q17PosProportionTerm]
+	.dwattr DW$133, DW_AT_type(*DW$T$155)
+	.dwattr DW$133, DW_AT_external(0x01)
+	.global	_q17PositionErrSum
+_q17PositionErrSum:	.usect	".ebss",2,1,1
+DW$134	.dwtag  DW_TAG_variable, DW_AT_name("q17PositionErrSum"), DW_AT_symbol_name("_q17PositionErrSum")
+	.dwattr DW$134, DW_AT_location[DW_OP_addr _q17PositionErrSum]
 	.dwattr DW$134, DW_AT_type(*DW$T$155)
 	.dwattr DW$134, DW_AT_external(0x01)
-	.global	_pRDS
-_pRDS:	.usect	".ebss",2,1,1
-DW$135	.dwtag  DW_TAG_variable, DW_AT_name("pRDS"), DW_AT_symbol_name("_pRDS")
-	.dwattr DW$135, DW_AT_location[DW_OP_addr _pRDS]
-	.dwattr DW$135, DW_AT_type(*DW$T$199)
-	.dwattr DW$135, DW_AT_external(0x01)
-	.global	_pLDS
-_pLDS:	.usect	".ebss",2,1,1
-DW$136	.dwtag  DW_TAG_variable, DW_AT_name("pLDS"), DW_AT_symbol_name("_pLDS")
-	.dwattr DW$136, DW_AT_location[DW_OP_addr _pLDS]
-	.dwattr DW$136, DW_AT_type(*DW$T$199)
-	.dwattr DW$136, DW_AT_external(0x01)
-	.global	_pRFS
-_pRFS:	.usect	".ebss",2,1,1
-DW$137	.dwtag  DW_TAG_variable, DW_AT_name("pRFS"), DW_AT_symbol_name("_pRFS")
-	.dwattr DW$137, DW_AT_location[DW_OP_addr _pRFS]
-	.dwattr DW$137, DW_AT_type(*DW$T$199)
-	.dwattr DW$137, DW_AT_external(0x01)
 	.global	_pLFS
 _pLFS:	.usect	".ebss",2,1,1
-DW$138	.dwtag  DW_TAG_variable, DW_AT_name("pLFS"), DW_AT_symbol_name("_pLFS")
-	.dwattr DW$138, DW_AT_location[DW_OP_addr _pLFS]
-	.dwattr DW$138, DW_AT_type(*DW$T$199)
-	.dwattr DW$138, DW_AT_external(0x01)
+DW$135	.dwtag  DW_TAG_variable, DW_AT_name("pLFS"), DW_AT_symbol_name("_pLFS")
+	.dwattr DW$135, DW_AT_location[DW_OP_addr _pLFS]
+	.dwattr DW$135, DW_AT_type(*DW$T$199)
+	.dwattr DW$135, DW_AT_external(0x01)
+	.global	_pRDS
+_pRDS:	.usect	".ebss",2,1,1
+DW$136	.dwtag  DW_TAG_variable, DW_AT_name("pRDS"), DW_AT_symbol_name("_pRDS")
+	.dwattr DW$136, DW_AT_location[DW_OP_addr _pRDS]
+	.dwattr DW$136, DW_AT_type(*DW$T$199)
+	.dwattr DW$136, DW_AT_external(0x01)
 	.global	_M_CAL_POS_KP_DIFF
 _M_CAL_POS_KP_DIFF:	.usect	".ebss",2,1,1
-DW$139	.dwtag  DW_TAG_variable, DW_AT_name("M_CAL_POS_KP_DIFF"), DW_AT_symbol_name("_M_CAL_POS_KP_DIFF")
-	.dwattr DW$139, DW_AT_location[DW_OP_addr _M_CAL_POS_KP_DIFF]
-	.dwattr DW$139, DW_AT_type(*DW$T$159)
+DW$137	.dwtag  DW_TAG_variable, DW_AT_name("M_CAL_POS_KP_DIFF"), DW_AT_symbol_name("_M_CAL_POS_KP_DIFF")
+	.dwattr DW$137, DW_AT_location[DW_OP_addr _M_CAL_POS_KP_DIFF]
+	.dwattr DW$137, DW_AT_type(*DW$T$159)
+	.dwattr DW$137, DW_AT_external(0x01)
+	.global	_pRFS
+_pRFS:	.usect	".ebss",2,1,1
+DW$138	.dwtag  DW_TAG_variable, DW_AT_name("pRFS"), DW_AT_symbol_name("_pRFS")
+	.dwattr DW$138, DW_AT_location[DW_OP_addr _pRFS]
+	.dwattr DW$138, DW_AT_type(*DW$T$199)
+	.dwattr DW$138, DW_AT_external(0x01)
+	.global	_pLSS
+_pLSS:	.usect	".ebss",2,1,1
+DW$139	.dwtag  DW_TAG_variable, DW_AT_name("pLSS"), DW_AT_symbol_name("_pLSS")
+	.dwattr DW$139, DW_AT_location[DW_OP_addr _pLSS]
+	.dwattr DW$139, DW_AT_type(*DW$T$199)
 	.dwattr DW$139, DW_AT_external(0x01)
 	.global	_M_CAL_POS_KD_DIFF
 _M_CAL_POS_KD_DIFF:	.usect	".ebss",2,1,1
@@ -764,70 +762,70 @@ DW$140	.dwtag  DW_TAG_variable, DW_AT_name("M_CAL_POS_KD_DIFF"), DW_AT_symbol_na
 	.dwattr DW$140, DW_AT_location[DW_OP_addr _M_CAL_POS_KD_DIFF]
 	.dwattr DW$140, DW_AT_type(*DW$T$159)
 	.dwattr DW$140, DW_AT_external(0x01)
-	.global	_pRSS
-_pRSS:	.usect	".ebss",2,1,1
-DW$141	.dwtag  DW_TAG_variable, DW_AT_name("pRSS"), DW_AT_symbol_name("_pRSS")
-	.dwattr DW$141, DW_AT_location[DW_OP_addr _pRSS]
+	.global	_pLDS
+_pLDS:	.usect	".ebss",2,1,1
+DW$141	.dwtag  DW_TAG_variable, DW_AT_name("pLDS"), DW_AT_symbol_name("_pLDS")
+	.dwattr DW$141, DW_AT_location[DW_OP_addr _pLDS]
 	.dwattr DW$141, DW_AT_type(*DW$T$199)
 	.dwattr DW$141, DW_AT_external(0x01)
-	.global	_q26PosAdjDecelRef
-_q26PosAdjDecelRef:	.usect	".ebss",2,1,1
-DW$142	.dwtag  DW_TAG_variable, DW_AT_name("q26PosAdjDecelRef"), DW_AT_symbol_name("_q26PosAdjDecelRef")
-	.dwattr DW$142, DW_AT_location[DW_OP_addr _q26PosAdjDecelRef]
-	.dwattr DW$142, DW_AT_type(*DW$T$159)
-	.dwattr DW$142, DW_AT_external(0x01)
 	.global	_pidtest
 _pidtest:	.usect	".ebss",2,1,1
-DW$143	.dwtag  DW_TAG_variable, DW_AT_name("pidtest"), DW_AT_symbol_name("_pidtest")
-	.dwattr DW$143, DW_AT_location[DW_OP_addr _pidtest]
-	.dwattr DW$143, DW_AT_type(*DW$T$159)
-	.dwattr DW$143, DW_AT_external(0x01)
-	.global	_q30PosAdjDecelDiff
-_q30PosAdjDecelDiff:	.usect	".ebss",2,1,1
-DW$144	.dwtag  DW_TAG_variable, DW_AT_name("q30PosAdjDecelDiff"), DW_AT_symbol_name("_q30PosAdjDecelDiff")
-	.dwattr DW$144, DW_AT_location[DW_OP_addr _q30PosAdjDecelDiff]
-	.dwattr DW$144, DW_AT_type(*DW$T$160)
-	.dwattr DW$144, DW_AT_external(0x01)
-	.global	_q26PosAdjAccelRef
-_q26PosAdjAccelRef:	.usect	".ebss",2,1,1
-DW$145	.dwtag  DW_TAG_variable, DW_AT_name("q26PosAdjAccelRef"), DW_AT_symbol_name("_q26PosAdjAccelRef")
-	.dwattr DW$145, DW_AT_location[DW_OP_addr _q26PosAdjAccelRef]
-	.dwattr DW$145, DW_AT_type(*DW$T$159)
-	.dwattr DW$145, DW_AT_external(0x01)
-	.global	_M_POS_KD
-_M_POS_KD:	.usect	".ebss",2,1,1
-DW$146	.dwtag  DW_TAG_variable, DW_AT_name("M_POS_KD"), DW_AT_symbol_name("_M_POS_KD")
-	.dwattr DW$146, DW_AT_location[DW_OP_addr _M_POS_KD]
-	.dwattr DW$146, DW_AT_type(*DW$T$159)
-	.dwattr DW$146, DW_AT_external(0x01)
+DW$142	.dwtag  DW_TAG_variable, DW_AT_name("pidtest"), DW_AT_symbol_name("_pidtest")
+	.dwattr DW$142, DW_AT_location[DW_OP_addr _pidtest]
+	.dwattr DW$142, DW_AT_type(*DW$T$159)
+	.dwattr DW$142, DW_AT_external(0x01)
 	.global	_M_POS_KP
 _M_POS_KP:	.usect	".ebss",2,1,1
-DW$147	.dwtag  DW_TAG_variable, DW_AT_name("M_POS_KP"), DW_AT_symbol_name("_M_POS_KP")
-	.dwattr DW$147, DW_AT_location[DW_OP_addr _M_POS_KP]
-	.dwattr DW$147, DW_AT_type(*DW$T$159)
-	.dwattr DW$147, DW_AT_external(0x01)
-	.global	_pLSS
-_pLSS:	.usect	".ebss",2,1,1
-DW$148	.dwtag  DW_TAG_variable, DW_AT_name("pLSS"), DW_AT_symbol_name("_pLSS")
-	.dwattr DW$148, DW_AT_location[DW_OP_addr _pLSS]
-	.dwattr DW$148, DW_AT_type(*DW$T$199)
-	.dwattr DW$148, DW_AT_external(0x01)
+DW$143	.dwtag  DW_TAG_variable, DW_AT_name("M_POS_KP"), DW_AT_symbol_name("_M_POS_KP")
+	.dwattr DW$143, DW_AT_location[DW_OP_addr _M_POS_KP]
+	.dwattr DW$143, DW_AT_type(*DW$T$159)
+	.dwattr DW$143, DW_AT_external(0x01)
+	.global	_q26PosAdjAccelRef
+_q26PosAdjAccelRef:	.usect	".ebss",2,1,1
+DW$144	.dwtag  DW_TAG_variable, DW_AT_name("q26PosAdjAccelRef"), DW_AT_symbol_name("_q26PosAdjAccelRef")
+	.dwattr DW$144, DW_AT_location[DW_OP_addr _q26PosAdjAccelRef]
+	.dwattr DW$144, DW_AT_type(*DW$T$159)
+	.dwattr DW$144, DW_AT_external(0x01)
+	.global	_q26PosAdjDecelRef
+_q26PosAdjDecelRef:	.usect	".ebss",2,1,1
+DW$145	.dwtag  DW_TAG_variable, DW_AT_name("q26PosAdjDecelRef"), DW_AT_symbol_name("_q26PosAdjDecelRef")
+	.dwattr DW$145, DW_AT_location[DW_OP_addr _q26PosAdjDecelRef]
+	.dwattr DW$145, DW_AT_type(*DW$T$159)
+	.dwattr DW$145, DW_AT_external(0x01)
+	.global	_FALLDIFF
+_FALLDIFF:	.usect	".ebss",2,1,1
+DW$146	.dwtag  DW_TAG_variable, DW_AT_name("FALLDIFF"), DW_AT_symbol_name("_FALLDIFF")
+	.dwattr DW$146, DW_AT_location[DW_OP_addr _FALLDIFF]
+	.dwattr DW$146, DW_AT_type(*DW$T$155)
+	.dwattr DW$146, DW_AT_external(0x01)
 	.global	_M_POS_KI
 _M_POS_KI:	.usect	".ebss",2,1,1
-DW$149	.dwtag  DW_TAG_variable, DW_AT_name("M_POS_KI"), DW_AT_symbol_name("_M_POS_KI")
-	.dwattr DW$149, DW_AT_location[DW_OP_addr _M_POS_KI]
+DW$147	.dwtag  DW_TAG_variable, DW_AT_name("M_POS_KI"), DW_AT_symbol_name("_M_POS_KI")
+	.dwattr DW$147, DW_AT_location[DW_OP_addr _M_POS_KI]
+	.dwattr DW$147, DW_AT_type(*DW$T$159)
+	.dwattr DW$147, DW_AT_external(0x01)
+	.global	_pRSS
+_pRSS:	.usect	".ebss",2,1,1
+DW$148	.dwtag  DW_TAG_variable, DW_AT_name("pRSS"), DW_AT_symbol_name("_pRSS")
+	.dwattr DW$148, DW_AT_location[DW_OP_addr _pRSS]
+	.dwattr DW$148, DW_AT_type(*DW$T$199)
+	.dwattr DW$148, DW_AT_external(0x01)
+	.global	_M_POS_KD
+_M_POS_KD:	.usect	".ebss",2,1,1
+DW$149	.dwtag  DW_TAG_variable, DW_AT_name("M_POS_KD"), DW_AT_symbol_name("_M_POS_KD")
+	.dwattr DW$149, DW_AT_location[DW_OP_addr _M_POS_KD]
 	.dwattr DW$149, DW_AT_type(*DW$T$159)
 	.dwattr DW$149, DW_AT_external(0x01)
-	.global	_gMoveTable
-_gMoveTable:	.usect	".ebss",4,1,0
-DW$150	.dwtag  DW_TAG_variable, DW_AT_name("gMoveTable"), DW_AT_symbol_name("_gMoveTable")
-	.dwattr DW$150, DW_AT_location[DW_OP_addr _gMoveTable]
-	.dwattr DW$150, DW_AT_type(*DW$T$145)
-	.dwattr DW$150, DW_AT_external(0x01)
 	.global	_gHeadTable
 _gHeadTable:	.usect	".ebss",4,1,0
-DW$151	.dwtag  DW_TAG_variable, DW_AT_name("gHeadTable"), DW_AT_symbol_name("_gHeadTable")
-	.dwattr DW$151, DW_AT_location[DW_OP_addr _gHeadTable]
+DW$150	.dwtag  DW_TAG_variable, DW_AT_name("gHeadTable"), DW_AT_symbol_name("_gHeadTable")
+	.dwattr DW$150, DW_AT_location[DW_OP_addr _gHeadTable]
+	.dwattr DW$150, DW_AT_type(*DW$T$145)
+	.dwattr DW$150, DW_AT_external(0x01)
+	.global	_gMoveTable
+_gMoveTable:	.usect	".ebss",4,1,0
+DW$151	.dwtag  DW_TAG_variable, DW_AT_name("gMoveTable"), DW_AT_symbol_name("_gMoveTable")
+	.dwattr DW$151, DW_AT_location[DW_OP_addr _gMoveTable]
 	.dwattr DW$151, DW_AT_type(*DW$T$145)
 	.dwattr DW$151, DW_AT_external(0x01)
 DW$152	.dwtag  DW_TAG_variable, DW_AT_name("CpuTimer2Regs"), DW_AT_symbol_name("_CpuTimer2Regs")
@@ -846,22 +844,22 @@ DW$154	.dwtag  DW_TAG_variable, DW_AT_name("RSideEdge"), DW_AT_symbol_name("_RSi
 	.dwattr DW$154, DW_AT_location[DW_OP_addr _RSideEdge]
 	.dwattr DW$154, DW_AT_type(*DW$T$188)
 	.dwattr DW$154, DW_AT_external(0x01)
-	.global	_RDiagEdge
-_RDiagEdge:	.usect	".ebss",10,1,1
-DW$155	.dwtag  DW_TAG_variable, DW_AT_name("RDiagEdge"), DW_AT_symbol_name("_RDiagEdge")
-	.dwattr DW$155, DW_AT_location[DW_OP_addr _RDiagEdge]
-	.dwattr DW$155, DW_AT_type(*DW$T$188)
-	.dwattr DW$155, DW_AT_external(0x01)
-	.global	_LSideEdge
-_LSideEdge:	.usect	".ebss",10,1,1
-DW$156	.dwtag  DW_TAG_variable, DW_AT_name("LSideEdge"), DW_AT_symbol_name("_LSideEdge")
-	.dwattr DW$156, DW_AT_location[DW_OP_addr _LSideEdge]
-	.dwattr DW$156, DW_AT_type(*DW$T$188)
-	.dwattr DW$156, DW_AT_external(0x01)
 	.global	_LDiagEdge
 _LDiagEdge:	.usect	".ebss",10,1,1
-DW$157	.dwtag  DW_TAG_variable, DW_AT_name("LDiagEdge"), DW_AT_symbol_name("_LDiagEdge")
-	.dwattr DW$157, DW_AT_location[DW_OP_addr _LDiagEdge]
+DW$155	.dwtag  DW_TAG_variable, DW_AT_name("LDiagEdge"), DW_AT_symbol_name("_LDiagEdge")
+	.dwattr DW$155, DW_AT_location[DW_OP_addr _LDiagEdge]
+	.dwattr DW$155, DW_AT_type(*DW$T$188)
+	.dwattr DW$155, DW_AT_external(0x01)
+	.global	_RDiagEdge
+_RDiagEdge:	.usect	".ebss",10,1,1
+DW$156	.dwtag  DW_TAG_variable, DW_AT_name("RDiagEdge"), DW_AT_symbol_name("_RDiagEdge")
+	.dwattr DW$156, DW_AT_location[DW_OP_addr _RDiagEdge]
+	.dwattr DW$156, DW_AT_type(*DW$T$188)
+	.dwattr DW$156, DW_AT_external(0x01)
+	.global	_LSideEdge
+_LSideEdge:	.usect	".ebss",10,1,1
+DW$157	.dwtag  DW_TAG_variable, DW_AT_name("LSideEdge"), DW_AT_symbol_name("_LSideEdge")
+	.dwattr DW$157, DW_AT_location[DW_OP_addr _LSideEdge]
 	.dwattr DW$157, DW_AT_type(*DW$T$188)
 	.dwattr DW$157, DW_AT_external(0x01)
 	.global	_GyroVar
@@ -874,11 +872,11 @@ DW$159	.dwtag  DW_TAG_variable, DW_AT_name("GpioDataRegs"), DW_AT_symbol_name("_
 	.dwattr DW$159, DW_AT_type(*DW$T$181)
 	.dwattr DW$159, DW_AT_declaration(0x01)
 	.dwattr DW$159, DW_AT_external(0x01)
-DW$160	.dwtag  DW_TAG_variable, DW_AT_name("LeftPwmRegs"), DW_AT_symbol_name("_LeftPwmRegs")
+DW$160	.dwtag  DW_TAG_variable, DW_AT_name("RightPwmRegs"), DW_AT_symbol_name("_RightPwmRegs")
 	.dwattr DW$160, DW_AT_type(*DW$T$128)
 	.dwattr DW$160, DW_AT_declaration(0x01)
 	.dwattr DW$160, DW_AT_external(0x01)
-DW$161	.dwtag  DW_TAG_variable, DW_AT_name("RightPwmRegs"), DW_AT_symbol_name("_RightPwmRegs")
+DW$161	.dwtag  DW_TAG_variable, DW_AT_name("LeftPwmRegs"), DW_AT_symbol_name("_LeftPwmRegs")
 	.dwattr DW$161, DW_AT_type(*DW$T$128)
 	.dwattr DW$161, DW_AT_declaration(0x01)
 	.dwattr DW$161, DW_AT_external(0x01)
@@ -900,16 +898,16 @@ DW$164	.dwtag  DW_TAG_variable, DW_AT_name("q21LFSSectionDiff"), DW_AT_symbol_na
 	.dwattr DW$164, DW_AT_location[DW_OP_addr _q21LFSSectionDiff]
 	.dwattr DW$164, DW_AT_type(*DW$T$166)
 	.dwattr DW$164, DW_AT_external(0x01)
-	.global	_q17RFSSection
-_q17RFSSection:	.usect	".ebss",52,1,1
-DW$165	.dwtag  DW_TAG_variable, DW_AT_name("q17RFSSection"), DW_AT_symbol_name("_q17RFSSection")
-	.dwattr DW$165, DW_AT_location[DW_OP_addr _q17RFSSection]
-	.dwattr DW$165, DW_AT_type(*DW$T$158)
-	.dwattr DW$165, DW_AT_external(0x01)
 	.global	_q17LFSSection
 _q17LFSSection:	.usect	".ebss",52,1,1
-DW$166	.dwtag  DW_TAG_variable, DW_AT_name("q17LFSSection"), DW_AT_symbol_name("_q17LFSSection")
-	.dwattr DW$166, DW_AT_location[DW_OP_addr _q17LFSSection]
+DW$165	.dwtag  DW_TAG_variable, DW_AT_name("q17LFSSection"), DW_AT_symbol_name("_q17LFSSection")
+	.dwattr DW$165, DW_AT_location[DW_OP_addr _q17LFSSection]
+	.dwattr DW$165, DW_AT_type(*DW$T$158)
+	.dwattr DW$165, DW_AT_external(0x01)
+	.global	_q17RFSSection
+_q17RFSSection:	.usect	".ebss",52,1,1
+DW$166	.dwtag  DW_TAG_variable, DW_AT_name("q17RFSSection"), DW_AT_symbol_name("_q17RFSSection")
+	.dwattr DW$166, DW_AT_location[DW_OP_addr _q17RFSSection]
 	.dwattr DW$166, DW_AT_type(*DW$T$158)
 	.dwattr DW$166, DW_AT_external(0x01)
 	.global	_R_Motor
@@ -924,11 +922,11 @@ DW$168	.dwtag  DW_TAG_variable, DW_AT_name("L_Motor"), DW_AT_symbol_name("_L_Mot
 	.dwattr DW$168, DW_AT_location[DW_OP_addr _L_Motor]
 	.dwattr DW$168, DW_AT_type(*DW$T$121)
 	.dwattr DW$168, DW_AT_external(0x01)
-DW$169	.dwtag  DW_TAG_variable, DW_AT_name("LeftQepRegs"), DW_AT_symbol_name("_LeftQepRegs")
+DW$169	.dwtag  DW_TAG_variable, DW_AT_name("RightQepRegs"), DW_AT_symbol_name("_RightQepRegs")
 	.dwattr DW$169, DW_AT_type(*DW$T$116)
 	.dwattr DW$169, DW_AT_declaration(0x01)
 	.dwattr DW$169, DW_AT_external(0x01)
-DW$170	.dwtag  DW_TAG_variable, DW_AT_name("RightQepRegs"), DW_AT_symbol_name("_RightQepRegs")
+DW$170	.dwtag  DW_TAG_variable, DW_AT_name("LeftQepRegs"), DW_AT_symbol_name("_LeftQepRegs")
 	.dwattr DW$170, DW_AT_type(*DW$T$116)
 	.dwattr DW$170, DW_AT_declaration(0x01)
 	.dwattr DW$170, DW_AT_external(0x01)
@@ -944,10 +942,10 @@ DW$172	.dwtag  DW_TAG_variable, DW_AT_name("g_sen"), DW_AT_symbol_name("_g_sen")
 	.dwattr DW$172, DW_AT_location[DW_OP_addr _g_sen]
 	.dwattr DW$172, DW_AT_type(*DW$T$198)
 	.dwattr DW$172, DW_AT_external(0x01)
-	.global	_gMazeMapBackUp0
-_gMazeMapBackUp0:	.usect	".ebss",256,1,0
-DW$173	.dwtag  DW_TAG_variable, DW_AT_name("gMazeMapBackUp0"), DW_AT_symbol_name("_gMazeMapBackUp0")
-	.dwattr DW$173, DW_AT_location[DW_OP_addr _gMazeMapBackUp0]
+	.global	_gMazeMap
+_gMazeMap:	.usect	".ebss",256,1,0
+DW$173	.dwtag  DW_TAG_variable, DW_AT_name("gMazeMap"), DW_AT_symbol_name("_gMazeMap")
+	.dwattr DW$173, DW_AT_location[DW_OP_addr _gMazeMap]
 	.dwattr DW$173, DW_AT_type(*DW$T$144)
 	.dwattr DW$173, DW_AT_external(0x01)
 	.global	_gMazeMapBackUp1
@@ -962,28 +960,28 @@ DW$175	.dwtag  DW_TAG_variable, DW_AT_name("Que"), DW_AT_symbol_name("_Que")
 	.dwattr DW$175, DW_AT_location[DW_OP_addr _Que]
 	.dwattr DW$175, DW_AT_type(*DW$T$144)
 	.dwattr DW$175, DW_AT_external(0x01)
-	.global	_gMazeMapBackUp2
-_gMazeMapBackUp2:	.usect	".ebss",256,1,0
-DW$176	.dwtag  DW_TAG_variable, DW_AT_name("gMazeMapBackUp2"), DW_AT_symbol_name("_gMazeMapBackUp2")
-	.dwattr DW$176, DW_AT_location[DW_OP_addr _gMazeMapBackUp2]
-	.dwattr DW$176, DW_AT_type(*DW$T$144)
-	.dwattr DW$176, DW_AT_external(0x01)
-	.global	_gMazeMap
-_gMazeMap:	.usect	".ebss",256,1,0
-DW$177	.dwtag  DW_TAG_variable, DW_AT_name("gMazeMap"), DW_AT_symbol_name("_gMazeMap")
-	.dwattr DW$177, DW_AT_location[DW_OP_addr _gMazeMap]
-	.dwattr DW$177, DW_AT_type(*DW$T$144)
-	.dwattr DW$177, DW_AT_external(0x01)
-	.global	_gMazeMapBackUp
-_gMazeMapBackUp:	.usect	".ebss",256,1,0
-DW$178	.dwtag  DW_TAG_variable, DW_AT_name("gMazeMapBackUp"), DW_AT_symbol_name("_gMazeMapBackUp")
-	.dwattr DW$178, DW_AT_location[DW_OP_addr _gMazeMapBackUp]
-	.dwattr DW$178, DW_AT_type(*DW$T$144)
-	.dwattr DW$178, DW_AT_external(0x01)
 	.global	_gMapflag
 _gMapflag:	.usect	".ebss",256,1,0
-DW$179	.dwtag  DW_TAG_variable, DW_AT_name("gMapflag"), DW_AT_symbol_name("_gMapflag")
-	.dwattr DW$179, DW_AT_location[DW_OP_addr _gMapflag]
+DW$176	.dwtag  DW_TAG_variable, DW_AT_name("gMapflag"), DW_AT_symbol_name("_gMapflag")
+	.dwattr DW$176, DW_AT_location[DW_OP_addr _gMapflag]
+	.dwattr DW$176, DW_AT_type(*DW$T$144)
+	.dwattr DW$176, DW_AT_external(0x01)
+	.global	_gMazeMapBackUp2
+_gMazeMapBackUp2:	.usect	".ebss",256,1,0
+DW$177	.dwtag  DW_TAG_variable, DW_AT_name("gMazeMapBackUp2"), DW_AT_symbol_name("_gMazeMapBackUp2")
+	.dwattr DW$177, DW_AT_location[DW_OP_addr _gMazeMapBackUp2]
+	.dwattr DW$177, DW_AT_type(*DW$T$144)
+	.dwattr DW$177, DW_AT_external(0x01)
+	.global	_gMazeMapBackUp0
+_gMazeMapBackUp0:	.usect	".ebss",256,1,0
+DW$178	.dwtag  DW_TAG_variable, DW_AT_name("gMazeMapBackUp0"), DW_AT_symbol_name("_gMazeMapBackUp0")
+	.dwattr DW$178, DW_AT_location[DW_OP_addr _gMazeMapBackUp0]
+	.dwattr DW$178, DW_AT_type(*DW$T$144)
+	.dwattr DW$178, DW_AT_external(0x01)
+	.global	_gMazeMapBackUp
+_gMazeMapBackUp:	.usect	".ebss",256,1,0
+DW$179	.dwtag  DW_TAG_variable, DW_AT_name("gMazeMapBackUp"), DW_AT_symbol_name("_gMazeMapBackUp")
+	.dwattr DW$179, DW_AT_location[DW_OP_addr _gMazeMapBackUp]
 	.dwattr DW$179, DW_AT_type(*DW$T$144)
 	.dwattr DW$179, DW_AT_external(0x01)
 	.global	_KnowBlockPath
@@ -993,37 +991,37 @@ DW$180	.dwtag  DW_TAG_variable, DW_AT_name("KnowBlockPath"), DW_AT_symbol_name("
 	.dwattr DW$180, DW_AT_type(*DW$T$203)
 	.dwattr DW$180, DW_AT_external(0x01)
 	.global	_gtesttick
-_gtesttick:	.usect	".ebss",600,1,0
+_gtesttick:	.usect	".ebss",610,1,0
 DW$181	.dwtag  DW_TAG_variable, DW_AT_name("gtesttick"), DW_AT_symbol_name("_gtesttick")
 	.dwattr DW$181, DW_AT_location[DW_OP_addr _gtesttick]
 	.dwattr DW$181, DW_AT_type(*DW$T$143)
 	.dwattr DW$181, DW_AT_external(0x01)
 	.global	_q17testfposition
-_q17testfposition:	.usect	".ebss",1200,1,1
+_q17testfposition:	.usect	".ebss",1220,1,1
 DW$182	.dwtag  DW_TAG_variable, DW_AT_name("q17testfposition"), DW_AT_symbol_name("_q17testfposition")
 	.dwattr DW$182, DW_AT_location[DW_OP_addr _q17testfposition]
 	.dwattr DW$182, DW_AT_type(*DW$T$157)
 	.dwattr DW$182, DW_AT_external(0x01)
-	.global	_q17testfdiff
-_q17testfdiff:	.usect	".ebss",1200,1,1
-DW$183	.dwtag  DW_TAG_variable, DW_AT_name("q17testfdiff"), DW_AT_symbol_name("_q17testfdiff")
-	.dwattr DW$183, DW_AT_location[DW_OP_addr _q17testfdiff]
+	.global	_q17testdiff
+_q17testdiff:	.usect	".ebss",1220,1,1
+DW$183	.dwtag  DW_TAG_variable, DW_AT_name("q17testdiff"), DW_AT_symbol_name("_q17testdiff")
+	.dwattr DW$183, DW_AT_location[DW_OP_addr _q17testdiff]
 	.dwattr DW$183, DW_AT_type(*DW$T$157)
 	.dwattr DW$183, DW_AT_external(0x01)
-	.global	_q17testdiff
-_q17testdiff:	.usect	".ebss",1200,1,1
-DW$184	.dwtag  DW_TAG_variable, DW_AT_name("q17testdiff"), DW_AT_symbol_name("_q17testdiff")
-	.dwattr DW$184, DW_AT_location[DW_OP_addr _q17testdiff]
+	.global	_q17testposition
+_q17testposition:	.usect	".ebss",1220,1,1
+DW$184	.dwtag  DW_TAG_variable, DW_AT_name("q17testposition"), DW_AT_symbol_name("_q17testposition")
+	.dwattr DW$184, DW_AT_location[DW_OP_addr _q17testposition]
 	.dwattr DW$184, DW_AT_type(*DW$T$157)
 	.dwattr DW$184, DW_AT_external(0x01)
-	.global	_q17testposition
-_q17testposition:	.usect	".ebss",1200,1,1
-DW$185	.dwtag  DW_TAG_variable, DW_AT_name("q17testposition"), DW_AT_symbol_name("_q17testposition")
-	.dwattr DW$185, DW_AT_location[DW_OP_addr _q17testposition]
+	.global	_q17testfdiff
+_q17testfdiff:	.usect	".ebss",1220,1,1
+DW$185	.dwtag  DW_TAG_variable, DW_AT_name("q17testfdiff"), DW_AT_symbol_name("_q17testfdiff")
+	.dwattr DW$185, DW_AT_location[DW_OP_addr _q17testfdiff]
 	.dwattr DW$185, DW_AT_type(*DW$T$157)
 	.dwattr DW$185, DW_AT_external(0x01)
-;	C:\algo\Compiler\bin\opt2000.exe C:\Users\kimsy\AppData\Local\Temp\TI52410 C:\Users\kimsy\AppData\Local\Temp\TI5244 
-;	C:\algo\Compiler\bin\ac2000.exe --keep_unneeded_types -D_INLINE -DLARGE_MODEL -IC:\algo\include --version=28 --keep_unneeded_types --mem_model:code=flat --mem_model:data=large -m --i_output_file C:\Users\kimsy\AppData\Local\Temp\TI5242 --template_info_file C:\Users\kimsy\AppData\Local\Temp\TI5246 --object_file main.obj --embed_opts 10 --call_assumptions=0 --mem_model:code=flat --mem_model:data=large --opt_for_speed --opt_level=3 --optimizer_comments --optimizer_interlist --program_level_compile 
+;	C:\algo\Compiler\bin\opt2000.exe C:\Users\KSY\AppData\Local\Temp\TI52810 C:\Users\KSY\AppData\Local\Temp\TI5284 
+;	C:\algo\Compiler\bin\ac2000.exe --keep_unneeded_types -D_INLINE -DLARGE_MODEL -IC:\algo\include --version=28 --keep_unneeded_types --mem_model:code=flat --mem_model:data=large -m --i_output_file C:\Users\KSY\AppData\Local\Temp\TI5282 --template_info_file C:\Users\KSY\AppData\Local\Temp\TI5286 --object_file main.obj --embed_opts 10 --call_assumptions=0 --mem_model:code=flat --mem_model:data=large --opt_for_speed --opt_level=3 --optimizer_comments --optimizer_interlist --program_level_compile 
 	.sect	".text"
 	.global	_System_Init
 
@@ -1133,11 +1131,11 @@ DW$187	.dwtag  DW_TAG_variable, DW_AT_name("C$1"), DW_AT_symbol_name("C$1")
         MOVL      @_pRFS,ACC            ; |31| 
 	.dwpsn	"main.c",32,2
         MOVB      ACC,#60
-        MOVW      DP,#_pLSS
         ADDL      ACC,XAR4
         MOVL      @_pLSS,ACC            ; |32| 
 	.dwpsn	"main.c",33,2
         MOVB      ACC,#90
+        MOVW      DP,#_pRSS
         ADDL      ACC,XAR4
         MOVL      @_pRSS,ACC            ; |33| 
 	.dwpsn	"main.c",34,2
@@ -1237,104 +1235,84 @@ _Variable_Init:
 ;*** 58	-----------------------    pidtest = 6710886L;
 ;*** 59	-----------------------    Flag_Chaetering = 0u;
 ;*** 60	-----------------------    gUint16user_speed = 0u;
-;*** 61	-----------------------    gUint16SensorSelect = 0u;
-;*** 62	-----------------------    gMovestate = 0u;
-;*** 63	-----------------------    gStopcount = 0u;
-;*** 64	-----------------------    gRPosWallF = 0u;
-;*** 65	-----------------------    gLPosWallF = 0u;
-;*** 66	-----------------------    gPosAdjF = 0u;
-;*** 67	-----------------------    gDiffAdjCnt = 0u;
-;*** 68	-----------------------    gTURN_cnt = 0u;
-;*** 69	-----------------------    wallcnt = 0uL;
-;*** 70	-----------------------    gTURN_MENU = 1u;
-;*** 71	-----------------------    gFrontSensorPull = 0u;
-;*** 72	-----------------------    q17Position = 0L;
-;*** 73	-----------------------    q17RightPos = 0L;
-;*** 74	-----------------------    q17LeftPos = 0L;
-;*** 75	-----------------------    gNowPollMode = 0u;
-;*** 76	-----------------------    q17PositionErrSum = 0L;
-;*** 77	-----------------------    q17PosProportionTerm = 0L;
-;*** 78	-----------------------    q17PosDerivativeTerm = 0L;
-;*** 79	-----------------------    q17PosIntegralTerm = 0L;
-;*** 80	-----------------------    q17PosPidOutTerm = 0L;
-;*** 81	-----------------------    q30PosAdjAccelDiff = 0L;
-;*** 82	-----------------------    q30PosAdjDecelDiff = 0L;
-;*** 83	-----------------------    q26PosAdjAccelRef = 0L;
-;*** 84	-----------------------    q26PosAdjDecelRef = 0L;
-;*** 85	-----------------------    C$4 = &q17PositionErr[0];
-;*** 85	-----------------------    *C$4 = 0L;
-;*** 86	-----------------------    C$4[1] = 0L;
-;*** 87	-----------------------    C$4[2] = 0L;
-;*** 88	-----------------------    C$4[3] = 0L;
-;*** 89	-----------------------    PositionAdjustDiffVal(214748368L, 214748368L);
-;*** 90	-----------------------    SetpPathFuntion();
-;*** 92	-----------------------    InitAlgorithmVariable();
-;*** 93	-----------------------    q17PosPidOutTerm = 0L;
-;*** 94	-----------------------    gBackTurnFrontAdjState = 0u;
-;*** 95	-----------------------    gDiagDirectAdjState = 0u;
-;*** 96	-----------------------    gDiagTurnOutAdjF = 0u;
-;*** 97	-----------------------    gDiagTurnOutREdgeAdjF = 0u;
-;*** 98	-----------------------    gDiagTurnOutLEdgeAdjF = 0u;
-;*** 99	-----------------------    gUint16speedcnt = 0u;
-;*** 100	-----------------------    gAngleDirectflag = 0u;
-;*** 101	-----------------------    g_int16_menu_x = 0;
-;*** 102	-----------------------    g_int16_menu_y = 0;
-;*** 103	-----------------------    g_uint16_sensor_cnt = 0u;
-;*** 104	-----------------------    g_uint16_position_cnt = 0u;
-;*** 105	-----------------------    g_uint16_pwm_flag = 1u;
-;*** 106	-----------------------    chooseturnspeed = 0u;
-;*** 109	-----------------------    gDIR_cnt = 0u;
-;*** 110	-----------------------    gRunTime = 0.0F;
-;*** 111	-----------------------    utimetick = 0L;
-;*** 112	-----------------------    ftimedata = 0L;
-;*** 113	-----------------------    turn1300no = 1u;
-;*** 114	-----------------------    gUserTimeCnt = 0uL;
-;*** 115	-----------------------    FALLDIFF = 0L;
-;*** 116	-----------------------    accelcheck = 0u;
-;*** 117	-----------------------    gUserTurnSpeed = 0u;
-;*** 118	-----------------------    test_flag = 1u;
-;*** 119	-----------------------    gMousePosition = 0u;
-;*** 120	-----------------------    C$3 = &gMoveTable[0];
-;*** 120	-----------------------    *C$3 = 1u;
-;*** 121	-----------------------    C$3[1] = 16u;
-;*** 122	-----------------------    C$3[2] = 0xffffu;
-;*** 123	-----------------------    C$3[3] = 0xfff0u;
-;*** 124	-----------------------    C$2 = &gHeadTable[0];
-;*** 124	-----------------------    *C$2 = 1u;
-;*** 125	-----------------------    C$2[1] = 2u;
-;*** 126	-----------------------    C$2[2] = 4u;
-;*** 127	-----------------------    C$2[3] = 8u;
-;*** 128	-----------------------    DirectLike = 1u;
-;*** 129	-----------------------    Likecnt = 1u;
-;*** 130	-----------------------    Flag_Left = 0u;
-;*** 131	-----------------------    gSearch = 0u;
-;*** 132	-----------------------    backturn_cnt = 0;
-;*** 133	-----------------------    search = 0u;
-;*** 135	-----------------------    InitMotor(&R_Motor);
-;*** 136	-----------------------    InitMotor(&L_Motor);
-;*** 139	-----------------------    C$1 = &GpioDataRegs;
-;*** 139	-----------------------    ((volatile unsigned *)C$1)[3] &= 0xf7ffu;
-;*** 140	-----------------------    ((volatile unsigned *)C$1)[2] &= 0xff7fu;
-;*** 141	-----------------------    *(&GpioDataRegs+2L) &= 0xfdffu;
-;*** 143	-----------------------    *(&GpioDataRegs+2L) &= 0xfbffu;
-;*** 144	-----------------------    *(&GpioDataRegs+2L) &= 0xf7ffu;
-;*** 148	-----------------------    wall_cnt = 0u;
-;*** 149	-----------------------    dir_cnt = 0u;
-;*** 150	-----------------------    turnflag = 0u;
-;*** 151	-----------------------    TURNBFSTRT = 0;
-;*** 152	-----------------------    M_POS_KP = 0L;
-;*** 153	-----------------------    M_POS_KI = 0L;
-;*** 154	-----------------------    M_POS_KD = 0L;
-;*** 155	-----------------------    M_CAL_POS_KP_DIFF = 0L;
-;*** 156	-----------------------    M_CAL_POS_KD_DIFF = 0L;
-;*** 157	-----------------------    fasttime = 0uL;
-;*** 158	-----------------------    testsen = 0u;
-;*** 159	-----------------------    adccnt = 0u;
-;*** 160	-----------------------    JapanGoal = 0u;
-;*** 161	-----------------------    seq0 = 0uL;
-;*** 162	-----------------------    seq1 = 0uL;
-;*** 163	-----------------------    seq2 = 0uL;
-;*** 163	-----------------------    return;
+;*** 61	-----------------------    g_U32Chaetering = 0uL;
+;*** 62	-----------------------    gUint16SensorSelect = 0u;
+;*** 63	-----------------------    gMovestate = 0u;
+;*** 64	-----------------------    gStopcount = 0u;
+;*** 65	-----------------------    gRPosWallF = 0u;
+;*** 66	-----------------------    gLPosWallF = 0u;
+;*** 67	-----------------------    gPosAdjF = 0u;
+;*** 68	-----------------------    gDiffAdjCnt = 0u;
+;*** 69	-----------------------    gTURN_cnt = 0u;
+;*** 70	-----------------------    wallcnt = 0uL;
+;*** 71	-----------------------    gTURN_MENU = 1u;
+;*** 72	-----------------------    gFrontSensorPull = 0u;
+;*** 73	-----------------------    q17Position = 0L;
+;*** 74	-----------------------    q17RightPos = 0L;
+;*** 75	-----------------------    q17LeftPos = 0L;
+;*** 76	-----------------------    gNowPollMode = 0u;
+;*** 77	-----------------------    q17PositionErrSum = 0L;
+;*** 78	-----------------------    q17PosProportionTerm = 0L;
+;*** 79	-----------------------    q17PosDerivativeTerm = 0L;
+;*** 80	-----------------------    q17PosIntegralTerm = 0L;
+;*** 81	-----------------------    q17PosPidOutTerm = 0L;
+;*** 82	-----------------------    q30PosAdjAccelDiff = 0L;
+;*** 83	-----------------------    q30PosAdjDecelDiff = 0L;
+;*** 84	-----------------------    q26PosAdjAccelRef = 0L;
+;*** 85	-----------------------    q26PosAdjDecelRef = 0L;
+;*** 86	-----------------------    C$4 = &q17PositionErr[0];
+;*** 86	-----------------------    *C$4 = 0L;
+;*** 87	-----------------------    C$4[1] = 0L;
+;*** 88	-----------------------    C$4[2] = 0L;
+;*** 89	-----------------------    C$4[3] = 0L;
+;*** 90	-----------------------    PositionAdjustDiffVal(214748368L, 214748368L);
+;*** 91	-----------------------    SetpPathFuntion();
+;*** 93	-----------------------    InitAlgorithmVariable();
+;*** 94	-----------------------    q17PosPidOutTerm = 0L;
+;*** 95	-----------------------    gBackTurnFrontAdjState = 0u;
+;*** 96	-----------------------    gDiagDirectAdjState = 0u;
+;*** 97	-----------------------    gDiagTurnOutAdjF = 0u;
+;*** 98	-----------------------    gDiagTurnOutREdgeAdjF = 0u;
+;*** 99	-----------------------    gDiagTurnOutLEdgeAdjF = 0u;
+;*** 100	-----------------------    gUint16speedcnt = 0u;
+;*** 101	-----------------------    gAngleDirectflag = 0u;
+;*** 102	-----------------------    g_int16_menu_x = 0;
+;*** 103	-----------------------    g_int16_menu_y = 0;
+;*** 104	-----------------------    g_uint16_sensor_cnt = 0u;
+;*** 105	-----------------------    g_uint16_position_cnt = 0u;
+;*** 106	-----------------------    g_uint16_pwm_flag = 0u;
+;*** 107	-----------------------    chooseturnspeed = 0u;
+;*** 108	-----------------------    FrontSensorValueCall();
+;*** 109	-----------------------    SideSensorValueCall();
+;*** 110	-----------------------    gDIR_cnt = 0u;
+;*** 111	-----------------------    gRunTime = 0.0F;
+;*** 112	-----------------------    utimetick = 0L;
+;*** 113	-----------------------    ftimedata = 0L;
+;*** 114	-----------------------    turn1300no = 1u;
+;*** 115	-----------------------    gUserTimeCnt = 0uL;
+;*** 116	-----------------------    FALLDIFF = 0L;
+;*** 117	-----------------------    accelcheck = 0u;
+;*** 118	-----------------------    gUserTurnSpeed = 0u;
+;*** 119	-----------------------    test_flag = 1u;
+;*** 120	-----------------------    gMousePosition = 0u;
+;*** 121	-----------------------    C$3 = &gMoveTable[0];
+;*** 121	-----------------------    *C$3 = 1u;
+;*** 122	-----------------------    C$3[1] = 16u;
+;*** 123	-----------------------    C$3[2] = 0xffffu;
+;*** 124	-----------------------    C$3[3] = 0xfff0u;
+;*** 125	-----------------------    C$2 = &gHeadTable[0];
+;*** 125	-----------------------    *C$2 = 1u;
+;*** 126	-----------------------    C$2[1] = 2u;
+;*** 127	-----------------------    C$2[2] = 4u;
+;*** 128	-----------------------    C$2[3] = 8u;
+;*** 129	-----------------------    DirectLike = 1u;
+;*** 130	-----------------------    Likecnt = 1u;
+;*** 131	-----------------------    Flag_Left = 0u;
+;*** 132	-----------------------    gSearch = 0u;
+;*** 133	-----------------------    backturn_cnt = 0;
+;*** 134	-----------------------    search = 0u;
+;*** 136	-----------------------    InitMotor(&R_Motor);
+;*** 137	-----------------------    InitMotor(&L_Motor);
 	.dwcfa	0x1d, -2
 	.dwcfa	0x1c, 26, 0
 	.dwcfa	0x09, 40, 26
@@ -1380,251 +1358,274 @@ DW$192	.dwtag  DW_TAG_variable, DW_AT_name("C$4"), DW_AT_symbol_name("C$4")
         MOVW      DP,#_gUint16user_speed
         MOV       @_gUint16user_speed,#0 ; |60| 
 	.dwpsn	"main.c",61,2
-        MOVW      DP,#_gUint16SensorSelect
-        MOV       @_gUint16SensorSelect,#0 ; |61| 
-	.dwpsn	"main.c",62,2
-        MOV       @_gMovestate,#0       ; |62| 
-	.dwpsn	"main.c",63,2
-        MOV       @_gStopcount,#0       ; |63| 
-	.dwpsn	"main.c",64,2
-        MOV       @_gRPosWallF,#0       ; |64| 
-	.dwpsn	"main.c",65,2
-        MOV       @_gLPosWallF,#0       ; |65| 
-	.dwpsn	"main.c",66,2
-        MOV       @_gPosAdjF,#0         ; |66| 
-	.dwpsn	"main.c",67,2
-        MOVW      DP,#_gDiffAdjCnt
-        MOV       @_gDiffAdjCnt,#0      ; |67| 
-	.dwpsn	"main.c",68,2
-        MOVW      DP,#_gTURN_cnt
-        MOV       @_gTURN_cnt,#0        ; |68| 
-	.dwpsn	"main.c",69,2
-        MOVW      DP,#_wallcnt
         MOVB      ACC,#0
-        MOVL      @_wallcnt,ACC         ; |69| 
+        MOVL      @_g_U32Chaetering,ACC ; |61| 
+	.dwpsn	"main.c",62,2
+        MOVW      DP,#_gUint16SensorSelect
+        MOV       @_gUint16SensorSelect,#0 ; |62| 
+	.dwpsn	"main.c",63,2
+        MOV       @_gMovestate,#0       ; |63| 
+	.dwpsn	"main.c",64,2
+        MOV       @_gStopcount,#0       ; |64| 
+	.dwpsn	"main.c",65,2
+        MOV       @_gRPosWallF,#0       ; |65| 
+	.dwpsn	"main.c",66,2
+        MOV       @_gLPosWallF,#0       ; |66| 
+	.dwpsn	"main.c",67,2
+        MOV       @_gPosAdjF,#0         ; |67| 
+	.dwpsn	"main.c",68,2
+        MOVW      DP,#_gDiffAdjCnt
+        MOV       @_gDiffAdjCnt,#0      ; |68| 
+	.dwpsn	"main.c",69,2
+        MOVW      DP,#_gTURN_cnt
+        MOV       @_gTURN_cnt,#0        ; |69| 
 	.dwpsn	"main.c",70,2
-        MOVW      DP,#_gTURN_MENU
-        MOV       @_gTURN_MENU,#1       ; |70| 
+        MOVW      DP,#_wallcnt
+        MOVL      @_wallcnt,ACC         ; |70| 
 	.dwpsn	"main.c",71,2
-        MOV       @_gFrontSensorPull,#0 ; |71| 
+        MOVW      DP,#_gTURN_MENU
+        MOV       @_gTURN_MENU,#1       ; |71| 
 	.dwpsn	"main.c",72,2
+        MOV       @_gFrontSensorPull,#0 ; |72| 
+	.dwpsn	"main.c",73,2
         MOVW      DP,#_q17Position
         MOVB      ACC,#0
-        MOVL      @_q17Position,ACC     ; |72| 
-	.dwpsn	"main.c",73,2
-        MOVL      @_q17RightPos,ACC     ; |73| 
+        MOVL      @_q17Position,ACC     ; |73| 
 	.dwpsn	"main.c",74,2
-        MOVL      @_q17LeftPos,ACC      ; |74| 
+        MOVL      @_q17RightPos,ACC     ; |74| 
 	.dwpsn	"main.c",75,2
-        MOVW      DP,#_gNowPollMode
-        MOV       @_gNowPollMode,#0     ; |75| 
+        MOVL      @_q17LeftPos,ACC      ; |75| 
 	.dwpsn	"main.c",76,2
-        MOVW      DP,#_q17PositionErrSum
-        MOVL      @_q17PositionErrSum,ACC ; |76| 
+        MOVW      DP,#_gNowPollMode
+        MOV       @_gNowPollMode,#0     ; |76| 
 	.dwpsn	"main.c",77,2
-        MOVL      @_q17PosProportionTerm,ACC ; |77| 
+        MOVW      DP,#_q17PositionErrSum
+        MOVL      @_q17PositionErrSum,ACC ; |77| 
 	.dwpsn	"main.c",78,2
-        MOVL      @_q17PosDerivativeTerm,ACC ; |78| 
+        MOVL      @_q17PosProportionTerm,ACC ; |78| 
 	.dwpsn	"main.c",79,2
-        MOVL      @_q17PosIntegralTerm,ACC ; |79| 
+        MOVL      @_q17PosDerivativeTerm,ACC ; |79| 
 	.dwpsn	"main.c",80,2
-        MOVL      @_q17PosPidOutTerm,ACC ; |80| 
+        MOVL      @_q17PosIntegralTerm,ACC ; |80| 
 	.dwpsn	"main.c",81,2
-        MOVL      @_q30PosAdjAccelDiff,ACC ; |81| 
+        MOVL      @_q17PosPidOutTerm,ACC ; |81| 
 	.dwpsn	"main.c",82,2
-        MOVW      DP,#_q30PosAdjDecelDiff
-        MOVL      @_q30PosAdjDecelDiff,ACC ; |82| 
+        MOVL      @_q30PosAdjAccelDiff,ACC ; |82| 
 	.dwpsn	"main.c",83,2
-        MOVL      @_q26PosAdjAccelRef,ACC ; |83| 
+        MOVL      @_q30PosAdjDecelDiff,ACC ; |83| 
 	.dwpsn	"main.c",84,2
-        MOVL      @_q26PosAdjDecelRef,ACC ; |84| 
+        MOVW      DP,#_q26PosAdjAccelRef
+        MOVL      @_q26PosAdjAccelRef,ACC ; |84| 
 	.dwpsn	"main.c",85,2
-        MOVL      XAR4,#_q17PositionErr ; |85| 
-        MOVL      *+XAR4[0],ACC         ; |85| 
+        MOVL      @_q26PosAdjDecelRef,ACC ; |85| 
 	.dwpsn	"main.c",86,2
-        MOVL      *+XAR4[2],ACC         ; |86| 
+        MOVL      XAR4,#_q17PositionErr ; |86| 
+        MOVL      *+XAR4[0],ACC         ; |86| 
 	.dwpsn	"main.c",87,2
-        MOVL      *+XAR4[4],ACC         ; |87| 
+        MOVL      *+XAR4[2],ACC         ; |87| 
 	.dwpsn	"main.c",88,2
-        MOVL      *+XAR4[6],ACC         ; |88| 
+        MOVL      *+XAR4[4],ACC         ; |88| 
 	.dwpsn	"main.c",89,2
+        MOVL      *+XAR4[6],ACC         ; |89| 
+	.dwpsn	"main.c",90,2
         MOV       PH,#3276
         MOV       PL,#52432
         MOV       AL,#52432
-        MOVL      *-SP[2],P             ; |89| 
+        MOVL      *-SP[2],P             ; |90| 
         MOV       AH,#3276
-        LCR       #_PositionAdjustDiffVal ; |89| 
-        ; call occurs [#_PositionAdjustDiffVal] ; |89| 
-	.dwpsn	"main.c",90,2
-        LCR       #_SetpPathFuntion     ; |90| 
-        ; call occurs [#_SetpPathFuntion] ; |90| 
-	.dwpsn	"main.c",92,2
-        LCR       #_InitAlgorithmVariable ; |92| 
-        ; call occurs [#_InitAlgorithmVariable] ; |92| 
+        LCR       #_PositionAdjustDiffVal ; |90| 
+        ; call occurs [#_PositionAdjustDiffVal] ; |90| 
+	.dwpsn	"main.c",91,2
+        LCR       #_SetpPathFuntion     ; |91| 
+        ; call occurs [#_SetpPathFuntion] ; |91| 
 	.dwpsn	"main.c",93,2
+        LCR       #_InitAlgorithmVariable ; |93| 
+        ; call occurs [#_InitAlgorithmVariable] ; |93| 
+	.dwpsn	"main.c",94,2
         MOVW      DP,#_q17PosPidOutTerm
         MOVB      ACC,#0
-        MOVL      @_q17PosPidOutTerm,ACC ; |93| 
-	.dwpsn	"main.c",94,2
-        MOVW      DP,#_gBackTurnFrontAdjState
-        MOV       @_gBackTurnFrontAdjState,#0 ; |94| 
+        MOVL      @_q17PosPidOutTerm,ACC ; |94| 
 	.dwpsn	"main.c",95,2
-        MOVW      DP,#_gDiagDirectAdjState
-        MOV       @_gDiagDirectAdjState,#0 ; |95| 
+        MOVW      DP,#_gBackTurnFrontAdjState
+        MOV       @_gBackTurnFrontAdjState,#0 ; |95| 
 	.dwpsn	"main.c",96,2
-        MOV       @_gDiagTurnOutAdjF,#0 ; |96| 
+        MOVW      DP,#_gDiagDirectAdjState
+        MOV       @_gDiagDirectAdjState,#0 ; |96| 
 	.dwpsn	"main.c",97,2
-        MOV       @_gDiagTurnOutREdgeAdjF,#0 ; |97| 
+        MOV       @_gDiagTurnOutAdjF,#0 ; |97| 
 	.dwpsn	"main.c",98,2
-        MOV       @_gDiagTurnOutLEdgeAdjF,#0 ; |98| 
+        MOV       @_gDiagTurnOutREdgeAdjF,#0 ; |98| 
 	.dwpsn	"main.c",99,2
-        MOV       @_gUint16speedcnt,#0  ; |99| 
+        MOV       @_gDiagTurnOutLEdgeAdjF,#0 ; |99| 
 	.dwpsn	"main.c",100,2
-        MOV       @_gAngleDirectflag,#0 ; |100| 
+        MOV       @_gUint16speedcnt,#0  ; |100| 
 	.dwpsn	"main.c",101,2
-        MOVW      DP,#_g_int16_menu_x
-        MOV       @_g_int16_menu_x,#0   ; |101| 
+        MOV       @_gAngleDirectflag,#0 ; |101| 
 	.dwpsn	"main.c",102,2
-        MOV       @_g_int16_menu_y,#0   ; |102| 
+        MOVW      DP,#_g_int16_menu_x
+        MOV       @_g_int16_menu_x,#0   ; |102| 
 	.dwpsn	"main.c",103,2
-        MOVW      DP,#_g_uint16_sensor_cnt
-        MOV       @_g_uint16_sensor_cnt,#0 ; |103| 
+        MOV       @_g_int16_menu_y,#0   ; |103| 
 	.dwpsn	"main.c",104,2
-        MOVW      DP,#_g_uint16_position_cnt
-        MOV       @_g_uint16_position_cnt,#0 ; |104| 
+        MOV       @_g_uint16_sensor_cnt,#0 ; |104| 
 	.dwpsn	"main.c",105,2
-        MOV       @_g_uint16_pwm_flag,#1 ; |105| 
+        MOV       @_g_uint16_position_cnt,#0 ; |105| 
 	.dwpsn	"main.c",106,2
-        MOV       @_chooseturnspeed,#0  ; |106| 
+        MOVW      DP,#_g_uint16_pwm_flag
+        MOV       @_g_uint16_pwm_flag,#0 ; |106| 
+	.dwpsn	"main.c",107,2
+        MOVW      DP,#_chooseturnspeed
+        MOV       @_chooseturnspeed,#0  ; |107| 
+	.dwpsn	"main.c",108,2
+        LCR       #_FrontSensorValueCall ; |108| 
+        ; call occurs [#_FrontSensorValueCall] ; |108| 
 	.dwpsn	"main.c",109,2
-        MOV       @_gDIR_cnt,#0         ; |109| 
+        LCR       #_SideSensorValueCall ; |109| 
+        ; call occurs [#_SideSensorValueCall] ; |109| 
 	.dwpsn	"main.c",110,2
+        MOVW      DP,#_gDIR_cnt
+        MOV       @_gDIR_cnt,#0         ; |110| 
+	.dwpsn	"main.c",111,2
         MOVW      DP,#_gRunTime
         MOV       AH,#0
         MOV       AL,#0
-        MOVL      @_gRunTime,ACC        ; |110| 
-	.dwpsn	"main.c",111,2
-        MOVB      ACC,#0
-        MOVL      @_utimetick,ACC       ; |111| 
+        MOVL      @_gRunTime,ACC        ; |111| 
 	.dwpsn	"main.c",112,2
-        MOVL      @_ftimedata,ACC       ; |112| 
+        MOVB      ACC,#0
+        MOVL      @_utimetick,ACC       ; |112| 
 	.dwpsn	"main.c",113,2
-        MOVW      DP,#_turn1300no
-        MOV       @_turn1300no,#1       ; |113| 
+        MOVL      @_ftimedata,ACC       ; |113| 
 	.dwpsn	"main.c",114,2
+        MOVW      DP,#_turn1300no
+        MOV       @_turn1300no,#1       ; |114| 
+	.dwpsn	"main.c",115,2
         MOVW      DP,#_gUserTimeCnt
         MOVB      ACC,#0
-        MOVL      @_gUserTimeCnt,ACC    ; |114| 
-	.dwpsn	"main.c",115,2
-        MOVL      @_FALLDIFF,ACC        ; |115| 
+        MOVL      @_gUserTimeCnt,ACC    ; |115| 
 	.dwpsn	"main.c",116,2
-        MOVW      DP,#_accelcheck
-        MOV       @_accelcheck,#0       ; |116| 
+        MOVW      DP,#_FALLDIFF
+        MOVL      @_FALLDIFF,ACC        ; |116| 
 	.dwpsn	"main.c",117,2
-        MOV       @_gUserTurnSpeed,#0   ; |117| 
+        MOVW      DP,#_accelcheck
+        MOV       @_accelcheck,#0       ; |117| 
 	.dwpsn	"main.c",118,2
-        MOVW      DP,#_test_flag
-        MOVB      AL,#1                 ; |118| 
-        MOV       @_test_flag,AL        ; |118| 
+        MOV       @_gUserTurnSpeed,#0   ; |118| 
 	.dwpsn	"main.c",119,2
-        MOVW      DP,#_gMousePosition
-        MOV       @_gMousePosition,#0   ; |119| 
+        MOVW      DP,#_test_flag
+        MOVB      AL,#1                 ; |119| 
+        MOV       @_test_flag,AL        ; |119| 
 	.dwpsn	"main.c",120,2
-        MOVL      XAR4,#_gMoveTable     ; |120| 
-        MOV       *+XAR4[0],AL          ; |120| 
+        MOVW      DP,#_gMousePosition
+        MOV       @_gMousePosition,#0   ; |120| 
 	.dwpsn	"main.c",121,2
-        MOV       *+XAR4[1],#16         ; |121| 
+        MOVL      XAR4,#_gMoveTable     ; |121| 
+        MOV       *+XAR4[0],AL          ; |121| 
 	.dwpsn	"main.c",122,2
-        MOV       *+XAR4[2],#65535      ; |122| 
+        MOV       *+XAR4[1],#16         ; |122| 
 	.dwpsn	"main.c",123,2
-        MOV       *+XAR4[3],#65520      ; |123| 
+        MOV       *+XAR4[2],#65535      ; |123| 
 	.dwpsn	"main.c",124,2
-        MOVL      XAR4,#_gHeadTable     ; |124| 
-        MOV       *+XAR4[0],#1          ; |124| 
+        MOV       *+XAR4[3],#65520      ; |124| 
 	.dwpsn	"main.c",125,2
-        MOV       *+XAR4[1],#2          ; |125| 
+        MOVL      XAR4,#_gHeadTable     ; |125| 
+        MOV       *+XAR4[0],#1          ; |125| 
 	.dwpsn	"main.c",126,2
-        MOV       *+XAR4[2],#4          ; |126| 
+        MOV       *+XAR4[1],#2          ; |126| 
 	.dwpsn	"main.c",127,2
-        MOV       *+XAR4[3],#8          ; |127| 
+        MOV       *+XAR4[2],#4          ; |127| 
 	.dwpsn	"main.c",128,2
-        MOVB      AL,#1                 ; |128| 
-        MOV       @_DirectLike,AL       ; |128| 
+        MOV       *+XAR4[3],#8          ; |128| 
 	.dwpsn	"main.c",129,2
-        MOV       @_Likecnt,AL          ; |129| 
+        MOVB      AL,#1                 ; |129| 
+        MOV       @_DirectLike,AL       ; |129| 
 	.dwpsn	"main.c",130,2
-        MOV       @_Flag_Left,#0        ; |130| 
+        MOV       @_Likecnt,AL          ; |130| 
 	.dwpsn	"main.c",131,2
-        MOV       @_gSearch,#0          ; |131| 
+        MOV       @_Flag_Left,#0        ; |131| 
 	.dwpsn	"main.c",132,2
-        MOV       @_backturn_cnt,#0     ; |132| 
+        MOV       @_gSearch,#0          ; |132| 
 	.dwpsn	"main.c",133,2
-        MOV       @_search,#0           ; |133| 
-	.dwpsn	"main.c",135,2
-        MOVL      XAR4,#_R_Motor        ; |135| 
-        LCR       #_InitMotor           ; |135| 
-        ; call occurs [#_InitMotor] ; |135| 
+        MOV       @_backturn_cnt,#0     ; |133| 
+	.dwpsn	"main.c",134,2
+        MOV       @_search,#0           ; |134| 
 	.dwpsn	"main.c",136,2
-        MOVL      XAR4,#_L_Motor        ; |136| 
+        MOVL      XAR4,#_R_Motor        ; |136| 
         LCR       #_InitMotor           ; |136| 
         ; call occurs [#_InitMotor] ; |136| 
-	.dwpsn	"main.c",139,2
-        MOVL      XAR4,#_GpioDataRegs   ; |139| 
-        AND       *+XAR4[3],#0xf7ff     ; |139| 
+	.dwpsn	"main.c",137,2
+        MOVL      XAR4,#_L_Motor        ; |137| 
+        LCR       #_InitMotor           ; |137| 
+        ; call occurs [#_InitMotor] ; |137| 
+;*** 140	-----------------------    C$1 = &GpioDataRegs;
+;*** 140	-----------------------    ((volatile unsigned *)C$1)[3] |= 0x800u;
+;*** 141	-----------------------    ((volatile unsigned *)C$1)[2] &= 0xff7fu;
+;*** 142	-----------------------    *(&GpioDataRegs+2L) &= 0xfdffu;
+;*** 144	-----------------------    *(&GpioDataRegs+2L) &= 0xfbffu;
+;*** 145	-----------------------    *(&GpioDataRegs+2L) &= 0xf7ffu;
+;*** 149	-----------------------    wall_cnt = 0u;
+;*** 150	-----------------------    dir_cnt = 0u;
+;*** 151	-----------------------    turnflag = 0u;
+;*** 152	-----------------------    TURNBFSTRT = 0;
+;*** 153	-----------------------    M_POS_KP = 0L;
+;*** 154	-----------------------    M_POS_KI = 0L;
+;*** 155	-----------------------    M_POS_KD = 0L;
+;*** 156	-----------------------    M_CAL_POS_KP_DIFF = 0L;
+;*** 157	-----------------------    M_CAL_POS_KD_DIFF = 0L;
+;*** 158	-----------------------    fasttime = 0uL;
+;*** 159	-----------------------    testsen = 0u;
+;*** 160	-----------------------    adccnt = 0u;
+;*** 161	-----------------------    JapanGoal = 0u;
+;*** 161	-----------------------    return;
 	.dwpsn	"main.c",140,2
-        AND       *+XAR4[2],#0xff7f     ; |140| 
+        MOVL      XAR4,#_GpioDataRegs   ; |140| 
+        OR        *+XAR4[3],#0x0800     ; |140| 
 	.dwpsn	"main.c",141,2
+        AND       *+XAR4[2],#0xff7f     ; |141| 
+	.dwpsn	"main.c",142,2
         MOVW      DP,#_GpioDataRegs+2
-        AND       @_GpioDataRegs+2,#0xfdff ; |141| 
-	.dwpsn	"main.c",143,2
-        AND       @_GpioDataRegs+2,#0xfbff ; |143| 
+        AND       @_GpioDataRegs+2,#0xfdff ; |142| 
 	.dwpsn	"main.c",144,2
-        AND       @_GpioDataRegs+2,#0xf7ff ; |144| 
-	.dwpsn	"main.c",148,2
-        MOVW      DP,#_wall_cnt
-        MOV       @_wall_cnt,#0         ; |148| 
+        AND       @_GpioDataRegs+2,#0xfbff ; |144| 
+	.dwpsn	"main.c",145,2
+        AND       @_GpioDataRegs+2,#0xf7ff ; |145| 
 	.dwpsn	"main.c",149,2
-        MOV       @_dir_cnt,#0          ; |149| 
+        MOVW      DP,#_wall_cnt
+        MOV       @_wall_cnt,#0         ; |149| 
 	.dwpsn	"main.c",150,2
-        MOV       @_turnflag,#0         ; |150| 
+        MOV       @_dir_cnt,#0          ; |150| 
 	.dwpsn	"main.c",151,2
-        MOV       @_TURNBFSTRT,#0       ; |151| 
+        MOV       @_turnflag,#0         ; |151| 
 	.dwpsn	"main.c",152,2
+        MOV       @_TURNBFSTRT,#0       ; |152| 
+	.dwpsn	"main.c",153,2
         MOVW      DP,#_M_POS_KP
         MOVB      ACC,#0
-        MOVL      @_M_POS_KP,ACC        ; |152| 
-	.dwpsn	"main.c",153,2
-        MOVL      @_M_POS_KI,ACC        ; |153| 
+        MOVL      @_M_POS_KP,ACC        ; |153| 
 	.dwpsn	"main.c",154,2
-        MOVL      @_M_POS_KD,ACC        ; |154| 
+        MOVL      @_M_POS_KI,ACC        ; |154| 
 	.dwpsn	"main.c",155,2
-        MOVW      DP,#_M_CAL_POS_KP_DIFF
-        MOVL      @_M_CAL_POS_KP_DIFF,ACC ; |155| 
+        MOVL      @_M_POS_KD,ACC        ; |155| 
 	.dwpsn	"main.c",156,2
-        MOVL      @_M_CAL_POS_KD_DIFF,ACC ; |156| 
+        MOVW      DP,#_M_CAL_POS_KP_DIFF
+        MOVL      @_M_CAL_POS_KP_DIFF,ACC ; |156| 
 	.dwpsn	"main.c",157,2
-        MOVL      @_fasttime,ACC        ; |157| 
-	.dwpsn	"main.c",158,5
-        MOVW      DP,#_testsen
-        MOV       @_testsen,#0          ; |158| 
+        MOVL      @_M_CAL_POS_KD_DIFF,ACC ; |157| 
+	.dwpsn	"main.c",158,2
+        MOVL      @_fasttime,ACC        ; |158| 
 	.dwpsn	"main.c",159,5
-        MOV       @_adccnt,#0           ; |159| 
+        MOVW      DP,#_testsen
+        MOV       @_testsen,#0          ; |159| 
 	.dwpsn	"main.c",160,5
-        MOV       @_JapanGoal,#0        ; |160| 
+        MOV       @_adccnt,#0           ; |160| 
 	.dwpsn	"main.c",161,5
-        MOVW      DP,#_seq0
-        MOVL      @_seq0,ACC            ; |161| 
-	.dwpsn	"main.c",162,5
-        MOVL      @_seq1,ACC            ; |162| 
-	.dwpsn	"main.c",163,5
-        MOVL      @_seq2,ACC            ; |163| 
-	.dwpsn	"main.c",164,1
+        MOV       @_JapanGoal,#0        ; |161| 
+	.dwpsn	"main.c",162,1
         SUBB      SP,#2
 	.dwcfa	0x1d, -2
         LRETR
         ; return occurs
 	.dwattr DW$188, DW_AT_end_file("main.c")
-	.dwattr DW$188, DW_AT_end_line(0xa4)
+	.dwattr DW$188, DW_AT_end_line(0xa2)
 	.dwattr DW$188, DW_AT_end_column(0x01)
 	.dwendentry
 	.dwendtag DW$188
@@ -1636,9 +1637,9 @@ DW$193	.dwtag  DW_TAG_subprogram, DW_AT_name("main"), DW_AT_symbol_name("_main")
 	.dwattr DW$193, DW_AT_low_pc(_main)
 	.dwattr DW$193, DW_AT_high_pc(0x00)
 	.dwattr DW$193, DW_AT_begin_file("main.c")
-	.dwattr DW$193, DW_AT_begin_line(0xa6)
+	.dwattr DW$193, DW_AT_begin_line(0xa4)
 	.dwattr DW$193, DW_AT_begin_column(0x06)
-	.dwpsn	"main.c",167,1
+	.dwpsn	"main.c",165,1
 
 	.dwfde DW$CIE
 
@@ -1658,51 +1659,51 @@ DW$193	.dwtag  DW_TAG_subprogram, DW_AT_name("main"), DW_AT_symbol_name("_main")
 ;*                                                             *
 ;***************************************************************
 _main:
-;*** 168	-----------------------    System_Init();
-;*** 169	-----------------------    Variable_Init();
-;*** 170	-----------------------    *(&CpuTimer2Regs+4L) &= 0xffefu;
+;*** 166	-----------------------    System_Init();
+;*** 167	-----------------------    Variable_Init();
+;*** 168	-----------------------    *(&CpuTimer2Regs+4L) &= 0xffefu;
 ;*** 172	-----------------------    g_uint16_pwm_flag = 1u;
 ;***  	-----------------------    #pragma LOOP_FLAGS(5120u)
 	.dwcfa	0x1d, -2
 	.dwcfa	0x1c, 26, 0
 	.dwcfa	0x09, 40, 26
+	.dwpsn	"main.c",166,2
+        LCR       #_System_Init         ; |166| 
+        ; call occurs [#_System_Init] ; |166| 
+	.dwpsn	"main.c",167,2
+        LCR       #_Variable_Init       ; |167| 
+        ; call occurs [#_Variable_Init] ; |167| 
 	.dwpsn	"main.c",168,2
-        LCR       #_System_Init         ; |168| 
-        ; call occurs [#_System_Init] ; |168| 
-	.dwpsn	"main.c",169,2
-        LCR       #_Variable_Init       ; |169| 
-        ; call occurs [#_Variable_Init] ; |169| 
-	.dwpsn	"main.c",170,2
         MOVW      DP,#_CpuTimer2Regs+4
-        AND       @_CpuTimer2Regs+4,#0xffef ; |170| 
+        AND       @_CpuTimer2Regs+4,#0xffef ; |168| 
 	.dwpsn	"main.c",172,2
         MOVW      DP,#_g_uint16_pwm_flag
         MOV       @_g_uint16_pwm_flag,#1 ; |172| 
 L1:    
 DW$L$_main$2$B:
 ;***	-----------------------g2:
-;*** 260	-----------------------    Menu_Selection();
-;*** 251	-----------------------    goto g2;
-	.dwpsn	"main.c",260,3
-        LCR       #_Menu_Selection      ; |260| 
-        ; call occurs [#_Menu_Selection] ; |260| 
-	.dwpsn	"main.c",251,8
-        BF        L1,UNC                ; |251| 
-        ; branch occurs ; |251| 
+;*** 247	-----------------------    Menu_Selection();
+;*** 238	-----------------------    goto g2;
+	.dwpsn	"main.c",247,3
+        LCR       #_Menu_Selection      ; |247| 
+        ; call occurs [#_Menu_Selection] ; |247| 
+	.dwpsn	"main.c",238,8
+        BF        L1,UNC                ; |238| 
+        ; branch occurs ; |238| 
 DW$L$_main$2$E:
 
 DW$194	.dwtag  DW_TAG_loop
-	.dwattr DW$194, DW_AT_name("C:\algo\main\main.asm:L1:1:1755591077")
+	.dwattr DW$194, DW_AT_name("C:\algo\main\main.asm:L1:1:1773144222")
 	.dwattr DW$194, DW_AT_begin_file("main.c")
-	.dwattr DW$194, DW_AT_begin_line(0xfb)
-	.dwattr DW$194, DW_AT_end_line(0x106)
+	.dwattr DW$194, DW_AT_begin_line(0xee)
+	.dwattr DW$194, DW_AT_end_line(0xf9)
 DW$195	.dwtag  DW_TAG_loop_range
 	.dwattr DW$195, DW_AT_low_pc(DW$L$_main$2$B)
 	.dwattr DW$195, DW_AT_high_pc(DW$L$_main$2$E)
 	.dwendtag DW$194
 
 	.dwattr DW$193, DW_AT_end_file("main.c")
-	.dwattr DW$193, DW_AT_end_line(0x108)
+	.dwattr DW$193, DW_AT_end_line(0xfb)
 	.dwattr DW$193, DW_AT_end_column(0x01)
 	.dwendentry
 	.dwendtag DW$193
@@ -1714,9 +1715,9 @@ DW$196	.dwtag  DW_TAG_subprogram, DW_AT_name("Delay"), DW_AT_symbol_name("_Delay
 	.dwattr DW$196, DW_AT_low_pc(_Delay)
 	.dwattr DW$196, DW_AT_high_pc(0x00)
 	.dwattr DW$196, DW_AT_begin_file("main.c")
-	.dwattr DW$196, DW_AT_begin_line(0x10a)
+	.dwattr DW$196, DW_AT_begin_line(0xfd)
 	.dwattr DW$196, DW_AT_begin_column(0x06)
-	.dwpsn	"main.c",267,1
+	.dwpsn	"main.c",254,1
 
 	.dwfde DW$CIE
 
@@ -1736,7 +1737,7 @@ DW$196	.dwtag  DW_TAG_subprogram, DW_AT_name("Delay"), DW_AT_symbol_name("_Delay
 ;*                                                             *
 ;***************************************************************
 _Delay:
-;*** 268	-----------------------    if ( Cnt == 0uL ) goto g4;
+;*** 255	-----------------------    if ( Cnt == 0uL ) goto g4;
 ;***  	-----------------------    #pragma MUST_ITERATE(1, 4294967295, 1)
 ;***  	-----------------------    #pragma LOOP_FLAGS(4096u)
 	.dwcfa	0x1d, -2
@@ -1750,45 +1751,45 @@ DW$197	.dwtag  DW_TAG_formal_parameter, DW_AT_name("Cnt"), DW_AT_symbol_name("_C
 DW$198	.dwtag  DW_TAG_variable, DW_AT_name("Cnt"), DW_AT_symbol_name("_Cnt")
 	.dwattr DW$198, DW_AT_type(*DW$T$36)
 	.dwattr DW$198, DW_AT_location[DW_OP_reg0]
-	.dwpsn	"main.c",268,2
-        TEST      ACC                   ; |268| 
-        BF        L3,EQ                 ; |268| 
-        ; branchcc occurs ; |268| 
+	.dwpsn	"main.c",255,2
+        TEST      ACC                   ; |255| 
+        BF        L3,EQ                 ; |255| 
+        ; branchcc occurs ; |255| 
 L2:    
 DW$L$_Delay$2$B:
 ;***	-----------------------g3:
-;*** 270	-----------------------    asm("\t\tnop");
-;*** 272	-----------------------    asm("\tnop");
-;*** 270	-----------------------    if ( --Cnt ) goto g3;
+;*** 257	-----------------------    asm("\t\tnop");
+;*** 259	-----------------------    asm("\tnop");
+;*** 257	-----------------------    if ( --Cnt ) goto g3;
 ;***	-----------------------g4:
 ;***  	-----------------------    return;
-	.dwpsn	"main.c",270,3
+	.dwpsn	"main.c",257,3
 		nop
-	.dwpsn	"main.c",272,3
+	.dwpsn	"main.c",259,3
 	nop
-	.dwpsn	"main.c",270,3
-        SUBB      ACC,#1                ; |270| 
-        BF        L2,NEQ                ; |270| 
-        ; branchcc occurs ; |270| 
+	.dwpsn	"main.c",257,3
+        SUBB      ACC,#1                ; |257| 
+        BF        L2,NEQ                ; |257| 
+        ; branchcc occurs ; |257| 
 DW$L$_Delay$2$E:
 L3:    
-	.dwpsn	"main.c",274,1
+	.dwpsn	"main.c",261,1
         SPM       #0
         LRETR
         ; return occurs
 
 DW$199	.dwtag  DW_TAG_loop
-	.dwattr DW$199, DW_AT_name("C:\algo\main\main.asm:L2:1:1755591077")
+	.dwattr DW$199, DW_AT_name("C:\algo\main\main.asm:L2:1:1773144222")
 	.dwattr DW$199, DW_AT_begin_file("main.c")
-	.dwattr DW$199, DW_AT_begin_line(0x10c)
-	.dwattr DW$199, DW_AT_end_line(0x111)
+	.dwattr DW$199, DW_AT_begin_line(0xff)
+	.dwattr DW$199, DW_AT_end_line(0x104)
 DW$200	.dwtag  DW_TAG_loop_range
 	.dwattr DW$200, DW_AT_low_pc(DW$L$_Delay$2$B)
 	.dwattr DW$200, DW_AT_high_pc(DW$L$_Delay$2$E)
 	.dwendtag DW$199
 
 	.dwattr DW$196, DW_AT_end_file("main.c")
-	.dwattr DW$196, DW_AT_end_line(0x112)
+	.dwattr DW$196, DW_AT_end_line(0x105)
 	.dwattr DW$196, DW_AT_end_column(0x01)
 	.dwendentry
 	.dwendtag DW$196
@@ -1800,9 +1801,9 @@ DW$201	.dwtag  DW_TAG_subprogram, DW_AT_name("Buzz"), DW_AT_symbol_name("_Buzz")
 	.dwattr DW$201, DW_AT_low_pc(_Buzz)
 	.dwattr DW$201, DW_AT_high_pc(0x00)
 	.dwattr DW$201, DW_AT_begin_file("main.c")
-	.dwattr DW$201, DW_AT_begin_line(0x115)
+	.dwattr DW$201, DW_AT_begin_line(0x108)
 	.dwattr DW$201, DW_AT_begin_column(0x06)
-	.dwpsn	"main.c",278,1
+	.dwpsn	"main.c",265,1
 
 	.dwfde DW$CIE
 
@@ -1822,7 +1823,7 @@ DW$201	.dwtag  DW_TAG_subprogram, DW_AT_name("Buzz"), DW_AT_symbol_name("_Buzz")
 ;*                                                             *
 ;***************************************************************
 _Buzz:
-;*** 280	-----------------------    if ( !Time ) goto g4;
+;*** 267	-----------------------    if ( !Time ) goto g4;
 	.dwcfa	0x1d, -2
 	.dwcfa	0x1c, 26, 0
 	.dwcfa	0x09, 40, 26
@@ -1846,11 +1847,11 @@ DW$205	.dwtag  DW_TAG_variable, DW_AT_name("Hz"), DW_AT_symbol_name("_Hz")
 DW$206	.dwtag  DW_TAG_variable, DW_AT_name("L$1"), DW_AT_symbol_name("L$1")
 	.dwattr DW$206, DW_AT_type(*DW$T$10)
 	.dwattr DW$206, DW_AT_location[DW_OP_reg16]
-        MOVZ      AR7,AL                ; |278| 
-        MOV       AL,AH                 ; |278| 
-	.dwpsn	"main.c",280,13
-        BF        L5,EQ                 ; |280| 
-        ; branchcc occurs ; |280| 
+        MOVZ      AR7,AL                ; |265| 
+        MOV       AL,AH                 ; |265| 
+	.dwpsn	"main.c",267,13
+        BF        L5,EQ                 ; |267| 
+        ; branchcc occurs ; |267| 
 ;***  	-----------------------    #pragma MUST_ITERATE(1, 4294967295, 1)
 ;***  	-----------------------    #pragma LOOP_FLAGS(5120u)
 ;***  	-----------------------    L$1 = (int)Time-1;
@@ -1859,40 +1860,40 @@ DW$206	.dwtag  DW_TAG_variable, DW_AT_name("L$1"), DW_AT_symbol_name("L$1")
 L4:    
 DW$L$_Buzz$3$B:
 ;***	-----------------------g3:
-;*** 282	-----------------------    Delay((unsigned long)Hz);
-;*** 284	-----------------------    Delay((unsigned long)Hz);
-;*** 280	-----------------------    if ( (--L$1) != (-1) ) goto g3;
+;*** 269	-----------------------    Delay((unsigned long)Hz);
+;*** 271	-----------------------    Delay((unsigned long)Hz);
+;*** 267	-----------------------    if ( (--L$1) != (-1) ) goto g3;
 ;***	-----------------------g4:
 ;***  	-----------------------    return;
-	.dwpsn	"main.c",282,3
+	.dwpsn	"main.c",269,3
         MOVU      ACC,AR7
-        LCR       #_Delay               ; |282| 
-        ; call occurs [#_Delay] ; |282| 
-	.dwpsn	"main.c",284,3
+        LCR       #_Delay               ; |269| 
+        ; call occurs [#_Delay] ; |269| 
+	.dwpsn	"main.c",271,3
         MOVU      ACC,AR7
-        LCR       #_Delay               ; |284| 
-        ; call occurs [#_Delay] ; |284| 
-	.dwpsn	"main.c",280,13
-        BANZ      L4,AR6--              ; |280| 
-        ; branchcc occurs ; |280| 
+        LCR       #_Delay               ; |271| 
+        ; call occurs [#_Delay] ; |271| 
+	.dwpsn	"main.c",267,13
+        BANZ      L4,AR6--              ; |267| 
+        ; branchcc occurs ; |267| 
 DW$L$_Buzz$3$E:
 L5:    
-	.dwpsn	"main.c",287,1
+	.dwpsn	"main.c",274,1
         LRETR
         ; return occurs
 
 DW$207	.dwtag  DW_TAG_loop
-	.dwattr DW$207, DW_AT_name("C:\algo\main\main.asm:L4:1:1755591077")
+	.dwattr DW$207, DW_AT_name("C:\algo\main\main.asm:L4:1:1773144222")
 	.dwattr DW$207, DW_AT_begin_file("main.c")
-	.dwattr DW$207, DW_AT_begin_line(0x118)
-	.dwattr DW$207, DW_AT_end_line(0x11e)
+	.dwattr DW$207, DW_AT_begin_line(0x10b)
+	.dwattr DW$207, DW_AT_end_line(0x111)
 DW$208	.dwtag  DW_TAG_loop_range
 	.dwattr DW$208, DW_AT_low_pc(DW$L$_Buzz$3$B)
 	.dwattr DW$208, DW_AT_high_pc(DW$L$_Buzz$3$E)
 	.dwendtag DW$207
 
 	.dwattr DW$201, DW_AT_end_file("main.c")
-	.dwattr DW$201, DW_AT_end_line(0x11f)
+	.dwattr DW$201, DW_AT_end_line(0x112)
 	.dwattr DW$201, DW_AT_end_column(0x01)
 	.dwendentry
 	.dwendtag DW$201
@@ -1914,8 +1915,8 @@ DW$208	.dwtag  DW_TAG_loop_range
 	.global	_Init_ISR
 	.global	_InitCpuTimers
 	.global	_InitMotor
-	.global	_initsensor
 	.global	_SensorOff
+	.global	_initsensor
 	.global	_InitAdc
 	.global	_initedge
 	.global	_InitEQep
@@ -1926,15 +1927,17 @@ DW$208	.dwtag  DW_TAG_loop_range
 	.global	_RamfuncsLoadStart
 	.global	_RamfuncsLoadEnd1
 	.global	_RamfuncsLoadEnd
+	.global	_FrontSensorValueCall
 	.global	_InitAlgorithmVariable
+	.global	_SideSensorValueCall
 	.global	_SetpPathFuntion
 	.global	_Initmenu
 	.global	_CpuTimer2Regs
 	.global	_GpioDataRegs
-	.global	_LeftPwmRegs
 	.global	_RightPwmRegs
-	.global	_LeftQepRegs
+	.global	_LeftPwmRegs
 	.global	_RightQepRegs
+	.global	_LeftQepRegs
 
 ;***************************************************************
 ;* TYPE INFORMATION                                            *
@@ -2019,9 +2022,9 @@ DW$T$142	.dwtag  DW_TAG_volatile_type
 
 DW$T$143	.dwtag  DW_TAG_array_type, DW_AT_type(*DW$T$142)
 	.dwattr DW$T$143, DW_AT_language(DW_LANG_C)
-	.dwattr DW$T$143, DW_AT_byte_size(0x258)
+	.dwattr DW$T$143, DW_AT_byte_size(0x262)
 DW$223	.dwtag  DW_TAG_subrange_type
-	.dwattr DW$223, DW_AT_upper_bound(0x257)
+	.dwattr DW$223, DW_AT_upper_bound(0x261)
 	.dwendtag DW$T$143
 
 
@@ -2073,9 +2076,9 @@ DW$230	.dwtag  DW_TAG_subrange_type
 
 DW$T$157	.dwtag  DW_TAG_array_type, DW_AT_type(*DW$T$155)
 	.dwattr DW$T$157, DW_AT_language(DW_LANG_C)
-	.dwattr DW$T$157, DW_AT_byte_size(0x4b0)
+	.dwattr DW$T$157, DW_AT_byte_size(0x4c4)
 DW$231	.dwtag  DW_TAG_subrange_type
-	.dwattr DW$231, DW_AT_upper_bound(0x257)
+	.dwattr DW$231, DW_AT_upper_bound(0x261)
 	.dwendtag DW$T$157
 
 

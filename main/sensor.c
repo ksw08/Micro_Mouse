@@ -78,7 +78,7 @@ volatile Uint16 SensorShoot[6] =
 
 volatile Uint16 SensorSEQ[6] = 
 {
-	LSS_SEN_AD_SEQ,R45_SEN_AD_SEQ,LFS_SEN_AD_SEQ,
+	LFS_SEN_AD_SEQ,R45_SEN_AD_SEQ,LSS_SEN_AD_SEQ,
 	RSS_SEN_AD_SEQ,L45_SEN_AD_SEQ,RFS_SEN_AD_SEQ
 };
 
@@ -132,38 +132,26 @@ interrupt void SensorADC(void)
 	SenSum +=	AdcMirror.ADCRESULT13;
 	SenSum +=	AdcMirror.ADCRESULT14;
 	SenSum +=   AdcMirror.ADCRESULT15;
-
-    //sensum test
-    /*if(ADChanelCnt == 0 && gUint16SensorSelect == 0) 
-    {
-        seq0 += SenSum;
-    }
-    else if(ADChanelCnt == 1 && gUint16SensorSelect == 0)
-    {
-        seq1 += SenSum;
-    }
-    else if(ADChanelCnt == 2 && gUint16SensorSelect == 0) 
-    {
-        seq2 += SenSum;
-    }*/
+    /*if(gUint16SensorSelect == 0)
+        {
+          testsen = AdcMirror.ADCRESULT0;
+          adccnt++;
+        }*/
 
 
 	AdcRegs.ADCTRL2.bit.RST_SEQ1 = 1;
 	AdcRegs.ADCST.bit.INT_SEQ1_CLR = 1;
 
 	ADChanelCnt++;
-    adccnt++;
 
 	if(ADChanelCnt >= 3)//마지막 시퀀스 
 	{
 		ADChanelCnt = 0;
 		g_sen[ gUint16SensorSelect ].Uint16Value= SenSum >> 8;//16, 센서의 평균값 추출
 		SenSum = 0;
-        adccnt = 0;
-        testsen = 1;
 
 		// SENSOR VARIABLE FILTERING
-		g_sen[ gUint16SensorSelect ].q17LPFOutDataYet = g_sen[ gUint16SensorSelect ].q17LPFOutData; // 한 틱 전 lpf 필터 이후 센서값
+		g_sen[ gUint16SensorSelect ].q17LPFOutDataYet = g_sen[ gUint16SensorSelect ].q17LPFOutData; // 한 틱 전 센서값
 		g_sen[ gUint16SensorSelect ].q17LPFOutData = _IQ17mpyIQX( SENSOR_Kb, 30, g_sen[ gUint16SensorSelect ].q17LPFInData + QUP( g_sen[ gUint16SensorSelect ].Uint16Value, 17 ), 17 ) 
 										 - _IQ17mpyIQX( SENSOR_Ka, 30, g_sen[ gUint16SensorSelect ].q17LPFOutData, 17 ); // 과거 센서값 + 현재 센서값 - 과거 out값
 		g_sen[ gUint16SensorSelect ].q17LPFInData = QUP( g_sen[ gUint16SensorSelect ].Uint16Value, 17 ); // 센서의 평균값
@@ -187,10 +175,8 @@ interrupt void SensorADC(void)
 			
 			if( buff >= g_sen[ gUint16SensorSelect ].q17MidVal ) // 중앙보다 더 벽에 붙음
 				g_sen[ gUint16SensorSelect ].q17Position = _IQ17mpy( g_sen[ gUint16SensorSelect ].q17HighCoefficient, _IQ17sqrt( buff - g_sen[ gUint16SensorSelect ].q17MidVal ) ) + _IQ17( 256.0 );
-                //g_sen[ gUint16SensorSelect ].q17Position = _IQ17mpy( g_sen[ gUint16SensorSelect ].q17HighCoefficient, ( buff - g_sen[ gUint16SensorSelect ].q17MidVal ) ) + _IQ17( 256.0 );
-			else //중앙보다 멈
+			else //중앙보다 더 벽과 멈
 				g_sen[ gUint16SensorSelect ].q17Position = _IQ17mpy( g_sen[ gUint16SensorSelect ].q17LowCoefficient, _IQ17sqrt( buff - g_sen[ gUint16SensorSelect ].q17MinVal ) ) + _IQ17( 512.0 );
-                //g_sen[ gUint16SensorSelect ].q17Position = _IQ17mpy( g_sen[ gUint16SensorSelect ].q17LowCoefficient, ( buff - g_sen[ gUint16SensorSelect ].q17MinVal ) ) + _IQ17( 512.0 );
 	
 			if( g_sen[ gUint16SensorSelect ].q17Position < 0 )
 				g_sen[ gUint16SensorSelect ].q17Position = 0;
@@ -508,38 +494,11 @@ void SideSensorSet(void)
 	Delay(0x200000);
 	
 	GyroVar.q17AngleRef = QDW(GyroVar.q20LPFOutData,3);
-
-	TxPrintf("\n=================================================================\n");
-	TxPrintf("RDS max :%4.2f  RDS min :%4.2f RDS mid :%4.2f RDS hc :%4.2f RDS lc :%4.2f\n" 	, _IQ17toF( p[ 0 ]->q17MaxVal )
-																					, _IQ17toF( p[ 0 ]->q17MinVal )
-																					, _IQ17toF( p[ 0 ]->q17MidVal )
-																					, _IQ17toF( p[ 0 ]->q17HighCoefficient )
-																					, _IQ17toF( p[ 0 ]->q17LowCoefficient ) );
-	
-	TxPrintf("RSS max :%4.2f  RSS min :%4.2f RSS mid :%4.2f RSS hc :%4.2f RSS lc :%4.2f\n" 	, _IQ17toF( p[ 1 ]->q17MaxVal )
-																					, _IQ17toF( p[ 1 ]->q17MinVal )
-																					, _IQ17toF( p[ 1 ]->q17MidVal )
-																					, _IQ17toF( p[ 1 ]->q17HighCoefficient )
-																					, _IQ17toF( p[ 1 ]->q17LowCoefficient ) );
-	
-	TxPrintf("LDS max :%4.2f  LDS min :%4.2f LDS mid :%4.2f LDS hc :%4.2f LDS lc :%4.2f\n" 	, _IQ17toF( p[ 2 ]->q17MaxVal )
-																					, _IQ17toF( p[ 2 ]->q17MinVal )
-																					, _IQ17toF( p[ 2 ]->q17MidVal )
-																					, _IQ17toF( p[ 2 ]->q17HighCoefficient )
-																					, _IQ17toF( p[ 2 ]->q17LowCoefficient ) );
-	
-	TxPrintf("LSS max :%4.2f  LSS min :%4.2f LSS mid :%4.2f LSS hc :%4.2f LSS lc :%4.2f\n" 	, _IQ17toF( p[ 3 ]->q17MaxVal )
-																					, _IQ17toF( p[ 3 ]->q17MinVal )
-																					, _IQ17toF( p[ 3 ]->q17MidVal )
-																					, _IQ17toF( p[ 3 ]->q17HighCoefficient )
-																					, _IQ17toF( p[ 3 ]->q17LowCoefficient ) );	
 	
 	for(i = 0; i < 4; i++)
 	{
-		p[i]->q17HighCoefficient = _IQ17mpy((int32)(-1) << 17,_IQ17div((int32)256 << 17, _IQ17sqrt(p[i]->q17MaxVal - p[i]->q17MidVal)));
-		p[i]->q17LowCoefficient = _IQ17mpy((int32)(-1) << 17,_IQ17div((int32)256 << 17, _IQ17sqrt(p[i]->q17MidVal - p[i]->q17MinVal)));
-		//p[i]->q17HighCoefficient = _IQ17mpy((int32)(-1) << 17,_IQ17div((int32)256 << 17, (p[i]->q17MaxVal - p[i]->q17MidVal)));
-		//p[i]->q17LowCoefficient = _IQ17mpy((int32)(-1) << 17,_IQ17div((int32)256 << 17,  (p[i]->q17MidVal - p[i]->q17MinVal)));
+		p[i]->q17HighCoefficient = _IQ17mpy((int32)(-1) << 17,_IQ17div((int32)256 << 17, _IQ17sqrt(p[i]->q17MaxVal - p[i]->q17MidVal))); // left width
+		p[i]->q17LowCoefficient = _IQ17mpy((int32)(-1) << 17,_IQ17div((int32)256 << 17, _IQ17sqrt(p[i]->q17MidVal - p[i]->q17MinVal)));  // 
 
 		WriteBuf[i*20+0] = (p[i]->q17MaxVal >> 0)  & 0xff;
 		WriteBuf[i*20+1] = (p[i]->q17MaxVal >> 8)  & 0xff;

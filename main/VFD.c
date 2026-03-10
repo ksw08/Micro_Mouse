@@ -199,7 +199,7 @@ void VfdInit(void)
 	VFD_DA_L;
 	VFD_RS_L;
 	VfdCtlRegInit(0x81);
-	VfdCtlRegInit(0x41);// 0x4d
+	VfdCtlRegInit(0x4d);
 }
 
 void VfdDataLoad(char *Buff)//(char *buffer)

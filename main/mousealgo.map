@@ -18,13 +18,13 @@ OUTPUT TRANSLATION MAP
    OUTPUT FILES: mousealgo.hex [b0..b15]
 
    CONTENTS: 003e8000..003e8001   codestart Data Width=2   
-             003e8002..003ecb45   .text Data Width=2   
-             003ecb46..003ede21   .econst Data Width=2   
-             003ede22..003eec82   ramfuncs2 Data Width=2   
-             003eec83..003eef02   VFD_FONT Data Width=2   
-             003eef03..003ef0bf   IQmath Data Width=2   
-             003ef0c0..003ef1c0   .cinit Data Width=2   
-             003ef1c1..003ef1e3   ramfuncs Data Width=2   
+             003e8002..003ecaa2   .text Data Width=2   
+             003ecaa4..003edd87   .econst Data Width=2   
+             003edd88..003eebc7   ramfuncs2 Data Width=2   
+             003eebc8..003eee47   VFD_FONT Data Width=2   
+             003eee48..003ef004   IQmath Data Width=2   
+             003ef005..003ef105   .cinit Data Width=2   
+             003ef106..003ef128   ramfuncs Data Width=2   
 
 --------------------------------------------------------------------------------
 00000000..003fffff  Page=1  Memory Width=16  ROM Width=16  "*DEFAULT PAGE 1*"

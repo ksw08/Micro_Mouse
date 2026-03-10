@@ -58,6 +58,7 @@ void Variable_Init(void)
 	pidtest = _IQ26(0.1);
 	Flag_Chaetering = OFF;
 	gUint16user_speed = 0;
+	g_U32Chaetering = 0;
 	gUint16SensorSelect = 0;
 	gMovestate = 0;
 	gStopcount = 0;
@@ -102,10 +103,10 @@ void Variable_Init(void)
 	g_int16_menu_y = 0;
 	g_uint16_sensor_cnt = 0;
 	g_uint16_position_cnt = 0;
-	g_uint16_pwm_flag = 1;
+	g_uint16_pwm_flag = 0;
 	chooseturnspeed = SMOOTH600;
-	//FrontSensorValueCall();
-	//SideSensorValueCall();
+	FrontSensorValueCall();
+	SideSensorValueCall();
 	gDIR_cnt = 0;
 	gRunTime = 0;
 	utimetick = 0;
@@ -136,7 +137,7 @@ void Variable_Init(void)
 	InitMotor(&L_Motor);
 
 
-	GpioDataRegs.GPASET.bit.GPIO27 = 0; // Buzz off
+	GpioDataRegs.GPASET.bit.GPIO27 = 1; // PWM_STANBY
 	GpioDataRegs.GPASET.bit.GPIO7 = 0; // right PWM_DIR1
 	GpioDataRegs.GPASET.bit.GPIO9 = 0; // right PWM_DIR2
 //////////////////////////////////////////////////////////////////	
@@ -158,9 +159,6 @@ void Variable_Init(void)
     testsen = 0;
     adccnt = 0;
     JapanGoal = OFF;
-    seq0 = 0;
-    seq1 = 0;
-    seq2 = 0;
 }
 
 void main(void)
@@ -168,21 +166,10 @@ void main(void)
 	System_Init();
 	Variable_Init();
 	StartCpuTimer2(); 
+    //while(1) TxPrintf("%4d:%4d\n", adccnt,testsen);
+
 
 	g_uint16_pwm_flag = 1;
-    /*while(1) 
-    {
-        if(gUint16SensorSelect == 0) 
-        {
-            TxPrintf("seq0:%6ld   seq1:%6ld   seq2:%6ld\n", seq0,seq1,seq2);
-            TxPrintf("%d\n",adccnt);
-            if(testsen == 1)
-            {    
-                seq0 = 0, seq1 = 0, seq2 = 0;
-                testsen = 0;
-            }
-        }
-    }*/
 
 
 #if 0

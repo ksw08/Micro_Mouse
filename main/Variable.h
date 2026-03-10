@@ -55,7 +55,7 @@ __VARIABLE_EXT__ volatile Uint16 	Flag_Chaetering,
 									gTURN_cnt,
 									gTURN_MENU,
 									gFrontPosition,
-									gtesttick[600],
+									gtesttick[610],
 									print_cnt,
 									chooseturnspeed,
 									turnflag;
@@ -108,7 +108,7 @@ __VARIABLE_EXT__ volatile Uint16	Que[256],
 									adccnt,
 									JapanGoal;
 									
-__VARIABLE_EXT__ volatile Uint32	seq0, seq1, seq2;
+__VARIABLE_EXT__ volatile Uint32	g_U32Chaetering;
 
 __VARIABLE_EXT__ volatile Uint32 	gUserTimeCnt,
 									wallcnt,
@@ -129,10 +129,10 @@ __VARIABLE_EXT__ volatile _iq17		q17Position,
 									q17PosDerivativeTerm,
 									q17PosIntegralTerm,
 									q17PosPidOutTerm,
-									q17testfdiff[600],
-									q17testfposition[600],
-									q17testposition[600],
-									q17testdiff[600],	
+									q17testfdiff[610],
+									q17testfposition[610],
+									q17testposition[610],
+									q17testdiff[610],	
 									//q17testfrposition[500],
 									//q17testfrdiff[500], >> 이거 사용할라면 메모리 부족함.
 									q17LeftPos,
@@ -204,7 +204,7 @@ __VARIABLE_EXT__ volatile float32
 
 #define SMOOTH600			0
 #define SMOOTH850			1
-#define SMOOTH1200			2
+#define SMOOTH1000			2
 #define SMOOTH1300			3
 #define SMOOTHFIRSTDIAG		4
 
@@ -257,6 +257,9 @@ __VARIABLE_EXT__	Uint16	init_buffer[110];
 #define	SW_RIGHT			!GpioDataRegs.GPADAT.bit.GPIO14
 #define SW_DOWN				!GpioDataRegs.GPADAT.bit.GPIO30
 #define SW_UP				!GpioDataRegs.GPADAT.bit.GPIO31
+
+//#define SW_DOWN			(g_sen[2].q17LPFOutData >= _IQ17(550))
+//#define SW_UP			(g_sen[5].q17LPFOutData >= _IQ17(450))
 
 
 

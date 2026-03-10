@@ -1,6 +1,6 @@
 ;***************************************************************
 ;* TMS320C2000 C/C++ Codegen                         PC v4.1.3 *
-;* Date/Time created: Tue Aug 19 17:11:19 2025                 *
+;* Date/Time created: Tue Mar 10 21:03:47 2026                 *
 ;***************************************************************
 	.compiler_opts --mem_model:code=flat --mem_model:data=large --silicon_version=28 
 FP	.set	XAR2
@@ -378,8 +378,8 @@ DW$91	.dwtag  DW_TAG_variable, DW_AT_name("gMapValue"), DW_AT_symbol_name("_gMap
 	.dwattr DW$91, DW_AT_location[DW_OP_addr _gMapValue]
 	.dwattr DW$91, DW_AT_type(*DW$T$116)
 	.dwattr DW$91, DW_AT_external(0x01)
-;	C:\algo\Compiler\bin\opt2000.exe C:\Users\kimsy\AppData\Local\Temp\TI30010 C:\Users\kimsy\AppData\Local\Temp\TI3004 
-;	C:\algo\Compiler\bin\ac2000.exe --keep_unneeded_types -D_INLINE -DLARGE_MODEL -IC:\algo\include --version=28 --keep_unneeded_types --mem_model:code=flat --mem_model:data=large -m --i_output_file C:\Users\kimsy\AppData\Local\Temp\TI3002 --template_info_file C:\Users\kimsy\AppData\Local\Temp\TI3006 --object_file algo.obj --embed_opts 10 --call_assumptions=0 --mem_model:code=flat --mem_model:data=large --opt_for_speed --opt_level=3 --optimizer_comments --optimizer_interlist --program_level_compile 
+;	C:\algo\Compiler\bin\opt2000.exe C:\Users\KSY\AppData\Local\Temp\TI94010 C:\Users\KSY\AppData\Local\Temp\TI9404 
+;	C:\algo\Compiler\bin\ac2000.exe --keep_unneeded_types -D_INLINE -DLARGE_MODEL -IC:\algo\include --version=28 --keep_unneeded_types --mem_model:code=flat --mem_model:data=large -m --i_output_file C:\Users\KSY\AppData\Local\Temp\TI9402 --template_info_file C:\Users\KSY\AppData\Local\Temp\TI9406 --object_file algo.obj --embed_opts 10 --call_assumptions=0 --mem_model:code=flat --mem_model:data=large --opt_for_speed --opt_level=3 --optimizer_comments --optimizer_interlist --program_level_compile 
 	.sect	".text"
 	.global	_directvelacc_change
 
@@ -387,9 +387,9 @@ DW$92	.dwtag  DW_TAG_subprogram, DW_AT_name("directvelacc_change"), DW_AT_symbol
 	.dwattr DW$92, DW_AT_low_pc(_directvelacc_change)
 	.dwattr DW$92, DW_AT_high_pc(0x00)
 	.dwattr DW$92, DW_AT_begin_file("algo.c")
-	.dwattr DW$92, DW_AT_begin_line(0x7e4)
+	.dwattr DW$92, DW_AT_begin_line(0x7e5)
 	.dwattr DW$92, DW_AT_begin_column(0x06)
-	.dwpsn	"algo.c",2020,31
+	.dwpsn	"algo.c",2021,31
 
 	.dwfde DW$CIE
 
@@ -409,12 +409,12 @@ DW$92	.dwtag  DW_TAG_subprogram, DW_AT_name("directvelacc_change"), DW_AT_symbol
 ;*                                                             *
 ;***************************************************************
 _directvelacc_change:
-;** 2025	-----------------------    VFDPrintf("Direcvel");
-;** 2026	-----------------------    DSP28x_usDelay(9999998uL);
+;** 2026	-----------------------    VFDPrintf("Direcvel");
+;** 2027	-----------------------    DSP28x_usDelay(9999998uL);
 ;***  	-----------------------    #pragma LOOP_FLAGS(5120u)
-;** 2021	-----------------------    cnt = 0;
-;** 2022	-----------------------    vel = 1800u;
-;** 2023	-----------------------    acc = 7000u;
+;** 2022	-----------------------    cnt = 0;
+;** 2023	-----------------------    vel = 1500u;
+;** 2024	-----------------------    acc = 7000u;
 	.dwcfa	0x1d, -2
 	.dwcfa	0x1c, 26, 0
 	.dwcfa	0x09, 40, 26
@@ -441,259 +441,259 @@ DW$94	.dwtag  DW_TAG_variable, DW_AT_name("vel"), DW_AT_symbol_name("_vel")
 DW$95	.dwtag  DW_TAG_variable, DW_AT_name("cnt"), DW_AT_symbol_name("_cnt")
 	.dwattr DW$95, DW_AT_type(*DW$T$10)
 	.dwattr DW$95, DW_AT_location[DW_OP_reg6]
-	.dwpsn	"algo.c",2025,5
-        MOVL      XAR4,#FSL1            ; |2025| 
-        MOVL      *-SP[2],XAR4          ; |2025| 
-        LCR       #_VFDPrintf           ; |2025| 
-        ; call occurs [#_VFDPrintf] ; |2025| 
 	.dwpsn	"algo.c",2026,5
+        MOVL      XAR4,#FSL1            ; |2026| 
+        MOVL      *-SP[2],XAR4          ; |2026| 
+        LCR       #_VFDPrintf           ; |2026| 
+        ; call occurs [#_VFDPrintf] ; |2026| 
+	.dwpsn	"algo.c",2027,5
         MOV       AL,#38526
         MOV       AH,#152
-        LCR       #_DSP28x_usDelay      ; |2026| 
-        ; call occurs [#_DSP28x_usDelay] ; |2026| 
-	.dwpsn	"algo.c",2021,6
+        LCR       #_DSP28x_usDelay      ; |2027| 
+        ; call occurs [#_DSP28x_usDelay] ; |2027| 
+	.dwpsn	"algo.c",2022,6
         MOVB      XAR1,#0
-	.dwpsn	"algo.c",2022,9
-        MOVL      XAR2,#1800            ; |2022| 
 	.dwpsn	"algo.c",2023,9
-        MOVL      XAR3,#7000            ; |2023| 
+        MOVL      XAR2,#1500            ; |2023| 
+	.dwpsn	"algo.c",2024,9
+        MOVL      XAR3,#7000            ; |2024| 
 L1:    
 DW$L$_directvelacc_change$2$B:
 ;***	-----------------------g2:
-;** 2030	-----------------------    if ( !cnt ) goto g5;
-	.dwpsn	"algo.c",2030,3
+;** 2031	-----------------------    if ( !cnt ) goto g5;
+	.dwpsn	"algo.c",2031,3
         MOV       AL,AR1
-        BF        L2,EQ                 ; |2030| 
-        ; branchcc occurs ; |2030| 
+        BF        L2,EQ                 ; |2031| 
+        ; branchcc occurs ; |2031| 
 DW$L$_directvelacc_change$2$E:
 DW$L$_directvelacc_change$3$B:
-;** 2033	-----------------------    if ( cnt != 1 ) goto g6;
-	.dwpsn	"algo.c",2033,8
-        CMPB      AL,#1                 ; |2033| 
-        BF        L3,NEQ                ; |2033| 
-        ; branchcc occurs ; |2033| 
+;** 2034	-----------------------    if ( cnt != 1 ) goto g6;
+	.dwpsn	"algo.c",2034,8
+        CMPB      AL,#1                 ; |2034| 
+        BF        L3,NEQ                ; |2034| 
+        ; branchcc occurs ; |2034| 
 DW$L$_directvelacc_change$3$E:
 DW$L$_directvelacc_change$4$B:
-;** 2034	-----------------------    VFDPrintf("ACC:%4d", acc);
-;** 2034	-----------------------    goto g6;
-	.dwpsn	"algo.c",2034,4
-        MOVL      XAR4,#FSL2            ; |2034| 
-        MOVL      *-SP[2],XAR4          ; |2034| 
-        MOV       *-SP[3],AR3           ; |2034| 
-        LCR       #_VFDPrintf           ; |2034| 
-        ; call occurs [#_VFDPrintf] ; |2034| 
-        BF        L3,UNC                ; |2034| 
-        ; branch occurs ; |2034| 
+;** 2035	-----------------------    VFDPrintf("ACC:%4d", acc);
+;** 2035	-----------------------    goto g6;
+	.dwpsn	"algo.c",2035,4
+        MOVL      XAR4,#FSL2            ; |2035| 
+        MOVL      *-SP[2],XAR4          ; |2035| 
+        MOV       *-SP[3],AR3           ; |2035| 
+        LCR       #_VFDPrintf           ; |2035| 
+        ; call occurs [#_VFDPrintf] ; |2035| 
+        BF        L3,UNC                ; |2035| 
+        ; branch occurs ; |2035| 
 DW$L$_directvelacc_change$4$E:
 L2:    
 DW$L$_directvelacc_change$5$B:
 ;***	-----------------------g5:
-;** 2031	-----------------------    VFDPrintf("VEL:%4d", vel);
-	.dwpsn	"algo.c",2031,4
-        MOVL      XAR4,#FSL3            ; |2031| 
-        MOVL      *-SP[2],XAR4          ; |2031| 
-        MOV       *-SP[3],AR2           ; |2031| 
-        LCR       #_VFDPrintf           ; |2031| 
-        ; call occurs [#_VFDPrintf] ; |2031| 
+;** 2032	-----------------------    VFDPrintf("VEL:%4d", vel);
+	.dwpsn	"algo.c",2032,4
+        MOVL      XAR4,#FSL3            ; |2032| 
+        MOVL      *-SP[2],XAR4          ; |2032| 
+        MOV       *-SP[3],AR2           ; |2032| 
+        LCR       #_VFDPrintf           ; |2032| 
+        ; call occurs [#_VFDPrintf] ; |2032| 
 DW$L$_directvelacc_change$5$E:
 L3:    
 DW$L$_directvelacc_change$6$B:
 ;***	-----------------------g6:
-;** 2036	-----------------------    if ( *&GpioDataRegs&0x4000u ) goto g9;
-	.dwpsn	"algo.c",2036,3
+;** 2037	-----------------------    if ( *&GpioDataRegs&0x4000u ) goto g9;
+	.dwpsn	"algo.c",2037,3
         MOVW      DP,#_GpioDataRegs
-        TBIT      @_GpioDataRegs,#14    ; |2036| 
-        BF        L4,TC                 ; |2036| 
-        ; branchcc occurs ; |2036| 
+        TBIT      @_GpioDataRegs,#14    ; |2037| 
+        BF        L4,TC                 ; |2037| 
+        ; branchcc occurs ; |2037| 
 DW$L$_directvelacc_change$6$E:
 DW$L$_directvelacc_change$7$B:
-;** 2037	-----------------------    DSP28x_usDelay(3999998uL);
-;** 2038	-----------------------    if ( (++cnt) < 2 ) goto g9;
-	.dwpsn	"algo.c",2037,4
+;** 2038	-----------------------    DSP28x_usDelay(3999998uL);
+;** 2039	-----------------------    if ( (++cnt) < 2 ) goto g9;
+	.dwpsn	"algo.c",2038,4
         MOV       AL,#2302
         MOV       AH,#61
-        LCR       #_DSP28x_usDelay      ; |2037| 
-        ; call occurs [#_DSP28x_usDelay] ; |2037| 
-	.dwpsn	"algo.c",2038,4
+        LCR       #_DSP28x_usDelay      ; |2038| 
+        ; call occurs [#_DSP28x_usDelay] ; |2038| 
+	.dwpsn	"algo.c",2039,4
         MOV       AL,AR1
-        ADDB      AL,#1                 ; |2038| 
-        CMPB      AL,#2                 ; |2038| 
-        MOVZ      AR1,AL                ; |2038| 
-        BF        L4,LT                 ; |2038| 
-        ; branchcc occurs ; |2038| 
+        ADDB      AL,#1                 ; |2039| 
+        CMPB      AL,#2                 ; |2039| 
+        MOVZ      AR1,AL                ; |2039| 
+        BF        L4,LT                 ; |2039| 
+        ; branchcc occurs ; |2039| 
 DW$L$_directvelacc_change$7$E:
 DW$L$_directvelacc_change$8$B:
-;** 2039	-----------------------    cnt = 0;
-	.dwpsn	"algo.c",2039,14
+;** 2040	-----------------------    cnt = 0;
+	.dwpsn	"algo.c",2040,14
         MOVB      XAR1,#0
 DW$L$_directvelacc_change$8$E:
 L4:    
 DW$L$_directvelacc_change$9$B:
 ;***	-----------------------g9:
-;** 2042	-----------------------    if ( *&GpioDataRegs&0x8000u ) goto g24;
-	.dwpsn	"algo.c",2042,3
+;** 2043	-----------------------    if ( *&GpioDataRegs&0x8000u ) goto g24;
+	.dwpsn	"algo.c",2043,3
         MOVW      DP,#_GpioDataRegs
-        TBIT      @_GpioDataRegs,#15    ; |2042| 
-        BF        L12,TC                ; |2042| 
-        ; branchcc occurs ; |2042| 
+        TBIT      @_GpioDataRegs,#15    ; |2043| 
+        BF        L12,TC                ; |2043| 
+        ; branchcc occurs ; |2043| 
 DW$L$_directvelacc_change$9$E:
 DW$L$_directvelacc_change$10$B:
-;** 2044	-----------------------    if ( cnt ) goto g17;
+;** 2045	-----------------------    if ( cnt ) goto g17;
 ;***  	-----------------------    #pragma LOOP_FLAGS(5120u)
-	.dwpsn	"algo.c",2044,4
+	.dwpsn	"algo.c",2045,4
         MOV       AL,AR1
-        BF        L8,NEQ                ; |2044| 
-        ; branchcc occurs ; |2044| 
+        BF        L8,NEQ                ; |2045| 
+        ; branchcc occurs ; |2045| 
 DW$L$_directvelacc_change$10$E:
 L5:    
 DW$L$_directvelacc_change$11$B:
 ;***	-----------------------g12:
-;** 2047	-----------------------    VFDPrintf("VEL:%4d", vel);
-;** 2048	-----------------------    if ( *(&GpioDataRegs+1)&0x8000u ) goto g14;
-	.dwpsn	"algo.c",2047,5
-        MOVL      XAR4,#FSL3            ; |2047| 
-        MOVL      *-SP[2],XAR4          ; |2047| 
-        MOV       *-SP[3],AR2           ; |2047| 
-        LCR       #_VFDPrintf           ; |2047| 
-        ; call occurs [#_VFDPrintf] ; |2047| 
+;** 2048	-----------------------    VFDPrintf("VEL:%4d", vel);
+;** 2049	-----------------------    if ( *(&GpioDataRegs+1)&0x8000u ) goto g14;
 	.dwpsn	"algo.c",2048,5
+        MOVL      XAR4,#FSL3            ; |2048| 
+        MOVL      *-SP[2],XAR4          ; |2048| 
+        MOV       *-SP[3],AR2           ; |2048| 
+        LCR       #_VFDPrintf           ; |2048| 
+        ; call occurs [#_VFDPrintf] ; |2048| 
+	.dwpsn	"algo.c",2049,5
         MOVW      DP,#_GpioDataRegs+1
-        TBIT      @_GpioDataRegs+1,#15  ; |2048| 
-        BF        L6,TC                 ; |2048| 
-        ; branchcc occurs ; |2048| 
+        TBIT      @_GpioDataRegs+1,#15  ; |2049| 
+        BF        L6,TC                 ; |2049| 
+        ; branchcc occurs ; |2049| 
 DW$L$_directvelacc_change$11$E:
 DW$L$_directvelacc_change$12$B:
-;** 2049	-----------------------    DSP28x_usDelay(1199998uL);
-;** 2050	-----------------------    vel += 50u;
-	.dwpsn	"algo.c",2049,6
+;** 2050	-----------------------    DSP28x_usDelay(1199998uL);
+;** 2051	-----------------------    vel += 50u;
+	.dwpsn	"algo.c",2050,6
         MOV       AL,#20350
         MOV       AH,#18
-        LCR       #_DSP28x_usDelay      ; |2049| 
-        ; call occurs [#_DSP28x_usDelay] ; |2049| 
-	.dwpsn	"algo.c",2050,6
-        ADDB      XAR2,#50              ; |2050| 
+        LCR       #_DSP28x_usDelay      ; |2050| 
+        ; call occurs [#_DSP28x_usDelay] ; |2050| 
+	.dwpsn	"algo.c",2051,6
+        ADDB      XAR2,#50              ; |2051| 
 DW$L$_directvelacc_change$12$E:
 L6:    
 DW$L$_directvelacc_change$13$B:
 ;***	-----------------------g14:
-;** 2052	-----------------------    if ( *(&GpioDataRegs+1)&0x4000u ) goto g16;
-	.dwpsn	"algo.c",2052,5
+;** 2053	-----------------------    if ( *(&GpioDataRegs+1)&0x4000u ) goto g16;
+	.dwpsn	"algo.c",2053,5
         MOVW      DP,#_GpioDataRegs+1
-        TBIT      @_GpioDataRegs+1,#14  ; |2052| 
-        BF        L7,TC                 ; |2052| 
-        ; branchcc occurs ; |2052| 
+        TBIT      @_GpioDataRegs+1,#14  ; |2053| 
+        BF        L7,TC                 ; |2053| 
+        ; branchcc occurs ; |2053| 
 DW$L$_directvelacc_change$13$E:
 DW$L$_directvelacc_change$14$B:
-;** 2053	-----------------------    DSP28x_usDelay(1199998uL);
-;** 2054	-----------------------    vel -= 50u;
-	.dwpsn	"algo.c",2053,6
+;** 2054	-----------------------    DSP28x_usDelay(1199998uL);
+;** 2055	-----------------------    vel -= 50u;
+	.dwpsn	"algo.c",2054,6
         MOV       AL,#20350
         MOV       AH,#18
-        LCR       #_DSP28x_usDelay      ; |2053| 
-        ; call occurs [#_DSP28x_usDelay] ; |2053| 
-	.dwpsn	"algo.c",2054,6
-        SUBB      XAR2,#50              ; |2054| 
+        LCR       #_DSP28x_usDelay      ; |2054| 
+        ; call occurs [#_DSP28x_usDelay] ; |2054| 
+	.dwpsn	"algo.c",2055,6
+        SUBB      XAR2,#50              ; |2055| 
 DW$L$_directvelacc_change$14$E:
 L7:    
 DW$L$_directvelacc_change$15$B:
 ;***	-----------------------g16:
-;** 2056	-----------------------    if ( *&GpioDataRegs&0x4000u ) goto g12;
-	.dwpsn	"algo.c",2056,24
+;** 2057	-----------------------    if ( *&GpioDataRegs&0x4000u ) goto g12;
+	.dwpsn	"algo.c",2057,24
         MOVW      DP,#_GpioDataRegs
-        TBIT      @_GpioDataRegs,#14    ; |2056| 
-        BF        L5,TC                 ; |2056| 
-        ; branchcc occurs ; |2056| 
+        TBIT      @_GpioDataRegs,#14    ; |2057| 
+        BF        L5,TC                 ; |2057| 
+        ; branchcc occurs ; |2057| 
 DW$L$_directvelacc_change$15$E:
 L8:    
 DW$L$_directvelacc_change$16$B:
 ;***	-----------------------g17:
-;** 2058	-----------------------    if ( cnt != 1 ) goto g24;
+;** 2059	-----------------------    if ( cnt != 1 ) goto g24;
 ;***  	-----------------------    #pragma LOOP_FLAGS(5120u)
-	.dwpsn	"algo.c",2058,5
+	.dwpsn	"algo.c",2059,5
         MOV       AL,AR1
-        CMPB      AL,#1                 ; |2058| 
-        BF        L12,NEQ               ; |2058| 
-        ; branchcc occurs ; |2058| 
+        CMPB      AL,#1                 ; |2059| 
+        BF        L12,NEQ               ; |2059| 
+        ; branchcc occurs ; |2059| 
 DW$L$_directvelacc_change$16$E:
 L9:    
 DW$L$_directvelacc_change$17$B:
 ;***	-----------------------g19:
-;** 2062	-----------------------    VFDPrintf("ACC:%4d", acc);
-;** 2063	-----------------------    if ( *(&GpioDataRegs+1)&0x8000u ) goto g21;
-	.dwpsn	"algo.c",2062,5
-        MOVL      XAR4,#FSL2            ; |2062| 
-        MOVL      *-SP[2],XAR4          ; |2062| 
-        MOV       *-SP[3],AR3           ; |2062| 
-        LCR       #_VFDPrintf           ; |2062| 
-        ; call occurs [#_VFDPrintf] ; |2062| 
+;** 2063	-----------------------    VFDPrintf("ACC:%4d", acc);
+;** 2064	-----------------------    if ( *(&GpioDataRegs+1)&0x8000u ) goto g21;
 	.dwpsn	"algo.c",2063,5
+        MOVL      XAR4,#FSL2            ; |2063| 
+        MOVL      *-SP[2],XAR4          ; |2063| 
+        MOV       *-SP[3],AR3           ; |2063| 
+        LCR       #_VFDPrintf           ; |2063| 
+        ; call occurs [#_VFDPrintf] ; |2063| 
+	.dwpsn	"algo.c",2064,5
         MOVW      DP,#_GpioDataRegs+1
-        TBIT      @_GpioDataRegs+1,#15  ; |2063| 
-        BF        L10,TC                ; |2063| 
-        ; branchcc occurs ; |2063| 
+        TBIT      @_GpioDataRegs+1,#15  ; |2064| 
+        BF        L10,TC                ; |2064| 
+        ; branchcc occurs ; |2064| 
 DW$L$_directvelacc_change$17$E:
 DW$L$_directvelacc_change$18$B:
-;** 2064	-----------------------    DSP28x_usDelay(1199998uL);
-;** 2065	-----------------------    acc += 500u;
-	.dwpsn	"algo.c",2064,6
+;** 2065	-----------------------    DSP28x_usDelay(1199998uL);
+;** 2066	-----------------------    acc += 500u;
+	.dwpsn	"algo.c",2065,6
         MOV       AL,#20350
         MOV       AH,#18
-        LCR       #_DSP28x_usDelay      ; |2064| 
-        ; call occurs [#_DSP28x_usDelay] ; |2064| 
-	.dwpsn	"algo.c",2065,6
-        ADD       AR3,#500              ; |2065| 
+        LCR       #_DSP28x_usDelay      ; |2065| 
+        ; call occurs [#_DSP28x_usDelay] ; |2065| 
+	.dwpsn	"algo.c",2066,6
+        ADD       AR3,#500              ; |2066| 
 DW$L$_directvelacc_change$18$E:
 L10:    
 DW$L$_directvelacc_change$19$B:
 ;***	-----------------------g21:
-;** 2067	-----------------------    if ( *(&GpioDataRegs+1)&0x4000u ) goto g23;
-	.dwpsn	"algo.c",2067,5
+;** 2068	-----------------------    if ( *(&GpioDataRegs+1)&0x4000u ) goto g23;
+	.dwpsn	"algo.c",2068,5
         MOVW      DP,#_GpioDataRegs+1
-        TBIT      @_GpioDataRegs+1,#14  ; |2067| 
-        BF        L11,TC                ; |2067| 
-        ; branchcc occurs ; |2067| 
+        TBIT      @_GpioDataRegs+1,#14  ; |2068| 
+        BF        L11,TC                ; |2068| 
+        ; branchcc occurs ; |2068| 
 DW$L$_directvelacc_change$19$E:
 DW$L$_directvelacc_change$20$B:
-;** 2068	-----------------------    DSP28x_usDelay(1199998uL);
-;** 2069	-----------------------    acc -= 500u;
-	.dwpsn	"algo.c",2068,6
+;** 2069	-----------------------    DSP28x_usDelay(1199998uL);
+;** 2070	-----------------------    acc -= 500u;
+	.dwpsn	"algo.c",2069,6
         MOV       AL,#20350
         MOV       AH,#18
-        LCR       #_DSP28x_usDelay      ; |2068| 
-        ; call occurs [#_DSP28x_usDelay] ; |2068| 
-	.dwpsn	"algo.c",2069,6
-        SUB       AR3,#500              ; |2069| 
+        LCR       #_DSP28x_usDelay      ; |2069| 
+        ; call occurs [#_DSP28x_usDelay] ; |2069| 
+	.dwpsn	"algo.c",2070,6
+        SUB       AR3,#500              ; |2070| 
 DW$L$_directvelacc_change$20$E:
 L11:    
 DW$L$_directvelacc_change$21$B:
 ;***	-----------------------g23:
-;** 2071	-----------------------    if ( *&GpioDataRegs&0x4000u ) goto g19;
-	.dwpsn	"algo.c",2071,24
+;** 2072	-----------------------    if ( *&GpioDataRegs&0x4000u ) goto g19;
+	.dwpsn	"algo.c",2072,24
         MOVW      DP,#_GpioDataRegs
-        TBIT      @_GpioDataRegs,#14    ; |2071| 
-        BF        L9,TC                 ; |2071| 
-        ; branchcc occurs ; |2071| 
+        TBIT      @_GpioDataRegs,#14    ; |2072| 
+        BF        L9,TC                 ; |2072| 
+        ; branchcc occurs ; |2072| 
 DW$L$_directvelacc_change$21$E:
 L12:    
 DW$L$_directvelacc_change$22$B:
 ;***	-----------------------g24:
-;** 2075	-----------------------    if ( *(&GpioDataRegs+1)&0x4000u ) goto g2;
-	.dwpsn	"algo.c",2075,3
-        TBIT      @_GpioDataRegs+1,#14  ; |2075| 
-        BF        L1,TC                 ; |2075| 
-        ; branchcc occurs ; |2075| 
+;** 2076	-----------------------    if ( *(&GpioDataRegs+1)&0x4000u ) goto g2;
+	.dwpsn	"algo.c",2076,3
+        TBIT      @_GpioDataRegs+1,#14  ; |2076| 
+        BF        L1,TC                 ; |2076| 
+        ; branchcc occurs ; |2076| 
 DW$L$_directvelacc_change$22$E:
-;** 2077	-----------------------    gDirectSpeedLimit = vel;
-;** 2078	-----------------------    gUserDirectAccel = acc;
-;** 2079	-----------------------    return;
-	.dwpsn	"algo.c",2077,4
-        MOVW      DP,#_gDirectSpeedLimit
-        MOV       @_gDirectSpeedLimit,AR2 ; |2077| 
+;** 2078	-----------------------    gDirectSpeedLimit = vel;
+;** 2079	-----------------------    gUserDirectAccel = acc;
+;** 2080	-----------------------    return;
 	.dwpsn	"algo.c",2078,4
-        MOVW      DP,#_gUserDirectAccel
-        MOV       @_gUserDirectAccel,AR3 ; |2078| 
+        MOVW      DP,#_gDirectSpeedLimit
+        MOV       @_gDirectSpeedLimit,AR2 ; |2078| 
 	.dwpsn	"algo.c",2079,4
-	.dwpsn	"algo.c",2082,1
+        MOVW      DP,#_gUserDirectAccel
+        MOV       @_gUserDirectAccel,AR3 ; |2079| 
+	.dwpsn	"algo.c",2080,4
+	.dwpsn	"algo.c",2083,1
         SUBB      SP,#4
 	.dwcfa	0x1d, -8
         MOVL      XAR3,*--SP
@@ -709,10 +709,10 @@ DW$L$_directvelacc_change$22$E:
         ; return occurs
 
 DW$96	.dwtag  DW_TAG_loop
-	.dwattr DW$96, DW_AT_name("C:\algo\main\algo.asm:L1:1:1755591079")
+	.dwattr DW$96, DW_AT_name("C:\algo\main\algo.asm:L1:1:1773144227")
 	.dwattr DW$96, DW_AT_begin_file("algo.c")
-	.dwattr DW$96, DW_AT_begin_line(0x7ec)
-	.dwattr DW$96, DW_AT_end_line(0x821)
+	.dwattr DW$96, DW_AT_begin_line(0x7ed)
+	.dwattr DW$96, DW_AT_end_line(0x822)
 DW$97	.dwtag  DW_TAG_loop_range
 	.dwattr DW$97, DW_AT_low_pc(DW$L$_directvelacc_change$2$B)
 	.dwattr DW$97, DW_AT_high_pc(DW$L$_directvelacc_change$2$E)
@@ -748,10 +748,10 @@ DW$107	.dwtag  DW_TAG_loop_range
 	.dwattr DW$107, DW_AT_high_pc(DW$L$_directvelacc_change$22$E)
 
 DW$108	.dwtag  DW_TAG_loop
-	.dwattr DW$108, DW_AT_name("C:\algo\main\algo.asm:L5:2:1755591079")
+	.dwattr DW$108, DW_AT_name("C:\algo\main\algo.asm:L5:2:1773144227")
 	.dwattr DW$108, DW_AT_begin_file("algo.c")
-	.dwattr DW$108, DW_AT_begin_line(0x7fd)
-	.dwattr DW$108, DW_AT_end_line(0x809)
+	.dwattr DW$108, DW_AT_begin_line(0x7fe)
+	.dwattr DW$108, DW_AT_end_line(0x80a)
 DW$109	.dwtag  DW_TAG_loop_range
 	.dwattr DW$109, DW_AT_low_pc(DW$L$_directvelacc_change$11$B)
 	.dwattr DW$109, DW_AT_high_pc(DW$L$_directvelacc_change$11$E)
@@ -771,10 +771,10 @@ DW$113	.dwtag  DW_TAG_loop_range
 
 
 DW$114	.dwtag  DW_TAG_loop
-	.dwattr DW$114, DW_AT_name("C:\algo\main\algo.asm:L9:2:1755591079")
+	.dwattr DW$114, DW_AT_name("C:\algo\main\algo.asm:L9:2:1773144227")
 	.dwattr DW$114, DW_AT_begin_file("algo.c")
-	.dwattr DW$114, DW_AT_begin_line(0x80c)
-	.dwattr DW$114, DW_AT_end_line(0x818)
+	.dwattr DW$114, DW_AT_begin_line(0x80d)
+	.dwattr DW$114, DW_AT_end_line(0x819)
 DW$115	.dwtag  DW_TAG_loop_range
 	.dwattr DW$115, DW_AT_low_pc(DW$L$_directvelacc_change$17$B)
 	.dwattr DW$115, DW_AT_high_pc(DW$L$_directvelacc_change$17$E)
@@ -795,7 +795,7 @@ DW$119	.dwtag  DW_TAG_loop_range
 	.dwendtag DW$96
 
 	.dwattr DW$92, DW_AT_end_file("algo.c")
-	.dwattr DW$92, DW_AT_end_line(0x822)
+	.dwattr DW$92, DW_AT_end_line(0x823)
 	.dwattr DW$92, DW_AT_end_column(0x01)
 	.dwendentry
 	.dwendtag DW$92
@@ -807,9 +807,9 @@ DW$120	.dwtag  DW_TAG_subprogram, DW_AT_name("diagvelacc_change"), DW_AT_symbol_
 	.dwattr DW$120, DW_AT_low_pc(_diagvelacc_change)
 	.dwattr DW$120, DW_AT_high_pc(0x00)
 	.dwattr DW$120, DW_AT_begin_file("algo.c")
-	.dwattr DW$120, DW_AT_begin_line(0x825)
+	.dwattr DW$120, DW_AT_begin_line(0x826)
 	.dwattr DW$120, DW_AT_begin_column(0x06)
-	.dwpsn	"algo.c",2085,29
+	.dwpsn	"algo.c",2086,29
 
 	.dwfde DW$CIE
 
@@ -829,12 +829,12 @@ DW$120	.dwtag  DW_TAG_subprogram, DW_AT_name("diagvelacc_change"), DW_AT_symbol_
 ;*                                                             *
 ;***************************************************************
 _diagvelacc_change:
-;** 2090	-----------------------    VFDPrintf("Diag_vel");
-;** 2091	-----------------------    DSP28x_usDelay(9999998uL);
+;** 2091	-----------------------    VFDPrintf("Diag_vel");
+;** 2092	-----------------------    DSP28x_usDelay(9999998uL);
 ;***  	-----------------------    #pragma LOOP_FLAGS(5120u)
-;** 2086	-----------------------    cnt = 0;
-;** 2087	-----------------------    vel = 1000u;
-;** 2088	-----------------------    acc = 7000u;
+;** 2087	-----------------------    cnt = 0;
+;** 2088	-----------------------    vel = 1200u;
+;** 2089	-----------------------    acc = 7000u;
 	.dwcfa	0x1d, -2
 	.dwcfa	0x1c, 26, 0
 	.dwcfa	0x09, 40, 26
@@ -861,259 +861,259 @@ DW$122	.dwtag  DW_TAG_variable, DW_AT_name("vel"), DW_AT_symbol_name("_vel")
 DW$123	.dwtag  DW_TAG_variable, DW_AT_name("cnt"), DW_AT_symbol_name("_cnt")
 	.dwattr DW$123, DW_AT_type(*DW$T$10)
 	.dwattr DW$123, DW_AT_location[DW_OP_reg6]
-	.dwpsn	"algo.c",2090,5
-        MOVL      XAR4,#FSL4            ; |2090| 
-        MOVL      *-SP[2],XAR4          ; |2090| 
-        LCR       #_VFDPrintf           ; |2090| 
-        ; call occurs [#_VFDPrintf] ; |2090| 
 	.dwpsn	"algo.c",2091,5
+        MOVL      XAR4,#FSL4            ; |2091| 
+        MOVL      *-SP[2],XAR4          ; |2091| 
+        LCR       #_VFDPrintf           ; |2091| 
+        ; call occurs [#_VFDPrintf] ; |2091| 
+	.dwpsn	"algo.c",2092,5
         MOV       AL,#38526
         MOV       AH,#152
-        LCR       #_DSP28x_usDelay      ; |2091| 
-        ; call occurs [#_DSP28x_usDelay] ; |2091| 
-	.dwpsn	"algo.c",2086,6
+        LCR       #_DSP28x_usDelay      ; |2092| 
+        ; call occurs [#_DSP28x_usDelay] ; |2092| 
+	.dwpsn	"algo.c",2087,6
         MOVB      XAR1,#0
-	.dwpsn	"algo.c",2087,12
-        MOVL      XAR2,#1000            ; |2087| 
-	.dwpsn	"algo.c",2088,9
-        MOVL      XAR3,#7000            ; |2088| 
+	.dwpsn	"algo.c",2088,12
+        MOVL      XAR2,#1200            ; |2088| 
+	.dwpsn	"algo.c",2089,9
+        MOVL      XAR3,#7000            ; |2089| 
 L13:    
 DW$L$_diagvelacc_change$2$B:
 ;***	-----------------------g2:
-;** 2095	-----------------------    if ( !cnt ) goto g5;
-	.dwpsn	"algo.c",2095,3
+;** 2096	-----------------------    if ( !cnt ) goto g5;
+	.dwpsn	"algo.c",2096,3
         MOV       AL,AR1
-        BF        L14,EQ                ; |2095| 
-        ; branchcc occurs ; |2095| 
+        BF        L14,EQ                ; |2096| 
+        ; branchcc occurs ; |2096| 
 DW$L$_diagvelacc_change$2$E:
 DW$L$_diagvelacc_change$3$B:
-;** 2098	-----------------------    if ( cnt != 1 ) goto g6;
-	.dwpsn	"algo.c",2098,8
-        CMPB      AL,#1                 ; |2098| 
-        BF        L15,NEQ               ; |2098| 
-        ; branchcc occurs ; |2098| 
+;** 2099	-----------------------    if ( cnt != 1 ) goto g6;
+	.dwpsn	"algo.c",2099,8
+        CMPB      AL,#1                 ; |2099| 
+        BF        L15,NEQ               ; |2099| 
+        ; branchcc occurs ; |2099| 
 DW$L$_diagvelacc_change$3$E:
 DW$L$_diagvelacc_change$4$B:
-;** 2099	-----------------------    VFDPrintf("ACC:%4d", acc);
-;** 2099	-----------------------    goto g6;
-	.dwpsn	"algo.c",2099,4
-        MOVL      XAR4,#FSL2            ; |2099| 
-        MOVL      *-SP[2],XAR4          ; |2099| 
-        MOV       *-SP[3],AR3           ; |2099| 
-        LCR       #_VFDPrintf           ; |2099| 
-        ; call occurs [#_VFDPrintf] ; |2099| 
-        BF        L15,UNC               ; |2099| 
-        ; branch occurs ; |2099| 
+;** 2100	-----------------------    VFDPrintf("ACC:%4d", acc);
+;** 2100	-----------------------    goto g6;
+	.dwpsn	"algo.c",2100,4
+        MOVL      XAR4,#FSL2            ; |2100| 
+        MOVL      *-SP[2],XAR4          ; |2100| 
+        MOV       *-SP[3],AR3           ; |2100| 
+        LCR       #_VFDPrintf           ; |2100| 
+        ; call occurs [#_VFDPrintf] ; |2100| 
+        BF        L15,UNC               ; |2100| 
+        ; branch occurs ; |2100| 
 DW$L$_diagvelacc_change$4$E:
 L14:    
 DW$L$_diagvelacc_change$5$B:
 ;***	-----------------------g5:
-;** 2096	-----------------------    VFDPrintf("VEL:%4d", vel);
-	.dwpsn	"algo.c",2096,4
-        MOVL      XAR4,#FSL3            ; |2096| 
-        MOVL      *-SP[2],XAR4          ; |2096| 
-        MOV       *-SP[3],AR2           ; |2096| 
-        LCR       #_VFDPrintf           ; |2096| 
-        ; call occurs [#_VFDPrintf] ; |2096| 
+;** 2097	-----------------------    VFDPrintf("VEL:%4d", vel);
+	.dwpsn	"algo.c",2097,4
+        MOVL      XAR4,#FSL3            ; |2097| 
+        MOVL      *-SP[2],XAR4          ; |2097| 
+        MOV       *-SP[3],AR2           ; |2097| 
+        LCR       #_VFDPrintf           ; |2097| 
+        ; call occurs [#_VFDPrintf] ; |2097| 
 DW$L$_diagvelacc_change$5$E:
 L15:    
 DW$L$_diagvelacc_change$6$B:
 ;***	-----------------------g6:
-;** 2101	-----------------------    if ( *&GpioDataRegs&0x4000u ) goto g9;
-	.dwpsn	"algo.c",2101,3
+;** 2102	-----------------------    if ( *&GpioDataRegs&0x4000u ) goto g9;
+	.dwpsn	"algo.c",2102,3
         MOVW      DP,#_GpioDataRegs
-        TBIT      @_GpioDataRegs,#14    ; |2101| 
-        BF        L16,TC                ; |2101| 
-        ; branchcc occurs ; |2101| 
+        TBIT      @_GpioDataRegs,#14    ; |2102| 
+        BF        L16,TC                ; |2102| 
+        ; branchcc occurs ; |2102| 
 DW$L$_diagvelacc_change$6$E:
 DW$L$_diagvelacc_change$7$B:
-;** 2102	-----------------------    DSP28x_usDelay(3999998uL);
-;** 2103	-----------------------    if ( (++cnt) < 2 ) goto g9;
-	.dwpsn	"algo.c",2102,4
+;** 2103	-----------------------    DSP28x_usDelay(3999998uL);
+;** 2104	-----------------------    if ( (++cnt) < 2 ) goto g9;
+	.dwpsn	"algo.c",2103,4
         MOV       AL,#2302
         MOV       AH,#61
-        LCR       #_DSP28x_usDelay      ; |2102| 
-        ; call occurs [#_DSP28x_usDelay] ; |2102| 
-	.dwpsn	"algo.c",2103,4
+        LCR       #_DSP28x_usDelay      ; |2103| 
+        ; call occurs [#_DSP28x_usDelay] ; |2103| 
+	.dwpsn	"algo.c",2104,4
         MOV       AL,AR1
-        ADDB      AL,#1                 ; |2103| 
-        CMPB      AL,#2                 ; |2103| 
-        MOVZ      AR1,AL                ; |2103| 
-        BF        L16,LT                ; |2103| 
-        ; branchcc occurs ; |2103| 
+        ADDB      AL,#1                 ; |2104| 
+        CMPB      AL,#2                 ; |2104| 
+        MOVZ      AR1,AL                ; |2104| 
+        BF        L16,LT                ; |2104| 
+        ; branchcc occurs ; |2104| 
 DW$L$_diagvelacc_change$7$E:
 DW$L$_diagvelacc_change$8$B:
-;** 2104	-----------------------    cnt = 0;
-	.dwpsn	"algo.c",2104,14
+;** 2105	-----------------------    cnt = 0;
+	.dwpsn	"algo.c",2105,14
         MOVB      XAR1,#0
 DW$L$_diagvelacc_change$8$E:
 L16:    
 DW$L$_diagvelacc_change$9$B:
 ;***	-----------------------g9:
-;** 2107	-----------------------    if ( *&GpioDataRegs&0x8000u ) goto g24;
-	.dwpsn	"algo.c",2107,3
+;** 2108	-----------------------    if ( *&GpioDataRegs&0x8000u ) goto g24;
+	.dwpsn	"algo.c",2108,3
         MOVW      DP,#_GpioDataRegs
-        TBIT      @_GpioDataRegs,#15    ; |2107| 
-        BF        L24,TC                ; |2107| 
-        ; branchcc occurs ; |2107| 
+        TBIT      @_GpioDataRegs,#15    ; |2108| 
+        BF        L24,TC                ; |2108| 
+        ; branchcc occurs ; |2108| 
 DW$L$_diagvelacc_change$9$E:
 DW$L$_diagvelacc_change$10$B:
-;** 2109	-----------------------    if ( cnt ) goto g17;
+;** 2110	-----------------------    if ( cnt ) goto g17;
 ;***  	-----------------------    #pragma LOOP_FLAGS(5120u)
-	.dwpsn	"algo.c",2109,4
+	.dwpsn	"algo.c",2110,4
         MOV       AL,AR1
-        BF        L20,NEQ               ; |2109| 
-        ; branchcc occurs ; |2109| 
+        BF        L20,NEQ               ; |2110| 
+        ; branchcc occurs ; |2110| 
 DW$L$_diagvelacc_change$10$E:
 L17:    
 DW$L$_diagvelacc_change$11$B:
 ;***	-----------------------g12:
-;** 2112	-----------------------    VFDPrintf("VEL:%4d", vel);
-;** 2113	-----------------------    if ( *(&GpioDataRegs+1)&0x8000u ) goto g14;
-	.dwpsn	"algo.c",2112,5
-        MOVL      XAR4,#FSL3            ; |2112| 
-        MOVL      *-SP[2],XAR4          ; |2112| 
-        MOV       *-SP[3],AR2           ; |2112| 
-        LCR       #_VFDPrintf           ; |2112| 
-        ; call occurs [#_VFDPrintf] ; |2112| 
+;** 2113	-----------------------    VFDPrintf("VEL:%4d", vel);
+;** 2114	-----------------------    if ( *(&GpioDataRegs+1)&0x8000u ) goto g14;
 	.dwpsn	"algo.c",2113,5
+        MOVL      XAR4,#FSL3            ; |2113| 
+        MOVL      *-SP[2],XAR4          ; |2113| 
+        MOV       *-SP[3],AR2           ; |2113| 
+        LCR       #_VFDPrintf           ; |2113| 
+        ; call occurs [#_VFDPrintf] ; |2113| 
+	.dwpsn	"algo.c",2114,5
         MOVW      DP,#_GpioDataRegs+1
-        TBIT      @_GpioDataRegs+1,#15  ; |2113| 
-        BF        L18,TC                ; |2113| 
-        ; branchcc occurs ; |2113| 
+        TBIT      @_GpioDataRegs+1,#15  ; |2114| 
+        BF        L18,TC                ; |2114| 
+        ; branchcc occurs ; |2114| 
 DW$L$_diagvelacc_change$11$E:
 DW$L$_diagvelacc_change$12$B:
-;** 2114	-----------------------    DSP28x_usDelay(1199998uL);
-;** 2115	-----------------------    vel += 50u;
-	.dwpsn	"algo.c",2114,6
+;** 2115	-----------------------    DSP28x_usDelay(1199998uL);
+;** 2116	-----------------------    vel += 50u;
+	.dwpsn	"algo.c",2115,6
         MOV       AL,#20350
         MOV       AH,#18
-        LCR       #_DSP28x_usDelay      ; |2114| 
-        ; call occurs [#_DSP28x_usDelay] ; |2114| 
-	.dwpsn	"algo.c",2115,6
-        ADDB      XAR2,#50              ; |2115| 
+        LCR       #_DSP28x_usDelay      ; |2115| 
+        ; call occurs [#_DSP28x_usDelay] ; |2115| 
+	.dwpsn	"algo.c",2116,6
+        ADDB      XAR2,#50              ; |2116| 
 DW$L$_diagvelacc_change$12$E:
 L18:    
 DW$L$_diagvelacc_change$13$B:
 ;***	-----------------------g14:
-;** 2117	-----------------------    if ( *(&GpioDataRegs+1)&0x4000u ) goto g16;
-	.dwpsn	"algo.c",2117,5
+;** 2118	-----------------------    if ( *(&GpioDataRegs+1)&0x4000u ) goto g16;
+	.dwpsn	"algo.c",2118,5
         MOVW      DP,#_GpioDataRegs+1
-        TBIT      @_GpioDataRegs+1,#14  ; |2117| 
-        BF        L19,TC                ; |2117| 
-        ; branchcc occurs ; |2117| 
+        TBIT      @_GpioDataRegs+1,#14  ; |2118| 
+        BF        L19,TC                ; |2118| 
+        ; branchcc occurs ; |2118| 
 DW$L$_diagvelacc_change$13$E:
 DW$L$_diagvelacc_change$14$B:
-;** 2118	-----------------------    DSP28x_usDelay(1199998uL);
-;** 2119	-----------------------    vel -= 50u;
-	.dwpsn	"algo.c",2118,6
+;** 2119	-----------------------    DSP28x_usDelay(1199998uL);
+;** 2120	-----------------------    vel -= 50u;
+	.dwpsn	"algo.c",2119,6
         MOV       AL,#20350
         MOV       AH,#18
-        LCR       #_DSP28x_usDelay      ; |2118| 
-        ; call occurs [#_DSP28x_usDelay] ; |2118| 
-	.dwpsn	"algo.c",2119,6
-        SUBB      XAR2,#50              ; |2119| 
+        LCR       #_DSP28x_usDelay      ; |2119| 
+        ; call occurs [#_DSP28x_usDelay] ; |2119| 
+	.dwpsn	"algo.c",2120,6
+        SUBB      XAR2,#50              ; |2120| 
 DW$L$_diagvelacc_change$14$E:
 L19:    
 DW$L$_diagvelacc_change$15$B:
 ;***	-----------------------g16:
-;** 2121	-----------------------    if ( *&GpioDataRegs&0x4000u ) goto g12;
-	.dwpsn	"algo.c",2121,24
+;** 2122	-----------------------    if ( *&GpioDataRegs&0x4000u ) goto g12;
+	.dwpsn	"algo.c",2122,24
         MOVW      DP,#_GpioDataRegs
-        TBIT      @_GpioDataRegs,#14    ; |2121| 
-        BF        L17,TC                ; |2121| 
-        ; branchcc occurs ; |2121| 
+        TBIT      @_GpioDataRegs,#14    ; |2122| 
+        BF        L17,TC                ; |2122| 
+        ; branchcc occurs ; |2122| 
 DW$L$_diagvelacc_change$15$E:
 L20:    
 DW$L$_diagvelacc_change$16$B:
 ;***	-----------------------g17:
-;** 2123	-----------------------    if ( cnt != 1 ) goto g24;
+;** 2124	-----------------------    if ( cnt != 1 ) goto g24;
 ;***  	-----------------------    #pragma LOOP_FLAGS(5120u)
-	.dwpsn	"algo.c",2123,5
+	.dwpsn	"algo.c",2124,5
         MOV       AL,AR1
-        CMPB      AL,#1                 ; |2123| 
-        BF        L24,NEQ               ; |2123| 
-        ; branchcc occurs ; |2123| 
+        CMPB      AL,#1                 ; |2124| 
+        BF        L24,NEQ               ; |2124| 
+        ; branchcc occurs ; |2124| 
 DW$L$_diagvelacc_change$16$E:
 L21:    
 DW$L$_diagvelacc_change$17$B:
 ;***	-----------------------g19:
-;** 2127	-----------------------    VFDPrintf("ACC:%4d", acc);
-;** 2128	-----------------------    if ( *(&GpioDataRegs+1)&0x8000u ) goto g21;
-	.dwpsn	"algo.c",2127,5
-        MOVL      XAR4,#FSL2            ; |2127| 
-        MOVL      *-SP[2],XAR4          ; |2127| 
-        MOV       *-SP[3],AR3           ; |2127| 
-        LCR       #_VFDPrintf           ; |2127| 
-        ; call occurs [#_VFDPrintf] ; |2127| 
+;** 2128	-----------------------    VFDPrintf("ACC:%4d", acc);
+;** 2129	-----------------------    if ( *(&GpioDataRegs+1)&0x8000u ) goto g21;
 	.dwpsn	"algo.c",2128,5
+        MOVL      XAR4,#FSL2            ; |2128| 
+        MOVL      *-SP[2],XAR4          ; |2128| 
+        MOV       *-SP[3],AR3           ; |2128| 
+        LCR       #_VFDPrintf           ; |2128| 
+        ; call occurs [#_VFDPrintf] ; |2128| 
+	.dwpsn	"algo.c",2129,5
         MOVW      DP,#_GpioDataRegs+1
-        TBIT      @_GpioDataRegs+1,#15  ; |2128| 
-        BF        L22,TC                ; |2128| 
-        ; branchcc occurs ; |2128| 
+        TBIT      @_GpioDataRegs+1,#15  ; |2129| 
+        BF        L22,TC                ; |2129| 
+        ; branchcc occurs ; |2129| 
 DW$L$_diagvelacc_change$17$E:
 DW$L$_diagvelacc_change$18$B:
-;** 2129	-----------------------    DSP28x_usDelay(1199998uL);
-;** 2130	-----------------------    acc += 500u;
-	.dwpsn	"algo.c",2129,6
+;** 2130	-----------------------    DSP28x_usDelay(1199998uL);
+;** 2131	-----------------------    acc += 500u;
+	.dwpsn	"algo.c",2130,6
         MOV       AL,#20350
         MOV       AH,#18
-        LCR       #_DSP28x_usDelay      ; |2129| 
-        ; call occurs [#_DSP28x_usDelay] ; |2129| 
-	.dwpsn	"algo.c",2130,6
-        ADD       AR3,#500              ; |2130| 
+        LCR       #_DSP28x_usDelay      ; |2130| 
+        ; call occurs [#_DSP28x_usDelay] ; |2130| 
+	.dwpsn	"algo.c",2131,6
+        ADD       AR3,#500              ; |2131| 
 DW$L$_diagvelacc_change$18$E:
 L22:    
 DW$L$_diagvelacc_change$19$B:
 ;***	-----------------------g21:
-;** 2132	-----------------------    if ( *(&GpioDataRegs+1)&0x4000u ) goto g23;
-	.dwpsn	"algo.c",2132,5
+;** 2133	-----------------------    if ( *(&GpioDataRegs+1)&0x4000u ) goto g23;
+	.dwpsn	"algo.c",2133,5
         MOVW      DP,#_GpioDataRegs+1
-        TBIT      @_GpioDataRegs+1,#14  ; |2132| 
-        BF        L23,TC                ; |2132| 
-        ; branchcc occurs ; |2132| 
+        TBIT      @_GpioDataRegs+1,#14  ; |2133| 
+        BF        L23,TC                ; |2133| 
+        ; branchcc occurs ; |2133| 
 DW$L$_diagvelacc_change$19$E:
 DW$L$_diagvelacc_change$20$B:
-;** 2133	-----------------------    DSP28x_usDelay(1199998uL);
-;** 2134	-----------------------    acc -= 500u;
-	.dwpsn	"algo.c",2133,6
+;** 2134	-----------------------    DSP28x_usDelay(1199998uL);
+;** 2135	-----------------------    acc -= 500u;
+	.dwpsn	"algo.c",2134,6
         MOV       AL,#20350
         MOV       AH,#18
-        LCR       #_DSP28x_usDelay      ; |2133| 
-        ; call occurs [#_DSP28x_usDelay] ; |2133| 
-	.dwpsn	"algo.c",2134,6
-        SUB       AR3,#500              ; |2134| 
+        LCR       #_DSP28x_usDelay      ; |2134| 
+        ; call occurs [#_DSP28x_usDelay] ; |2134| 
+	.dwpsn	"algo.c",2135,6
+        SUB       AR3,#500              ; |2135| 
 DW$L$_diagvelacc_change$20$E:
 L23:    
 DW$L$_diagvelacc_change$21$B:
 ;***	-----------------------g23:
-;** 2136	-----------------------    if ( *&GpioDataRegs&0x4000u ) goto g19;
-	.dwpsn	"algo.c",2136,24
+;** 2137	-----------------------    if ( *&GpioDataRegs&0x4000u ) goto g19;
+	.dwpsn	"algo.c",2137,24
         MOVW      DP,#_GpioDataRegs
-        TBIT      @_GpioDataRegs,#14    ; |2136| 
-        BF        L21,TC                ; |2136| 
-        ; branchcc occurs ; |2136| 
+        TBIT      @_GpioDataRegs,#14    ; |2137| 
+        BF        L21,TC                ; |2137| 
+        ; branchcc occurs ; |2137| 
 DW$L$_diagvelacc_change$21$E:
 L24:    
 DW$L$_diagvelacc_change$22$B:
 ;***	-----------------------g24:
-;** 2140	-----------------------    if ( *(&GpioDataRegs+1)&0x4000u ) goto g2;
-	.dwpsn	"algo.c",2140,3
-        TBIT      @_GpioDataRegs+1,#14  ; |2140| 
-        BF        L13,TC                ; |2140| 
-        ; branchcc occurs ; |2140| 
+;** 2141	-----------------------    if ( *(&GpioDataRegs+1)&0x4000u ) goto g2;
+	.dwpsn	"algo.c",2141,3
+        TBIT      @_GpioDataRegs+1,#14  ; |2141| 
+        BF        L13,TC                ; |2141| 
+        ; branchcc occurs ; |2141| 
 DW$L$_diagvelacc_change$22$E:
-;** 2142	-----------------------    gDiagSpeedLimit = vel;
-;** 2143	-----------------------    gUserDiagAccel = acc;
-;** 2144	-----------------------    return;
-	.dwpsn	"algo.c",2142,4
-        MOVW      DP,#_gDiagSpeedLimit
-        MOV       @_gDiagSpeedLimit,AR2 ; |2142| 
+;** 2143	-----------------------    gDiagSpeedLimit = vel;
+;** 2144	-----------------------    gUserDiagAccel = acc;
+;** 2145	-----------------------    return;
 	.dwpsn	"algo.c",2143,4
-        MOVW      DP,#_gUserDiagAccel
-        MOV       @_gUserDiagAccel,AR3  ; |2143| 
+        MOVW      DP,#_gDiagSpeedLimit
+        MOV       @_gDiagSpeedLimit,AR2 ; |2143| 
 	.dwpsn	"algo.c",2144,4
-	.dwpsn	"algo.c",2147,1
+        MOVW      DP,#_gUserDiagAccel
+        MOV       @_gUserDiagAccel,AR3  ; |2144| 
+	.dwpsn	"algo.c",2145,4
+	.dwpsn	"algo.c",2148,1
         SUBB      SP,#4
 	.dwcfa	0x1d, -8
         MOVL      XAR3,*--SP
@@ -1129,10 +1129,10 @@ DW$L$_diagvelacc_change$22$E:
         ; return occurs
 
 DW$124	.dwtag  DW_TAG_loop
-	.dwattr DW$124, DW_AT_name("C:\algo\main\algo.asm:L13:1:1755591079")
+	.dwattr DW$124, DW_AT_name("C:\algo\main\algo.asm:L13:1:1773144227")
 	.dwattr DW$124, DW_AT_begin_file("algo.c")
-	.dwattr DW$124, DW_AT_begin_line(0x82d)
-	.dwattr DW$124, DW_AT_end_line(0x862)
+	.dwattr DW$124, DW_AT_begin_line(0x82e)
+	.dwattr DW$124, DW_AT_end_line(0x863)
 DW$125	.dwtag  DW_TAG_loop_range
 	.dwattr DW$125, DW_AT_low_pc(DW$L$_diagvelacc_change$2$B)
 	.dwattr DW$125, DW_AT_high_pc(DW$L$_diagvelacc_change$2$E)
@@ -1168,10 +1168,10 @@ DW$135	.dwtag  DW_TAG_loop_range
 	.dwattr DW$135, DW_AT_high_pc(DW$L$_diagvelacc_change$22$E)
 
 DW$136	.dwtag  DW_TAG_loop
-	.dwattr DW$136, DW_AT_name("C:\algo\main\algo.asm:L17:2:1755591079")
+	.dwattr DW$136, DW_AT_name("C:\algo\main\algo.asm:L17:2:1773144227")
 	.dwattr DW$136, DW_AT_begin_file("algo.c")
-	.dwattr DW$136, DW_AT_begin_line(0x83e)
-	.dwattr DW$136, DW_AT_end_line(0x84a)
+	.dwattr DW$136, DW_AT_begin_line(0x83f)
+	.dwattr DW$136, DW_AT_end_line(0x84b)
 DW$137	.dwtag  DW_TAG_loop_range
 	.dwattr DW$137, DW_AT_low_pc(DW$L$_diagvelacc_change$11$B)
 	.dwattr DW$137, DW_AT_high_pc(DW$L$_diagvelacc_change$11$E)
@@ -1191,10 +1191,10 @@ DW$141	.dwtag  DW_TAG_loop_range
 
 
 DW$142	.dwtag  DW_TAG_loop
-	.dwattr DW$142, DW_AT_name("C:\algo\main\algo.asm:L21:2:1755591079")
+	.dwattr DW$142, DW_AT_name("C:\algo\main\algo.asm:L21:2:1773144227")
 	.dwattr DW$142, DW_AT_begin_file("algo.c")
-	.dwattr DW$142, DW_AT_begin_line(0x84d)
-	.dwattr DW$142, DW_AT_end_line(0x859)
+	.dwattr DW$142, DW_AT_begin_line(0x84e)
+	.dwattr DW$142, DW_AT_end_line(0x85a)
 DW$143	.dwtag  DW_TAG_loop_range
 	.dwattr DW$143, DW_AT_low_pc(DW$L$_diagvelacc_change$17$B)
 	.dwattr DW$143, DW_AT_high_pc(DW$L$_diagvelacc_change$17$E)
@@ -1215,7 +1215,7 @@ DW$147	.dwtag  DW_TAG_loop_range
 	.dwendtag DW$124
 
 	.dwattr DW$120, DW_AT_end_file("algo.c")
-	.dwattr DW$120, DW_AT_end_line(0x863)
+	.dwattr DW$120, DW_AT_end_line(0x864)
 	.dwattr DW$120, DW_AT_end_column(0x01)
 	.dwendentry
 	.dwendtag DW$120
@@ -1384,7 +1384,7 @@ L29:
         ; return occurs
 
 DW$160	.dwtag  DW_TAG_loop
-	.dwattr DW$160, DW_AT_name("C:\algo\main\algo.asm:L27:1:1755591079")
+	.dwattr DW$160, DW_AT_name("C:\algo\main\algo.asm:L27:1:1773144227")
 	.dwattr DW$160, DW_AT_begin_file("algo.c")
 	.dwattr DW$160, DW_AT_begin_line(0x176)
 	.dwattr DW$160, DW_AT_end_line(0x179)
@@ -1761,7 +1761,7 @@ DW$L$_WriteMazeWeight$9$E:
         ; return occurs
 
 DW$186	.dwtag  DW_TAG_loop
-	.dwattr DW$186, DW_AT_name("C:\algo\main\algo.asm:L30:1:1755591079")
+	.dwattr DW$186, DW_AT_name("C:\algo\main\algo.asm:L30:1:1773144227")
 	.dwattr DW$186, DW_AT_begin_file("algo.c")
 	.dwattr DW$186, DW_AT_begin_line(0x1a2)
 	.dwattr DW$186, DW_AT_end_line(0x1c3)
@@ -1773,7 +1773,7 @@ DW$188	.dwtag  DW_TAG_loop_range
 	.dwattr DW$188, DW_AT_high_pc(DW$L$_WriteMazeWeight$9$E)
 
 DW$189	.dwtag  DW_TAG_loop
-	.dwattr DW$189, DW_AT_name("C:\algo\main\algo.asm:L31:2:1755591079")
+	.dwattr DW$189, DW_AT_name("C:\algo\main\algo.asm:L31:2:1773144227")
 	.dwattr DW$189, DW_AT_begin_file("algo.c")
 	.dwattr DW$189, DW_AT_begin_line(0x1ab)
 	.dwattr DW$189, DW_AT_end_line(0x1c2)
@@ -2028,7 +2028,7 @@ L41:
         ; return occurs
 
 DW$205	.dwtag  DW_TAG_loop
-	.dwattr DW$205, DW_AT_name("C:\algo\main\algo.asm:L36:1:1755591079")
+	.dwattr DW$205, DW_AT_name("C:\algo\main\algo.asm:L36:1:1773144227")
 	.dwattr DW$205, DW_AT_begin_file("algo.c")
 	.dwattr DW$205, DW_AT_begin_line(0x58)
 	.dwattr DW$205, DW_AT_end_line(0x58)
@@ -2131,6103 +2131,14 @@ _InitSearchStartVar:
 	.dwendtag DW$207
 
 	.sect	".text"
-	.global	_InitWeight
-
-DW$208	.dwtag  DW_TAG_subprogram, DW_AT_name("InitWeight"), DW_AT_symbol_name("_InitWeight")
-	.dwattr DW$208, DW_AT_low_pc(_InitWeight)
-	.dwattr DW$208, DW_AT_high_pc(0x00)
-	.dwattr DW$208, DW_AT_begin_file("algo.c")
-	.dwattr DW$208, DW_AT_begin_line(0x79)
-	.dwattr DW$208, DW_AT_begin_column(0x06)
-	.dwpsn	"algo.c",122,1
-
-	.dwfde DW$CIE
-
-;***************************************************************
-;* FNAME: _InitWeight                   FR SIZE:   0           *
-;*                                                             *
-;* FUNCTION ENVIRONMENT                                        *
-;*                                                             *
-;* FUNCTION PROPERTIES                                         *
-;*                            0 Parameter,  0 Auto,  0 SOE     *
-;***************************************************************
-
-
-;***************************************************************
-;*                                                             *
-;* Using -g (debug) with optimization (-o3) may disable key op *
-;*                                                             *
-;***************************************************************
-_InitWeight:
-;***  	-----------------------    #pragma MUST_ITERATE(256, 256, 256)
-;***  	-----------------------    #pragma LOOP_FLAGS(4096u)
-;***  	-----------------------    U$10 = &gMapflag[0];
-;***  	-----------------------    K$5 = &gMapValue[0];
-;*** 123	-----------------------    i = 0u;
-;***  	-----------------------    L$1 = 255;
-	.dwcfa	0x1d, -2
-	.dwcfa	0x1c, 26, 0
-	.dwcfa	0x09, 40, 26
-;* AR4   assigned to C$1
-DW$209	.dwtag  DW_TAG_variable, DW_AT_name("C$1"), DW_AT_symbol_name("C$1")
-	.dwattr DW$209, DW_AT_type(*DW$T$92)
-	.dwattr DW$209, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to C$2
-DW$210	.dwtag  DW_TAG_variable, DW_AT_name("C$2"), DW_AT_symbol_name("C$2")
-	.dwattr DW$210, DW_AT_type(*DW$T$92)
-	.dwattr DW$210, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to C$3
-DW$211	.dwtag  DW_TAG_variable, DW_AT_name("C$3"), DW_AT_symbol_name("C$3")
-	.dwattr DW$211, DW_AT_type(*DW$T$92)
-	.dwattr DW$211, DW_AT_location[DW_OP_reg12]
-;* AR5   assigned to U$10
-DW$212	.dwtag  DW_TAG_variable, DW_AT_name("U$10"), DW_AT_symbol_name("U$10")
-	.dwattr DW$212, DW_AT_type(*DW$T$92)
-	.dwattr DW$212, DW_AT_location[DW_OP_reg14]
-;* AR6   assigned to L$1
-DW$213	.dwtag  DW_TAG_variable, DW_AT_name("L$1"), DW_AT_symbol_name("L$1")
-	.dwattr DW$213, DW_AT_type(*DW$T$10)
-	.dwattr DW$213, DW_AT_location[DW_OP_reg16]
-;* AR0   assigned to _i
-DW$214	.dwtag  DW_TAG_variable, DW_AT_name("i"), DW_AT_symbol_name("_i")
-	.dwattr DW$214, DW_AT_type(*DW$T$19)
-	.dwattr DW$214, DW_AT_location[DW_OP_reg4]
-;* AR7   assigned to K$5
-DW$215	.dwtag  DW_TAG_variable, DW_AT_name("K$5"), DW_AT_symbol_name("K$5")
-	.dwattr DW$215, DW_AT_type(*DW$T$125)
-	.dwattr DW$215, DW_AT_location[DW_OP_reg18]
-;* AR5   assigned to K$5
-DW$216	.dwtag  DW_TAG_variable, DW_AT_name("K$5"), DW_AT_symbol_name("K$5")
-	.dwattr DW$216, DW_AT_type(*DW$T$125)
-	.dwattr DW$216, DW_AT_location[DW_OP_reg14]
-        MOVL      XAR7,#_gMapValue
-        MOVL      XAR5,#_gMapflag
-	.dwpsn	"algo.c",123,9
-        MOVB      XAR0,#0
-        MOVB      XAR6,#255
-L42:    
-DW$L$_InitWeight$2$B:
-;***	-----------------------g2:
-;*** 127	-----------------------    C$3 = (long)i*2+(volatile struct _bit *)K$5;
-;*** 127	-----------------------    *C$3;
-;*** 127	-----------------------    *C$3 = 255u;
-;*** 128	-----------------------    *U$10++ = 0u;
-;*** 125	-----------------------    ++i;
-;*** 125	-----------------------    if ( (--L$1) != (-1) ) goto g2;
-	.dwpsn	"algo.c",127,3
-        MOVL      XAR4,XAR7             ; |127| 
-        MOVU      ACC,AR0
-        LSL       ACC,1                 ; |127| 
-        ADDL      XAR4,ACC
-        MOV       AL,*+XAR4[0]          ; |127| 
-        MOV       *+XAR4[0],#255        ; |127| 
-	.dwpsn	"algo.c",128,3
-        MOV       *XAR5++,#0            ; |128| 
-	.dwpsn	"algo.c",125,21
-        ADDB      XAR0,#1               ; |125| 
-	.dwpsn	"algo.c",125,13
-        BANZ      L42,AR6--             ; |125| 
-        ; branchcc occurs ; |125| 
-DW$L$_InitWeight$2$E:
-;*** 131	-----------------------    if ( gSearchType == 1u ) goto g6;
-	.dwpsn	"algo.c",131,2
-        MOVW      DP,#_gSearchType
-        MOV       AL,@_gSearchType      ; |131| 
-        CMPB      AL,#1                 ; |131| 
-        BF        L43,EQ                ; |131| 
-        ; branchcc occurs ; |131| 
-;*** 155	-----------------------    if ( gSearchType != 2u ) goto g7;
-	.dwpsn	"algo.c",155,7
-        MOV       AL,@_gSearchType      ; |155| 
-        CMPB      AL,#2                 ; |155| 
-        BF        L44,NEQ               ; |155| 
-        ; branchcc occurs ; |155| 
-;*** 157	-----------------------    ((volatile unsigned *)gMapValue)[0] &= 0u;
-;*** 158	-----------------------    Que[0] = 0u;
-;*** 159	-----------------------    gMapflag[0] = 1u;
-;*** 159	-----------------------    goto g7;
-	.dwpsn	"algo.c",157,3
-        MOVW      DP,#_gMapValue
-        MOV       @_gMapValue,#0        ; |157| 
-	.dwpsn	"algo.c",158,3
-        MOVW      DP,#_Que
-        MOV       @_Que,#0              ; |158| 
-	.dwpsn	"algo.c",159,3
-        MOVW      DP,#_gMapflag
-        MOV       @_gMapflag,#1         ; |159| 
-        BF        L44,UNC               ; |159| 
-        ; branch occurs ; |159| 
-L43:    
-;***	-----------------------g6:
-;*** 135	-----------------------    K$5 = &gMapValue[0];
-;*** 135	-----------------------    *((volatile struct _bit *)K$5+238L) &= 0u;
-;*** 136	-----------------------    *((volatile struct _bit *)K$5+240L) &= 0u;
-;*** 137	-----------------------    *((volatile struct _bit *)K$5+272L) &= 0u;
-;*** 138	-----------------------    *((volatile struct _bit *)K$5+270L) &= 0u;
-;*** 145	-----------------------    C$2 = &gMapflag[0];
-;*** 145	-----------------------    C$2[119] = 1u;
-;*** 146	-----------------------    C$2[120] = 1u;
-;*** 147	-----------------------    C$2[136] = 1u;
-;*** 148	-----------------------    C$2[135] = 1u;
-;*** 150	-----------------------    C$1 = &Que[0];
-;*** 150	-----------------------    *C$1 = 119u;
-;*** 151	-----------------------    C$1[1] = 120u;
-;*** 152	-----------------------    C$1[2] = 136u;
-;*** 153	-----------------------    C$1[3] = 135u;
-;***	-----------------------g7:
-;***  	-----------------------    return;
-	.dwpsn	"algo.c",135,3
-        MOVL      XAR5,#_gMapValue      ; |135| 
-        MOVB      ACC,#238
-        ADDL      ACC,XAR5
-        MOVL      XAR4,ACC              ; |135| 
-        MOV       *+XAR4[0],#0          ; |135| 
-	.dwpsn	"algo.c",136,3
-        MOVB      ACC,#240
-        ADDL      ACC,XAR5
-        MOVL      XAR4,ACC              ; |136| 
-        MOV       *+XAR4[0],#0          ; |136| 
-	.dwpsn	"algo.c",137,3
-        MOVL      ACC,XAR5
-        MOVL      XAR4,#272             ; |137| 
-        ADDL      XAR4,ACC
-        MOV       *+XAR4[0],#0          ; |137| 
-	.dwpsn	"algo.c",138,3
-        MOVL      ACC,XAR5
-        MOVL      XAR4,#270             ; |138| 
-        ADDL      XAR4,ACC
-        MOV       *+XAR4[0],#0          ; |138| 
-	.dwpsn	"algo.c",145,3
-        MOVB      XAR0,#119             ; |145| 
-        MOVB      AL,#1                 ; |145| 
-        MOVL      XAR4,#_gMapflag       ; |145| 
-        MOV       *+XAR4[AR0],AL        ; |145| 
-	.dwpsn	"algo.c",146,3
-        MOVB      XAR0,#120             ; |146| 
-        MOV       *+XAR4[AR0],AL        ; |146| 
-	.dwpsn	"algo.c",147,3
-        MOVB      XAR0,#136             ; |147| 
-        MOV       *+XAR4[AR0],AL        ; |147| 
-	.dwpsn	"algo.c",148,3
-        MOVB      XAR0,#135             ; |148| 
-        MOV       *+XAR4[AR0],AL        ; |148| 
-	.dwpsn	"algo.c",150,3
-        MOVL      XAR4,#_Que            ; |150| 
-        MOV       *+XAR4[0],#119        ; |150| 
-	.dwpsn	"algo.c",151,3
-        MOV       *+XAR4[1],#120        ; |151| 
-	.dwpsn	"algo.c",152,3
-        MOV       *+XAR4[2],#136        ; |152| 
-	.dwpsn	"algo.c",153,3
-        MOV       *+XAR4[3],#135        ; |153| 
-L44:    
-	.dwpsn	"algo.c",163,1
-        LRETR
-        ; return occurs
-
-DW$217	.dwtag  DW_TAG_loop
-	.dwattr DW$217, DW_AT_name("C:\algo\main\algo.asm:L42:1:1755591079")
-	.dwattr DW$217, DW_AT_begin_file("algo.c")
-	.dwattr DW$217, DW_AT_begin_line(0x7d)
-	.dwattr DW$217, DW_AT_end_line(0x81)
-DW$218	.dwtag  DW_TAG_loop_range
-	.dwattr DW$218, DW_AT_low_pc(DW$L$_InitWeight$2$B)
-	.dwattr DW$218, DW_AT_high_pc(DW$L$_InitWeight$2$E)
-	.dwendtag DW$217
-
-	.dwattr DW$208, DW_AT_end_file("algo.c")
-	.dwattr DW$208, DW_AT_end_line(0xa3)
-	.dwattr DW$208, DW_AT_end_column(0x01)
-	.dwendentry
-	.dwendtag DW$208
-
-	.sect	".text"
-	.global	_RunPathMake
-
-DW$219	.dwtag  DW_TAG_subprogram, DW_AT_name("RunPathMake"), DW_AT_symbol_name("_RunPathMake")
-	.dwattr DW$219, DW_AT_low_pc(_RunPathMake)
-	.dwattr DW$219, DW_AT_high_pc(0x00)
-	.dwattr DW$219, DW_AT_begin_file("algo.c")
-	.dwattr DW$219, DW_AT_begin_line(0x534)
-	.dwattr DW$219, DW_AT_begin_column(0x06)
-	.dwpsn	"algo.c",1333,1
-
-	.dwfde DW$CIE
-
-;***************************************************************
-;* FNAME: _RunPathMake                  FR SIZE:  44           *
-;*                                                             *
-;* FUNCTION ENVIRONMENT                                        *
-;*                                                             *
-;* FUNCTION PROPERTIES                                         *
-;*                            7 Parameter, 31 Auto,  6 SOE     *
-;***************************************************************
-
-
-;***************************************************************
-;*                                                             *
-;* Using -g (debug) with optimization (-o3) may disable key op *
-;*                                                             *
-;***************************************************************
-_RunPathMake:
-;** 1336	-----------------------    Goal[] = {...};
-;** 1359	-----------------------    K$4 = &gMazeMap[0];
-;** 1359	-----------------------    memset((void *)K$4, 0, 256uL);
-;** 1360	-----------------------    K$5 = &gMazeMapBackUp;
-;** 1360	-----------------------    memset(K$5, 0, 256uL);
-;** 1362	-----------------------    SpiReadRom(5u, 0u, 256u, (unsigned *)K$5);
-;***  	-----------------------    U$9 = (volatile unsigned *)K$5;
-;***  	-----------------------    U$12 = K$4;
-;***  	-----------------------    K$19 = &gMoveTable[0];
-;** 1364	-----------------------    cnt = 0u;
-	.dwcfa	0x1d, -2
-	.dwcfa	0x1c, 26, 0
-	.dwcfa	0x09, 40, 26
-        MOVL      *SP++,XAR1
-	.dwcfa	0x80, 7, 2
-	.dwcfa	0x1d, -4
-        MOVL      *SP++,XAR2
-	.dwcfa	0x80, 9, 4
-	.dwcfa	0x1d, -6
-        MOVL      *SP++,XAR3
-	.dwcfa	0x80, 11, 6
-	.dwcfa	0x1d, -8
-        ADDB      SP,#38
-	.dwcfa	0x1d, -46
-;* AR6   assigned to C$21
-DW$220	.dwtag  DW_TAG_variable, DW_AT_name("C$21"), DW_AT_symbol_name("C$21")
-	.dwattr DW$220, DW_AT_type(*DW$T$92)
-	.dwattr DW$220, DW_AT_location[DW_OP_reg16]
-;* AR5   assigned to C$22
-DW$221	.dwtag  DW_TAG_variable, DW_AT_name("C$22"), DW_AT_symbol_name("C$22")
-	.dwattr DW$221, DW_AT_type(*DW$T$92)
-	.dwattr DW$221, DW_AT_location[DW_OP_reg14]
-;* AR4   assigned to C$23
-DW$222	.dwtag  DW_TAG_variable, DW_AT_name("C$23"), DW_AT_symbol_name("C$23")
-	.dwattr DW$222, DW_AT_type(*DW$T$92)
-	.dwattr DW$222, DW_AT_location[DW_OP_reg12]
-;* AR5   assigned to C$24
-DW$223	.dwtag  DW_TAG_variable, DW_AT_name("C$24"), DW_AT_symbol_name("C$24")
-	.dwattr DW$223, DW_AT_type(*DW$T$92)
-	.dwattr DW$223, DW_AT_location[DW_OP_reg14]
-;* AR4   assigned to C$25
-DW$224	.dwtag  DW_TAG_variable, DW_AT_name("C$25"), DW_AT_symbol_name("C$25")
-	.dwattr DW$224, DW_AT_type(*DW$T$92)
-	.dwattr DW$224, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to C$26
-DW$225	.dwtag  DW_TAG_variable, DW_AT_name("C$26"), DW_AT_symbol_name("C$26")
-	.dwattr DW$225, DW_AT_type(*DW$T$92)
-	.dwattr DW$225, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to C$27
-DW$226	.dwtag  DW_TAG_variable, DW_AT_name("C$27"), DW_AT_symbol_name("C$27")
-	.dwattr DW$226, DW_AT_type(*DW$T$92)
-	.dwattr DW$226, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to C$28
-DW$227	.dwtag  DW_TAG_variable, DW_AT_name("C$28"), DW_AT_symbol_name("C$28")
-	.dwattr DW$227, DW_AT_type(*DW$T$92)
-	.dwattr DW$227, DW_AT_location[DW_OP_reg12]
-;* AR6   assigned to C$29
-DW$228	.dwtag  DW_TAG_variable, DW_AT_name("C$29"), DW_AT_symbol_name("C$29")
-	.dwattr DW$228, DW_AT_type(*DW$T$92)
-	.dwattr DW$228, DW_AT_location[DW_OP_reg16]
-;* AR5   assigned to C$30
-DW$229	.dwtag  DW_TAG_variable, DW_AT_name("C$30"), DW_AT_symbol_name("C$30")
-	.dwattr DW$229, DW_AT_type(*DW$T$92)
-	.dwattr DW$229, DW_AT_location[DW_OP_reg14]
-;* AR4   assigned to C$31
-DW$230	.dwtag  DW_TAG_variable, DW_AT_name("C$31"), DW_AT_symbol_name("C$31")
-	.dwattr DW$230, DW_AT_type(*DW$T$92)
-	.dwattr DW$230, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to C$32
-DW$231	.dwtag  DW_TAG_variable, DW_AT_name("C$32"), DW_AT_symbol_name("C$32")
-	.dwattr DW$231, DW_AT_type(*DW$T$92)
-	.dwattr DW$231, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to C$33
-DW$232	.dwtag  DW_TAG_variable, DW_AT_name("C$33"), DW_AT_symbol_name("C$33")
-	.dwattr DW$232, DW_AT_type(*DW$T$92)
-	.dwattr DW$232, DW_AT_location[DW_OP_reg12]
-;* PL    assigned to C$34
-DW$233	.dwtag  DW_TAG_variable, DW_AT_name("C$34"), DW_AT_symbol_name("C$34")
-	.dwattr DW$233, DW_AT_type(*DW$T$11)
-	.dwattr DW$233, DW_AT_location[DW_OP_reg2]
-;* AR4   assigned to C$35
-DW$234	.dwtag  DW_TAG_variable, DW_AT_name("C$35"), DW_AT_symbol_name("C$35")
-	.dwattr DW$234, DW_AT_type(*DW$T$92)
-	.dwattr DW$234, DW_AT_location[DW_OP_reg12]
-DW$235	.dwtag  DW_TAG_variable, DW_AT_name("K$19"), DW_AT_symbol_name("K$19")
-	.dwattr DW$235, DW_AT_type(*DW$T$92)
-	.dwattr DW$235, DW_AT_location[DW_OP_breg20 -32]
-DW$236	.dwtag  DW_TAG_variable, DW_AT_name("K$57"), DW_AT_symbol_name("K$57")
-	.dwattr DW$236, DW_AT_type(*DW$T$127)
-	.dwattr DW$236, DW_AT_location[DW_OP_breg20 -36]
-;* AR5   assigned to U$47
-DW$237	.dwtag  DW_TAG_variable, DW_AT_name("U$47"), DW_AT_symbol_name("U$47")
-	.dwattr DW$237, DW_AT_type(*DW$T$77)
-	.dwattr DW$237, DW_AT_location[DW_OP_reg14]
-DW$238	.dwtag  DW_TAG_variable, DW_AT_name("K$71"), DW_AT_symbol_name("K$71")
-	.dwattr DW$238, DW_AT_type(*DW$T$111)
-	.dwattr DW$238, DW_AT_location[DW_OP_breg20 -38]
-;* PH    assigned to U$117
-DW$239	.dwtag  DW_TAG_variable, DW_AT_name("U$117"), DW_AT_symbol_name("U$117")
-	.dwattr DW$239, DW_AT_type(*DW$T$11)
-	.dwattr DW$239, DW_AT_location[DW_OP_reg3]
-;* AR7   assigned to U$138
-DW$240	.dwtag  DW_TAG_variable, DW_AT_name("U$138"), DW_AT_symbol_name("U$138")
-	.dwattr DW$240, DW_AT_type(*DW$T$92)
-	.dwattr DW$240, DW_AT_location[DW_OP_reg18]
-;* PH    assigned to U$31
-DW$241	.dwtag  DW_TAG_variable, DW_AT_name("U$31"), DW_AT_symbol_name("U$31")
-	.dwattr DW$241, DW_AT_type(*DW$T$11)
-	.dwattr DW$241, DW_AT_location[DW_OP_reg3]
-DW$242	.dwtag  DW_TAG_variable, DW_AT_name("K$5"), DW_AT_symbol_name("K$5")
-	.dwattr DW$242, DW_AT_type(*DW$T$3)
-	.dwattr DW$242, DW_AT_location[DW_OP_breg20 -30]
-;* AR6   assigned to U$125
-DW$243	.dwtag  DW_TAG_variable, DW_AT_name("U$125"), DW_AT_symbol_name("U$125")
-	.dwattr DW$243, DW_AT_type(*DW$T$11)
-	.dwattr DW$243, DW_AT_location[DW_OP_reg16]
-;* AL    assigned to P$16
-DW$244	.dwtag  DW_TAG_variable, DW_AT_name("P$16"), DW_AT_symbol_name("P$16")
-	.dwattr DW$244, DW_AT_type(*DW$T$10)
-	.dwattr DW$244, DW_AT_location[DW_OP_reg0]
-;* AL    assigned to P$17
-DW$245	.dwtag  DW_TAG_variable, DW_AT_name("P$17"), DW_AT_symbol_name("P$17")
-	.dwattr DW$245, DW_AT_type(*DW$T$10)
-	.dwattr DW$245, DW_AT_location[DW_OP_reg0]
-;* AR7   assigned to P$18
-DW$246	.dwtag  DW_TAG_variable, DW_AT_name("P$18"), DW_AT_symbol_name("P$18")
-	.dwattr DW$246, DW_AT_type(*DW$T$10)
-	.dwattr DW$246, DW_AT_location[DW_OP_reg18]
-;* AL    assigned to P$19
-DW$247	.dwtag  DW_TAG_variable, DW_AT_name("P$19"), DW_AT_symbol_name("P$19")
-	.dwattr DW$247, DW_AT_type(*DW$T$10)
-	.dwattr DW$247, DW_AT_location[DW_OP_reg0]
-;* AL    assigned to P$20
-DW$248	.dwtag  DW_TAG_variable, DW_AT_name("P$20"), DW_AT_symbol_name("P$20")
-	.dwattr DW$248, DW_AT_type(*DW$T$10)
-	.dwattr DW$248, DW_AT_location[DW_OP_reg0]
-;* AR6   assigned to L$3
-DW$249	.dwtag  DW_TAG_variable, DW_AT_name("L$3"), DW_AT_symbol_name("L$3")
-	.dwattr DW$249, DW_AT_type(*DW$T$10)
-	.dwattr DW$249, DW_AT_location[DW_OP_reg16]
-;* AR6   assigned to L$4
-DW$250	.dwtag  DW_TAG_variable, DW_AT_name("L$4"), DW_AT_symbol_name("L$4")
-	.dwattr DW$250, DW_AT_type(*DW$T$10)
-	.dwattr DW$250, DW_AT_location[DW_OP_reg16]
-;* AR6   assigned to L$5
-DW$251	.dwtag  DW_TAG_variable, DW_AT_name("L$5"), DW_AT_symbol_name("L$5")
-	.dwattr DW$251, DW_AT_type(*DW$T$10)
-	.dwattr DW$251, DW_AT_location[DW_OP_reg16]
-;* AR6   assigned to L$6
-DW$252	.dwtag  DW_TAG_variable, DW_AT_name("L$6"), DW_AT_symbol_name("L$6")
-	.dwattr DW$252, DW_AT_type(*DW$T$10)
-	.dwattr DW$252, DW_AT_location[DW_OP_reg16]
-;* AR6   assigned to L$7
-DW$253	.dwtag  DW_TAG_variable, DW_AT_name("L$7"), DW_AT_symbol_name("L$7")
-	.dwattr DW$253, DW_AT_type(*DW$T$10)
-	.dwattr DW$253, DW_AT_location[DW_OP_reg16]
-DW$254	.dwtag  DW_TAG_variable, DW_AT_name("LastPath"), DW_AT_symbol_name("_LastPath")
-	.dwattr DW$254, DW_AT_type(*DW$T$19)
-	.dwattr DW$254, DW_AT_location[DW_OP_breg20 -25]
-;* AR2   assigned to _YetMouseHead
-DW$255	.dwtag  DW_TAG_variable, DW_AT_name("YetMouseHead"), DW_AT_symbol_name("_YetMouseHead")
-	.dwattr DW$255, DW_AT_type(*DW$T$19)
-	.dwattr DW$255, DW_AT_location[DW_OP_reg8]
-;* AR6   assigned to _YetTurnState
-DW$256	.dwtag  DW_TAG_variable, DW_AT_name("YetTurnState"), DW_AT_symbol_name("_YetTurnState")
-	.dwattr DW$256, DW_AT_type(*DW$T$19)
-	.dwattr DW$256, DW_AT_location[DW_OP_reg16]
-;* PL    assigned to _BlockCnt
-DW$257	.dwtag  DW_TAG_variable, DW_AT_name("BlockCnt"), DW_AT_symbol_name("_BlockCnt")
-	.dwattr DW$257, DW_AT_type(*DW$T$19)
-	.dwattr DW$257, DW_AT_location[DW_OP_reg2]
-DW$258	.dwtag  DW_TAG_variable, DW_AT_name("NextPos"), DW_AT_symbol_name("_NextPos")
-	.dwattr DW$258, DW_AT_type(*DW$T$19)
-	.dwattr DW$258, DW_AT_location[DW_OP_breg20 -27]
-DW$259	.dwtag  DW_TAG_variable, DW_AT_name("NextTurn"), DW_AT_symbol_name("_NextTurn")
-	.dwattr DW$259, DW_AT_type(*DW$T$19)
-	.dwattr DW$259, DW_AT_location[DW_OP_breg20 -28]
-;* AR2   assigned to _AbsoluteDir
-DW$260	.dwtag  DW_TAG_variable, DW_AT_name("AbsoluteDir"), DW_AT_symbol_name("_AbsoluteDir")
-	.dwattr DW$260, DW_AT_type(*DW$T$19)
-	.dwattr DW$260, DW_AT_location[DW_OP_reg8]
-DW$261	.dwtag  DW_TAG_variable, DW_AT_name("GoalPosition"), DW_AT_symbol_name("_GoalPosition")
-	.dwattr DW$261, DW_AT_type(*DW$T$19)
-	.dwattr DW$261, DW_AT_location[DW_OP_breg20 -24]
-;* AR7   assigned to _LowWeight
-DW$262	.dwtag  DW_TAG_variable, DW_AT_name("LowWeight"), DW_AT_symbol_name("_LowWeight")
-	.dwattr DW$262, DW_AT_type(*DW$T$19)
-	.dwattr DW$262, DW_AT_location[DW_OP_reg18]
-;* AR5   assigned to S$15
-DW$263	.dwtag  DW_TAG_variable, DW_AT_name("S$15"), DW_AT_symbol_name("S$15")
-	.dwattr DW$263, DW_AT_type(*DW$T$113)
-	.dwattr DW$263, DW_AT_location[DW_OP_reg14]
-;* AR4   assigned to S$14
-DW$264	.dwtag  DW_TAG_variable, DW_AT_name("S$14"), DW_AT_symbol_name("S$14")
-	.dwattr DW$264, DW_AT_type(*DW$T$111)
-	.dwattr DW$264, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to S$13
-DW$265	.dwtag  DW_TAG_variable, DW_AT_name("S$13"), DW_AT_symbol_name("S$13")
-	.dwattr DW$265, DW_AT_type(*DW$T$111)
-	.dwattr DW$265, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to S$12
-DW$266	.dwtag  DW_TAG_variable, DW_AT_name("S$12"), DW_AT_symbol_name("S$12")
-	.dwattr DW$266, DW_AT_type(*DW$T$111)
-	.dwattr DW$266, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to S$11
-DW$267	.dwtag  DW_TAG_variable, DW_AT_name("S$11"), DW_AT_symbol_name("S$11")
-	.dwattr DW$267, DW_AT_type(*DW$T$113)
-	.dwattr DW$267, DW_AT_location[DW_OP_reg12]
-;* AR5   assigned to S$10
-DW$268	.dwtag  DW_TAG_variable, DW_AT_name("S$10"), DW_AT_symbol_name("S$10")
-	.dwattr DW$268, DW_AT_type(*DW$T$113)
-	.dwattr DW$268, DW_AT_location[DW_OP_reg14]
-;* AR4   assigned to S$9
-DW$269	.dwtag  DW_TAG_variable, DW_AT_name("S$9"), DW_AT_symbol_name("S$9")
-	.dwattr DW$269, DW_AT_type(*DW$T$111)
-	.dwattr DW$269, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to S$8
-DW$270	.dwtag  DW_TAG_variable, DW_AT_name("S$8"), DW_AT_symbol_name("S$8")
-	.dwattr DW$270, DW_AT_type(*DW$T$111)
-	.dwattr DW$270, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to S$7
-DW$271	.dwtag  DW_TAG_variable, DW_AT_name("S$7"), DW_AT_symbol_name("S$7")
-	.dwattr DW$271, DW_AT_type(*DW$T$111)
-	.dwattr DW$271, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to S$6
-DW$272	.dwtag  DW_TAG_variable, DW_AT_name("S$6"), DW_AT_symbol_name("S$6")
-	.dwattr DW$272, DW_AT_type(*DW$T$111)
-	.dwattr DW$272, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to S$5
-DW$273	.dwtag  DW_TAG_variable, DW_AT_name("S$5"), DW_AT_symbol_name("S$5")
-	.dwattr DW$273, DW_AT_type(*DW$T$111)
-	.dwattr DW$273, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to S$4
-DW$274	.dwtag  DW_TAG_variable, DW_AT_name("S$4"), DW_AT_symbol_name("S$4")
-	.dwattr DW$274, DW_AT_type(*DW$T$111)
-	.dwattr DW$274, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to S$3
-DW$275	.dwtag  DW_TAG_variable, DW_AT_name("S$3"), DW_AT_symbol_name("S$3")
-	.dwattr DW$275, DW_AT_type(*DW$T$111)
-	.dwattr DW$275, DW_AT_location[DW_OP_reg12]
-;* AR7   assigned to U$9
-DW$276	.dwtag  DW_TAG_variable, DW_AT_name("U$9"), DW_AT_symbol_name("U$9")
-	.dwattr DW$276, DW_AT_type(*DW$T$92)
-	.dwattr DW$276, DW_AT_location[DW_OP_reg18]
-;* AR4   assigned to U$9
-DW$277	.dwtag  DW_TAG_variable, DW_AT_name("U$9"), DW_AT_symbol_name("U$9")
-	.dwattr DW$277, DW_AT_type(*DW$T$92)
-	.dwattr DW$277, DW_AT_location[DW_OP_reg12]
-;* AR6   assigned to U$12
-DW$278	.dwtag  DW_TAG_variable, DW_AT_name("U$12"), DW_AT_symbol_name("U$12")
-	.dwattr DW$278, DW_AT_type(*DW$T$92)
-	.dwattr DW$278, DW_AT_location[DW_OP_reg16]
-;* AR5   assigned to U$12
-DW$279	.dwtag  DW_TAG_variable, DW_AT_name("U$12"), DW_AT_symbol_name("U$12")
-	.dwattr DW$279, DW_AT_type(*DW$T$92)
-	.dwattr DW$279, DW_AT_location[DW_OP_reg14]
-;* AR3   assigned to K$4
-DW$280	.dwtag  DW_TAG_variable, DW_AT_name("K$4"), DW_AT_symbol_name("K$4")
-	.dwattr DW$280, DW_AT_type(*DW$T$92)
-	.dwattr DW$280, DW_AT_location[DW_OP_reg10]
-;* AR4   assigned to K$4
-DW$281	.dwtag  DW_TAG_variable, DW_AT_name("K$4"), DW_AT_symbol_name("K$4")
-	.dwattr DW$281, DW_AT_type(*DW$T$92)
-	.dwattr DW$281, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to K$4
-DW$282	.dwtag  DW_TAG_variable, DW_AT_name("K$4"), DW_AT_symbol_name("K$4")
-	.dwattr DW$282, DW_AT_type(*DW$T$92)
-	.dwattr DW$282, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to K$4
-DW$283	.dwtag  DW_TAG_variable, DW_AT_name("K$4"), DW_AT_symbol_name("K$4")
-	.dwattr DW$283, DW_AT_type(*DW$T$92)
-	.dwattr DW$283, DW_AT_location[DW_OP_reg12]
-DW$284	.dwtag  DW_TAG_variable, DW_AT_name("K$4"), DW_AT_symbol_name("K$4")
-	.dwattr DW$284, DW_AT_type(*DW$T$92)
-	.dwattr DW$284, DW_AT_location[DW_OP_breg20 -34]
-;* AR7   assigned to U$75
-DW$285	.dwtag  DW_TAG_variable, DW_AT_name("U$75"), DW_AT_symbol_name("U$75")
-	.dwattr DW$285, DW_AT_type(*DW$T$92)
-	.dwattr DW$285, DW_AT_location[DW_OP_reg18]
-;* AR7   assigned to U$75
-DW$286	.dwtag  DW_TAG_variable, DW_AT_name("U$75"), DW_AT_symbol_name("U$75")
-	.dwattr DW$286, DW_AT_type(*DW$T$92)
-	.dwattr DW$286, DW_AT_location[DW_OP_reg18]
-;* AR0   assigned to U$73
-DW$287	.dwtag  DW_TAG_variable, DW_AT_name("U$73"), DW_AT_symbol_name("U$73")
-	.dwattr DW$287, DW_AT_type(*DW$T$92)
-	.dwattr DW$287, DW_AT_location[DW_OP_reg4]
-;* AR1   assigned to U$73
-DW$288	.dwtag  DW_TAG_variable, DW_AT_name("U$73"), DW_AT_symbol_name("U$73")
-	.dwattr DW$288, DW_AT_type(*DW$T$92)
-	.dwattr DW$288, DW_AT_location[DW_OP_reg6]
-;* XT    assigned to U$186
-DW$289	.dwtag  DW_TAG_variable, DW_AT_name("U$186"), DW_AT_symbol_name("U$186")
-	.dwattr DW$289, DW_AT_type(*DW$T$92)
-	.dwattr DW$289, DW_AT_location[DW_OP_reg21]
-;* AR1   assigned to U$186
-DW$290	.dwtag  DW_TAG_variable, DW_AT_name("U$186"), DW_AT_symbol_name("U$186")
-	.dwattr DW$290, DW_AT_type(*DW$T$92)
-	.dwattr DW$290, DW_AT_location[DW_OP_reg6]
-;* AR4   assigned to K$177
-DW$291	.dwtag  DW_TAG_variable, DW_AT_name("K$177"), DW_AT_symbol_name("K$177")
-	.dwattr DW$291, DW_AT_type(*DW$T$75)
-	.dwattr DW$291, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to K$177
-DW$292	.dwtag  DW_TAG_variable, DW_AT_name("K$177"), DW_AT_symbol_name("K$177")
-	.dwattr DW$292, DW_AT_type(*DW$T$75)
-	.dwattr DW$292, DW_AT_location[DW_OP_reg12]
-;* AR1   assigned to _Position
-DW$293	.dwtag  DW_TAG_variable, DW_AT_name("Position"), DW_AT_symbol_name("_Position")
-	.dwattr DW$293, DW_AT_type(*DW$T$19)
-	.dwattr DW$293, DW_AT_location[DW_OP_reg6]
-;* PL    assigned to _Position
-DW$294	.dwtag  DW_TAG_variable, DW_AT_name("Position"), DW_AT_symbol_name("_Position")
-	.dwattr DW$294, DW_AT_type(*DW$T$19)
-	.dwattr DW$294, DW_AT_location[DW_OP_reg2]
-;* PL    assigned to _MouseDir
-DW$295	.dwtag  DW_TAG_variable, DW_AT_name("MouseDir"), DW_AT_symbol_name("_MouseDir")
-	.dwattr DW$295, DW_AT_type(*DW$T$19)
-	.dwattr DW$295, DW_AT_location[DW_OP_reg2]
-;* AR0   assigned to _MouseDir
-DW$296	.dwtag  DW_TAG_variable, DW_AT_name("MouseDir"), DW_AT_symbol_name("_MouseDir")
-	.dwattr DW$296, DW_AT_type(*DW$T$19)
-	.dwattr DW$296, DW_AT_location[DW_OP_reg4]
-;* AH    assigned to _NextWeight
-DW$297	.dwtag  DW_TAG_variable, DW_AT_name("NextWeight"), DW_AT_symbol_name("_NextWeight")
-	.dwattr DW$297, DW_AT_type(*DW$T$19)
-	.dwattr DW$297, DW_AT_location[DW_OP_reg1]
-;* AH    assigned to _NextWeight
-DW$298	.dwtag  DW_TAG_variable, DW_AT_name("NextWeight"), DW_AT_symbol_name("_NextWeight")
-	.dwattr DW$298, DW_AT_type(*DW$T$19)
-	.dwattr DW$298, DW_AT_location[DW_OP_reg1]
-DW$299	.dwtag  DW_TAG_variable, DW_AT_name("WeightMin"), DW_AT_symbol_name("_WeightMin")
-	.dwattr DW$299, DW_AT_type(*DW$T$19)
-	.dwattr DW$299, DW_AT_location[DW_OP_breg20 -26]
-;* PH    assigned to _WeightMin
-DW$300	.dwtag  DW_TAG_variable, DW_AT_name("WeightMin"), DW_AT_symbol_name("_WeightMin")
-	.dwattr DW$300, DW_AT_type(*DW$T$19)
-	.dwattr DW$300, DW_AT_location[DW_OP_reg3]
-;* AR0   assigned to _x
-DW$301	.dwtag  DW_TAG_variable, DW_AT_name("x"), DW_AT_symbol_name("_x")
-	.dwattr DW$301, DW_AT_type(*DW$T$19)
-	.dwattr DW$301, DW_AT_location[DW_OP_reg4]
-;* AR3   assigned to _x
-DW$302	.dwtag  DW_TAG_variable, DW_AT_name("x"), DW_AT_symbol_name("_x")
-	.dwattr DW$302, DW_AT_type(*DW$T$19)
-	.dwattr DW$302, DW_AT_location[DW_OP_reg10]
-;* AR3   assigned to _x
-DW$303	.dwtag  DW_TAG_variable, DW_AT_name("x"), DW_AT_symbol_name("_x")
-	.dwattr DW$303, DW_AT_type(*DW$T$19)
-	.dwattr DW$303, DW_AT_location[DW_OP_reg10]
-;* AR0   assigned to _x
-DW$304	.dwtag  DW_TAG_variable, DW_AT_name("x"), DW_AT_symbol_name("_x")
-	.dwattr DW$304, DW_AT_type(*DW$T$19)
-	.dwattr DW$304, DW_AT_location[DW_OP_reg4]
-;* AR5   assigned to _cnt
-DW$305	.dwtag  DW_TAG_variable, DW_AT_name("cnt"), DW_AT_symbol_name("_cnt")
-	.dwattr DW$305, DW_AT_type(*DW$T$19)
-	.dwattr DW$305, DW_AT_location[DW_OP_reg14]
-;* AR0   assigned to _cnt
-DW$306	.dwtag  DW_TAG_variable, DW_AT_name("cnt"), DW_AT_symbol_name("_cnt")
-	.dwattr DW$306, DW_AT_type(*DW$T$19)
-	.dwattr DW$306, DW_AT_location[DW_OP_reg4]
-;* AR5   assigned to _cnt
-DW$307	.dwtag  DW_TAG_variable, DW_AT_name("cnt"), DW_AT_symbol_name("_cnt")
-	.dwattr DW$307, DW_AT_type(*DW$T$19)
-	.dwattr DW$307, DW_AT_location[DW_OP_reg14]
-;* AR5   assigned to _cnt
-DW$308	.dwtag  DW_TAG_variable, DW_AT_name("cnt"), DW_AT_symbol_name("_cnt")
-	.dwattr DW$308, DW_AT_type(*DW$T$19)
-	.dwattr DW$308, DW_AT_location[DW_OP_reg14]
-;* AR1   assigned to _cnt
-DW$309	.dwtag  DW_TAG_variable, DW_AT_name("cnt"), DW_AT_symbol_name("_cnt")
-	.dwattr DW$309, DW_AT_type(*DW$T$19)
-	.dwattr DW$309, DW_AT_location[DW_OP_reg6]
-;* AR2   assigned to _cnt
-DW$310	.dwtag  DW_TAG_variable, DW_AT_name("cnt"), DW_AT_symbol_name("_cnt")
-	.dwattr DW$310, DW_AT_type(*DW$T$19)
-	.dwattr DW$310, DW_AT_location[DW_OP_reg8]
-DW$311	.dwtag  DW_TAG_variable, DW_AT_name("Goal"), DW_AT_symbol_name("_Goal")
-	.dwattr DW$311, DW_AT_type(*DW$T$88)
-	.dwattr DW$311, DW_AT_location[DW_OP_breg20 -11]
-DW$312	.dwtag  DW_TAG_variable, DW_AT_name("i"), DW_AT_symbol_name("_i")
-	.dwattr DW$312, DW_AT_type(*DW$T$88)
-	.dwattr DW$312, DW_AT_location[DW_OP_breg20 -15]
-DW$313	.dwtag  DW_TAG_variable, DW_AT_name("DiagPos"), DW_AT_symbol_name("_DiagPos")
-	.dwattr DW$313, DW_AT_type(*DW$T$88)
-	.dwattr DW$313, DW_AT_location[DW_OP_breg20 -19]
-DW$314	.dwtag  DW_TAG_variable, DW_AT_name("DiagDir"), DW_AT_symbol_name("_DiagDir")
-	.dwattr DW$314, DW_AT_type(*DW$T$88)
-	.dwattr DW$314, DW_AT_location[DW_OP_breg20 -23]
-	.dwpsn	"algo.c",1336,9
-        MOVZ      AR4,SP                ; |1336| 
-        MOVB      ACC,#4
-        MOVL      XAR5,#_$T2$3$0        ; |1336| 
-        SUBB      XAR4,#11              ; |1336| 
-        LCR       #___memcpy_ff         ; |1336| 
-        ; call occurs [#___memcpy_ff] ; |1336| 
-	.dwpsn	"algo.c",1359,2
-        MOVL      XAR3,#_gMazeMap       ; |1359| 
-        MOVL      XAR4,XAR3             ; |1359| 
-        MOVB      XAR5,#0
-        MOV       ACC,#1 << 8
-        LCR       #_memset              ; |1359| 
-        ; call occurs [#_memset] ; |1359| 
-	.dwpsn	"algo.c",1360,2
-        MOVL      XAR4,#_gMazeMapBackUp ; |1360| 
-        MOVL      *-SP[30],XAR4         ; |1360| 
-        MOVB      XAR5,#0
-        MOV       ACC,#1 << 8
-        LCR       #_memset              ; |1360| 
-        ; call occurs [#_memset] ; |1360| 
-	.dwpsn	"algo.c",1362,2
-        MOVL      XAR4,*-SP[30]         ; |1362| 
-        MOVL      XAR5,#256             ; |1362| 
-        MOVB      ACC,#5
-        LCR       #_SpiReadRom          ; |1362| 
-        ; call occurs [#_SpiReadRom] ; |1362| 
-        MOVL      XAR4,#_gMoveTable
-        MOVL      XAR7,*-SP[30]
-        MOVL      XAR6,XAR3
-        MOVL      *-SP[32],XAR4
-	.dwpsn	"algo.c",1364,6
-        MOVB      XAR5,#0
-L45:    
-DW$L$_RunPathMake$2$B:
-;***	-----------------------g2:
-;** 1366	-----------------------    if ( *U$9&0x10 ) goto g14;
-	.dwpsn	"algo.c",1366,3
-        MOVL      XAR4,XAR7
-        TBIT      *+XAR4[0],#4          ; |1366| 
-        BF        L51,TC                ; |1366| 
-        ; branchcc occurs ; |1366| 
-DW$L$_RunPathMake$2$E:
-DW$L$_RunPathMake$3$B:
-;** 1370	-----------------------    *U$12 = 15u;
-;** 1371	-----------------------    x = 0u;
-	.dwpsn	"algo.c",1370,4
-        MOVL      XAR4,XAR6             ; |1370| 
-        MOV       *+XAR4[0],#15         ; |1370| 
-	.dwpsn	"algo.c",1371,8
-        MOVB      XAR0,#0
-DW$L$_RunPathMake$3$E:
-L46:    
-DW$L$_RunPathMake$4$B:
-;***	-----------------------g4:
-;** 1373	-----------------------    switch ( x ) {case 0u: goto g11;, case 1u: goto g9;, case 2u: goto g7;, case 3u: goto g5;, DEFAULT goto g13};
-	.dwpsn	"algo.c",1373,5
-        MOV       AL,AR0                ; |1373| 
-        BF        L49,EQ                ; |1373| 
-        ; branchcc occurs ; |1373| 
-DW$L$_RunPathMake$4$E:
-DW$L$_RunPathMake$5$B:
-        CMPB      AL,#1                 ; |1373| 
-        BF        L48,EQ                ; |1373| 
-        ; branchcc occurs ; |1373| 
-DW$L$_RunPathMake$5$E:
-DW$L$_RunPathMake$6$B:
-        CMPB      AL,#2                 ; |1373| 
-        BF        L47,EQ                ; |1373| 
-        ; branchcc occurs ; |1373| 
-DW$L$_RunPathMake$6$E:
-DW$L$_RunPathMake$7$B:
-        CMPB      AL,#3                 ; |1373| 
-        BF        L50,NEQ               ; |1373| 
-        ; branchcc occurs ; |1373| 
-DW$L$_RunPathMake$7$E:
-DW$L$_RunPathMake$8$B:
-;***	-----------------------g5:
-;** 1392	-----------------------    if ( !(cnt&0xf0u) ) goto g13;
-	.dwpsn	"algo.c",1392,7
-        AND       AL,AR5,#0x00f0        ; |1392| 
-        BF        L50,EQ                ; |1392| 
-        ; branchcc occurs ; |1392| 
-DW$L$_RunPathMake$8$E:
-DW$L$_RunPathMake$9$B:
-;** 1393	-----------------------    K$4[K$19[x]+cnt] |= 2u;
-;** 1393	-----------------------    goto g13;
-	.dwpsn	"algo.c",1393,8
-        MOVL      XAR4,*-SP[32]
-        MOV       AL,AR5
-        MOV       PL,*+XAR4[AR0]        ; |1393| 
-        ADD       PL,AL
-        MOVL      ACC,XAR3              ; |1393| 
-        ADDU      ACC,PL                ; |1393| 
-        MOVL      XAR4,ACC              ; |1393| 
-        OR        *+XAR4[0],#0x0002     ; |1393| 
-        BF        L50,UNC               ; |1393| 
-        ; branch occurs ; |1393| 
-DW$L$_RunPathMake$9$E:
-L47:    
-DW$L$_RunPathMake$10$B:
-;***	-----------------------g7:
-;** 1387	-----------------------    if ( !(cnt&0xfu) ) goto g13;
-	.dwpsn	"algo.c",1387,7
-        AND       AL,AR5,#0x000f        ; |1387| 
-        BF        L50,EQ                ; |1387| 
-        ; branchcc occurs ; |1387| 
-DW$L$_RunPathMake$10$E:
-DW$L$_RunPathMake$11$B:
-;** 1388	-----------------------    K$4[K$19[x]+cnt] |= 1u;
-;** 1388	-----------------------    goto g13;
-	.dwpsn	"algo.c",1388,8
-        MOVL      XAR4,*-SP[32]
-        MOV       AL,AR5
-        MOV       PL,*+XAR4[AR0]        ; |1388| 
-        ADD       PL,AL
-        MOVL      ACC,XAR3              ; |1388| 
-        ADDU      ACC,PL                ; |1388| 
-        MOVL      XAR4,ACC              ; |1388| 
-        OR        *+XAR4[0],#0x0001     ; |1388| 
-        BF        L50,UNC               ; |1388| 
-        ; branch occurs ; |1388| 
-DW$L$_RunPathMake$11$E:
-L48:    
-DW$L$_RunPathMake$12$B:
-;***	-----------------------g9:
-;** 1382	-----------------------    if ( (cnt&0xf0u) == 0xf0u ) goto g13;
-	.dwpsn	"algo.c",1382,7
-        AND       AL,AR5,#0x00f0        ; |1382| 
-        CMPB      AL,#240               ; |1382| 
-        BF        L50,EQ                ; |1382| 
-        ; branchcc occurs ; |1382| 
-DW$L$_RunPathMake$12$E:
-DW$L$_RunPathMake$13$B:
-;** 1383	-----------------------    K$4[K$19[x]+cnt] |= 0x8u;
-;** 1383	-----------------------    goto g13;
-	.dwpsn	"algo.c",1383,8
-        MOVL      XAR4,*-SP[32]
-        MOV       AL,AR5
-        MOV       PL,*+XAR4[AR0]        ; |1383| 
-        ADD       PL,AL
-        MOVL      ACC,XAR3              ; |1383| 
-        ADDU      ACC,PL                ; |1383| 
-        MOVL      XAR4,ACC              ; |1383| 
-        OR        *+XAR4[0],#0x0008     ; |1383| 
-        BF        L50,UNC               ; |1383| 
-        ; branch occurs ; |1383| 
-DW$L$_RunPathMake$13$E:
-L49:    
-DW$L$_RunPathMake$14$B:
-;***	-----------------------g11:
-;** 1377	-----------------------    if ( (cnt&0xfu) == 0xfu ) goto g13;
-	.dwpsn	"algo.c",1377,7
-        AND       AL,AR5,#0x000f        ; |1377| 
-        CMPB      AL,#15                ; |1377| 
-        BF        L50,EQ                ; |1377| 
-        ; branchcc occurs ; |1377| 
-DW$L$_RunPathMake$14$E:
-DW$L$_RunPathMake$15$B:
-;** 1378	-----------------------    K$4[K$19[x]+cnt] |= 4u;
-	.dwpsn	"algo.c",1378,8
-        MOVL      XAR4,*-SP[32]
-        MOV       AL,AR5
-        MOV       PL,*+XAR4[AR0]        ; |1378| 
-        ADD       PL,AL
-        MOVL      ACC,XAR3              ; |1378| 
-        ADDU      ACC,PL                ; |1378| 
-        MOVL      XAR4,ACC              ; |1378| 
-        OR        *+XAR4[0],#0x0004     ; |1378| 
-DW$L$_RunPathMake$15$E:
-L50:    
-DW$L$_RunPathMake$16$B:
-;***	-----------------------g13:
-;** 1371	-----------------------    if ( (++x) < 4u ) goto g4;
-	.dwpsn	"algo.c",1371,22
-        ADDB      XAR0,#1               ; |1371| 
-        MOV       AL,AR0                ; |1371| 
-        CMPB      AL,#4                 ; |1371| 
-        BF        L46,LO                ; |1371| 
-        ; branchcc occurs ; |1371| 
-DW$L$_RunPathMake$16$E:
-DW$L$_RunPathMake$17$B:
-;** 1371	-----------------------    goto g15;
-        BF        L52,UNC               ; |1371| 
-        ; branch occurs ; |1371| 
-DW$L$_RunPathMake$17$E:
-L51:    
-DW$L$_RunPathMake$18$B:
-;***	-----------------------g14:
-;** 1367	-----------------------    *U$12 |= *U$9&0xfu;
-	.dwpsn	"algo.c",1367,4
-        MOVL      XAR4,XAR7
-        MOV       AL,*+XAR4[0]          ; |1367| 
-        MOVL      XAR4,XAR6             ; |1367| 
-        ANDB      AL,#0x0f              ; |1367| 
-        OR        *+XAR4[0],AL          ; |1367| 
-DW$L$_RunPathMake$18$E:
-L52:    
-DW$L$_RunPathMake$19$B:
-;***	-----------------------g15:
-;** 1364	-----------------------    ++U$9;
-;** 1364	-----------------------    ++U$12;
-;** 1364	-----------------------    if ( (++cnt) < 256u ) goto g2;
-	.dwpsn	"algo.c",1364,26
-        MOVL      ACC,XAR7              ; |1364| 
-        MOVB      XAR4,#1               ; |1364| 
-        ADDB      XAR5,#1               ; |1364| 
-        ADDU      ACC,AR4               ; |1364| 
-        MOVL      XAR7,ACC              ; |1364| 
-        MOVL      ACC,XAR6              ; |1364| 
-        ADDU      ACC,AR4               ; |1364| 
-        CMP       AR5,#256              ; |1364| 
-        MOVL      XAR6,ACC              ; |1364| 
-        BF        L45,LO                ; |1364| 
-        ; branchcc occurs ; |1364| 
-DW$L$_RunPathMake$19$E:
-;** 1403	-----------------------    gSearchType = 2u;
-;** 1404	-----------------------    gPathWeightState = 1u;
-;** 1406	-----------------------    InitWeight();
-;** 1407	-----------------------    WriteMazeWeight();
-;** 1409	-----------------------    gPathWeightState = 0u;
-;** 1413	-----------------------    K$4 = &gMazeMap[119];
-;** 1337	-----------------------    LowWeight = 4095u;
-;** 1338	-----------------------    GoalPosition = 0u;
-;** 1356	-----------------------    LastPath = 0u;
-;** 1413	-----------------------    if ( !(*K$4&0x8) ) goto g19;
-	.dwpsn	"algo.c",1403,2
-        MOVW      DP,#_gSearchType
-        MOV       @_gSearchType,#2      ; |1403| 
-	.dwpsn	"algo.c",1404,2
-        MOVW      DP,#_gPathWeightState
-        MOV       @_gPathWeightState,#1 ; |1404| 
-	.dwpsn	"algo.c",1406,2
-        LCR       #_InitWeight          ; |1406| 
-        ; call occurs [#_InitWeight] ; |1406| 
-	.dwpsn	"algo.c",1407,2
-        LCR       #_WriteMazeWeight     ; |1407| 
-        ; call occurs [#_WriteMazeWeight] ; |1407| 
-	.dwpsn	"algo.c",1409,2
-        MOVW      DP,#_gPathWeightState
-        MOV       @_gPathWeightState,#0 ; |1409| 
-	.dwpsn	"algo.c",1413,2
-        MOVL      XAR4,#_gMazeMap+119   ; |1413| 
-	.dwpsn	"algo.c",1337,9
-        MOVL      XAR7,#4095            ; |1337| 
-	.dwpsn	"algo.c",1338,9
-        MOVB      AL,#0
-        MOV       *-SP[24],AL           ; |1338| 
-	.dwpsn	"algo.c",1356,9
-        MOV       *-SP[25],AL           ; |1356| 
-	.dwpsn	"algo.c",1413,2
-        TBIT      *+XAR4[0],#3          ; |1413| 
-        BF        L53,NTC               ; |1413| 
-        ; branchcc occurs ; |1413| 
-;** 1413	-----------------------    if ( !(*K$4&4) ) goto g19;
-        TBIT      *+XAR4[0],#2          ; |1413| 
-        BF        L53,NTC               ; |1413| 
-        ; branchcc occurs ; |1413| 
-;** 1412	-----------------------    cnt = 0u;
-;***  	-----------------------    goto g20;
-	.dwpsn	"algo.c",1412,2
-        MOVB      XAR0,#0
-        BF        L54,UNC
-        ; branch occurs
-L53:    
-;***	-----------------------g19:
-;** 1414	-----------------------    Goal[0] = 119u;
-;** 1414	-----------------------    cnt = 1u;
-	.dwpsn	"algo.c",1414,3
-        MOVB      XAR0,#1               ; |1414| 
-        MOV       *-SP[11],#119         ; |1414| 
-L54:    
-;***	-----------------------g20:
-;** 1416	-----------------------    K$4 = &gMazeMap[120];
-;** 1416	-----------------------    if ( !(*K$4&0x8) ) goto g22;
-	.dwpsn	"algo.c",1416,2
-        MOVL      XAR4,#_gMazeMap+120   ; |1416| 
-        TBIT      *+XAR4[0],#3          ; |1416| 
-        BF        L55,NTC               ; |1416| 
-        ; branchcc occurs ; |1416| 
-;** 1416	-----------------------    if ( *K$4&1u ) goto g23;
-        TBIT      *+XAR4[0],#0          ; |1416| 
-        BF        L56,TC                ; |1416| 
-        ; branchcc occurs ; |1416| 
-L55:    
-;***	-----------------------g22:
-;** 1417	-----------------------    Goal[cnt] = 120u;
-;** 1417	-----------------------    ++cnt;
-	.dwpsn	"algo.c",1417,3
-        MOVZ      AR4,SP                ; |1417| 
-        SUBB      XAR4,#11              ; |1417| 
-        MOV       *+XAR4[AR0],#120      ; |1417| 
-        ADDB      XAR0,#1               ; |1417| 
-L56:    
-;***	-----------------------g23:
-;** 1419	-----------------------    K$4 = &gMazeMap[135];
-;** 1419	-----------------------    if ( !(*K$4&2) ) goto g25;
-	.dwpsn	"algo.c",1419,2
-        MOVL      XAR4,#_gMazeMap+135   ; |1419| 
-        TBIT      *+XAR4[0],#1          ; |1419| 
-        BF        L57,NTC               ; |1419| 
-        ; branchcc occurs ; |1419| 
-;** 1419	-----------------------    if ( *K$4&4 ) goto g26;
-        TBIT      *+XAR4[0],#2          ; |1419| 
-        BF        L58,TC                ; |1419| 
-        ; branchcc occurs ; |1419| 
-L57:    
-;***	-----------------------g25:
-;** 1420	-----------------------    Goal[cnt] = 135u;
-;** 1420	-----------------------    ++cnt;
-	.dwpsn	"algo.c",1420,3
-        MOVZ      AR4,SP                ; |1420| 
-        SUBB      XAR4,#11              ; |1420| 
-        MOV       *+XAR4[AR0],#135      ; |1420| 
-        ADDB      XAR0,#1               ; |1420| 
-L58:    
-;***	-----------------------g26:
-;** 1422	-----------------------    K$4 = &gMazeMap[0];
-;** 1422	-----------------------    if ( !(K$4[136]&2) ) goto g28;
-	.dwpsn	"algo.c",1422,2
-        MOVL      XAR4,#_gMazeMap       ; |1422| 
-        MOVB      XAR1,#136             ; |1422| 
-        MOVL      *-SP[34],XAR4         ; |1422| 
-        TBIT      *+XAR4[AR1],#1        ; |1422| 
-        BF        L59,NTC               ; |1422| 
-        ; branchcc occurs ; |1422| 
-;** 1422	-----------------------    if ( K$4[136]&1u ) goto g29;
-        MOVL      XAR4,*-SP[34]         ; |1422| 
-        TBIT      *+XAR4[AR1],#0        ; |1422| 
-        BF        L60,TC                ; |1422| 
-        ; branchcc occurs ; |1422| 
-L59:    
-;***	-----------------------g28:
-;** 1423	-----------------------    Goal[cnt] = 136u;
-	.dwpsn	"algo.c",1423,3
-        MOVZ      AR4,SP                ; |1423| 
-        SUBB      XAR4,#11              ; |1423| 
-        MOV       *+XAR4[AR0],#136      ; |1423| 
-L60:    
-;***	-----------------------g29:
-;***  	-----------------------    K$57 = &gMapValue[0];
-;***  	-----------------------    U$47 = &Goal[0];
-;***  	-----------------------    L$3 = 3;
-        MOVZ      AR5,SP
-        MOVL      XAR4,#_gMapValue
-        MOVB      XAR6,#3
-        MOVL      *-SP[36],XAR4
-        SUBB      XAR5,#11
-L61:    
-DW$L$_RunPathMake$34$B:
-;***	-----------------------g30:
-;** 1427	-----------------------    C$34 = *U$47++;
-;** 1427	-----------------------    C$35 = (long)C$34*2+(volatile struct _bit *)K$57;
-;** 1427	-----------------------    if ( *C$35 >= LowWeight || C$34 == 0u ) goto g32;
-	.dwpsn	"algo.c",1427,3
-        MOVL      XAR4,*-SP[36]         ; |1427| 
-        MOV       PL,*XAR5++            ; |1427| 
-        MOVU      ACC,PL
-        LSL       ACC,1                 ; |1427| 
-        ADDL      XAR4,ACC
-        MOV       AH,AR7
-        CMP       AH,*+XAR4[0]          ; |1427| 
-        BF        L62,LOS               ; |1427| 
-        ; branchcc occurs ; |1427| 
-DW$L$_RunPathMake$34$E:
-DW$L$_RunPathMake$35$B:
-        MOV       AL,PL
-        BF        L62,EQ                ; |1427| 
-        ; branchcc occurs ; |1427| 
-DW$L$_RunPathMake$35$E:
-DW$L$_RunPathMake$36$B:
-;** 1429	-----------------------    LowWeight = *C$35;
-;** 1430	-----------------------    GoalPosition = C$34;
-	.dwpsn	"algo.c",1429,4
-        MOVZ      AR7,*+XAR4[0]         ; |1429| 
-	.dwpsn	"algo.c",1430,4
-        MOV       *-SP[24],P            ; |1430| 
-DW$L$_RunPathMake$36$E:
-L62:    
-DW$L$_RunPathMake$37$B:
-;***	-----------------------g32:
-;** 1425	-----------------------    if ( (--L$3) != (-1) ) goto g30;
-	.dwpsn	"algo.c",1425,15
-        BANZ      L61,AR6--             ; |1425| 
-        ; branchcc occurs ; |1425| 
-DW$L$_RunPathMake$37$E:
-;** 1434	-----------------------    WeightMin = *((long)GoalPosition*2+(volatile struct _bit *)K$57);
-;** 1435	-----------------------    Position = GoalPosition;
-;** 1438	-----------------------    TxPrintf("\nGoal = %x\n", Position);
-;** 1441	-----------------------    gPathBufferHead = 0u;
-;** 1444	-----------------------    K$71 = &KnowBlockPath[0];
-;** 1444	-----------------------    memset((void *)K$71, 0, 512uL);
-;** 1442	-----------------------    MouseDir = 0u;
-	.dwpsn	"algo.c",1434,2
-        MOVL      XAR4,*-SP[36]         ; |1434| 
-        MOV       AL,*-SP[24]
-        MOVU      ACC,AL
-        LSL       ACC,1                 ; |1434| 
-        ADDL      XAR4,ACC
-        MOV       AL,*+XAR4[0]          ; |1434| 
-        MOV       *-SP[26],AL           ; |1434| 
-	.dwpsn	"algo.c",1435,2
-        MOVZ      AR1,*-SP[24]
-	.dwpsn	"algo.c",1438,2
-        MOVL      XAR4,#FSL6            ; |1438| 
-        MOVL      *-SP[2],XAR4          ; |1438| 
-        MOV       *-SP[3],AR1           ; |1438| 
-        LCR       #_TxPrintf            ; |1438| 
-        ; call occurs [#_TxPrintf] ; |1438| 
-	.dwpsn	"algo.c",1441,2
-        MOVW      DP,#_gPathBufferHead
-        MOV       @_gPathBufferHead,#0  ; |1441| 
-	.dwpsn	"algo.c",1444,2
-        MOVL      XAR4,#_KnowBlockPath  ; |1444| 
-        MOVL      *-SP[38],XAR4         ; |1444| 
-        MOVB      XAR5,#0
-        MOV       ACC,#1 << 9
-        LCR       #_memset              ; |1444| 
-        ; call occurs [#_memset] ; |1444| 
-	.dwpsn	"algo.c",1442,2
-        MOV       PL,#0                 ; |1442| 
-L63:    
-DW$L$_RunPathMake$39$B:
-;***	-----------------------g34:
-;***  	-----------------------    U$73 = &K$4[Position];
-;***  	-----------------------    U$75 = &gHeadTable[0];
-;** 1448	-----------------------    x = 0u;
-;***  	-----------------------    L$4 = 3;
-        MOVL      ACC,*-SP[34]
-        ADDU      ACC,AR1
-        MOVL      XAR0,ACC
-        MOVL      XAR7,#_gHeadTable
-	.dwpsn	"algo.c",1448,7
-        MOVB      XAR6,#3
-        MOVB      XAR3,#0
-DW$L$_RunPathMake$39$E:
-L64:    
-DW$L$_RunPathMake$40$B:
-;***	-----------------------g35:
-;** 1450	-----------------------    if ( *U$73&*U$75++&0xfu ) goto g38;
-	.dwpsn	"algo.c",1450,4
-        MOV       AL,*XAR7++            ; |1450| 
-        AND       AL,*+XAR0[0]          ; |1450| 
-        ANDB      AL,#0x0f              ; |1450| 
-        BF        L65,NEQ               ; |1450| 
-        ; branchcc occurs ; |1450| 
-DW$L$_RunPathMake$40$E:
-DW$L$_RunPathMake$41$B:
-;** 1452	-----------------------    C$33 = &K$19[x];
-;** 1452	-----------------------    S$15 = (volatile struct _bit *)((long)(*C$33+Position)*2+K$57);
-;** 1452	-----------------------    NextWeight = *(volatile unsigned *)S$15;
-;** 1453	-----------------------    if ( NextWeight >= WeightMin ) goto g38;
-	.dwpsn	"algo.c",1452,5
-        MOVL      ACC,*-SP[32]
-        ADDU      ACC,AR3               ; |1452| 
-        MOVL      XAR4,ACC              ; |1452| 
-        MOVL      XAR5,*-SP[36]         ; |1452| 
-        MOV       AL,*+XAR4[0]          ; |1452| 
-        ADD       AL,AR1                ; |1452| 
-        MOVU      ACC,AL
-        LSL       ACC,1                 ; |1452| 
-        ADDL      XAR5,ACC
-        MOV       AH,*+XAR5[0]          ; |1452| 
-	.dwpsn	"algo.c",1453,5
-        MOV       AL,*-SP[26]
-        CMP       AL,AH                 ; |1453| 
-        BF        L65,LOS               ; |1453| 
-        ; branchcc occurs ; |1453| 
-DW$L$_RunPathMake$41$E:
-DW$L$_RunPathMake$42$B:
-;** 1455	-----------------------    WeightMin = NextWeight;
-;** 1456	-----------------------    NextPos = *C$33+Position;
-;** 1457	-----------------------    AbsoluteDir = x;
-;** 1458	-----------------------    NextTurn = AbsoluteDir-MouseDir&3u;
-	.dwpsn	"algo.c",1455,6
-        MOV       *-SP[26],AH           ; |1455| 
-	.dwpsn	"algo.c",1456,6
-        MOV       AL,*+XAR4[0]          ; |1456| 
-        ADD       AL,AR1                ; |1456| 
-        MOV       *-SP[27],AL           ; |1456| 
-	.dwpsn	"algo.c",1457,6
-        MOVZ      AR2,AR3               ; |1457| 
-	.dwpsn	"algo.c",1458,6
-        MOV       AL,AR2                ; |1458| 
-        SUB       AL,PL                 ; |1458| 
-        ANDB      AL,#0x03              ; |1458| 
-        MOV       *-SP[28],AL           ; |1458| 
-DW$L$_RunPathMake$42$E:
-L65:    
-DW$L$_RunPathMake$43$B:
-;***	-----------------------g38:
-;** 1448	-----------------------    ++x;
-;** 1448	-----------------------    if ( (--L$4) != (-1) ) goto g35;
-	.dwpsn	"algo.c",1448,21
-        ADDB      XAR3,#1               ; |1448| 
-	.dwpsn	"algo.c",1448,14
-        BANZ      L64,AR6--             ; |1448| 
-        ; branchcc occurs ; |1448| 
-DW$L$_RunPathMake$43$E:
-DW$L$_RunPathMake$44$B:
-;** 1464	-----------------------    S$14 = &K$71[(long)gPathBufferHead];
-;** 1464	-----------------------    *(volatile unsigned *)S$14 = *(volatile unsigned *)S$14&0xff00u|Position&0xffu;
-;** 1465	-----------------------    Position = NextPos;
-;** 1466	-----------------------    MouseDir = AbsoluteDir;
-;** 1467	-----------------------    ++gPathBufferHead;
-;** 1469	-----------------------    if ( P$16 = gPathBufferHead > 255u ) goto g169;
-	.dwpsn	"algo.c",1464,3
-        MOVL      XAR4,*-SP[38]         ; |1464| 
-        MOVW      DP,#_gPathBufferHead
-        MOVU      ACC,@_gPathBufferHead
-        LSL       ACC,1                 ; |1464| 
-        ADDL      XAR4,ACC
-        MOV       AL,AR1                ; |1464| 
-        MOV       AH,*+XAR4[0]          ; |1464| 
-        MOVB      AH,AL.LSB             ; |1464| 
-        MOV       *+XAR4[0],AH          ; |1464| 
-	.dwpsn	"algo.c",1465,3
-        MOVZ      AR1,*-SP[27]
-	.dwpsn	"algo.c",1466,3
-        MOV       PL,AR2                ; |1466| 
-	.dwpsn	"algo.c",1467,3
-        INC       @_gPathBufferHead     ; |1467| 
-	.dwpsn	"algo.c",1469,3
-        MOVB      AL,#0
-        MOV       AH,@_gPathBufferHead  ; |1469| 
-        CMPB      AH,#255               ; |1469| 
-        BF        L66,LOS               ; |1469| 
-        ; branchcc occurs ; |1469| 
-DW$L$_RunPathMake$44$E:
-DW$L$_RunPathMake$45$B:
-        MOVB      AL,#1                 ; |1469| 
-DW$L$_RunPathMake$45$E:
-L66:    
-DW$L$_RunPathMake$46$B:
-        CMPB      AL,#0                 ; |1469| 
-        BF        L137,NEQ              ; |1469| 
-        ; branchcc occurs ; |1469| 
-DW$L$_RunPathMake$46$E:
-DW$L$_RunPathMake$47$B:
-;** 1479	-----------------------    if ( Position ) goto g34;
-	.dwpsn	"algo.c",1479,3
-        MOV       AL,AR1
-        BF        L63,NEQ               ; |1479| 
-        ; branchcc occurs ; |1479| 
-DW$L$_RunPathMake$47$E:
-;** 1481	-----------------------    S$13 = &K$71[(long)gPathBufferHead];
-;** 1481	-----------------------    ++gPathBufferHead;
-;** 1481	-----------------------    *(volatile unsigned *)S$13 &= 0xff00u;
-;** 1482	-----------------------    cnt = 0u;
-;***  	-----------------------    L$5 = 255;
-	.dwpsn	"algo.c",1481,4
-        MOVL      XAR4,*-SP[38]         ; |1481| 
-        MOVU      ACC,@_gPathBufferHead
-        LSL       ACC,1                 ; |1481| 
-        ADDL      XAR4,ACC
-        INC       @_gPathBufferHead     ; |1481| 
-        AND       *+XAR4[0],#0xff00     ; |1481| 
-	.dwpsn	"algo.c",1482,4
-        MOVB      XAR5,#0
-        MOVB      XAR6,#255
-L67:    
-DW$L$_RunPathMake$49$B:
-;***	-----------------------g42:
-;** 1492	-----------------------    *((long)cnt*2+(volatile struct _bit *)K$57) |= 0xffffu;
-;** 1491	-----------------------    ++cnt;
-;** 1491	-----------------------    if ( (--L$5) != (-1) ) goto g42;
-	.dwpsn	"algo.c",1492,3
-        MOVL      XAR4,*-SP[36]         ; |1492| 
-        MOVU      ACC,AR5
-        LSL       ACC,1                 ; |1492| 
-        ADDL      XAR4,ACC
-        OR        *+XAR4[0],#0xffff     ; |1492| 
-	.dwpsn	"algo.c",1491,26
-        ADDB      XAR5,#1               ; |1491| 
-	.dwpsn	"algo.c",1491,15
-        BANZ      L67,AR6--             ; |1491| 
-        ; branchcc occurs ; |1491| 
-DW$L$_RunPathMake$49$E:
-;** 1494	-----------------------    if ( !gPathBufferHead ) goto g46;
-	.dwpsn	"algo.c",1494,15
-        MOVW      DP,#_gPathBufferHead
-        MOV       AL,@_gPathBufferHead  ; |1494| 
-        BF        L69,EQ                ; |1494| 
-        ; branchcc occurs ; |1494| 
-;** 1494	-----------------------    cnt = 0u;
-	.dwpsn	"algo.c",1494,6
-        MOVB      XAR5,#0
-L68:    
-DW$L$_RunPathMake$52$B:
-;***	-----------------------g45:
-;** 1496	-----------------------    S$12 = &K$71[(long)(gPathBufferHead-cnt-1u)];
-;** 1496	-----------------------    S$11 = (volatile struct _bit *)((long)(*(volatile unsigned *)S$12&0xffu)*2+K$57);
-;** 1496	-----------------------    *(volatile unsigned *)S$11;
-;** 1496	-----------------------    *(volatile unsigned *)S$11 = 4095u-cnt;
-;** 1494	-----------------------    if ( gPathBufferHead > (++cnt) ) goto g45;
-	.dwpsn	"algo.c",1496,3
-        MOV       AL,@_gPathBufferHead  ; |1496| 
-        SUB       AL,AR5                ; |1496| 
-        MOVL      XAR4,*-SP[38]         ; |1496| 
-        ADDB      AL,#-1
-        MOVU      ACC,AL
-        LSL       ACC,1                 ; |1496| 
-        ADDL      XAR4,ACC
-        MOV       AL,*+XAR4[0]          ; |1496| 
-        MOVL      XAR4,*-SP[36]         ; |1496| 
-        ANDB      AL,#0xff              ; |1496| 
-        MOVU      ACC,AL
-        LSL       ACC,1                 ; |1496| 
-        ADDL      XAR4,ACC
-        MOV       AL,*+XAR4[0]          ; |1496| 
-        MOV       AL,#4095              ; |1496| 
-        SUB       AL,AR5                ; |1496| 
-        MOV       *+XAR4[0],AL          ; |1496| 
-	.dwpsn	"algo.c",1494,15
-        ADDB      XAR5,#1               ; |1494| 
-        MOV       AL,AR5                ; |1494| 
-        CMP       AL,@_gPathBufferHead  ; |1494| 
-        BF        L68,LO                ; |1494| 
-        ; branchcc occurs ; |1494| 
-DW$L$_RunPathMake$52$E:
-L69:    
-;***	-----------------------g46:
-;** 1502	-----------------------    gPathBufferHead = 0u;
-;** 1505	-----------------------    memset((void *)K$71, 0, 512uL);
-;** 1501	-----------------------    WeightMin = 4095u;
-;** 1503	-----------------------    Position = 0u;
-;** 1504	-----------------------    MouseDir = 0u;
-	.dwpsn	"algo.c",1502,2
-        MOV       @_gPathBufferHead,#0  ; |1502| 
-	.dwpsn	"algo.c",1505,2
-        MOVL      XAR4,*-SP[38]
-        MOV       ACC,#1 << 9
-        MOVB      XAR5,#0
-        LCR       #_memset              ; |1505| 
-        ; call occurs [#_memset] ; |1505| 
-	.dwpsn	"algo.c",1501,2
-        MOV       PH,#4095              ; |1501| 
-	.dwpsn	"algo.c",1503,2
-        MOV       PL,#0                 ; |1503| 
-	.dwpsn	"algo.c",1504,2
-        MOVB      XAR0,#0
-L70:    
-DW$L$_RunPathMake$54$B:
-;***	-----------------------g47:
-;***  	-----------------------    U$73 = &K$4[Position];
-;***  	-----------------------    U$75 = &gHeadTable[0];
-;** 1509	-----------------------    x = 0u;
-;***  	-----------------------    L$6 = 3;
-        MOVL      ACC,*-SP[34]
-        ADDU      ACC,PL
-        MOVL      XAR1,ACC
-        MOVL      XAR7,#_gHeadTable
-	.dwpsn	"algo.c",1509,7
-        MOVB      XAR6,#3
-        MOVB      XAR3,#0
-DW$L$_RunPathMake$54$E:
-L71:    
-DW$L$_RunPathMake$55$B:
-;***	-----------------------g48:
-;** 1511	-----------------------    if ( *U$73&*U$75++&0xfu ) goto g51;
-	.dwpsn	"algo.c",1511,4
-        MOV       AL,*XAR7++            ; |1511| 
-        AND       AL,*+XAR1[0]          ; |1511| 
-        ANDB      AL,#0x0f              ; |1511| 
-        BF        L72,NEQ               ; |1511| 
-        ; branchcc occurs ; |1511| 
-DW$L$_RunPathMake$55$E:
-DW$L$_RunPathMake$56$B:
-;** 1513	-----------------------    C$32 = &K$19[x];
-;** 1513	-----------------------    S$10 = (volatile struct _bit *)((long)(*C$32+Position)*2+K$57);
-;** 1513	-----------------------    NextWeight = *(volatile unsigned *)S$10;
-;** 1514	-----------------------    if ( NextWeight >= WeightMin ) goto g51;
-	.dwpsn	"algo.c",1513,5
-        MOVL      ACC,*-SP[32]
-        ADDU      ACC,AR3               ; |1513| 
-        MOVL      XAR4,ACC              ; |1513| 
-        MOVL      XAR5,*-SP[36]         ; |1513| 
-        MOV       AL,*+XAR4[0]          ; |1513| 
-        ADD       AL,PL                 ; |1513| 
-        MOVU      ACC,AL
-        LSL       ACC,1                 ; |1513| 
-        ADDL      XAR5,ACC
-        MOV       AH,*+XAR5[0]          ; |1513| 
-	.dwpsn	"algo.c",1514,5
-        MOV       AL,PH
-        CMP       AL,AH                 ; |1514| 
-        BF        L72,LOS               ; |1514| 
-        ; branchcc occurs ; |1514| 
-DW$L$_RunPathMake$56$E:
-DW$L$_RunPathMake$57$B:
-;** 1516	-----------------------    WeightMin = NextWeight;
-;** 1517	-----------------------    NextPos = *C$32+Position;
-;** 1518	-----------------------    AbsoluteDir = x;
-;** 1519	-----------------------    NextTurn = AbsoluteDir-MouseDir&3u;
-	.dwpsn	"algo.c",1516,6
-        MOV       PH,AH                 ; |1516| 
-	.dwpsn	"algo.c",1517,6
-        MOV       AL,*+XAR4[0]          ; |1517| 
-        ADD       AL,PL                 ; |1517| 
-        MOV       *-SP[27],AL           ; |1517| 
-	.dwpsn	"algo.c",1518,6
-        MOVZ      AR2,AR3               ; |1518| 
-	.dwpsn	"algo.c",1519,6
-        MOV       AL,AR2                ; |1519| 
-        SUB       AL,AR0                ; |1519| 
-        ANDB      AL,#0x03              ; |1519| 
-        MOV       *-SP[28],AL           ; |1519| 
-DW$L$_RunPathMake$57$E:
-L72:    
-DW$L$_RunPathMake$58$B:
-;***	-----------------------g51:
-;** 1509	-----------------------    ++x;
-;** 1509	-----------------------    if ( (--L$6) != (-1) ) goto g48;
-	.dwpsn	"algo.c",1509,21
-        ADDB      XAR3,#1               ; |1509| 
-	.dwpsn	"algo.c",1509,14
-        BANZ      L71,AR6--             ; |1509| 
-        ; branchcc occurs ; |1509| 
-DW$L$_RunPathMake$58$E:
-DW$L$_RunPathMake$59$B:
-;** 1525	-----------------------    S$9 = &K$71[(long)gPathBufferHead];
-;** 1525	-----------------------    *(volatile unsigned *)S$9 = *(volatile unsigned *)S$9&0xff00u|Position&0xffu;
-;** 1526	-----------------------    Position = NextPos;
-;** 1527	-----------------------    S$8 = &K$71[(long)gPathBufferHead];
-;** 1527	-----------------------    *(volatile unsigned *)S$8 = *(volatile unsigned *)S$8&0xfffu|MouseDir<<12;
-;** 1528	-----------------------    MouseDir = AbsoluteDir;
-;** 1529	-----------------------    S$7 = &K$71[(long)gPathBufferHead];
-;** 1529	-----------------------    *(volatile unsigned *)S$7 = *(volatile unsigned *)S$7&0xf0ffu|(NextTurn&0xfu)<<8;
-;** 1530	-----------------------    ++gPathBufferHead;
-;** 1533	-----------------------    if ( P$17 = gPathBufferHead > 255u ) goto g167;
-	.dwpsn	"algo.c",1525,3
-        MOVL      XAR4,*-SP[38]         ; |1525| 
-        MOVW      DP,#_gPathBufferHead
-        MOVU      ACC,@_gPathBufferHead
-        LSL       ACC,1                 ; |1525| 
-        ADDL      XAR4,ACC
-        MOV       AL,PL                 ; |1525| 
-        MOV       AH,*+XAR4[0]          ; |1525| 
-        MOVB      AH,AL.LSB             ; |1525| 
-        MOV       *+XAR4[0],AH          ; |1525| 
-	.dwpsn	"algo.c",1526,3
-        MOV       PL,*-SP[27]
-	.dwpsn	"algo.c",1527,3
-        MOVL      XAR4,*-SP[38]         ; |1527| 
-        MOVU      ACC,@_gPathBufferHead
-        LSL       ACC,1                 ; |1527| 
-        ADDL      XAR4,ACC
-        AND       AL,*+XAR4[0],#0x0fff  ; |1527| 
-        MOVZ      AR6,AL                ; |1527| 
-        MOV       ACC,AR0 << #12        ; |1527| 
-        OR        AL,AR6                ; |1527| 
-        MOV       *+XAR4[0],AL          ; |1527| 
-	.dwpsn	"algo.c",1528,3
-        MOVZ      AR0,AR2               ; |1528| 
-	.dwpsn	"algo.c",1529,3
-        MOVL      XAR4,*-SP[38]         ; |1529| 
-        MOVU      ACC,@_gPathBufferHead
-        LSL       ACC,1                 ; |1529| 
-        ADDL      XAR4,ACC
-        MOV       AL,*-SP[28]           ; |1529| 
-        ANDB      AL,#15                ; |1529| 
-        LSL       AL,8                  ; |1529| 
-        AND       AH,*+XAR4[0],#0xf0ff  ; |1529| 
-        OR        AL,AH                 ; |1529| 
-        MOV       *+XAR4[0],AL          ; |1529| 
-	.dwpsn	"algo.c",1530,3
-        INC       @_gPathBufferHead     ; |1530| 
-	.dwpsn	"algo.c",1533,3
-        MOVB      AL,#0
-        MOV       AH,@_gPathBufferHead  ; |1533| 
-        CMPB      AH,#255               ; |1533| 
-        BF        L73,LOS               ; |1533| 
-        ; branchcc occurs ; |1533| 
-DW$L$_RunPathMake$59$E:
-DW$L$_RunPathMake$60$B:
-        MOVB      AL,#1                 ; |1533| 
-DW$L$_RunPathMake$60$E:
-L73:    
-DW$L$_RunPathMake$61$B:
-        CMPB      AL,#0                 ; |1533| 
-        BF        L135,NEQ              ; |1533| 
-        ; branchcc occurs ; |1533| 
-DW$L$_RunPathMake$61$E:
-DW$L$_RunPathMake$62$B:
-;** 1543	-----------------------    if ( Position != GoalPosition ) goto g47;
-	.dwpsn	"algo.c",1543,3
-        MOV       AL,*-SP[24]
-        CMP       AL,PL                 ; |1543| 
-        BF        L70,NEQ               ; |1543| 
-        ; branchcc occurs ; |1543| 
-DW$L$_RunPathMake$62$E:
-;** 1545	-----------------------    S$6 = &K$71[(long)gPathBufferHead];
-;** 1545	-----------------------    *(volatile unsigned *)S$6 = *(volatile unsigned *)S$6&0xff00u|GoalPosition&0xffu;
-;** 1546	-----------------------    S$5 = &K$71[(long)gPathBufferHead];
-;** 1546	-----------------------    *(volatile unsigned *)S$5 = *(volatile unsigned *)S$5&0xfffu|MouseDir<<12;
-;** 1547	-----------------------    S$4 = &K$71[(long)gPathBufferHead];
-;** 1547	-----------------------    ++gPathBufferHead;
-;** 1547	-----------------------    *(volatile unsigned *)S$4 &= 0xf0ffu;
-;** 1548	-----------------------    gMouseDir = MouseDir;
-;** 1554	-----------------------    gMousePosition = K$19[MouseDir]+GoalPosition;
-;** 1556	-----------------------    TxPrintf("%x %x\n", gMouseDir, gMousePosition);
-;** 1561	-----------------------    gMouseHead = 0;
-;** 1564	-----------------------    gTurnState = 2;
-;** 1562	-----------------------    x = 0u;
-;** 1563	-----------------------    cnt = 0u;
-;***  	-----------------------    if ( gPathBufferHead <= 3u ) goto g152;
-	.dwpsn	"algo.c",1545,4
-        MOVL      XAR4,*-SP[38]         ; |1545| 
-        MOVU      ACC,@_gPathBufferHead
-        LSL       ACC,1                 ; |1545| 
-        ADDL      XAR4,ACC
-        MOV       AL,*-SP[24]           ; |1545| 
-        MOV       AH,*+XAR4[0]          ; |1545| 
-        MOVB      AH,AL.LSB             ; |1545| 
-        MOV       *+XAR4[0],AH          ; |1545| 
-	.dwpsn	"algo.c",1546,4
-        MOVL      XAR4,*-SP[38]         ; |1546| 
-        MOVU      ACC,@_gPathBufferHead
-        LSL       ACC,1                 ; |1546| 
-        ADDL      XAR4,ACC
-        AND       AL,*+XAR4[0],#0x0fff  ; |1546| 
-        MOVZ      AR6,AL                ; |1546| 
-        MOV       ACC,AR0 << #12        ; |1546| 
-        OR        AL,AR6                ; |1546| 
-        MOV       *+XAR4[0],AL          ; |1546| 
-	.dwpsn	"algo.c",1547,4
-        MOVL      XAR4,*-SP[38]         ; |1547| 
-        MOVU      ACC,@_gPathBufferHead
-        LSL       ACC,1                 ; |1547| 
-        ADDL      XAR4,ACC
-        INC       @_gPathBufferHead     ; |1547| 
-        AND       *+XAR4[0],#0xf0ff     ; |1547| 
-	.dwpsn	"algo.c",1548,4
-        MOVW      DP,#_gMouseDir
-        MOV       @_gMouseDir,AR0       ; |1548| 
-	.dwpsn	"algo.c",1554,2
-        MOVL      XAR4,*-SP[32]
-        MOV       AL,*+XAR4[AR0]        ; |1554| 
-        MOVW      DP,#_gMousePosition
-        ADD       AL,*-SP[24]           ; |1554| 
-        MOV       @_gMousePosition,AL   ; |1554| 
-	.dwpsn	"algo.c",1556,2
-        MOVW      DP,#_gMouseDir
-        MOVL      XAR4,#FSL7            ; |1556| 
-        MOV       AL,@_gMouseDir        ; |1556| 
-        MOVL      *-SP[2],XAR4          ; |1556| 
-        MOVW      DP,#_gMousePosition
-        MOV       *-SP[3],AL            ; |1556| 
-        MOV       AL,@_gMousePosition   ; |1556| 
-        MOV       *-SP[4],AL            ; |1556| 
-        LCR       #_TxPrintf            ; |1556| 
-        ; call occurs [#_TxPrintf] ; |1556| 
-	.dwpsn	"algo.c",1561,2
-        MOVW      DP,#_gMouseHead
-        MOV       @_gMouseHead,#0       ; |1561| 
-	.dwpsn	"algo.c",1564,2
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#2       ; |1564| 
-	.dwpsn	"algo.c",1562,2
-        MOVB      XAR0,#0
-	.dwpsn	"algo.c",1563,2
-        MOVW      DP,#_gPathBufferHead
-        MOV       AL,@_gPathBufferHead
-        CMPB      AL,#3
-        MOVB      XAR1,#0
-        BF        L124,LOS
-        ; branchcc occurs
-;***  	-----------------------    U$138 = (volatile unsigned *)K$71;
-;***  	-----------------------    U$186 = U$138;
-;***  	-----------------------    U$117 = 3u;
-        MOVL      XAR7,*-SP[38]
-        MOVB      AL,#3
-        MOV       PH,AL
-        MOVL      XT,XAR7
-L74:    
-;***	-----------------------g56:
-;** 1570	-----------------------    C$31 = &((volatile unsigned *)K$71)[2*(long)U$117];
-;** 1570	-----------------------    i[3] = *C$31>>8&0xfu;
-;** 1571	-----------------------    C$30 = &((volatile unsigned *)K$71)[2*(long)(x+2u)];
-;** 1571	-----------------------    i[2] = *C$30>>8&0xfu;
-;** 1572	-----------------------    C$29 = &((volatile unsigned *)K$71)[2*(long)(x+1u)];
-;** 1572	-----------------------    i[1] = *C$29>>8&0xfu;
-;** 1573	-----------------------    i[0] = *U$138>>8&0xfu;
-;** 1575	-----------------------    DiagPos[3] = *C$31&0xffu;
-;** 1576	-----------------------    DiagPos[2] = *C$30&0xffu;
-;** 1577	-----------------------    DiagPos[1] = *C$29&0xffu;
-;** 1578	-----------------------    DiagPos[0] = *U$138&0xffu;
-;** 1580	-----------------------    DiagDir[3] = *C$31>>12;
-;** 1581	-----------------------    DiagDir[2] = *C$30>>12;
-;** 1582	-----------------------    DiagDir[1] = *C$29>>12;
-;** 1583	-----------------------    DiagDir[0] = *U$138>>12;
-	.dwpsn	"algo.c",1570,4
-        MOVL      XAR4,*-SP[38]         ; |1570| 
-        MOVU      ACC,PH
-        LSL       ACC,1                 ; |1570| 
-        ADDL      XAR4,ACC
-        AND       AL,*+XAR4[0],#0x0f00  ; |1570| 
-        LSR       AL,8                  ; |1570| 
-        MOV       *-SP[12],AL           ; |1570| 
-	.dwpsn	"algo.c",1571,4
-        MOVB      AL,#2                 ; |1571| 
-        MOVL      XAR5,*-SP[38]         ; |1571| 
-        ADD       AL,AR0                ; |1571| 
-        MOVU      ACC,AL
-        LSL       ACC,1                 ; |1571| 
-        ADDL      XAR5,ACC
-        AND       AL,*+XAR5[0],#0x0f00  ; |1571| 
-        LSR       AL,8                  ; |1571| 
-        MOV       *-SP[13],AL           ; |1571| 
-	.dwpsn	"algo.c",1572,4
-        MOVB      AL,#1                 ; |1572| 
-        MOVL      XAR6,*-SP[38]         ; |1572| 
-        ADD       AL,AR0                ; |1572| 
-        MOVU      ACC,AL
-        LSL       ACC,1                 ; |1572| 
-        ADDL      XAR6,ACC
-        AND       AL,*+XAR6[0],#0x0f00  ; |1572| 
-        LSR       AL,8                  ; |1572| 
-        MOV       *-SP[14],AL           ; |1572| 
-	.dwpsn	"algo.c",1573,4
-        AND       AL,*+XAR7[0],#0x0f00  ; |1573| 
-        LSR       AL,8                  ; |1573| 
-        MOV       *-SP[15],AL           ; |1573| 
-	.dwpsn	"algo.c",1575,4
-        MOV       AL,*+XAR4[0]          ; |1575| 
-        ANDB      AL,#0xff              ; |1575| 
-        MOV       *-SP[16],AL           ; |1575| 
-	.dwpsn	"algo.c",1576,4
-        MOV       AL,*+XAR5[0]          ; |1576| 
-        ANDB      AL,#0xff              ; |1576| 
-        MOV       *-SP[17],AL           ; |1576| 
-	.dwpsn	"algo.c",1577,4
-        MOV       AL,*+XAR6[0]          ; |1577| 
-        ANDB      AL,#0xff              ; |1577| 
-        MOV       *-SP[18],AL           ; |1577| 
-	.dwpsn	"algo.c",1578,4
-        MOV       AL,*+XAR7[0]          ; |1578| 
-        ANDB      AL,#0xff              ; |1578| 
-        MOV       *-SP[19],AL           ; |1578| 
-	.dwpsn	"algo.c",1580,4
-        MOV       AL,*+XAR4[0]          ; |1580| 
-        LSR       AL,12                 ; |1580| 
-        MOV       *-SP[20],AL           ; |1580| 
-	.dwpsn	"algo.c",1581,4
-        MOV       AL,*+XAR5[0]          ; |1581| 
-        LSR       AL,12                 ; |1581| 
-        MOV       *-SP[21],AL           ; |1581| 
-	.dwpsn	"algo.c",1582,4
-        MOV       AL,*+XAR6[0]          ; |1582| 
-        LSR       AL,12                 ; |1582| 
-        MOV       *-SP[22],AL           ; |1582| 
-	.dwpsn	"algo.c",1583,4
-        MOVL      XAR4,XAR7
-        MOV       AL,*+XAR4[0]          ; |1583| 
-        LSR       AL,12                 ; |1583| 
-        MOV       *-SP[23],AL           ; |1583| 
-L75:    
-;***	-----------------------g57:
-;** 1639	-----------------------    YetTurnState = gTurnState;
-;** 1640	-----------------------    YetMouseHead = gMouseHead;
-;** 1642	-----------------------    if ( *&gMouseHead ) goto g93;
-	.dwpsn	"algo.c",1639,3
-        MOVW      DP,#_gTurnState
-        MOVZ      AR6,@_gTurnState      ; |1639| 
-	.dwpsn	"algo.c",1640,3
-        MOVW      DP,#_gMouseHead
-        MOVZ      AR2,@_gMouseHead      ; |1640| 
-	.dwpsn	"algo.c",1642,3
-        MOV       AL,@_gMouseHead       ; |1642| 
-        BF        L93,NEQ               ; |1642| 
-        ; branchcc occurs ; |1642| 
-;** 1644	-----------------------    if ( i[0]|LastPath ) goto g90;
-	.dwpsn	"algo.c",1644,4
-        MOV       AL,*-SP[15]           ; |1644| 
-        OR        AL,*-SP[25]           ; |1644| 
-        BF        L91,NEQ               ; |1644| 
-        ; branchcc occurs ; |1644| 
-;** 1646	-----------------------    if ( i[1] == 1u ) goto g77;
-	.dwpsn	"algo.c",1646,5
-        MOV       AL,*-SP[14]           ; |1646| 
-        CMPB      AL,#1                 ; |1646| 
-        BF        L84,EQ                ; |1646| 
-        ; branchcc occurs ; |1646| 
-;** 1680	-----------------------    if ( i[1] == 3u ) goto g70;
-	.dwpsn	"algo.c",1680,10
-        CMPB      AL,#3                 ; |1680| 
-        BF        L80,EQ                ; |1680| 
-        ; branchcc occurs ; |1680| 
-;** 1715	-----------------------    if ( i[1] ) goto g67;
-	.dwpsn	"algo.c",1715,10
-        CMPB      AL,#0                 ; |1715| 
-        BF        L78,NEQ               ; |1715| 
-        ; branchcc occurs ; |1715| 
-;** 1717	-----------------------    gMouseHead = 0;
-;** 1718	-----------------------    gTurnState = 0;
-;** 1720	-----------------------    if ( i[2] ) goto g66;
-	.dwpsn	"algo.c",1717,6
-        MOV       @_gMouseHead,#0       ; |1717| 
-	.dwpsn	"algo.c",1718,6
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#0       ; |1718| 
-	.dwpsn	"algo.c",1720,6
-        MOV       AL,*-SP[13]           ; |1720| 
-        BF        L77,NEQ               ; |1720| 
-        ; branchcc occurs ; |1720| 
-;** 1722	-----------------------    if ( i[3] ) goto g65;
-	.dwpsn	"algo.c",1722,7
-        MOV       AL,*-SP[12]           ; |1722| 
-        BF        L76,NEQ               ; |1722| 
-        ; branchcc occurs ; |1722| 
-;** 1725	-----------------------    U$138 += 6;
-;** 1725	-----------------------    x += 3u;
-;** 1726	-----------------------    BlockCnt = 3u;
-;** 1727	-----------------------    goto g85;
-	.dwpsn	"algo.c",1725,8
-        MOVL      ACC,XAR7              ; |1725| 
-        MOVB      XAR4,#6               ; |1725| 
-        ADDU      ACC,AR4               ; |1725| 
-        MOVL      XAR7,ACC              ; |1725| 
-        ADDB      XAR0,#3               ; |1725| 
-	.dwpsn	"algo.c",1726,8
-        MOVB      AL,#3                 ; |1726| 
-        MOV       PL,AL                 ; |1726| 
-	.dwpsn	"algo.c",1727,7
-        BF        L89,UNC               ; |1727| 
-        ; branch occurs ; |1727| 
-L76:    
-;***	-----------------------g65:
-;** 1731	-----------------------    U$138 += 4;
-;** 1731	-----------------------    x += 2u;
-;** 1732	-----------------------    BlockCnt = 2u;
-;** 1732	-----------------------    goto g85;
-	.dwpsn	"algo.c",1731,8
-        MOVL      ACC,XAR7              ; |1731| 
-        MOVB      XAR4,#4               ; |1731| 
-        ADDU      ACC,AR4               ; |1731| 
-        MOVL      XAR7,ACC              ; |1731| 
-        ADDB      XAR0,#2               ; |1731| 
-	.dwpsn	"algo.c",1732,8
-        MOVB      AL,#2                 ; |1732| 
-        MOV       PL,AL                 ; |1732| 
-        BF        L89,UNC               ; |1732| 
-        ; branch occurs ; |1732| 
-L77:    
-;***	-----------------------g66:
-;** 1739	-----------------------    U$138 += 2;
-;** 1739	-----------------------    ++x;
-;** 1740	-----------------------    BlockCnt = 1u;
-;** 1740	-----------------------    goto g85;
-	.dwpsn	"algo.c",1739,7
-        MOVL      ACC,XAR7              ; |1739| 
-        MOVB      XAR4,#2               ; |1739| 
-        ADDU      ACC,AR4               ; |1739| 
-        MOVL      XAR7,ACC              ; |1739| 
-        ADDB      XAR0,#1               ; |1739| 
-	.dwpsn	"algo.c",1740,7
-        MOVB      AL,#1                 ; |1740| 
-        MOV       PL,AL                 ; |1740| 
-        BF        L89,UNC               ; |1740| 
-        ; branch occurs ; |1740| 
-L78:    
-;***	-----------------------g67:
-;** 1749	-----------------------    gMouseHead = 0;
-;** 1750	-----------------------    gTurnState = 0;
-;** 1751	-----------------------    U$138 += 2;
-;** 1751	-----------------------    ++x;
-;** 1752	-----------------------    BlockCnt = 1u;
-;** 1753	-----------------------    if ( YetTurnState ) goto g69;
-	.dwpsn	"algo.c",1749,6
-        MOV       @_gMouseHead,#0       ; |1749| 
-	.dwpsn	"algo.c",1750,6
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#0       ; |1750| 
-	.dwpsn	"algo.c",1751,6
-        MOVL      ACC,XAR7              ; |1751| 
-        MOVB      XAR4,#2               ; |1751| 
-        ADDU      ACC,AR4               ; |1751| 
-        MOVL      XAR7,ACC              ; |1751| 
-        ADDB      XAR0,#1               ; |1751| 
-	.dwpsn	"algo.c",1752,6
-        MOVB      AL,#1                 ; |1752| 
-        MOV       PL,AL                 ; |1752| 
-	.dwpsn	"algo.c",1753,6
-        MOV       AL,AR6
-        BF        L79,NEQ               ; |1753| 
-        ; branchcc occurs ; |1753| 
-;** 1755	-----------------------    C$28 = &((volatile unsigned *)K$71)[2*(long)(cnt-1u)];
-;** 1755	-----------------------    *C$28 = *C$28&0xff00u|DiagPos[0]&0xffu;
-;** 1756	-----------------------    *C$28 = *C$28&0xfffu|DiagDir[0]<<12;
-;** 1757	-----------------------    goto g85;
-	.dwpsn	"algo.c",1755,7
-        MOV       AL,AR1                ; |1755| 
-        MOVL      XAR4,*-SP[38]         ; |1755| 
-        ADDB      AL,#-1
-        MOVU      ACC,AL
-        LSL       ACC,1                 ; |1755| 
-        ADDL      XAR4,ACC
-        MOV       AL,*-SP[19]           ; |1755| 
-        MOV       AH,*+XAR4[0]          ; |1755| 
-        MOVB      AH,AL.LSB             ; |1755| 
-        MOV       *+XAR4[0],AH          ; |1755| 
-	.dwpsn	"algo.c",1756,7
-        AND       AL,*+XAR4[0],#0x0fff  ; |1756| 
-        MOV       PH,AL                 ; |1756| 
-        MOV       ACC,*-SP[23] << #12   ; |1756| 
-        OR        AL,PH                 ; |1756| 
-        MOV       *+XAR4[0],AL          ; |1756| 
-	.dwpsn	"algo.c",1757,6
-        BF        L89,UNC               ; |1757| 
-        ; branch occurs ; |1757| 
-L79:    
-;***	-----------------------g69:
-;** 1760	-----------------------    *U$186 = *U$186&0xff00u|DiagPos[0]&0xffu;
-;** 1761	-----------------------    *U$186 = *U$186&0xfffu|DiagDir[0]<<12;
-;** 1761	-----------------------    goto g85;
-	.dwpsn	"algo.c",1760,7
-        MOVL      XAR4,XT               ; |1760| 
-        MOV       AH,*+XAR4[0]          ; |1760| 
-        MOVL      XAR4,XT               ; |1760| 
-        MOV       AL,*-SP[19]           ; |1760| 
-        MOVB      AH,AL.LSB             ; |1760| 
-        MOV       *+XAR4[0],AH          ; |1760| 
-	.dwpsn	"algo.c",1761,7
-        MOVL      XAR4,XT
-        AND       AL,*+XAR4[0],#0x0fff  ; |1761| 
-        MOVL      XAR4,XT               ; |1761| 
-        MOV       PH,AL                 ; |1761| 
-        MOV       ACC,*-SP[23] << #12   ; |1761| 
-        OR        AL,PH                 ; |1761| 
-        MOV       *+XAR4[0],AL          ; |1761| 
-        BF        L89,UNC               ; |1761| 
-        ; branch occurs ; |1761| 
-L80:    
-;***	-----------------------g70:
-;** 1682	-----------------------    if ( i[2] == 3u ) goto g74;
-	.dwpsn	"algo.c",1682,6
-        MOV       AL,*-SP[13]           ; |1682| 
-        CMPB      AL,#3                 ; |1682| 
-        BF        L82,EQ                ; |1682| 
-        ; branchcc occurs ; |1682| 
-;** 1699	-----------------------    if ( i[2] ) goto g73;
-	.dwpsn	"algo.c",1699,11
-        CMPB      AL,#0                 ; |1699| 
-        BF        L81,NEQ               ; |1699| 
-        ; branchcc occurs ; |1699| 
-;** 1702	-----------------------    gMouseHead = 0;
-;** 1703	-----------------------    gTurnState = 3;
-;** 1704	-----------------------    U$138 += 4;
-;** 1704	-----------------------    x += 2u;
-;** 1705	-----------------------    goto g85;
-	.dwpsn	"algo.c",1702,7
-        MOV       @_gMouseHead,#0       ; |1702| 
-	.dwpsn	"algo.c",1703,7
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#3       ; |1703| 
-	.dwpsn	"algo.c",1704,7
-        MOVL      ACC,XAR7              ; |1704| 
-        MOVB      XAR4,#4               ; |1704| 
-        ADDU      ACC,AR4               ; |1704| 
-        MOVL      XAR7,ACC              ; |1704| 
-        ADDB      XAR0,#2               ; |1704| 
-	.dwpsn	"algo.c",1705,6
-        BF        L89,UNC               ; |1705| 
-        ; branch occurs ; |1705| 
-L81:    
-;***	-----------------------g73:
-;** 1709	-----------------------    gMouseHead = 1;
-;** 1710	-----------------------    gTurnState = 9;
-;** 1711	-----------------------    U$138 += 4;
-;** 1711	-----------------------    x += 2u;
-;** 1711	-----------------------    goto g85;
-	.dwpsn	"algo.c",1709,7
-        MOV       @_gMouseHead,#1       ; |1709| 
-	.dwpsn	"algo.c",1710,7
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#9       ; |1710| 
-	.dwpsn	"algo.c",1711,7
-        MOVL      ACC,XAR7              ; |1711| 
-        MOVB      XAR4,#4               ; |1711| 
-        ADDU      ACC,AR4               ; |1711| 
-        ADDB      XAR0,#2               ; |1711| 
-        MOVL      XAR7,ACC              ; |1711| 
-        BF        L89,UNC               ; |1711| 
-        ; branch occurs ; |1711| 
-L82:    
-;***	-----------------------g74:
-;** 1684	-----------------------    if ( i[3] ) goto g76;
-	.dwpsn	"algo.c",1684,7
-        MOV       AL,*-SP[12]           ; |1684| 
-        BF        L83,NEQ               ; |1684| 
-        ; branchcc occurs ; |1684| 
-;** 1687	-----------------------    gMouseHead = 0;
-;** 1688	-----------------------    gTurnState = 5;
-;** 1689	-----------------------    U$138 += 6;
-;** 1689	-----------------------    x += 3u;
-;** 1690	-----------------------    goto g85;
-	.dwpsn	"algo.c",1687,8
-        MOV       @_gMouseHead,#0       ; |1687| 
-	.dwpsn	"algo.c",1688,8
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#5       ; |1688| 
-	.dwpsn	"algo.c",1689,8
-        MOVL      ACC,XAR7              ; |1689| 
-        MOVB      XAR4,#6               ; |1689| 
-        ADDU      ACC,AR4               ; |1689| 
-        MOVL      XAR7,ACC              ; |1689| 
-        ADDB      XAR0,#3               ; |1689| 
-	.dwpsn	"algo.c",1690,7
-        BF        L89,UNC               ; |1690| 
-        ; branch occurs ; |1690| 
-L83:    
-;***	-----------------------g76:
-;** 1694	-----------------------    gMouseHead = 1;
-;** 1695	-----------------------    gTurnState = 7;
-;** 1696	-----------------------    U$138 += 6;
-;** 1696	-----------------------    x += 3u;
-;** 1696	-----------------------    goto g85;
-	.dwpsn	"algo.c",1694,8
-        MOV       @_gMouseHead,#1       ; |1694| 
-	.dwpsn	"algo.c",1695,8
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#7       ; |1695| 
-	.dwpsn	"algo.c",1696,8
-        MOVL      ACC,XAR7              ; |1696| 
-        MOVB      XAR4,#6               ; |1696| 
-        ADDU      ACC,AR4               ; |1696| 
-        ADDB      XAR0,#3               ; |1696| 
-        MOVL      XAR7,ACC              ; |1696| 
-        BF        L89,UNC               ; |1696| 
-        ; branch occurs ; |1696| 
-L84:    
-;***	-----------------------g77:
-;** 1649	-----------------------    if ( i[2] == 1u ) goto g81;
-	.dwpsn	"algo.c",1649,6
-        MOV       AL,*-SP[13]           ; |1649| 
-        CMPB      AL,#1                 ; |1649| 
-        BF        L86,EQ                ; |1649| 
-        ; branchcc occurs ; |1649| 
-;** 1665	-----------------------    if ( i[2] ) goto g80;
-	.dwpsn	"algo.c",1665,11
-        CMPB      AL,#0                 ; |1665| 
-        BF        L85,NEQ               ; |1665| 
-        ; branchcc occurs ; |1665| 
-;** 1668	-----------------------    gMouseHead = 0;
-;** 1669	-----------------------    gTurnState = 1;
-;** 1670	-----------------------    U$138 += 4;
-;** 1670	-----------------------    x += 2u;
-;** 1671	-----------------------    goto g85;
-	.dwpsn	"algo.c",1668,7
-        MOV       @_gMouseHead,#0       ; |1668| 
-	.dwpsn	"algo.c",1669,7
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#1       ; |1669| 
-	.dwpsn	"algo.c",1670,7
-        MOVL      ACC,XAR7              ; |1670| 
-        MOVB      XAR4,#4               ; |1670| 
-        ADDU      ACC,AR4               ; |1670| 
-        MOVL      XAR7,ACC              ; |1670| 
-        ADDB      XAR0,#2               ; |1670| 
-	.dwpsn	"algo.c",1671,6
-        BF        L89,UNC               ; |1671| 
-        ; branch occurs ; |1671| 
-L85:    
-;***	-----------------------g80:
-;** 1675	-----------------------    gMouseHead = 1;
-;** 1676	-----------------------    gTurnState = 8;
-;** 1677	-----------------------    U$138 += 4;
-;** 1677	-----------------------    x += 2u;
-;** 1677	-----------------------    goto g85;
-	.dwpsn	"algo.c",1675,7
-        MOV       @_gMouseHead,#1       ; |1675| 
-	.dwpsn	"algo.c",1676,7
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#8       ; |1676| 
-	.dwpsn	"algo.c",1677,7
-        MOVL      ACC,XAR7              ; |1677| 
-        MOVB      XAR4,#4               ; |1677| 
-        ADDU      ACC,AR4               ; |1677| 
-        ADDB      XAR0,#2               ; |1677| 
-        MOVL      XAR7,ACC              ; |1677| 
-        BF        L89,UNC               ; |1677| 
-        ; branch occurs ; |1677| 
-L86:    
-;***	-----------------------g81:
-;** 1651	-----------------------    if ( i[3] ) goto g83;
-	.dwpsn	"algo.c",1651,7
-        MOV       AL,*-SP[12]           ; |1651| 
-        BF        L87,NEQ               ; |1651| 
-        ; branchcc occurs ; |1651| 
-;** 1654	-----------------------    gMouseHead = 0;
-;** 1655	-----------------------    gTurnState = 4;
-;** 1656	-----------------------    goto g84;
-	.dwpsn	"algo.c",1654,8
-        MOV       @_gMouseHead,#0       ; |1654| 
-	.dwpsn	"algo.c",1655,8
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#4       ; |1655| 
-	.dwpsn	"algo.c",1656,7
-        BF        L88,UNC               ; |1656| 
-        ; branch occurs ; |1656| 
-L87:    
-;***	-----------------------g83:
-;** 1660	-----------------------    gMouseHead = 1;
-;** 1661	-----------------------    gTurnState = 6;
-	.dwpsn	"algo.c",1660,8
-        MOV       @_gMouseHead,#1       ; |1660| 
-	.dwpsn	"algo.c",1661,8
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#6       ; |1661| 
-L88:    
-;***	-----------------------g84:
-;** 1663	-----------------------    U$138 += 6;
-;** 1663	-----------------------    x += 3u;
-	.dwpsn	"algo.c",1663,7
-        MOVL      ACC,XAR7              ; |1663| 
-        MOVB      XAR4,#6               ; |1663| 
-        ADDB      XAR0,#3               ; |1663| 
-        ADDU      ACC,AR4               ; |1663| 
-        MOVL      XAR7,ACC              ; |1663| 
-L89:    
-;***	-----------------------g85:
-;** 1664	-----------------------    if ( !*&gTurnState ) goto g110;
-	.dwpsn	"algo.c",1664,6
-        MOV       AL,@_gTurnState       ; |1664| 
-        BF        L101,EQ               ; |1664| 
-        ; branchcc occurs ; |1664| 
-;** 1768	-----------------------    if ( YetTurnState ) goto g89;
-	.dwpsn	"algo.c",1768,6
-        MOV       AL,AR6
-        BF        L90,NEQ               ; |1768| 
-        ; branchcc occurs ; |1768| 
-;** 1770	-----------------------    C$27 = &((volatile unsigned *)K$71)[2*(long)(cnt-1u)];
-;** 1770	-----------------------    C$27[1] = C$27[1]&0xff00u|C$27[1]+1u&0xffu;
-;** 1771	-----------------------    *C$27 = *C$27&0xfffu|DiagDir[0]<<12;
-;** 1773	-----------------------    if ( !(*C$27&0xffu) ) goto g110;
-	.dwpsn	"algo.c",1770,7
-        MOV       AL,AR1                ; |1770| 
-        MOVL      XAR4,*-SP[38]         ; |1770| 
-        ADDB      AL,#-1
-        MOVU      ACC,AL
-        LSL       ACC,1                 ; |1770| 
-        ADDL      XAR4,ACC
-        MOV       AL,*+XAR4[1]          ; |1770| 
-        ADDB      AL,#1                 ; |1770| 
-        MOV       AH,*+XAR4[1]          ; |1770| 
-        MOVB      AH,AL.LSB             ; |1770| 
-        MOV       *+XAR4[1],AH          ; |1770| 
-	.dwpsn	"algo.c",1771,7
-        AND       AL,*+XAR4[0],#0x0fff  ; |1771| 
-        MOV       PH,AL                 ; |1771| 
-        MOV       ACC,*-SP[23] << #12   ; |1771| 
-        OR        AL,PH                 ; |1771| 
-        MOV       *+XAR4[0],AL          ; |1771| 
-	.dwpsn	"algo.c",1773,7
-        MOV       AL,*+XAR4[0]          ; |1773| 
-        ANDB      AL,#0xff              ; |1773| 
-        BF        L101,EQ               ; |1773| 
-        ; branchcc occurs ; |1773| 
-;** 1776	-----------------------    *C$27 = *C$27&0xff00u|DiagPos[0]&0xffu;
-;***  	-----------------------    U$117 = x+3u;
-;** 1776	-----------------------    goto g124;
-	.dwpsn	"algo.c",1776,8
-        MOV       AL,*-SP[19]           ; |1776| 
-        MOV       AH,*+XAR4[0]          ; |1776| 
-        MOVB      AH,AL.LSB             ; |1776| 
-        MOVB      AL,#3
-        ADD       AL,AR0
-        MOV       *+XAR4[0],AH          ; |1776| 
-        MOV       PH,AL
-        BF        L110,UNC              ; |1776| 
-        ; branch occurs ; |1776| 
-L90:    
-;***	-----------------------g89:
-;** 1781	-----------------------    U$186[1] &= 0xffu;
-;** 1782	-----------------------    *U$186 = *U$186&0xff00u|DiagPos[0]&0xffu;
-;** 1783	-----------------------    *U$186 = *U$186&0xfffu|DiagDir[0]<<12;
-;** 1784	-----------------------    S$3 = (volatile struct _Path *)(U$186+1L);
-;** 1784	-----------------------    U$186 += 2;
-;** 1784	-----------------------    ++cnt;
-;** 1784	-----------------------    *(volatile unsigned *)S$3 = *(volatile unsigned *)S$3&0xff00u|1u;
-;***  	-----------------------    U$117 = x+3u;
-;** 1784	-----------------------    goto g127;
-	.dwpsn	"algo.c",1781,7
-        MOVL      XAR4,XT
-        AND       *+XAR4[1],#0x00ff     ; |1781| 
-	.dwpsn	"algo.c",1782,7
-        MOVL      XAR4,XT               ; |1782| 
-        MOV       AH,*+XAR4[0]          ; |1782| 
-        MOVL      XAR4,XT               ; |1782| 
-        MOV       AL,*-SP[19]           ; |1782| 
-        MOVB      AH,AL.LSB             ; |1782| 
-        MOV       *+XAR4[0],AH          ; |1782| 
-	.dwpsn	"algo.c",1783,7
-        MOVL      XAR4,XT
-        AND       AL,*+XAR4[0],#0x0fff  ; |1783| 
-        MOVL      XAR4,XT               ; |1783| 
-        MOV       PH,AL                 ; |1783| 
-        MOV       ACC,*-SP[23] << #12   ; |1783| 
-        OR        AL,PH                 ; |1783| 
-        MOV       *+XAR4[0],AL          ; |1783| 
-	.dwpsn	"algo.c",1784,7
-        MOVB      ACC,#1
-        ADDL      ACC,XT
-        MOVL      XAR4,ACC              ; |1784| 
-        MOVB      XAR5,#2               ; |1784| 
-        MOVL      ACC,XT                ; |1784| 
-        ADDU      ACC,AR5               ; |1784| 
-        MOVL      XT,ACC                ; |1784| 
-        AND       AL,*+XAR4[0],#0xff00  ; |1784| 
-        ORB       AL,#0x01              ; |1784| 
-        MOV       *+XAR4[0],AL          ; |1784| 
-        MOVB      AL,#3
-        ADD       AL,AR0
-        ADDB      XAR1,#1               ; |1784| 
-        MOV       PH,AL
-        BF        L111,UNC              ; |1784| 
-        ; branch occurs ; |1784| 
-L91:    
-;***	-----------------------g90:
-;** 1793	-----------------------    gMouseHead = 0;
-;** 1794	-----------------------    gTurnState = 22;
-;** 1795	-----------------------    if ( i[0] ) goto g92;
-	.dwpsn	"algo.c",1793,5
-        MOV       @_gMouseHead,#0       ; |1793| 
-	.dwpsn	"algo.c",1794,5
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#22      ; |1794| 
-	.dwpsn	"algo.c",1795,5
-        MOV       AL,*-SP[15]           ; |1795| 
-        BF        L92,NEQ               ; |1795| 
-        ; branchcc occurs ; |1795| 
-;** 1797	-----------------------    gTurnState = 0;
-;** 1798	-----------------------    BlockCnt = 1u;
-	.dwpsn	"algo.c",1797,6
-        MOV       @_gTurnState,#0       ; |1797| 
-	.dwpsn	"algo.c",1798,6
-        MOVB      AL,#1                 ; |1798| 
-        MOV       PL,AL                 ; |1798| 
-L92:    
-;***	-----------------------g92:
-;** 1803	-----------------------    U$138 += 2;
-;***  	-----------------------    U$117 = (++x)+3u;
-;** 1803	-----------------------    goto g123;
-	.dwpsn	"algo.c",1803,5
-        MOVL      ACC,XAR7              ; |1803| 
-        MOVB      XAR4,#2               ; |1803| 
-        ADDB      XAR0,#1
-        ADDU      ACC,AR4               ; |1803| 
-        MOVL      XAR7,ACC              ; |1803| 
-        MOVB      AL,#3
-        ADD       AL,AR0
-        MOV       PH,AL
-        BF        L109,UNC              ; |1803| 
-        ; branch occurs ; |1803| 
-L93:    
-;***	-----------------------g93:
-;** 1809	-----------------------    if ( i[0] == 1u ) goto g111;
-	.dwpsn	"algo.c",1809,4
-        MOV       AL,*-SP[15]           ; |1809| 
-        CMPB      AL,#1                 ; |1809| 
-        BF        L102,EQ               ; |1809| 
-        ; branchcc occurs ; |1809| 
-;** 1861	-----------------------    if ( i[0] != 3u ) goto g110;
-	.dwpsn	"algo.c",1861,9
-        CMPB      AL,#3                 ; |1861| 
-        BF        L101,NEQ              ; |1861| 
-        ; branchcc occurs ; |1861| 
-;** 1863	-----------------------    if ( i[1] == 3u ) goto g103;
-	.dwpsn	"algo.c",1863,5
-        MOV       AL,*-SP[14]           ; |1863| 
-        CMPB      AL,#3                 ; |1863| 
-        BF        L97,EQ                ; |1863| 
-        ; branchcc occurs ; |1863| 
-;** 1892	-----------------------    if ( !i[1] ) goto g102;
-	.dwpsn	"algo.c",1892,10
-        CMPB      AL,#0                 ; |1892| 
-        BF        L96,EQ                ; |1892| 
-        ; branchcc occurs ; |1892| 
-;** 1899	-----------------------    if ( i[1] == 1u ) goto g101;
-	.dwpsn	"algo.c",1899,10
-        CMPB      AL,#1                 ; |1899| 
-        BF        L95,EQ                ; |1899| 
-        ; branchcc occurs ; |1899| 
-;** 1906	-----------------------    if ( i[1] != 2u ) goto g100;
-	.dwpsn	"algo.c",1906,10
-        CMPB      AL,#2                 ; |1906| 
-        BF        L94,NEQ               ; |1906| 
-        ; branchcc occurs ; |1906| 
-;** 1906	-----------------------    if ( gSearchEndState == 1u ) goto g102;
-        MOVW      DP,#_gSearchEndState
-        MOV       AL,@_gSearchEndState  ; |1906| 
-        CMPB      AL,#1                 ; |1906| 
-        BF        L96,EQ                ; |1906| 
-        ; branchcc occurs ; |1906| 
-L94:    
-;***	-----------------------g100:
-;** 1915	-----------------------    gMouseHead = 0;
-;** 1916	-----------------------    gTurnState = 17;
-;** 1917	-----------------------    U$138 += 2;
-;***  	-----------------------    U$117 = (++x)+3u;
-;** 1917	-----------------------    goto g123;
-	.dwpsn	"algo.c",1915,6
-        MOVW      DP,#_gMouseHead
-        MOV       @_gMouseHead,#0       ; |1915| 
-	.dwpsn	"algo.c",1916,6
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#17      ; |1916| 
-	.dwpsn	"algo.c",1917,6
-        MOVL      ACC,XAR7              ; |1917| 
-        MOVB      XAR4,#2               ; |1917| 
-        ADDU      ACC,AR4               ; |1917| 
-        MOVL      XAR7,ACC              ; |1917| 
-        ADDB      XAR0,#1
-        MOVB      AL,#3
-        ADD       AL,AR0
-        MOV       PH,AL
-        BF        L109,UNC              ; |1917| 
-        ; branch occurs ; |1917| 
-L95:    
-;***	-----------------------g101:
-;** 1902	-----------------------    gMouseHead = 1;
-;** 1903	-----------------------    gTurnState = 21;
-;** 1904	-----------------------    U$138 += 2;
-;***  	-----------------------    U$117 = (++x)+3u;
-;** 1905	-----------------------    goto g123;
-	.dwpsn	"algo.c",1902,6
-        MOV       @_gMouseHead,#1       ; |1902| 
-	.dwpsn	"algo.c",1903,6
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#21      ; |1903| 
-	.dwpsn	"algo.c",1904,6
-        MOVL      ACC,XAR7              ; |1904| 
-        MOVB      XAR4,#2               ; |1904| 
-        ADDU      ACC,AR4               ; |1904| 
-        ADDB      XAR0,#1
-        MOVL      XAR7,ACC              ; |1904| 
-        MOVB      AL,#3
-        ADD       AL,AR0
-        MOV       PH,AL
-	.dwpsn	"algo.c",1905,5
-        BF        L109,UNC              ; |1905| 
-        ; branch occurs ; |1905| 
-L96:    
-;***	-----------------------g102:
-;** 1908	-----------------------    gMouseHead = 0;
-;** 1909	-----------------------    gTurnState = 13;
-;** 1910	-----------------------    U$138 += 2;
-;***  	-----------------------    U$117 = (++x)+3u;
-;** 1911	-----------------------    goto g123;
-	.dwpsn	"algo.c",1908,6
-        MOVW      DP,#_gMouseHead
-        MOV       @_gMouseHead,#0       ; |1908| 
-	.dwpsn	"algo.c",1909,6
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#13      ; |1909| 
-	.dwpsn	"algo.c",1910,6
-        MOVL      ACC,XAR7              ; |1910| 
-        MOVB      XAR4,#2               ; |1910| 
-        ADDU      ACC,AR4               ; |1910| 
-        MOVL      XAR7,ACC              ; |1910| 
-        ADDB      XAR0,#1
-        MOVB      AL,#3
-        ADD       AL,AR0
-        MOV       PH,AL
-	.dwpsn	"algo.c",1911,5
-        BF        L109,UNC              ; |1911| 
-        ; branch occurs ; |1911| 
-L97:    
-;***	-----------------------g103:
-;** 1865	-----------------------    if ( !i[2] ) goto g109;
-	.dwpsn	"algo.c",1865,6
-        MOV       AL,*-SP[13]           ; |1865| 
-        BF        L100,EQ               ; |1865| 
-        ; branchcc occurs ; |1865| 
-;** 1871	-----------------------    if ( i[2] != 2u ) goto g106;
-	.dwpsn	"algo.c",1871,11
-        CMPB      AL,#2                 ; |1871| 
-        BF        L98,NEQ               ; |1871| 
-        ; branchcc occurs ; |1871| 
-;** 1871	-----------------------    if ( gSearchEndState == 1u ) goto g109;
-        MOVW      DP,#_gSearchEndState
-        MOV       AL,@_gSearchEndState  ; |1871| 
-        CMPB      AL,#1                 ; |1871| 
-        BF        L100,EQ               ; |1871| 
-        ; branchcc occurs ; |1871| 
-L98:    
-;***	-----------------------g106:
-;** 1879	-----------------------    if ( LastPath ) goto g108;
-	.dwpsn	"algo.c",1879,7
-        MOV       AL,*-SP[25]
-        BF        L99,NEQ               ; |1879| 
-        ; branchcc occurs ; |1879| 
-;** 1881	-----------------------    gMouseHead = 1;
-;** 1882	-----------------------    gTurnState = 15;
-;** 1883	-----------------------    goto g121;
-	.dwpsn	"algo.c",1881,8
-        MOVW      DP,#_gMouseHead
-        MOV       @_gMouseHead,#1       ; |1881| 
-	.dwpsn	"algo.c",1882,8
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#15      ; |1882| 
-	.dwpsn	"algo.c",1883,7
-        BF        L107,UNC              ; |1883| 
-        ; branch occurs ; |1883| 
-L99:    
-;***	-----------------------g108:
-;** 1886	-----------------------    gMouseHead = 0;
-;** 1887	-----------------------    gTurnState = 19;
-;** 1887	-----------------------    goto g121;
-	.dwpsn	"algo.c",1886,8
-        MOVW      DP,#_gMouseHead
-        MOV       @_gMouseHead,#0       ; |1886| 
-	.dwpsn	"algo.c",1887,8
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#19      ; |1887| 
-        BF        L107,UNC              ; |1887| 
-        ; branch occurs ; |1887| 
-L100:    
-;***	-----------------------g109:
-;** 1868	-----------------------    gMouseHead = 0;
-;** 1869	-----------------------    gTurnState = 11;
-;** 1870	-----------------------    goto g121;
-	.dwpsn	"algo.c",1868,7
-        MOVW      DP,#_gMouseHead
-        MOV       @_gMouseHead,#0       ; |1868| 
-	.dwpsn	"algo.c",1869,7
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#11      ; |1869| 
-	.dwpsn	"algo.c",1870,6
-        BF        L107,UNC              ; |1870| 
-        ; branch occurs ; |1870| 
-L101:    
-;***	-----------------------g110:
-;***  	-----------------------    U$117 = x+3u;
-;** 1924	-----------------------    goto g123;
-        MOVB      AL,#3
-        ADD       AL,AR0
-        MOV       PH,AL
-	.dwpsn	"algo.c",1924,3
-        BF        L109,UNC              ; |1924| 
-        ; branch occurs ; |1924| 
-L102:    
-;***	-----------------------g111:
-;** 1811	-----------------------    if ( i[1] == 1u ) goto g117;
-	.dwpsn	"algo.c",1811,5
-        MOV       AL,*-SP[14]           ; |1811| 
-        CMPB      AL,#1                 ; |1811| 
-        BF        L105,EQ               ; |1811| 
-        ; branchcc occurs ; |1811| 
-;** 1836	-----------------------    if ( !i[1] ) goto g116;
-	.dwpsn	"algo.c",1836,10
-        CMPB      AL,#0                 ; |1836| 
-        BF        L104,EQ               ; |1836| 
-        ; branchcc occurs ; |1836| 
-;** 1843	-----------------------    if ( i[1] == 3u ) goto g115;
-	.dwpsn	"algo.c",1843,10
-        CMPB      AL,#3                 ; |1843| 
-        BF        L103,EQ               ; |1843| 
-        ; branchcc occurs ; |1843| 
-;** 1854	-----------------------    gMouseHead = 0;
-;** 1855	-----------------------    gTurnState = 16;
-;** 1856	-----------------------    U$138 += 2;
-;***  	-----------------------    U$117 = (++x)+3u;
-;** 1856	-----------------------    goto g123;
-	.dwpsn	"algo.c",1854,6
-        MOV       @_gMouseHead,#0       ; |1854| 
-	.dwpsn	"algo.c",1855,6
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#16      ; |1855| 
-	.dwpsn	"algo.c",1856,6
-        MOVL      ACC,XAR7              ; |1856| 
-        MOVB      XAR4,#2               ; |1856| 
-        ADDU      ACC,AR4               ; |1856| 
-        ADDB      XAR0,#1
-        MOVL      XAR7,ACC              ; |1856| 
-        MOVB      AL,#3
-        ADD       AL,AR0
-        MOV       PH,AL
-        BF        L109,UNC              ; |1856| 
-        ; branch occurs ; |1856| 
-L103:    
-;***	-----------------------g115:
-;** 1846	-----------------------    gMouseHead = 1;
-;** 1847	-----------------------    gTurnState = 20;
-;** 1848	-----------------------    U$138 += 2;
-;***  	-----------------------    U$117 = (++x)+3u;
-;** 1849	-----------------------    goto g123;
-	.dwpsn	"algo.c",1846,6
-        MOV       @_gMouseHead,#1       ; |1846| 
-	.dwpsn	"algo.c",1847,6
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#20      ; |1847| 
-	.dwpsn	"algo.c",1848,6
-        MOVL      ACC,XAR7              ; |1848| 
-        MOVB      XAR4,#2               ; |1848| 
-        ADDU      ACC,AR4               ; |1848| 
-        ADDB      XAR0,#1
-        MOVL      XAR7,ACC              ; |1848| 
-        MOVB      AL,#3
-        ADD       AL,AR0
-        MOV       PH,AL
-	.dwpsn	"algo.c",1849,5
-        BF        L109,UNC              ; |1849| 
-        ; branch occurs ; |1849| 
-L104:    
-;***	-----------------------g116:
-;** 1839	-----------------------    gMouseHead = 0;
-;** 1840	-----------------------    gTurnState = 12;
-;** 1841	-----------------------    U$138 += 2;
-;***  	-----------------------    U$117 = (++x)+3u;
-;** 1842	-----------------------    goto g123;
-	.dwpsn	"algo.c",1839,6
-        MOV       @_gMouseHead,#0       ; |1839| 
-	.dwpsn	"algo.c",1840,6
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#12      ; |1840| 
-	.dwpsn	"algo.c",1841,6
-        MOVL      ACC,XAR7              ; |1841| 
-        MOVB      XAR4,#2               ; |1841| 
-        ADDU      ACC,AR4               ; |1841| 
-        ADDB      XAR0,#1
-        MOVL      XAR7,ACC              ; |1841| 
-        MOVB      AL,#3
-        ADD       AL,AR0
-        MOV       PH,AL
-	.dwpsn	"algo.c",1842,5
-        BF        L109,UNC              ; |1842| 
-        ; branch occurs ; |1842| 
-L105:    
-;***	-----------------------g117:
-;** 1813	-----------------------    if ( !i[2] ) goto g122;
-	.dwpsn	"algo.c",1813,6
-        MOV       AL,*-SP[13]           ; |1813| 
-        BF        L108,EQ               ; |1813| 
-        ; branchcc occurs ; |1813| 
-;** 1823	-----------------------    if ( LastPath ) goto g120;
-	.dwpsn	"algo.c",1823,7
-        MOV       AL,*-SP[25]
-        BF        L106,NEQ              ; |1823| 
-        ; branchcc occurs ; |1823| 
-;** 1825	-----------------------    gMouseHead = 1;
-;** 1826	-----------------------    gTurnState = 14;
-;** 1827	-----------------------    goto g121;
-	.dwpsn	"algo.c",1825,8
-        MOV       @_gMouseHead,#1       ; |1825| 
-	.dwpsn	"algo.c",1826,8
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#14      ; |1826| 
-	.dwpsn	"algo.c",1827,7
-        BF        L107,UNC              ; |1827| 
-        ; branch occurs ; |1827| 
-L106:    
-;***	-----------------------g120:
-;** 1830	-----------------------    gMouseHead = 0;
-;** 1831	-----------------------    gTurnState = 18;
-	.dwpsn	"algo.c",1830,8
-        MOV       @_gMouseHead,#0       ; |1830| 
-	.dwpsn	"algo.c",1831,8
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#18      ; |1831| 
-L107:    
-;***	-----------------------g121:
-;** 1833	-----------------------    U$138 += 4;
-;***  	-----------------------    U$117 = (x += 2u)+3u;
-;** 1833	-----------------------    goto g123;
-	.dwpsn	"algo.c",1833,7
-        MOVL      ACC,XAR7              ; |1833| 
-        MOVB      XAR4,#4               ; |1833| 
-        ADDB      XAR0,#2
-        ADDU      ACC,AR4               ; |1833| 
-        MOVL      XAR7,ACC              ; |1833| 
-        MOVB      AL,#3
-        ADD       AL,AR0
-        MOV       PH,AL
-        BF        L109,UNC              ; |1833| 
-        ; branch occurs ; |1833| 
-L108:    
-;***	-----------------------g122:
-;** 1816	-----------------------    gMouseHead = 0;
-;** 1817	-----------------------    gTurnState = 10;
-;** 1818	-----------------------    U$138 += 4;
-;***  	-----------------------    U$117 = (x += 2u)+3u;
-	.dwpsn	"algo.c",1816,7
-        MOV       @_gMouseHead,#0       ; |1816| 
-	.dwpsn	"algo.c",1817,7
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#10      ; |1817| 
-	.dwpsn	"algo.c",1818,7
-        MOVL      ACC,XAR7              ; |1818| 
-        MOVB      XAR4,#4               ; |1818| 
-        ADDU      ACC,AR4               ; |1818| 
-        ADDB      XAR0,#2
-        MOVL      XAR7,ACC              ; |1818| 
-        MOVB      AL,#3
-        ADD       AL,AR0
-        MOV       PH,AL
-L109:    
-;***	-----------------------g123:
-;** 1833	-----------------------    if ( YetTurnState ) goto g127;
-	.dwpsn	"algo.c",1833,7
-        MOV       AL,AR6
-        BF        L111,NEQ              ; |1833| 
-        ; branchcc occurs ; |1833| 
-L110:    
-;***	-----------------------g124:
-;** 1924	-----------------------    if ( *&gTurnState ) goto g127;
-	.dwpsn	"algo.c",1924,3
-        MOVW      DP,#_gTurnState
-        MOV       AL,@_gTurnState       ; |1924| 
-        BF        L111,NEQ              ; |1924| 
-        ; branchcc occurs ; |1924| 
-;** 1926	-----------------------    --cnt;
-;** 1926	-----------------------    U$186 -= 2;
-;** 1926	-----------------------    U$186[1] = U$186[1]&0xff00u|U$186[1]+BlockCnt&0xffu;
-;** 1927	-----------------------    if ( !(*U$186&0xffu) ) goto g151;
-	.dwpsn	"algo.c",1926,4
-        MOVL      ACC,XT                ; |1926| 
-        SUBB      ACC,#2                ; |1926| 
-        MOVL      XAR4,ACC              ; |1926| 
-        MOVL      XT,ACC                ; |1926| 
-        MOV       AL,*+XAR4[1]          ; |1926| 
-        MOVL      XAR4,XT               ; |1926| 
-        MOV       AH,*+XAR4[1]          ; |1926| 
-        MOVL      XAR4,XT               ; |1926| 
-        ADD       AL,PL                 ; |1926| 
-        MOVB      AH,AL.LSB             ; |1926| 
-        MOV       *+XAR4[1],AH          ; |1926| 
-        SUBB      XAR1,#1               ; |1926| 
-	.dwpsn	"algo.c",1927,4
-        MOVL      XAR4,XT
-        MOV       AL,*+XAR4[0]          ; |1927| 
-        ANDB      AL,#0xff              ; |1927| 
-        BF        L123,EQ               ; |1927| 
-        ; branchcc occurs ; |1927| 
-;** 1930	-----------------------    *U$186 = *U$186&0xff00u|DiagPos[0]&0xffu;
-;** 1930	-----------------------    goto g151;
-	.dwpsn	"algo.c",1930,5
-        MOVL      XAR4,XT               ; |1930| 
-        MOV       AH,*+XAR4[0]          ; |1930| 
-        MOVL      XAR4,XT               ; |1930| 
-        MOV       AL,*-SP[19]           ; |1930| 
-        MOVB      AH,AL.LSB             ; |1930| 
-        MOV       *+XAR4[0],AH          ; |1930| 
-        BF        L123,UNC              ; |1930| 
-        ; branch occurs ; |1930| 
-L111:    
-;***	-----------------------g127:
-;** 1932	-----------------------    K$177 = &gTurnState;
-;** 1932	-----------------------    if ( !*K$177 ) goto g150;
-	.dwpsn	"algo.c",1932,8
-        MOVL      XAR4,#_gTurnState     ; |1932| 
-        MOV       AL,*+XAR4[0]          ; |1932| 
-        BF        L122,EQ               ; |1932| 
-        ; branchcc occurs ; |1932| 
-;** 1940	-----------------------    U$186[1] = U$186[1]&0xffu|*K$177<<8;
-;** 1942	-----------------------    if ( YetMouseHead ) goto g141;
-	.dwpsn	"algo.c",1940,4
-        MOVL      XAR5,XT               ; |1940| 
-        MOV       AH,*+XAR4[0]          ; |1940| 
-        MOV       AL,*+XAR5[1]          ; |1940| 
-        MOVL      XAR5,XT               ; |1940| 
-        MOVB      AL.MSB,AH             ; |1940| 
-        MOV       *+XAR5[1],AL          ; |1940| 
-	.dwpsn	"algo.c",1942,4
-        MOV       AL,AR2
-        BF        L116,NEQ              ; |1942| 
-        ; branchcc occurs ; |1942| 
-;** 1944	-----------------------    if ( *K$177 == 22 ) goto g135;
-	.dwpsn	"algo.c",1944,5
-        MOV       AL,*+XAR4[0]          ; |1944| 
-        CMPB      AL,#22                ; |1944| 
-        BF        L113,EQ               ; |1944| 
-        ; branchcc occurs ; |1944| 
-;** 1959	-----------------------    if ( *K$177 == 4 ) goto g134;
-	.dwpsn	"algo.c",1959,6
-        MOV       AL,*+XAR4[0]          ; |1959| 
-        CMPB      AL,#4                 ; |1959| 
-        BF        L112,EQ               ; |1959| 
-        ; branchcc occurs ; |1959| 
-;** 1959	-----------------------    if ( *K$177 == 5 ) goto g134;
-        MOV       AL,*+XAR4[0]          ; |1959| 
-        CMPB      AL,#5                 ; |1959| 
-        BF        L112,EQ               ; |1959| 
-        ; branchcc occurs ; |1959| 
-;** 1959	-----------------------    if ( *K$177 == 6 ) goto g134;
-        MOV       AL,*+XAR4[0]          ; |1959| 
-        CMPB      AL,#6                 ; |1959| 
-        BF        L112,EQ               ; |1959| 
-        ; branchcc occurs ; |1959| 
-;** 1959	-----------------------    if ( *K$177 != 7 ) goto g148;
-        MOV       AL,*+XAR4[0]          ; |1959| 
-        CMPB      AL,#7                 ; |1959| 
-        BF        L120,NEQ              ; |1959| 
-        ; branchcc occurs ; |1959| 
-L112:    
-;***	-----------------------g134:
-;** 1961	-----------------------    *U$186 = *U$186&0xff00u|DiagPos[2]&0xffu;
-;** 1962	-----------------------    *U$186 = *U$186&0xfffu|DiagDir[2]<<12;
-;** 1963	-----------------------    goto g151;
-	.dwpsn	"algo.c",1961,7
-        MOVL      XAR4,XT               ; |1961| 
-        MOV       AH,*+XAR4[0]          ; |1961| 
-        MOVL      XAR4,XT               ; |1961| 
-        MOV       AL,*-SP[17]           ; |1961| 
-        MOVB      AH,AL.LSB             ; |1961| 
-        MOV       *+XAR4[0],AH          ; |1961| 
-	.dwpsn	"algo.c",1962,7
-        MOVL      XAR4,XT
-        AND       AL,*+XAR4[0],#0x0fff  ; |1962| 
-        MOVZ      AR6,AL                ; |1962| 
-        MOVL      XAR4,XT               ; |1962| 
-        MOV       ACC,*-SP[21] << #12   ; |1962| 
-        OR        AL,AR6                ; |1962| 
-        MOV       *+XAR4[0],AL          ; |1962| 
-	.dwpsn	"algo.c",1963,6
-        BF        L123,UNC              ; |1963| 
-        ; branch occurs ; |1963| 
-L113:    
-;***	-----------------------g135:
-;** 1946	-----------------------    if ( i[0] == 3u ) goto g140;
-	.dwpsn	"algo.c",1946,6
-        MOV       AL,*-SP[15]           ; |1946| 
-        CMPB      AL,#3                 ; |1946| 
-        BF        L115,EQ               ; |1946| 
-        ; branchcc occurs ; |1946| 
-;** 1948	-----------------------    if ( i[0] == 1u ) goto g139;
-	.dwpsn	"algo.c",1948,11
-        CMPB      AL,#1                 ; |1948| 
-        BF        L114,EQ               ; |1948| 
-        ; branchcc occurs ; |1948| 
-;** 1951	-----------------------    if ( i[0] != 2u ) goto g149;
-	.dwpsn	"algo.c",1951,11
-        CMPB      AL,#2                 ; |1951| 
-        BF        L121,NEQ              ; |1951| 
-        ; branchcc occurs ; |1951| 
-;** 1952	-----------------------    U$186[1] = U$186[1]&0xffu|0x200u;
-;** 1952	-----------------------    goto g149;
-	.dwpsn	"algo.c",1952,7
-        MOVL      XAR4,XT
-        MOV       AL,*+XAR4[1]          ; |1952| 
-        MOVL      XAR4,XT               ; |1952| 
-        ANDB      AL,#0xff              ; |1952| 
-        OR        AL,#0x0200            ; |1952| 
-        MOV       *+XAR4[1],AL          ; |1952| 
-        BF        L121,UNC              ; |1952| 
-        ; branch occurs ; |1952| 
-L114:    
-;***	-----------------------g139:
-;** 1949	-----------------------    U$186[1] = U$186[1]&0xffu|0x100u;
-;** 1949	-----------------------    goto g149;
-	.dwpsn	"algo.c",1949,7
-        MOVL      XAR4,XT
-        MOV       AL,*+XAR4[1]          ; |1949| 
-        MOVL      XAR4,XT               ; |1949| 
-        ANDB      AL,#0xff              ; |1949| 
-        OR        AL,#0x0100            ; |1949| 
-        MOV       *+XAR4[1],AL          ; |1949| 
-        BF        L121,UNC              ; |1949| 
-        ; branch occurs ; |1949| 
-L115:    
-;***	-----------------------g140:
-;** 1947	-----------------------    U$186[1] = U$186[1]&0xffu|0x300u;
-;** 1947	-----------------------    goto g149;
-	.dwpsn	"algo.c",1947,7
-        MOVL      XAR4,XT
-        MOV       AL,*+XAR4[1]          ; |1947| 
-        MOVL      XAR4,XT               ; |1947| 
-        ANDB      AL,#0xff              ; |1947| 
-        OR        AL,#0x0300            ; |1947| 
-        MOV       *+XAR4[1],AL          ; |1947| 
-        BF        L121,UNC              ; |1947| 
-        ; branch occurs ; |1947| 
-L116:    
-;***	-----------------------g141:
-;** 1976	-----------------------    K$177 = &gTurnState;
-;** 1976	-----------------------    if ( *K$177 == 20 ) goto g143;
-	.dwpsn	"algo.c",1976,5
-        MOV       AL,*+XAR4[0]          ; |1976| 
-        CMPB      AL,#20                ; |1976| 
-        BF        L117,EQ               ; |1976| 
-        ; branchcc occurs ; |1976| 
-;** 1976	-----------------------    if ( *K$177 != 21 ) goto g146;
-        MOV       AL,*+XAR4[0]          ; |1976| 
-        CMPB      AL,#21                ; |1976| 
-        BF        L119,NEQ              ; |1976| 
-        ; branchcc occurs ; |1976| 
-L117:    
-;***	-----------------------g143:
-;** 1978	-----------------------    if ( YetTurnState == 20u || YetTurnState == 21u ) goto g145;
-	.dwpsn	"algo.c",1978,6
-        MOV       AL,AR6
-        CMPB      AL,#20                ; |1978| 
-        BF        L118,EQ               ; |1978| 
-        ; branchcc occurs ; |1978| 
-        CMPB      AL,#21                ; |1978| 
-        BF        L118,EQ               ; |1978| 
-        ; branchcc occurs ; |1978| 
-;** 1981	-----------------------    U$186[1] = U$186[1]&0xff00u|1u;
-;** 1981	-----------------------    goto g146;
-	.dwpsn	"algo.c",1981,7
-        MOVL      XAR4,XT
-        AND       AL,*+XAR4[1],#0xff00  ; |1981| 
-        MOVL      XAR4,XT               ; |1981| 
-        ORB       AL,#0x01              ; |1981| 
-        MOV       *+XAR4[1],AL          ; |1981| 
-        BF        L119,UNC              ; |1981| 
-        ; branch occurs ; |1981| 
-L118:    
-;***	-----------------------g145:
-;** 1979	-----------------------    --cnt;
-;** 1979	-----------------------    U$186 -= 2;
-;** 1979	-----------------------    U$186[1] = U$186[1]&0xff00u|U$186[1]+1u&0xffu;
-	.dwpsn	"algo.c",1979,7
-        MOVL      ACC,XT                ; |1979| 
-        SUBB      ACC,#2                ; |1979| 
-        MOVL      XAR4,ACC              ; |1979| 
-        MOVL      XT,ACC                ; |1979| 
-        MOV       AL,*+XAR4[1]          ; |1979| 
-        MOVL      XAR4,XT               ; |1979| 
-        MOV       AH,*+XAR4[1]          ; |1979| 
-        MOVL      XAR4,XT               ; |1979| 
-        ADDB      AL,#1                 ; |1979| 
-        MOVB      AH,AL.LSB             ; |1979| 
-        SUBB      XAR1,#1               ; |1979| 
-        MOV       *+XAR4[1],AH          ; |1979| 
-L119:    
-;***	-----------------------g146:
-;** 1984	-----------------------    if ( *&gTurnState == 12 ) goto g149;
-	.dwpsn	"algo.c",1984,5
-        MOVW      DP,#_gTurnState
-        MOV       AL,@_gTurnState       ; |1984| 
-        CMPB      AL,#12                ; |1984| 
-        BF        L121,EQ               ; |1984| 
-        ; branchcc occurs ; |1984| 
-;** 1984	-----------------------    if ( *&gTurnState == 13 ) goto g149;
-        MOV       AL,@_gTurnState       ; |1984| 
-        CMPB      AL,#13                ; |1984| 
-        BF        L121,EQ               ; |1984| 
-        ; branchcc occurs ; |1984| 
-L120:    
-;***	-----------------------g148:
-;** 1991	-----------------------    *U$186 = *U$186&0xff00u|DiagPos[1]&0xffu;
-;** 1992	-----------------------    *U$186 = *U$186&0xfffu|DiagDir[1]<<12;
-;** 1992	-----------------------    goto g151;
-	.dwpsn	"algo.c",1991,6
-        MOVL      XAR4,XT               ; |1991| 
-        MOV       AH,*+XAR4[0]          ; |1991| 
-        MOVL      XAR4,XT               ; |1991| 
-        MOV       AL,*-SP[18]           ; |1991| 
-        MOVB      AH,AL.LSB             ; |1991| 
-        MOV       *+XAR4[0],AH          ; |1991| 
-	.dwpsn	"algo.c",1992,6
-        MOVL      XAR4,XT
-        AND       AL,*+XAR4[0],#0x0fff  ; |1992| 
-        MOVZ      AR6,AL                ; |1992| 
-        MOVL      XAR4,XT               ; |1992| 
-        MOV       ACC,*-SP[22] << #12   ; |1992| 
-        OR        AL,AR6                ; |1992| 
-        MOV       *+XAR4[0],AL          ; |1992| 
-        BF        L123,UNC              ; |1992| 
-        ; branch occurs ; |1992| 
-L121:    
-;***	-----------------------g149:
-;** 1986	-----------------------    *U$186 = *U$186&0xff00u|DiagPos[0]&0xffu;
-;** 1987	-----------------------    *U$186 = *U$186&0xfffu|DiagDir[0]<<12;
-;** 1988	-----------------------    goto g151;
-	.dwpsn	"algo.c",1986,6
-        MOVL      XAR4,XT               ; |1986| 
-        MOV       AH,*+XAR4[0]          ; |1986| 
-        MOVL      XAR4,XT               ; |1986| 
-        MOV       AL,*-SP[19]           ; |1986| 
-        MOVB      AH,AL.LSB             ; |1986| 
-        MOV       *+XAR4[0],AH          ; |1986| 
-	.dwpsn	"algo.c",1987,6
-        MOVL      XAR4,XT
-        AND       AL,*+XAR4[0],#0x0fff  ; |1987| 
-        MOVZ      AR6,AL                ; |1987| 
-        MOVL      XAR4,XT               ; |1987| 
-        MOV       ACC,*-SP[23] << #12   ; |1987| 
-        OR        AL,AR6                ; |1987| 
-        MOV       *+XAR4[0],AL          ; |1987| 
-	.dwpsn	"algo.c",1988,5
-        BF        L123,UNC              ; |1988| 
-        ; branch occurs ; |1988| 
-L122:    
-;***	-----------------------g150:
-;** 1934	-----------------------    U$186[1] = U$186[1]&0xffu|*K$177<<8;
-;** 1935	-----------------------    U$186[1] = U$186[1]&0xff00u|BlockCnt&0xffu;
-;** 1936	-----------------------    *U$186 = *U$186&0xff00u|DiagPos[0]&0xffu;
-	.dwpsn	"algo.c",1934,4
-        MOV       AH,*+XAR4[0]          ; |1934| 
-        MOVL      XAR4,XT               ; |1934| 
-        MOV       AL,*+XAR4[1]          ; |1934| 
-        MOVL      XAR4,XT               ; |1934| 
-        MOVB      AL.MSB,AH             ; |1934| 
-        MOV       *+XAR4[1],AL          ; |1934| 
-	.dwpsn	"algo.c",1935,4
-        MOVL      XAR4,XT
-        MOV       AH,*+XAR4[1]          ; |1935| 
-        MOVL      XAR4,XT               ; |1935| 
-        MOV       AL,PL                 ; |1935| 
-        MOVB      AH,AL.LSB             ; |1935| 
-        MOV       *+XAR4[1],AH          ; |1935| 
-	.dwpsn	"algo.c",1936,4
-        MOVL      XAR4,XT               ; |1936| 
-        MOV       AH,*+XAR4[0]          ; |1936| 
-        MOVL      XAR4,XT               ; |1936| 
-        MOV       AL,*-SP[19]           ; |1936| 
-        MOVB      AH,AL.LSB             ; |1936| 
-        MOV       *+XAR4[0],AH          ; |1936| 
-L123:    
-;***	-----------------------g151:
-;** 1998	-----------------------    U$186 += 2;
-;** 1998	-----------------------    ++cnt;
-;** 1566	-----------------------    if ( U$117 < gPathBufferHead ) goto g56;
-	.dwpsn	"algo.c",1998,3
-        MOVL      ACC,XT                ; |1998| 
-        MOVB      XAR4,#2               ; |1998| 
-        ADDU      ACC,AR4               ; |1998| 
-        MOVL      XT,ACC                ; |1998| 
-        ADDB      XAR1,#1               ; |1998| 
-	.dwpsn	"algo.c",1566,8
-        MOVW      DP,#_gPathBufferHead
-        MOV       AL,PH
-        CMP       AL,@_gPathBufferHead  ; |1566| 
-        BF        L74,LO                ; |1566| 
-        ; branchcc occurs ; |1566| 
-L124:    
-;***	-----------------------g152:
-;** 1586	-----------------------    U$125 = x+2u;
-;** 1586	-----------------------    P$18 = U$125 < gPathBufferHead;
-	.dwpsn	"algo.c",1586,8
-        MOVB      AL,#2                 ; |1586| 
-        MOVB      XAR7,#0
-        ADD       AL,AR0                ; |1586| 
-        CMP       AL,@_gPathBufferHead  ; |1586| 
-        MOVZ      AR6,AL                ; |1586| 
-        BF        L125,HIS              ; |1586| 
-        ; branchcc occurs ; |1586| 
-        MOVB      XAR7,#1               ; |1586| 
-L125:    
-;***  	-----------------------    U$31 = x+1u;
-;***  	-----------------------    U$186 = &((volatile unsigned *)K$71)[2*(long)cnt];
-;** 1586	-----------------------    if ( P$18 ) goto g163;
-        MOVB      AL,#1
-        ADD       AL,AR0
-        MOVL      XT,*-SP[38]
-        MOV       PH,AL
-        MOVU      ACC,AR1
-        LSL       ACC,1
-        ADDL      XT,ACC
-        MOV       AH,AR7
-        BF        L133,NEQ              ; |1586| 
-        ; branchcc occurs ; |1586| 
-;** 1605	-----------------------    if ( U$31 < gPathBufferHead ) goto g162;
-	.dwpsn	"algo.c",1605,8
-        MOV       AL,PH
-        CMP       AL,@_gPathBufferHead  ; |1605| 
-        BF        L131,LO               ; |1605| 
-        ; branchcc occurs ; |1605| 
-;** 1620	-----------------------    if ( x < gPathBufferHead ) goto g161;
-	.dwpsn	"algo.c",1620,8
-        MOV       AH,AR0
-        CMP       AH,@_gPathBufferHead  ; |1620| 
-        BF        L129,LO               ; |1620| 
-        ; branchcc occurs ; |1620| 
-;** 1634	-----------------------    gPathBufferHead = cnt;
-;** 1635	-----------------------    U$186[1] &= 0xffu;
-;** 2004	-----------------------    if ( !gPathBufferHead ) goto g158;
-	.dwpsn	"algo.c",1634,4
-        MOV       @_gPathBufferHead,AR1 ; |1634| 
-	.dwpsn	"algo.c",1635,4
-        MOVL      XAR4,XT
-        AND       *+XAR4[1],#0x00ff     ; |1635| 
-	.dwpsn	"algo.c",2004,15
-        MOV       AL,@_gPathBufferHead  ; |2004| 
-        BF        L127,EQ               ; |2004| 
-        ; branchcc occurs ; |2004| 
-;***  	-----------------------    U$186 = (volatile unsigned *)K$71;
-;** 1636	-----------------------    cnt = 0u;
-        MOVL      XAR1,*-SP[38]
-	.dwpsn	"algo.c",1636,4
-        MOVB      XAR2,#0
-L126:    
-DW$L$_RunPathMake$169$B:
-;***	-----------------------g157:
-;** 2005	-----------------------    TxPrintf("%d  TURN : %d  DIR : %d  POS : %x CNT : %d\n", cnt, U$186[1]>>8, *U$186>>12, *U$186&0xffu, U$186[1]&0xffu);
-;** 2004	-----------------------    U$186 += 2;
-;** 2004	-----------------------    if ( gPathBufferHead > (++cnt) ) goto g157;
-	.dwpsn	"algo.c",2005,4
-        MOVL      XAR4,#FSL8            ; |2005| 
-        MOVL      *-SP[2],XAR4          ; |2005| 
-        MOV       *-SP[3],AR2           ; |2005| 
-        MOV       AL,*+XAR1[1]          ; |2005| 
-        LSR       AL,8                  ; |2005| 
-        MOV       *-SP[4],AL            ; |2005| 
-        MOV       AL,*+XAR1[0]          ; |2005| 
-        LSR       AL,12                 ; |2005| 
-        MOV       *-SP[5],AL            ; |2005| 
-        MOV       AL,*+XAR1[0]          ; |2005| 
-        ANDB      AL,#0xff              ; |2005| 
-        MOV       *-SP[6],AL            ; |2005| 
-        MOV       AL,*+XAR1[1]          ; |2005| 
-        ANDB      AL,#0xff              ; |2005| 
-        MOV       *-SP[7],AL            ; |2005| 
-        LCR       #_TxPrintf            ; |2005| 
-        ; call occurs [#_TxPrintf] ; |2005| 
-	.dwpsn	"algo.c",2004,38
-        MOVB      XAR4,#2               ; |2004| 
-        MOVL      ACC,XAR1              ; |2004| 
-        ADDU      ACC,AR4               ; |2004| 
-        MOVL      XAR1,ACC              ; |2004| 
-	.dwpsn	"algo.c",2004,15
-        ADDB      XAR2,#1               ; |2004| 
-        MOVW      DP,#_gPathBufferHead
-        MOV       AL,AR2                ; |2004| 
-        CMP       AL,@_gPathBufferHead  ; |2004| 
-        BF        L126,LO               ; |2004| 
-        ; branchcc occurs ; |2004| 
-DW$L$_RunPathMake$169$E:
-L127:    
-;***	-----------------------g158:
-;** 2009	-----------------------    memset((void *)K$4, 0, 256uL);
-;** 2010	-----------------------    memset(K$5, 0, 256uL);
-;** 2012	-----------------------    SpiReadRom(5u, 0u, 256u, (unsigned *)K$5);
-;***  	-----------------------    U$9 = (volatile unsigned *)K$5;
-;***  	-----------------------    U$12 = K$4;
-;***  	-----------------------    L$7 = 255;
-	.dwpsn	"algo.c",2009,2
-        MOVL      XAR4,*-SP[34]
-        MOV       ACC,#1 << 8
-        MOVB      XAR5,#0
-        LCR       #_memset              ; |2009| 
-        ; call occurs [#_memset] ; |2009| 
-	.dwpsn	"algo.c",2010,2
-        MOVL      XAR4,*-SP[30]
-        MOVB      XAR5,#0
-        MOV       ACC,#1 << 8
-        LCR       #_memset              ; |2010| 
-        ; call occurs [#_memset] ; |2010| 
-	.dwpsn	"algo.c",2012,2
-        MOVL      XAR4,*-SP[30]         ; |2012| 
-        MOVL      XAR5,#256             ; |2012| 
-        MOVB      ACC,#5
-        LCR       #_SpiReadRom          ; |2012| 
-        ; call occurs [#_SpiReadRom] ; |2012| 
-        MOVL      XAR4,*-SP[30]
-        MOVB      XAR6,#255
-        MOVL      XAR5,*-SP[34]
-L128:    
-DW$L$_RunPathMake$171$B:
-;***	-----------------------g159:
-;** 2016	-----------------------    *U$12++ = *U$9++;
-;** 2015	-----------------------    if ( (--L$7) != (-1) ) goto g159;
-	.dwpsn	"algo.c",2016,3
-        MOV       AL,*XAR4++            ; |2016| 
-        MOV       *XAR5++,AL            ; |2016| 
-	.dwpsn	"algo.c",2015,15
-        BANZ      L128,AR6--            ; |2015| 
-        ; branchcc occurs ; |2015| 
-DW$L$_RunPathMake$171$E:
-;***  	-----------------------    return;
-        BF        L139,UNC
-        ; branch occurs
-L129:    
-;***	-----------------------g161:
-;** 1622	-----------------------    i[3] = 4095u;
-;** 1623	-----------------------    i[2] = 4095u;
-;** 1624	-----------------------    i[1] = 4095u;
-;** 1625	-----------------------    C$26 = &((volatile unsigned *)K$71)[2*(long)x];
-;** 1625	-----------------------    i[0] = *C$26>>8&0xfu;
-;** 1626	-----------------------    DiagPos[0] = *C$26&0xffu;
-;** 1627	-----------------------    U$138 = C$26;
-;** 1627	-----------------------    DiagDir[0] = *U$138>>12;
-;** 1629	-----------------------    if ( !(P$19 = gPathBufferHead == U$31) ) goto g57;
-	.dwpsn	"algo.c",1622,4
-        MOV       *-SP[12],#4095        ; |1622| 
-	.dwpsn	"algo.c",1623,4
-        MOV       *-SP[13],#4095        ; |1623| 
-	.dwpsn	"algo.c",1624,4
-        MOV       *-SP[14],#4095        ; |1624| 
-	.dwpsn	"algo.c",1625,4
-        MOVL      XAR4,*-SP[38]         ; |1625| 
-        MOVU      ACC,AR0
-        LSL       ACC,1                 ; |1625| 
-        ADDL      XAR4,ACC
-        AND       AH,*+XAR4[0],#0x0f00  ; |1625| 
-        LSR       AH,8                  ; |1625| 
-        MOV       *-SP[15],AH           ; |1625| 
-	.dwpsn	"algo.c",1626,4
-        MOV       AH,*+XAR4[0]          ; |1626| 
-        ANDB      AH,#0xff              ; |1626| 
-        MOV       *-SP[19],AH           ; |1626| 
-	.dwpsn	"algo.c",1627,4
-        MOV       AH,*+XAR4[0]          ; |1627| 
-        LSR       AH,12                 ; |1627| 
-        MOV       *-SP[23],AH           ; |1627| 
-        MOVL      XAR7,XAR4             ; |1627| 
-	.dwpsn	"algo.c",1629,4
-        MOVB      AH,#0
-        MOV       AL,PH                 ; |1629| 
-        CMP       AL,@_gPathBufferHead  ; |1629| 
-        BF        L130,NEQ              ; |1629| 
-        ; branchcc occurs ; |1629| 
-        MOVB      AH,#1                 ; |1629| 
-L130:    
-        MOV       AL,AH                 ; |1629| 
-        BF        L75,EQ                ; |1629| 
-        ; branchcc occurs ; |1629| 
-;** 1629	-----------------------    goto g166;
-        BF        L134,UNC              ; |1629| 
-        ; branch occurs ; |1629| 
-L131:    
-;***	-----------------------g162:
-;** 1608	-----------------------    i[3] = 4095u;
-;** 1609	-----------------------    i[2] = 4095u;
-;** 1610	-----------------------    C$25 = &((volatile unsigned *)K$71)[2*(long)U$31];
-;** 1610	-----------------------    i[1] = *C$25>>8&0xfu;
-;** 1611	-----------------------    C$24 = &((volatile unsigned *)K$71)[2*(long)x];
-;** 1611	-----------------------    i[0] = *C$24>>8&0xfu;
-;** 1612	-----------------------    DiagPos[1] = *C$25&0xffu;
-;** 1613	-----------------------    DiagPos[0] = *C$24&0xffu;
-;** 1614	-----------------------    DiagDir[1] = *C$25>>12;
-;** 1615	-----------------------    U$138 = C$24;
-;** 1615	-----------------------    DiagDir[0] = *U$138>>12;
-;** 1617	-----------------------    if ( !(P$20 = gPathBufferHead == U$125) ) goto g57;
-	.dwpsn	"algo.c",1608,4
-        MOV       *-SP[12],#4095        ; |1608| 
-	.dwpsn	"algo.c",1609,4
-        MOV       *-SP[13],#4095        ; |1609| 
-	.dwpsn	"algo.c",1610,4
-        MOVL      XAR4,*-SP[38]         ; |1610| 
-        MOVU      ACC,PH
-        LSL       ACC,1                 ; |1610| 
-        ADDL      XAR4,ACC
-        AND       AL,*+XAR4[0],#0x0f00  ; |1610| 
-        LSR       AL,8                  ; |1610| 
-        MOV       *-SP[14],AL           ; |1610| 
-	.dwpsn	"algo.c",1611,4
-        MOVL      XAR5,*-SP[38]         ; |1611| 
-        MOVU      ACC,AR0
-        LSL       ACC,1                 ; |1611| 
-        ADDL      XAR5,ACC
-        AND       AL,*+XAR5[0],#0x0f00  ; |1611| 
-        LSR       AL,8                  ; |1611| 
-        MOV       *-SP[15],AL           ; |1611| 
-	.dwpsn	"algo.c",1612,4
-        MOV       AL,*+XAR4[0]          ; |1612| 
-        ANDB      AL,#0xff              ; |1612| 
-        MOV       *-SP[18],AL           ; |1612| 
-	.dwpsn	"algo.c",1613,4
-        MOV       AL,*+XAR5[0]          ; |1613| 
-        ANDB      AL,#0xff              ; |1613| 
-        MOV       *-SP[19],AL           ; |1613| 
-	.dwpsn	"algo.c",1614,4
-        MOV       AL,*+XAR4[0]          ; |1614| 
-        LSR       AL,12                 ; |1614| 
-        MOV       *-SP[22],AL           ; |1614| 
-	.dwpsn	"algo.c",1615,4
-        MOVL      XAR4,XAR5             ; |1615| 
-        MOV       AL,*+XAR4[0]          ; |1615| 
-        LSR       AL,12                 ; |1615| 
-        MOV       *-SP[23],AL           ; |1615| 
-        MOVL      XAR7,XAR5             ; |1615| 
-	.dwpsn	"algo.c",1617,4
-        MOVB      AH,#0
-        MOV       AL,AR6                ; |1617| 
-        CMP       AL,@_gPathBufferHead  ; |1617| 
-        BF        L132,NEQ              ; |1617| 
-        ; branchcc occurs ; |1617| 
-        MOVB      AH,#1                 ; |1617| 
-L132:    
-        MOV       AL,AH                 ; |1617| 
-        BF        L75,EQ                ; |1617| 
-        ; branchcc occurs ; |1617| 
-;** 1617	-----------------------    goto g166;
-        BF        L134,UNC              ; |1617| 
-        ; branch occurs ; |1617| 
-L133:    
-;***	-----------------------g163:
-;** 1588	-----------------------    i[3] = 4095u;
-;** 1589	-----------------------    C$23 = &((volatile unsigned *)K$71)[2*(long)U$125];
-;** 1589	-----------------------    i[2] = *C$23>>8&0xfu;
-;** 1590	-----------------------    C$22 = &((volatile unsigned *)K$71)[2*(long)U$31];
-;** 1590	-----------------------    i[1] = *C$22>>8&0xfu;
-;** 1591	-----------------------    C$21 = &((volatile unsigned *)K$71)[2*(long)x];
-;** 1591	-----------------------    i[0] = *C$21>>8&0xfu;
-;** 1593	-----------------------    DiagPos[2] = *C$23&0xffu;
-;** 1594	-----------------------    DiagPos[1] = *C$22&0xffu;
-;** 1595	-----------------------    DiagPos[0] = *C$21&0xffu;
-;** 1597	-----------------------    DiagDir[2] = *C$23>>12;
-;** 1598	-----------------------    DiagDir[1] = *C$22>>12;
-;** 1599	-----------------------    U$138 = C$21;
-;** 1599	-----------------------    DiagDir[0] = *U$138>>12;
-;** 1601	-----------------------    if ( !i[2] ) goto g57;
-	.dwpsn	"algo.c",1588,4
-        MOV       *-SP[12],#4095        ; |1588| 
-	.dwpsn	"algo.c",1589,4
-        MOVL      XAR4,*-SP[38]         ; |1589| 
-        MOVU      ACC,AR6
-        LSL       ACC,1                 ; |1589| 
-        ADDL      XAR4,ACC
-        AND       AH,*+XAR4[0],#0x0f00  ; |1589| 
-        LSR       AH,8                  ; |1589| 
-        MOV       *-SP[13],AH           ; |1589| 
-	.dwpsn	"algo.c",1590,4
-        MOVL      XAR5,*-SP[38]         ; |1590| 
-        MOVU      ACC,PH
-        LSL       ACC,1                 ; |1590| 
-        ADDL      XAR5,ACC
-        AND       AL,*+XAR5[0],#0x0f00  ; |1590| 
-        LSR       AL,8                  ; |1590| 
-        MOV       *-SP[14],AL           ; |1590| 
-	.dwpsn	"algo.c",1591,4
-        MOVL      XAR6,*-SP[38]         ; |1591| 
-        MOVU      ACC,AR0
-        LSL       ACC,1                 ; |1591| 
-        ADDL      XAR6,ACC
-        AND       AL,*+XAR6[0],#0x0f00  ; |1591| 
-        LSR       AL,8                  ; |1591| 
-        MOV       *-SP[15],AL           ; |1591| 
-	.dwpsn	"algo.c",1593,4
-        MOV       AL,*+XAR4[0]          ; |1593| 
-        ANDB      AL,#0xff              ; |1593| 
-        MOV       *-SP[17],AL           ; |1593| 
-	.dwpsn	"algo.c",1594,4
-        MOV       AL,*+XAR5[0]          ; |1594| 
-        ANDB      AL,#0xff              ; |1594| 
-        MOV       *-SP[18],AL           ; |1594| 
-	.dwpsn	"algo.c",1595,4
-        MOV       AL,*+XAR6[0]          ; |1595| 
-        ANDB      AL,#0xff              ; |1595| 
-        MOV       *-SP[19],AL           ; |1595| 
-	.dwpsn	"algo.c",1597,4
-        MOV       AL,*+XAR4[0]          ; |1597| 
-        LSR       AL,12                 ; |1597| 
-        MOV       *-SP[21],AL           ; |1597| 
-	.dwpsn	"algo.c",1598,4
-        MOV       AL,*+XAR5[0]          ; |1598| 
-        LSR       AL,12                 ; |1598| 
-        MOV       *-SP[22],AL           ; |1598| 
-	.dwpsn	"algo.c",1599,4
-        MOVL      XAR4,XAR6             ; |1599| 
-        MOV       AL,*+XAR4[0]          ; |1599| 
-        LSR       AL,12                 ; |1599| 
-        MOV       *-SP[23],AL           ; |1599| 
-        MOVL      XAR7,XAR6             ; |1599| 
-	.dwpsn	"algo.c",1601,4
-        MOV       AL,*-SP[13]           ; |1601| 
-        BF        L75,EQ                ; |1601| 
-        ; branchcc occurs ; |1601| 
-;** 1601	-----------------------    if ( gPathBufferHead != x+3u ) goto g57;
-        MOV       AL,AR0                ; |1601| 
-        ADDB      AL,#3                 ; |1601| 
-        CMP       AL,@_gPathBufferHead  ; |1601| 
-        BF        L75,NEQ               ; |1601| 
-        ; branchcc occurs ; |1601| 
-;** 1601	-----------------------    if ( *&gMouseHead ) goto g57;
-        MOVW      DP,#_gMouseHead
-        MOV       AL,@_gMouseHead       ; |1601| 
-        BF        L75,NEQ               ; |1601| 
-        ; branchcc occurs ; |1601| 
-L134:    
-;***	-----------------------g166:
-;** 1602	-----------------------    LastPath = 1u;
-;** 1602	-----------------------    goto g57;
-	.dwpsn	"algo.c",1602,5
-        MOV       *-SP[25],#1           ; |1602| 
-        BF        L75,UNC               ; |1602| 
-        ; branch occurs ; |1602| 
-L135:    
-;***	-----------------------g167:
-;** 1535	-----------------------    TxPrintf("error2\n");
-	.dwpsn	"algo.c",1535,4
-        MOVL      XAR4,#FSL9            ; |1535| 
-        MOVL      *-SP[2],XAR4          ; |1535| 
-        LCR       #_TxPrintf            ; |1535| 
-        ; call occurs [#_TxPrintf] ; |1535| 
-L136:    
-DW$L$_RunPathMake$186$B:
-;***	-----------------------g168:
-;** 1538	-----------------------    VFDPrintf("    E2nd");
-;** 1536	-----------------------    goto g168;
-	.dwpsn	"algo.c",1538,5
-        MOVL      XAR4,#FSL10           ; |1538| 
-        MOVL      *-SP[2],XAR4          ; |1538| 
-        LCR       #_VFDPrintf           ; |1538| 
-        ; call occurs [#_VFDPrintf] ; |1538| 
-	.dwpsn	"algo.c",1536,10
-        BF        L136,UNC              ; |1536| 
-        ; branch occurs ; |1536| 
-DW$L$_RunPathMake$186$E:
-L137:    
-;***	-----------------------g169:
-;** 1471	-----------------------    TxPrintf("error1\n");
-	.dwpsn	"algo.c",1471,4
-        MOVL      XAR4,#FSL11           ; |1471| 
-        MOVL      *-SP[2],XAR4          ; |1471| 
-        LCR       #_TxPrintf            ; |1471| 
-        ; call occurs [#_TxPrintf] ; |1471| 
-L138:    
-DW$L$_RunPathMake$188$B:
-;***	-----------------------g170:
-;** 1474	-----------------------    VFDPrintf("    E2nd");
-;** 1472	-----------------------    goto g170;
-	.dwpsn	"algo.c",1474,5
-        MOVL      XAR4,#FSL10           ; |1474| 
-        MOVL      *-SP[2],XAR4          ; |1474| 
-        LCR       #_VFDPrintf           ; |1474| 
-        ; call occurs [#_VFDPrintf] ; |1474| 
-	.dwpsn	"algo.c",1472,10
-        BF        L138,UNC              ; |1472| 
-        ; branch occurs ; |1472| 
-DW$L$_RunPathMake$188$E:
-L139:    
-	.dwpsn	"algo.c",2018,1
-        SUBB      SP,#38
-	.dwcfa	0x1d, -8
-        MOVL      XAR3,*--SP
-	.dwcfa	0x1d, -6
-	.dwcfa	0xc0, 11
-        MOVL      XAR2,*--SP
-	.dwcfa	0x1d, -4
-	.dwcfa	0xc0, 9
-        MOVL      XAR1,*--SP
-	.dwcfa	0x1d, -2
-	.dwcfa	0xc0, 7
-        LRETR
-        ; return occurs
-
-DW$315	.dwtag  DW_TAG_loop
-	.dwattr DW$315, DW_AT_name("C:\algo\main\algo.asm:L138:1:1755591079")
-	.dwattr DW$315, DW_AT_begin_file("algo.c")
-	.dwattr DW$315, DW_AT_begin_line(0x5c0)
-	.dwattr DW$315, DW_AT_end_line(0x5c3)
-DW$316	.dwtag  DW_TAG_loop_range
-	.dwattr DW$316, DW_AT_low_pc(DW$L$_RunPathMake$188$B)
-	.dwattr DW$316, DW_AT_high_pc(DW$L$_RunPathMake$188$E)
-	.dwendtag DW$315
-
-
-DW$317	.dwtag  DW_TAG_loop
-	.dwattr DW$317, DW_AT_name("C:\algo\main\algo.asm:L136:1:1755591079")
-	.dwattr DW$317, DW_AT_begin_file("algo.c")
-	.dwattr DW$317, DW_AT_begin_line(0x600)
-	.dwattr DW$317, DW_AT_end_line(0x603)
-DW$318	.dwtag  DW_TAG_loop_range
-	.dwattr DW$318, DW_AT_low_pc(DW$L$_RunPathMake$186$B)
-	.dwattr DW$318, DW_AT_high_pc(DW$L$_RunPathMake$186$E)
-	.dwendtag DW$317
-
-
-DW$319	.dwtag  DW_TAG_loop
-	.dwattr DW$319, DW_AT_name("C:\algo\main\algo.asm:L128:1:1755591079")
-	.dwattr DW$319, DW_AT_begin_file("algo.c")
-	.dwattr DW$319, DW_AT_begin_line(0x7df)
-	.dwattr DW$319, DW_AT_end_line(0x7e0)
-DW$320	.dwtag  DW_TAG_loop_range
-	.dwattr DW$320, DW_AT_low_pc(DW$L$_RunPathMake$171$B)
-	.dwattr DW$320, DW_AT_high_pc(DW$L$_RunPathMake$171$E)
-	.dwendtag DW$319
-
-
-DW$321	.dwtag  DW_TAG_loop
-	.dwattr DW$321, DW_AT_name("C:\algo\main\algo.asm:L126:1:1755591079")
-	.dwattr DW$321, DW_AT_begin_file("algo.c")
-	.dwattr DW$321, DW_AT_begin_line(0x7d4)
-	.dwattr DW$321, DW_AT_end_line(0x7d5)
-DW$322	.dwtag  DW_TAG_loop_range
-	.dwattr DW$322, DW_AT_low_pc(DW$L$_RunPathMake$169$B)
-	.dwattr DW$322, DW_AT_high_pc(DW$L$_RunPathMake$169$E)
-	.dwendtag DW$321
-
-
-DW$323	.dwtag  DW_TAG_loop
-	.dwattr DW$323, DW_AT_name("C:\algo\main\algo.asm:L70:1:1755591079")
-	.dwattr DW$323, DW_AT_begin_file("algo.c")
-	.dwattr DW$323, DW_AT_begin_line(0x5e3)
-	.dwattr DW$323, DW_AT_end_line(0x60f)
-DW$324	.dwtag  DW_TAG_loop_range
-	.dwattr DW$324, DW_AT_low_pc(DW$L$_RunPathMake$54$B)
-	.dwattr DW$324, DW_AT_high_pc(DW$L$_RunPathMake$54$E)
-DW$325	.dwtag  DW_TAG_loop_range
-	.dwattr DW$325, DW_AT_low_pc(DW$L$_RunPathMake$59$B)
-	.dwattr DW$325, DW_AT_high_pc(DW$L$_RunPathMake$59$E)
-DW$326	.dwtag  DW_TAG_loop_range
-	.dwattr DW$326, DW_AT_low_pc(DW$L$_RunPathMake$60$B)
-	.dwattr DW$326, DW_AT_high_pc(DW$L$_RunPathMake$60$E)
-DW$327	.dwtag  DW_TAG_loop_range
-	.dwattr DW$327, DW_AT_low_pc(DW$L$_RunPathMake$61$B)
-	.dwattr DW$327, DW_AT_high_pc(DW$L$_RunPathMake$61$E)
-DW$328	.dwtag  DW_TAG_loop_range
-	.dwattr DW$328, DW_AT_low_pc(DW$L$_RunPathMake$62$B)
-	.dwattr DW$328, DW_AT_high_pc(DW$L$_RunPathMake$62$E)
-
-DW$329	.dwtag  DW_TAG_loop
-	.dwattr DW$329, DW_AT_name("C:\algo\main\algo.asm:L71:2:1755591079")
-	.dwattr DW$329, DW_AT_begin_file("algo.c")
-	.dwattr DW$329, DW_AT_begin_line(0x5e5)
-	.dwattr DW$329, DW_AT_end_line(0x5f3)
-DW$330	.dwtag  DW_TAG_loop_range
-	.dwattr DW$330, DW_AT_low_pc(DW$L$_RunPathMake$55$B)
-	.dwattr DW$330, DW_AT_high_pc(DW$L$_RunPathMake$55$E)
-DW$331	.dwtag  DW_TAG_loop_range
-	.dwattr DW$331, DW_AT_low_pc(DW$L$_RunPathMake$56$B)
-	.dwattr DW$331, DW_AT_high_pc(DW$L$_RunPathMake$56$E)
-DW$332	.dwtag  DW_TAG_loop_range
-	.dwattr DW$332, DW_AT_low_pc(DW$L$_RunPathMake$57$B)
-	.dwattr DW$332, DW_AT_high_pc(DW$L$_RunPathMake$57$E)
-DW$333	.dwtag  DW_TAG_loop_range
-	.dwattr DW$333, DW_AT_low_pc(DW$L$_RunPathMake$58$B)
-	.dwattr DW$333, DW_AT_high_pc(DW$L$_RunPathMake$58$E)
-	.dwendtag DW$329
-
-	.dwendtag DW$323
-
-
-DW$334	.dwtag  DW_TAG_loop
-	.dwattr DW$334, DW_AT_name("C:\algo\main\algo.asm:L68:1:1755591079")
-	.dwattr DW$334, DW_AT_begin_file("algo.c")
-	.dwattr DW$334, DW_AT_begin_line(0x5d6)
-	.dwattr DW$334, DW_AT_end_line(0x5d9)
-DW$335	.dwtag  DW_TAG_loop_range
-	.dwattr DW$335, DW_AT_low_pc(DW$L$_RunPathMake$52$B)
-	.dwattr DW$335, DW_AT_high_pc(DW$L$_RunPathMake$52$E)
-	.dwendtag DW$334
-
-
-DW$336	.dwtag  DW_TAG_loop
-	.dwattr DW$336, DW_AT_name("C:\algo\main\algo.asm:L67:1:1755591079")
-	.dwattr DW$336, DW_AT_begin_file("algo.c")
-	.dwattr DW$336, DW_AT_begin_line(0x5d3)
-	.dwattr DW$336, DW_AT_end_line(0x5d4)
-DW$337	.dwtag  DW_TAG_loop_range
-	.dwattr DW$337, DW_AT_low_pc(DW$L$_RunPathMake$49$B)
-	.dwattr DW$337, DW_AT_high_pc(DW$L$_RunPathMake$49$E)
-	.dwendtag DW$336
-
-
-DW$338	.dwtag  DW_TAG_loop
-	.dwattr DW$338, DW_AT_name("C:\algo\main\algo.asm:L63:1:1755591079")
-	.dwattr DW$338, DW_AT_begin_file("algo.c")
-	.dwattr DW$338, DW_AT_begin_line(0x5a6)
-	.dwattr DW$338, DW_AT_end_line(0x5cd)
-DW$339	.dwtag  DW_TAG_loop_range
-	.dwattr DW$339, DW_AT_low_pc(DW$L$_RunPathMake$39$B)
-	.dwattr DW$339, DW_AT_high_pc(DW$L$_RunPathMake$39$E)
-DW$340	.dwtag  DW_TAG_loop_range
-	.dwattr DW$340, DW_AT_low_pc(DW$L$_RunPathMake$44$B)
-	.dwattr DW$340, DW_AT_high_pc(DW$L$_RunPathMake$44$E)
-DW$341	.dwtag  DW_TAG_loop_range
-	.dwattr DW$341, DW_AT_low_pc(DW$L$_RunPathMake$45$B)
-	.dwattr DW$341, DW_AT_high_pc(DW$L$_RunPathMake$45$E)
-DW$342	.dwtag  DW_TAG_loop_range
-	.dwattr DW$342, DW_AT_low_pc(DW$L$_RunPathMake$46$B)
-	.dwattr DW$342, DW_AT_high_pc(DW$L$_RunPathMake$46$E)
-DW$343	.dwtag  DW_TAG_loop_range
-	.dwattr DW$343, DW_AT_low_pc(DW$L$_RunPathMake$47$B)
-	.dwattr DW$343, DW_AT_high_pc(DW$L$_RunPathMake$47$E)
-
-DW$344	.dwtag  DW_TAG_loop
-	.dwattr DW$344, DW_AT_name("C:\algo\main\algo.asm:L64:2:1755591079")
-	.dwattr DW$344, DW_AT_begin_file("algo.c")
-	.dwattr DW$344, DW_AT_begin_line(0x5a8)
-	.dwattr DW$344, DW_AT_end_line(0x5b6)
-DW$345	.dwtag  DW_TAG_loop_range
-	.dwattr DW$345, DW_AT_low_pc(DW$L$_RunPathMake$40$B)
-	.dwattr DW$345, DW_AT_high_pc(DW$L$_RunPathMake$40$E)
-DW$346	.dwtag  DW_TAG_loop_range
-	.dwattr DW$346, DW_AT_low_pc(DW$L$_RunPathMake$41$B)
-	.dwattr DW$346, DW_AT_high_pc(DW$L$_RunPathMake$41$E)
-DW$347	.dwtag  DW_TAG_loop_range
-	.dwattr DW$347, DW_AT_low_pc(DW$L$_RunPathMake$42$B)
-	.dwattr DW$347, DW_AT_high_pc(DW$L$_RunPathMake$42$E)
-DW$348	.dwtag  DW_TAG_loop_range
-	.dwattr DW$348, DW_AT_low_pc(DW$L$_RunPathMake$43$B)
-	.dwattr DW$348, DW_AT_high_pc(DW$L$_RunPathMake$43$E)
-	.dwendtag DW$344
-
-	.dwendtag DW$338
-
-
-DW$349	.dwtag  DW_TAG_loop
-	.dwattr DW$349, DW_AT_name("C:\algo\main\algo.asm:L61:1:1755591079")
-	.dwattr DW$349, DW_AT_begin_file("algo.c")
-	.dwattr DW$349, DW_AT_begin_line(0x591)
-	.dwattr DW$349, DW_AT_end_line(0x598)
-DW$350	.dwtag  DW_TAG_loop_range
-	.dwattr DW$350, DW_AT_low_pc(DW$L$_RunPathMake$34$B)
-	.dwattr DW$350, DW_AT_high_pc(DW$L$_RunPathMake$34$E)
-DW$351	.dwtag  DW_TAG_loop_range
-	.dwattr DW$351, DW_AT_low_pc(DW$L$_RunPathMake$35$B)
-	.dwattr DW$351, DW_AT_high_pc(DW$L$_RunPathMake$35$E)
-DW$352	.dwtag  DW_TAG_loop_range
-	.dwattr DW$352, DW_AT_low_pc(DW$L$_RunPathMake$36$B)
-	.dwattr DW$352, DW_AT_high_pc(DW$L$_RunPathMake$36$E)
-DW$353	.dwtag  DW_TAG_loop_range
-	.dwattr DW$353, DW_AT_low_pc(DW$L$_RunPathMake$37$B)
-	.dwattr DW$353, DW_AT_high_pc(DW$L$_RunPathMake$37$E)
-	.dwendtag DW$349
-
-
-DW$354	.dwtag  DW_TAG_loop
-	.dwattr DW$354, DW_AT_name("C:\algo\main\algo.asm:L45:1:1755591079")
-	.dwattr DW$354, DW_AT_begin_file("algo.c")
-	.dwattr DW$354, DW_AT_begin_line(0x554)
-	.dwattr DW$354, DW_AT_end_line(0x579)
-DW$355	.dwtag  DW_TAG_loop_range
-	.dwattr DW$355, DW_AT_low_pc(DW$L$_RunPathMake$2$B)
-	.dwattr DW$355, DW_AT_high_pc(DW$L$_RunPathMake$2$E)
-DW$356	.dwtag  DW_TAG_loop_range
-	.dwattr DW$356, DW_AT_low_pc(DW$L$_RunPathMake$3$B)
-	.dwattr DW$356, DW_AT_high_pc(DW$L$_RunPathMake$3$E)
-DW$357	.dwtag  DW_TAG_loop_range
-	.dwattr DW$357, DW_AT_low_pc(DW$L$_RunPathMake$17$B)
-	.dwattr DW$357, DW_AT_high_pc(DW$L$_RunPathMake$17$E)
-DW$358	.dwtag  DW_TAG_loop_range
-	.dwattr DW$358, DW_AT_low_pc(DW$L$_RunPathMake$18$B)
-	.dwattr DW$358, DW_AT_high_pc(DW$L$_RunPathMake$18$E)
-DW$359	.dwtag  DW_TAG_loop_range
-	.dwattr DW$359, DW_AT_low_pc(DW$L$_RunPathMake$19$B)
-	.dwattr DW$359, DW_AT_high_pc(DW$L$_RunPathMake$19$E)
-
-DW$360	.dwtag  DW_TAG_loop
-	.dwattr DW$360, DW_AT_name("C:\algo\main\algo.asm:L46:2:1755591079")
-	.dwattr DW$360, DW_AT_begin_file("algo.c")
-	.dwattr DW$360, DW_AT_begin_line(0x55b)
-	.dwattr DW$360, DW_AT_end_line(0x577)
-DW$361	.dwtag  DW_TAG_loop_range
-	.dwattr DW$361, DW_AT_low_pc(DW$L$_RunPathMake$4$B)
-	.dwattr DW$361, DW_AT_high_pc(DW$L$_RunPathMake$4$E)
-DW$362	.dwtag  DW_TAG_loop_range
-	.dwattr DW$362, DW_AT_low_pc(DW$L$_RunPathMake$5$B)
-	.dwattr DW$362, DW_AT_high_pc(DW$L$_RunPathMake$5$E)
-DW$363	.dwtag  DW_TAG_loop_range
-	.dwattr DW$363, DW_AT_low_pc(DW$L$_RunPathMake$6$B)
-	.dwattr DW$363, DW_AT_high_pc(DW$L$_RunPathMake$6$E)
-DW$364	.dwtag  DW_TAG_loop_range
-	.dwattr DW$364, DW_AT_low_pc(DW$L$_RunPathMake$7$B)
-	.dwattr DW$364, DW_AT_high_pc(DW$L$_RunPathMake$7$E)
-DW$365	.dwtag  DW_TAG_loop_range
-	.dwattr DW$365, DW_AT_low_pc(DW$L$_RunPathMake$8$B)
-	.dwattr DW$365, DW_AT_high_pc(DW$L$_RunPathMake$8$E)
-DW$366	.dwtag  DW_TAG_loop_range
-	.dwattr DW$366, DW_AT_low_pc(DW$L$_RunPathMake$9$B)
-	.dwattr DW$366, DW_AT_high_pc(DW$L$_RunPathMake$9$E)
-DW$367	.dwtag  DW_TAG_loop_range
-	.dwattr DW$367, DW_AT_low_pc(DW$L$_RunPathMake$10$B)
-	.dwattr DW$367, DW_AT_high_pc(DW$L$_RunPathMake$10$E)
-DW$368	.dwtag  DW_TAG_loop_range
-	.dwattr DW$368, DW_AT_low_pc(DW$L$_RunPathMake$11$B)
-	.dwattr DW$368, DW_AT_high_pc(DW$L$_RunPathMake$11$E)
-DW$369	.dwtag  DW_TAG_loop_range
-	.dwattr DW$369, DW_AT_low_pc(DW$L$_RunPathMake$12$B)
-	.dwattr DW$369, DW_AT_high_pc(DW$L$_RunPathMake$12$E)
-DW$370	.dwtag  DW_TAG_loop_range
-	.dwattr DW$370, DW_AT_low_pc(DW$L$_RunPathMake$13$B)
-	.dwattr DW$370, DW_AT_high_pc(DW$L$_RunPathMake$13$E)
-DW$371	.dwtag  DW_TAG_loop_range
-	.dwattr DW$371, DW_AT_low_pc(DW$L$_RunPathMake$14$B)
-	.dwattr DW$371, DW_AT_high_pc(DW$L$_RunPathMake$14$E)
-DW$372	.dwtag  DW_TAG_loop_range
-	.dwattr DW$372, DW_AT_low_pc(DW$L$_RunPathMake$15$B)
-	.dwattr DW$372, DW_AT_high_pc(DW$L$_RunPathMake$15$E)
-DW$373	.dwtag  DW_TAG_loop_range
-	.dwattr DW$373, DW_AT_low_pc(DW$L$_RunPathMake$16$B)
-	.dwattr DW$373, DW_AT_high_pc(DW$L$_RunPathMake$16$E)
-	.dwendtag DW$360
-
-	.dwendtag DW$354
-
-	.dwattr DW$219, DW_AT_end_file("algo.c")
-	.dwattr DW$219, DW_AT_end_line(0x7e2)
-	.dwattr DW$219, DW_AT_end_column(0x01)
-	.dwendentry
-	.dwendtag DW$219
-
-	.sect	".text"
-	.global	_RunPath90Make
-
-DW$374	.dwtag  DW_TAG_subprogram, DW_AT_name("RunPath90Make"), DW_AT_symbol_name("_RunPath90Make")
-	.dwattr DW$374, DW_AT_low_pc(_RunPath90Make)
-	.dwattr DW$374, DW_AT_high_pc(0x00)
-	.dwattr DW$374, DW_AT_begin_file("algo.c")
-	.dwattr DW$374, DW_AT_begin_line(0x33e)
-	.dwattr DW$374, DW_AT_begin_column(0x06)
-	.dwpsn	"algo.c",831,1
-
-	.dwfde DW$CIE
-
-;***************************************************************
-;* FNAME: _RunPath90Make                FR SIZE:  44           *
-;*                                                             *
-;* FUNCTION ENVIRONMENT                                        *
-;*                                                             *
-;* FUNCTION PROPERTIES                                         *
-;*                            7 Parameter, 31 Auto,  6 SOE     *
-;***************************************************************
-
-
-;***************************************************************
-;*                                                             *
-;* Using -g (debug) with optimization (-o3) may disable key op *
-;*                                                             *
-;***************************************************************
-_RunPath90Make:
-;*** 834	-----------------------    Goal[] = {...};
-;*** 857	-----------------------    K$4 = &gMazeMap[0];
-;*** 857	-----------------------    memset((void *)K$4, 0, 256uL);
-;*** 858	-----------------------    K$5 = &gMazeMapBackUp;
-;*** 858	-----------------------    memset(K$5, 0, 256uL);
-;*** 860	-----------------------    SpiReadRom(5u, 0u, 256u, (unsigned *)K$5);
-;***  	-----------------------    U$9 = (volatile unsigned *)K$5;
-;***  	-----------------------    U$12 = K$4;
-;***  	-----------------------    K$19 = &gMoveTable[0];
-;*** 862	-----------------------    cnt = 0u;
-	.dwcfa	0x1d, -2
-	.dwcfa	0x1c, 26, 0
-	.dwcfa	0x09, 40, 26
-        MOVL      *SP++,XAR1
-	.dwcfa	0x80, 7, 2
-	.dwcfa	0x1d, -4
-        MOVL      *SP++,XAR2
-	.dwcfa	0x80, 9, 4
-	.dwcfa	0x1d, -6
-        MOVL      *SP++,XAR3
-	.dwcfa	0x80, 11, 6
-	.dwcfa	0x1d, -8
-        ADDB      SP,#38
-	.dwcfa	0x1d, -46
-;* AR6   assigned to C$20
-DW$375	.dwtag  DW_TAG_variable, DW_AT_name("C$20"), DW_AT_symbol_name("C$20")
-	.dwattr DW$375, DW_AT_type(*DW$T$92)
-	.dwattr DW$375, DW_AT_location[DW_OP_reg16]
-;* AR5   assigned to C$21
-DW$376	.dwtag  DW_TAG_variable, DW_AT_name("C$21"), DW_AT_symbol_name("C$21")
-	.dwattr DW$376, DW_AT_type(*DW$T$92)
-	.dwattr DW$376, DW_AT_location[DW_OP_reg14]
-;* AR4   assigned to C$22
-DW$377	.dwtag  DW_TAG_variable, DW_AT_name("C$22"), DW_AT_symbol_name("C$22")
-	.dwattr DW$377, DW_AT_type(*DW$T$92)
-	.dwattr DW$377, DW_AT_location[DW_OP_reg12]
-;* AR5   assigned to C$23
-DW$378	.dwtag  DW_TAG_variable, DW_AT_name("C$23"), DW_AT_symbol_name("C$23")
-	.dwattr DW$378, DW_AT_type(*DW$T$92)
-	.dwattr DW$378, DW_AT_location[DW_OP_reg14]
-;* AR4   assigned to C$24
-DW$379	.dwtag  DW_TAG_variable, DW_AT_name("C$24"), DW_AT_symbol_name("C$24")
-	.dwattr DW$379, DW_AT_type(*DW$T$92)
-	.dwattr DW$379, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to C$25
-DW$380	.dwtag  DW_TAG_variable, DW_AT_name("C$25"), DW_AT_symbol_name("C$25")
-	.dwattr DW$380, DW_AT_type(*DW$T$92)
-	.dwattr DW$380, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to C$26
-DW$381	.dwtag  DW_TAG_variable, DW_AT_name("C$26"), DW_AT_symbol_name("C$26")
-	.dwattr DW$381, DW_AT_type(*DW$T$92)
-	.dwattr DW$381, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to C$27
-DW$382	.dwtag  DW_TAG_variable, DW_AT_name("C$27"), DW_AT_symbol_name("C$27")
-	.dwattr DW$382, DW_AT_type(*DW$T$92)
-	.dwattr DW$382, DW_AT_location[DW_OP_reg12]
-;* AR6   assigned to C$28
-DW$383	.dwtag  DW_TAG_variable, DW_AT_name("C$28"), DW_AT_symbol_name("C$28")
-	.dwattr DW$383, DW_AT_type(*DW$T$92)
-	.dwattr DW$383, DW_AT_location[DW_OP_reg16]
-;* AR5   assigned to C$29
-DW$384	.dwtag  DW_TAG_variable, DW_AT_name("C$29"), DW_AT_symbol_name("C$29")
-	.dwattr DW$384, DW_AT_type(*DW$T$92)
-	.dwattr DW$384, DW_AT_location[DW_OP_reg14]
-;* AR4   assigned to C$30
-DW$385	.dwtag  DW_TAG_variable, DW_AT_name("C$30"), DW_AT_symbol_name("C$30")
-	.dwattr DW$385, DW_AT_type(*DW$T$92)
-	.dwattr DW$385, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to C$31
-DW$386	.dwtag  DW_TAG_variable, DW_AT_name("C$31"), DW_AT_symbol_name("C$31")
-	.dwattr DW$386, DW_AT_type(*DW$T$92)
-	.dwattr DW$386, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to C$32
-DW$387	.dwtag  DW_TAG_variable, DW_AT_name("C$32"), DW_AT_symbol_name("C$32")
-	.dwattr DW$387, DW_AT_type(*DW$T$92)
-	.dwattr DW$387, DW_AT_location[DW_OP_reg12]
-;* PL    assigned to C$33
-DW$388	.dwtag  DW_TAG_variable, DW_AT_name("C$33"), DW_AT_symbol_name("C$33")
-	.dwattr DW$388, DW_AT_type(*DW$T$11)
-	.dwattr DW$388, DW_AT_location[DW_OP_reg2]
-;* AR4   assigned to C$34
-DW$389	.dwtag  DW_TAG_variable, DW_AT_name("C$34"), DW_AT_symbol_name("C$34")
-	.dwattr DW$389, DW_AT_type(*DW$T$92)
-	.dwattr DW$389, DW_AT_location[DW_OP_reg12]
-DW$390	.dwtag  DW_TAG_variable, DW_AT_name("K$19"), DW_AT_symbol_name("K$19")
-	.dwattr DW$390, DW_AT_type(*DW$T$92)
-	.dwattr DW$390, DW_AT_location[DW_OP_breg20 -32]
-DW$391	.dwtag  DW_TAG_variable, DW_AT_name("K$57"), DW_AT_symbol_name("K$57")
-	.dwattr DW$391, DW_AT_type(*DW$T$135)
-	.dwattr DW$391, DW_AT_location[DW_OP_breg20 -36]
-;* AR5   assigned to U$47
-DW$392	.dwtag  DW_TAG_variable, DW_AT_name("U$47"), DW_AT_symbol_name("U$47")
-	.dwattr DW$392, DW_AT_type(*DW$T$77)
-	.dwattr DW$392, DW_AT_location[DW_OP_reg14]
-DW$393	.dwtag  DW_TAG_variable, DW_AT_name("K$71"), DW_AT_symbol_name("K$71")
-	.dwattr DW$393, DW_AT_type(*DW$T$111)
-	.dwattr DW$393, DW_AT_location[DW_OP_breg20 -38]
-;* PH    assigned to U$117
-DW$394	.dwtag  DW_TAG_variable, DW_AT_name("U$117"), DW_AT_symbol_name("U$117")
-	.dwattr DW$394, DW_AT_type(*DW$T$11)
-	.dwattr DW$394, DW_AT_location[DW_OP_reg3]
-;* AR7   assigned to U$138
-DW$395	.dwtag  DW_TAG_variable, DW_AT_name("U$138"), DW_AT_symbol_name("U$138")
-	.dwattr DW$395, DW_AT_type(*DW$T$92)
-	.dwattr DW$395, DW_AT_location[DW_OP_reg18]
-;* AR4   assigned to K$177
-DW$396	.dwtag  DW_TAG_variable, DW_AT_name("K$177"), DW_AT_symbol_name("K$177")
-	.dwattr DW$396, DW_AT_type(*DW$T$75)
-	.dwattr DW$396, DW_AT_location[DW_OP_reg12]
-;* PH    assigned to U$31
-DW$397	.dwtag  DW_TAG_variable, DW_AT_name("U$31"), DW_AT_symbol_name("U$31")
-	.dwattr DW$397, DW_AT_type(*DW$T$11)
-	.dwattr DW$397, DW_AT_location[DW_OP_reg3]
-DW$398	.dwtag  DW_TAG_variable, DW_AT_name("K$5"), DW_AT_symbol_name("K$5")
-	.dwattr DW$398, DW_AT_type(*DW$T$3)
-	.dwattr DW$398, DW_AT_location[DW_OP_breg20 -30]
-;* AR6   assigned to U$125
-DW$399	.dwtag  DW_TAG_variable, DW_AT_name("U$125"), DW_AT_symbol_name("U$125")
-	.dwattr DW$399, DW_AT_type(*DW$T$11)
-	.dwattr DW$399, DW_AT_location[DW_OP_reg16]
-;* AL    assigned to P$15
-DW$400	.dwtag  DW_TAG_variable, DW_AT_name("P$15"), DW_AT_symbol_name("P$15")
-	.dwattr DW$400, DW_AT_type(*DW$T$10)
-	.dwattr DW$400, DW_AT_location[DW_OP_reg0]
-;* AL    assigned to P$16
-DW$401	.dwtag  DW_TAG_variable, DW_AT_name("P$16"), DW_AT_symbol_name("P$16")
-	.dwattr DW$401, DW_AT_type(*DW$T$10)
-	.dwattr DW$401, DW_AT_location[DW_OP_reg0]
-;* AR7   assigned to P$17
-DW$402	.dwtag  DW_TAG_variable, DW_AT_name("P$17"), DW_AT_symbol_name("P$17")
-	.dwattr DW$402, DW_AT_type(*DW$T$10)
-	.dwattr DW$402, DW_AT_location[DW_OP_reg18]
-;* AL    assigned to P$18
-DW$403	.dwtag  DW_TAG_variable, DW_AT_name("P$18"), DW_AT_symbol_name("P$18")
-	.dwattr DW$403, DW_AT_type(*DW$T$10)
-	.dwattr DW$403, DW_AT_location[DW_OP_reg0]
-;* AL    assigned to P$19
-DW$404	.dwtag  DW_TAG_variable, DW_AT_name("P$19"), DW_AT_symbol_name("P$19")
-	.dwattr DW$404, DW_AT_type(*DW$T$10)
-	.dwattr DW$404, DW_AT_location[DW_OP_reg0]
-;* AR6   assigned to L$3
-DW$405	.dwtag  DW_TAG_variable, DW_AT_name("L$3"), DW_AT_symbol_name("L$3")
-	.dwattr DW$405, DW_AT_type(*DW$T$10)
-	.dwattr DW$405, DW_AT_location[DW_OP_reg16]
-;* AR6   assigned to L$4
-DW$406	.dwtag  DW_TAG_variable, DW_AT_name("L$4"), DW_AT_symbol_name("L$4")
-	.dwattr DW$406, DW_AT_type(*DW$T$10)
-	.dwattr DW$406, DW_AT_location[DW_OP_reg16]
-;* AR6   assigned to L$5
-DW$407	.dwtag  DW_TAG_variable, DW_AT_name("L$5"), DW_AT_symbol_name("L$5")
-	.dwattr DW$407, DW_AT_type(*DW$T$10)
-	.dwattr DW$407, DW_AT_location[DW_OP_reg16]
-;* AR6   assigned to L$6
-DW$408	.dwtag  DW_TAG_variable, DW_AT_name("L$6"), DW_AT_symbol_name("L$6")
-	.dwattr DW$408, DW_AT_type(*DW$T$10)
-	.dwattr DW$408, DW_AT_location[DW_OP_reg16]
-;* AR6   assigned to L$7
-DW$409	.dwtag  DW_TAG_variable, DW_AT_name("L$7"), DW_AT_symbol_name("L$7")
-	.dwattr DW$409, DW_AT_type(*DW$T$10)
-	.dwattr DW$409, DW_AT_location[DW_OP_reg16]
-DW$410	.dwtag  DW_TAG_variable, DW_AT_name("LastPath"), DW_AT_symbol_name("_LastPath")
-	.dwattr DW$410, DW_AT_type(*DW$T$19)
-	.dwattr DW$410, DW_AT_location[DW_OP_breg20 -25]
-;* AR6   assigned to _YetMouseHead
-DW$411	.dwtag  DW_TAG_variable, DW_AT_name("YetMouseHead"), DW_AT_symbol_name("_YetMouseHead")
-	.dwattr DW$411, DW_AT_type(*DW$T$19)
-	.dwattr DW$411, DW_AT_location[DW_OP_reg16]
-;* AR5   assigned to _YetTurnState
-DW$412	.dwtag  DW_TAG_variable, DW_AT_name("YetTurnState"), DW_AT_symbol_name("_YetTurnState")
-	.dwattr DW$412, DW_AT_type(*DW$T$19)
-	.dwattr DW$412, DW_AT_location[DW_OP_reg14]
-;* PL    assigned to _BlockCnt
-DW$413	.dwtag  DW_TAG_variable, DW_AT_name("BlockCnt"), DW_AT_symbol_name("_BlockCnt")
-	.dwattr DW$413, DW_AT_type(*DW$T$19)
-	.dwattr DW$413, DW_AT_location[DW_OP_reg2]
-DW$414	.dwtag  DW_TAG_variable, DW_AT_name("NextPos"), DW_AT_symbol_name("_NextPos")
-	.dwattr DW$414, DW_AT_type(*DW$T$19)
-	.dwattr DW$414, DW_AT_location[DW_OP_breg20 -27]
-DW$415	.dwtag  DW_TAG_variable, DW_AT_name("NextTurn"), DW_AT_symbol_name("_NextTurn")
-	.dwattr DW$415, DW_AT_type(*DW$T$19)
-	.dwattr DW$415, DW_AT_location[DW_OP_breg20 -28]
-;* AR2   assigned to _AbsoluteDir
-DW$416	.dwtag  DW_TAG_variable, DW_AT_name("AbsoluteDir"), DW_AT_symbol_name("_AbsoluteDir")
-	.dwattr DW$416, DW_AT_type(*DW$T$19)
-	.dwattr DW$416, DW_AT_location[DW_OP_reg8]
-DW$417	.dwtag  DW_TAG_variable, DW_AT_name("GoalPosition"), DW_AT_symbol_name("_GoalPosition")
-	.dwattr DW$417, DW_AT_type(*DW$T$19)
-	.dwattr DW$417, DW_AT_location[DW_OP_breg20 -24]
-;* AR7   assigned to _LowWeight
-DW$418	.dwtag  DW_TAG_variable, DW_AT_name("LowWeight"), DW_AT_symbol_name("_LowWeight")
-	.dwattr DW$418, DW_AT_type(*DW$T$19)
-	.dwattr DW$418, DW_AT_location[DW_OP_reg18]
-;* AR5   assigned to S$14
-DW$419	.dwtag  DW_TAG_variable, DW_AT_name("S$14"), DW_AT_symbol_name("S$14")
-	.dwattr DW$419, DW_AT_type(*DW$T$113)
-	.dwattr DW$419, DW_AT_location[DW_OP_reg14]
-;* AR4   assigned to S$13
-DW$420	.dwtag  DW_TAG_variable, DW_AT_name("S$13"), DW_AT_symbol_name("S$13")
-	.dwattr DW$420, DW_AT_type(*DW$T$111)
-	.dwattr DW$420, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to S$12
-DW$421	.dwtag  DW_TAG_variable, DW_AT_name("S$12"), DW_AT_symbol_name("S$12")
-	.dwattr DW$421, DW_AT_type(*DW$T$111)
-	.dwattr DW$421, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to S$11
-DW$422	.dwtag  DW_TAG_variable, DW_AT_name("S$11"), DW_AT_symbol_name("S$11")
-	.dwattr DW$422, DW_AT_type(*DW$T$111)
-	.dwattr DW$422, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to S$10
-DW$423	.dwtag  DW_TAG_variable, DW_AT_name("S$10"), DW_AT_symbol_name("S$10")
-	.dwattr DW$423, DW_AT_type(*DW$T$113)
-	.dwattr DW$423, DW_AT_location[DW_OP_reg12]
-;* AR5   assigned to S$9
-DW$424	.dwtag  DW_TAG_variable, DW_AT_name("S$9"), DW_AT_symbol_name("S$9")
-	.dwattr DW$424, DW_AT_type(*DW$T$113)
-	.dwattr DW$424, DW_AT_location[DW_OP_reg14]
-;* AR4   assigned to S$8
-DW$425	.dwtag  DW_TAG_variable, DW_AT_name("S$8"), DW_AT_symbol_name("S$8")
-	.dwattr DW$425, DW_AT_type(*DW$T$111)
-	.dwattr DW$425, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to S$7
-DW$426	.dwtag  DW_TAG_variable, DW_AT_name("S$7"), DW_AT_symbol_name("S$7")
-	.dwattr DW$426, DW_AT_type(*DW$T$111)
-	.dwattr DW$426, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to S$6
-DW$427	.dwtag  DW_TAG_variable, DW_AT_name("S$6"), DW_AT_symbol_name("S$6")
-	.dwattr DW$427, DW_AT_type(*DW$T$111)
-	.dwattr DW$427, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to S$5
-DW$428	.dwtag  DW_TAG_variable, DW_AT_name("S$5"), DW_AT_symbol_name("S$5")
-	.dwattr DW$428, DW_AT_type(*DW$T$111)
-	.dwattr DW$428, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to S$4
-DW$429	.dwtag  DW_TAG_variable, DW_AT_name("S$4"), DW_AT_symbol_name("S$4")
-	.dwattr DW$429, DW_AT_type(*DW$T$111)
-	.dwattr DW$429, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to S$3
-DW$430	.dwtag  DW_TAG_variable, DW_AT_name("S$3"), DW_AT_symbol_name("S$3")
-	.dwattr DW$430, DW_AT_type(*DW$T$111)
-	.dwattr DW$430, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to S$2
-DW$431	.dwtag  DW_TAG_variable, DW_AT_name("S$2"), DW_AT_symbol_name("S$2")
-	.dwattr DW$431, DW_AT_type(*DW$T$111)
-	.dwattr DW$431, DW_AT_location[DW_OP_reg12]
-;* AR7   assigned to U$9
-DW$432	.dwtag  DW_TAG_variable, DW_AT_name("U$9"), DW_AT_symbol_name("U$9")
-	.dwattr DW$432, DW_AT_type(*DW$T$92)
-	.dwattr DW$432, DW_AT_location[DW_OP_reg18]
-;* AR4   assigned to U$9
-DW$433	.dwtag  DW_TAG_variable, DW_AT_name("U$9"), DW_AT_symbol_name("U$9")
-	.dwattr DW$433, DW_AT_type(*DW$T$92)
-	.dwattr DW$433, DW_AT_location[DW_OP_reg12]
-;* AR6   assigned to U$12
-DW$434	.dwtag  DW_TAG_variable, DW_AT_name("U$12"), DW_AT_symbol_name("U$12")
-	.dwattr DW$434, DW_AT_type(*DW$T$92)
-	.dwattr DW$434, DW_AT_location[DW_OP_reg16]
-;* AR5   assigned to U$12
-DW$435	.dwtag  DW_TAG_variable, DW_AT_name("U$12"), DW_AT_symbol_name("U$12")
-	.dwattr DW$435, DW_AT_type(*DW$T$92)
-	.dwattr DW$435, DW_AT_location[DW_OP_reg14]
-;* AR3   assigned to K$4
-DW$436	.dwtag  DW_TAG_variable, DW_AT_name("K$4"), DW_AT_symbol_name("K$4")
-	.dwattr DW$436, DW_AT_type(*DW$T$92)
-	.dwattr DW$436, DW_AT_location[DW_OP_reg10]
-;* AR4   assigned to K$4
-DW$437	.dwtag  DW_TAG_variable, DW_AT_name("K$4"), DW_AT_symbol_name("K$4")
-	.dwattr DW$437, DW_AT_type(*DW$T$92)
-	.dwattr DW$437, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to K$4
-DW$438	.dwtag  DW_TAG_variable, DW_AT_name("K$4"), DW_AT_symbol_name("K$4")
-	.dwattr DW$438, DW_AT_type(*DW$T$92)
-	.dwattr DW$438, DW_AT_location[DW_OP_reg12]
-;* AR4   assigned to K$4
-DW$439	.dwtag  DW_TAG_variable, DW_AT_name("K$4"), DW_AT_symbol_name("K$4")
-	.dwattr DW$439, DW_AT_type(*DW$T$92)
-	.dwattr DW$439, DW_AT_location[DW_OP_reg12]
-DW$440	.dwtag  DW_TAG_variable, DW_AT_name("K$4"), DW_AT_symbol_name("K$4")
-	.dwattr DW$440, DW_AT_type(*DW$T$92)
-	.dwattr DW$440, DW_AT_location[DW_OP_breg20 -34]
-;* AR7   assigned to U$75
-DW$441	.dwtag  DW_TAG_variable, DW_AT_name("U$75"), DW_AT_symbol_name("U$75")
-	.dwattr DW$441, DW_AT_type(*DW$T$92)
-	.dwattr DW$441, DW_AT_location[DW_OP_reg18]
-;* AR7   assigned to U$75
-DW$442	.dwtag  DW_TAG_variable, DW_AT_name("U$75"), DW_AT_symbol_name("U$75")
-	.dwattr DW$442, DW_AT_type(*DW$T$92)
-	.dwattr DW$442, DW_AT_location[DW_OP_reg18]
-;* AR0   assigned to U$73
-DW$443	.dwtag  DW_TAG_variable, DW_AT_name("U$73"), DW_AT_symbol_name("U$73")
-	.dwattr DW$443, DW_AT_type(*DW$T$92)
-	.dwattr DW$443, DW_AT_location[DW_OP_reg4]
-;* AR1   assigned to U$73
-DW$444	.dwtag  DW_TAG_variable, DW_AT_name("U$73"), DW_AT_symbol_name("U$73")
-	.dwattr DW$444, DW_AT_type(*DW$T$92)
-	.dwattr DW$444, DW_AT_location[DW_OP_reg6]
-;* XT    assigned to U$186
-DW$445	.dwtag  DW_TAG_variable, DW_AT_name("U$186"), DW_AT_symbol_name("U$186")
-	.dwattr DW$445, DW_AT_type(*DW$T$92)
-	.dwattr DW$445, DW_AT_location[DW_OP_reg21]
-;* AR1   assigned to U$186
-DW$446	.dwtag  DW_TAG_variable, DW_AT_name("U$186"), DW_AT_symbol_name("U$186")
-	.dwattr DW$446, DW_AT_type(*DW$T$92)
-	.dwattr DW$446, DW_AT_location[DW_OP_reg6]
-;* AR1   assigned to _Position
-DW$447	.dwtag  DW_TAG_variable, DW_AT_name("Position"), DW_AT_symbol_name("_Position")
-	.dwattr DW$447, DW_AT_type(*DW$T$19)
-	.dwattr DW$447, DW_AT_location[DW_OP_reg6]
-;* PL    assigned to _Position
-DW$448	.dwtag  DW_TAG_variable, DW_AT_name("Position"), DW_AT_symbol_name("_Position")
-	.dwattr DW$448, DW_AT_type(*DW$T$19)
-	.dwattr DW$448, DW_AT_location[DW_OP_reg2]
-;* PL    assigned to _MouseDir
-DW$449	.dwtag  DW_TAG_variable, DW_AT_name("MouseDir"), DW_AT_symbol_name("_MouseDir")
-	.dwattr DW$449, DW_AT_type(*DW$T$19)
-	.dwattr DW$449, DW_AT_location[DW_OP_reg2]
-;* AR0   assigned to _MouseDir
-DW$450	.dwtag  DW_TAG_variable, DW_AT_name("MouseDir"), DW_AT_symbol_name("_MouseDir")
-	.dwattr DW$450, DW_AT_type(*DW$T$19)
-	.dwattr DW$450, DW_AT_location[DW_OP_reg4]
-;* AH    assigned to _NextWeight
-DW$451	.dwtag  DW_TAG_variable, DW_AT_name("NextWeight"), DW_AT_symbol_name("_NextWeight")
-	.dwattr DW$451, DW_AT_type(*DW$T$19)
-	.dwattr DW$451, DW_AT_location[DW_OP_reg1]
-;* AH    assigned to _NextWeight
-DW$452	.dwtag  DW_TAG_variable, DW_AT_name("NextWeight"), DW_AT_symbol_name("_NextWeight")
-	.dwattr DW$452, DW_AT_type(*DW$T$19)
-	.dwattr DW$452, DW_AT_location[DW_OP_reg1]
-DW$453	.dwtag  DW_TAG_variable, DW_AT_name("WeightMin"), DW_AT_symbol_name("_WeightMin")
-	.dwattr DW$453, DW_AT_type(*DW$T$19)
-	.dwattr DW$453, DW_AT_location[DW_OP_breg20 -26]
-;* PH    assigned to _WeightMin
-DW$454	.dwtag  DW_TAG_variable, DW_AT_name("WeightMin"), DW_AT_symbol_name("_WeightMin")
-	.dwattr DW$454, DW_AT_type(*DW$T$19)
-	.dwattr DW$454, DW_AT_location[DW_OP_reg3]
-;* AR0   assigned to _x
-DW$455	.dwtag  DW_TAG_variable, DW_AT_name("x"), DW_AT_symbol_name("_x")
-	.dwattr DW$455, DW_AT_type(*DW$T$19)
-	.dwattr DW$455, DW_AT_location[DW_OP_reg4]
-;* AR3   assigned to _x
-DW$456	.dwtag  DW_TAG_variable, DW_AT_name("x"), DW_AT_symbol_name("_x")
-	.dwattr DW$456, DW_AT_type(*DW$T$19)
-	.dwattr DW$456, DW_AT_location[DW_OP_reg10]
-;* AR3   assigned to _x
-DW$457	.dwtag  DW_TAG_variable, DW_AT_name("x"), DW_AT_symbol_name("_x")
-	.dwattr DW$457, DW_AT_type(*DW$T$19)
-	.dwattr DW$457, DW_AT_location[DW_OP_reg10]
-;* AR0   assigned to _x
-DW$458	.dwtag  DW_TAG_variable, DW_AT_name("x"), DW_AT_symbol_name("_x")
-	.dwattr DW$458, DW_AT_type(*DW$T$19)
-	.dwattr DW$458, DW_AT_location[DW_OP_reg4]
-;* AR5   assigned to _cnt
-DW$459	.dwtag  DW_TAG_variable, DW_AT_name("cnt"), DW_AT_symbol_name("_cnt")
-	.dwattr DW$459, DW_AT_type(*DW$T$19)
-	.dwattr DW$459, DW_AT_location[DW_OP_reg14]
-;* AR0   assigned to _cnt
-DW$460	.dwtag  DW_TAG_variable, DW_AT_name("cnt"), DW_AT_symbol_name("_cnt")
-	.dwattr DW$460, DW_AT_type(*DW$T$19)
-	.dwattr DW$460, DW_AT_location[DW_OP_reg4]
-;* AR5   assigned to _cnt
-DW$461	.dwtag  DW_TAG_variable, DW_AT_name("cnt"), DW_AT_symbol_name("_cnt")
-	.dwattr DW$461, DW_AT_type(*DW$T$19)
-	.dwattr DW$461, DW_AT_location[DW_OP_reg14]
-;* AR5   assigned to _cnt
-DW$462	.dwtag  DW_TAG_variable, DW_AT_name("cnt"), DW_AT_symbol_name("_cnt")
-	.dwattr DW$462, DW_AT_type(*DW$T$19)
-	.dwattr DW$462, DW_AT_location[DW_OP_reg14]
-;* AR1   assigned to _cnt
-DW$463	.dwtag  DW_TAG_variable, DW_AT_name("cnt"), DW_AT_symbol_name("_cnt")
-	.dwattr DW$463, DW_AT_type(*DW$T$19)
-	.dwattr DW$463, DW_AT_location[DW_OP_reg6]
-;* AR2   assigned to _cnt
-DW$464	.dwtag  DW_TAG_variable, DW_AT_name("cnt"), DW_AT_symbol_name("_cnt")
-	.dwattr DW$464, DW_AT_type(*DW$T$19)
-	.dwattr DW$464, DW_AT_location[DW_OP_reg8]
-DW$465	.dwtag  DW_TAG_variable, DW_AT_name("Goal"), DW_AT_symbol_name("_Goal")
-	.dwattr DW$465, DW_AT_type(*DW$T$88)
-	.dwattr DW$465, DW_AT_location[DW_OP_breg20 -11]
-DW$466	.dwtag  DW_TAG_variable, DW_AT_name("i"), DW_AT_symbol_name("_i")
-	.dwattr DW$466, DW_AT_type(*DW$T$88)
-	.dwattr DW$466, DW_AT_location[DW_OP_breg20 -15]
-DW$467	.dwtag  DW_TAG_variable, DW_AT_name("DiagPos"), DW_AT_symbol_name("_DiagPos")
-	.dwattr DW$467, DW_AT_type(*DW$T$88)
-	.dwattr DW$467, DW_AT_location[DW_OP_breg20 -19]
-DW$468	.dwtag  DW_TAG_variable, DW_AT_name("DiagDir"), DW_AT_symbol_name("_DiagDir")
-	.dwattr DW$468, DW_AT_type(*DW$T$88)
-	.dwattr DW$468, DW_AT_location[DW_OP_breg20 -23]
-	.dwpsn	"algo.c",834,9
-        MOVZ      AR4,SP                ; |834| 
-        MOVB      ACC,#4
-        MOVL      XAR5,#_$T1$2$0        ; |834| 
-        SUBB      XAR4,#11              ; |834| 
-        LCR       #___memcpy_ff         ; |834| 
-        ; call occurs [#___memcpy_ff] ; |834| 
-	.dwpsn	"algo.c",857,2
-        MOVL      XAR3,#_gMazeMap       ; |857| 
-        MOVL      XAR4,XAR3             ; |857| 
-        MOVB      XAR5,#0
-        MOV       ACC,#1 << 8
-        LCR       #_memset              ; |857| 
-        ; call occurs [#_memset] ; |857| 
-	.dwpsn	"algo.c",858,2
-        MOVL      XAR4,#_gMazeMapBackUp ; |858| 
-        MOVL      *-SP[30],XAR4         ; |858| 
-        MOVB      XAR5,#0
-        MOV       ACC,#1 << 8
-        LCR       #_memset              ; |858| 
-        ; call occurs [#_memset] ; |858| 
-	.dwpsn	"algo.c",860,2
-        MOVL      XAR4,*-SP[30]         ; |860| 
-        MOVL      XAR5,#256             ; |860| 
-        MOVB      ACC,#5
-        LCR       #_SpiReadRom          ; |860| 
-        ; call occurs [#_SpiReadRom] ; |860| 
-        MOVL      XAR4,#_gMoveTable
-        MOVL      XAR7,*-SP[30]
-        MOVL      XAR6,XAR3
-        MOVL      *-SP[32],XAR4
-	.dwpsn	"algo.c",862,6
-        MOVB      XAR5,#0
-L140:    
-DW$L$_RunPath90Make$2$B:
-;***	-----------------------g2:
-;*** 864	-----------------------    if ( *U$9&0x10 ) goto g14;
-	.dwpsn	"algo.c",864,3
-        MOVL      XAR4,XAR7
-        TBIT      *+XAR4[0],#4          ; |864| 
-        BF        L146,TC               ; |864| 
-        ; branchcc occurs ; |864| 
-DW$L$_RunPath90Make$2$E:
-DW$L$_RunPath90Make$3$B:
-;*** 868	-----------------------    *U$12 = 15u;
-;*** 869	-----------------------    x = 0u;
-	.dwpsn	"algo.c",868,4
-        MOVL      XAR4,XAR6             ; |868| 
-        MOV       *+XAR4[0],#15         ; |868| 
-	.dwpsn	"algo.c",869,8
-        MOVB      XAR0,#0
-DW$L$_RunPath90Make$3$E:
-L141:    
-DW$L$_RunPath90Make$4$B:
-;***	-----------------------g4:
-;*** 871	-----------------------    switch ( x ) {case 0u: goto g11;, case 1u: goto g9;, case 2u: goto g7;, case 3u: goto g5;, DEFAULT goto g13};
-	.dwpsn	"algo.c",871,5
-        MOV       AL,AR0                ; |871| 
-        BF        L144,EQ               ; |871| 
-        ; branchcc occurs ; |871| 
-DW$L$_RunPath90Make$4$E:
-DW$L$_RunPath90Make$5$B:
-        CMPB      AL,#1                 ; |871| 
-        BF        L143,EQ               ; |871| 
-        ; branchcc occurs ; |871| 
-DW$L$_RunPath90Make$5$E:
-DW$L$_RunPath90Make$6$B:
-        CMPB      AL,#2                 ; |871| 
-        BF        L142,EQ               ; |871| 
-        ; branchcc occurs ; |871| 
-DW$L$_RunPath90Make$6$E:
-DW$L$_RunPath90Make$7$B:
-        CMPB      AL,#3                 ; |871| 
-        BF        L145,NEQ              ; |871| 
-        ; branchcc occurs ; |871| 
-DW$L$_RunPath90Make$7$E:
-DW$L$_RunPath90Make$8$B:
-;***	-----------------------g5:
-;*** 890	-----------------------    if ( !(cnt&0xf0u) ) goto g13;
-	.dwpsn	"algo.c",890,7
-        AND       AL,AR5,#0x00f0        ; |890| 
-        BF        L145,EQ               ; |890| 
-        ; branchcc occurs ; |890| 
-DW$L$_RunPath90Make$8$E:
-DW$L$_RunPath90Make$9$B:
-;*** 891	-----------------------    K$4[K$19[x]+cnt] |= 2u;
-;*** 891	-----------------------    goto g13;
-	.dwpsn	"algo.c",891,8
-        MOVL      XAR4,*-SP[32]
-        MOV       AL,AR5
-        MOV       PL,*+XAR4[AR0]        ; |891| 
-        ADD       PL,AL
-        MOVL      ACC,XAR3              ; |891| 
-        ADDU      ACC,PL                ; |891| 
-        MOVL      XAR4,ACC              ; |891| 
-        OR        *+XAR4[0],#0x0002     ; |891| 
-        BF        L145,UNC              ; |891| 
-        ; branch occurs ; |891| 
-DW$L$_RunPath90Make$9$E:
-L142:    
-DW$L$_RunPath90Make$10$B:
-;***	-----------------------g7:
-;*** 885	-----------------------    if ( !(cnt&0xfu) ) goto g13;
-	.dwpsn	"algo.c",885,7
-        AND       AL,AR5,#0x000f        ; |885| 
-        BF        L145,EQ               ; |885| 
-        ; branchcc occurs ; |885| 
-DW$L$_RunPath90Make$10$E:
-DW$L$_RunPath90Make$11$B:
-;*** 886	-----------------------    K$4[K$19[x]+cnt] |= 1u;
-;*** 886	-----------------------    goto g13;
-	.dwpsn	"algo.c",886,8
-        MOVL      XAR4,*-SP[32]
-        MOV       AL,AR5
-        MOV       PL,*+XAR4[AR0]        ; |886| 
-        ADD       PL,AL
-        MOVL      ACC,XAR3              ; |886| 
-        ADDU      ACC,PL                ; |886| 
-        MOVL      XAR4,ACC              ; |886| 
-        OR        *+XAR4[0],#0x0001     ; |886| 
-        BF        L145,UNC              ; |886| 
-        ; branch occurs ; |886| 
-DW$L$_RunPath90Make$11$E:
-L143:    
-DW$L$_RunPath90Make$12$B:
-;***	-----------------------g9:
-;*** 880	-----------------------    if ( (cnt&0xf0u) == 0xf0u ) goto g13;
-	.dwpsn	"algo.c",880,7
-        AND       AL,AR5,#0x00f0        ; |880| 
-        CMPB      AL,#240               ; |880| 
-        BF        L145,EQ               ; |880| 
-        ; branchcc occurs ; |880| 
-DW$L$_RunPath90Make$12$E:
-DW$L$_RunPath90Make$13$B:
-;*** 881	-----------------------    K$4[K$19[x]+cnt] |= 0x8u;
-;*** 881	-----------------------    goto g13;
-	.dwpsn	"algo.c",881,8
-        MOVL      XAR4,*-SP[32]
-        MOV       AL,AR5
-        MOV       PL,*+XAR4[AR0]        ; |881| 
-        ADD       PL,AL
-        MOVL      ACC,XAR3              ; |881| 
-        ADDU      ACC,PL                ; |881| 
-        MOVL      XAR4,ACC              ; |881| 
-        OR        *+XAR4[0],#0x0008     ; |881| 
-        BF        L145,UNC              ; |881| 
-        ; branch occurs ; |881| 
-DW$L$_RunPath90Make$13$E:
-L144:    
-DW$L$_RunPath90Make$14$B:
-;***	-----------------------g11:
-;*** 875	-----------------------    if ( (cnt&0xfu) == 0xfu ) goto g13;
-	.dwpsn	"algo.c",875,7
-        AND       AL,AR5,#0x000f        ; |875| 
-        CMPB      AL,#15                ; |875| 
-        BF        L145,EQ               ; |875| 
-        ; branchcc occurs ; |875| 
-DW$L$_RunPath90Make$14$E:
-DW$L$_RunPath90Make$15$B:
-;*** 876	-----------------------    K$4[K$19[x]+cnt] |= 4u;
-	.dwpsn	"algo.c",876,8
-        MOVL      XAR4,*-SP[32]
-        MOV       AL,AR5
-        MOV       PL,*+XAR4[AR0]        ; |876| 
-        ADD       PL,AL
-        MOVL      ACC,XAR3              ; |876| 
-        ADDU      ACC,PL                ; |876| 
-        MOVL      XAR4,ACC              ; |876| 
-        OR        *+XAR4[0],#0x0004     ; |876| 
-DW$L$_RunPath90Make$15$E:
-L145:    
-DW$L$_RunPath90Make$16$B:
-;***	-----------------------g13:
-;*** 869	-----------------------    if ( (++x) < 4u ) goto g4;
-	.dwpsn	"algo.c",869,22
-        ADDB      XAR0,#1               ; |869| 
-        MOV       AL,AR0                ; |869| 
-        CMPB      AL,#4                 ; |869| 
-        BF        L141,LO               ; |869| 
-        ; branchcc occurs ; |869| 
-DW$L$_RunPath90Make$16$E:
-DW$L$_RunPath90Make$17$B:
-;*** 869	-----------------------    goto g15;
-        BF        L147,UNC              ; |869| 
-        ; branch occurs ; |869| 
-DW$L$_RunPath90Make$17$E:
-L146:    
-DW$L$_RunPath90Make$18$B:
-;***	-----------------------g14:
-;*** 865	-----------------------    *U$12 |= *U$9&0xfu;
-	.dwpsn	"algo.c",865,4
-        MOVL      XAR4,XAR7
-        MOV       AL,*+XAR4[0]          ; |865| 
-        MOVL      XAR4,XAR6             ; |865| 
-        ANDB      AL,#0x0f              ; |865| 
-        OR        *+XAR4[0],AL          ; |865| 
-DW$L$_RunPath90Make$18$E:
-L147:    
-DW$L$_RunPath90Make$19$B:
-;***	-----------------------g15:
-;*** 862	-----------------------    ++U$9;
-;*** 862	-----------------------    ++U$12;
-;*** 862	-----------------------    if ( (++cnt) < 256u ) goto g2;
-	.dwpsn	"algo.c",862,26
-        MOVL      ACC,XAR7              ; |862| 
-        MOVB      XAR4,#1               ; |862| 
-        ADDB      XAR5,#1               ; |862| 
-        ADDU      ACC,AR4               ; |862| 
-        MOVL      XAR7,ACC              ; |862| 
-        MOVL      ACC,XAR6              ; |862| 
-        ADDU      ACC,AR4               ; |862| 
-        CMP       AR5,#256              ; |862| 
-        MOVL      XAR6,ACC              ; |862| 
-        BF        L140,LO               ; |862| 
-        ; branchcc occurs ; |862| 
-DW$L$_RunPath90Make$19$E:
-;*** 901	-----------------------    gSearchType = 2u;
-;*** 902	-----------------------    gPathWeightState = 1u;
-;*** 904	-----------------------    InitWeight();
-;*** 905	-----------------------    WriteMazeWeight();
-;*** 907	-----------------------    gPathWeightState = 0u;
-;*** 911	-----------------------    K$4 = &gMazeMap[119];
-;*** 835	-----------------------    LowWeight = 4095u;
-;*** 836	-----------------------    GoalPosition = 0u;
-;*** 854	-----------------------    LastPath = 0u;
-;*** 911	-----------------------    if ( !(*K$4&0x8) ) goto g19;
-	.dwpsn	"algo.c",901,2
-        MOVW      DP,#_gSearchType
-        MOV       @_gSearchType,#2      ; |901| 
-	.dwpsn	"algo.c",902,2
-        MOVW      DP,#_gPathWeightState
-        MOV       @_gPathWeightState,#1 ; |902| 
-	.dwpsn	"algo.c",904,2
-        LCR       #_InitWeight          ; |904| 
-        ; call occurs [#_InitWeight] ; |904| 
-	.dwpsn	"algo.c",905,2
-        LCR       #_WriteMazeWeight     ; |905| 
-        ; call occurs [#_WriteMazeWeight] ; |905| 
-	.dwpsn	"algo.c",907,2
-        MOVW      DP,#_gPathWeightState
-        MOV       @_gPathWeightState,#0 ; |907| 
-	.dwpsn	"algo.c",911,2
-        MOVL      XAR4,#_gMazeMap+119   ; |911| 
-	.dwpsn	"algo.c",835,9
-        MOVL      XAR7,#4095            ; |835| 
-	.dwpsn	"algo.c",836,9
-        MOVB      AL,#0
-        MOV       *-SP[24],AL           ; |836| 
-	.dwpsn	"algo.c",854,9
-        MOV       *-SP[25],AL           ; |854| 
-	.dwpsn	"algo.c",911,2
-        TBIT      *+XAR4[0],#3          ; |911| 
-        BF        L148,NTC              ; |911| 
-        ; branchcc occurs ; |911| 
-;*** 911	-----------------------    if ( !(*K$4&4) ) goto g19;
-        TBIT      *+XAR4[0],#2          ; |911| 
-        BF        L148,NTC              ; |911| 
-        ; branchcc occurs ; |911| 
-;*** 910	-----------------------    cnt = 0u;
-;***  	-----------------------    goto g20;
-	.dwpsn	"algo.c",910,2
-        MOVB      XAR0,#0
-        BF        L149,UNC
-        ; branch occurs
-L148:    
-;***	-----------------------g19:
-;*** 912	-----------------------    Goal[0] = 119u;
-;*** 912	-----------------------    cnt = 1u;
-	.dwpsn	"algo.c",912,3
-        MOVB      XAR0,#1               ; |912| 
-        MOV       *-SP[11],#119         ; |912| 
-L149:    
-;***	-----------------------g20:
-;*** 914	-----------------------    K$4 = &gMazeMap[120];
-;*** 914	-----------------------    if ( !(*K$4&0x8) ) goto g22;
-	.dwpsn	"algo.c",914,2
-        MOVL      XAR4,#_gMazeMap+120   ; |914| 
-        TBIT      *+XAR4[0],#3          ; |914| 
-        BF        L150,NTC              ; |914| 
-        ; branchcc occurs ; |914| 
-;*** 914	-----------------------    if ( *K$4&1u ) goto g23;
-        TBIT      *+XAR4[0],#0          ; |914| 
-        BF        L151,TC               ; |914| 
-        ; branchcc occurs ; |914| 
-L150:    
-;***	-----------------------g22:
-;*** 915	-----------------------    Goal[cnt] = 120u;
-;*** 915	-----------------------    ++cnt;
-	.dwpsn	"algo.c",915,3
-        MOVZ      AR4,SP                ; |915| 
-        SUBB      XAR4,#11              ; |915| 
-        MOV       *+XAR4[AR0],#120      ; |915| 
-        ADDB      XAR0,#1               ; |915| 
-L151:    
-;***	-----------------------g23:
-;*** 917	-----------------------    K$4 = &gMazeMap[135];
-;*** 917	-----------------------    if ( !(*K$4&2) ) goto g25;
-	.dwpsn	"algo.c",917,2
-        MOVL      XAR4,#_gMazeMap+135   ; |917| 
-        TBIT      *+XAR4[0],#1          ; |917| 
-        BF        L152,NTC              ; |917| 
-        ; branchcc occurs ; |917| 
-;*** 917	-----------------------    if ( *K$4&4 ) goto g26;
-        TBIT      *+XAR4[0],#2          ; |917| 
-        BF        L153,TC               ; |917| 
-        ; branchcc occurs ; |917| 
-L152:    
-;***	-----------------------g25:
-;*** 918	-----------------------    Goal[cnt] = 135u;
-;*** 918	-----------------------    ++cnt;
-	.dwpsn	"algo.c",918,3
-        MOVZ      AR4,SP                ; |918| 
-        SUBB      XAR4,#11              ; |918| 
-        MOV       *+XAR4[AR0],#135      ; |918| 
-        ADDB      XAR0,#1               ; |918| 
-L153:    
-;***	-----------------------g26:
-;*** 920	-----------------------    K$4 = &gMazeMap[0];
-;*** 920	-----------------------    if ( !(K$4[136]&2) ) goto g28;
-	.dwpsn	"algo.c",920,2
-        MOVL      XAR4,#_gMazeMap       ; |920| 
-        MOVB      XAR1,#136             ; |920| 
-        MOVL      *-SP[34],XAR4         ; |920| 
-        TBIT      *+XAR4[AR1],#1        ; |920| 
-        BF        L154,NTC              ; |920| 
-        ; branchcc occurs ; |920| 
-;*** 920	-----------------------    if ( K$4[136]&1u ) goto g29;
-        MOVL      XAR4,*-SP[34]         ; |920| 
-        TBIT      *+XAR4[AR1],#0        ; |920| 
-        BF        L155,TC               ; |920| 
-        ; branchcc occurs ; |920| 
-L154:    
-;***	-----------------------g28:
-;*** 921	-----------------------    Goal[cnt] = 136u;
-	.dwpsn	"algo.c",921,3
-        MOVZ      AR4,SP                ; |921| 
-        SUBB      XAR4,#11              ; |921| 
-        MOV       *+XAR4[AR0],#136      ; |921| 
-L155:    
-;***	-----------------------g29:
-;***  	-----------------------    K$57 = &gMapValue[0];
-;***  	-----------------------    U$47 = &Goal[0];
-;***  	-----------------------    L$3 = 3;
-        MOVZ      AR5,SP
-        MOVL      XAR4,#_gMapValue
-        MOVB      XAR6,#3
-        MOVL      *-SP[36],XAR4
-        SUBB      XAR5,#11
-L156:    
-DW$L$_RunPath90Make$34$B:
-;***	-----------------------g30:
-;*** 925	-----------------------    C$33 = *U$47++;
-;*** 925	-----------------------    C$34 = (long)C$33*2+(volatile struct _bit *)K$57;
-;*** 925	-----------------------    if ( *C$34 >= LowWeight || C$33 == 0u ) goto g32;
-	.dwpsn	"algo.c",925,3
-        MOVL      XAR4,*-SP[36]         ; |925| 
-        MOV       PL,*XAR5++            ; |925| 
-        MOVU      ACC,PL
-        LSL       ACC,1                 ; |925| 
-        ADDL      XAR4,ACC
-        MOV       AH,AR7
-        CMP       AH,*+XAR4[0]          ; |925| 
-        BF        L157,LOS              ; |925| 
-        ; branchcc occurs ; |925| 
-DW$L$_RunPath90Make$34$E:
-DW$L$_RunPath90Make$35$B:
-        MOV       AL,PL
-        BF        L157,EQ               ; |925| 
-        ; branchcc occurs ; |925| 
-DW$L$_RunPath90Make$35$E:
-DW$L$_RunPath90Make$36$B:
-;*** 927	-----------------------    LowWeight = *C$34;
-;*** 928	-----------------------    GoalPosition = C$33;
-	.dwpsn	"algo.c",927,4
-        MOVZ      AR7,*+XAR4[0]         ; |927| 
-	.dwpsn	"algo.c",928,4
-        MOV       *-SP[24],P            ; |928| 
-DW$L$_RunPath90Make$36$E:
-L157:    
-DW$L$_RunPath90Make$37$B:
-;***	-----------------------g32:
-;*** 923	-----------------------    if ( (--L$3) != (-1) ) goto g30;
-	.dwpsn	"algo.c",923,15
-        BANZ      L156,AR6--            ; |923| 
-        ; branchcc occurs ; |923| 
-DW$L$_RunPath90Make$37$E:
-;*** 932	-----------------------    WeightMin = *((long)GoalPosition*2+(volatile struct _bit *)K$57);
-;*** 933	-----------------------    Position = GoalPosition;
-;*** 935	-----------------------    gPathBufferHead = 0u;
-;*** 938	-----------------------    TxPrintf("\nGoal = %d\n", WeightMin);
-;*** 940	-----------------------    K$71 = &KnowBlockPath[0];
-;*** 940	-----------------------    memset((void *)K$71, 0, 512uL);
-;*** 936	-----------------------    MouseDir = 0u;
-	.dwpsn	"algo.c",932,2
-        MOVL      XAR4,*-SP[36]         ; |932| 
-        MOV       AL,*-SP[24]
-        MOVU      ACC,AL
-        LSL       ACC,1                 ; |932| 
-        ADDL      XAR4,ACC
-        MOV       AL,*+XAR4[0]          ; |932| 
-        MOV       *-SP[26],AL           ; |932| 
-	.dwpsn	"algo.c",933,2
-        MOVZ      AR1,*-SP[24]
-	.dwpsn	"algo.c",935,2
-        MOVW      DP,#_gPathBufferHead
-        MOV       @_gPathBufferHead,#0  ; |935| 
-	.dwpsn	"algo.c",938,5
-        MOVL      XAR4,#FSL12           ; |938| 
-        MOVL      *-SP[2],XAR4          ; |938| 
-        MOV       *-SP[3],AL            ; |938| 
-        LCR       #_TxPrintf            ; |938| 
-        ; call occurs [#_TxPrintf] ; |938| 
-	.dwpsn	"algo.c",940,2
-        MOVL      XAR4,#_KnowBlockPath  ; |940| 
-        MOVL      *-SP[38],XAR4         ; |940| 
-        MOVB      XAR5,#0
-        MOV       ACC,#1 << 9
-        LCR       #_memset              ; |940| 
-        ; call occurs [#_memset] ; |940| 
-	.dwpsn	"algo.c",936,2
-        MOV       PL,#0                 ; |936| 
-L158:    
-DW$L$_RunPath90Make$39$B:
-;***	-----------------------g34:
-;***  	-----------------------    U$73 = &K$4[Position];
-;***  	-----------------------    U$75 = &gHeadTable[0];
-;*** 944	-----------------------    x = 0u;
-;***  	-----------------------    L$4 = 3;
-        MOVL      ACC,*-SP[34]
-        ADDU      ACC,AR1
-        MOVL      XAR0,ACC
-        MOVL      XAR7,#_gHeadTable
-	.dwpsn	"algo.c",944,7
-        MOVB      XAR6,#3
-        MOVB      XAR3,#0
-DW$L$_RunPath90Make$39$E:
-L159:    
-DW$L$_RunPath90Make$40$B:
-;***	-----------------------g35:
-;*** 946	-----------------------    if ( *U$73&*U$75++&0xfu ) goto g38;
-	.dwpsn	"algo.c",946,4
-        MOV       AL,*XAR7++            ; |946| 
-        AND       AL,*+XAR0[0]          ; |946| 
-        ANDB      AL,#0x0f              ; |946| 
-        BF        L160,NEQ              ; |946| 
-        ; branchcc occurs ; |946| 
-DW$L$_RunPath90Make$40$E:
-DW$L$_RunPath90Make$41$B:
-;*** 948	-----------------------    C$32 = &K$19[x];
-;*** 948	-----------------------    S$14 = (volatile struct _bit *)((long)(*C$32+Position)*2+K$57);
-;*** 948	-----------------------    NextWeight = *(volatile unsigned *)S$14;
-;*** 949	-----------------------    if ( NextWeight >= WeightMin ) goto g38;
-	.dwpsn	"algo.c",948,5
-        MOVL      ACC,*-SP[32]
-        ADDU      ACC,AR3               ; |948| 
-        MOVL      XAR4,ACC              ; |948| 
-        MOVL      XAR5,*-SP[36]         ; |948| 
-        MOV       AL,*+XAR4[0]          ; |948| 
-        ADD       AL,AR1                ; |948| 
-        MOVU      ACC,AL
-        LSL       ACC,1                 ; |948| 
-        ADDL      XAR5,ACC
-        MOV       AH,*+XAR5[0]          ; |948| 
-	.dwpsn	"algo.c",949,5
-        MOV       AL,*-SP[26]
-        CMP       AL,AH                 ; |949| 
-        BF        L160,LOS              ; |949| 
-        ; branchcc occurs ; |949| 
-DW$L$_RunPath90Make$41$E:
-DW$L$_RunPath90Make$42$B:
-;*** 951	-----------------------    WeightMin = NextWeight;
-;*** 952	-----------------------    NextPos = *C$32+Position;
-;*** 953	-----------------------    AbsoluteDir = x;
-;*** 954	-----------------------    NextTurn = AbsoluteDir-MouseDir&3u;
-	.dwpsn	"algo.c",951,6
-        MOV       *-SP[26],AH           ; |951| 
-	.dwpsn	"algo.c",952,6
-        MOV       AL,*+XAR4[0]          ; |952| 
-        ADD       AL,AR1                ; |952| 
-        MOV       *-SP[27],AL           ; |952| 
-	.dwpsn	"algo.c",953,6
-        MOVZ      AR2,AR3               ; |953| 
-	.dwpsn	"algo.c",954,6
-        MOV       AL,AR2                ; |954| 
-        SUB       AL,PL                 ; |954| 
-        ANDB      AL,#0x03              ; |954| 
-        MOV       *-SP[28],AL           ; |954| 
-DW$L$_RunPath90Make$42$E:
-L160:    
-DW$L$_RunPath90Make$43$B:
-;***	-----------------------g38:
-;*** 944	-----------------------    ++x;
-;*** 944	-----------------------    if ( (--L$4) != (-1) ) goto g35;
-	.dwpsn	"algo.c",944,21
-        ADDB      XAR3,#1               ; |944| 
-	.dwpsn	"algo.c",944,14
-        BANZ      L159,AR6--            ; |944| 
-        ; branchcc occurs ; |944| 
-DW$L$_RunPath90Make$43$E:
-DW$L$_RunPath90Make$44$B:
-;*** 960	-----------------------    S$13 = &K$71[(long)gPathBufferHead];
-;*** 960	-----------------------    *(volatile unsigned *)S$13 = *(volatile unsigned *)S$13&0xff00u|Position&0xffu;
-;*** 961	-----------------------    Position = NextPos;
-;*** 962	-----------------------    MouseDir = AbsoluteDir;
-;*** 963	-----------------------    ++gPathBufferHead;
-;*** 965	-----------------------    if ( P$15 = gPathBufferHead > 255u ) goto g122;
-	.dwpsn	"algo.c",960,3
-        MOVL      XAR4,*-SP[38]         ; |960| 
-        MOVW      DP,#_gPathBufferHead
-        MOVU      ACC,@_gPathBufferHead
-        LSL       ACC,1                 ; |960| 
-        ADDL      XAR4,ACC
-        MOV       AL,AR1                ; |960| 
-        MOV       AH,*+XAR4[0]          ; |960| 
-        MOVB      AH,AL.LSB             ; |960| 
-        MOV       *+XAR4[0],AH          ; |960| 
-	.dwpsn	"algo.c",961,3
-        MOVZ      AR1,*-SP[27]
-	.dwpsn	"algo.c",962,3
-        MOV       PL,AR2                ; |962| 
-	.dwpsn	"algo.c",963,3
-        INC       @_gPathBufferHead     ; |963| 
-	.dwpsn	"algo.c",965,3
-        MOVB      AL,#0
-        MOV       AH,@_gPathBufferHead  ; |965| 
-        CMPB      AH,#255               ; |965| 
-        BF        L161,LOS              ; |965| 
-        ; branchcc occurs ; |965| 
-DW$L$_RunPath90Make$44$E:
-DW$L$_RunPath90Make$45$B:
-        MOVB      AL,#1                 ; |965| 
-DW$L$_RunPath90Make$45$E:
-L161:    
-DW$L$_RunPath90Make$46$B:
-        CMPB      AL,#0                 ; |965| 
-        BF        L207,NEQ              ; |965| 
-        ; branchcc occurs ; |965| 
-DW$L$_RunPath90Make$46$E:
-DW$L$_RunPath90Make$47$B:
-;*** 975	-----------------------    if ( Position ) goto g34;
-	.dwpsn	"algo.c",975,3
-        MOV       AL,AR1
-        BF        L158,NEQ              ; |975| 
-        ; branchcc occurs ; |975| 
-DW$L$_RunPath90Make$47$E:
-;*** 977	-----------------------    S$12 = &K$71[(long)gPathBufferHead];
-;*** 977	-----------------------    ++gPathBufferHead;
-;*** 977	-----------------------    *(volatile unsigned *)S$12 &= 0xff00u;
-;*** 978	-----------------------    cnt = 0u;
-;***  	-----------------------    L$5 = 255;
-	.dwpsn	"algo.c",977,4
-        MOVL      XAR4,*-SP[38]         ; |977| 
-        MOVU      ACC,@_gPathBufferHead
-        LSL       ACC,1                 ; |977| 
-        ADDL      XAR4,ACC
-        INC       @_gPathBufferHead     ; |977| 
-        AND       *+XAR4[0],#0xff00     ; |977| 
-	.dwpsn	"algo.c",978,4
-        MOVB      XAR5,#0
-        MOVB      XAR6,#255
-L162:    
-DW$L$_RunPath90Make$49$B:
-;***	-----------------------g42:
-;*** 984	-----------------------    *((long)cnt*2+(volatile struct _bit *)K$57) |= 0xffffu;
-;*** 983	-----------------------    ++cnt;
-;*** 983	-----------------------    if ( (--L$5) != (-1) ) goto g42;
-	.dwpsn	"algo.c",984,3
-        MOVL      XAR4,*-SP[36]         ; |984| 
-        MOVU      ACC,AR5
-        LSL       ACC,1                 ; |984| 
-        ADDL      XAR4,ACC
-        OR        *+XAR4[0],#0xffff     ; |984| 
-	.dwpsn	"algo.c",983,26
-        ADDB      XAR5,#1               ; |983| 
-	.dwpsn	"algo.c",983,15
-        BANZ      L162,AR6--            ; |983| 
-        ; branchcc occurs ; |983| 
-DW$L$_RunPath90Make$49$E:
-;*** 986	-----------------------    if ( !gPathBufferHead ) goto g46;
-	.dwpsn	"algo.c",986,15
-        MOVW      DP,#_gPathBufferHead
-        MOV       AL,@_gPathBufferHead  ; |986| 
-        BF        L164,EQ               ; |986| 
-        ; branchcc occurs ; |986| 
-;*** 986	-----------------------    cnt = 0u;
-	.dwpsn	"algo.c",986,6
-        MOVB      XAR5,#0
-L163:    
-DW$L$_RunPath90Make$52$B:
-;***	-----------------------g45:
-;*** 988	-----------------------    S$11 = &K$71[(long)(gPathBufferHead-cnt-1u)];
-;*** 988	-----------------------    S$10 = (volatile struct _bit *)((long)(*(volatile unsigned *)S$11&0xffu)*2+K$57);
-;*** 988	-----------------------    *(volatile unsigned *)S$10;
-;*** 988	-----------------------    *(volatile unsigned *)S$10 = 4095u-cnt;
-;*** 986	-----------------------    if ( gPathBufferHead > (++cnt) ) goto g45;
-	.dwpsn	"algo.c",988,3
-        MOV       AL,@_gPathBufferHead  ; |988| 
-        SUB       AL,AR5                ; |988| 
-        MOVL      XAR4,*-SP[38]         ; |988| 
-        ADDB      AL,#-1
-        MOVU      ACC,AL
-        LSL       ACC,1                 ; |988| 
-        ADDL      XAR4,ACC
-        MOV       AL,*+XAR4[0]          ; |988| 
-        MOVL      XAR4,*-SP[36]         ; |988| 
-        ANDB      AL,#0xff              ; |988| 
-        MOVU      ACC,AL
-        LSL       ACC,1                 ; |988| 
-        ADDL      XAR4,ACC
-        MOV       AL,*+XAR4[0]          ; |988| 
-        MOV       AL,#4095              ; |988| 
-        SUB       AL,AR5                ; |988| 
-        MOV       *+XAR4[0],AL          ; |988| 
-	.dwpsn	"algo.c",986,15
-        ADDB      XAR5,#1               ; |986| 
-        MOV       AL,AR5                ; |986| 
-        CMP       AL,@_gPathBufferHead  ; |986| 
-        BF        L163,LO               ; |986| 
-        ; branchcc occurs ; |986| 
-DW$L$_RunPath90Make$52$E:
-L164:    
-;***	-----------------------g46:
-;*** 992	-----------------------    gPathBufferHead = 0u;
-;*** 995	-----------------------    memset((void *)K$71, 0, 512uL);
-;*** 991	-----------------------    WeightMin = 4095u;
-;*** 993	-----------------------    Position = 0u;
-;*** 994	-----------------------    MouseDir = 0u;
-	.dwpsn	"algo.c",992,2
-        MOV       @_gPathBufferHead,#0  ; |992| 
-	.dwpsn	"algo.c",995,2
-        MOVL      XAR4,*-SP[38]
-        MOV       ACC,#1 << 9
-        MOVB      XAR5,#0
-        LCR       #_memset              ; |995| 
-        ; call occurs [#_memset] ; |995| 
-	.dwpsn	"algo.c",991,2
-        MOV       PH,#4095              ; |991| 
-	.dwpsn	"algo.c",993,2
-        MOV       PL,#0                 ; |993| 
-	.dwpsn	"algo.c",994,2
-        MOVB      XAR0,#0
-L165:    
-DW$L$_RunPath90Make$54$B:
-;***	-----------------------g47:
-;***  	-----------------------    U$73 = &K$4[Position];
-;***  	-----------------------    U$75 = &gHeadTable[0];
-;*** 999	-----------------------    x = 0u;
-;***  	-----------------------    L$6 = 3;
-        MOVL      ACC,*-SP[34]
-        ADDU      ACC,PL
-        MOVL      XAR1,ACC
-        MOVL      XAR7,#_gHeadTable
-	.dwpsn	"algo.c",999,7
-        MOVB      XAR6,#3
-        MOVB      XAR3,#0
-DW$L$_RunPath90Make$54$E:
-L166:    
-DW$L$_RunPath90Make$55$B:
-;***	-----------------------g48:
-;** 1001	-----------------------    if ( *U$73&*U$75++&0xfu ) goto g51;
-	.dwpsn	"algo.c",1001,4
-        MOV       AL,*XAR7++            ; |1001| 
-        AND       AL,*+XAR1[0]          ; |1001| 
-        ANDB      AL,#0x0f              ; |1001| 
-        BF        L167,NEQ              ; |1001| 
-        ; branchcc occurs ; |1001| 
-DW$L$_RunPath90Make$55$E:
-DW$L$_RunPath90Make$56$B:
-;** 1003	-----------------------    C$31 = &K$19[x];
-;** 1003	-----------------------    S$9 = (volatile struct _bit *)((long)(*C$31+Position)*2+K$57);
-;** 1003	-----------------------    NextWeight = *(volatile unsigned *)S$9;
-;** 1004	-----------------------    if ( NextWeight >= WeightMin ) goto g51;
-	.dwpsn	"algo.c",1003,5
-        MOVL      ACC,*-SP[32]
-        ADDU      ACC,AR3               ; |1003| 
-        MOVL      XAR4,ACC              ; |1003| 
-        MOVL      XAR5,*-SP[36]         ; |1003| 
-        MOV       AL,*+XAR4[0]          ; |1003| 
-        ADD       AL,PL                 ; |1003| 
-        MOVU      ACC,AL
-        LSL       ACC,1                 ; |1003| 
-        ADDL      XAR5,ACC
-        MOV       AH,*+XAR5[0]          ; |1003| 
-	.dwpsn	"algo.c",1004,5
-        MOV       AL,PH
-        CMP       AL,AH                 ; |1004| 
-        BF        L167,LOS              ; |1004| 
-        ; branchcc occurs ; |1004| 
-DW$L$_RunPath90Make$56$E:
-DW$L$_RunPath90Make$57$B:
-;** 1006	-----------------------    WeightMin = NextWeight;
-;** 1007	-----------------------    NextPos = *C$31+Position;
-;** 1008	-----------------------    AbsoluteDir = x;
-;** 1009	-----------------------    NextTurn = AbsoluteDir-MouseDir&3u;
-	.dwpsn	"algo.c",1006,6
-        MOV       PH,AH                 ; |1006| 
-	.dwpsn	"algo.c",1007,6
-        MOV       AL,*+XAR4[0]          ; |1007| 
-        ADD       AL,PL                 ; |1007| 
-        MOV       *-SP[27],AL           ; |1007| 
-	.dwpsn	"algo.c",1008,6
-        MOVZ      AR2,AR3               ; |1008| 
-	.dwpsn	"algo.c",1009,6
-        MOV       AL,AR2                ; |1009| 
-        SUB       AL,AR0                ; |1009| 
-        ANDB      AL,#0x03              ; |1009| 
-        MOV       *-SP[28],AL           ; |1009| 
-DW$L$_RunPath90Make$57$E:
-L167:    
-DW$L$_RunPath90Make$58$B:
-;***	-----------------------g51:
-;*** 999	-----------------------    ++x;
-;*** 999	-----------------------    if ( (--L$6) != (-1) ) goto g48;
-	.dwpsn	"algo.c",999,21
-        ADDB      XAR3,#1               ; |999| 
-	.dwpsn	"algo.c",999,14
-        BANZ      L166,AR6--            ; |999| 
-        ; branchcc occurs ; |999| 
-DW$L$_RunPath90Make$58$E:
-DW$L$_RunPath90Make$59$B:
-;** 1015	-----------------------    S$8 = &K$71[(long)gPathBufferHead];
-;** 1015	-----------------------    *(volatile unsigned *)S$8 = *(volatile unsigned *)S$8&0xff00u|Position&0xffu;
-;** 1016	-----------------------    Position = NextPos;
-;** 1017	-----------------------    S$7 = &K$71[(long)gPathBufferHead];
-;** 1017	-----------------------    *(volatile unsigned *)S$7 = *(volatile unsigned *)S$7&0xfffu|MouseDir<<12;
-;** 1018	-----------------------    MouseDir = AbsoluteDir;
-;** 1019	-----------------------    S$6 = &K$71[(long)gPathBufferHead];
-;** 1019	-----------------------    *(volatile unsigned *)S$6 = *(volatile unsigned *)S$6&0xf0ffu|(NextTurn&0xfu)<<8;
-;** 1020	-----------------------    ++gPathBufferHead;
-;** 1023	-----------------------    if ( P$16 = gPathBufferHead > 255u ) goto g120;
-	.dwpsn	"algo.c",1015,3
-        MOVL      XAR4,*-SP[38]         ; |1015| 
-        MOVW      DP,#_gPathBufferHead
-        MOVU      ACC,@_gPathBufferHead
-        LSL       ACC,1                 ; |1015| 
-        ADDL      XAR4,ACC
-        MOV       AL,PL                 ; |1015| 
-        MOV       AH,*+XAR4[0]          ; |1015| 
-        MOVB      AH,AL.LSB             ; |1015| 
-        MOV       *+XAR4[0],AH          ; |1015| 
-	.dwpsn	"algo.c",1016,3
-        MOV       PL,*-SP[27]
-	.dwpsn	"algo.c",1017,3
-        MOVL      XAR4,*-SP[38]         ; |1017| 
-        MOVU      ACC,@_gPathBufferHead
-        LSL       ACC,1                 ; |1017| 
-        ADDL      XAR4,ACC
-        AND       AL,*+XAR4[0],#0x0fff  ; |1017| 
-        MOVZ      AR6,AL                ; |1017| 
-        MOV       ACC,AR0 << #12        ; |1017| 
-        OR        AL,AR6                ; |1017| 
-        MOV       *+XAR4[0],AL          ; |1017| 
-	.dwpsn	"algo.c",1018,3
-        MOVZ      AR0,AR2               ; |1018| 
-	.dwpsn	"algo.c",1019,3
-        MOVL      XAR4,*-SP[38]         ; |1019| 
-        MOVU      ACC,@_gPathBufferHead
-        LSL       ACC,1                 ; |1019| 
-        ADDL      XAR4,ACC
-        MOV       AL,*-SP[28]           ; |1019| 
-        ANDB      AL,#15                ; |1019| 
-        LSL       AL,8                  ; |1019| 
-        AND       AH,*+XAR4[0],#0xf0ff  ; |1019| 
-        OR        AL,AH                 ; |1019| 
-        MOV       *+XAR4[0],AL          ; |1019| 
-	.dwpsn	"algo.c",1020,3
-        INC       @_gPathBufferHead     ; |1020| 
-	.dwpsn	"algo.c",1023,3
-        MOVB      AL,#0
-        MOV       AH,@_gPathBufferHead  ; |1023| 
-        CMPB      AH,#255               ; |1023| 
-        BF        L168,LOS              ; |1023| 
-        ; branchcc occurs ; |1023| 
-DW$L$_RunPath90Make$59$E:
-DW$L$_RunPath90Make$60$B:
-        MOVB      AL,#1                 ; |1023| 
-DW$L$_RunPath90Make$60$E:
-L168:    
-DW$L$_RunPath90Make$61$B:
-        CMPB      AL,#0                 ; |1023| 
-        BF        L205,NEQ              ; |1023| 
-        ; branchcc occurs ; |1023| 
-DW$L$_RunPath90Make$61$E:
-DW$L$_RunPath90Make$62$B:
-;** 1033	-----------------------    if ( Position != GoalPosition ) goto g47;
-	.dwpsn	"algo.c",1033,3
-        MOV       AL,*-SP[24]
-        CMP       AL,PL                 ; |1033| 
-        BF        L165,NEQ              ; |1033| 
-        ; branchcc occurs ; |1033| 
-DW$L$_RunPath90Make$62$E:
-;** 1035	-----------------------    S$5 = &K$71[(long)gPathBufferHead];
-;** 1035	-----------------------    *(volatile unsigned *)S$5 = *(volatile unsigned *)S$5&0xff00u|GoalPosition&0xffu;
-;** 1036	-----------------------    S$4 = &K$71[(long)gPathBufferHead];
-;** 1036	-----------------------    *(volatile unsigned *)S$4 = *(volatile unsigned *)S$4&0xfffu|MouseDir<<12;
-;** 1037	-----------------------    S$3 = &K$71[(long)gPathBufferHead];
-;** 1037	-----------------------    ++gPathBufferHead;
-;** 1037	-----------------------    *(volatile unsigned *)S$3 &= 0xf0ffu;
-;** 1038	-----------------------    gMouseDir = MouseDir;
-;** 1044	-----------------------    gMousePosition = K$19[MouseDir]+GoalPosition;
-;** 1046	-----------------------    TxPrintf("%x %x\n", gMouseDir, gMousePosition);
-;** 1048	-----------------------    gMouseHead = 0;
-;** 1051	-----------------------    gTurnState = 2;
-;** 1049	-----------------------    x = 0u;
-;** 1050	-----------------------    cnt = 0u;
-;***  	-----------------------    if ( gPathBufferHead <= 3u ) goto g105;
-	.dwpsn	"algo.c",1035,4
-        MOVL      XAR4,*-SP[38]         ; |1035| 
-        MOVU      ACC,@_gPathBufferHead
-        LSL       ACC,1                 ; |1035| 
-        ADDL      XAR4,ACC
-        MOV       AL,*-SP[24]           ; |1035| 
-        MOV       AH,*+XAR4[0]          ; |1035| 
-        MOVB      AH,AL.LSB             ; |1035| 
-        MOV       *+XAR4[0],AH          ; |1035| 
-	.dwpsn	"algo.c",1036,4
-        MOVL      XAR4,*-SP[38]         ; |1036| 
-        MOVU      ACC,@_gPathBufferHead
-        LSL       ACC,1                 ; |1036| 
-        ADDL      XAR4,ACC
-        AND       AL,*+XAR4[0],#0x0fff  ; |1036| 
-        MOVZ      AR6,AL                ; |1036| 
-        MOV       ACC,AR0 << #12        ; |1036| 
-        OR        AL,AR6                ; |1036| 
-        MOV       *+XAR4[0],AL          ; |1036| 
-	.dwpsn	"algo.c",1037,4
-        MOVL      XAR4,*-SP[38]         ; |1037| 
-        MOVU      ACC,@_gPathBufferHead
-        LSL       ACC,1                 ; |1037| 
-        ADDL      XAR4,ACC
-        INC       @_gPathBufferHead     ; |1037| 
-        AND       *+XAR4[0],#0xf0ff     ; |1037| 
-	.dwpsn	"algo.c",1038,4
-        MOVW      DP,#_gMouseDir
-        MOV       @_gMouseDir,AR0       ; |1038| 
-	.dwpsn	"algo.c",1044,2
-        MOVL      XAR4,*-SP[32]
-        MOV       AL,*+XAR4[AR0]        ; |1044| 
-        MOVW      DP,#_gMousePosition
-        ADD       AL,*-SP[24]           ; |1044| 
-        MOV       @_gMousePosition,AL   ; |1044| 
-	.dwpsn	"algo.c",1046,2
-        MOVW      DP,#_gMouseDir
-        MOVL      XAR4,#FSL7            ; |1046| 
-        MOV       AL,@_gMouseDir        ; |1046| 
-        MOVL      *-SP[2],XAR4          ; |1046| 
-        MOVW      DP,#_gMousePosition
-        MOV       *-SP[3],AL            ; |1046| 
-        MOV       AL,@_gMousePosition   ; |1046| 
-        MOV       *-SP[4],AL            ; |1046| 
-        LCR       #_TxPrintf            ; |1046| 
-        ; call occurs [#_TxPrintf] ; |1046| 
-	.dwpsn	"algo.c",1048,2
-        MOVW      DP,#_gMouseHead
-        MOV       @_gMouseHead,#0       ; |1048| 
-	.dwpsn	"algo.c",1051,2
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#2       ; |1051| 
-	.dwpsn	"algo.c",1049,2
-        MOVB      XAR0,#0
-	.dwpsn	"algo.c",1050,2
-        MOVW      DP,#_gPathBufferHead
-        MOV       AL,@_gPathBufferHead
-        CMPB      AL,#3
-        MOVB      XAR1,#0
-        BF        L194,LOS
-        ; branchcc occurs
-;***  	-----------------------    U$138 = (volatile unsigned *)K$71;
-;***  	-----------------------    U$186 = U$138;
-;***  	-----------------------    U$117 = 3u;
-        MOVL      XAR7,*-SP[38]
-        MOVB      AL,#3
-        MOV       PH,AL
-        MOVL      XT,XAR7
-L169:    
-;***	-----------------------g56:
-;** 1057	-----------------------    C$30 = &((volatile unsigned *)K$71)[2*(long)U$117];
-;** 1057	-----------------------    i[3] = *C$30>>8&0xfu;
-;** 1058	-----------------------    C$29 = &((volatile unsigned *)K$71)[2*(long)(x+2u)];
-;** 1058	-----------------------    i[2] = *C$29>>8&0xfu;
-;** 1059	-----------------------    C$28 = &((volatile unsigned *)K$71)[2*(long)(x+1u)];
-;** 1059	-----------------------    i[1] = *C$28>>8&0xfu;
-;** 1060	-----------------------    i[0] = *U$138>>8&0xfu;
-;** 1062	-----------------------    DiagPos[3] = *C$30&0xffu;
-;** 1063	-----------------------    DiagPos[2] = *C$29&0xffu;
-;** 1064	-----------------------    DiagPos[1] = *C$28&0xffu;
-;** 1065	-----------------------    DiagPos[0] = *U$138&0xffu;
-;** 1067	-----------------------    DiagDir[3] = *C$30>>12;
-;** 1068	-----------------------    DiagDir[2] = *C$29>>12;
-;** 1069	-----------------------    DiagDir[1] = *C$28>>12;
-;** 1070	-----------------------    DiagDir[0] = *U$138>>12;
-	.dwpsn	"algo.c",1057,4
-        MOVL      XAR4,*-SP[38]         ; |1057| 
-        MOVU      ACC,PH
-        LSL       ACC,1                 ; |1057| 
-        ADDL      XAR4,ACC
-        AND       AL,*+XAR4[0],#0x0f00  ; |1057| 
-        LSR       AL,8                  ; |1057| 
-        MOV       *-SP[12],AL           ; |1057| 
-	.dwpsn	"algo.c",1058,4
-        MOVB      AL,#2                 ; |1058| 
-        MOVL      XAR5,*-SP[38]         ; |1058| 
-        ADD       AL,AR0                ; |1058| 
-        MOVU      ACC,AL
-        LSL       ACC,1                 ; |1058| 
-        ADDL      XAR5,ACC
-        AND       AL,*+XAR5[0],#0x0f00  ; |1058| 
-        LSR       AL,8                  ; |1058| 
-        MOV       *-SP[13],AL           ; |1058| 
-	.dwpsn	"algo.c",1059,4
-        MOVB      AL,#1                 ; |1059| 
-        MOVL      XAR6,*-SP[38]         ; |1059| 
-        ADD       AL,AR0                ; |1059| 
-        MOVU      ACC,AL
-        LSL       ACC,1                 ; |1059| 
-        ADDL      XAR6,ACC
-        AND       AL,*+XAR6[0],#0x0f00  ; |1059| 
-        LSR       AL,8                  ; |1059| 
-        MOV       *-SP[14],AL           ; |1059| 
-	.dwpsn	"algo.c",1060,4
-        AND       AL,*+XAR7[0],#0x0f00  ; |1060| 
-        LSR       AL,8                  ; |1060| 
-        MOV       *-SP[15],AL           ; |1060| 
-	.dwpsn	"algo.c",1062,4
-        MOV       AL,*+XAR4[0]          ; |1062| 
-        ANDB      AL,#0xff              ; |1062| 
-        MOV       *-SP[16],AL           ; |1062| 
-	.dwpsn	"algo.c",1063,4
-        MOV       AL,*+XAR5[0]          ; |1063| 
-        ANDB      AL,#0xff              ; |1063| 
-        MOV       *-SP[17],AL           ; |1063| 
-	.dwpsn	"algo.c",1064,4
-        MOV       AL,*+XAR6[0]          ; |1064| 
-        ANDB      AL,#0xff              ; |1064| 
-        MOV       *-SP[18],AL           ; |1064| 
-	.dwpsn	"algo.c",1065,4
-        MOV       AL,*+XAR7[0]          ; |1065| 
-        ANDB      AL,#0xff              ; |1065| 
-        MOV       *-SP[19],AL           ; |1065| 
-	.dwpsn	"algo.c",1067,4
-        MOV       AL,*+XAR4[0]          ; |1067| 
-        LSR       AL,12                 ; |1067| 
-        MOV       *-SP[20],AL           ; |1067| 
-	.dwpsn	"algo.c",1068,4
-        MOV       AL,*+XAR5[0]          ; |1068| 
-        LSR       AL,12                 ; |1068| 
-        MOV       *-SP[21],AL           ; |1068| 
-	.dwpsn	"algo.c",1069,4
-        MOV       AL,*+XAR6[0]          ; |1069| 
-        LSR       AL,12                 ; |1069| 
-        MOV       *-SP[22],AL           ; |1069| 
-	.dwpsn	"algo.c",1070,4
-        MOVL      XAR4,XAR7
-        MOV       AL,*+XAR4[0]          ; |1070| 
-        LSR       AL,12                 ; |1070| 
-        MOV       *-SP[23],AL           ; |1070| 
-L170:    
-;***	-----------------------g57:
-;** 1126	-----------------------    YetTurnState = gTurnState;
-;** 1127	-----------------------    YetMouseHead = gMouseHead;
-;** 1129	-----------------------    if ( *&gMouseHead ) goto g80;
-	.dwpsn	"algo.c",1126,3
-        MOVW      DP,#_gTurnState
-        MOVZ      AR5,@_gTurnState      ; |1126| 
-	.dwpsn	"algo.c",1127,3
-        MOVW      DP,#_gMouseHead
-        MOVZ      AR6,@_gMouseHead      ; |1127| 
-	.dwpsn	"algo.c",1129,3
-        MOV       AL,@_gMouseHead       ; |1129| 
-        BF        L181,NEQ              ; |1129| 
-        ; branchcc occurs ; |1129| 
-;** 1131	-----------------------    if ( i[0]|LastPath ) goto g77;
-	.dwpsn	"algo.c",1131,4
-        MOV       AL,*-SP[15]           ; |1131| 
-        OR        AL,*-SP[25]           ; |1131| 
-        BF        L179,NEQ              ; |1131| 
-        ; branchcc occurs ; |1131| 
-;** 1133	-----------------------    if ( i[1] == 1u ) goto g71;
-	.dwpsn	"algo.c",1133,5
-        MOV       AL,*-SP[14]           ; |1133| 
-        CMPB      AL,#1                 ; |1133| 
-        BF        L176,EQ               ; |1133| 
-        ; branchcc occurs ; |1133| 
-;** 1139	-----------------------    if ( i[1] == 3u ) goto g70;
-	.dwpsn	"algo.c",1139,10
-        CMPB      AL,#3                 ; |1139| 
-        BF        L175,EQ               ; |1139| 
-        ; branchcc occurs ; |1139| 
-;** 1147	-----------------------    if ( i[1] ) goto g67;
-	.dwpsn	"algo.c",1147,10
-        CMPB      AL,#0                 ; |1147| 
-        BF        L173,NEQ              ; |1147| 
-        ; branchcc occurs ; |1147| 
-;** 1149	-----------------------    gMouseHead = 0;
-;** 1150	-----------------------    gTurnState = 0;
-;** 1152	-----------------------    if ( i[2] ) goto g66;
-	.dwpsn	"algo.c",1149,6
-        MOV       @_gMouseHead,#0       ; |1149| 
-	.dwpsn	"algo.c",1150,6
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#0       ; |1150| 
-	.dwpsn	"algo.c",1152,6
-        MOV       AL,*-SP[13]           ; |1152| 
-        BF        L172,NEQ              ; |1152| 
-        ; branchcc occurs ; |1152| 
-;** 1154	-----------------------    if ( i[3] ) goto g65;
-	.dwpsn	"algo.c",1154,7
-        MOV       AL,*-SP[12]           ; |1154| 
-        BF        L171,NEQ              ; |1154| 
-        ; branchcc occurs ; |1154| 
-;** 1156	-----------------------    U$138 += 6;
-;** 1156	-----------------------    x += 3u;
-;** 1157	-----------------------    BlockCnt = 3u;
-;** 1158	-----------------------    goto g72;
-	.dwpsn	"algo.c",1156,8
-        MOVL      ACC,XAR7              ; |1156| 
-        MOVB      XAR4,#6               ; |1156| 
-        ADDU      ACC,AR4               ; |1156| 
-        MOVL      XAR7,ACC              ; |1156| 
-        ADDB      XAR0,#3               ; |1156| 
-	.dwpsn	"algo.c",1157,8
-        MOVB      AL,#3                 ; |1157| 
-        MOV       PL,AL                 ; |1157| 
-	.dwpsn	"algo.c",1158,7
-        BF        L177,UNC              ; |1158| 
-        ; branch occurs ; |1158| 
-L171:    
-;***	-----------------------g65:
-;** 1161	-----------------------    U$138 += 4;
-;** 1161	-----------------------    x += 2u;
-;** 1162	-----------------------    BlockCnt = 2u;
-;** 1162	-----------------------    goto g72;
-	.dwpsn	"algo.c",1161,8
-        MOVL      ACC,XAR7              ; |1161| 
-        MOVB      XAR4,#4               ; |1161| 
-        ADDU      ACC,AR4               ; |1161| 
-        MOVL      XAR7,ACC              ; |1161| 
-        ADDB      XAR0,#2               ; |1161| 
-	.dwpsn	"algo.c",1162,8
-        MOVB      AL,#2                 ; |1162| 
-        MOV       PL,AL                 ; |1162| 
-        BF        L177,UNC              ; |1162| 
-        ; branch occurs ; |1162| 
-L172:    
-;***	-----------------------g66:
-;** 1168	-----------------------    U$138 += 2;
-;** 1168	-----------------------    ++x;
-;** 1169	-----------------------    BlockCnt = 1u;
-;** 1169	-----------------------    goto g72;
-	.dwpsn	"algo.c",1168,7
-        MOVL      ACC,XAR7              ; |1168| 
-        MOVB      XAR4,#2               ; |1168| 
-        ADDU      ACC,AR4               ; |1168| 
-        MOVL      XAR7,ACC              ; |1168| 
-        ADDB      XAR0,#1               ; |1168| 
-	.dwpsn	"algo.c",1169,7
-        MOVB      AL,#1                 ; |1169| 
-        MOV       PL,AL                 ; |1169| 
-        BF        L177,UNC              ; |1169| 
-        ; branch occurs ; |1169| 
-L173:    
-;***	-----------------------g67:
-;** 1178	-----------------------    gMouseHead = 0;
-;** 1179	-----------------------    gTurnState = 0;
-;** 1180	-----------------------    U$138 += 2;
-;** 1180	-----------------------    ++x;
-;** 1181	-----------------------    BlockCnt = 1u;
-;** 1182	-----------------------    if ( YetTurnState ) goto g69;
-	.dwpsn	"algo.c",1178,6
-        MOV       @_gMouseHead,#0       ; |1178| 
-	.dwpsn	"algo.c",1179,6
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#0       ; |1179| 
-	.dwpsn	"algo.c",1180,6
-        MOVL      ACC,XAR7              ; |1180| 
-        MOVB      XAR4,#2               ; |1180| 
-        ADDU      ACC,AR4               ; |1180| 
-        MOVL      XAR7,ACC              ; |1180| 
-        ADDB      XAR0,#1               ; |1180| 
-	.dwpsn	"algo.c",1181,6
-        MOVB      AL,#1                 ; |1181| 
-        MOV       PL,AL                 ; |1181| 
-	.dwpsn	"algo.c",1182,6
-        MOV       AL,AR5
-        BF        L174,NEQ              ; |1182| 
-        ; branchcc occurs ; |1182| 
-;** 1184	-----------------------    C$27 = &((volatile unsigned *)K$71)[2*(long)(cnt-1u)];
-;** 1184	-----------------------    *C$27 = *C$27&0xff00u|DiagPos[0]&0xffu;
-;** 1185	-----------------------    *C$27 = *C$27&0xfffu|DiagDir[0]<<12;
-;** 1187	-----------------------    goto g72;
-	.dwpsn	"algo.c",1184,7
-        MOV       AL,AR1                ; |1184| 
-        MOVL      XAR4,*-SP[38]         ; |1184| 
-        ADDB      AL,#-1
-        MOVU      ACC,AL
-        LSL       ACC,1                 ; |1184| 
-        ADDL      XAR4,ACC
-        MOV       AL,*-SP[19]           ; |1184| 
-        MOV       AH,*+XAR4[0]          ; |1184| 
-        MOVB      AH,AL.LSB             ; |1184| 
-        MOV       *+XAR4[0],AH          ; |1184| 
-	.dwpsn	"algo.c",1185,7
-        AND       AL,*+XAR4[0],#0x0fff  ; |1185| 
-        MOV       PH,AL                 ; |1185| 
-        MOV       ACC,*-SP[23] << #12   ; |1185| 
-        OR        AL,PH                 ; |1185| 
-        MOV       *+XAR4[0],AL          ; |1185| 
-	.dwpsn	"algo.c",1187,6
-        BF        L177,UNC              ; |1187| 
-        ; branch occurs ; |1187| 
-L174:    
-;***	-----------------------g69:
-;** 1190	-----------------------    *U$186 = *U$186&0xff00u|DiagPos[0]&0xffu;
-;** 1191	-----------------------    *U$186 = *U$186&0xfffu|DiagDir[0]<<12;
-;** 1191	-----------------------    goto g72;
-	.dwpsn	"algo.c",1190,7
-        MOVL      XAR4,XT               ; |1190| 
-        MOV       AH,*+XAR4[0]          ; |1190| 
-        MOVL      XAR4,XT               ; |1190| 
-        MOV       AL,*-SP[19]           ; |1190| 
-        MOVB      AH,AL.LSB             ; |1190| 
-        MOV       *+XAR4[0],AH          ; |1190| 
-	.dwpsn	"algo.c",1191,7
-        MOVL      XAR4,XT
-        AND       AL,*+XAR4[0],#0x0fff  ; |1191| 
-        MOVL      XAR4,XT               ; |1191| 
-        MOV       PH,AL                 ; |1191| 
-        MOV       ACC,*-SP[23] << #12   ; |1191| 
-        OR        AL,PH                 ; |1191| 
-        MOV       *+XAR4[0],AL          ; |1191| 
-        BF        L177,UNC              ; |1191| 
-        ; branch occurs ; |1191| 
-L175:    
-;***	-----------------------g70:
-;** 1142	-----------------------    gMouseHead = 0;
-;** 1143	-----------------------    gTurnState = 3;
-;** 1144	-----------------------    U$138 += 4;
-;** 1144	-----------------------    x += 2u;
-;** 1146	-----------------------    goto g72;
-	.dwpsn	"algo.c",1142,6
-        MOV       @_gMouseHead,#0       ; |1142| 
-	.dwpsn	"algo.c",1143,6
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#3       ; |1143| 
-	.dwpsn	"algo.c",1144,6
-        MOVL      ACC,XAR7              ; |1144| 
-        MOVB      XAR4,#4               ; |1144| 
-        ADDU      ACC,AR4               ; |1144| 
-        MOVL      XAR7,ACC              ; |1144| 
-        ADDB      XAR0,#2               ; |1144| 
-	.dwpsn	"algo.c",1146,5
-        BF        L177,UNC              ; |1146| 
-        ; branch occurs ; |1146| 
-L176:    
-;***	-----------------------g71:
-;** 1135	-----------------------    gMouseHead = 0;
-;** 1136	-----------------------    gTurnState = 1;
-;** 1137	-----------------------    U$138 += 4;
-;** 1137	-----------------------    x += 2u;
-	.dwpsn	"algo.c",1135,6
-        MOV       @_gMouseHead,#0       ; |1135| 
-	.dwpsn	"algo.c",1136,6
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#1       ; |1136| 
-	.dwpsn	"algo.c",1137,6
-        MOVL      ACC,XAR7              ; |1137| 
-        MOVB      XAR4,#4               ; |1137| 
-        ADDU      ACC,AR4               ; |1137| 
-        ADDB      XAR0,#2               ; |1137| 
-        MOVL      XAR7,ACC              ; |1137| 
-L177:    
-;***	-----------------------g72:
-;** 1138	-----------------------    if ( !*&gTurnState ) goto g84;
-	.dwpsn	"algo.c",1138,5
-        MOV       AL,@_gTurnState       ; |1138| 
-        BF        L183,EQ               ; |1138| 
-        ; branchcc occurs ; |1138| 
-;** 1198	-----------------------    if ( YetTurnState ) goto g76;
-	.dwpsn	"algo.c",1198,6
-        MOV       AL,AR5
-        BF        L178,NEQ              ; |1198| 
-        ; branchcc occurs ; |1198| 
-;** 1200	-----------------------    C$26 = &((volatile unsigned *)K$71)[2*(long)(cnt-1u)];
-;** 1200	-----------------------    C$26[1] = C$26[1]&0xff00u|C$26[1]+1u&0xffu;
-;** 1201	-----------------------    *C$26 = *C$26&0xfffu|DiagDir[0]<<12;
-;** 1203	-----------------------    if ( !(*C$26&0xffu) ) goto g84;
-	.dwpsn	"algo.c",1200,7
-        MOV       AL,AR1                ; |1200| 
-        MOVL      XAR4,*-SP[38]         ; |1200| 
-        ADDB      AL,#-1
-        MOVU      ACC,AL
-        LSL       ACC,1                 ; |1200| 
-        ADDL      XAR4,ACC
-        MOV       AL,*+XAR4[1]          ; |1200| 
-        ADDB      AL,#1                 ; |1200| 
-        MOV       AH,*+XAR4[1]          ; |1200| 
-        MOVB      AH,AL.LSB             ; |1200| 
-        MOV       *+XAR4[1],AH          ; |1200| 
-	.dwpsn	"algo.c",1201,7
-        AND       AL,*+XAR4[0],#0x0fff  ; |1201| 
-        MOV       PH,AL                 ; |1201| 
-        MOV       ACC,*-SP[23] << #12   ; |1201| 
-        OR        AL,PH                 ; |1201| 
-        MOV       *+XAR4[0],AL          ; |1201| 
-	.dwpsn	"algo.c",1203,7
-        MOV       AL,*+XAR4[0]          ; |1203| 
-        ANDB      AL,#0xff              ; |1203| 
-        BF        L183,EQ               ; |1203| 
-        ; branchcc occurs ; |1203| 
-;** 1206	-----------------------    *C$26 = *C$26&0xff00u|DiagPos[0]&0xffu;
-;***  	-----------------------    U$117 = x+3u;
-;** 1206	-----------------------    goto g86;
-	.dwpsn	"algo.c",1206,8
-        MOV       AL,*-SP[19]           ; |1206| 
-        MOV       AH,*+XAR4[0]          ; |1206| 
-        MOVB      AH,AL.LSB             ; |1206| 
-        MOVB      AL,#3
-        ADD       AL,AR0
-        MOV       *+XAR4[0],AH          ; |1206| 
-        MOV       PH,AL
-        BF        L185,UNC              ; |1206| 
-        ; branch occurs ; |1206| 
-L178:    
-;***	-----------------------g76:
-;** 1211	-----------------------    U$186[1] &= 0xffu;
-;** 1212	-----------------------    *U$186 = *U$186&0xff00u|DiagPos[0]&0xffu;
-;** 1213	-----------------------    *U$186 = *U$186&0xfffu|DiagDir[0]<<12;
-;** 1214	-----------------------    S$2 = (volatile struct _Path *)(U$186+1L);
-;** 1214	-----------------------    U$186 += 2;
-;** 1214	-----------------------    ++cnt;
-;** 1214	-----------------------    *(volatile unsigned *)S$2 = *(volatile unsigned *)S$2&0xff00u|1u;
-;***  	-----------------------    U$117 = x+3u;
-;** 1214	-----------------------    goto g89;
-	.dwpsn	"algo.c",1211,7
-        MOVL      XAR4,XT
-        AND       *+XAR4[1],#0x00ff     ; |1211| 
-	.dwpsn	"algo.c",1212,7
-        MOVL      XAR4,XT               ; |1212| 
-        MOV       AH,*+XAR4[0]          ; |1212| 
-        MOVL      XAR4,XT               ; |1212| 
-        MOV       AL,*-SP[19]           ; |1212| 
-        MOVB      AH,AL.LSB             ; |1212| 
-        MOV       *+XAR4[0],AH          ; |1212| 
-	.dwpsn	"algo.c",1213,7
-        MOVL      XAR4,XT
-        AND       AL,*+XAR4[0],#0x0fff  ; |1213| 
-        MOVL      XAR4,XT               ; |1213| 
-        MOV       PH,AL                 ; |1213| 
-        MOV       ACC,*-SP[23] << #12   ; |1213| 
-        OR        AL,PH                 ; |1213| 
-        MOV       *+XAR4[0],AL          ; |1213| 
-	.dwpsn	"algo.c",1214,7
-        MOVB      ACC,#1
-        ADDL      ACC,XT
-        MOVL      XAR4,ACC              ; |1214| 
-        MOVB      XAR5,#2               ; |1214| 
-        MOVL      ACC,XT                ; |1214| 
-        ADDU      ACC,AR5               ; |1214| 
-        MOVL      XT,ACC                ; |1214| 
-        AND       AL,*+XAR4[0],#0xff00  ; |1214| 
-        ORB       AL,#0x01              ; |1214| 
-        MOV       *+XAR4[0],AL          ; |1214| 
-        MOVB      AL,#3
-        ADD       AL,AR0
-        ADDB      XAR1,#1               ; |1214| 
-        MOV       PH,AL
-        BF        L186,UNC              ; |1214| 
-        ; branch occurs ; |1214| 
-L179:    
-;***	-----------------------g77:
-;** 1223	-----------------------    gMouseHead = 0;
-;** 1224	-----------------------    gTurnState = 22;
-;** 1225	-----------------------    if ( i[0] ) goto g79;
-	.dwpsn	"algo.c",1223,5
-        MOV       @_gMouseHead,#0       ; |1223| 
-	.dwpsn	"algo.c",1224,5
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#22      ; |1224| 
-	.dwpsn	"algo.c",1225,5
-        MOV       AL,*-SP[15]           ; |1225| 
-        BF        L180,NEQ              ; |1225| 
-        ; branchcc occurs ; |1225| 
-;** 1227	-----------------------    gTurnState = 0;
-;** 1228	-----------------------    BlockCnt = 1u;
-	.dwpsn	"algo.c",1227,6
-        MOV       @_gTurnState,#0       ; |1227| 
-	.dwpsn	"algo.c",1228,6
-        MOVB      AL,#1                 ; |1228| 
-        MOV       PL,AL                 ; |1228| 
-L180:    
-;***	-----------------------g79:
-;** 1233	-----------------------    U$138 += 2;
-;***  	-----------------------    U$117 = (++x)+3u;
-;** 1233	-----------------------    goto g85;
-	.dwpsn	"algo.c",1233,5
-        MOVL      ACC,XAR7              ; |1233| 
-        MOVB      XAR4,#2               ; |1233| 
-        ADDB      XAR0,#1
-        ADDU      ACC,AR4               ; |1233| 
-        MOVL      XAR7,ACC              ; |1233| 
-        MOVB      AL,#3
-        ADD       AL,AR0
-        MOV       PH,AL
-        BF        L184,UNC              ; |1233| 
-        ; branch occurs ; |1233| 
-L181:    
-;***	-----------------------g80:
-;** 1237	-----------------------    if ( i[0] == 1u ) goto g83;
-	.dwpsn	"algo.c",1237,8
-        MOV       AL,*-SP[15]           ; |1237| 
-        CMPB      AL,#1                 ; |1237| 
-        BF        L182,EQ               ; |1237| 
-        ; branchcc occurs ; |1237| 
-;** 1237	-----------------------    if ( i[0] != 3u ) goto g84;
-        CMPB      AL,#3                 ; |1237| 
-        BF        L183,NEQ              ; |1237| 
-        ; branchcc occurs ; |1237| 
-;** 1248	-----------------------    gMouseHead = 0;
-;** 1249	-----------------------    gTurnState = 3;
-;** 1250	-----------------------    U$138 += 2;
-;***  	-----------------------    U$117 = (++x)+3u;
-;** 1251	-----------------------    BlockCnt = 1u;
-;** 1251	-----------------------    goto g85;
-	.dwpsn	"algo.c",1248,5
-        MOV       @_gMouseHead,#0       ; |1248| 
-	.dwpsn	"algo.c",1249,5
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#3       ; |1249| 
-	.dwpsn	"algo.c",1250,5
-        MOVL      ACC,XAR7              ; |1250| 
-        MOVB      XAR4,#2               ; |1250| 
-        ADDU      ACC,AR4               ; |1250| 
-        ADDB      XAR0,#1
-        MOVL      XAR7,ACC              ; |1250| 
-        MOVB      AL,#3
-        ADD       AL,AR0
-        MOV       PH,AL
-	.dwpsn	"algo.c",1251,5
-        MOVB      AL,#1                 ; |1251| 
-        MOV       PL,AL                 ; |1251| 
-        BF        L184,UNC              ; |1251| 
-        ; branch occurs ; |1251| 
-L182:    
-;***	-----------------------g83:
-;** 1241	-----------------------    gMouseHead = 0;
-;** 1242	-----------------------    gTurnState = 1;
-;** 1243	-----------------------    U$138 += 2;
-;** 1243	-----------------------    ++x;
-;** 1244	-----------------------    BlockCnt = 1u;
-	.dwpsn	"algo.c",1241,5
-        MOV       @_gMouseHead,#0       ; |1241| 
-	.dwpsn	"algo.c",1242,5
-        MOVW      DP,#_gTurnState
-        MOV       @_gTurnState,#1       ; |1242| 
-	.dwpsn	"algo.c",1243,5
-        MOVL      ACC,XAR7              ; |1243| 
-        MOVB      XAR4,#2               ; |1243| 
-        ADDU      ACC,AR4               ; |1243| 
-        MOVL      XAR7,ACC              ; |1243| 
-        ADDB      XAR0,#1               ; |1243| 
-	.dwpsn	"algo.c",1244,5
-        MOVB      AL,#1                 ; |1244| 
-        MOV       PL,AL                 ; |1244| 
-L183:    
-;***	-----------------------g84:
-;***  	-----------------------    U$117 = x+3u;
-        MOVB      AL,#3
-        ADD       AL,AR0
-        MOV       PH,AL
-L184:    
-;***	-----------------------g85:
-;** 1257	-----------------------    if ( YetTurnState ) goto g89;
-	.dwpsn	"algo.c",1257,3
-        MOV       AL,AR5
-        BF        L186,NEQ              ; |1257| 
-        ; branchcc occurs ; |1257| 
-L185:    
-;***	-----------------------g86:
-;** 1257	-----------------------    if ( *&gTurnState ) goto g89;
-        MOVW      DP,#_gTurnState
-        MOV       AL,@_gTurnState       ; |1257| 
-        BF        L186,NEQ              ; |1257| 
-        ; branchcc occurs ; |1257| 
-;** 1259	-----------------------    --cnt;
-;** 1259	-----------------------    U$186 -= 2;
-;** 1259	-----------------------    U$186[1] = U$186[1]&0xff00u|U$186[1]+BlockCnt&0xffu;
-;** 1260	-----------------------    if ( !(*U$186&0xffu) ) goto g104;
-	.dwpsn	"algo.c",1259,4
-        MOVL      ACC,XT                ; |1259| 
-        SUBB      ACC,#2                ; |1259| 
-        MOVL      XAR4,ACC              ; |1259| 
-        MOVL      XT,ACC                ; |1259| 
-        MOV       AL,*+XAR4[1]          ; |1259| 
-        MOVL      XAR4,XT               ; |1259| 
-        MOV       AH,*+XAR4[1]          ; |1259| 
-        MOVL      XAR4,XT               ; |1259| 
-        ADD       AL,PL                 ; |1259| 
-        MOVB      AH,AL.LSB             ; |1259| 
-        MOV       *+XAR4[1],AH          ; |1259| 
-        SUBB      XAR1,#1               ; |1259| 
-	.dwpsn	"algo.c",1260,4
-        MOVL      XAR4,XT
-        MOV       AL,*+XAR4[0]          ; |1260| 
-        ANDB      AL,#0xff              ; |1260| 
-        BF        L193,EQ               ; |1260| 
-        ; branchcc occurs ; |1260| 
-;** 1263	-----------------------    *U$186 = *U$186&0xff00u|DiagPos[0]&0xffu;
-;** 1263	-----------------------    goto g104;
-	.dwpsn	"algo.c",1263,5
-        MOVL      XAR4,XT               ; |1263| 
-        MOV       AH,*+XAR4[0]          ; |1263| 
-        MOVL      XAR4,XT               ; |1263| 
-        MOV       AL,*-SP[19]           ; |1263| 
-        MOVB      AH,AL.LSB             ; |1263| 
-        MOV       *+XAR4[0],AH          ; |1263| 
-        BF        L193,UNC              ; |1263| 
-        ; branch occurs ; |1263| 
-L186:    
-;***	-----------------------g89:
-;** 1265	-----------------------    K$177 = &gTurnState;
-;** 1265	-----------------------    if ( !*K$177 ) goto g103;
-	.dwpsn	"algo.c",1265,8
-        MOVL      XAR4,#_gTurnState     ; |1265| 
-        MOV       AL,*+XAR4[0]          ; |1265| 
-        BF        L192,EQ               ; |1265| 
-        ; branchcc occurs ; |1265| 
-;** 1273	-----------------------    U$186[1] = U$186[1]&0xffu|*K$177<<8;
-;** 1275	-----------------------    if ( YetMouseHead ) goto g104;
-	.dwpsn	"algo.c",1273,4
-        MOVL      XAR5,XT               ; |1273| 
-        MOV       AH,*+XAR4[0]          ; |1273| 
-        MOV       AL,*+XAR5[1]          ; |1273| 
-        MOVL      XAR5,XT               ; |1273| 
-        MOVB      AL.MSB,AH             ; |1273| 
-        MOV       *+XAR5[1],AL          ; |1273| 
-	.dwpsn	"algo.c",1275,4
-        MOV       AL,AR6
-        BF        L193,NEQ              ; |1275| 
-        ; branchcc occurs ; |1275| 
-;** 1277	-----------------------    if ( *K$177 == 22 ) goto g96;
-	.dwpsn	"algo.c",1277,5
-        MOV       AL,*+XAR4[0]          ; |1277| 
-        CMPB      AL,#22                ; |1277| 
-        BF        L188,EQ               ; |1277| 
-        ; branchcc occurs ; |1277| 
-;** 1291	-----------------------    if ( *K$177 == 4 ) goto g95;
-	.dwpsn	"algo.c",1291,6
-        MOV       AL,*+XAR4[0]          ; |1291| 
-        CMPB      AL,#4                 ; |1291| 
-        BF        L187,EQ               ; |1291| 
-        ; branchcc occurs ; |1291| 
-;** 1291	-----------------------    if ( *K$177 == 5 ) goto g95;
-        MOV       AL,*+XAR4[0]          ; |1291| 
-        CMPB      AL,#5                 ; |1291| 
-        BF        L187,EQ               ; |1291| 
-        ; branchcc occurs ; |1291| 
-;** 1298	-----------------------    *U$186 = *U$186&0xff00u|DiagPos[1]&0xffu;
-;** 1299	-----------------------    *U$186 = *U$186&0xfffu|DiagDir[1]<<12;
-;** 1299	-----------------------    goto g104;
-	.dwpsn	"algo.c",1298,7
-        MOVL      XAR4,XT               ; |1298| 
-        MOV       AH,*+XAR4[0]          ; |1298| 
-        MOVL      XAR4,XT               ; |1298| 
-        MOV       AL,*-SP[18]           ; |1298| 
-        MOVB      AH,AL.LSB             ; |1298| 
-        MOV       *+XAR4[0],AH          ; |1298| 
-	.dwpsn	"algo.c",1299,7
-        MOVL      XAR4,XT
-        AND       AL,*+XAR4[0],#0x0fff  ; |1299| 
-        MOVZ      AR6,AL                ; |1299| 
-        MOVL      XAR4,XT               ; |1299| 
-        MOV       ACC,*-SP[22] << #12   ; |1299| 
-        OR        AL,AR6                ; |1299| 
-        MOV       *+XAR4[0],AL          ; |1299| 
-        BF        L193,UNC              ; |1299| 
-        ; branch occurs ; |1299| 
-L187:    
-;***	-----------------------g95:
-;** 1293	-----------------------    *U$186 = *U$186&0xff00u|DiagPos[2]&0xffu;
-;** 1294	-----------------------    *U$186 = *U$186&0xfffu|DiagDir[2]<<12;
-;** 1295	-----------------------    goto g104;
-	.dwpsn	"algo.c",1293,7
-        MOVL      XAR4,XT               ; |1293| 
-        MOV       AH,*+XAR4[0]          ; |1293| 
-        MOVL      XAR4,XT               ; |1293| 
-        MOV       AL,*-SP[17]           ; |1293| 
-        MOVB      AH,AL.LSB             ; |1293| 
-        MOV       *+XAR4[0],AH          ; |1293| 
-	.dwpsn	"algo.c",1294,7
-        MOVL      XAR4,XT
-        AND       AL,*+XAR4[0],#0x0fff  ; |1294| 
-        MOVZ      AR6,AL                ; |1294| 
-        MOVL      XAR4,XT               ; |1294| 
-        MOV       ACC,*-SP[21] << #12   ; |1294| 
-        OR        AL,AR6                ; |1294| 
-        MOV       *+XAR4[0],AL          ; |1294| 
-	.dwpsn	"algo.c",1295,6
-        BF        L193,UNC              ; |1295| 
-        ; branch occurs ; |1295| 
-L188:    
-;***	-----------------------g96:
-;** 1279	-----------------------    if ( i[0] == 3u ) goto g101;
-	.dwpsn	"algo.c",1279,6
-        MOV       AL,*-SP[15]           ; |1279| 
-        CMPB      AL,#3                 ; |1279| 
-        BF        L190,EQ               ; |1279| 
-        ; branchcc occurs ; |1279| 
-;** 1281	-----------------------    if ( i[0] == 1u ) goto g100;
-	.dwpsn	"algo.c",1281,11
-        CMPB      AL,#1                 ; |1281| 
-        BF        L189,EQ               ; |1281| 
-        ; branchcc occurs ; |1281| 
-;** 1283	-----------------------    if ( i[0] != 2u ) goto g102;
-	.dwpsn	"algo.c",1283,11
-        CMPB      AL,#2                 ; |1283| 
-        BF        L191,NEQ              ; |1283| 
-        ; branchcc occurs ; |1283| 
-;** 1284	-----------------------    U$186[1] = U$186[1]&0xffu|0x200u;
-;** 1284	-----------------------    goto g102;
-	.dwpsn	"algo.c",1284,7
-        MOVL      XAR4,XT
-        MOV       AL,*+XAR4[1]          ; |1284| 
-        MOVL      XAR4,XT               ; |1284| 
-        ANDB      AL,#0xff              ; |1284| 
-        OR        AL,#0x0200            ; |1284| 
-        MOV       *+XAR4[1],AL          ; |1284| 
-        BF        L191,UNC              ; |1284| 
-        ; branch occurs ; |1284| 
-L189:    
-;***	-----------------------g100:
-;** 1282	-----------------------    U$186[1] = U$186[1]&0xffu|0x100u;
-;** 1282	-----------------------    goto g102;
-	.dwpsn	"algo.c",1282,7
-        MOVL      XAR4,XT
-        MOV       AL,*+XAR4[1]          ; |1282| 
-        MOVL      XAR4,XT               ; |1282| 
-        ANDB      AL,#0xff              ; |1282| 
-        OR        AL,#0x0100            ; |1282| 
-        MOV       *+XAR4[1],AL          ; |1282| 
-        BF        L191,UNC              ; |1282| 
-        ; branch occurs ; |1282| 
-L190:    
-;***	-----------------------g101:
-;** 1280	-----------------------    U$186[1] = U$186[1]&0xffu|0x300u;
-	.dwpsn	"algo.c",1280,7
-        MOVL      XAR4,XT
-        MOV       AL,*+XAR4[1]          ; |1280| 
-        MOVL      XAR4,XT               ; |1280| 
-        ANDB      AL,#0xff              ; |1280| 
-        OR        AL,#0x0300            ; |1280| 
-        MOV       *+XAR4[1],AL          ; |1280| 
-L191:    
-;***	-----------------------g102:
-;** 1286	-----------------------    *U$186 = *U$186&0xff00u|DiagPos[0]&0xffu;
-;** 1287	-----------------------    *U$186 = *U$186&0xfffu|DiagDir[0]<<12;
-;** 1288	-----------------------    goto g104;
-	.dwpsn	"algo.c",1286,6
-        MOVL      XAR4,XT               ; |1286| 
-        MOV       AH,*+XAR4[0]          ; |1286| 
-        MOVL      XAR4,XT               ; |1286| 
-        MOV       AL,*-SP[19]           ; |1286| 
-        MOVB      AH,AL.LSB             ; |1286| 
-        MOV       *+XAR4[0],AH          ; |1286| 
-	.dwpsn	"algo.c",1287,6
-        MOVL      XAR4,XT
-        AND       AL,*+XAR4[0],#0x0fff  ; |1287| 
-        MOVZ      AR6,AL                ; |1287| 
-        MOVL      XAR4,XT               ; |1287| 
-        MOV       ACC,*-SP[23] << #12   ; |1287| 
-        OR        AL,AR6                ; |1287| 
-        MOV       *+XAR4[0],AL          ; |1287| 
-	.dwpsn	"algo.c",1288,5
-        BF        L193,UNC              ; |1288| 
-        ; branch occurs ; |1288| 
-L192:    
-;***	-----------------------g103:
-;** 1267	-----------------------    U$186[1] = U$186[1]&0xffu|*K$177<<8;
-;** 1268	-----------------------    U$186[1] = U$186[1]&0xff00u|BlockCnt&0xffu;
-;** 1269	-----------------------    *U$186 = *U$186&0xff00u|DiagPos[0]&0xffu;
-	.dwpsn	"algo.c",1267,4
-        MOV       AH,*+XAR4[0]          ; |1267| 
-        MOVL      XAR4,XT               ; |1267| 
-        MOV       AL,*+XAR4[1]          ; |1267| 
-        MOVL      XAR4,XT               ; |1267| 
-        MOVB      AL.MSB,AH             ; |1267| 
-        MOV       *+XAR4[1],AL          ; |1267| 
-	.dwpsn	"algo.c",1268,4
-        MOVL      XAR4,XT
-        MOV       AH,*+XAR4[1]          ; |1268| 
-        MOVL      XAR4,XT               ; |1268| 
-        MOV       AL,PL                 ; |1268| 
-        MOVB      AH,AL.LSB             ; |1268| 
-        MOV       *+XAR4[1],AH          ; |1268| 
-	.dwpsn	"algo.c",1269,4
-        MOVL      XAR4,XT               ; |1269| 
-        MOV       AH,*+XAR4[0]          ; |1269| 
-        MOVL      XAR4,XT               ; |1269| 
-        MOV       AL,*-SP[19]           ; |1269| 
-        MOVB      AH,AL.LSB             ; |1269| 
-        MOV       *+XAR4[0],AH          ; |1269| 
-L193:    
-;***	-----------------------g104:
-;** 1308	-----------------------    U$186 += 2;
-;** 1308	-----------------------    ++cnt;
-;** 1053	-----------------------    if ( U$117 < gPathBufferHead ) goto g56;
-	.dwpsn	"algo.c",1308,3
-        MOVL      ACC,XT                ; |1308| 
-        MOVB      XAR4,#2               ; |1308| 
-        ADDU      ACC,AR4               ; |1308| 
-        MOVL      XT,ACC                ; |1308| 
-        ADDB      XAR1,#1               ; |1308| 
-	.dwpsn	"algo.c",1053,8
-        MOVW      DP,#_gPathBufferHead
-        MOV       AL,PH
-        CMP       AL,@_gPathBufferHead  ; |1053| 
-        BF        L169,LO               ; |1053| 
-        ; branchcc occurs ; |1053| 
-L194:    
-;***	-----------------------g105:
-;** 1073	-----------------------    U$125 = x+2u;
-;** 1073	-----------------------    P$17 = U$125 < gPathBufferHead;
-	.dwpsn	"algo.c",1073,8
-        MOVB      AL,#2                 ; |1073| 
-        MOVB      XAR7,#0
-        ADD       AL,AR0                ; |1073| 
-        CMP       AL,@_gPathBufferHead  ; |1073| 
-        MOVZ      AR6,AL                ; |1073| 
-        BF        L195,HIS              ; |1073| 
-        ; branchcc occurs ; |1073| 
-        MOVB      XAR7,#1               ; |1073| 
-L195:    
-;***  	-----------------------    U$31 = x+1u;
-;***  	-----------------------    U$186 = &((volatile unsigned *)K$71)[2*(long)cnt];
-;** 1073	-----------------------    if ( P$17 ) goto g116;
-        MOVB      AL,#1
-        ADD       AL,AR0
-        MOVL      XT,*-SP[38]
-        MOV       PH,AL
-        MOVU      ACC,AR1
-        LSL       ACC,1
-        ADDL      XT,ACC
-        MOV       AH,AR7
-        BF        L203,NEQ              ; |1073| 
-        ; branchcc occurs ; |1073| 
-;** 1092	-----------------------    if ( U$31 < gPathBufferHead ) goto g115;
-	.dwpsn	"algo.c",1092,8
-        MOV       AL,PH
-        CMP       AL,@_gPathBufferHead  ; |1092| 
-        BF        L201,LO               ; |1092| 
-        ; branchcc occurs ; |1092| 
-;** 1107	-----------------------    if ( x < gPathBufferHead ) goto g114;
-	.dwpsn	"algo.c",1107,8
-        MOV       AH,AR0
-        CMP       AH,@_gPathBufferHead  ; |1107| 
-        BF        L199,LO               ; |1107| 
-        ; branchcc occurs ; |1107| 
-;** 1121	-----------------------    gPathBufferHead = cnt;
-;** 1122	-----------------------    U$186[1] &= 0xffu;
-;** 1314	-----------------------    if ( !gPathBufferHead ) goto g111;
-	.dwpsn	"algo.c",1121,4
-        MOV       @_gPathBufferHead,AR1 ; |1121| 
-	.dwpsn	"algo.c",1122,4
-        MOVL      XAR4,XT
-        AND       *+XAR4[1],#0x00ff     ; |1122| 
-	.dwpsn	"algo.c",1314,15
-        MOV       AL,@_gPathBufferHead  ; |1314| 
-        BF        L197,EQ               ; |1314| 
-        ; branchcc occurs ; |1314| 
-;***  	-----------------------    U$186 = (volatile unsigned *)K$71;
-;** 1123	-----------------------    cnt = 0u;
-        MOVL      XAR1,*-SP[38]
-	.dwpsn	"algo.c",1123,4
-        MOVB      XAR2,#0
-L196:    
-DW$L$_RunPath90Make$121$B:
-;***	-----------------------g110:
-;** 1315	-----------------------    TxPrintf("%d  TURN : %d  DIR : %d  POS : %x CNT : %d\n", cnt, U$186[1]>>8, *U$186>>12, *U$186&0xffu, U$186[1]&0xffu);
-;** 1314	-----------------------    U$186 += 2;
-;** 1314	-----------------------    if ( gPathBufferHead > (++cnt) ) goto g110;
-	.dwpsn	"algo.c",1315,4
-        MOVL      XAR4,#FSL8            ; |1315| 
-        MOVL      *-SP[2],XAR4          ; |1315| 
-        MOV       *-SP[3],AR2           ; |1315| 
-        MOV       AL,*+XAR1[1]          ; |1315| 
-        LSR       AL,8                  ; |1315| 
-        MOV       *-SP[4],AL            ; |1315| 
-        MOV       AL,*+XAR1[0]          ; |1315| 
-        LSR       AL,12                 ; |1315| 
-        MOV       *-SP[5],AL            ; |1315| 
-        MOV       AL,*+XAR1[0]          ; |1315| 
-        ANDB      AL,#0xff              ; |1315| 
-        MOV       *-SP[6],AL            ; |1315| 
-        MOV       AL,*+XAR1[1]          ; |1315| 
-        ANDB      AL,#0xff              ; |1315| 
-        MOV       *-SP[7],AL            ; |1315| 
-        LCR       #_TxPrintf            ; |1315| 
-        ; call occurs [#_TxPrintf] ; |1315| 
-	.dwpsn	"algo.c",1314,38
-        MOVB      XAR4,#2               ; |1314| 
-        MOVL      ACC,XAR1              ; |1314| 
-        ADDU      ACC,AR4               ; |1314| 
-        MOVL      XAR1,ACC              ; |1314| 
-	.dwpsn	"algo.c",1314,15
-        ADDB      XAR2,#1               ; |1314| 
-        MOVW      DP,#_gPathBufferHead
-        MOV       AL,AR2                ; |1314| 
-        CMP       AL,@_gPathBufferHead  ; |1314| 
-        BF        L196,LO               ; |1314| 
-        ; branchcc occurs ; |1314| 
-DW$L$_RunPath90Make$121$E:
-L197:    
-;***	-----------------------g111:
-;** 1319	-----------------------    memset((void *)K$4, 0, 256uL);
-;** 1320	-----------------------    memset(K$5, 0, 256uL);
-;** 1322	-----------------------    SpiReadRom(5u, 0u, 256u, (unsigned *)K$5);
-;***  	-----------------------    U$9 = (volatile unsigned *)K$5;
-;***  	-----------------------    U$12 = K$4;
-;***  	-----------------------    L$7 = 255;
-	.dwpsn	"algo.c",1319,2
-        MOVL      XAR4,*-SP[34]
-        MOV       ACC,#1 << 8
-        MOVB      XAR5,#0
-        LCR       #_memset              ; |1319| 
-        ; call occurs [#_memset] ; |1319| 
-	.dwpsn	"algo.c",1320,2
-        MOVL      XAR4,*-SP[30]
-        MOVB      XAR5,#0
-        MOV       ACC,#1 << 8
-        LCR       #_memset              ; |1320| 
-        ; call occurs [#_memset] ; |1320| 
-	.dwpsn	"algo.c",1322,2
-        MOVL      XAR4,*-SP[30]         ; |1322| 
-        MOVL      XAR5,#256             ; |1322| 
-        MOVB      ACC,#5
-        LCR       #_SpiReadRom          ; |1322| 
-        ; call occurs [#_SpiReadRom] ; |1322| 
-        MOVL      XAR4,*-SP[30]
-        MOVB      XAR6,#255
-        MOVL      XAR5,*-SP[34]
-L198:    
-DW$L$_RunPath90Make$123$B:
-;***	-----------------------g112:
-;** 1326	-----------------------    *U$12++ = *U$9++;
-;** 1325	-----------------------    if ( (--L$7) != (-1) ) goto g112;
-	.dwpsn	"algo.c",1326,3
-        MOV       AL,*XAR4++            ; |1326| 
-        MOV       *XAR5++,AL            ; |1326| 
-	.dwpsn	"algo.c",1325,15
-        BANZ      L198,AR6--            ; |1325| 
-        ; branchcc occurs ; |1325| 
-DW$L$_RunPath90Make$123$E:
-;***  	-----------------------    return;
-        BF        L209,UNC
-        ; branch occurs
-L199:    
-;***	-----------------------g114:
-;** 1109	-----------------------    i[3] = 4095u;
-;** 1110	-----------------------    i[2] = 4095u;
-;** 1111	-----------------------    i[1] = 4095u;
-;** 1112	-----------------------    C$25 = &((volatile unsigned *)K$71)[2*(long)x];
-;** 1112	-----------------------    i[0] = *C$25>>8&0xfu;
-;** 1113	-----------------------    DiagPos[0] = *C$25&0xffu;
-;** 1114	-----------------------    U$138 = C$25;
-;** 1114	-----------------------    DiagDir[0] = *U$138>>12;
-;** 1116	-----------------------    if ( !(P$18 = gPathBufferHead == U$31) ) goto g57;
-	.dwpsn	"algo.c",1109,4
-        MOV       *-SP[12],#4095        ; |1109| 
-	.dwpsn	"algo.c",1110,4
-        MOV       *-SP[13],#4095        ; |1110| 
-	.dwpsn	"algo.c",1111,4
-        MOV       *-SP[14],#4095        ; |1111| 
-	.dwpsn	"algo.c",1112,4
-        MOVL      XAR4,*-SP[38]         ; |1112| 
-        MOVU      ACC,AR0
-        LSL       ACC,1                 ; |1112| 
-        ADDL      XAR4,ACC
-        AND       AH,*+XAR4[0],#0x0f00  ; |1112| 
-        LSR       AH,8                  ; |1112| 
-        MOV       *-SP[15],AH           ; |1112| 
-	.dwpsn	"algo.c",1113,4
-        MOV       AH,*+XAR4[0]          ; |1113| 
-        ANDB      AH,#0xff              ; |1113| 
-        MOV       *-SP[19],AH           ; |1113| 
-	.dwpsn	"algo.c",1114,4
-        MOV       AH,*+XAR4[0]          ; |1114| 
-        LSR       AH,12                 ; |1114| 
-        MOV       *-SP[23],AH           ; |1114| 
-        MOVL      XAR7,XAR4             ; |1114| 
-	.dwpsn	"algo.c",1116,4
-        MOVB      AH,#0
-        MOV       AL,PH                 ; |1116| 
-        CMP       AL,@_gPathBufferHead  ; |1116| 
-        BF        L200,NEQ              ; |1116| 
-        ; branchcc occurs ; |1116| 
-        MOVB      AH,#1                 ; |1116| 
-L200:    
-        MOV       AL,AH                 ; |1116| 
-        BF        L170,EQ               ; |1116| 
-        ; branchcc occurs ; |1116| 
-;** 1116	-----------------------    goto g119;
-        BF        L204,UNC              ; |1116| 
-        ; branch occurs ; |1116| 
-L201:    
-;***	-----------------------g115:
-;** 1095	-----------------------    i[3] = 4095u;
-;** 1096	-----------------------    i[2] = 4095u;
-;** 1097	-----------------------    C$24 = &((volatile unsigned *)K$71)[2*(long)U$31];
-;** 1097	-----------------------    i[1] = *C$24>>8&0xfu;
-;** 1098	-----------------------    C$23 = &((volatile unsigned *)K$71)[2*(long)x];
-;** 1098	-----------------------    i[0] = *C$23>>8&0xfu;
-;** 1099	-----------------------    DiagPos[1] = *C$24&0xffu;
-;** 1100	-----------------------    DiagPos[0] = *C$23&0xffu;
-;** 1101	-----------------------    DiagDir[1] = *C$24>>12;
-;** 1102	-----------------------    U$138 = C$23;
-;** 1102	-----------------------    DiagDir[0] = *U$138>>12;
-;** 1104	-----------------------    if ( !(P$19 = gPathBufferHead == U$125) ) goto g57;
-	.dwpsn	"algo.c",1095,4
-        MOV       *-SP[12],#4095        ; |1095| 
-	.dwpsn	"algo.c",1096,4
-        MOV       *-SP[13],#4095        ; |1096| 
-	.dwpsn	"algo.c",1097,4
-        MOVL      XAR4,*-SP[38]         ; |1097| 
-        MOVU      ACC,PH
-        LSL       ACC,1                 ; |1097| 
-        ADDL      XAR4,ACC
-        AND       AL,*+XAR4[0],#0x0f00  ; |1097| 
-        LSR       AL,8                  ; |1097| 
-        MOV       *-SP[14],AL           ; |1097| 
-	.dwpsn	"algo.c",1098,4
-        MOVL      XAR5,*-SP[38]         ; |1098| 
-        MOVU      ACC,AR0
-        LSL       ACC,1                 ; |1098| 
-        ADDL      XAR5,ACC
-        AND       AL,*+XAR5[0],#0x0f00  ; |1098| 
-        LSR       AL,8                  ; |1098| 
-        MOV       *-SP[15],AL           ; |1098| 
-	.dwpsn	"algo.c",1099,4
-        MOV       AL,*+XAR4[0]          ; |1099| 
-        ANDB      AL,#0xff              ; |1099| 
-        MOV       *-SP[18],AL           ; |1099| 
-	.dwpsn	"algo.c",1100,4
-        MOV       AL,*+XAR5[0]          ; |1100| 
-        ANDB      AL,#0xff              ; |1100| 
-        MOV       *-SP[19],AL           ; |1100| 
-	.dwpsn	"algo.c",1101,4
-        MOV       AL,*+XAR4[0]          ; |1101| 
-        LSR       AL,12                 ; |1101| 
-        MOV       *-SP[22],AL           ; |1101| 
-	.dwpsn	"algo.c",1102,4
-        MOVL      XAR4,XAR5             ; |1102| 
-        MOV       AL,*+XAR4[0]          ; |1102| 
-        LSR       AL,12                 ; |1102| 
-        MOV       *-SP[23],AL           ; |1102| 
-        MOVL      XAR7,XAR5             ; |1102| 
-	.dwpsn	"algo.c",1104,4
-        MOVB      AH,#0
-        MOV       AL,AR6                ; |1104| 
-        CMP       AL,@_gPathBufferHead  ; |1104| 
-        BF        L202,NEQ              ; |1104| 
-        ; branchcc occurs ; |1104| 
-        MOVB      AH,#1                 ; |1104| 
-L202:    
-        MOV       AL,AH                 ; |1104| 
-        BF        L170,EQ               ; |1104| 
-        ; branchcc occurs ; |1104| 
-;** 1104	-----------------------    goto g119;
-        BF        L204,UNC              ; |1104| 
-        ; branch occurs ; |1104| 
-L203:    
-;***	-----------------------g116:
-;** 1075	-----------------------    i[3] = 4095u;
-;** 1076	-----------------------    C$22 = &((volatile unsigned *)K$71)[2*(long)U$125];
-;** 1076	-----------------------    i[2] = *C$22>>8&0xfu;
-;** 1077	-----------------------    C$21 = &((volatile unsigned *)K$71)[2*(long)U$31];
-;** 1077	-----------------------    i[1] = *C$21>>8&0xfu;
-;** 1078	-----------------------    C$20 = &((volatile unsigned *)K$71)[2*(long)x];
-;** 1078	-----------------------    i[0] = *C$20>>8&0xfu;
-;** 1080	-----------------------    DiagPos[2] = *C$22&0xffu;
-;** 1081	-----------------------    DiagPos[1] = *C$21&0xffu;
-;** 1082	-----------------------    DiagPos[0] = *C$20&0xffu;
-;** 1084	-----------------------    DiagDir[2] = *C$22>>12;
-;** 1085	-----------------------    DiagDir[1] = *C$21>>12;
-;** 1086	-----------------------    U$138 = C$20;
-;** 1086	-----------------------    DiagDir[0] = *U$138>>12;
-;** 1088	-----------------------    if ( !i[2] ) goto g57;
-	.dwpsn	"algo.c",1075,4
-        MOV       *-SP[12],#4095        ; |1075| 
-	.dwpsn	"algo.c",1076,4
-        MOVL      XAR4,*-SP[38]         ; |1076| 
-        MOVU      ACC,AR6
-        LSL       ACC,1                 ; |1076| 
-        ADDL      XAR4,ACC
-        AND       AH,*+XAR4[0],#0x0f00  ; |1076| 
-        LSR       AH,8                  ; |1076| 
-        MOV       *-SP[13],AH           ; |1076| 
-	.dwpsn	"algo.c",1077,4
-        MOVL      XAR5,*-SP[38]         ; |1077| 
-        MOVU      ACC,PH
-        LSL       ACC,1                 ; |1077| 
-        ADDL      XAR5,ACC
-        AND       AL,*+XAR5[0],#0x0f00  ; |1077| 
-        LSR       AL,8                  ; |1077| 
-        MOV       *-SP[14],AL           ; |1077| 
-	.dwpsn	"algo.c",1078,4
-        MOVL      XAR6,*-SP[38]         ; |1078| 
-        MOVU      ACC,AR0
-        LSL       ACC,1                 ; |1078| 
-        ADDL      XAR6,ACC
-        AND       AL,*+XAR6[0],#0x0f00  ; |1078| 
-        LSR       AL,8                  ; |1078| 
-        MOV       *-SP[15],AL           ; |1078| 
-	.dwpsn	"algo.c",1080,4
-        MOV       AL,*+XAR4[0]          ; |1080| 
-        ANDB      AL,#0xff              ; |1080| 
-        MOV       *-SP[17],AL           ; |1080| 
-	.dwpsn	"algo.c",1081,4
-        MOV       AL,*+XAR5[0]          ; |1081| 
-        ANDB      AL,#0xff              ; |1081| 
-        MOV       *-SP[18],AL           ; |1081| 
-	.dwpsn	"algo.c",1082,4
-        MOV       AL,*+XAR6[0]          ; |1082| 
-        ANDB      AL,#0xff              ; |1082| 
-        MOV       *-SP[19],AL           ; |1082| 
-	.dwpsn	"algo.c",1084,4
-        MOV       AL,*+XAR4[0]          ; |1084| 
-        LSR       AL,12                 ; |1084| 
-        MOV       *-SP[21],AL           ; |1084| 
-	.dwpsn	"algo.c",1085,4
-        MOV       AL,*+XAR5[0]          ; |1085| 
-        LSR       AL,12                 ; |1085| 
-        MOV       *-SP[22],AL           ; |1085| 
-	.dwpsn	"algo.c",1086,4
-        MOVL      XAR4,XAR6             ; |1086| 
-        MOV       AL,*+XAR4[0]          ; |1086| 
-        LSR       AL,12                 ; |1086| 
-        MOV       *-SP[23],AL           ; |1086| 
-        MOVL      XAR7,XAR6             ; |1086| 
-	.dwpsn	"algo.c",1088,4
-        MOV       AL,*-SP[13]           ; |1088| 
-        BF        L170,EQ               ; |1088| 
-        ; branchcc occurs ; |1088| 
-;** 1088	-----------------------    if ( gPathBufferHead != x+3u ) goto g57;
-        MOV       AL,AR0                ; |1088| 
-        ADDB      AL,#3                 ; |1088| 
-        CMP       AL,@_gPathBufferHead  ; |1088| 
-        BF        L170,NEQ              ; |1088| 
-        ; branchcc occurs ; |1088| 
-;** 1088	-----------------------    if ( *&gMouseHead ) goto g57;
-        MOVW      DP,#_gMouseHead
-        MOV       AL,@_gMouseHead       ; |1088| 
-        BF        L170,NEQ              ; |1088| 
-        ; branchcc occurs ; |1088| 
-L204:    
-;***	-----------------------g119:
-;** 1089	-----------------------    LastPath = 1u;
-;** 1089	-----------------------    goto g57;
-	.dwpsn	"algo.c",1089,5
-        MOV       *-SP[25],#1           ; |1089| 
-        BF        L170,UNC              ; |1089| 
-        ; branch occurs ; |1089| 
-L205:    
-;***	-----------------------g120:
-;** 1025	-----------------------    TxPrintf("error\n");
-	.dwpsn	"algo.c",1025,4
-        MOVL      XAR4,#FSL13           ; |1025| 
-        MOVL      *-SP[2],XAR4          ; |1025| 
-        LCR       #_TxPrintf            ; |1025| 
-        ; call occurs [#_TxPrintf] ; |1025| 
-L206:    
-DW$L$_RunPath90Make$138$B:
-;***	-----------------------g121:
-;** 1028	-----------------------    VFDPrintf("E2nd");
-;** 1026	-----------------------    goto g121;
-	.dwpsn	"algo.c",1028,5
-        MOVL      XAR4,#FSL14           ; |1028| 
-        MOVL      *-SP[2],XAR4          ; |1028| 
-        LCR       #_VFDPrintf           ; |1028| 
-        ; call occurs [#_VFDPrintf] ; |1028| 
-	.dwpsn	"algo.c",1026,10
-        BF        L206,UNC              ; |1026| 
-        ; branch occurs ; |1026| 
-DW$L$_RunPath90Make$138$E:
-L207:    
-;***	-----------------------g122:
-;*** 967	-----------------------    TxPrintf("error\n");
-	.dwpsn	"algo.c",967,4
-        MOVL      XAR4,#FSL13           ; |967| 
-        MOVL      *-SP[2],XAR4          ; |967| 
-        LCR       #_TxPrintf            ; |967| 
-        ; call occurs [#_TxPrintf] ; |967| 
-L208:    
-DW$L$_RunPath90Make$140$B:
-;***	-----------------------g123:
-;*** 970	-----------------------    VFDPrintf("E2nd");
-;*** 968	-----------------------    goto g123;
-	.dwpsn	"algo.c",970,5
-        MOVL      XAR4,#FSL14           ; |970| 
-        MOVL      *-SP[2],XAR4          ; |970| 
-        LCR       #_VFDPrintf           ; |970| 
-        ; call occurs [#_VFDPrintf] ; |970| 
-	.dwpsn	"algo.c",968,10
-        BF        L208,UNC              ; |968| 
-        ; branch occurs ; |968| 
-DW$L$_RunPath90Make$140$E:
-L209:    
-	.dwpsn	"algo.c",1328,1
-        SUBB      SP,#38
-	.dwcfa	0x1d, -8
-        MOVL      XAR3,*--SP
-	.dwcfa	0x1d, -6
-	.dwcfa	0xc0, 11
-        MOVL      XAR2,*--SP
-	.dwcfa	0x1d, -4
-	.dwcfa	0xc0, 9
-        MOVL      XAR1,*--SP
-	.dwcfa	0x1d, -2
-	.dwcfa	0xc0, 7
-        LRETR
-        ; return occurs
-
-DW$469	.dwtag  DW_TAG_loop
-	.dwattr DW$469, DW_AT_name("C:\algo\main\algo.asm:L208:1:1755591079")
-	.dwattr DW$469, DW_AT_begin_file("algo.c")
-	.dwattr DW$469, DW_AT_begin_line(0x3c8)
-	.dwattr DW$469, DW_AT_end_line(0x3cb)
-DW$470	.dwtag  DW_TAG_loop_range
-	.dwattr DW$470, DW_AT_low_pc(DW$L$_RunPath90Make$140$B)
-	.dwattr DW$470, DW_AT_high_pc(DW$L$_RunPath90Make$140$E)
-	.dwendtag DW$469
-
-
-DW$471	.dwtag  DW_TAG_loop
-	.dwattr DW$471, DW_AT_name("C:\algo\main\algo.asm:L206:1:1755591079")
-	.dwattr DW$471, DW_AT_begin_file("algo.c")
-	.dwattr DW$471, DW_AT_begin_line(0x402)
-	.dwattr DW$471, DW_AT_end_line(0x405)
-DW$472	.dwtag  DW_TAG_loop_range
-	.dwattr DW$472, DW_AT_low_pc(DW$L$_RunPath90Make$138$B)
-	.dwattr DW$472, DW_AT_high_pc(DW$L$_RunPath90Make$138$E)
-	.dwendtag DW$471
-
-
-DW$473	.dwtag  DW_TAG_loop
-	.dwattr DW$473, DW_AT_name("C:\algo\main\algo.asm:L198:1:1755591079")
-	.dwattr DW$473, DW_AT_begin_file("algo.c")
-	.dwattr DW$473, DW_AT_begin_line(0x52d)
-	.dwattr DW$473, DW_AT_end_line(0x52e)
-DW$474	.dwtag  DW_TAG_loop_range
-	.dwattr DW$474, DW_AT_low_pc(DW$L$_RunPath90Make$123$B)
-	.dwattr DW$474, DW_AT_high_pc(DW$L$_RunPath90Make$123$E)
-	.dwendtag DW$473
-
-
-DW$475	.dwtag  DW_TAG_loop
-	.dwattr DW$475, DW_AT_name("C:\algo\main\algo.asm:L196:1:1755591079")
-	.dwattr DW$475, DW_AT_begin_file("algo.c")
-	.dwattr DW$475, DW_AT_begin_line(0x522)
-	.dwattr DW$475, DW_AT_end_line(0x523)
-DW$476	.dwtag  DW_TAG_loop_range
-	.dwattr DW$476, DW_AT_low_pc(DW$L$_RunPath90Make$121$B)
-	.dwattr DW$476, DW_AT_high_pc(DW$L$_RunPath90Make$121$E)
-	.dwendtag DW$475
-
-
-DW$477	.dwtag  DW_TAG_loop
-	.dwattr DW$477, DW_AT_name("C:\algo\main\algo.asm:L165:1:1755591079")
-	.dwattr DW$477, DW_AT_begin_file("algo.c")
-	.dwattr DW$477, DW_AT_begin_line(0x3e5)
-	.dwattr DW$477, DW_AT_end_line(0x411)
-DW$478	.dwtag  DW_TAG_loop_range
-	.dwattr DW$478, DW_AT_low_pc(DW$L$_RunPath90Make$54$B)
-	.dwattr DW$478, DW_AT_high_pc(DW$L$_RunPath90Make$54$E)
-DW$479	.dwtag  DW_TAG_loop_range
-	.dwattr DW$479, DW_AT_low_pc(DW$L$_RunPath90Make$59$B)
-	.dwattr DW$479, DW_AT_high_pc(DW$L$_RunPath90Make$59$E)
-DW$480	.dwtag  DW_TAG_loop_range
-	.dwattr DW$480, DW_AT_low_pc(DW$L$_RunPath90Make$60$B)
-	.dwattr DW$480, DW_AT_high_pc(DW$L$_RunPath90Make$60$E)
-DW$481	.dwtag  DW_TAG_loop_range
-	.dwattr DW$481, DW_AT_low_pc(DW$L$_RunPath90Make$61$B)
-	.dwattr DW$481, DW_AT_high_pc(DW$L$_RunPath90Make$61$E)
-DW$482	.dwtag  DW_TAG_loop_range
-	.dwattr DW$482, DW_AT_low_pc(DW$L$_RunPath90Make$62$B)
-	.dwattr DW$482, DW_AT_high_pc(DW$L$_RunPath90Make$62$E)
-
-DW$483	.dwtag  DW_TAG_loop
-	.dwattr DW$483, DW_AT_name("C:\algo\main\algo.asm:L166:2:1755591079")
-	.dwattr DW$483, DW_AT_begin_file("algo.c")
-	.dwattr DW$483, DW_AT_begin_line(0x3e7)
-	.dwattr DW$483, DW_AT_end_line(0x3f5)
-DW$484	.dwtag  DW_TAG_loop_range
-	.dwattr DW$484, DW_AT_low_pc(DW$L$_RunPath90Make$55$B)
-	.dwattr DW$484, DW_AT_high_pc(DW$L$_RunPath90Make$55$E)
-DW$485	.dwtag  DW_TAG_loop_range
-	.dwattr DW$485, DW_AT_low_pc(DW$L$_RunPath90Make$56$B)
-	.dwattr DW$485, DW_AT_high_pc(DW$L$_RunPath90Make$56$E)
-DW$486	.dwtag  DW_TAG_loop_range
-	.dwattr DW$486, DW_AT_low_pc(DW$L$_RunPath90Make$57$B)
-	.dwattr DW$486, DW_AT_high_pc(DW$L$_RunPath90Make$57$E)
-DW$487	.dwtag  DW_TAG_loop_range
-	.dwattr DW$487, DW_AT_low_pc(DW$L$_RunPath90Make$58$B)
-	.dwattr DW$487, DW_AT_high_pc(DW$L$_RunPath90Make$58$E)
-	.dwendtag DW$483
-
-	.dwendtag DW$477
-
-
-DW$488	.dwtag  DW_TAG_loop
-	.dwattr DW$488, DW_AT_name("C:\algo\main\algo.asm:L163:1:1755591079")
-	.dwattr DW$488, DW_AT_begin_file("algo.c")
-	.dwattr DW$488, DW_AT_begin_line(0x3da)
-	.dwattr DW$488, DW_AT_end_line(0x3dd)
-DW$489	.dwtag  DW_TAG_loop_range
-	.dwattr DW$489, DW_AT_low_pc(DW$L$_RunPath90Make$52$B)
-	.dwattr DW$489, DW_AT_high_pc(DW$L$_RunPath90Make$52$E)
-	.dwendtag DW$488
-
-
-DW$490	.dwtag  DW_TAG_loop
-	.dwattr DW$490, DW_AT_name("C:\algo\main\algo.asm:L162:1:1755591079")
-	.dwattr DW$490, DW_AT_begin_file("algo.c")
-	.dwattr DW$490, DW_AT_begin_line(0x3d7)
-	.dwattr DW$490, DW_AT_end_line(0x3d8)
-DW$491	.dwtag  DW_TAG_loop_range
-	.dwattr DW$491, DW_AT_low_pc(DW$L$_RunPath90Make$49$B)
-	.dwattr DW$491, DW_AT_high_pc(DW$L$_RunPath90Make$49$E)
-	.dwendtag DW$490
-
-
-DW$492	.dwtag  DW_TAG_loop
-	.dwattr DW$492, DW_AT_name("C:\algo\main\algo.asm:L158:1:1755591079")
-	.dwattr DW$492, DW_AT_begin_file("algo.c")
-	.dwattr DW$492, DW_AT_begin_line(0x3ae)
-	.dwattr DW$492, DW_AT_end_line(0x3d5)
-DW$493	.dwtag  DW_TAG_loop_range
-	.dwattr DW$493, DW_AT_low_pc(DW$L$_RunPath90Make$39$B)
-	.dwattr DW$493, DW_AT_high_pc(DW$L$_RunPath90Make$39$E)
-DW$494	.dwtag  DW_TAG_loop_range
-	.dwattr DW$494, DW_AT_low_pc(DW$L$_RunPath90Make$44$B)
-	.dwattr DW$494, DW_AT_high_pc(DW$L$_RunPath90Make$44$E)
-DW$495	.dwtag  DW_TAG_loop_range
-	.dwattr DW$495, DW_AT_low_pc(DW$L$_RunPath90Make$45$B)
-	.dwattr DW$495, DW_AT_high_pc(DW$L$_RunPath90Make$45$E)
-DW$496	.dwtag  DW_TAG_loop_range
-	.dwattr DW$496, DW_AT_low_pc(DW$L$_RunPath90Make$46$B)
-	.dwattr DW$496, DW_AT_high_pc(DW$L$_RunPath90Make$46$E)
-DW$497	.dwtag  DW_TAG_loop_range
-	.dwattr DW$497, DW_AT_low_pc(DW$L$_RunPath90Make$47$B)
-	.dwattr DW$497, DW_AT_high_pc(DW$L$_RunPath90Make$47$E)
-
-DW$498	.dwtag  DW_TAG_loop
-	.dwattr DW$498, DW_AT_name("C:\algo\main\algo.asm:L159:2:1755591079")
-	.dwattr DW$498, DW_AT_begin_file("algo.c")
-	.dwattr DW$498, DW_AT_begin_line(0x3b0)
-	.dwattr DW$498, DW_AT_end_line(0x3be)
-DW$499	.dwtag  DW_TAG_loop_range
-	.dwattr DW$499, DW_AT_low_pc(DW$L$_RunPath90Make$40$B)
-	.dwattr DW$499, DW_AT_high_pc(DW$L$_RunPath90Make$40$E)
-DW$500	.dwtag  DW_TAG_loop_range
-	.dwattr DW$500, DW_AT_low_pc(DW$L$_RunPath90Make$41$B)
-	.dwattr DW$500, DW_AT_high_pc(DW$L$_RunPath90Make$41$E)
-DW$501	.dwtag  DW_TAG_loop_range
-	.dwattr DW$501, DW_AT_low_pc(DW$L$_RunPath90Make$42$B)
-	.dwattr DW$501, DW_AT_high_pc(DW$L$_RunPath90Make$42$E)
-DW$502	.dwtag  DW_TAG_loop_range
-	.dwattr DW$502, DW_AT_low_pc(DW$L$_RunPath90Make$43$B)
-	.dwattr DW$502, DW_AT_high_pc(DW$L$_RunPath90Make$43$E)
-	.dwendtag DW$498
-
-	.dwendtag DW$492
-
-
-DW$503	.dwtag  DW_TAG_loop
-	.dwattr DW$503, DW_AT_name("C:\algo\main\algo.asm:L156:1:1755591079")
-	.dwattr DW$503, DW_AT_begin_file("algo.c")
-	.dwattr DW$503, DW_AT_begin_line(0x39b)
-	.dwattr DW$503, DW_AT_end_line(0x3a2)
-DW$504	.dwtag  DW_TAG_loop_range
-	.dwattr DW$504, DW_AT_low_pc(DW$L$_RunPath90Make$34$B)
-	.dwattr DW$504, DW_AT_high_pc(DW$L$_RunPath90Make$34$E)
-DW$505	.dwtag  DW_TAG_loop_range
-	.dwattr DW$505, DW_AT_low_pc(DW$L$_RunPath90Make$35$B)
-	.dwattr DW$505, DW_AT_high_pc(DW$L$_RunPath90Make$35$E)
-DW$506	.dwtag  DW_TAG_loop_range
-	.dwattr DW$506, DW_AT_low_pc(DW$L$_RunPath90Make$36$B)
-	.dwattr DW$506, DW_AT_high_pc(DW$L$_RunPath90Make$36$E)
-DW$507	.dwtag  DW_TAG_loop_range
-	.dwattr DW$507, DW_AT_low_pc(DW$L$_RunPath90Make$37$B)
-	.dwattr DW$507, DW_AT_high_pc(DW$L$_RunPath90Make$37$E)
-	.dwendtag DW$503
-
-
-DW$508	.dwtag  DW_TAG_loop
-	.dwattr DW$508, DW_AT_name("C:\algo\main\algo.asm:L140:1:1755591079")
-	.dwattr DW$508, DW_AT_begin_file("algo.c")
-	.dwattr DW$508, DW_AT_begin_line(0x35e)
-	.dwattr DW$508, DW_AT_end_line(0x383)
-DW$509	.dwtag  DW_TAG_loop_range
-	.dwattr DW$509, DW_AT_low_pc(DW$L$_RunPath90Make$2$B)
-	.dwattr DW$509, DW_AT_high_pc(DW$L$_RunPath90Make$2$E)
-DW$510	.dwtag  DW_TAG_loop_range
-	.dwattr DW$510, DW_AT_low_pc(DW$L$_RunPath90Make$3$B)
-	.dwattr DW$510, DW_AT_high_pc(DW$L$_RunPath90Make$3$E)
-DW$511	.dwtag  DW_TAG_loop_range
-	.dwattr DW$511, DW_AT_low_pc(DW$L$_RunPath90Make$17$B)
-	.dwattr DW$511, DW_AT_high_pc(DW$L$_RunPath90Make$17$E)
-DW$512	.dwtag  DW_TAG_loop_range
-	.dwattr DW$512, DW_AT_low_pc(DW$L$_RunPath90Make$18$B)
-	.dwattr DW$512, DW_AT_high_pc(DW$L$_RunPath90Make$18$E)
-DW$513	.dwtag  DW_TAG_loop_range
-	.dwattr DW$513, DW_AT_low_pc(DW$L$_RunPath90Make$19$B)
-	.dwattr DW$513, DW_AT_high_pc(DW$L$_RunPath90Make$19$E)
-
-DW$514	.dwtag  DW_TAG_loop
-	.dwattr DW$514, DW_AT_name("C:\algo\main\algo.asm:L141:2:1755591079")
-	.dwattr DW$514, DW_AT_begin_file("algo.c")
-	.dwattr DW$514, DW_AT_begin_line(0x365)
-	.dwattr DW$514, DW_AT_end_line(0x381)
-DW$515	.dwtag  DW_TAG_loop_range
-	.dwattr DW$515, DW_AT_low_pc(DW$L$_RunPath90Make$4$B)
-	.dwattr DW$515, DW_AT_high_pc(DW$L$_RunPath90Make$4$E)
-DW$516	.dwtag  DW_TAG_loop_range
-	.dwattr DW$516, DW_AT_low_pc(DW$L$_RunPath90Make$5$B)
-	.dwattr DW$516, DW_AT_high_pc(DW$L$_RunPath90Make$5$E)
-DW$517	.dwtag  DW_TAG_loop_range
-	.dwattr DW$517, DW_AT_low_pc(DW$L$_RunPath90Make$6$B)
-	.dwattr DW$517, DW_AT_high_pc(DW$L$_RunPath90Make$6$E)
-DW$518	.dwtag  DW_TAG_loop_range
-	.dwattr DW$518, DW_AT_low_pc(DW$L$_RunPath90Make$7$B)
-	.dwattr DW$518, DW_AT_high_pc(DW$L$_RunPath90Make$7$E)
-DW$519	.dwtag  DW_TAG_loop_range
-	.dwattr DW$519, DW_AT_low_pc(DW$L$_RunPath90Make$8$B)
-	.dwattr DW$519, DW_AT_high_pc(DW$L$_RunPath90Make$8$E)
-DW$520	.dwtag  DW_TAG_loop_range
-	.dwattr DW$520, DW_AT_low_pc(DW$L$_RunPath90Make$9$B)
-	.dwattr DW$520, DW_AT_high_pc(DW$L$_RunPath90Make$9$E)
-DW$521	.dwtag  DW_TAG_loop_range
-	.dwattr DW$521, DW_AT_low_pc(DW$L$_RunPath90Make$10$B)
-	.dwattr DW$521, DW_AT_high_pc(DW$L$_RunPath90Make$10$E)
-DW$522	.dwtag  DW_TAG_loop_range
-	.dwattr DW$522, DW_AT_low_pc(DW$L$_RunPath90Make$11$B)
-	.dwattr DW$522, DW_AT_high_pc(DW$L$_RunPath90Make$11$E)
-DW$523	.dwtag  DW_TAG_loop_range
-	.dwattr DW$523, DW_AT_low_pc(DW$L$_RunPath90Make$12$B)
-	.dwattr DW$523, DW_AT_high_pc(DW$L$_RunPath90Make$12$E)
-DW$524	.dwtag  DW_TAG_loop_range
-	.dwattr DW$524, DW_AT_low_pc(DW$L$_RunPath90Make$13$B)
-	.dwattr DW$524, DW_AT_high_pc(DW$L$_RunPath90Make$13$E)
-DW$525	.dwtag  DW_TAG_loop_range
-	.dwattr DW$525, DW_AT_low_pc(DW$L$_RunPath90Make$14$B)
-	.dwattr DW$525, DW_AT_high_pc(DW$L$_RunPath90Make$14$E)
-DW$526	.dwtag  DW_TAG_loop_range
-	.dwattr DW$526, DW_AT_low_pc(DW$L$_RunPath90Make$15$B)
-	.dwattr DW$526, DW_AT_high_pc(DW$L$_RunPath90Make$15$E)
-DW$527	.dwtag  DW_TAG_loop_range
-	.dwattr DW$527, DW_AT_low_pc(DW$L$_RunPath90Make$16$B)
-	.dwattr DW$527, DW_AT_high_pc(DW$L$_RunPath90Make$16$E)
-	.dwendtag DW$514
-
-	.dwendtag DW$508
-
-	.dwattr DW$374, DW_AT_end_file("algo.c")
-	.dwattr DW$374, DW_AT_end_line(0x530)
-	.dwattr DW$374, DW_AT_end_column(0x01)
-	.dwendentry
-	.dwendtag DW$374
-
-	.sect	".text"
 	.global	_InitAlgorithm
 
-DW$528	.dwtag  DW_TAG_subprogram, DW_AT_name("InitAlgorithm"), DW_AT_symbol_name("_InitAlgorithm")
-	.dwattr DW$528, DW_AT_low_pc(_InitAlgorithm)
-	.dwattr DW$528, DW_AT_high_pc(0x00)
-	.dwattr DW$528, DW_AT_begin_file("algo.c")
-	.dwattr DW$528, DW_AT_begin_line(0xa5)
-	.dwattr DW$528, DW_AT_begin_column(0x06)
+DW$208	.dwtag  DW_TAG_subprogram, DW_AT_name("InitAlgorithm"), DW_AT_symbol_name("_InitAlgorithm")
+	.dwattr DW$208, DW_AT_low_pc(_InitAlgorithm)
+	.dwattr DW$208, DW_AT_high_pc(0x00)
+	.dwattr DW$208, DW_AT_begin_file("algo.c")
+	.dwattr DW$208, DW_AT_begin_line(0xa5)
+	.dwattr DW$208, DW_AT_begin_column(0x06)
 	.dwpsn	"algo.c",166,1
 
 	.dwfde DW$CIE
@@ -8266,21 +2177,21 @@ _InitAlgorithm:
 	.dwcfa	0x1c, 26, 0
 	.dwcfa	0x09, 40, 26
 ;* AL    assigned to C$1
-DW$529	.dwtag  DW_TAG_variable, DW_AT_name("C$1"), DW_AT_symbol_name("C$1")
-	.dwattr DW$529, DW_AT_type(*DW$T$11)
-	.dwattr DW$529, DW_AT_location[DW_OP_reg0]
+DW$209	.dwtag  DW_TAG_variable, DW_AT_name("C$1"), DW_AT_symbol_name("C$1")
+	.dwattr DW$209, DW_AT_type(*DW$T$11)
+	.dwattr DW$209, DW_AT_location[DW_OP_reg0]
 ;* AR0   assigned to _Cnt
-DW$530	.dwtag  DW_TAG_variable, DW_AT_name("Cnt"), DW_AT_symbol_name("_Cnt")
-	.dwattr DW$530, DW_AT_type(*DW$T$19)
-	.dwattr DW$530, DW_AT_location[DW_OP_reg4]
+DW$210	.dwtag  DW_TAG_variable, DW_AT_name("Cnt"), DW_AT_symbol_name("_Cnt")
+	.dwattr DW$210, DW_AT_type(*DW$T$19)
+	.dwattr DW$210, DW_AT_location[DW_OP_reg4]
 ;* AL    assigned to U$13
-DW$531	.dwtag  DW_TAG_variable, DW_AT_name("U$13"), DW_AT_symbol_name("U$13")
-	.dwattr DW$531, DW_AT_type(*DW$T$11)
-	.dwattr DW$531, DW_AT_location[DW_OP_reg0]
+DW$211	.dwtag  DW_TAG_variable, DW_AT_name("U$13"), DW_AT_symbol_name("U$13")
+	.dwattr DW$211, DW_AT_type(*DW$T$11)
+	.dwattr DW$211, DW_AT_location[DW_OP_reg0]
 ;* AR4   assigned to K$10
-DW$532	.dwtag  DW_TAG_variable, DW_AT_name("K$10"), DW_AT_symbol_name("K$10")
-	.dwattr DW$532, DW_AT_type(*DW$T$92)
-	.dwattr DW$532, DW_AT_location[DW_OP_reg12]
+DW$212	.dwtag  DW_TAG_variable, DW_AT_name("K$10"), DW_AT_symbol_name("K$10")
+	.dwattr DW$212, DW_AT_type(*DW$T$92)
+	.dwattr DW$212, DW_AT_location[DW_OP_reg12]
 	.dwpsn	"algo.c",169,2
         MOVB      AL,#1                 ; |169| 
         MOVW      DP,#_gSearchType
@@ -8315,20 +2226,20 @@ DW$532	.dwtag  DW_TAG_variable, DW_AT_name("K$10"), DW_AT_symbol_name("K$10")
         MOVL      XAR4,#_gMazeMap
 	.dwpsn	"algo.c",183,6
         MOVB      XAR0,#0
-L210:    
+L42:    
 DW$L$_InitAlgorithm$2$B:
 ;***	-----------------------g2:
 ;*** 185	-----------------------    if ( !(C$1 = Cnt&0xf0u) ) goto g5;
 	.dwpsn	"algo.c",185,3
         AND       AL,AR0,#0x00f0        ; |185| 
-        BF        L211,EQ               ; |185| 
+        BF        L43,EQ                ; |185| 
         ; branchcc occurs ; |185| 
 DW$L$_InitAlgorithm$2$E:
 DW$L$_InitAlgorithm$3$B:
 ;*** 187	-----------------------    if ( C$1 != 240u ) goto g6;
 	.dwpsn	"algo.c",187,8
         CMPB      AL,#240               ; |187| 
-        BF        L212,NEQ              ; |187| 
+        BF        L44,NEQ               ; |187| 
         ; branchcc occurs ; |187| 
 DW$L$_InitAlgorithm$3$E:
 DW$L$_InitAlgorithm$4$B:
@@ -8336,30 +2247,30 @@ DW$L$_InitAlgorithm$4$B:
 ;*** 188	-----------------------    goto g6;
 	.dwpsn	"algo.c",188,4
         OR        *+XAR4[AR0],#0x0002   ; |188| 
-        BF        L212,UNC              ; |188| 
+        BF        L44,UNC               ; |188| 
         ; branch occurs ; |188| 
 DW$L$_InitAlgorithm$4$E:
-L211:    
+L43:    
 DW$L$_InitAlgorithm$5$B:
 ;***	-----------------------g5:
 ;*** 186	-----------------------    K$10[Cnt] |= 0x8u;
 	.dwpsn	"algo.c",186,4
         OR        *+XAR4[AR0],#0x0008   ; |186| 
 DW$L$_InitAlgorithm$5$E:
-L212:    
+L44:    
 DW$L$_InitAlgorithm$6$B:
 ;***	-----------------------g6:
 ;*** 190	-----------------------    if ( !(U$13 = Cnt&0xfu) ) goto g9;
 	.dwpsn	"algo.c",190,3
         AND       AL,AR0,#0x000f        ; |190| 
-        BF        L213,EQ               ; |190| 
+        BF        L45,EQ                ; |190| 
         ; branchcc occurs ; |190| 
 DW$L$_InitAlgorithm$6$E:
 DW$L$_InitAlgorithm$7$B:
 ;*** 192	-----------------------    if ( U$13 != 15u ) goto g10;
 	.dwpsn	"algo.c",192,8
         CMPB      AL,#15                ; |192| 
-        BF        L214,NEQ              ; |192| 
+        BF        L46,NEQ               ; |192| 
         ; branchcc occurs ; |192| 
 DW$L$_InitAlgorithm$7$E:
 DW$L$_InitAlgorithm$8$B:
@@ -8367,46 +2278,46 @@ DW$L$_InitAlgorithm$8$B:
 ;*** 193	-----------------------    goto g10;
 	.dwpsn	"algo.c",193,4
         OR        *+XAR4[AR0],#0x0001   ; |193| 
-        BF        L214,UNC              ; |193| 
+        BF        L46,UNC               ; |193| 
         ; branch occurs ; |193| 
 DW$L$_InitAlgorithm$8$E:
-L213:    
+L45:    
 DW$L$_InitAlgorithm$9$B:
 ;***	-----------------------g9:
 ;*** 191	-----------------------    K$10[Cnt] |= 4u;
 	.dwpsn	"algo.c",191,4
         OR        *+XAR4[AR0],#0x0004   ; |191| 
 DW$L$_InitAlgorithm$9$E:
-L214:    
+L46:    
 DW$L$_InitAlgorithm$10$B:
 ;***	-----------------------g10:
 ;*** 183	-----------------------    if ( (++Cnt) < 256u ) goto g2;
 	.dwpsn	"algo.c",183,26
         ADDB      XAR0,#1               ; |183| 
         CMP       AR0,#256              ; |183| 
-        BF        L210,LO               ; |183| 
+        BF        L42,LO                ; |183| 
         ; branchcc occurs ; |183| 
 DW$L$_InitAlgorithm$10$E:
 ;*** 195	-----------------------    if ( gMousePosition ) goto g13;
 	.dwpsn	"algo.c",195,2
         MOVW      DP,#_gMousePosition
         MOV       AL,@_gMousePosition   ; |195| 
-        BF        L215,NEQ              ; |195| 
+        BF        L47,NEQ               ; |195| 
         ; branchcc occurs ; |195| 
 ;*** 195	-----------------------    gMazeMap[0] |= 0xeu;
 ;*** 195	-----------------------    goto g14;
 	.dwpsn	"algo.c",195,29
         MOVW      DP,#_gMazeMap
         OR        @_gMazeMap,#0x000e    ; |195| 
-        BF        L216,UNC              ; |195| 
+        BF        L48,UNC               ; |195| 
         ; branch occurs ; |195| 
-L215:    
+L47:    
 ;***	-----------------------g13:
 ;*** 196	-----------------------    gMazeMap[240] |= 0xeu;
 	.dwpsn	"algo.c",196,7
         MOVW      DP,#_gMazeMap+240
         OR        @_gMazeMap+240,#0x000e ; |196| 
-L216:    
+L48:    
 ;***	-----------------------g14:
 ;*** 198	-----------------------    memset(&Que, 0, 256uL);
 ;*** 198	-----------------------    return;
@@ -8420,45 +2331,6134 @@ L216:
         LRETR
         ; return occurs
 
-DW$533	.dwtag  DW_TAG_loop
-	.dwattr DW$533, DW_AT_name("C:\algo\main\algo.asm:L210:1:1755591079")
-	.dwattr DW$533, DW_AT_begin_file("algo.c")
-	.dwattr DW$533, DW_AT_begin_line(0xb7)
-	.dwattr DW$533, DW_AT_end_line(0xc2)
-DW$534	.dwtag  DW_TAG_loop_range
-	.dwattr DW$534, DW_AT_low_pc(DW$L$_InitAlgorithm$2$B)
-	.dwattr DW$534, DW_AT_high_pc(DW$L$_InitAlgorithm$2$E)
-DW$535	.dwtag  DW_TAG_loop_range
-	.dwattr DW$535, DW_AT_low_pc(DW$L$_InitAlgorithm$3$B)
-	.dwattr DW$535, DW_AT_high_pc(DW$L$_InitAlgorithm$3$E)
-DW$536	.dwtag  DW_TAG_loop_range
-	.dwattr DW$536, DW_AT_low_pc(DW$L$_InitAlgorithm$4$B)
-	.dwattr DW$536, DW_AT_high_pc(DW$L$_InitAlgorithm$4$E)
-DW$537	.dwtag  DW_TAG_loop_range
-	.dwattr DW$537, DW_AT_low_pc(DW$L$_InitAlgorithm$5$B)
-	.dwattr DW$537, DW_AT_high_pc(DW$L$_InitAlgorithm$5$E)
-DW$538	.dwtag  DW_TAG_loop_range
-	.dwattr DW$538, DW_AT_low_pc(DW$L$_InitAlgorithm$6$B)
-	.dwattr DW$538, DW_AT_high_pc(DW$L$_InitAlgorithm$6$E)
-DW$539	.dwtag  DW_TAG_loop_range
-	.dwattr DW$539, DW_AT_low_pc(DW$L$_InitAlgorithm$7$B)
-	.dwattr DW$539, DW_AT_high_pc(DW$L$_InitAlgorithm$7$E)
-DW$540	.dwtag  DW_TAG_loop_range
-	.dwattr DW$540, DW_AT_low_pc(DW$L$_InitAlgorithm$8$B)
-	.dwattr DW$540, DW_AT_high_pc(DW$L$_InitAlgorithm$8$E)
-DW$541	.dwtag  DW_TAG_loop_range
-	.dwattr DW$541, DW_AT_low_pc(DW$L$_InitAlgorithm$9$B)
-	.dwattr DW$541, DW_AT_high_pc(DW$L$_InitAlgorithm$9$E)
-DW$542	.dwtag  DW_TAG_loop_range
-	.dwattr DW$542, DW_AT_low_pc(DW$L$_InitAlgorithm$10$B)
-	.dwattr DW$542, DW_AT_high_pc(DW$L$_InitAlgorithm$10$E)
-	.dwendtag DW$533
+DW$213	.dwtag  DW_TAG_loop
+	.dwattr DW$213, DW_AT_name("C:\algo\main\algo.asm:L42:1:1773144227")
+	.dwattr DW$213, DW_AT_begin_file("algo.c")
+	.dwattr DW$213, DW_AT_begin_line(0xb7)
+	.dwattr DW$213, DW_AT_end_line(0xc2)
+DW$214	.dwtag  DW_TAG_loop_range
+	.dwattr DW$214, DW_AT_low_pc(DW$L$_InitAlgorithm$2$B)
+	.dwattr DW$214, DW_AT_high_pc(DW$L$_InitAlgorithm$2$E)
+DW$215	.dwtag  DW_TAG_loop_range
+	.dwattr DW$215, DW_AT_low_pc(DW$L$_InitAlgorithm$3$B)
+	.dwattr DW$215, DW_AT_high_pc(DW$L$_InitAlgorithm$3$E)
+DW$216	.dwtag  DW_TAG_loop_range
+	.dwattr DW$216, DW_AT_low_pc(DW$L$_InitAlgorithm$4$B)
+	.dwattr DW$216, DW_AT_high_pc(DW$L$_InitAlgorithm$4$E)
+DW$217	.dwtag  DW_TAG_loop_range
+	.dwattr DW$217, DW_AT_low_pc(DW$L$_InitAlgorithm$5$B)
+	.dwattr DW$217, DW_AT_high_pc(DW$L$_InitAlgorithm$5$E)
+DW$218	.dwtag  DW_TAG_loop_range
+	.dwattr DW$218, DW_AT_low_pc(DW$L$_InitAlgorithm$6$B)
+	.dwattr DW$218, DW_AT_high_pc(DW$L$_InitAlgorithm$6$E)
+DW$219	.dwtag  DW_TAG_loop_range
+	.dwattr DW$219, DW_AT_low_pc(DW$L$_InitAlgorithm$7$B)
+	.dwattr DW$219, DW_AT_high_pc(DW$L$_InitAlgorithm$7$E)
+DW$220	.dwtag  DW_TAG_loop_range
+	.dwattr DW$220, DW_AT_low_pc(DW$L$_InitAlgorithm$8$B)
+	.dwattr DW$220, DW_AT_high_pc(DW$L$_InitAlgorithm$8$E)
+DW$221	.dwtag  DW_TAG_loop_range
+	.dwattr DW$221, DW_AT_low_pc(DW$L$_InitAlgorithm$9$B)
+	.dwattr DW$221, DW_AT_high_pc(DW$L$_InitAlgorithm$9$E)
+DW$222	.dwtag  DW_TAG_loop_range
+	.dwattr DW$222, DW_AT_low_pc(DW$L$_InitAlgorithm$10$B)
+	.dwattr DW$222, DW_AT_high_pc(DW$L$_InitAlgorithm$10$E)
+	.dwendtag DW$213
 
-	.dwattr DW$528, DW_AT_end_file("algo.c")
-	.dwattr DW$528, DW_AT_end_line(0xc8)
-	.dwattr DW$528, DW_AT_end_column(0x01)
+	.dwattr DW$208, DW_AT_end_file("algo.c")
+	.dwattr DW$208, DW_AT_end_line(0xc8)
+	.dwattr DW$208, DW_AT_end_column(0x01)
 	.dwendentry
-	.dwendtag DW$528
+	.dwendtag DW$208
+
+	.sect	".text"
+	.global	_InitWeight
+
+DW$223	.dwtag  DW_TAG_subprogram, DW_AT_name("InitWeight"), DW_AT_symbol_name("_InitWeight")
+	.dwattr DW$223, DW_AT_low_pc(_InitWeight)
+	.dwattr DW$223, DW_AT_high_pc(0x00)
+	.dwattr DW$223, DW_AT_begin_file("algo.c")
+	.dwattr DW$223, DW_AT_begin_line(0x79)
+	.dwattr DW$223, DW_AT_begin_column(0x06)
+	.dwpsn	"algo.c",122,1
+
+	.dwfde DW$CIE
+
+;***************************************************************
+;* FNAME: _InitWeight                   FR SIZE:   0           *
+;*                                                             *
+;* FUNCTION ENVIRONMENT                                        *
+;*                                                             *
+;* FUNCTION PROPERTIES                                         *
+;*                            0 Parameter,  0 Auto,  0 SOE     *
+;***************************************************************
+
+
+;***************************************************************
+;*                                                             *
+;* Using -g (debug) with optimization (-o3) may disable key op *
+;*                                                             *
+;***************************************************************
+_InitWeight:
+;***  	-----------------------    #pragma MUST_ITERATE(256, 256, 256)
+;***  	-----------------------    #pragma LOOP_FLAGS(4096u)
+;***  	-----------------------    U$10 = &gMapflag[0];
+;***  	-----------------------    K$5 = &gMapValue[0];
+;*** 123	-----------------------    i = 0u;
+;***  	-----------------------    L$1 = 255;
+	.dwcfa	0x1d, -2
+	.dwcfa	0x1c, 26, 0
+	.dwcfa	0x09, 40, 26
+;* AR4   assigned to C$1
+DW$224	.dwtag  DW_TAG_variable, DW_AT_name("C$1"), DW_AT_symbol_name("C$1")
+	.dwattr DW$224, DW_AT_type(*DW$T$92)
+	.dwattr DW$224, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to C$2
+DW$225	.dwtag  DW_TAG_variable, DW_AT_name("C$2"), DW_AT_symbol_name("C$2")
+	.dwattr DW$225, DW_AT_type(*DW$T$92)
+	.dwattr DW$225, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to C$3
+DW$226	.dwtag  DW_TAG_variable, DW_AT_name("C$3"), DW_AT_symbol_name("C$3")
+	.dwattr DW$226, DW_AT_type(*DW$T$92)
+	.dwattr DW$226, DW_AT_location[DW_OP_reg12]
+;* AR5   assigned to U$10
+DW$227	.dwtag  DW_TAG_variable, DW_AT_name("U$10"), DW_AT_symbol_name("U$10")
+	.dwattr DW$227, DW_AT_type(*DW$T$92)
+	.dwattr DW$227, DW_AT_location[DW_OP_reg14]
+;* AR6   assigned to L$1
+DW$228	.dwtag  DW_TAG_variable, DW_AT_name("L$1"), DW_AT_symbol_name("L$1")
+	.dwattr DW$228, DW_AT_type(*DW$T$10)
+	.dwattr DW$228, DW_AT_location[DW_OP_reg16]
+;* AR0   assigned to _i
+DW$229	.dwtag  DW_TAG_variable, DW_AT_name("i"), DW_AT_symbol_name("_i")
+	.dwattr DW$229, DW_AT_type(*DW$T$19)
+	.dwattr DW$229, DW_AT_location[DW_OP_reg4]
+;* AR7   assigned to K$5
+DW$230	.dwtag  DW_TAG_variable, DW_AT_name("K$5"), DW_AT_symbol_name("K$5")
+	.dwattr DW$230, DW_AT_type(*DW$T$125)
+	.dwattr DW$230, DW_AT_location[DW_OP_reg18]
+;* AR5   assigned to K$5
+DW$231	.dwtag  DW_TAG_variable, DW_AT_name("K$5"), DW_AT_symbol_name("K$5")
+	.dwattr DW$231, DW_AT_type(*DW$T$125)
+	.dwattr DW$231, DW_AT_location[DW_OP_reg14]
+        MOVL      XAR7,#_gMapValue
+        MOVL      XAR5,#_gMapflag
+	.dwpsn	"algo.c",123,9
+        MOVB      XAR0,#0
+        MOVB      XAR6,#255
+L49:    
+DW$L$_InitWeight$2$B:
+;***	-----------------------g2:
+;*** 127	-----------------------    C$3 = (long)i*2+(volatile struct _bit *)K$5;
+;*** 127	-----------------------    *C$3;
+;*** 127	-----------------------    *C$3 = 255u;
+;*** 128	-----------------------    *U$10++ = 0u;
+;*** 125	-----------------------    ++i;
+;*** 125	-----------------------    if ( (--L$1) != (-1) ) goto g2;
+	.dwpsn	"algo.c",127,3
+        MOVL      XAR4,XAR7             ; |127| 
+        MOVU      ACC,AR0
+        LSL       ACC,1                 ; |127| 
+        ADDL      XAR4,ACC
+        MOV       AL,*+XAR4[0]          ; |127| 
+        MOV       *+XAR4[0],#255        ; |127| 
+	.dwpsn	"algo.c",128,3
+        MOV       *XAR5++,#0            ; |128| 
+	.dwpsn	"algo.c",125,21
+        ADDB      XAR0,#1               ; |125| 
+	.dwpsn	"algo.c",125,13
+        BANZ      L49,AR6--             ; |125| 
+        ; branchcc occurs ; |125| 
+DW$L$_InitWeight$2$E:
+;*** 131	-----------------------    if ( gSearchType == 1u ) goto g6;
+	.dwpsn	"algo.c",131,2
+        MOVW      DP,#_gSearchType
+        MOV       AL,@_gSearchType      ; |131| 
+        CMPB      AL,#1                 ; |131| 
+        BF        L50,EQ                ; |131| 
+        ; branchcc occurs ; |131| 
+;*** 155	-----------------------    if ( gSearchType != 2u ) goto g7;
+	.dwpsn	"algo.c",155,7
+        MOV       AL,@_gSearchType      ; |155| 
+        CMPB      AL,#2                 ; |155| 
+        BF        L51,NEQ               ; |155| 
+        ; branchcc occurs ; |155| 
+;*** 157	-----------------------    ((volatile unsigned *)gMapValue)[0] &= 0u;
+;*** 158	-----------------------    Que[0] = 0u;
+;*** 159	-----------------------    gMapflag[0] = 1u;
+;*** 159	-----------------------    goto g7;
+	.dwpsn	"algo.c",157,3
+        MOVW      DP,#_gMapValue
+        MOV       @_gMapValue,#0        ; |157| 
+	.dwpsn	"algo.c",158,3
+        MOVW      DP,#_Que
+        MOV       @_Que,#0              ; |158| 
+	.dwpsn	"algo.c",159,3
+        MOVW      DP,#_gMapflag
+        MOV       @_gMapflag,#1         ; |159| 
+        BF        L51,UNC               ; |159| 
+        ; branch occurs ; |159| 
+L50:    
+;***	-----------------------g6:
+;*** 135	-----------------------    K$5 = &gMapValue[0];
+;*** 135	-----------------------    *((volatile struct _bit *)K$5+104L) &= 0u;
+;*** 136	-----------------------    *((volatile struct _bit *)K$5+240L) &= 0u;
+;*** 137	-----------------------    *((volatile struct _bit *)K$5+272L) &= 0u;
+;*** 138	-----------------------    *((volatile struct _bit *)K$5+270L) &= 0u;
+;*** 145	-----------------------    C$2 = &gMapflag[0];
+;*** 145	-----------------------    C$2[52] = 1u;
+;*** 146	-----------------------    C$2[120] = 1u;
+;*** 147	-----------------------    C$2[136] = 1u;
+;*** 148	-----------------------    C$2[135] = 1u;
+;*** 150	-----------------------    C$1 = &Que[0];
+;*** 150	-----------------------    *C$1 = 52u;
+;*** 151	-----------------------    C$1[1] = 120u;
+;*** 152	-----------------------    C$1[2] = 136u;
+;*** 153	-----------------------    C$1[3] = 135u;
+;***	-----------------------g7:
+;***  	-----------------------    return;
+	.dwpsn	"algo.c",135,3
+        MOVL      XAR5,#_gMapValue      ; |135| 
+        MOVB      ACC,#104
+        ADDL      ACC,XAR5
+        MOVL      XAR4,ACC              ; |135| 
+        MOV       *+XAR4[0],#0          ; |135| 
+	.dwpsn	"algo.c",136,3
+        MOVB      ACC,#240
+        ADDL      ACC,XAR5
+        MOVL      XAR4,ACC              ; |136| 
+        MOV       *+XAR4[0],#0          ; |136| 
+	.dwpsn	"algo.c",137,3
+        MOVL      ACC,XAR5
+        MOVL      XAR4,#272             ; |137| 
+        ADDL      XAR4,ACC
+        MOV       *+XAR4[0],#0          ; |137| 
+	.dwpsn	"algo.c",138,3
+        MOVL      ACC,XAR5
+        MOVL      XAR4,#270             ; |138| 
+        ADDL      XAR4,ACC
+        MOV       *+XAR4[0],#0          ; |138| 
+	.dwpsn	"algo.c",145,3
+        MOVB      XAR0,#52              ; |145| 
+        MOVB      AL,#1                 ; |145| 
+        MOVL      XAR4,#_gMapflag       ; |145| 
+        MOV       *+XAR4[AR0],AL        ; |145| 
+	.dwpsn	"algo.c",146,3
+        MOVB      XAR0,#120             ; |146| 
+        MOV       *+XAR4[AR0],AL        ; |146| 
+	.dwpsn	"algo.c",147,3
+        MOVB      XAR0,#136             ; |147| 
+        MOV       *+XAR4[AR0],AL        ; |147| 
+	.dwpsn	"algo.c",148,3
+        MOVB      XAR0,#135             ; |148| 
+        MOV       *+XAR4[AR0],AL        ; |148| 
+	.dwpsn	"algo.c",150,3
+        MOVL      XAR4,#_Que            ; |150| 
+        MOV       *+XAR4[0],#52         ; |150| 
+	.dwpsn	"algo.c",151,3
+        MOV       *+XAR4[1],#120        ; |151| 
+	.dwpsn	"algo.c",152,3
+        MOV       *+XAR4[2],#136        ; |152| 
+	.dwpsn	"algo.c",153,3
+        MOV       *+XAR4[3],#135        ; |153| 
+L51:    
+	.dwpsn	"algo.c",163,1
+        LRETR
+        ; return occurs
+
+DW$232	.dwtag  DW_TAG_loop
+	.dwattr DW$232, DW_AT_name("C:\algo\main\algo.asm:L49:1:1773144227")
+	.dwattr DW$232, DW_AT_begin_file("algo.c")
+	.dwattr DW$232, DW_AT_begin_line(0x7d)
+	.dwattr DW$232, DW_AT_end_line(0x81)
+DW$233	.dwtag  DW_TAG_loop_range
+	.dwattr DW$233, DW_AT_low_pc(DW$L$_InitWeight$2$B)
+	.dwattr DW$233, DW_AT_high_pc(DW$L$_InitWeight$2$E)
+	.dwendtag DW$232
+
+	.dwattr DW$223, DW_AT_end_file("algo.c")
+	.dwattr DW$223, DW_AT_end_line(0xa3)
+	.dwattr DW$223, DW_AT_end_column(0x01)
+	.dwendentry
+	.dwendtag DW$223
+
+	.sect	".text"
+	.global	_RunPathMake
+
+DW$234	.dwtag  DW_TAG_subprogram, DW_AT_name("RunPathMake"), DW_AT_symbol_name("_RunPathMake")
+	.dwattr DW$234, DW_AT_low_pc(_RunPathMake)
+	.dwattr DW$234, DW_AT_high_pc(0x00)
+	.dwattr DW$234, DW_AT_begin_file("algo.c")
+	.dwattr DW$234, DW_AT_begin_line(0x535)
+	.dwattr DW$234, DW_AT_begin_column(0x06)
+	.dwpsn	"algo.c",1334,1
+
+	.dwfde DW$CIE
+
+;***************************************************************
+;* FNAME: _RunPathMake                  FR SIZE:  44           *
+;*                                                             *
+;* FUNCTION ENVIRONMENT                                        *
+;*                                                             *
+;* FUNCTION PROPERTIES                                         *
+;*                            7 Parameter, 31 Auto,  6 SOE     *
+;***************************************************************
+
+
+;***************************************************************
+;*                                                             *
+;* Using -g (debug) with optimization (-o3) may disable key op *
+;*                                                             *
+;***************************************************************
+_RunPathMake:
+;** 1337	-----------------------    Goal[] = {...};
+;** 1360	-----------------------    K$4 = &gMazeMap[0];
+;** 1360	-----------------------    memset((void *)K$4, 0, 256uL);
+;** 1361	-----------------------    K$5 = &gMazeMapBackUp;
+;** 1361	-----------------------    memset(K$5, 0, 256uL);
+;** 1363	-----------------------    SpiReadRom(5u, 0u, 256u, (unsigned *)K$5);
+;***  	-----------------------    U$9 = (volatile unsigned *)K$5;
+;***  	-----------------------    U$12 = K$4;
+;***  	-----------------------    K$19 = &gMoveTable[0];
+;** 1365	-----------------------    cnt = 0u;
+	.dwcfa	0x1d, -2
+	.dwcfa	0x1c, 26, 0
+	.dwcfa	0x09, 40, 26
+        MOVL      *SP++,XAR1
+	.dwcfa	0x80, 7, 2
+	.dwcfa	0x1d, -4
+        MOVL      *SP++,XAR2
+	.dwcfa	0x80, 9, 4
+	.dwcfa	0x1d, -6
+        MOVL      *SP++,XAR3
+	.dwcfa	0x80, 11, 6
+	.dwcfa	0x1d, -8
+        ADDB      SP,#38
+	.dwcfa	0x1d, -46
+;* AR6   assigned to C$21
+DW$235	.dwtag  DW_TAG_variable, DW_AT_name("C$21"), DW_AT_symbol_name("C$21")
+	.dwattr DW$235, DW_AT_type(*DW$T$92)
+	.dwattr DW$235, DW_AT_location[DW_OP_reg16]
+;* AR5   assigned to C$22
+DW$236	.dwtag  DW_TAG_variable, DW_AT_name("C$22"), DW_AT_symbol_name("C$22")
+	.dwattr DW$236, DW_AT_type(*DW$T$92)
+	.dwattr DW$236, DW_AT_location[DW_OP_reg14]
+;* AR4   assigned to C$23
+DW$237	.dwtag  DW_TAG_variable, DW_AT_name("C$23"), DW_AT_symbol_name("C$23")
+	.dwattr DW$237, DW_AT_type(*DW$T$92)
+	.dwattr DW$237, DW_AT_location[DW_OP_reg12]
+;* AR5   assigned to C$24
+DW$238	.dwtag  DW_TAG_variable, DW_AT_name("C$24"), DW_AT_symbol_name("C$24")
+	.dwattr DW$238, DW_AT_type(*DW$T$92)
+	.dwattr DW$238, DW_AT_location[DW_OP_reg14]
+;* AR4   assigned to C$25
+DW$239	.dwtag  DW_TAG_variable, DW_AT_name("C$25"), DW_AT_symbol_name("C$25")
+	.dwattr DW$239, DW_AT_type(*DW$T$92)
+	.dwattr DW$239, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to C$26
+DW$240	.dwtag  DW_TAG_variable, DW_AT_name("C$26"), DW_AT_symbol_name("C$26")
+	.dwattr DW$240, DW_AT_type(*DW$T$92)
+	.dwattr DW$240, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to C$27
+DW$241	.dwtag  DW_TAG_variable, DW_AT_name("C$27"), DW_AT_symbol_name("C$27")
+	.dwattr DW$241, DW_AT_type(*DW$T$92)
+	.dwattr DW$241, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to C$28
+DW$242	.dwtag  DW_TAG_variable, DW_AT_name("C$28"), DW_AT_symbol_name("C$28")
+	.dwattr DW$242, DW_AT_type(*DW$T$92)
+	.dwattr DW$242, DW_AT_location[DW_OP_reg12]
+;* AR6   assigned to C$29
+DW$243	.dwtag  DW_TAG_variable, DW_AT_name("C$29"), DW_AT_symbol_name("C$29")
+	.dwattr DW$243, DW_AT_type(*DW$T$92)
+	.dwattr DW$243, DW_AT_location[DW_OP_reg16]
+;* AR5   assigned to C$30
+DW$244	.dwtag  DW_TAG_variable, DW_AT_name("C$30"), DW_AT_symbol_name("C$30")
+	.dwattr DW$244, DW_AT_type(*DW$T$92)
+	.dwattr DW$244, DW_AT_location[DW_OP_reg14]
+;* AR4   assigned to C$31
+DW$245	.dwtag  DW_TAG_variable, DW_AT_name("C$31"), DW_AT_symbol_name("C$31")
+	.dwattr DW$245, DW_AT_type(*DW$T$92)
+	.dwattr DW$245, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to C$32
+DW$246	.dwtag  DW_TAG_variable, DW_AT_name("C$32"), DW_AT_symbol_name("C$32")
+	.dwattr DW$246, DW_AT_type(*DW$T$92)
+	.dwattr DW$246, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to C$33
+DW$247	.dwtag  DW_TAG_variable, DW_AT_name("C$33"), DW_AT_symbol_name("C$33")
+	.dwattr DW$247, DW_AT_type(*DW$T$92)
+	.dwattr DW$247, DW_AT_location[DW_OP_reg12]
+;* PL    assigned to C$34
+DW$248	.dwtag  DW_TAG_variable, DW_AT_name("C$34"), DW_AT_symbol_name("C$34")
+	.dwattr DW$248, DW_AT_type(*DW$T$11)
+	.dwattr DW$248, DW_AT_location[DW_OP_reg2]
+;* AR4   assigned to C$35
+DW$249	.dwtag  DW_TAG_variable, DW_AT_name("C$35"), DW_AT_symbol_name("C$35")
+	.dwattr DW$249, DW_AT_type(*DW$T$92)
+	.dwattr DW$249, DW_AT_location[DW_OP_reg12]
+DW$250	.dwtag  DW_TAG_variable, DW_AT_name("K$19"), DW_AT_symbol_name("K$19")
+	.dwattr DW$250, DW_AT_type(*DW$T$92)
+	.dwattr DW$250, DW_AT_location[DW_OP_breg20 -32]
+DW$251	.dwtag  DW_TAG_variable, DW_AT_name("K$57"), DW_AT_symbol_name("K$57")
+	.dwattr DW$251, DW_AT_type(*DW$T$127)
+	.dwattr DW$251, DW_AT_location[DW_OP_breg20 -36]
+;* AR5   assigned to U$47
+DW$252	.dwtag  DW_TAG_variable, DW_AT_name("U$47"), DW_AT_symbol_name("U$47")
+	.dwattr DW$252, DW_AT_type(*DW$T$77)
+	.dwattr DW$252, DW_AT_location[DW_OP_reg14]
+DW$253	.dwtag  DW_TAG_variable, DW_AT_name("K$71"), DW_AT_symbol_name("K$71")
+	.dwattr DW$253, DW_AT_type(*DW$T$111)
+	.dwattr DW$253, DW_AT_location[DW_OP_breg20 -38]
+;* PH    assigned to U$117
+DW$254	.dwtag  DW_TAG_variable, DW_AT_name("U$117"), DW_AT_symbol_name("U$117")
+	.dwattr DW$254, DW_AT_type(*DW$T$11)
+	.dwattr DW$254, DW_AT_location[DW_OP_reg3]
+;* AR7   assigned to U$138
+DW$255	.dwtag  DW_TAG_variable, DW_AT_name("U$138"), DW_AT_symbol_name("U$138")
+	.dwattr DW$255, DW_AT_type(*DW$T$92)
+	.dwattr DW$255, DW_AT_location[DW_OP_reg18]
+;* PH    assigned to U$31
+DW$256	.dwtag  DW_TAG_variable, DW_AT_name("U$31"), DW_AT_symbol_name("U$31")
+	.dwattr DW$256, DW_AT_type(*DW$T$11)
+	.dwattr DW$256, DW_AT_location[DW_OP_reg3]
+DW$257	.dwtag  DW_TAG_variable, DW_AT_name("K$5"), DW_AT_symbol_name("K$5")
+	.dwattr DW$257, DW_AT_type(*DW$T$3)
+	.dwattr DW$257, DW_AT_location[DW_OP_breg20 -30]
+;* AR6   assigned to U$125
+DW$258	.dwtag  DW_TAG_variable, DW_AT_name("U$125"), DW_AT_symbol_name("U$125")
+	.dwattr DW$258, DW_AT_type(*DW$T$11)
+	.dwattr DW$258, DW_AT_location[DW_OP_reg16]
+;* AL    assigned to P$16
+DW$259	.dwtag  DW_TAG_variable, DW_AT_name("P$16"), DW_AT_symbol_name("P$16")
+	.dwattr DW$259, DW_AT_type(*DW$T$10)
+	.dwattr DW$259, DW_AT_location[DW_OP_reg0]
+;* AL    assigned to P$17
+DW$260	.dwtag  DW_TAG_variable, DW_AT_name("P$17"), DW_AT_symbol_name("P$17")
+	.dwattr DW$260, DW_AT_type(*DW$T$10)
+	.dwattr DW$260, DW_AT_location[DW_OP_reg0]
+;* AR7   assigned to P$18
+DW$261	.dwtag  DW_TAG_variable, DW_AT_name("P$18"), DW_AT_symbol_name("P$18")
+	.dwattr DW$261, DW_AT_type(*DW$T$10)
+	.dwattr DW$261, DW_AT_location[DW_OP_reg18]
+;* AL    assigned to P$19
+DW$262	.dwtag  DW_TAG_variable, DW_AT_name("P$19"), DW_AT_symbol_name("P$19")
+	.dwattr DW$262, DW_AT_type(*DW$T$10)
+	.dwattr DW$262, DW_AT_location[DW_OP_reg0]
+;* AL    assigned to P$20
+DW$263	.dwtag  DW_TAG_variable, DW_AT_name("P$20"), DW_AT_symbol_name("P$20")
+	.dwattr DW$263, DW_AT_type(*DW$T$10)
+	.dwattr DW$263, DW_AT_location[DW_OP_reg0]
+;* AR6   assigned to L$3
+DW$264	.dwtag  DW_TAG_variable, DW_AT_name("L$3"), DW_AT_symbol_name("L$3")
+	.dwattr DW$264, DW_AT_type(*DW$T$10)
+	.dwattr DW$264, DW_AT_location[DW_OP_reg16]
+;* AR6   assigned to L$4
+DW$265	.dwtag  DW_TAG_variable, DW_AT_name("L$4"), DW_AT_symbol_name("L$4")
+	.dwattr DW$265, DW_AT_type(*DW$T$10)
+	.dwattr DW$265, DW_AT_location[DW_OP_reg16]
+;* AR6   assigned to L$5
+DW$266	.dwtag  DW_TAG_variable, DW_AT_name("L$5"), DW_AT_symbol_name("L$5")
+	.dwattr DW$266, DW_AT_type(*DW$T$10)
+	.dwattr DW$266, DW_AT_location[DW_OP_reg16]
+;* AR6   assigned to L$6
+DW$267	.dwtag  DW_TAG_variable, DW_AT_name("L$6"), DW_AT_symbol_name("L$6")
+	.dwattr DW$267, DW_AT_type(*DW$T$10)
+	.dwattr DW$267, DW_AT_location[DW_OP_reg16]
+;* AR6   assigned to L$7
+DW$268	.dwtag  DW_TAG_variable, DW_AT_name("L$7"), DW_AT_symbol_name("L$7")
+	.dwattr DW$268, DW_AT_type(*DW$T$10)
+	.dwattr DW$268, DW_AT_location[DW_OP_reg16]
+DW$269	.dwtag  DW_TAG_variable, DW_AT_name("LastPath"), DW_AT_symbol_name("_LastPath")
+	.dwattr DW$269, DW_AT_type(*DW$T$19)
+	.dwattr DW$269, DW_AT_location[DW_OP_breg20 -25]
+;* AR2   assigned to _YetMouseHead
+DW$270	.dwtag  DW_TAG_variable, DW_AT_name("YetMouseHead"), DW_AT_symbol_name("_YetMouseHead")
+	.dwattr DW$270, DW_AT_type(*DW$T$19)
+	.dwattr DW$270, DW_AT_location[DW_OP_reg8]
+;* AR6   assigned to _YetTurnState
+DW$271	.dwtag  DW_TAG_variable, DW_AT_name("YetTurnState"), DW_AT_symbol_name("_YetTurnState")
+	.dwattr DW$271, DW_AT_type(*DW$T$19)
+	.dwattr DW$271, DW_AT_location[DW_OP_reg16]
+;* PL    assigned to _BlockCnt
+DW$272	.dwtag  DW_TAG_variable, DW_AT_name("BlockCnt"), DW_AT_symbol_name("_BlockCnt")
+	.dwattr DW$272, DW_AT_type(*DW$T$19)
+	.dwattr DW$272, DW_AT_location[DW_OP_reg2]
+DW$273	.dwtag  DW_TAG_variable, DW_AT_name("NextPos"), DW_AT_symbol_name("_NextPos")
+	.dwattr DW$273, DW_AT_type(*DW$T$19)
+	.dwattr DW$273, DW_AT_location[DW_OP_breg20 -27]
+DW$274	.dwtag  DW_TAG_variable, DW_AT_name("NextTurn"), DW_AT_symbol_name("_NextTurn")
+	.dwattr DW$274, DW_AT_type(*DW$T$19)
+	.dwattr DW$274, DW_AT_location[DW_OP_breg20 -28]
+;* AR2   assigned to _AbsoluteDir
+DW$275	.dwtag  DW_TAG_variable, DW_AT_name("AbsoluteDir"), DW_AT_symbol_name("_AbsoluteDir")
+	.dwattr DW$275, DW_AT_type(*DW$T$19)
+	.dwattr DW$275, DW_AT_location[DW_OP_reg8]
+DW$276	.dwtag  DW_TAG_variable, DW_AT_name("GoalPosition"), DW_AT_symbol_name("_GoalPosition")
+	.dwattr DW$276, DW_AT_type(*DW$T$19)
+	.dwattr DW$276, DW_AT_location[DW_OP_breg20 -24]
+;* AR7   assigned to _LowWeight
+DW$277	.dwtag  DW_TAG_variable, DW_AT_name("LowWeight"), DW_AT_symbol_name("_LowWeight")
+	.dwattr DW$277, DW_AT_type(*DW$T$19)
+	.dwattr DW$277, DW_AT_location[DW_OP_reg18]
+;* AR5   assigned to S$15
+DW$278	.dwtag  DW_TAG_variable, DW_AT_name("S$15"), DW_AT_symbol_name("S$15")
+	.dwattr DW$278, DW_AT_type(*DW$T$113)
+	.dwattr DW$278, DW_AT_location[DW_OP_reg14]
+;* AR4   assigned to S$14
+DW$279	.dwtag  DW_TAG_variable, DW_AT_name("S$14"), DW_AT_symbol_name("S$14")
+	.dwattr DW$279, DW_AT_type(*DW$T$111)
+	.dwattr DW$279, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to S$13
+DW$280	.dwtag  DW_TAG_variable, DW_AT_name("S$13"), DW_AT_symbol_name("S$13")
+	.dwattr DW$280, DW_AT_type(*DW$T$111)
+	.dwattr DW$280, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to S$12
+DW$281	.dwtag  DW_TAG_variable, DW_AT_name("S$12"), DW_AT_symbol_name("S$12")
+	.dwattr DW$281, DW_AT_type(*DW$T$111)
+	.dwattr DW$281, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to S$11
+DW$282	.dwtag  DW_TAG_variable, DW_AT_name("S$11"), DW_AT_symbol_name("S$11")
+	.dwattr DW$282, DW_AT_type(*DW$T$113)
+	.dwattr DW$282, DW_AT_location[DW_OP_reg12]
+;* AR5   assigned to S$10
+DW$283	.dwtag  DW_TAG_variable, DW_AT_name("S$10"), DW_AT_symbol_name("S$10")
+	.dwattr DW$283, DW_AT_type(*DW$T$113)
+	.dwattr DW$283, DW_AT_location[DW_OP_reg14]
+;* AR4   assigned to S$9
+DW$284	.dwtag  DW_TAG_variable, DW_AT_name("S$9"), DW_AT_symbol_name("S$9")
+	.dwattr DW$284, DW_AT_type(*DW$T$111)
+	.dwattr DW$284, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to S$8
+DW$285	.dwtag  DW_TAG_variable, DW_AT_name("S$8"), DW_AT_symbol_name("S$8")
+	.dwattr DW$285, DW_AT_type(*DW$T$111)
+	.dwattr DW$285, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to S$7
+DW$286	.dwtag  DW_TAG_variable, DW_AT_name("S$7"), DW_AT_symbol_name("S$7")
+	.dwattr DW$286, DW_AT_type(*DW$T$111)
+	.dwattr DW$286, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to S$6
+DW$287	.dwtag  DW_TAG_variable, DW_AT_name("S$6"), DW_AT_symbol_name("S$6")
+	.dwattr DW$287, DW_AT_type(*DW$T$111)
+	.dwattr DW$287, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to S$5
+DW$288	.dwtag  DW_TAG_variable, DW_AT_name("S$5"), DW_AT_symbol_name("S$5")
+	.dwattr DW$288, DW_AT_type(*DW$T$111)
+	.dwattr DW$288, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to S$4
+DW$289	.dwtag  DW_TAG_variable, DW_AT_name("S$4"), DW_AT_symbol_name("S$4")
+	.dwattr DW$289, DW_AT_type(*DW$T$111)
+	.dwattr DW$289, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to S$3
+DW$290	.dwtag  DW_TAG_variable, DW_AT_name("S$3"), DW_AT_symbol_name("S$3")
+	.dwattr DW$290, DW_AT_type(*DW$T$111)
+	.dwattr DW$290, DW_AT_location[DW_OP_reg12]
+;* AR7   assigned to U$9
+DW$291	.dwtag  DW_TAG_variable, DW_AT_name("U$9"), DW_AT_symbol_name("U$9")
+	.dwattr DW$291, DW_AT_type(*DW$T$92)
+	.dwattr DW$291, DW_AT_location[DW_OP_reg18]
+;* AR4   assigned to U$9
+DW$292	.dwtag  DW_TAG_variable, DW_AT_name("U$9"), DW_AT_symbol_name("U$9")
+	.dwattr DW$292, DW_AT_type(*DW$T$92)
+	.dwattr DW$292, DW_AT_location[DW_OP_reg12]
+;* AR6   assigned to U$12
+DW$293	.dwtag  DW_TAG_variable, DW_AT_name("U$12"), DW_AT_symbol_name("U$12")
+	.dwattr DW$293, DW_AT_type(*DW$T$92)
+	.dwattr DW$293, DW_AT_location[DW_OP_reg16]
+;* AR5   assigned to U$12
+DW$294	.dwtag  DW_TAG_variable, DW_AT_name("U$12"), DW_AT_symbol_name("U$12")
+	.dwattr DW$294, DW_AT_type(*DW$T$92)
+	.dwattr DW$294, DW_AT_location[DW_OP_reg14]
+;* AR3   assigned to K$4
+DW$295	.dwtag  DW_TAG_variable, DW_AT_name("K$4"), DW_AT_symbol_name("K$4")
+	.dwattr DW$295, DW_AT_type(*DW$T$92)
+	.dwattr DW$295, DW_AT_location[DW_OP_reg10]
+;* AR4   assigned to K$4
+DW$296	.dwtag  DW_TAG_variable, DW_AT_name("K$4"), DW_AT_symbol_name("K$4")
+	.dwattr DW$296, DW_AT_type(*DW$T$92)
+	.dwattr DW$296, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to K$4
+DW$297	.dwtag  DW_TAG_variable, DW_AT_name("K$4"), DW_AT_symbol_name("K$4")
+	.dwattr DW$297, DW_AT_type(*DW$T$92)
+	.dwattr DW$297, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to K$4
+DW$298	.dwtag  DW_TAG_variable, DW_AT_name("K$4"), DW_AT_symbol_name("K$4")
+	.dwattr DW$298, DW_AT_type(*DW$T$92)
+	.dwattr DW$298, DW_AT_location[DW_OP_reg12]
+DW$299	.dwtag  DW_TAG_variable, DW_AT_name("K$4"), DW_AT_symbol_name("K$4")
+	.dwattr DW$299, DW_AT_type(*DW$T$92)
+	.dwattr DW$299, DW_AT_location[DW_OP_breg20 -34]
+;* AR7   assigned to U$75
+DW$300	.dwtag  DW_TAG_variable, DW_AT_name("U$75"), DW_AT_symbol_name("U$75")
+	.dwattr DW$300, DW_AT_type(*DW$T$92)
+	.dwattr DW$300, DW_AT_location[DW_OP_reg18]
+;* AR7   assigned to U$75
+DW$301	.dwtag  DW_TAG_variable, DW_AT_name("U$75"), DW_AT_symbol_name("U$75")
+	.dwattr DW$301, DW_AT_type(*DW$T$92)
+	.dwattr DW$301, DW_AT_location[DW_OP_reg18]
+;* AR0   assigned to U$73
+DW$302	.dwtag  DW_TAG_variable, DW_AT_name("U$73"), DW_AT_symbol_name("U$73")
+	.dwattr DW$302, DW_AT_type(*DW$T$92)
+	.dwattr DW$302, DW_AT_location[DW_OP_reg4]
+;* AR1   assigned to U$73
+DW$303	.dwtag  DW_TAG_variable, DW_AT_name("U$73"), DW_AT_symbol_name("U$73")
+	.dwattr DW$303, DW_AT_type(*DW$T$92)
+	.dwattr DW$303, DW_AT_location[DW_OP_reg6]
+;* XT    assigned to U$186
+DW$304	.dwtag  DW_TAG_variable, DW_AT_name("U$186"), DW_AT_symbol_name("U$186")
+	.dwattr DW$304, DW_AT_type(*DW$T$92)
+	.dwattr DW$304, DW_AT_location[DW_OP_reg21]
+;* AR1   assigned to U$186
+DW$305	.dwtag  DW_TAG_variable, DW_AT_name("U$186"), DW_AT_symbol_name("U$186")
+	.dwattr DW$305, DW_AT_type(*DW$T$92)
+	.dwattr DW$305, DW_AT_location[DW_OP_reg6]
+;* AR4   assigned to K$177
+DW$306	.dwtag  DW_TAG_variable, DW_AT_name("K$177"), DW_AT_symbol_name("K$177")
+	.dwattr DW$306, DW_AT_type(*DW$T$75)
+	.dwattr DW$306, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to K$177
+DW$307	.dwtag  DW_TAG_variable, DW_AT_name("K$177"), DW_AT_symbol_name("K$177")
+	.dwattr DW$307, DW_AT_type(*DW$T$75)
+	.dwattr DW$307, DW_AT_location[DW_OP_reg12]
+;* AR1   assigned to _Position
+DW$308	.dwtag  DW_TAG_variable, DW_AT_name("Position"), DW_AT_symbol_name("_Position")
+	.dwattr DW$308, DW_AT_type(*DW$T$19)
+	.dwattr DW$308, DW_AT_location[DW_OP_reg6]
+;* PL    assigned to _Position
+DW$309	.dwtag  DW_TAG_variable, DW_AT_name("Position"), DW_AT_symbol_name("_Position")
+	.dwattr DW$309, DW_AT_type(*DW$T$19)
+	.dwattr DW$309, DW_AT_location[DW_OP_reg2]
+;* PL    assigned to _MouseDir
+DW$310	.dwtag  DW_TAG_variable, DW_AT_name("MouseDir"), DW_AT_symbol_name("_MouseDir")
+	.dwattr DW$310, DW_AT_type(*DW$T$19)
+	.dwattr DW$310, DW_AT_location[DW_OP_reg2]
+;* AR0   assigned to _MouseDir
+DW$311	.dwtag  DW_TAG_variable, DW_AT_name("MouseDir"), DW_AT_symbol_name("_MouseDir")
+	.dwattr DW$311, DW_AT_type(*DW$T$19)
+	.dwattr DW$311, DW_AT_location[DW_OP_reg4]
+;* AH    assigned to _NextWeight
+DW$312	.dwtag  DW_TAG_variable, DW_AT_name("NextWeight"), DW_AT_symbol_name("_NextWeight")
+	.dwattr DW$312, DW_AT_type(*DW$T$19)
+	.dwattr DW$312, DW_AT_location[DW_OP_reg1]
+;* AH    assigned to _NextWeight
+DW$313	.dwtag  DW_TAG_variable, DW_AT_name("NextWeight"), DW_AT_symbol_name("_NextWeight")
+	.dwattr DW$313, DW_AT_type(*DW$T$19)
+	.dwattr DW$313, DW_AT_location[DW_OP_reg1]
+DW$314	.dwtag  DW_TAG_variable, DW_AT_name("WeightMin"), DW_AT_symbol_name("_WeightMin")
+	.dwattr DW$314, DW_AT_type(*DW$T$19)
+	.dwattr DW$314, DW_AT_location[DW_OP_breg20 -26]
+;* PH    assigned to _WeightMin
+DW$315	.dwtag  DW_TAG_variable, DW_AT_name("WeightMin"), DW_AT_symbol_name("_WeightMin")
+	.dwattr DW$315, DW_AT_type(*DW$T$19)
+	.dwattr DW$315, DW_AT_location[DW_OP_reg3]
+;* AR0   assigned to _x
+DW$316	.dwtag  DW_TAG_variable, DW_AT_name("x"), DW_AT_symbol_name("_x")
+	.dwattr DW$316, DW_AT_type(*DW$T$19)
+	.dwattr DW$316, DW_AT_location[DW_OP_reg4]
+;* AR3   assigned to _x
+DW$317	.dwtag  DW_TAG_variable, DW_AT_name("x"), DW_AT_symbol_name("_x")
+	.dwattr DW$317, DW_AT_type(*DW$T$19)
+	.dwattr DW$317, DW_AT_location[DW_OP_reg10]
+;* AR3   assigned to _x
+DW$318	.dwtag  DW_TAG_variable, DW_AT_name("x"), DW_AT_symbol_name("_x")
+	.dwattr DW$318, DW_AT_type(*DW$T$19)
+	.dwattr DW$318, DW_AT_location[DW_OP_reg10]
+;* AR0   assigned to _x
+DW$319	.dwtag  DW_TAG_variable, DW_AT_name("x"), DW_AT_symbol_name("_x")
+	.dwattr DW$319, DW_AT_type(*DW$T$19)
+	.dwattr DW$319, DW_AT_location[DW_OP_reg4]
+;* AR5   assigned to _cnt
+DW$320	.dwtag  DW_TAG_variable, DW_AT_name("cnt"), DW_AT_symbol_name("_cnt")
+	.dwattr DW$320, DW_AT_type(*DW$T$19)
+	.dwattr DW$320, DW_AT_location[DW_OP_reg14]
+;* AR0   assigned to _cnt
+DW$321	.dwtag  DW_TAG_variable, DW_AT_name("cnt"), DW_AT_symbol_name("_cnt")
+	.dwattr DW$321, DW_AT_type(*DW$T$19)
+	.dwattr DW$321, DW_AT_location[DW_OP_reg4]
+;* AR5   assigned to _cnt
+DW$322	.dwtag  DW_TAG_variable, DW_AT_name("cnt"), DW_AT_symbol_name("_cnt")
+	.dwattr DW$322, DW_AT_type(*DW$T$19)
+	.dwattr DW$322, DW_AT_location[DW_OP_reg14]
+;* AR5   assigned to _cnt
+DW$323	.dwtag  DW_TAG_variable, DW_AT_name("cnt"), DW_AT_symbol_name("_cnt")
+	.dwattr DW$323, DW_AT_type(*DW$T$19)
+	.dwattr DW$323, DW_AT_location[DW_OP_reg14]
+;* AR1   assigned to _cnt
+DW$324	.dwtag  DW_TAG_variable, DW_AT_name("cnt"), DW_AT_symbol_name("_cnt")
+	.dwattr DW$324, DW_AT_type(*DW$T$19)
+	.dwattr DW$324, DW_AT_location[DW_OP_reg6]
+;* AR2   assigned to _cnt
+DW$325	.dwtag  DW_TAG_variable, DW_AT_name("cnt"), DW_AT_symbol_name("_cnt")
+	.dwattr DW$325, DW_AT_type(*DW$T$19)
+	.dwattr DW$325, DW_AT_location[DW_OP_reg8]
+DW$326	.dwtag  DW_TAG_variable, DW_AT_name("Goal"), DW_AT_symbol_name("_Goal")
+	.dwattr DW$326, DW_AT_type(*DW$T$88)
+	.dwattr DW$326, DW_AT_location[DW_OP_breg20 -11]
+DW$327	.dwtag  DW_TAG_variable, DW_AT_name("i"), DW_AT_symbol_name("_i")
+	.dwattr DW$327, DW_AT_type(*DW$T$88)
+	.dwattr DW$327, DW_AT_location[DW_OP_breg20 -15]
+DW$328	.dwtag  DW_TAG_variable, DW_AT_name("DiagPos"), DW_AT_symbol_name("_DiagPos")
+	.dwattr DW$328, DW_AT_type(*DW$T$88)
+	.dwattr DW$328, DW_AT_location[DW_OP_breg20 -19]
+DW$329	.dwtag  DW_TAG_variable, DW_AT_name("DiagDir"), DW_AT_symbol_name("_DiagDir")
+	.dwattr DW$329, DW_AT_type(*DW$T$88)
+	.dwattr DW$329, DW_AT_location[DW_OP_breg20 -23]
+	.dwpsn	"algo.c",1337,9
+        MOVZ      AR4,SP                ; |1337| 
+        MOVB      ACC,#4
+        MOVL      XAR5,#_$T2$3$0        ; |1337| 
+        SUBB      XAR4,#11              ; |1337| 
+        LCR       #___memcpy_ff         ; |1337| 
+        ; call occurs [#___memcpy_ff] ; |1337| 
+	.dwpsn	"algo.c",1360,2
+        MOVL      XAR3,#_gMazeMap       ; |1360| 
+        MOVL      XAR4,XAR3             ; |1360| 
+        MOVB      XAR5,#0
+        MOV       ACC,#1 << 8
+        LCR       #_memset              ; |1360| 
+        ; call occurs [#_memset] ; |1360| 
+	.dwpsn	"algo.c",1361,2
+        MOVL      XAR4,#_gMazeMapBackUp ; |1361| 
+        MOVL      *-SP[30],XAR4         ; |1361| 
+        MOVB      XAR5,#0
+        MOV       ACC,#1 << 8
+        LCR       #_memset              ; |1361| 
+        ; call occurs [#_memset] ; |1361| 
+	.dwpsn	"algo.c",1363,2
+        MOVL      XAR4,*-SP[30]         ; |1363| 
+        MOVL      XAR5,#256             ; |1363| 
+        MOVB      ACC,#5
+        LCR       #_SpiReadRom          ; |1363| 
+        ; call occurs [#_SpiReadRom] ; |1363| 
+        MOVL      XAR4,#_gMoveTable
+        MOVL      XAR7,*-SP[30]
+        MOVL      XAR6,XAR3
+        MOVL      *-SP[32],XAR4
+	.dwpsn	"algo.c",1365,6
+        MOVB      XAR5,#0
+L52:    
+DW$L$_RunPathMake$2$B:
+;***	-----------------------g2:
+;** 1367	-----------------------    if ( *U$9&0x10 ) goto g14;
+	.dwpsn	"algo.c",1367,3
+        MOVL      XAR4,XAR7
+        TBIT      *+XAR4[0],#4          ; |1367| 
+        BF        L58,TC                ; |1367| 
+        ; branchcc occurs ; |1367| 
+DW$L$_RunPathMake$2$E:
+DW$L$_RunPathMake$3$B:
+;** 1371	-----------------------    *U$12 = 15u;
+;** 1372	-----------------------    x = 0u;
+	.dwpsn	"algo.c",1371,4
+        MOVL      XAR4,XAR6             ; |1371| 
+        MOV       *+XAR4[0],#15         ; |1371| 
+	.dwpsn	"algo.c",1372,8
+        MOVB      XAR0,#0
+DW$L$_RunPathMake$3$E:
+L53:    
+DW$L$_RunPathMake$4$B:
+;***	-----------------------g4:
+;** 1374	-----------------------    switch ( x ) {case 0u: goto g11;, case 1u: goto g9;, case 2u: goto g7;, case 3u: goto g5;, DEFAULT goto g13};
+	.dwpsn	"algo.c",1374,5
+        MOV       AL,AR0                ; |1374| 
+        BF        L56,EQ                ; |1374| 
+        ; branchcc occurs ; |1374| 
+DW$L$_RunPathMake$4$E:
+DW$L$_RunPathMake$5$B:
+        CMPB      AL,#1                 ; |1374| 
+        BF        L55,EQ                ; |1374| 
+        ; branchcc occurs ; |1374| 
+DW$L$_RunPathMake$5$E:
+DW$L$_RunPathMake$6$B:
+        CMPB      AL,#2                 ; |1374| 
+        BF        L54,EQ                ; |1374| 
+        ; branchcc occurs ; |1374| 
+DW$L$_RunPathMake$6$E:
+DW$L$_RunPathMake$7$B:
+        CMPB      AL,#3                 ; |1374| 
+        BF        L57,NEQ               ; |1374| 
+        ; branchcc occurs ; |1374| 
+DW$L$_RunPathMake$7$E:
+DW$L$_RunPathMake$8$B:
+;***	-----------------------g5:
+;** 1393	-----------------------    if ( !(cnt&0xf0u) ) goto g13;
+	.dwpsn	"algo.c",1393,7
+        AND       AL,AR5,#0x00f0        ; |1393| 
+        BF        L57,EQ                ; |1393| 
+        ; branchcc occurs ; |1393| 
+DW$L$_RunPathMake$8$E:
+DW$L$_RunPathMake$9$B:
+;** 1394	-----------------------    K$4[K$19[x]+cnt] |= 2u;
+;** 1394	-----------------------    goto g13;
+	.dwpsn	"algo.c",1394,8
+        MOVL      XAR4,*-SP[32]
+        MOV       AL,AR5
+        MOV       PL,*+XAR4[AR0]        ; |1394| 
+        ADD       PL,AL
+        MOVL      ACC,XAR3              ; |1394| 
+        ADDU      ACC,PL                ; |1394| 
+        MOVL      XAR4,ACC              ; |1394| 
+        OR        *+XAR4[0],#0x0002     ; |1394| 
+        BF        L57,UNC               ; |1394| 
+        ; branch occurs ; |1394| 
+DW$L$_RunPathMake$9$E:
+L54:    
+DW$L$_RunPathMake$10$B:
+;***	-----------------------g7:
+;** 1388	-----------------------    if ( !(cnt&0xfu) ) goto g13;
+	.dwpsn	"algo.c",1388,7
+        AND       AL,AR5,#0x000f        ; |1388| 
+        BF        L57,EQ                ; |1388| 
+        ; branchcc occurs ; |1388| 
+DW$L$_RunPathMake$10$E:
+DW$L$_RunPathMake$11$B:
+;** 1389	-----------------------    K$4[K$19[x]+cnt] |= 1u;
+;** 1389	-----------------------    goto g13;
+	.dwpsn	"algo.c",1389,8
+        MOVL      XAR4,*-SP[32]
+        MOV       AL,AR5
+        MOV       PL,*+XAR4[AR0]        ; |1389| 
+        ADD       PL,AL
+        MOVL      ACC,XAR3              ; |1389| 
+        ADDU      ACC,PL                ; |1389| 
+        MOVL      XAR4,ACC              ; |1389| 
+        OR        *+XAR4[0],#0x0001     ; |1389| 
+        BF        L57,UNC               ; |1389| 
+        ; branch occurs ; |1389| 
+DW$L$_RunPathMake$11$E:
+L55:    
+DW$L$_RunPathMake$12$B:
+;***	-----------------------g9:
+;** 1383	-----------------------    if ( (cnt&0xf0u) == 0xf0u ) goto g13;
+	.dwpsn	"algo.c",1383,7
+        AND       AL,AR5,#0x00f0        ; |1383| 
+        CMPB      AL,#240               ; |1383| 
+        BF        L57,EQ                ; |1383| 
+        ; branchcc occurs ; |1383| 
+DW$L$_RunPathMake$12$E:
+DW$L$_RunPathMake$13$B:
+;** 1384	-----------------------    K$4[K$19[x]+cnt] |= 0x8u;
+;** 1384	-----------------------    goto g13;
+	.dwpsn	"algo.c",1384,8
+        MOVL      XAR4,*-SP[32]
+        MOV       AL,AR5
+        MOV       PL,*+XAR4[AR0]        ; |1384| 
+        ADD       PL,AL
+        MOVL      ACC,XAR3              ; |1384| 
+        ADDU      ACC,PL                ; |1384| 
+        MOVL      XAR4,ACC              ; |1384| 
+        OR        *+XAR4[0],#0x0008     ; |1384| 
+        BF        L57,UNC               ; |1384| 
+        ; branch occurs ; |1384| 
+DW$L$_RunPathMake$13$E:
+L56:    
+DW$L$_RunPathMake$14$B:
+;***	-----------------------g11:
+;** 1378	-----------------------    if ( (cnt&0xfu) == 0xfu ) goto g13;
+	.dwpsn	"algo.c",1378,7
+        AND       AL,AR5,#0x000f        ; |1378| 
+        CMPB      AL,#15                ; |1378| 
+        BF        L57,EQ                ; |1378| 
+        ; branchcc occurs ; |1378| 
+DW$L$_RunPathMake$14$E:
+DW$L$_RunPathMake$15$B:
+;** 1379	-----------------------    K$4[K$19[x]+cnt] |= 4u;
+	.dwpsn	"algo.c",1379,8
+        MOVL      XAR4,*-SP[32]
+        MOV       AL,AR5
+        MOV       PL,*+XAR4[AR0]        ; |1379| 
+        ADD       PL,AL
+        MOVL      ACC,XAR3              ; |1379| 
+        ADDU      ACC,PL                ; |1379| 
+        MOVL      XAR4,ACC              ; |1379| 
+        OR        *+XAR4[0],#0x0004     ; |1379| 
+DW$L$_RunPathMake$15$E:
+L57:    
+DW$L$_RunPathMake$16$B:
+;***	-----------------------g13:
+;** 1372	-----------------------    if ( (++x) < 4u ) goto g4;
+	.dwpsn	"algo.c",1372,22
+        ADDB      XAR0,#1               ; |1372| 
+        MOV       AL,AR0                ; |1372| 
+        CMPB      AL,#4                 ; |1372| 
+        BF        L53,LO                ; |1372| 
+        ; branchcc occurs ; |1372| 
+DW$L$_RunPathMake$16$E:
+DW$L$_RunPathMake$17$B:
+;** 1372	-----------------------    goto g15;
+        BF        L59,UNC               ; |1372| 
+        ; branch occurs ; |1372| 
+DW$L$_RunPathMake$17$E:
+L58:    
+DW$L$_RunPathMake$18$B:
+;***	-----------------------g14:
+;** 1368	-----------------------    *U$12 |= *U$9&0xfu;
+	.dwpsn	"algo.c",1368,4
+        MOVL      XAR4,XAR7
+        MOV       AL,*+XAR4[0]          ; |1368| 
+        MOVL      XAR4,XAR6             ; |1368| 
+        ANDB      AL,#0x0f              ; |1368| 
+        OR        *+XAR4[0],AL          ; |1368| 
+DW$L$_RunPathMake$18$E:
+L59:    
+DW$L$_RunPathMake$19$B:
+;***	-----------------------g15:
+;** 1365	-----------------------    ++U$9;
+;** 1365	-----------------------    ++U$12;
+;** 1365	-----------------------    if ( (++cnt) < 256u ) goto g2;
+	.dwpsn	"algo.c",1365,26
+        MOVL      ACC,XAR7              ; |1365| 
+        MOVB      XAR4,#1               ; |1365| 
+        ADDB      XAR5,#1               ; |1365| 
+        ADDU      ACC,AR4               ; |1365| 
+        MOVL      XAR7,ACC              ; |1365| 
+        MOVL      ACC,XAR6              ; |1365| 
+        ADDU      ACC,AR4               ; |1365| 
+        CMP       AR5,#256              ; |1365| 
+        MOVL      XAR6,ACC              ; |1365| 
+        BF        L52,LO                ; |1365| 
+        ; branchcc occurs ; |1365| 
+DW$L$_RunPathMake$19$E:
+;** 1404	-----------------------    gSearchType = 2u;
+;** 1405	-----------------------    gPathWeightState = 1u;
+;** 1407	-----------------------    InitWeight();
+;** 1408	-----------------------    WriteMazeWeight();
+;** 1410	-----------------------    gPathWeightState = 0u;
+;** 1414	-----------------------    K$4 = &gMazeMap[52];
+;** 1338	-----------------------    LowWeight = 4095u;
+;** 1339	-----------------------    GoalPosition = 0u;
+;** 1357	-----------------------    LastPath = 0u;
+;** 1414	-----------------------    if ( !(*K$4&0x8) ) goto g19;
+	.dwpsn	"algo.c",1404,2
+        MOVW      DP,#_gSearchType
+        MOV       @_gSearchType,#2      ; |1404| 
+	.dwpsn	"algo.c",1405,2
+        MOVW      DP,#_gPathWeightState
+        MOV       @_gPathWeightState,#1 ; |1405| 
+	.dwpsn	"algo.c",1407,2
+        LCR       #_InitWeight          ; |1407| 
+        ; call occurs [#_InitWeight] ; |1407| 
+	.dwpsn	"algo.c",1408,2
+        LCR       #_WriteMazeWeight     ; |1408| 
+        ; call occurs [#_WriteMazeWeight] ; |1408| 
+	.dwpsn	"algo.c",1410,2
+        MOVW      DP,#_gPathWeightState
+        MOV       @_gPathWeightState,#0 ; |1410| 
+	.dwpsn	"algo.c",1414,2
+        MOVL      XAR4,#_gMazeMap+52    ; |1414| 
+	.dwpsn	"algo.c",1338,9
+        MOVL      XAR7,#4095            ; |1338| 
+	.dwpsn	"algo.c",1339,9
+        MOVB      AL,#0
+        MOV       *-SP[24],AL           ; |1339| 
+	.dwpsn	"algo.c",1357,9
+        MOV       *-SP[25],AL           ; |1357| 
+	.dwpsn	"algo.c",1414,2
+        TBIT      *+XAR4[0],#3          ; |1414| 
+        BF        L60,NTC               ; |1414| 
+        ; branchcc occurs ; |1414| 
+;** 1414	-----------------------    if ( !(*K$4&4) ) goto g19;
+        TBIT      *+XAR4[0],#2          ; |1414| 
+        BF        L60,NTC               ; |1414| 
+        ; branchcc occurs ; |1414| 
+;** 1413	-----------------------    cnt = 0u;
+;***  	-----------------------    goto g20;
+	.dwpsn	"algo.c",1413,2
+        MOVB      XAR0,#0
+        BF        L61,UNC
+        ; branch occurs
+L60:    
+;***	-----------------------g19:
+;** 1415	-----------------------    Goal[0] = 52u;
+;** 1415	-----------------------    cnt = 1u;
+	.dwpsn	"algo.c",1415,3
+        MOVB      XAR0,#1               ; |1415| 
+        MOV       *-SP[11],#52          ; |1415| 
+L61:    
+;***	-----------------------g20:
+;** 1417	-----------------------    K$4 = &gMazeMap[120];
+;** 1417	-----------------------    if ( !(*K$4&0x8) ) goto g22;
+	.dwpsn	"algo.c",1417,2
+        MOVL      XAR4,#_gMazeMap+120   ; |1417| 
+        TBIT      *+XAR4[0],#3          ; |1417| 
+        BF        L62,NTC               ; |1417| 
+        ; branchcc occurs ; |1417| 
+;** 1417	-----------------------    if ( *K$4&1u ) goto g23;
+        TBIT      *+XAR4[0],#0          ; |1417| 
+        BF        L63,TC                ; |1417| 
+        ; branchcc occurs ; |1417| 
+L62:    
+;***	-----------------------g22:
+;** 1418	-----------------------    Goal[cnt] = 120u;
+;** 1418	-----------------------    ++cnt;
+	.dwpsn	"algo.c",1418,3
+        MOVZ      AR4,SP                ; |1418| 
+        SUBB      XAR4,#11              ; |1418| 
+        MOV       *+XAR4[AR0],#120      ; |1418| 
+        ADDB      XAR0,#1               ; |1418| 
+L63:    
+;***	-----------------------g23:
+;** 1420	-----------------------    K$4 = &gMazeMap[135];
+;** 1420	-----------------------    if ( !(*K$4&2) ) goto g25;
+	.dwpsn	"algo.c",1420,2
+        MOVL      XAR4,#_gMazeMap+135   ; |1420| 
+        TBIT      *+XAR4[0],#1          ; |1420| 
+        BF        L64,NTC               ; |1420| 
+        ; branchcc occurs ; |1420| 
+;** 1420	-----------------------    if ( *K$4&4 ) goto g26;
+        TBIT      *+XAR4[0],#2          ; |1420| 
+        BF        L65,TC                ; |1420| 
+        ; branchcc occurs ; |1420| 
+L64:    
+;***	-----------------------g25:
+;** 1421	-----------------------    Goal[cnt] = 135u;
+;** 1421	-----------------------    ++cnt;
+	.dwpsn	"algo.c",1421,3
+        MOVZ      AR4,SP                ; |1421| 
+        SUBB      XAR4,#11              ; |1421| 
+        MOV       *+XAR4[AR0],#135      ; |1421| 
+        ADDB      XAR0,#1               ; |1421| 
+L65:    
+;***	-----------------------g26:
+;** 1423	-----------------------    K$4 = &gMazeMap[0];
+;** 1423	-----------------------    if ( !(K$4[136]&2) ) goto g28;
+	.dwpsn	"algo.c",1423,2
+        MOVL      XAR4,#_gMazeMap       ; |1423| 
+        MOVB      XAR1,#136             ; |1423| 
+        MOVL      *-SP[34],XAR4         ; |1423| 
+        TBIT      *+XAR4[AR1],#1        ; |1423| 
+        BF        L66,NTC               ; |1423| 
+        ; branchcc occurs ; |1423| 
+;** 1423	-----------------------    if ( K$4[136]&1u ) goto g29;
+        MOVL      XAR4,*-SP[34]         ; |1423| 
+        TBIT      *+XAR4[AR1],#0        ; |1423| 
+        BF        L67,TC                ; |1423| 
+        ; branchcc occurs ; |1423| 
+L66:    
+;***	-----------------------g28:
+;** 1424	-----------------------    Goal[cnt] = 136u;
+	.dwpsn	"algo.c",1424,3
+        MOVZ      AR4,SP                ; |1424| 
+        SUBB      XAR4,#11              ; |1424| 
+        MOV       *+XAR4[AR0],#136      ; |1424| 
+L67:    
+;***	-----------------------g29:
+;***  	-----------------------    K$57 = &gMapValue[0];
+;***  	-----------------------    U$47 = &Goal[0];
+;***  	-----------------------    L$3 = 3;
+        MOVZ      AR5,SP
+        MOVL      XAR4,#_gMapValue
+        MOVB      XAR6,#3
+        MOVL      *-SP[36],XAR4
+        SUBB      XAR5,#11
+L68:    
+DW$L$_RunPathMake$34$B:
+;***	-----------------------g30:
+;** 1428	-----------------------    C$34 = *U$47++;
+;** 1428	-----------------------    C$35 = (long)C$34*2+(volatile struct _bit *)K$57;
+;** 1428	-----------------------    if ( *C$35 >= LowWeight || C$34 == 0u ) goto g32;
+	.dwpsn	"algo.c",1428,3
+        MOVL      XAR4,*-SP[36]         ; |1428| 
+        MOV       PL,*XAR5++            ; |1428| 
+        MOVU      ACC,PL
+        LSL       ACC,1                 ; |1428| 
+        ADDL      XAR4,ACC
+        MOV       AH,AR7
+        CMP       AH,*+XAR4[0]          ; |1428| 
+        BF        L69,LOS               ; |1428| 
+        ; branchcc occurs ; |1428| 
+DW$L$_RunPathMake$34$E:
+DW$L$_RunPathMake$35$B:
+        MOV       AL,PL
+        BF        L69,EQ                ; |1428| 
+        ; branchcc occurs ; |1428| 
+DW$L$_RunPathMake$35$E:
+DW$L$_RunPathMake$36$B:
+;** 1430	-----------------------    LowWeight = *C$35;
+;** 1431	-----------------------    GoalPosition = C$34;
+	.dwpsn	"algo.c",1430,4
+        MOVZ      AR7,*+XAR4[0]         ; |1430| 
+	.dwpsn	"algo.c",1431,4
+        MOV       *-SP[24],P            ; |1431| 
+DW$L$_RunPathMake$36$E:
+L69:    
+DW$L$_RunPathMake$37$B:
+;***	-----------------------g32:
+;** 1426	-----------------------    if ( (--L$3) != (-1) ) goto g30;
+	.dwpsn	"algo.c",1426,15
+        BANZ      L68,AR6--             ; |1426| 
+        ; branchcc occurs ; |1426| 
+DW$L$_RunPathMake$37$E:
+;** 1435	-----------------------    WeightMin = *((long)GoalPosition*2+(volatile struct _bit *)K$57);
+;** 1436	-----------------------    Position = GoalPosition;
+;** 1439	-----------------------    TxPrintf("\nGoal = %x\n", Position);
+;** 1442	-----------------------    gPathBufferHead = 0u;
+;** 1445	-----------------------    K$71 = &KnowBlockPath[0];
+;** 1445	-----------------------    memset((void *)K$71, 0, 512uL);
+;** 1443	-----------------------    MouseDir = 0u;
+	.dwpsn	"algo.c",1435,2
+        MOVL      XAR4,*-SP[36]         ; |1435| 
+        MOV       AL,*-SP[24]
+        MOVU      ACC,AL
+        LSL       ACC,1                 ; |1435| 
+        ADDL      XAR4,ACC
+        MOV       AL,*+XAR4[0]          ; |1435| 
+        MOV       *-SP[26],AL           ; |1435| 
+	.dwpsn	"algo.c",1436,2
+        MOVZ      AR1,*-SP[24]
+	.dwpsn	"algo.c",1439,2
+        MOVL      XAR4,#FSL6            ; |1439| 
+        MOVL      *-SP[2],XAR4          ; |1439| 
+        MOV       *-SP[3],AR1           ; |1439| 
+        LCR       #_TxPrintf            ; |1439| 
+        ; call occurs [#_TxPrintf] ; |1439| 
+	.dwpsn	"algo.c",1442,2
+        MOVW      DP,#_gPathBufferHead
+        MOV       @_gPathBufferHead,#0  ; |1442| 
+	.dwpsn	"algo.c",1445,2
+        MOVL      XAR4,#_KnowBlockPath  ; |1445| 
+        MOVL      *-SP[38],XAR4         ; |1445| 
+        MOVB      XAR5,#0
+        MOV       ACC,#1 << 9
+        LCR       #_memset              ; |1445| 
+        ; call occurs [#_memset] ; |1445| 
+	.dwpsn	"algo.c",1443,2
+        MOV       PL,#0                 ; |1443| 
+L70:    
+DW$L$_RunPathMake$39$B:
+;***	-----------------------g34:
+;***  	-----------------------    U$73 = &K$4[Position];
+;***  	-----------------------    U$75 = &gHeadTable[0];
+;** 1449	-----------------------    x = 0u;
+;***  	-----------------------    L$4 = 3;
+        MOVL      ACC,*-SP[34]
+        ADDU      ACC,AR1
+        MOVL      XAR0,ACC
+        MOVL      XAR7,#_gHeadTable
+	.dwpsn	"algo.c",1449,7
+        MOVB      XAR6,#3
+        MOVB      XAR3,#0
+DW$L$_RunPathMake$39$E:
+L71:    
+DW$L$_RunPathMake$40$B:
+;***	-----------------------g35:
+;** 1451	-----------------------    if ( *U$73&*U$75++&0xfu ) goto g38;
+	.dwpsn	"algo.c",1451,4
+        MOV       AL,*XAR7++            ; |1451| 
+        AND       AL,*+XAR0[0]          ; |1451| 
+        ANDB      AL,#0x0f              ; |1451| 
+        BF        L72,NEQ               ; |1451| 
+        ; branchcc occurs ; |1451| 
+DW$L$_RunPathMake$40$E:
+DW$L$_RunPathMake$41$B:
+;** 1453	-----------------------    C$33 = &K$19[x];
+;** 1453	-----------------------    S$15 = (volatile struct _bit *)((long)(*C$33+Position)*2+K$57);
+;** 1453	-----------------------    NextWeight = *(volatile unsigned *)S$15;
+;** 1454	-----------------------    if ( NextWeight >= WeightMin ) goto g38;
+	.dwpsn	"algo.c",1453,5
+        MOVL      ACC,*-SP[32]
+        ADDU      ACC,AR3               ; |1453| 
+        MOVL      XAR4,ACC              ; |1453| 
+        MOVL      XAR5,*-SP[36]         ; |1453| 
+        MOV       AL,*+XAR4[0]          ; |1453| 
+        ADD       AL,AR1                ; |1453| 
+        MOVU      ACC,AL
+        LSL       ACC,1                 ; |1453| 
+        ADDL      XAR5,ACC
+        MOV       AH,*+XAR5[0]          ; |1453| 
+	.dwpsn	"algo.c",1454,5
+        MOV       AL,*-SP[26]
+        CMP       AL,AH                 ; |1454| 
+        BF        L72,LOS               ; |1454| 
+        ; branchcc occurs ; |1454| 
+DW$L$_RunPathMake$41$E:
+DW$L$_RunPathMake$42$B:
+;** 1456	-----------------------    WeightMin = NextWeight;
+;** 1457	-----------------------    NextPos = *C$33+Position;
+;** 1458	-----------------------    AbsoluteDir = x;
+;** 1459	-----------------------    NextTurn = AbsoluteDir-MouseDir&3u;
+	.dwpsn	"algo.c",1456,6
+        MOV       *-SP[26],AH           ; |1456| 
+	.dwpsn	"algo.c",1457,6
+        MOV       AL,*+XAR4[0]          ; |1457| 
+        ADD       AL,AR1                ; |1457| 
+        MOV       *-SP[27],AL           ; |1457| 
+	.dwpsn	"algo.c",1458,6
+        MOVZ      AR2,AR3               ; |1458| 
+	.dwpsn	"algo.c",1459,6
+        MOV       AL,AR2                ; |1459| 
+        SUB       AL,PL                 ; |1459| 
+        ANDB      AL,#0x03              ; |1459| 
+        MOV       *-SP[28],AL           ; |1459| 
+DW$L$_RunPathMake$42$E:
+L72:    
+DW$L$_RunPathMake$43$B:
+;***	-----------------------g38:
+;** 1449	-----------------------    ++x;
+;** 1449	-----------------------    if ( (--L$4) != (-1) ) goto g35;
+	.dwpsn	"algo.c",1449,21
+        ADDB      XAR3,#1               ; |1449| 
+	.dwpsn	"algo.c",1449,14
+        BANZ      L71,AR6--             ; |1449| 
+        ; branchcc occurs ; |1449| 
+DW$L$_RunPathMake$43$E:
+DW$L$_RunPathMake$44$B:
+;** 1465	-----------------------    S$14 = &K$71[(long)gPathBufferHead];
+;** 1465	-----------------------    *(volatile unsigned *)S$14 = *(volatile unsigned *)S$14&0xff00u|Position&0xffu;
+;** 1466	-----------------------    Position = NextPos;
+;** 1467	-----------------------    MouseDir = AbsoluteDir;
+;** 1468	-----------------------    ++gPathBufferHead;
+;** 1470	-----------------------    if ( P$16 = gPathBufferHead > 255u ) goto g169;
+	.dwpsn	"algo.c",1465,3
+        MOVL      XAR4,*-SP[38]         ; |1465| 
+        MOVW      DP,#_gPathBufferHead
+        MOVU      ACC,@_gPathBufferHead
+        LSL       ACC,1                 ; |1465| 
+        ADDL      XAR4,ACC
+        MOV       AL,AR1                ; |1465| 
+        MOV       AH,*+XAR4[0]          ; |1465| 
+        MOVB      AH,AL.LSB             ; |1465| 
+        MOV       *+XAR4[0],AH          ; |1465| 
+	.dwpsn	"algo.c",1466,3
+        MOVZ      AR1,*-SP[27]
+	.dwpsn	"algo.c",1467,3
+        MOV       PL,AR2                ; |1467| 
+	.dwpsn	"algo.c",1468,3
+        INC       @_gPathBufferHead     ; |1468| 
+	.dwpsn	"algo.c",1470,3
+        MOVB      AL,#0
+        MOV       AH,@_gPathBufferHead  ; |1470| 
+        CMPB      AH,#255               ; |1470| 
+        BF        L73,LOS               ; |1470| 
+        ; branchcc occurs ; |1470| 
+DW$L$_RunPathMake$44$E:
+DW$L$_RunPathMake$45$B:
+        MOVB      AL,#1                 ; |1470| 
+DW$L$_RunPathMake$45$E:
+L73:    
+DW$L$_RunPathMake$46$B:
+        CMPB      AL,#0                 ; |1470| 
+        BF        L144,NEQ              ; |1470| 
+        ; branchcc occurs ; |1470| 
+DW$L$_RunPathMake$46$E:
+DW$L$_RunPathMake$47$B:
+;** 1480	-----------------------    if ( Position ) goto g34;
+	.dwpsn	"algo.c",1480,3
+        MOV       AL,AR1
+        BF        L70,NEQ               ; |1480| 
+        ; branchcc occurs ; |1480| 
+DW$L$_RunPathMake$47$E:
+;** 1482	-----------------------    S$13 = &K$71[(long)gPathBufferHead];
+;** 1482	-----------------------    ++gPathBufferHead;
+;** 1482	-----------------------    *(volatile unsigned *)S$13 &= 0xff00u;
+;** 1483	-----------------------    cnt = 0u;
+;***  	-----------------------    L$5 = 255;
+	.dwpsn	"algo.c",1482,4
+        MOVL      XAR4,*-SP[38]         ; |1482| 
+        MOVU      ACC,@_gPathBufferHead
+        LSL       ACC,1                 ; |1482| 
+        ADDL      XAR4,ACC
+        INC       @_gPathBufferHead     ; |1482| 
+        AND       *+XAR4[0],#0xff00     ; |1482| 
+	.dwpsn	"algo.c",1483,4
+        MOVB      XAR5,#0
+        MOVB      XAR6,#255
+L74:    
+DW$L$_RunPathMake$49$B:
+;***	-----------------------g42:
+;** 1493	-----------------------    *((long)cnt*2+(volatile struct _bit *)K$57) |= 0xffffu;
+;** 1492	-----------------------    ++cnt;
+;** 1492	-----------------------    if ( (--L$5) != (-1) ) goto g42;
+	.dwpsn	"algo.c",1493,3
+        MOVL      XAR4,*-SP[36]         ; |1493| 
+        MOVU      ACC,AR5
+        LSL       ACC,1                 ; |1493| 
+        ADDL      XAR4,ACC
+        OR        *+XAR4[0],#0xffff     ; |1493| 
+	.dwpsn	"algo.c",1492,26
+        ADDB      XAR5,#1               ; |1492| 
+	.dwpsn	"algo.c",1492,15
+        BANZ      L74,AR6--             ; |1492| 
+        ; branchcc occurs ; |1492| 
+DW$L$_RunPathMake$49$E:
+;** 1495	-----------------------    if ( !gPathBufferHead ) goto g46;
+	.dwpsn	"algo.c",1495,15
+        MOVW      DP,#_gPathBufferHead
+        MOV       AL,@_gPathBufferHead  ; |1495| 
+        BF        L76,EQ                ; |1495| 
+        ; branchcc occurs ; |1495| 
+;** 1495	-----------------------    cnt = 0u;
+	.dwpsn	"algo.c",1495,6
+        MOVB      XAR5,#0
+L75:    
+DW$L$_RunPathMake$52$B:
+;***	-----------------------g45:
+;** 1497	-----------------------    S$12 = &K$71[(long)(gPathBufferHead-cnt-1u)];
+;** 1497	-----------------------    S$11 = (volatile struct _bit *)((long)(*(volatile unsigned *)S$12&0xffu)*2+K$57);
+;** 1497	-----------------------    *(volatile unsigned *)S$11;
+;** 1497	-----------------------    *(volatile unsigned *)S$11 = 4095u-cnt;
+;** 1495	-----------------------    if ( gPathBufferHead > (++cnt) ) goto g45;
+	.dwpsn	"algo.c",1497,3
+        MOV       AL,@_gPathBufferHead  ; |1497| 
+        SUB       AL,AR5                ; |1497| 
+        MOVL      XAR4,*-SP[38]         ; |1497| 
+        ADDB      AL,#-1
+        MOVU      ACC,AL
+        LSL       ACC,1                 ; |1497| 
+        ADDL      XAR4,ACC
+        MOV       AL,*+XAR4[0]          ; |1497| 
+        MOVL      XAR4,*-SP[36]         ; |1497| 
+        ANDB      AL,#0xff              ; |1497| 
+        MOVU      ACC,AL
+        LSL       ACC,1                 ; |1497| 
+        ADDL      XAR4,ACC
+        MOV       AL,*+XAR4[0]          ; |1497| 
+        MOV       AL,#4095              ; |1497| 
+        SUB       AL,AR5                ; |1497| 
+        MOV       *+XAR4[0],AL          ; |1497| 
+	.dwpsn	"algo.c",1495,15
+        ADDB      XAR5,#1               ; |1495| 
+        MOV       AL,AR5                ; |1495| 
+        CMP       AL,@_gPathBufferHead  ; |1495| 
+        BF        L75,LO                ; |1495| 
+        ; branchcc occurs ; |1495| 
+DW$L$_RunPathMake$52$E:
+L76:    
+;***	-----------------------g46:
+;** 1503	-----------------------    gPathBufferHead = 0u;
+;** 1506	-----------------------    memset((void *)K$71, 0, 512uL);
+;** 1502	-----------------------    WeightMin = 4095u;
+;** 1504	-----------------------    Position = 0u;
+;** 1505	-----------------------    MouseDir = 0u;
+	.dwpsn	"algo.c",1503,2
+        MOV       @_gPathBufferHead,#0  ; |1503| 
+	.dwpsn	"algo.c",1506,2
+        MOVL      XAR4,*-SP[38]
+        MOV       ACC,#1 << 9
+        MOVB      XAR5,#0
+        LCR       #_memset              ; |1506| 
+        ; call occurs [#_memset] ; |1506| 
+	.dwpsn	"algo.c",1502,2
+        MOV       PH,#4095              ; |1502| 
+	.dwpsn	"algo.c",1504,2
+        MOV       PL,#0                 ; |1504| 
+	.dwpsn	"algo.c",1505,2
+        MOVB      XAR0,#0
+L77:    
+DW$L$_RunPathMake$54$B:
+;***	-----------------------g47:
+;***  	-----------------------    U$73 = &K$4[Position];
+;***  	-----------------------    U$75 = &gHeadTable[0];
+;** 1510	-----------------------    x = 0u;
+;***  	-----------------------    L$6 = 3;
+        MOVL      ACC,*-SP[34]
+        ADDU      ACC,PL
+        MOVL      XAR1,ACC
+        MOVL      XAR7,#_gHeadTable
+	.dwpsn	"algo.c",1510,7
+        MOVB      XAR6,#3
+        MOVB      XAR3,#0
+DW$L$_RunPathMake$54$E:
+L78:    
+DW$L$_RunPathMake$55$B:
+;***	-----------------------g48:
+;** 1512	-----------------------    if ( *U$73&*U$75++&0xfu ) goto g51;
+	.dwpsn	"algo.c",1512,4
+        MOV       AL,*XAR7++            ; |1512| 
+        AND       AL,*+XAR1[0]          ; |1512| 
+        ANDB      AL,#0x0f              ; |1512| 
+        BF        L79,NEQ               ; |1512| 
+        ; branchcc occurs ; |1512| 
+DW$L$_RunPathMake$55$E:
+DW$L$_RunPathMake$56$B:
+;** 1514	-----------------------    C$32 = &K$19[x];
+;** 1514	-----------------------    S$10 = (volatile struct _bit *)((long)(*C$32+Position)*2+K$57);
+;** 1514	-----------------------    NextWeight = *(volatile unsigned *)S$10;
+;** 1515	-----------------------    if ( NextWeight >= WeightMin ) goto g51;
+	.dwpsn	"algo.c",1514,5
+        MOVL      ACC,*-SP[32]
+        ADDU      ACC,AR3               ; |1514| 
+        MOVL      XAR4,ACC              ; |1514| 
+        MOVL      XAR5,*-SP[36]         ; |1514| 
+        MOV       AL,*+XAR4[0]          ; |1514| 
+        ADD       AL,PL                 ; |1514| 
+        MOVU      ACC,AL
+        LSL       ACC,1                 ; |1514| 
+        ADDL      XAR5,ACC
+        MOV       AH,*+XAR5[0]          ; |1514| 
+	.dwpsn	"algo.c",1515,5
+        MOV       AL,PH
+        CMP       AL,AH                 ; |1515| 
+        BF        L79,LOS               ; |1515| 
+        ; branchcc occurs ; |1515| 
+DW$L$_RunPathMake$56$E:
+DW$L$_RunPathMake$57$B:
+;** 1517	-----------------------    WeightMin = NextWeight;
+;** 1518	-----------------------    NextPos = *C$32+Position;
+;** 1519	-----------------------    AbsoluteDir = x;
+;** 1520	-----------------------    NextTurn = AbsoluteDir-MouseDir&3u;
+	.dwpsn	"algo.c",1517,6
+        MOV       PH,AH                 ; |1517| 
+	.dwpsn	"algo.c",1518,6
+        MOV       AL,*+XAR4[0]          ; |1518| 
+        ADD       AL,PL                 ; |1518| 
+        MOV       *-SP[27],AL           ; |1518| 
+	.dwpsn	"algo.c",1519,6
+        MOVZ      AR2,AR3               ; |1519| 
+	.dwpsn	"algo.c",1520,6
+        MOV       AL,AR2                ; |1520| 
+        SUB       AL,AR0                ; |1520| 
+        ANDB      AL,#0x03              ; |1520| 
+        MOV       *-SP[28],AL           ; |1520| 
+DW$L$_RunPathMake$57$E:
+L79:    
+DW$L$_RunPathMake$58$B:
+;***	-----------------------g51:
+;** 1510	-----------------------    ++x;
+;** 1510	-----------------------    if ( (--L$6) != (-1) ) goto g48;
+	.dwpsn	"algo.c",1510,21
+        ADDB      XAR3,#1               ; |1510| 
+	.dwpsn	"algo.c",1510,14
+        BANZ      L78,AR6--             ; |1510| 
+        ; branchcc occurs ; |1510| 
+DW$L$_RunPathMake$58$E:
+DW$L$_RunPathMake$59$B:
+;** 1526	-----------------------    S$9 = &K$71[(long)gPathBufferHead];
+;** 1526	-----------------------    *(volatile unsigned *)S$9 = *(volatile unsigned *)S$9&0xff00u|Position&0xffu;
+;** 1527	-----------------------    Position = NextPos;
+;** 1528	-----------------------    S$8 = &K$71[(long)gPathBufferHead];
+;** 1528	-----------------------    *(volatile unsigned *)S$8 = *(volatile unsigned *)S$8&0xfffu|MouseDir<<12;
+;** 1529	-----------------------    MouseDir = AbsoluteDir;
+;** 1530	-----------------------    S$7 = &K$71[(long)gPathBufferHead];
+;** 1530	-----------------------    *(volatile unsigned *)S$7 = *(volatile unsigned *)S$7&0xf0ffu|(NextTurn&0xfu)<<8;
+;** 1531	-----------------------    ++gPathBufferHead;
+;** 1534	-----------------------    if ( P$17 = gPathBufferHead > 255u ) goto g167;
+	.dwpsn	"algo.c",1526,3
+        MOVL      XAR4,*-SP[38]         ; |1526| 
+        MOVW      DP,#_gPathBufferHead
+        MOVU      ACC,@_gPathBufferHead
+        LSL       ACC,1                 ; |1526| 
+        ADDL      XAR4,ACC
+        MOV       AL,PL                 ; |1526| 
+        MOV       AH,*+XAR4[0]          ; |1526| 
+        MOVB      AH,AL.LSB             ; |1526| 
+        MOV       *+XAR4[0],AH          ; |1526| 
+	.dwpsn	"algo.c",1527,3
+        MOV       PL,*-SP[27]
+	.dwpsn	"algo.c",1528,3
+        MOVL      XAR4,*-SP[38]         ; |1528| 
+        MOVU      ACC,@_gPathBufferHead
+        LSL       ACC,1                 ; |1528| 
+        ADDL      XAR4,ACC
+        AND       AL,*+XAR4[0],#0x0fff  ; |1528| 
+        MOVZ      AR6,AL                ; |1528| 
+        MOV       ACC,AR0 << #12        ; |1528| 
+        OR        AL,AR6                ; |1528| 
+        MOV       *+XAR4[0],AL          ; |1528| 
+	.dwpsn	"algo.c",1529,3
+        MOVZ      AR0,AR2               ; |1529| 
+	.dwpsn	"algo.c",1530,3
+        MOVL      XAR4,*-SP[38]         ; |1530| 
+        MOVU      ACC,@_gPathBufferHead
+        LSL       ACC,1                 ; |1530| 
+        ADDL      XAR4,ACC
+        MOV       AL,*-SP[28]           ; |1530| 
+        ANDB      AL,#15                ; |1530| 
+        LSL       AL,8                  ; |1530| 
+        AND       AH,*+XAR4[0],#0xf0ff  ; |1530| 
+        OR        AL,AH                 ; |1530| 
+        MOV       *+XAR4[0],AL          ; |1530| 
+	.dwpsn	"algo.c",1531,3
+        INC       @_gPathBufferHead     ; |1531| 
+	.dwpsn	"algo.c",1534,3
+        MOVB      AL,#0
+        MOV       AH,@_gPathBufferHead  ; |1534| 
+        CMPB      AH,#255               ; |1534| 
+        BF        L80,LOS               ; |1534| 
+        ; branchcc occurs ; |1534| 
+DW$L$_RunPathMake$59$E:
+DW$L$_RunPathMake$60$B:
+        MOVB      AL,#1                 ; |1534| 
+DW$L$_RunPathMake$60$E:
+L80:    
+DW$L$_RunPathMake$61$B:
+        CMPB      AL,#0                 ; |1534| 
+        BF        L142,NEQ              ; |1534| 
+        ; branchcc occurs ; |1534| 
+DW$L$_RunPathMake$61$E:
+DW$L$_RunPathMake$62$B:
+;** 1544	-----------------------    if ( Position != GoalPosition ) goto g47;
+	.dwpsn	"algo.c",1544,3
+        MOV       AL,*-SP[24]
+        CMP       AL,PL                 ; |1544| 
+        BF        L77,NEQ               ; |1544| 
+        ; branchcc occurs ; |1544| 
+DW$L$_RunPathMake$62$E:
+;** 1546	-----------------------    S$6 = &K$71[(long)gPathBufferHead];
+;** 1546	-----------------------    *(volatile unsigned *)S$6 = *(volatile unsigned *)S$6&0xff00u|GoalPosition&0xffu;
+;** 1547	-----------------------    S$5 = &K$71[(long)gPathBufferHead];
+;** 1547	-----------------------    *(volatile unsigned *)S$5 = *(volatile unsigned *)S$5&0xfffu|MouseDir<<12;
+;** 1548	-----------------------    S$4 = &K$71[(long)gPathBufferHead];
+;** 1548	-----------------------    ++gPathBufferHead;
+;** 1548	-----------------------    *(volatile unsigned *)S$4 &= 0xf0ffu;
+;** 1549	-----------------------    gMouseDir = MouseDir;
+;** 1555	-----------------------    gMousePosition = K$19[MouseDir]+GoalPosition;
+;** 1557	-----------------------    TxPrintf("%x %x\n", gMouseDir, gMousePosition);
+;** 1562	-----------------------    gMouseHead = 0;
+;** 1565	-----------------------    gTurnState = 2;
+;** 1563	-----------------------    x = 0u;
+;** 1564	-----------------------    cnt = 0u;
+;***  	-----------------------    if ( gPathBufferHead <= 3u ) goto g152;
+	.dwpsn	"algo.c",1546,4
+        MOVL      XAR4,*-SP[38]         ; |1546| 
+        MOVU      ACC,@_gPathBufferHead
+        LSL       ACC,1                 ; |1546| 
+        ADDL      XAR4,ACC
+        MOV       AL,*-SP[24]           ; |1546| 
+        MOV       AH,*+XAR4[0]          ; |1546| 
+        MOVB      AH,AL.LSB             ; |1546| 
+        MOV       *+XAR4[0],AH          ; |1546| 
+	.dwpsn	"algo.c",1547,4
+        MOVL      XAR4,*-SP[38]         ; |1547| 
+        MOVU      ACC,@_gPathBufferHead
+        LSL       ACC,1                 ; |1547| 
+        ADDL      XAR4,ACC
+        AND       AL,*+XAR4[0],#0x0fff  ; |1547| 
+        MOVZ      AR6,AL                ; |1547| 
+        MOV       ACC,AR0 << #12        ; |1547| 
+        OR        AL,AR6                ; |1547| 
+        MOV       *+XAR4[0],AL          ; |1547| 
+	.dwpsn	"algo.c",1548,4
+        MOVL      XAR4,*-SP[38]         ; |1548| 
+        MOVU      ACC,@_gPathBufferHead
+        LSL       ACC,1                 ; |1548| 
+        ADDL      XAR4,ACC
+        INC       @_gPathBufferHead     ; |1548| 
+        AND       *+XAR4[0],#0xf0ff     ; |1548| 
+	.dwpsn	"algo.c",1549,4
+        MOVW      DP,#_gMouseDir
+        MOV       @_gMouseDir,AR0       ; |1549| 
+	.dwpsn	"algo.c",1555,2
+        MOVL      XAR4,*-SP[32]
+        MOV       AL,*+XAR4[AR0]        ; |1555| 
+        MOVW      DP,#_gMousePosition
+        ADD       AL,*-SP[24]           ; |1555| 
+        MOV       @_gMousePosition,AL   ; |1555| 
+	.dwpsn	"algo.c",1557,2
+        MOVW      DP,#_gMouseDir
+        MOVL      XAR4,#FSL7            ; |1557| 
+        MOV       AL,@_gMouseDir        ; |1557| 
+        MOVL      *-SP[2],XAR4          ; |1557| 
+        MOVW      DP,#_gMousePosition
+        MOV       *-SP[3],AL            ; |1557| 
+        MOV       AL,@_gMousePosition   ; |1557| 
+        MOV       *-SP[4],AL            ; |1557| 
+        LCR       #_TxPrintf            ; |1557| 
+        ; call occurs [#_TxPrintf] ; |1557| 
+	.dwpsn	"algo.c",1562,2
+        MOVW      DP,#_gMouseHead
+        MOV       @_gMouseHead,#0       ; |1562| 
+	.dwpsn	"algo.c",1565,2
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#2       ; |1565| 
+	.dwpsn	"algo.c",1563,2
+        MOVB      XAR0,#0
+	.dwpsn	"algo.c",1564,2
+        MOVW      DP,#_gPathBufferHead
+        MOV       AL,@_gPathBufferHead
+        CMPB      AL,#3
+        MOVB      XAR1,#0
+        BF        L131,LOS
+        ; branchcc occurs
+;***  	-----------------------    U$138 = (volatile unsigned *)K$71;
+;***  	-----------------------    U$186 = U$138;
+;***  	-----------------------    U$117 = 3u;
+        MOVL      XAR7,*-SP[38]
+        MOVB      AL,#3
+        MOV       PH,AL
+        MOVL      XT,XAR7
+L81:    
+;***	-----------------------g56:
+;** 1571	-----------------------    C$31 = &((volatile unsigned *)K$71)[2*(long)U$117];
+;** 1571	-----------------------    i[3] = *C$31>>8&0xfu;
+;** 1572	-----------------------    C$30 = &((volatile unsigned *)K$71)[2*(long)(x+2u)];
+;** 1572	-----------------------    i[2] = *C$30>>8&0xfu;
+;** 1573	-----------------------    C$29 = &((volatile unsigned *)K$71)[2*(long)(x+1u)];
+;** 1573	-----------------------    i[1] = *C$29>>8&0xfu;
+;** 1574	-----------------------    i[0] = *U$138>>8&0xfu;
+;** 1576	-----------------------    DiagPos[3] = *C$31&0xffu;
+;** 1577	-----------------------    DiagPos[2] = *C$30&0xffu;
+;** 1578	-----------------------    DiagPos[1] = *C$29&0xffu;
+;** 1579	-----------------------    DiagPos[0] = *U$138&0xffu;
+;** 1581	-----------------------    DiagDir[3] = *C$31>>12;
+;** 1582	-----------------------    DiagDir[2] = *C$30>>12;
+;** 1583	-----------------------    DiagDir[1] = *C$29>>12;
+;** 1584	-----------------------    DiagDir[0] = *U$138>>12;
+	.dwpsn	"algo.c",1571,4
+        MOVL      XAR4,*-SP[38]         ; |1571| 
+        MOVU      ACC,PH
+        LSL       ACC,1                 ; |1571| 
+        ADDL      XAR4,ACC
+        AND       AL,*+XAR4[0],#0x0f00  ; |1571| 
+        LSR       AL,8                  ; |1571| 
+        MOV       *-SP[12],AL           ; |1571| 
+	.dwpsn	"algo.c",1572,4
+        MOVB      AL,#2                 ; |1572| 
+        MOVL      XAR5,*-SP[38]         ; |1572| 
+        ADD       AL,AR0                ; |1572| 
+        MOVU      ACC,AL
+        LSL       ACC,1                 ; |1572| 
+        ADDL      XAR5,ACC
+        AND       AL,*+XAR5[0],#0x0f00  ; |1572| 
+        LSR       AL,8                  ; |1572| 
+        MOV       *-SP[13],AL           ; |1572| 
+	.dwpsn	"algo.c",1573,4
+        MOVB      AL,#1                 ; |1573| 
+        MOVL      XAR6,*-SP[38]         ; |1573| 
+        ADD       AL,AR0                ; |1573| 
+        MOVU      ACC,AL
+        LSL       ACC,1                 ; |1573| 
+        ADDL      XAR6,ACC
+        AND       AL,*+XAR6[0],#0x0f00  ; |1573| 
+        LSR       AL,8                  ; |1573| 
+        MOV       *-SP[14],AL           ; |1573| 
+	.dwpsn	"algo.c",1574,4
+        AND       AL,*+XAR7[0],#0x0f00  ; |1574| 
+        LSR       AL,8                  ; |1574| 
+        MOV       *-SP[15],AL           ; |1574| 
+	.dwpsn	"algo.c",1576,4
+        MOV       AL,*+XAR4[0]          ; |1576| 
+        ANDB      AL,#0xff              ; |1576| 
+        MOV       *-SP[16],AL           ; |1576| 
+	.dwpsn	"algo.c",1577,4
+        MOV       AL,*+XAR5[0]          ; |1577| 
+        ANDB      AL,#0xff              ; |1577| 
+        MOV       *-SP[17],AL           ; |1577| 
+	.dwpsn	"algo.c",1578,4
+        MOV       AL,*+XAR6[0]          ; |1578| 
+        ANDB      AL,#0xff              ; |1578| 
+        MOV       *-SP[18],AL           ; |1578| 
+	.dwpsn	"algo.c",1579,4
+        MOV       AL,*+XAR7[0]          ; |1579| 
+        ANDB      AL,#0xff              ; |1579| 
+        MOV       *-SP[19],AL           ; |1579| 
+	.dwpsn	"algo.c",1581,4
+        MOV       AL,*+XAR4[0]          ; |1581| 
+        LSR       AL,12                 ; |1581| 
+        MOV       *-SP[20],AL           ; |1581| 
+	.dwpsn	"algo.c",1582,4
+        MOV       AL,*+XAR5[0]          ; |1582| 
+        LSR       AL,12                 ; |1582| 
+        MOV       *-SP[21],AL           ; |1582| 
+	.dwpsn	"algo.c",1583,4
+        MOV       AL,*+XAR6[0]          ; |1583| 
+        LSR       AL,12                 ; |1583| 
+        MOV       *-SP[22],AL           ; |1583| 
+	.dwpsn	"algo.c",1584,4
+        MOVL      XAR4,XAR7
+        MOV       AL,*+XAR4[0]          ; |1584| 
+        LSR       AL,12                 ; |1584| 
+        MOV       *-SP[23],AL           ; |1584| 
+L82:    
+;***	-----------------------g57:
+;** 1640	-----------------------    YetTurnState = gTurnState;
+;** 1641	-----------------------    YetMouseHead = gMouseHead;
+;** 1643	-----------------------    if ( *&gMouseHead ) goto g93;
+	.dwpsn	"algo.c",1640,3
+        MOVW      DP,#_gTurnState
+        MOVZ      AR6,@_gTurnState      ; |1640| 
+	.dwpsn	"algo.c",1641,3
+        MOVW      DP,#_gMouseHead
+        MOVZ      AR2,@_gMouseHead      ; |1641| 
+	.dwpsn	"algo.c",1643,3
+        MOV       AL,@_gMouseHead       ; |1643| 
+        BF        L100,NEQ              ; |1643| 
+        ; branchcc occurs ; |1643| 
+;** 1645	-----------------------    if ( i[0]|LastPath ) goto g90;
+	.dwpsn	"algo.c",1645,4
+        MOV       AL,*-SP[15]           ; |1645| 
+        OR        AL,*-SP[25]           ; |1645| 
+        BF        L98,NEQ               ; |1645| 
+        ; branchcc occurs ; |1645| 
+;** 1647	-----------------------    if ( i[1] == 1u ) goto g77;
+	.dwpsn	"algo.c",1647,5
+        MOV       AL,*-SP[14]           ; |1647| 
+        CMPB      AL,#1                 ; |1647| 
+        BF        L91,EQ                ; |1647| 
+        ; branchcc occurs ; |1647| 
+;** 1681	-----------------------    if ( i[1] == 3u ) goto g70;
+	.dwpsn	"algo.c",1681,10
+        CMPB      AL,#3                 ; |1681| 
+        BF        L87,EQ                ; |1681| 
+        ; branchcc occurs ; |1681| 
+;** 1716	-----------------------    if ( i[1] ) goto g67;
+	.dwpsn	"algo.c",1716,10
+        CMPB      AL,#0                 ; |1716| 
+        BF        L85,NEQ               ; |1716| 
+        ; branchcc occurs ; |1716| 
+;** 1718	-----------------------    gMouseHead = 0;
+;** 1719	-----------------------    gTurnState = 0;
+;** 1721	-----------------------    if ( i[2] ) goto g66;
+	.dwpsn	"algo.c",1718,6
+        MOV       @_gMouseHead,#0       ; |1718| 
+	.dwpsn	"algo.c",1719,6
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#0       ; |1719| 
+	.dwpsn	"algo.c",1721,6
+        MOV       AL,*-SP[13]           ; |1721| 
+        BF        L84,NEQ               ; |1721| 
+        ; branchcc occurs ; |1721| 
+;** 1723	-----------------------    if ( i[3] ) goto g65;
+	.dwpsn	"algo.c",1723,7
+        MOV       AL,*-SP[12]           ; |1723| 
+        BF        L83,NEQ               ; |1723| 
+        ; branchcc occurs ; |1723| 
+;** 1726	-----------------------    U$138 += 6;
+;** 1726	-----------------------    x += 3u;
+;** 1727	-----------------------    BlockCnt = 3u;
+;** 1728	-----------------------    goto g85;
+	.dwpsn	"algo.c",1726,8
+        MOVL      ACC,XAR7              ; |1726| 
+        MOVB      XAR4,#6               ; |1726| 
+        ADDU      ACC,AR4               ; |1726| 
+        MOVL      XAR7,ACC              ; |1726| 
+        ADDB      XAR0,#3               ; |1726| 
+	.dwpsn	"algo.c",1727,8
+        MOVB      AL,#3                 ; |1727| 
+        MOV       PL,AL                 ; |1727| 
+	.dwpsn	"algo.c",1728,7
+        BF        L96,UNC               ; |1728| 
+        ; branch occurs ; |1728| 
+L83:    
+;***	-----------------------g65:
+;** 1732	-----------------------    U$138 += 4;
+;** 1732	-----------------------    x += 2u;
+;** 1733	-----------------------    BlockCnt = 2u;
+;** 1733	-----------------------    goto g85;
+	.dwpsn	"algo.c",1732,8
+        MOVL      ACC,XAR7              ; |1732| 
+        MOVB      XAR4,#4               ; |1732| 
+        ADDU      ACC,AR4               ; |1732| 
+        MOVL      XAR7,ACC              ; |1732| 
+        ADDB      XAR0,#2               ; |1732| 
+	.dwpsn	"algo.c",1733,8
+        MOVB      AL,#2                 ; |1733| 
+        MOV       PL,AL                 ; |1733| 
+        BF        L96,UNC               ; |1733| 
+        ; branch occurs ; |1733| 
+L84:    
+;***	-----------------------g66:
+;** 1740	-----------------------    U$138 += 2;
+;** 1740	-----------------------    ++x;
+;** 1741	-----------------------    BlockCnt = 1u;
+;** 1741	-----------------------    goto g85;
+	.dwpsn	"algo.c",1740,7
+        MOVL      ACC,XAR7              ; |1740| 
+        MOVB      XAR4,#2               ; |1740| 
+        ADDU      ACC,AR4               ; |1740| 
+        MOVL      XAR7,ACC              ; |1740| 
+        ADDB      XAR0,#1               ; |1740| 
+	.dwpsn	"algo.c",1741,7
+        MOVB      AL,#1                 ; |1741| 
+        MOV       PL,AL                 ; |1741| 
+        BF        L96,UNC               ; |1741| 
+        ; branch occurs ; |1741| 
+L85:    
+;***	-----------------------g67:
+;** 1750	-----------------------    gMouseHead = 0;
+;** 1751	-----------------------    gTurnState = 0;
+;** 1752	-----------------------    U$138 += 2;
+;** 1752	-----------------------    ++x;
+;** 1753	-----------------------    BlockCnt = 1u;
+;** 1754	-----------------------    if ( YetTurnState ) goto g69;
+	.dwpsn	"algo.c",1750,6
+        MOV       @_gMouseHead,#0       ; |1750| 
+	.dwpsn	"algo.c",1751,6
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#0       ; |1751| 
+	.dwpsn	"algo.c",1752,6
+        MOVL      ACC,XAR7              ; |1752| 
+        MOVB      XAR4,#2               ; |1752| 
+        ADDU      ACC,AR4               ; |1752| 
+        MOVL      XAR7,ACC              ; |1752| 
+        ADDB      XAR0,#1               ; |1752| 
+	.dwpsn	"algo.c",1753,6
+        MOVB      AL,#1                 ; |1753| 
+        MOV       PL,AL                 ; |1753| 
+	.dwpsn	"algo.c",1754,6
+        MOV       AL,AR6
+        BF        L86,NEQ               ; |1754| 
+        ; branchcc occurs ; |1754| 
+;** 1756	-----------------------    C$28 = &((volatile unsigned *)K$71)[2*(long)(cnt-1u)];
+;** 1756	-----------------------    *C$28 = *C$28&0xff00u|DiagPos[0]&0xffu;
+;** 1757	-----------------------    *C$28 = *C$28&0xfffu|DiagDir[0]<<12;
+;** 1758	-----------------------    goto g85;
+	.dwpsn	"algo.c",1756,7
+        MOV       AL,AR1                ; |1756| 
+        MOVL      XAR4,*-SP[38]         ; |1756| 
+        ADDB      AL,#-1
+        MOVU      ACC,AL
+        LSL       ACC,1                 ; |1756| 
+        ADDL      XAR4,ACC
+        MOV       AL,*-SP[19]           ; |1756| 
+        MOV       AH,*+XAR4[0]          ; |1756| 
+        MOVB      AH,AL.LSB             ; |1756| 
+        MOV       *+XAR4[0],AH          ; |1756| 
+	.dwpsn	"algo.c",1757,7
+        AND       AL,*+XAR4[0],#0x0fff  ; |1757| 
+        MOV       PH,AL                 ; |1757| 
+        MOV       ACC,*-SP[23] << #12   ; |1757| 
+        OR        AL,PH                 ; |1757| 
+        MOV       *+XAR4[0],AL          ; |1757| 
+	.dwpsn	"algo.c",1758,6
+        BF        L96,UNC               ; |1758| 
+        ; branch occurs ; |1758| 
+L86:    
+;***	-----------------------g69:
+;** 1761	-----------------------    *U$186 = *U$186&0xff00u|DiagPos[0]&0xffu;
+;** 1762	-----------------------    *U$186 = *U$186&0xfffu|DiagDir[0]<<12;
+;** 1762	-----------------------    goto g85;
+	.dwpsn	"algo.c",1761,7
+        MOVL      XAR4,XT               ; |1761| 
+        MOV       AH,*+XAR4[0]          ; |1761| 
+        MOVL      XAR4,XT               ; |1761| 
+        MOV       AL,*-SP[19]           ; |1761| 
+        MOVB      AH,AL.LSB             ; |1761| 
+        MOV       *+XAR4[0],AH          ; |1761| 
+	.dwpsn	"algo.c",1762,7
+        MOVL      XAR4,XT
+        AND       AL,*+XAR4[0],#0x0fff  ; |1762| 
+        MOVL      XAR4,XT               ; |1762| 
+        MOV       PH,AL                 ; |1762| 
+        MOV       ACC,*-SP[23] << #12   ; |1762| 
+        OR        AL,PH                 ; |1762| 
+        MOV       *+XAR4[0],AL          ; |1762| 
+        BF        L96,UNC               ; |1762| 
+        ; branch occurs ; |1762| 
+L87:    
+;***	-----------------------g70:
+;** 1683	-----------------------    if ( i[2] == 3u ) goto g74;
+	.dwpsn	"algo.c",1683,6
+        MOV       AL,*-SP[13]           ; |1683| 
+        CMPB      AL,#3                 ; |1683| 
+        BF        L89,EQ                ; |1683| 
+        ; branchcc occurs ; |1683| 
+;** 1700	-----------------------    if ( i[2] ) goto g73;
+	.dwpsn	"algo.c",1700,11
+        CMPB      AL,#0                 ; |1700| 
+        BF        L88,NEQ               ; |1700| 
+        ; branchcc occurs ; |1700| 
+;** 1703	-----------------------    gMouseHead = 0;
+;** 1704	-----------------------    gTurnState = 3;
+;** 1705	-----------------------    U$138 += 4;
+;** 1705	-----------------------    x += 2u;
+;** 1706	-----------------------    goto g85;
+	.dwpsn	"algo.c",1703,7
+        MOV       @_gMouseHead,#0       ; |1703| 
+	.dwpsn	"algo.c",1704,7
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#3       ; |1704| 
+	.dwpsn	"algo.c",1705,7
+        MOVL      ACC,XAR7              ; |1705| 
+        MOVB      XAR4,#4               ; |1705| 
+        ADDU      ACC,AR4               ; |1705| 
+        MOVL      XAR7,ACC              ; |1705| 
+        ADDB      XAR0,#2               ; |1705| 
+	.dwpsn	"algo.c",1706,6
+        BF        L96,UNC               ; |1706| 
+        ; branch occurs ; |1706| 
+L88:    
+;***	-----------------------g73:
+;** 1710	-----------------------    gMouseHead = 1;
+;** 1711	-----------------------    gTurnState = 9;
+;** 1712	-----------------------    U$138 += 4;
+;** 1712	-----------------------    x += 2u;
+;** 1712	-----------------------    goto g85;
+	.dwpsn	"algo.c",1710,7
+        MOV       @_gMouseHead,#1       ; |1710| 
+	.dwpsn	"algo.c",1711,7
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#9       ; |1711| 
+	.dwpsn	"algo.c",1712,7
+        MOVL      ACC,XAR7              ; |1712| 
+        MOVB      XAR4,#4               ; |1712| 
+        ADDU      ACC,AR4               ; |1712| 
+        ADDB      XAR0,#2               ; |1712| 
+        MOVL      XAR7,ACC              ; |1712| 
+        BF        L96,UNC               ; |1712| 
+        ; branch occurs ; |1712| 
+L89:    
+;***	-----------------------g74:
+;** 1685	-----------------------    if ( i[3] ) goto g76;
+	.dwpsn	"algo.c",1685,7
+        MOV       AL,*-SP[12]           ; |1685| 
+        BF        L90,NEQ               ; |1685| 
+        ; branchcc occurs ; |1685| 
+;** 1688	-----------------------    gMouseHead = 0;
+;** 1689	-----------------------    gTurnState = 5;
+;** 1690	-----------------------    U$138 += 6;
+;** 1690	-----------------------    x += 3u;
+;** 1691	-----------------------    goto g85;
+	.dwpsn	"algo.c",1688,8
+        MOV       @_gMouseHead,#0       ; |1688| 
+	.dwpsn	"algo.c",1689,8
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#5       ; |1689| 
+	.dwpsn	"algo.c",1690,8
+        MOVL      ACC,XAR7              ; |1690| 
+        MOVB      XAR4,#6               ; |1690| 
+        ADDU      ACC,AR4               ; |1690| 
+        MOVL      XAR7,ACC              ; |1690| 
+        ADDB      XAR0,#3               ; |1690| 
+	.dwpsn	"algo.c",1691,7
+        BF        L96,UNC               ; |1691| 
+        ; branch occurs ; |1691| 
+L90:    
+;***	-----------------------g76:
+;** 1695	-----------------------    gMouseHead = 1;
+;** 1696	-----------------------    gTurnState = 7;
+;** 1697	-----------------------    U$138 += 6;
+;** 1697	-----------------------    x += 3u;
+;** 1697	-----------------------    goto g85;
+	.dwpsn	"algo.c",1695,8
+        MOV       @_gMouseHead,#1       ; |1695| 
+	.dwpsn	"algo.c",1696,8
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#7       ; |1696| 
+	.dwpsn	"algo.c",1697,8
+        MOVL      ACC,XAR7              ; |1697| 
+        MOVB      XAR4,#6               ; |1697| 
+        ADDU      ACC,AR4               ; |1697| 
+        ADDB      XAR0,#3               ; |1697| 
+        MOVL      XAR7,ACC              ; |1697| 
+        BF        L96,UNC               ; |1697| 
+        ; branch occurs ; |1697| 
+L91:    
+;***	-----------------------g77:
+;** 1650	-----------------------    if ( i[2] == 1u ) goto g81;
+	.dwpsn	"algo.c",1650,6
+        MOV       AL,*-SP[13]           ; |1650| 
+        CMPB      AL,#1                 ; |1650| 
+        BF        L93,EQ                ; |1650| 
+        ; branchcc occurs ; |1650| 
+;** 1666	-----------------------    if ( i[2] ) goto g80;
+	.dwpsn	"algo.c",1666,11
+        CMPB      AL,#0                 ; |1666| 
+        BF        L92,NEQ               ; |1666| 
+        ; branchcc occurs ; |1666| 
+;** 1669	-----------------------    gMouseHead = 0;
+;** 1670	-----------------------    gTurnState = 1;
+;** 1671	-----------------------    U$138 += 4;
+;** 1671	-----------------------    x += 2u;
+;** 1672	-----------------------    goto g85;
+	.dwpsn	"algo.c",1669,7
+        MOV       @_gMouseHead,#0       ; |1669| 
+	.dwpsn	"algo.c",1670,7
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#1       ; |1670| 
+	.dwpsn	"algo.c",1671,7
+        MOVL      ACC,XAR7              ; |1671| 
+        MOVB      XAR4,#4               ; |1671| 
+        ADDU      ACC,AR4               ; |1671| 
+        MOVL      XAR7,ACC              ; |1671| 
+        ADDB      XAR0,#2               ; |1671| 
+	.dwpsn	"algo.c",1672,6
+        BF        L96,UNC               ; |1672| 
+        ; branch occurs ; |1672| 
+L92:    
+;***	-----------------------g80:
+;** 1676	-----------------------    gMouseHead = 1;
+;** 1677	-----------------------    gTurnState = 8;
+;** 1678	-----------------------    U$138 += 4;
+;** 1678	-----------------------    x += 2u;
+;** 1678	-----------------------    goto g85;
+	.dwpsn	"algo.c",1676,7
+        MOV       @_gMouseHead,#1       ; |1676| 
+	.dwpsn	"algo.c",1677,7
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#8       ; |1677| 
+	.dwpsn	"algo.c",1678,7
+        MOVL      ACC,XAR7              ; |1678| 
+        MOVB      XAR4,#4               ; |1678| 
+        ADDU      ACC,AR4               ; |1678| 
+        ADDB      XAR0,#2               ; |1678| 
+        MOVL      XAR7,ACC              ; |1678| 
+        BF        L96,UNC               ; |1678| 
+        ; branch occurs ; |1678| 
+L93:    
+;***	-----------------------g81:
+;** 1652	-----------------------    if ( i[3] ) goto g83;
+	.dwpsn	"algo.c",1652,7
+        MOV       AL,*-SP[12]           ; |1652| 
+        BF        L94,NEQ               ; |1652| 
+        ; branchcc occurs ; |1652| 
+;** 1655	-----------------------    gMouseHead = 0;
+;** 1656	-----------------------    gTurnState = 4;
+;** 1657	-----------------------    goto g84;
+	.dwpsn	"algo.c",1655,8
+        MOV       @_gMouseHead,#0       ; |1655| 
+	.dwpsn	"algo.c",1656,8
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#4       ; |1656| 
+	.dwpsn	"algo.c",1657,7
+        BF        L95,UNC               ; |1657| 
+        ; branch occurs ; |1657| 
+L94:    
+;***	-----------------------g83:
+;** 1661	-----------------------    gMouseHead = 1;
+;** 1662	-----------------------    gTurnState = 6;
+	.dwpsn	"algo.c",1661,8
+        MOV       @_gMouseHead,#1       ; |1661| 
+	.dwpsn	"algo.c",1662,8
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#6       ; |1662| 
+L95:    
+;***	-----------------------g84:
+;** 1664	-----------------------    U$138 += 6;
+;** 1664	-----------------------    x += 3u;
+	.dwpsn	"algo.c",1664,7
+        MOVL      ACC,XAR7              ; |1664| 
+        MOVB      XAR4,#6               ; |1664| 
+        ADDB      XAR0,#3               ; |1664| 
+        ADDU      ACC,AR4               ; |1664| 
+        MOVL      XAR7,ACC              ; |1664| 
+L96:    
+;***	-----------------------g85:
+;** 1665	-----------------------    if ( !*&gTurnState ) goto g110;
+	.dwpsn	"algo.c",1665,6
+        MOV       AL,@_gTurnState       ; |1665| 
+        BF        L108,EQ               ; |1665| 
+        ; branchcc occurs ; |1665| 
+;** 1769	-----------------------    if ( YetTurnState ) goto g89;
+	.dwpsn	"algo.c",1769,6
+        MOV       AL,AR6
+        BF        L97,NEQ               ; |1769| 
+        ; branchcc occurs ; |1769| 
+;** 1771	-----------------------    C$27 = &((volatile unsigned *)K$71)[2*(long)(cnt-1u)];
+;** 1771	-----------------------    C$27[1] = C$27[1]&0xff00u|C$27[1]+1u&0xffu;
+;** 1772	-----------------------    *C$27 = *C$27&0xfffu|DiagDir[0]<<12;
+;** 1774	-----------------------    if ( !(*C$27&0xffu) ) goto g110;
+	.dwpsn	"algo.c",1771,7
+        MOV       AL,AR1                ; |1771| 
+        MOVL      XAR4,*-SP[38]         ; |1771| 
+        ADDB      AL,#-1
+        MOVU      ACC,AL
+        LSL       ACC,1                 ; |1771| 
+        ADDL      XAR4,ACC
+        MOV       AL,*+XAR4[1]          ; |1771| 
+        ADDB      AL,#1                 ; |1771| 
+        MOV       AH,*+XAR4[1]          ; |1771| 
+        MOVB      AH,AL.LSB             ; |1771| 
+        MOV       *+XAR4[1],AH          ; |1771| 
+	.dwpsn	"algo.c",1772,7
+        AND       AL,*+XAR4[0],#0x0fff  ; |1772| 
+        MOV       PH,AL                 ; |1772| 
+        MOV       ACC,*-SP[23] << #12   ; |1772| 
+        OR        AL,PH                 ; |1772| 
+        MOV       *+XAR4[0],AL          ; |1772| 
+	.dwpsn	"algo.c",1774,7
+        MOV       AL,*+XAR4[0]          ; |1774| 
+        ANDB      AL,#0xff              ; |1774| 
+        BF        L108,EQ               ; |1774| 
+        ; branchcc occurs ; |1774| 
+;** 1777	-----------------------    *C$27 = *C$27&0xff00u|DiagPos[0]&0xffu;
+;***  	-----------------------    U$117 = x+3u;
+;** 1777	-----------------------    goto g124;
+	.dwpsn	"algo.c",1777,8
+        MOV       AL,*-SP[19]           ; |1777| 
+        MOV       AH,*+XAR4[0]          ; |1777| 
+        MOVB      AH,AL.LSB             ; |1777| 
+        MOVB      AL,#3
+        ADD       AL,AR0
+        MOV       *+XAR4[0],AH          ; |1777| 
+        MOV       PH,AL
+        BF        L117,UNC              ; |1777| 
+        ; branch occurs ; |1777| 
+L97:    
+;***	-----------------------g89:
+;** 1782	-----------------------    U$186[1] &= 0xffu;
+;** 1783	-----------------------    *U$186 = *U$186&0xff00u|DiagPos[0]&0xffu;
+;** 1784	-----------------------    *U$186 = *U$186&0xfffu|DiagDir[0]<<12;
+;** 1785	-----------------------    S$3 = (volatile struct _Path *)(U$186+1L);
+;** 1785	-----------------------    U$186 += 2;
+;** 1785	-----------------------    ++cnt;
+;** 1785	-----------------------    *(volatile unsigned *)S$3 = *(volatile unsigned *)S$3&0xff00u|1u;
+;***  	-----------------------    U$117 = x+3u;
+;** 1785	-----------------------    goto g127;
+	.dwpsn	"algo.c",1782,7
+        MOVL      XAR4,XT
+        AND       *+XAR4[1],#0x00ff     ; |1782| 
+	.dwpsn	"algo.c",1783,7
+        MOVL      XAR4,XT               ; |1783| 
+        MOV       AH,*+XAR4[0]          ; |1783| 
+        MOVL      XAR4,XT               ; |1783| 
+        MOV       AL,*-SP[19]           ; |1783| 
+        MOVB      AH,AL.LSB             ; |1783| 
+        MOV       *+XAR4[0],AH          ; |1783| 
+	.dwpsn	"algo.c",1784,7
+        MOVL      XAR4,XT
+        AND       AL,*+XAR4[0],#0x0fff  ; |1784| 
+        MOVL      XAR4,XT               ; |1784| 
+        MOV       PH,AL                 ; |1784| 
+        MOV       ACC,*-SP[23] << #12   ; |1784| 
+        OR        AL,PH                 ; |1784| 
+        MOV       *+XAR4[0],AL          ; |1784| 
+	.dwpsn	"algo.c",1785,7
+        MOVB      ACC,#1
+        ADDL      ACC,XT
+        MOVL      XAR4,ACC              ; |1785| 
+        MOVB      XAR5,#2               ; |1785| 
+        MOVL      ACC,XT                ; |1785| 
+        ADDU      ACC,AR5               ; |1785| 
+        MOVL      XT,ACC                ; |1785| 
+        AND       AL,*+XAR4[0],#0xff00  ; |1785| 
+        ORB       AL,#0x01              ; |1785| 
+        MOV       *+XAR4[0],AL          ; |1785| 
+        MOVB      AL,#3
+        ADD       AL,AR0
+        ADDB      XAR1,#1               ; |1785| 
+        MOV       PH,AL
+        BF        L118,UNC              ; |1785| 
+        ; branch occurs ; |1785| 
+L98:    
+;***	-----------------------g90:
+;** 1794	-----------------------    gMouseHead = 0;
+;** 1795	-----------------------    gTurnState = 22;
+;** 1796	-----------------------    if ( i[0] ) goto g92;
+	.dwpsn	"algo.c",1794,5
+        MOV       @_gMouseHead,#0       ; |1794| 
+	.dwpsn	"algo.c",1795,5
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#22      ; |1795| 
+	.dwpsn	"algo.c",1796,5
+        MOV       AL,*-SP[15]           ; |1796| 
+        BF        L99,NEQ               ; |1796| 
+        ; branchcc occurs ; |1796| 
+;** 1798	-----------------------    gTurnState = 0;
+;** 1799	-----------------------    BlockCnt = 1u;
+	.dwpsn	"algo.c",1798,6
+        MOV       @_gTurnState,#0       ; |1798| 
+	.dwpsn	"algo.c",1799,6
+        MOVB      AL,#1                 ; |1799| 
+        MOV       PL,AL                 ; |1799| 
+L99:    
+;***	-----------------------g92:
+;** 1804	-----------------------    U$138 += 2;
+;***  	-----------------------    U$117 = (++x)+3u;
+;** 1804	-----------------------    goto g123;
+	.dwpsn	"algo.c",1804,5
+        MOVL      ACC,XAR7              ; |1804| 
+        MOVB      XAR4,#2               ; |1804| 
+        ADDB      XAR0,#1
+        ADDU      ACC,AR4               ; |1804| 
+        MOVL      XAR7,ACC              ; |1804| 
+        MOVB      AL,#3
+        ADD       AL,AR0
+        MOV       PH,AL
+        BF        L116,UNC              ; |1804| 
+        ; branch occurs ; |1804| 
+L100:    
+;***	-----------------------g93:
+;** 1810	-----------------------    if ( i[0] == 1u ) goto g111;
+	.dwpsn	"algo.c",1810,4
+        MOV       AL,*-SP[15]           ; |1810| 
+        CMPB      AL,#1                 ; |1810| 
+        BF        L109,EQ               ; |1810| 
+        ; branchcc occurs ; |1810| 
+;** 1862	-----------------------    if ( i[0] != 3u ) goto g110;
+	.dwpsn	"algo.c",1862,9
+        CMPB      AL,#3                 ; |1862| 
+        BF        L108,NEQ              ; |1862| 
+        ; branchcc occurs ; |1862| 
+;** 1864	-----------------------    if ( i[1] == 3u ) goto g103;
+	.dwpsn	"algo.c",1864,5
+        MOV       AL,*-SP[14]           ; |1864| 
+        CMPB      AL,#3                 ; |1864| 
+        BF        L104,EQ               ; |1864| 
+        ; branchcc occurs ; |1864| 
+;** 1893	-----------------------    if ( !i[1] ) goto g102;
+	.dwpsn	"algo.c",1893,10
+        CMPB      AL,#0                 ; |1893| 
+        BF        L103,EQ               ; |1893| 
+        ; branchcc occurs ; |1893| 
+;** 1900	-----------------------    if ( i[1] == 1u ) goto g101;
+	.dwpsn	"algo.c",1900,10
+        CMPB      AL,#1                 ; |1900| 
+        BF        L102,EQ               ; |1900| 
+        ; branchcc occurs ; |1900| 
+;** 1907	-----------------------    if ( i[1] != 2u ) goto g100;
+	.dwpsn	"algo.c",1907,10
+        CMPB      AL,#2                 ; |1907| 
+        BF        L101,NEQ              ; |1907| 
+        ; branchcc occurs ; |1907| 
+;** 1907	-----------------------    if ( gSearchEndState == 1u ) goto g102;
+        MOVW      DP,#_gSearchEndState
+        MOV       AL,@_gSearchEndState  ; |1907| 
+        CMPB      AL,#1                 ; |1907| 
+        BF        L103,EQ               ; |1907| 
+        ; branchcc occurs ; |1907| 
+L101:    
+;***	-----------------------g100:
+;** 1916	-----------------------    gMouseHead = 0;
+;** 1917	-----------------------    gTurnState = 17;
+;** 1918	-----------------------    U$138 += 2;
+;***  	-----------------------    U$117 = (++x)+3u;
+;** 1918	-----------------------    goto g123;
+	.dwpsn	"algo.c",1916,6
+        MOVW      DP,#_gMouseHead
+        MOV       @_gMouseHead,#0       ; |1916| 
+	.dwpsn	"algo.c",1917,6
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#17      ; |1917| 
+	.dwpsn	"algo.c",1918,6
+        MOVL      ACC,XAR7              ; |1918| 
+        MOVB      XAR4,#2               ; |1918| 
+        ADDU      ACC,AR4               ; |1918| 
+        MOVL      XAR7,ACC              ; |1918| 
+        ADDB      XAR0,#1
+        MOVB      AL,#3
+        ADD       AL,AR0
+        MOV       PH,AL
+        BF        L116,UNC              ; |1918| 
+        ; branch occurs ; |1918| 
+L102:    
+;***	-----------------------g101:
+;** 1903	-----------------------    gMouseHead = 1;
+;** 1904	-----------------------    gTurnState = 21;
+;** 1905	-----------------------    U$138 += 2;
+;***  	-----------------------    U$117 = (++x)+3u;
+;** 1906	-----------------------    goto g123;
+	.dwpsn	"algo.c",1903,6
+        MOV       @_gMouseHead,#1       ; |1903| 
+	.dwpsn	"algo.c",1904,6
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#21      ; |1904| 
+	.dwpsn	"algo.c",1905,6
+        MOVL      ACC,XAR7              ; |1905| 
+        MOVB      XAR4,#2               ; |1905| 
+        ADDU      ACC,AR4               ; |1905| 
+        ADDB      XAR0,#1
+        MOVL      XAR7,ACC              ; |1905| 
+        MOVB      AL,#3
+        ADD       AL,AR0
+        MOV       PH,AL
+	.dwpsn	"algo.c",1906,5
+        BF        L116,UNC              ; |1906| 
+        ; branch occurs ; |1906| 
+L103:    
+;***	-----------------------g102:
+;** 1909	-----------------------    gMouseHead = 0;
+;** 1910	-----------------------    gTurnState = 13;
+;** 1911	-----------------------    U$138 += 2;
+;***  	-----------------------    U$117 = (++x)+3u;
+;** 1912	-----------------------    goto g123;
+	.dwpsn	"algo.c",1909,6
+        MOVW      DP,#_gMouseHead
+        MOV       @_gMouseHead,#0       ; |1909| 
+	.dwpsn	"algo.c",1910,6
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#13      ; |1910| 
+	.dwpsn	"algo.c",1911,6
+        MOVL      ACC,XAR7              ; |1911| 
+        MOVB      XAR4,#2               ; |1911| 
+        ADDU      ACC,AR4               ; |1911| 
+        MOVL      XAR7,ACC              ; |1911| 
+        ADDB      XAR0,#1
+        MOVB      AL,#3
+        ADD       AL,AR0
+        MOV       PH,AL
+	.dwpsn	"algo.c",1912,5
+        BF        L116,UNC              ; |1912| 
+        ; branch occurs ; |1912| 
+L104:    
+;***	-----------------------g103:
+;** 1866	-----------------------    if ( !i[2] ) goto g109;
+	.dwpsn	"algo.c",1866,6
+        MOV       AL,*-SP[13]           ; |1866| 
+        BF        L107,EQ               ; |1866| 
+        ; branchcc occurs ; |1866| 
+;** 1872	-----------------------    if ( i[2] != 2u ) goto g106;
+	.dwpsn	"algo.c",1872,11
+        CMPB      AL,#2                 ; |1872| 
+        BF        L105,NEQ              ; |1872| 
+        ; branchcc occurs ; |1872| 
+;** 1872	-----------------------    if ( gSearchEndState == 1u ) goto g109;
+        MOVW      DP,#_gSearchEndState
+        MOV       AL,@_gSearchEndState  ; |1872| 
+        CMPB      AL,#1                 ; |1872| 
+        BF        L107,EQ               ; |1872| 
+        ; branchcc occurs ; |1872| 
+L105:    
+;***	-----------------------g106:
+;** 1880	-----------------------    if ( LastPath ) goto g108;
+	.dwpsn	"algo.c",1880,7
+        MOV       AL,*-SP[25]
+        BF        L106,NEQ              ; |1880| 
+        ; branchcc occurs ; |1880| 
+;** 1882	-----------------------    gMouseHead = 1;
+;** 1883	-----------------------    gTurnState = 15;
+;** 1884	-----------------------    goto g121;
+	.dwpsn	"algo.c",1882,8
+        MOVW      DP,#_gMouseHead
+        MOV       @_gMouseHead,#1       ; |1882| 
+	.dwpsn	"algo.c",1883,8
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#15      ; |1883| 
+	.dwpsn	"algo.c",1884,7
+        BF        L114,UNC              ; |1884| 
+        ; branch occurs ; |1884| 
+L106:    
+;***	-----------------------g108:
+;** 1887	-----------------------    gMouseHead = 0;
+;** 1888	-----------------------    gTurnState = 19;
+;** 1888	-----------------------    goto g121;
+	.dwpsn	"algo.c",1887,8
+        MOVW      DP,#_gMouseHead
+        MOV       @_gMouseHead,#0       ; |1887| 
+	.dwpsn	"algo.c",1888,8
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#19      ; |1888| 
+        BF        L114,UNC              ; |1888| 
+        ; branch occurs ; |1888| 
+L107:    
+;***	-----------------------g109:
+;** 1869	-----------------------    gMouseHead = 0;
+;** 1870	-----------------------    gTurnState = 11;
+;** 1871	-----------------------    goto g121;
+	.dwpsn	"algo.c",1869,7
+        MOVW      DP,#_gMouseHead
+        MOV       @_gMouseHead,#0       ; |1869| 
+	.dwpsn	"algo.c",1870,7
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#11      ; |1870| 
+	.dwpsn	"algo.c",1871,6
+        BF        L114,UNC              ; |1871| 
+        ; branch occurs ; |1871| 
+L108:    
+;***	-----------------------g110:
+;***  	-----------------------    U$117 = x+3u;
+;** 1925	-----------------------    goto g123;
+        MOVB      AL,#3
+        ADD       AL,AR0
+        MOV       PH,AL
+	.dwpsn	"algo.c",1925,3
+        BF        L116,UNC              ; |1925| 
+        ; branch occurs ; |1925| 
+L109:    
+;***	-----------------------g111:
+;** 1812	-----------------------    if ( i[1] == 1u ) goto g117;
+	.dwpsn	"algo.c",1812,5
+        MOV       AL,*-SP[14]           ; |1812| 
+        CMPB      AL,#1                 ; |1812| 
+        BF        L112,EQ               ; |1812| 
+        ; branchcc occurs ; |1812| 
+;** 1837	-----------------------    if ( !i[1] ) goto g116;
+	.dwpsn	"algo.c",1837,10
+        CMPB      AL,#0                 ; |1837| 
+        BF        L111,EQ               ; |1837| 
+        ; branchcc occurs ; |1837| 
+;** 1844	-----------------------    if ( i[1] == 3u ) goto g115;
+	.dwpsn	"algo.c",1844,10
+        CMPB      AL,#3                 ; |1844| 
+        BF        L110,EQ               ; |1844| 
+        ; branchcc occurs ; |1844| 
+;** 1855	-----------------------    gMouseHead = 0;
+;** 1856	-----------------------    gTurnState = 16;
+;** 1857	-----------------------    U$138 += 2;
+;***  	-----------------------    U$117 = (++x)+3u;
+;** 1857	-----------------------    goto g123;
+	.dwpsn	"algo.c",1855,6
+        MOV       @_gMouseHead,#0       ; |1855| 
+	.dwpsn	"algo.c",1856,6
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#16      ; |1856| 
+	.dwpsn	"algo.c",1857,6
+        MOVL      ACC,XAR7              ; |1857| 
+        MOVB      XAR4,#2               ; |1857| 
+        ADDU      ACC,AR4               ; |1857| 
+        ADDB      XAR0,#1
+        MOVL      XAR7,ACC              ; |1857| 
+        MOVB      AL,#3
+        ADD       AL,AR0
+        MOV       PH,AL
+        BF        L116,UNC              ; |1857| 
+        ; branch occurs ; |1857| 
+L110:    
+;***	-----------------------g115:
+;** 1847	-----------------------    gMouseHead = 1;
+;** 1848	-----------------------    gTurnState = 20;
+;** 1849	-----------------------    U$138 += 2;
+;***  	-----------------------    U$117 = (++x)+3u;
+;** 1850	-----------------------    goto g123;
+	.dwpsn	"algo.c",1847,6
+        MOV       @_gMouseHead,#1       ; |1847| 
+	.dwpsn	"algo.c",1848,6
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#20      ; |1848| 
+	.dwpsn	"algo.c",1849,6
+        MOVL      ACC,XAR7              ; |1849| 
+        MOVB      XAR4,#2               ; |1849| 
+        ADDU      ACC,AR4               ; |1849| 
+        ADDB      XAR0,#1
+        MOVL      XAR7,ACC              ; |1849| 
+        MOVB      AL,#3
+        ADD       AL,AR0
+        MOV       PH,AL
+	.dwpsn	"algo.c",1850,5
+        BF        L116,UNC              ; |1850| 
+        ; branch occurs ; |1850| 
+L111:    
+;***	-----------------------g116:
+;** 1840	-----------------------    gMouseHead = 0;
+;** 1841	-----------------------    gTurnState = 12;
+;** 1842	-----------------------    U$138 += 2;
+;***  	-----------------------    U$117 = (++x)+3u;
+;** 1843	-----------------------    goto g123;
+	.dwpsn	"algo.c",1840,6
+        MOV       @_gMouseHead,#0       ; |1840| 
+	.dwpsn	"algo.c",1841,6
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#12      ; |1841| 
+	.dwpsn	"algo.c",1842,6
+        MOVL      ACC,XAR7              ; |1842| 
+        MOVB      XAR4,#2               ; |1842| 
+        ADDU      ACC,AR4               ; |1842| 
+        ADDB      XAR0,#1
+        MOVL      XAR7,ACC              ; |1842| 
+        MOVB      AL,#3
+        ADD       AL,AR0
+        MOV       PH,AL
+	.dwpsn	"algo.c",1843,5
+        BF        L116,UNC              ; |1843| 
+        ; branch occurs ; |1843| 
+L112:    
+;***	-----------------------g117:
+;** 1814	-----------------------    if ( !i[2] ) goto g122;
+	.dwpsn	"algo.c",1814,6
+        MOV       AL,*-SP[13]           ; |1814| 
+        BF        L115,EQ               ; |1814| 
+        ; branchcc occurs ; |1814| 
+;** 1824	-----------------------    if ( LastPath ) goto g120;
+	.dwpsn	"algo.c",1824,7
+        MOV       AL,*-SP[25]
+        BF        L113,NEQ              ; |1824| 
+        ; branchcc occurs ; |1824| 
+;** 1826	-----------------------    gMouseHead = 1;
+;** 1827	-----------------------    gTurnState = 14;
+;** 1828	-----------------------    goto g121;
+	.dwpsn	"algo.c",1826,8
+        MOV       @_gMouseHead,#1       ; |1826| 
+	.dwpsn	"algo.c",1827,8
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#14      ; |1827| 
+	.dwpsn	"algo.c",1828,7
+        BF        L114,UNC              ; |1828| 
+        ; branch occurs ; |1828| 
+L113:    
+;***	-----------------------g120:
+;** 1831	-----------------------    gMouseHead = 0;
+;** 1832	-----------------------    gTurnState = 18;
+	.dwpsn	"algo.c",1831,8
+        MOV       @_gMouseHead,#0       ; |1831| 
+	.dwpsn	"algo.c",1832,8
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#18      ; |1832| 
+L114:    
+;***	-----------------------g121:
+;** 1834	-----------------------    U$138 += 4;
+;***  	-----------------------    U$117 = (x += 2u)+3u;
+;** 1834	-----------------------    goto g123;
+	.dwpsn	"algo.c",1834,7
+        MOVL      ACC,XAR7              ; |1834| 
+        MOVB      XAR4,#4               ; |1834| 
+        ADDB      XAR0,#2
+        ADDU      ACC,AR4               ; |1834| 
+        MOVL      XAR7,ACC              ; |1834| 
+        MOVB      AL,#3
+        ADD       AL,AR0
+        MOV       PH,AL
+        BF        L116,UNC              ; |1834| 
+        ; branch occurs ; |1834| 
+L115:    
+;***	-----------------------g122:
+;** 1817	-----------------------    gMouseHead = 0;
+;** 1818	-----------------------    gTurnState = 10;
+;** 1819	-----------------------    U$138 += 4;
+;***  	-----------------------    U$117 = (x += 2u)+3u;
+	.dwpsn	"algo.c",1817,7
+        MOV       @_gMouseHead,#0       ; |1817| 
+	.dwpsn	"algo.c",1818,7
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#10      ; |1818| 
+	.dwpsn	"algo.c",1819,7
+        MOVL      ACC,XAR7              ; |1819| 
+        MOVB      XAR4,#4               ; |1819| 
+        ADDU      ACC,AR4               ; |1819| 
+        ADDB      XAR0,#2
+        MOVL      XAR7,ACC              ; |1819| 
+        MOVB      AL,#3
+        ADD       AL,AR0
+        MOV       PH,AL
+L116:    
+;***	-----------------------g123:
+;** 1834	-----------------------    if ( YetTurnState ) goto g127;
+	.dwpsn	"algo.c",1834,7
+        MOV       AL,AR6
+        BF        L118,NEQ              ; |1834| 
+        ; branchcc occurs ; |1834| 
+L117:    
+;***	-----------------------g124:
+;** 1925	-----------------------    if ( *&gTurnState ) goto g127;
+	.dwpsn	"algo.c",1925,3
+        MOVW      DP,#_gTurnState
+        MOV       AL,@_gTurnState       ; |1925| 
+        BF        L118,NEQ              ; |1925| 
+        ; branchcc occurs ; |1925| 
+;** 1927	-----------------------    --cnt;
+;** 1927	-----------------------    U$186 -= 2;
+;** 1927	-----------------------    U$186[1] = U$186[1]&0xff00u|U$186[1]+BlockCnt&0xffu;
+;** 1928	-----------------------    if ( !(*U$186&0xffu) ) goto g151;
+	.dwpsn	"algo.c",1927,4
+        MOVL      ACC,XT                ; |1927| 
+        SUBB      ACC,#2                ; |1927| 
+        MOVL      XAR4,ACC              ; |1927| 
+        MOVL      XT,ACC                ; |1927| 
+        MOV       AL,*+XAR4[1]          ; |1927| 
+        MOVL      XAR4,XT               ; |1927| 
+        MOV       AH,*+XAR4[1]          ; |1927| 
+        MOVL      XAR4,XT               ; |1927| 
+        ADD       AL,PL                 ; |1927| 
+        MOVB      AH,AL.LSB             ; |1927| 
+        MOV       *+XAR4[1],AH          ; |1927| 
+        SUBB      XAR1,#1               ; |1927| 
+	.dwpsn	"algo.c",1928,4
+        MOVL      XAR4,XT
+        MOV       AL,*+XAR4[0]          ; |1928| 
+        ANDB      AL,#0xff              ; |1928| 
+        BF        L130,EQ               ; |1928| 
+        ; branchcc occurs ; |1928| 
+;** 1931	-----------------------    *U$186 = *U$186&0xff00u|DiagPos[0]&0xffu;
+;** 1931	-----------------------    goto g151;
+	.dwpsn	"algo.c",1931,5
+        MOVL      XAR4,XT               ; |1931| 
+        MOV       AH,*+XAR4[0]          ; |1931| 
+        MOVL      XAR4,XT               ; |1931| 
+        MOV       AL,*-SP[19]           ; |1931| 
+        MOVB      AH,AL.LSB             ; |1931| 
+        MOV       *+XAR4[0],AH          ; |1931| 
+        BF        L130,UNC              ; |1931| 
+        ; branch occurs ; |1931| 
+L118:    
+;***	-----------------------g127:
+;** 1933	-----------------------    K$177 = &gTurnState;
+;** 1933	-----------------------    if ( !*K$177 ) goto g150;
+	.dwpsn	"algo.c",1933,8
+        MOVL      XAR4,#_gTurnState     ; |1933| 
+        MOV       AL,*+XAR4[0]          ; |1933| 
+        BF        L129,EQ               ; |1933| 
+        ; branchcc occurs ; |1933| 
+;** 1941	-----------------------    U$186[1] = U$186[1]&0xffu|*K$177<<8;
+;** 1943	-----------------------    if ( YetMouseHead ) goto g141;
+	.dwpsn	"algo.c",1941,4
+        MOVL      XAR5,XT               ; |1941| 
+        MOV       AH,*+XAR4[0]          ; |1941| 
+        MOV       AL,*+XAR5[1]          ; |1941| 
+        MOVL      XAR5,XT               ; |1941| 
+        MOVB      AL.MSB,AH             ; |1941| 
+        MOV       *+XAR5[1],AL          ; |1941| 
+	.dwpsn	"algo.c",1943,4
+        MOV       AL,AR2
+        BF        L123,NEQ              ; |1943| 
+        ; branchcc occurs ; |1943| 
+;** 1945	-----------------------    if ( *K$177 == 22 ) goto g135;
+	.dwpsn	"algo.c",1945,5
+        MOV       AL,*+XAR4[0]          ; |1945| 
+        CMPB      AL,#22                ; |1945| 
+        BF        L120,EQ               ; |1945| 
+        ; branchcc occurs ; |1945| 
+;** 1960	-----------------------    if ( *K$177 == 4 ) goto g134;
+	.dwpsn	"algo.c",1960,6
+        MOV       AL,*+XAR4[0]          ; |1960| 
+        CMPB      AL,#4                 ; |1960| 
+        BF        L119,EQ               ; |1960| 
+        ; branchcc occurs ; |1960| 
+;** 1960	-----------------------    if ( *K$177 == 5 ) goto g134;
+        MOV       AL,*+XAR4[0]          ; |1960| 
+        CMPB      AL,#5                 ; |1960| 
+        BF        L119,EQ               ; |1960| 
+        ; branchcc occurs ; |1960| 
+;** 1960	-----------------------    if ( *K$177 == 6 ) goto g134;
+        MOV       AL,*+XAR4[0]          ; |1960| 
+        CMPB      AL,#6                 ; |1960| 
+        BF        L119,EQ               ; |1960| 
+        ; branchcc occurs ; |1960| 
+;** 1960	-----------------------    if ( *K$177 != 7 ) goto g148;
+        MOV       AL,*+XAR4[0]          ; |1960| 
+        CMPB      AL,#7                 ; |1960| 
+        BF        L127,NEQ              ; |1960| 
+        ; branchcc occurs ; |1960| 
+L119:    
+;***	-----------------------g134:
+;** 1962	-----------------------    *U$186 = *U$186&0xff00u|DiagPos[2]&0xffu;
+;** 1963	-----------------------    *U$186 = *U$186&0xfffu|DiagDir[2]<<12;
+;** 1964	-----------------------    goto g151;
+	.dwpsn	"algo.c",1962,7
+        MOVL      XAR4,XT               ; |1962| 
+        MOV       AH,*+XAR4[0]          ; |1962| 
+        MOVL      XAR4,XT               ; |1962| 
+        MOV       AL,*-SP[17]           ; |1962| 
+        MOVB      AH,AL.LSB             ; |1962| 
+        MOV       *+XAR4[0],AH          ; |1962| 
+	.dwpsn	"algo.c",1963,7
+        MOVL      XAR4,XT
+        AND       AL,*+XAR4[0],#0x0fff  ; |1963| 
+        MOVZ      AR6,AL                ; |1963| 
+        MOVL      XAR4,XT               ; |1963| 
+        MOV       ACC,*-SP[21] << #12   ; |1963| 
+        OR        AL,AR6                ; |1963| 
+        MOV       *+XAR4[0],AL          ; |1963| 
+	.dwpsn	"algo.c",1964,6
+        BF        L130,UNC              ; |1964| 
+        ; branch occurs ; |1964| 
+L120:    
+;***	-----------------------g135:
+;** 1947	-----------------------    if ( i[0] == 3u ) goto g140;
+	.dwpsn	"algo.c",1947,6
+        MOV       AL,*-SP[15]           ; |1947| 
+        CMPB      AL,#3                 ; |1947| 
+        BF        L122,EQ               ; |1947| 
+        ; branchcc occurs ; |1947| 
+;** 1949	-----------------------    if ( i[0] == 1u ) goto g139;
+	.dwpsn	"algo.c",1949,11
+        CMPB      AL,#1                 ; |1949| 
+        BF        L121,EQ               ; |1949| 
+        ; branchcc occurs ; |1949| 
+;** 1952	-----------------------    if ( i[0] != 2u ) goto g149;
+	.dwpsn	"algo.c",1952,11
+        CMPB      AL,#2                 ; |1952| 
+        BF        L128,NEQ              ; |1952| 
+        ; branchcc occurs ; |1952| 
+;** 1953	-----------------------    U$186[1] = U$186[1]&0xffu|0x200u;
+;** 1953	-----------------------    goto g149;
+	.dwpsn	"algo.c",1953,7
+        MOVL      XAR4,XT
+        MOV       AL,*+XAR4[1]          ; |1953| 
+        MOVL      XAR4,XT               ; |1953| 
+        ANDB      AL,#0xff              ; |1953| 
+        OR        AL,#0x0200            ; |1953| 
+        MOV       *+XAR4[1],AL          ; |1953| 
+        BF        L128,UNC              ; |1953| 
+        ; branch occurs ; |1953| 
+L121:    
+;***	-----------------------g139:
+;** 1950	-----------------------    U$186[1] = U$186[1]&0xffu|0x100u;
+;** 1950	-----------------------    goto g149;
+	.dwpsn	"algo.c",1950,7
+        MOVL      XAR4,XT
+        MOV       AL,*+XAR4[1]          ; |1950| 
+        MOVL      XAR4,XT               ; |1950| 
+        ANDB      AL,#0xff              ; |1950| 
+        OR        AL,#0x0100            ; |1950| 
+        MOV       *+XAR4[1],AL          ; |1950| 
+        BF        L128,UNC              ; |1950| 
+        ; branch occurs ; |1950| 
+L122:    
+;***	-----------------------g140:
+;** 1948	-----------------------    U$186[1] = U$186[1]&0xffu|0x300u;
+;** 1948	-----------------------    goto g149;
+	.dwpsn	"algo.c",1948,7
+        MOVL      XAR4,XT
+        MOV       AL,*+XAR4[1]          ; |1948| 
+        MOVL      XAR4,XT               ; |1948| 
+        ANDB      AL,#0xff              ; |1948| 
+        OR        AL,#0x0300            ; |1948| 
+        MOV       *+XAR4[1],AL          ; |1948| 
+        BF        L128,UNC              ; |1948| 
+        ; branch occurs ; |1948| 
+L123:    
+;***	-----------------------g141:
+;** 1977	-----------------------    K$177 = &gTurnState;
+;** 1977	-----------------------    if ( *K$177 == 20 ) goto g143;
+	.dwpsn	"algo.c",1977,5
+        MOV       AL,*+XAR4[0]          ; |1977| 
+        CMPB      AL,#20                ; |1977| 
+        BF        L124,EQ               ; |1977| 
+        ; branchcc occurs ; |1977| 
+;** 1977	-----------------------    if ( *K$177 != 21 ) goto g146;
+        MOV       AL,*+XAR4[0]          ; |1977| 
+        CMPB      AL,#21                ; |1977| 
+        BF        L126,NEQ              ; |1977| 
+        ; branchcc occurs ; |1977| 
+L124:    
+;***	-----------------------g143:
+;** 1979	-----------------------    if ( YetTurnState == 20u || YetTurnState == 21u ) goto g145;
+	.dwpsn	"algo.c",1979,6
+        MOV       AL,AR6
+        CMPB      AL,#20                ; |1979| 
+        BF        L125,EQ               ; |1979| 
+        ; branchcc occurs ; |1979| 
+        CMPB      AL,#21                ; |1979| 
+        BF        L125,EQ               ; |1979| 
+        ; branchcc occurs ; |1979| 
+;** 1982	-----------------------    U$186[1] = U$186[1]&0xff00u|1u;
+;** 1982	-----------------------    goto g146;
+	.dwpsn	"algo.c",1982,7
+        MOVL      XAR4,XT
+        AND       AL,*+XAR4[1],#0xff00  ; |1982| 
+        MOVL      XAR4,XT               ; |1982| 
+        ORB       AL,#0x01              ; |1982| 
+        MOV       *+XAR4[1],AL          ; |1982| 
+        BF        L126,UNC              ; |1982| 
+        ; branch occurs ; |1982| 
+L125:    
+;***	-----------------------g145:
+;** 1980	-----------------------    --cnt;
+;** 1980	-----------------------    U$186 -= 2;
+;** 1980	-----------------------    U$186[1] = U$186[1]&0xff00u|U$186[1]+1u&0xffu;
+	.dwpsn	"algo.c",1980,7
+        MOVL      ACC,XT                ; |1980| 
+        SUBB      ACC,#2                ; |1980| 
+        MOVL      XAR4,ACC              ; |1980| 
+        MOVL      XT,ACC                ; |1980| 
+        MOV       AL,*+XAR4[1]          ; |1980| 
+        MOVL      XAR4,XT               ; |1980| 
+        MOV       AH,*+XAR4[1]          ; |1980| 
+        MOVL      XAR4,XT               ; |1980| 
+        ADDB      AL,#1                 ; |1980| 
+        MOVB      AH,AL.LSB             ; |1980| 
+        SUBB      XAR1,#1               ; |1980| 
+        MOV       *+XAR4[1],AH          ; |1980| 
+L126:    
+;***	-----------------------g146:
+;** 1985	-----------------------    if ( *&gTurnState == 12 ) goto g149;
+	.dwpsn	"algo.c",1985,5
+        MOVW      DP,#_gTurnState
+        MOV       AL,@_gTurnState       ; |1985| 
+        CMPB      AL,#12                ; |1985| 
+        BF        L128,EQ               ; |1985| 
+        ; branchcc occurs ; |1985| 
+;** 1985	-----------------------    if ( *&gTurnState == 13 ) goto g149;
+        MOV       AL,@_gTurnState       ; |1985| 
+        CMPB      AL,#13                ; |1985| 
+        BF        L128,EQ               ; |1985| 
+        ; branchcc occurs ; |1985| 
+L127:    
+;***	-----------------------g148:
+;** 1992	-----------------------    *U$186 = *U$186&0xff00u|DiagPos[1]&0xffu;
+;** 1993	-----------------------    *U$186 = *U$186&0xfffu|DiagDir[1]<<12;
+;** 1993	-----------------------    goto g151;
+	.dwpsn	"algo.c",1992,6
+        MOVL      XAR4,XT               ; |1992| 
+        MOV       AH,*+XAR4[0]          ; |1992| 
+        MOVL      XAR4,XT               ; |1992| 
+        MOV       AL,*-SP[18]           ; |1992| 
+        MOVB      AH,AL.LSB             ; |1992| 
+        MOV       *+XAR4[0],AH          ; |1992| 
+	.dwpsn	"algo.c",1993,6
+        MOVL      XAR4,XT
+        AND       AL,*+XAR4[0],#0x0fff  ; |1993| 
+        MOVZ      AR6,AL                ; |1993| 
+        MOVL      XAR4,XT               ; |1993| 
+        MOV       ACC,*-SP[22] << #12   ; |1993| 
+        OR        AL,AR6                ; |1993| 
+        MOV       *+XAR4[0],AL          ; |1993| 
+        BF        L130,UNC              ; |1993| 
+        ; branch occurs ; |1993| 
+L128:    
+;***	-----------------------g149:
+;** 1987	-----------------------    *U$186 = *U$186&0xff00u|DiagPos[0]&0xffu;
+;** 1988	-----------------------    *U$186 = *U$186&0xfffu|DiagDir[0]<<12;
+;** 1989	-----------------------    goto g151;
+	.dwpsn	"algo.c",1987,6
+        MOVL      XAR4,XT               ; |1987| 
+        MOV       AH,*+XAR4[0]          ; |1987| 
+        MOVL      XAR4,XT               ; |1987| 
+        MOV       AL,*-SP[19]           ; |1987| 
+        MOVB      AH,AL.LSB             ; |1987| 
+        MOV       *+XAR4[0],AH          ; |1987| 
+	.dwpsn	"algo.c",1988,6
+        MOVL      XAR4,XT
+        AND       AL,*+XAR4[0],#0x0fff  ; |1988| 
+        MOVZ      AR6,AL                ; |1988| 
+        MOVL      XAR4,XT               ; |1988| 
+        MOV       ACC,*-SP[23] << #12   ; |1988| 
+        OR        AL,AR6                ; |1988| 
+        MOV       *+XAR4[0],AL          ; |1988| 
+	.dwpsn	"algo.c",1989,5
+        BF        L130,UNC              ; |1989| 
+        ; branch occurs ; |1989| 
+L129:    
+;***	-----------------------g150:
+;** 1935	-----------------------    U$186[1] = U$186[1]&0xffu|*K$177<<8;
+;** 1936	-----------------------    U$186[1] = U$186[1]&0xff00u|BlockCnt&0xffu;
+;** 1937	-----------------------    *U$186 = *U$186&0xff00u|DiagPos[0]&0xffu;
+	.dwpsn	"algo.c",1935,4
+        MOV       AH,*+XAR4[0]          ; |1935| 
+        MOVL      XAR4,XT               ; |1935| 
+        MOV       AL,*+XAR4[1]          ; |1935| 
+        MOVL      XAR4,XT               ; |1935| 
+        MOVB      AL.MSB,AH             ; |1935| 
+        MOV       *+XAR4[1],AL          ; |1935| 
+	.dwpsn	"algo.c",1936,4
+        MOVL      XAR4,XT
+        MOV       AH,*+XAR4[1]          ; |1936| 
+        MOVL      XAR4,XT               ; |1936| 
+        MOV       AL,PL                 ; |1936| 
+        MOVB      AH,AL.LSB             ; |1936| 
+        MOV       *+XAR4[1],AH          ; |1936| 
+	.dwpsn	"algo.c",1937,4
+        MOVL      XAR4,XT               ; |1937| 
+        MOV       AH,*+XAR4[0]          ; |1937| 
+        MOVL      XAR4,XT               ; |1937| 
+        MOV       AL,*-SP[19]           ; |1937| 
+        MOVB      AH,AL.LSB             ; |1937| 
+        MOV       *+XAR4[0],AH          ; |1937| 
+L130:    
+;***	-----------------------g151:
+;** 1999	-----------------------    U$186 += 2;
+;** 1999	-----------------------    ++cnt;
+;** 1567	-----------------------    if ( U$117 < gPathBufferHead ) goto g56;
+	.dwpsn	"algo.c",1999,3
+        MOVL      ACC,XT                ; |1999| 
+        MOVB      XAR4,#2               ; |1999| 
+        ADDU      ACC,AR4               ; |1999| 
+        MOVL      XT,ACC                ; |1999| 
+        ADDB      XAR1,#1               ; |1999| 
+	.dwpsn	"algo.c",1567,8
+        MOVW      DP,#_gPathBufferHead
+        MOV       AL,PH
+        CMP       AL,@_gPathBufferHead  ; |1567| 
+        BF        L81,LO                ; |1567| 
+        ; branchcc occurs ; |1567| 
+L131:    
+;***	-----------------------g152:
+;** 1587	-----------------------    U$125 = x+2u;
+;** 1587	-----------------------    P$18 = U$125 < gPathBufferHead;
+	.dwpsn	"algo.c",1587,8
+        MOVB      AL,#2                 ; |1587| 
+        MOVB      XAR7,#0
+        ADD       AL,AR0                ; |1587| 
+        CMP       AL,@_gPathBufferHead  ; |1587| 
+        MOVZ      AR6,AL                ; |1587| 
+        BF        L132,HIS              ; |1587| 
+        ; branchcc occurs ; |1587| 
+        MOVB      XAR7,#1               ; |1587| 
+L132:    
+;***  	-----------------------    U$31 = x+1u;
+;***  	-----------------------    U$186 = &((volatile unsigned *)K$71)[2*(long)cnt];
+;** 1587	-----------------------    if ( P$18 ) goto g163;
+        MOVB      AL,#1
+        ADD       AL,AR0
+        MOVL      XT,*-SP[38]
+        MOV       PH,AL
+        MOVU      ACC,AR1
+        LSL       ACC,1
+        ADDL      XT,ACC
+        MOV       AH,AR7
+        BF        L140,NEQ              ; |1587| 
+        ; branchcc occurs ; |1587| 
+;** 1606	-----------------------    if ( U$31 < gPathBufferHead ) goto g162;
+	.dwpsn	"algo.c",1606,8
+        MOV       AL,PH
+        CMP       AL,@_gPathBufferHead  ; |1606| 
+        BF        L138,LO               ; |1606| 
+        ; branchcc occurs ; |1606| 
+;** 1621	-----------------------    if ( x < gPathBufferHead ) goto g161;
+	.dwpsn	"algo.c",1621,8
+        MOV       AH,AR0
+        CMP       AH,@_gPathBufferHead  ; |1621| 
+        BF        L136,LO               ; |1621| 
+        ; branchcc occurs ; |1621| 
+;** 1635	-----------------------    gPathBufferHead = cnt;
+;** 1636	-----------------------    U$186[1] &= 0xffu;
+;** 2005	-----------------------    if ( !gPathBufferHead ) goto g158;
+	.dwpsn	"algo.c",1635,4
+        MOV       @_gPathBufferHead,AR1 ; |1635| 
+	.dwpsn	"algo.c",1636,4
+        MOVL      XAR4,XT
+        AND       *+XAR4[1],#0x00ff     ; |1636| 
+	.dwpsn	"algo.c",2005,15
+        MOV       AL,@_gPathBufferHead  ; |2005| 
+        BF        L134,EQ               ; |2005| 
+        ; branchcc occurs ; |2005| 
+;***  	-----------------------    U$186 = (volatile unsigned *)K$71;
+;** 1637	-----------------------    cnt = 0u;
+        MOVL      XAR1,*-SP[38]
+	.dwpsn	"algo.c",1637,4
+        MOVB      XAR2,#0
+L133:    
+DW$L$_RunPathMake$169$B:
+;***	-----------------------g157:
+;** 2006	-----------------------    TxPrintf("%d  TURN : %d  DIR : %d  POS : %x CNT : %d\n", cnt, U$186[1]>>8, *U$186>>12, *U$186&0xffu, U$186[1]&0xffu);
+;** 2005	-----------------------    U$186 += 2;
+;** 2005	-----------------------    if ( gPathBufferHead > (++cnt) ) goto g157;
+	.dwpsn	"algo.c",2006,4
+        MOVL      XAR4,#FSL8            ; |2006| 
+        MOVL      *-SP[2],XAR4          ; |2006| 
+        MOV       *-SP[3],AR2           ; |2006| 
+        MOV       AL,*+XAR1[1]          ; |2006| 
+        LSR       AL,8                  ; |2006| 
+        MOV       *-SP[4],AL            ; |2006| 
+        MOV       AL,*+XAR1[0]          ; |2006| 
+        LSR       AL,12                 ; |2006| 
+        MOV       *-SP[5],AL            ; |2006| 
+        MOV       AL,*+XAR1[0]          ; |2006| 
+        ANDB      AL,#0xff              ; |2006| 
+        MOV       *-SP[6],AL            ; |2006| 
+        MOV       AL,*+XAR1[1]          ; |2006| 
+        ANDB      AL,#0xff              ; |2006| 
+        MOV       *-SP[7],AL            ; |2006| 
+        LCR       #_TxPrintf            ; |2006| 
+        ; call occurs [#_TxPrintf] ; |2006| 
+	.dwpsn	"algo.c",2005,38
+        MOVB      XAR4,#2               ; |2005| 
+        MOVL      ACC,XAR1              ; |2005| 
+        ADDU      ACC,AR4               ; |2005| 
+        MOVL      XAR1,ACC              ; |2005| 
+	.dwpsn	"algo.c",2005,15
+        ADDB      XAR2,#1               ; |2005| 
+        MOVW      DP,#_gPathBufferHead
+        MOV       AL,AR2                ; |2005| 
+        CMP       AL,@_gPathBufferHead  ; |2005| 
+        BF        L133,LO               ; |2005| 
+        ; branchcc occurs ; |2005| 
+DW$L$_RunPathMake$169$E:
+L134:    
+;***	-----------------------g158:
+;** 2010	-----------------------    memset((void *)K$4, 0, 256uL);
+;** 2011	-----------------------    memset(K$5, 0, 256uL);
+;** 2013	-----------------------    SpiReadRom(5u, 0u, 256u, (unsigned *)K$5);
+;***  	-----------------------    U$9 = (volatile unsigned *)K$5;
+;***  	-----------------------    U$12 = K$4;
+;***  	-----------------------    L$7 = 255;
+	.dwpsn	"algo.c",2010,2
+        MOVL      XAR4,*-SP[34]
+        MOV       ACC,#1 << 8
+        MOVB      XAR5,#0
+        LCR       #_memset              ; |2010| 
+        ; call occurs [#_memset] ; |2010| 
+	.dwpsn	"algo.c",2011,2
+        MOVL      XAR4,*-SP[30]
+        MOVB      XAR5,#0
+        MOV       ACC,#1 << 8
+        LCR       #_memset              ; |2011| 
+        ; call occurs [#_memset] ; |2011| 
+	.dwpsn	"algo.c",2013,2
+        MOVL      XAR4,*-SP[30]         ; |2013| 
+        MOVL      XAR5,#256             ; |2013| 
+        MOVB      ACC,#5
+        LCR       #_SpiReadRom          ; |2013| 
+        ; call occurs [#_SpiReadRom] ; |2013| 
+        MOVL      XAR4,*-SP[30]
+        MOVB      XAR6,#255
+        MOVL      XAR5,*-SP[34]
+L135:    
+DW$L$_RunPathMake$171$B:
+;***	-----------------------g159:
+;** 2017	-----------------------    *U$12++ = *U$9++;
+;** 2016	-----------------------    if ( (--L$7) != (-1) ) goto g159;
+	.dwpsn	"algo.c",2017,3
+        MOV       AL,*XAR4++            ; |2017| 
+        MOV       *XAR5++,AL            ; |2017| 
+	.dwpsn	"algo.c",2016,15
+        BANZ      L135,AR6--            ; |2016| 
+        ; branchcc occurs ; |2016| 
+DW$L$_RunPathMake$171$E:
+;***  	-----------------------    return;
+        BF        L146,UNC
+        ; branch occurs
+L136:    
+;***	-----------------------g161:
+;** 1623	-----------------------    i[3] = 4095u;
+;** 1624	-----------------------    i[2] = 4095u;
+;** 1625	-----------------------    i[1] = 4095u;
+;** 1626	-----------------------    C$26 = &((volatile unsigned *)K$71)[2*(long)x];
+;** 1626	-----------------------    i[0] = *C$26>>8&0xfu;
+;** 1627	-----------------------    DiagPos[0] = *C$26&0xffu;
+;** 1628	-----------------------    U$138 = C$26;
+;** 1628	-----------------------    DiagDir[0] = *U$138>>12;
+;** 1630	-----------------------    if ( !(P$19 = gPathBufferHead == U$31) ) goto g57;
+	.dwpsn	"algo.c",1623,4
+        MOV       *-SP[12],#4095        ; |1623| 
+	.dwpsn	"algo.c",1624,4
+        MOV       *-SP[13],#4095        ; |1624| 
+	.dwpsn	"algo.c",1625,4
+        MOV       *-SP[14],#4095        ; |1625| 
+	.dwpsn	"algo.c",1626,4
+        MOVL      XAR4,*-SP[38]         ; |1626| 
+        MOVU      ACC,AR0
+        LSL       ACC,1                 ; |1626| 
+        ADDL      XAR4,ACC
+        AND       AH,*+XAR4[0],#0x0f00  ; |1626| 
+        LSR       AH,8                  ; |1626| 
+        MOV       *-SP[15],AH           ; |1626| 
+	.dwpsn	"algo.c",1627,4
+        MOV       AH,*+XAR4[0]          ; |1627| 
+        ANDB      AH,#0xff              ; |1627| 
+        MOV       *-SP[19],AH           ; |1627| 
+	.dwpsn	"algo.c",1628,4
+        MOV       AH,*+XAR4[0]          ; |1628| 
+        LSR       AH,12                 ; |1628| 
+        MOV       *-SP[23],AH           ; |1628| 
+        MOVL      XAR7,XAR4             ; |1628| 
+	.dwpsn	"algo.c",1630,4
+        MOVB      AH,#0
+        MOV       AL,PH                 ; |1630| 
+        CMP       AL,@_gPathBufferHead  ; |1630| 
+        BF        L137,NEQ              ; |1630| 
+        ; branchcc occurs ; |1630| 
+        MOVB      AH,#1                 ; |1630| 
+L137:    
+        MOV       AL,AH                 ; |1630| 
+        BF        L82,EQ                ; |1630| 
+        ; branchcc occurs ; |1630| 
+;** 1630	-----------------------    goto g166;
+        BF        L141,UNC              ; |1630| 
+        ; branch occurs ; |1630| 
+L138:    
+;***	-----------------------g162:
+;** 1609	-----------------------    i[3] = 4095u;
+;** 1610	-----------------------    i[2] = 4095u;
+;** 1611	-----------------------    C$25 = &((volatile unsigned *)K$71)[2*(long)U$31];
+;** 1611	-----------------------    i[1] = *C$25>>8&0xfu;
+;** 1612	-----------------------    C$24 = &((volatile unsigned *)K$71)[2*(long)x];
+;** 1612	-----------------------    i[0] = *C$24>>8&0xfu;
+;** 1613	-----------------------    DiagPos[1] = *C$25&0xffu;
+;** 1614	-----------------------    DiagPos[0] = *C$24&0xffu;
+;** 1615	-----------------------    DiagDir[1] = *C$25>>12;
+;** 1616	-----------------------    U$138 = C$24;
+;** 1616	-----------------------    DiagDir[0] = *U$138>>12;
+;** 1618	-----------------------    if ( !(P$20 = gPathBufferHead == U$125) ) goto g57;
+	.dwpsn	"algo.c",1609,4
+        MOV       *-SP[12],#4095        ; |1609| 
+	.dwpsn	"algo.c",1610,4
+        MOV       *-SP[13],#4095        ; |1610| 
+	.dwpsn	"algo.c",1611,4
+        MOVL      XAR4,*-SP[38]         ; |1611| 
+        MOVU      ACC,PH
+        LSL       ACC,1                 ; |1611| 
+        ADDL      XAR4,ACC
+        AND       AL,*+XAR4[0],#0x0f00  ; |1611| 
+        LSR       AL,8                  ; |1611| 
+        MOV       *-SP[14],AL           ; |1611| 
+	.dwpsn	"algo.c",1612,4
+        MOVL      XAR5,*-SP[38]         ; |1612| 
+        MOVU      ACC,AR0
+        LSL       ACC,1                 ; |1612| 
+        ADDL      XAR5,ACC
+        AND       AL,*+XAR5[0],#0x0f00  ; |1612| 
+        LSR       AL,8                  ; |1612| 
+        MOV       *-SP[15],AL           ; |1612| 
+	.dwpsn	"algo.c",1613,4
+        MOV       AL,*+XAR4[0]          ; |1613| 
+        ANDB      AL,#0xff              ; |1613| 
+        MOV       *-SP[18],AL           ; |1613| 
+	.dwpsn	"algo.c",1614,4
+        MOV       AL,*+XAR5[0]          ; |1614| 
+        ANDB      AL,#0xff              ; |1614| 
+        MOV       *-SP[19],AL           ; |1614| 
+	.dwpsn	"algo.c",1615,4
+        MOV       AL,*+XAR4[0]          ; |1615| 
+        LSR       AL,12                 ; |1615| 
+        MOV       *-SP[22],AL           ; |1615| 
+	.dwpsn	"algo.c",1616,4
+        MOVL      XAR4,XAR5             ; |1616| 
+        MOV       AL,*+XAR4[0]          ; |1616| 
+        LSR       AL,12                 ; |1616| 
+        MOV       *-SP[23],AL           ; |1616| 
+        MOVL      XAR7,XAR5             ; |1616| 
+	.dwpsn	"algo.c",1618,4
+        MOVB      AH,#0
+        MOV       AL,AR6                ; |1618| 
+        CMP       AL,@_gPathBufferHead  ; |1618| 
+        BF        L139,NEQ              ; |1618| 
+        ; branchcc occurs ; |1618| 
+        MOVB      AH,#1                 ; |1618| 
+L139:    
+        MOV       AL,AH                 ; |1618| 
+        BF        L82,EQ                ; |1618| 
+        ; branchcc occurs ; |1618| 
+;** 1618	-----------------------    goto g166;
+        BF        L141,UNC              ; |1618| 
+        ; branch occurs ; |1618| 
+L140:    
+;***	-----------------------g163:
+;** 1589	-----------------------    i[3] = 4095u;
+;** 1590	-----------------------    C$23 = &((volatile unsigned *)K$71)[2*(long)U$125];
+;** 1590	-----------------------    i[2] = *C$23>>8&0xfu;
+;** 1591	-----------------------    C$22 = &((volatile unsigned *)K$71)[2*(long)U$31];
+;** 1591	-----------------------    i[1] = *C$22>>8&0xfu;
+;** 1592	-----------------------    C$21 = &((volatile unsigned *)K$71)[2*(long)x];
+;** 1592	-----------------------    i[0] = *C$21>>8&0xfu;
+;** 1594	-----------------------    DiagPos[2] = *C$23&0xffu;
+;** 1595	-----------------------    DiagPos[1] = *C$22&0xffu;
+;** 1596	-----------------------    DiagPos[0] = *C$21&0xffu;
+;** 1598	-----------------------    DiagDir[2] = *C$23>>12;
+;** 1599	-----------------------    DiagDir[1] = *C$22>>12;
+;** 1600	-----------------------    U$138 = C$21;
+;** 1600	-----------------------    DiagDir[0] = *U$138>>12;
+;** 1602	-----------------------    if ( !i[2] ) goto g57;
+	.dwpsn	"algo.c",1589,4
+        MOV       *-SP[12],#4095        ; |1589| 
+	.dwpsn	"algo.c",1590,4
+        MOVL      XAR4,*-SP[38]         ; |1590| 
+        MOVU      ACC,AR6
+        LSL       ACC,1                 ; |1590| 
+        ADDL      XAR4,ACC
+        AND       AH,*+XAR4[0],#0x0f00  ; |1590| 
+        LSR       AH,8                  ; |1590| 
+        MOV       *-SP[13],AH           ; |1590| 
+	.dwpsn	"algo.c",1591,4
+        MOVL      XAR5,*-SP[38]         ; |1591| 
+        MOVU      ACC,PH
+        LSL       ACC,1                 ; |1591| 
+        ADDL      XAR5,ACC
+        AND       AL,*+XAR5[0],#0x0f00  ; |1591| 
+        LSR       AL,8                  ; |1591| 
+        MOV       *-SP[14],AL           ; |1591| 
+	.dwpsn	"algo.c",1592,4
+        MOVL      XAR6,*-SP[38]         ; |1592| 
+        MOVU      ACC,AR0
+        LSL       ACC,1                 ; |1592| 
+        ADDL      XAR6,ACC
+        AND       AL,*+XAR6[0],#0x0f00  ; |1592| 
+        LSR       AL,8                  ; |1592| 
+        MOV       *-SP[15],AL           ; |1592| 
+	.dwpsn	"algo.c",1594,4
+        MOV       AL,*+XAR4[0]          ; |1594| 
+        ANDB      AL,#0xff              ; |1594| 
+        MOV       *-SP[17],AL           ; |1594| 
+	.dwpsn	"algo.c",1595,4
+        MOV       AL,*+XAR5[0]          ; |1595| 
+        ANDB      AL,#0xff              ; |1595| 
+        MOV       *-SP[18],AL           ; |1595| 
+	.dwpsn	"algo.c",1596,4
+        MOV       AL,*+XAR6[0]          ; |1596| 
+        ANDB      AL,#0xff              ; |1596| 
+        MOV       *-SP[19],AL           ; |1596| 
+	.dwpsn	"algo.c",1598,4
+        MOV       AL,*+XAR4[0]          ; |1598| 
+        LSR       AL,12                 ; |1598| 
+        MOV       *-SP[21],AL           ; |1598| 
+	.dwpsn	"algo.c",1599,4
+        MOV       AL,*+XAR5[0]          ; |1599| 
+        LSR       AL,12                 ; |1599| 
+        MOV       *-SP[22],AL           ; |1599| 
+	.dwpsn	"algo.c",1600,4
+        MOVL      XAR4,XAR6             ; |1600| 
+        MOV       AL,*+XAR4[0]          ; |1600| 
+        LSR       AL,12                 ; |1600| 
+        MOV       *-SP[23],AL           ; |1600| 
+        MOVL      XAR7,XAR6             ; |1600| 
+	.dwpsn	"algo.c",1602,4
+        MOV       AL,*-SP[13]           ; |1602| 
+        BF        L82,EQ                ; |1602| 
+        ; branchcc occurs ; |1602| 
+;** 1602	-----------------------    if ( gPathBufferHead != x+3u ) goto g57;
+        MOV       AL,AR0                ; |1602| 
+        ADDB      AL,#3                 ; |1602| 
+        CMP       AL,@_gPathBufferHead  ; |1602| 
+        BF        L82,NEQ               ; |1602| 
+        ; branchcc occurs ; |1602| 
+;** 1602	-----------------------    if ( *&gMouseHead ) goto g57;
+        MOVW      DP,#_gMouseHead
+        MOV       AL,@_gMouseHead       ; |1602| 
+        BF        L82,NEQ               ; |1602| 
+        ; branchcc occurs ; |1602| 
+L141:    
+;***	-----------------------g166:
+;** 1603	-----------------------    LastPath = 1u;
+;** 1603	-----------------------    goto g57;
+	.dwpsn	"algo.c",1603,5
+        MOV       *-SP[25],#1           ; |1603| 
+        BF        L82,UNC               ; |1603| 
+        ; branch occurs ; |1603| 
+L142:    
+;***	-----------------------g167:
+;** 1536	-----------------------    TxPrintf("error2\n");
+	.dwpsn	"algo.c",1536,4
+        MOVL      XAR4,#FSL9            ; |1536| 
+        MOVL      *-SP[2],XAR4          ; |1536| 
+        LCR       #_TxPrintf            ; |1536| 
+        ; call occurs [#_TxPrintf] ; |1536| 
+L143:    
+DW$L$_RunPathMake$186$B:
+;***	-----------------------g168:
+;** 1539	-----------------------    VFDPrintf("    E2nd");
+;** 1537	-----------------------    goto g168;
+	.dwpsn	"algo.c",1539,5
+        MOVL      XAR4,#FSL10           ; |1539| 
+        MOVL      *-SP[2],XAR4          ; |1539| 
+        LCR       #_VFDPrintf           ; |1539| 
+        ; call occurs [#_VFDPrintf] ; |1539| 
+	.dwpsn	"algo.c",1537,10
+        BF        L143,UNC              ; |1537| 
+        ; branch occurs ; |1537| 
+DW$L$_RunPathMake$186$E:
+L144:    
+;***	-----------------------g169:
+;** 1472	-----------------------    TxPrintf("error1\n");
+	.dwpsn	"algo.c",1472,4
+        MOVL      XAR4,#FSL11           ; |1472| 
+        MOVL      *-SP[2],XAR4          ; |1472| 
+        LCR       #_TxPrintf            ; |1472| 
+        ; call occurs [#_TxPrintf] ; |1472| 
+L145:    
+DW$L$_RunPathMake$188$B:
+;***	-----------------------g170:
+;** 1475	-----------------------    VFDPrintf("    E2nd");
+;** 1473	-----------------------    goto g170;
+	.dwpsn	"algo.c",1475,5
+        MOVL      XAR4,#FSL10           ; |1475| 
+        MOVL      *-SP[2],XAR4          ; |1475| 
+        LCR       #_VFDPrintf           ; |1475| 
+        ; call occurs [#_VFDPrintf] ; |1475| 
+	.dwpsn	"algo.c",1473,10
+        BF        L145,UNC              ; |1473| 
+        ; branch occurs ; |1473| 
+DW$L$_RunPathMake$188$E:
+L146:    
+	.dwpsn	"algo.c",2019,1
+        SUBB      SP,#38
+	.dwcfa	0x1d, -8
+        MOVL      XAR3,*--SP
+	.dwcfa	0x1d, -6
+	.dwcfa	0xc0, 11
+        MOVL      XAR2,*--SP
+	.dwcfa	0x1d, -4
+	.dwcfa	0xc0, 9
+        MOVL      XAR1,*--SP
+	.dwcfa	0x1d, -2
+	.dwcfa	0xc0, 7
+        LRETR
+        ; return occurs
+
+DW$330	.dwtag  DW_TAG_loop
+	.dwattr DW$330, DW_AT_name("C:\algo\main\algo.asm:L145:1:1773144227")
+	.dwattr DW$330, DW_AT_begin_file("algo.c")
+	.dwattr DW$330, DW_AT_begin_line(0x5c1)
+	.dwattr DW$330, DW_AT_end_line(0x5c4)
+DW$331	.dwtag  DW_TAG_loop_range
+	.dwattr DW$331, DW_AT_low_pc(DW$L$_RunPathMake$188$B)
+	.dwattr DW$331, DW_AT_high_pc(DW$L$_RunPathMake$188$E)
+	.dwendtag DW$330
+
+
+DW$332	.dwtag  DW_TAG_loop
+	.dwattr DW$332, DW_AT_name("C:\algo\main\algo.asm:L143:1:1773144227")
+	.dwattr DW$332, DW_AT_begin_file("algo.c")
+	.dwattr DW$332, DW_AT_begin_line(0x601)
+	.dwattr DW$332, DW_AT_end_line(0x604)
+DW$333	.dwtag  DW_TAG_loop_range
+	.dwattr DW$333, DW_AT_low_pc(DW$L$_RunPathMake$186$B)
+	.dwattr DW$333, DW_AT_high_pc(DW$L$_RunPathMake$186$E)
+	.dwendtag DW$332
+
+
+DW$334	.dwtag  DW_TAG_loop
+	.dwattr DW$334, DW_AT_name("C:\algo\main\algo.asm:L135:1:1773144227")
+	.dwattr DW$334, DW_AT_begin_file("algo.c")
+	.dwattr DW$334, DW_AT_begin_line(0x7e0)
+	.dwattr DW$334, DW_AT_end_line(0x7e1)
+DW$335	.dwtag  DW_TAG_loop_range
+	.dwattr DW$335, DW_AT_low_pc(DW$L$_RunPathMake$171$B)
+	.dwattr DW$335, DW_AT_high_pc(DW$L$_RunPathMake$171$E)
+	.dwendtag DW$334
+
+
+DW$336	.dwtag  DW_TAG_loop
+	.dwattr DW$336, DW_AT_name("C:\algo\main\algo.asm:L133:1:1773144227")
+	.dwattr DW$336, DW_AT_begin_file("algo.c")
+	.dwattr DW$336, DW_AT_begin_line(0x7d5)
+	.dwattr DW$336, DW_AT_end_line(0x7d6)
+DW$337	.dwtag  DW_TAG_loop_range
+	.dwattr DW$337, DW_AT_low_pc(DW$L$_RunPathMake$169$B)
+	.dwattr DW$337, DW_AT_high_pc(DW$L$_RunPathMake$169$E)
+	.dwendtag DW$336
+
+
+DW$338	.dwtag  DW_TAG_loop
+	.dwattr DW$338, DW_AT_name("C:\algo\main\algo.asm:L77:1:1773144227")
+	.dwattr DW$338, DW_AT_begin_file("algo.c")
+	.dwattr DW$338, DW_AT_begin_line(0x5e4)
+	.dwattr DW$338, DW_AT_end_line(0x610)
+DW$339	.dwtag  DW_TAG_loop_range
+	.dwattr DW$339, DW_AT_low_pc(DW$L$_RunPathMake$54$B)
+	.dwattr DW$339, DW_AT_high_pc(DW$L$_RunPathMake$54$E)
+DW$340	.dwtag  DW_TAG_loop_range
+	.dwattr DW$340, DW_AT_low_pc(DW$L$_RunPathMake$59$B)
+	.dwattr DW$340, DW_AT_high_pc(DW$L$_RunPathMake$59$E)
+DW$341	.dwtag  DW_TAG_loop_range
+	.dwattr DW$341, DW_AT_low_pc(DW$L$_RunPathMake$60$B)
+	.dwattr DW$341, DW_AT_high_pc(DW$L$_RunPathMake$60$E)
+DW$342	.dwtag  DW_TAG_loop_range
+	.dwattr DW$342, DW_AT_low_pc(DW$L$_RunPathMake$61$B)
+	.dwattr DW$342, DW_AT_high_pc(DW$L$_RunPathMake$61$E)
+DW$343	.dwtag  DW_TAG_loop_range
+	.dwattr DW$343, DW_AT_low_pc(DW$L$_RunPathMake$62$B)
+	.dwattr DW$343, DW_AT_high_pc(DW$L$_RunPathMake$62$E)
+
+DW$344	.dwtag  DW_TAG_loop
+	.dwattr DW$344, DW_AT_name("C:\algo\main\algo.asm:L78:2:1773144227")
+	.dwattr DW$344, DW_AT_begin_file("algo.c")
+	.dwattr DW$344, DW_AT_begin_line(0x5e6)
+	.dwattr DW$344, DW_AT_end_line(0x5f4)
+DW$345	.dwtag  DW_TAG_loop_range
+	.dwattr DW$345, DW_AT_low_pc(DW$L$_RunPathMake$55$B)
+	.dwattr DW$345, DW_AT_high_pc(DW$L$_RunPathMake$55$E)
+DW$346	.dwtag  DW_TAG_loop_range
+	.dwattr DW$346, DW_AT_low_pc(DW$L$_RunPathMake$56$B)
+	.dwattr DW$346, DW_AT_high_pc(DW$L$_RunPathMake$56$E)
+DW$347	.dwtag  DW_TAG_loop_range
+	.dwattr DW$347, DW_AT_low_pc(DW$L$_RunPathMake$57$B)
+	.dwattr DW$347, DW_AT_high_pc(DW$L$_RunPathMake$57$E)
+DW$348	.dwtag  DW_TAG_loop_range
+	.dwattr DW$348, DW_AT_low_pc(DW$L$_RunPathMake$58$B)
+	.dwattr DW$348, DW_AT_high_pc(DW$L$_RunPathMake$58$E)
+	.dwendtag DW$344
+
+	.dwendtag DW$338
+
+
+DW$349	.dwtag  DW_TAG_loop
+	.dwattr DW$349, DW_AT_name("C:\algo\main\algo.asm:L75:1:1773144227")
+	.dwattr DW$349, DW_AT_begin_file("algo.c")
+	.dwattr DW$349, DW_AT_begin_line(0x5d7)
+	.dwattr DW$349, DW_AT_end_line(0x5da)
+DW$350	.dwtag  DW_TAG_loop_range
+	.dwattr DW$350, DW_AT_low_pc(DW$L$_RunPathMake$52$B)
+	.dwattr DW$350, DW_AT_high_pc(DW$L$_RunPathMake$52$E)
+	.dwendtag DW$349
+
+
+DW$351	.dwtag  DW_TAG_loop
+	.dwattr DW$351, DW_AT_name("C:\algo\main\algo.asm:L74:1:1773144227")
+	.dwattr DW$351, DW_AT_begin_file("algo.c")
+	.dwattr DW$351, DW_AT_begin_line(0x5d4)
+	.dwattr DW$351, DW_AT_end_line(0x5d5)
+DW$352	.dwtag  DW_TAG_loop_range
+	.dwattr DW$352, DW_AT_low_pc(DW$L$_RunPathMake$49$B)
+	.dwattr DW$352, DW_AT_high_pc(DW$L$_RunPathMake$49$E)
+	.dwendtag DW$351
+
+
+DW$353	.dwtag  DW_TAG_loop
+	.dwattr DW$353, DW_AT_name("C:\algo\main\algo.asm:L70:1:1773144227")
+	.dwattr DW$353, DW_AT_begin_file("algo.c")
+	.dwattr DW$353, DW_AT_begin_line(0x5a7)
+	.dwattr DW$353, DW_AT_end_line(0x5ce)
+DW$354	.dwtag  DW_TAG_loop_range
+	.dwattr DW$354, DW_AT_low_pc(DW$L$_RunPathMake$39$B)
+	.dwattr DW$354, DW_AT_high_pc(DW$L$_RunPathMake$39$E)
+DW$355	.dwtag  DW_TAG_loop_range
+	.dwattr DW$355, DW_AT_low_pc(DW$L$_RunPathMake$44$B)
+	.dwattr DW$355, DW_AT_high_pc(DW$L$_RunPathMake$44$E)
+DW$356	.dwtag  DW_TAG_loop_range
+	.dwattr DW$356, DW_AT_low_pc(DW$L$_RunPathMake$45$B)
+	.dwattr DW$356, DW_AT_high_pc(DW$L$_RunPathMake$45$E)
+DW$357	.dwtag  DW_TAG_loop_range
+	.dwattr DW$357, DW_AT_low_pc(DW$L$_RunPathMake$46$B)
+	.dwattr DW$357, DW_AT_high_pc(DW$L$_RunPathMake$46$E)
+DW$358	.dwtag  DW_TAG_loop_range
+	.dwattr DW$358, DW_AT_low_pc(DW$L$_RunPathMake$47$B)
+	.dwattr DW$358, DW_AT_high_pc(DW$L$_RunPathMake$47$E)
+
+DW$359	.dwtag  DW_TAG_loop
+	.dwattr DW$359, DW_AT_name("C:\algo\main\algo.asm:L71:2:1773144227")
+	.dwattr DW$359, DW_AT_begin_file("algo.c")
+	.dwattr DW$359, DW_AT_begin_line(0x5a9)
+	.dwattr DW$359, DW_AT_end_line(0x5b7)
+DW$360	.dwtag  DW_TAG_loop_range
+	.dwattr DW$360, DW_AT_low_pc(DW$L$_RunPathMake$40$B)
+	.dwattr DW$360, DW_AT_high_pc(DW$L$_RunPathMake$40$E)
+DW$361	.dwtag  DW_TAG_loop_range
+	.dwattr DW$361, DW_AT_low_pc(DW$L$_RunPathMake$41$B)
+	.dwattr DW$361, DW_AT_high_pc(DW$L$_RunPathMake$41$E)
+DW$362	.dwtag  DW_TAG_loop_range
+	.dwattr DW$362, DW_AT_low_pc(DW$L$_RunPathMake$42$B)
+	.dwattr DW$362, DW_AT_high_pc(DW$L$_RunPathMake$42$E)
+DW$363	.dwtag  DW_TAG_loop_range
+	.dwattr DW$363, DW_AT_low_pc(DW$L$_RunPathMake$43$B)
+	.dwattr DW$363, DW_AT_high_pc(DW$L$_RunPathMake$43$E)
+	.dwendtag DW$359
+
+	.dwendtag DW$353
+
+
+DW$364	.dwtag  DW_TAG_loop
+	.dwattr DW$364, DW_AT_name("C:\algo\main\algo.asm:L68:1:1773144227")
+	.dwattr DW$364, DW_AT_begin_file("algo.c")
+	.dwattr DW$364, DW_AT_begin_line(0x592)
+	.dwattr DW$364, DW_AT_end_line(0x599)
+DW$365	.dwtag  DW_TAG_loop_range
+	.dwattr DW$365, DW_AT_low_pc(DW$L$_RunPathMake$34$B)
+	.dwattr DW$365, DW_AT_high_pc(DW$L$_RunPathMake$34$E)
+DW$366	.dwtag  DW_TAG_loop_range
+	.dwattr DW$366, DW_AT_low_pc(DW$L$_RunPathMake$35$B)
+	.dwattr DW$366, DW_AT_high_pc(DW$L$_RunPathMake$35$E)
+DW$367	.dwtag  DW_TAG_loop_range
+	.dwattr DW$367, DW_AT_low_pc(DW$L$_RunPathMake$36$B)
+	.dwattr DW$367, DW_AT_high_pc(DW$L$_RunPathMake$36$E)
+DW$368	.dwtag  DW_TAG_loop_range
+	.dwattr DW$368, DW_AT_low_pc(DW$L$_RunPathMake$37$B)
+	.dwattr DW$368, DW_AT_high_pc(DW$L$_RunPathMake$37$E)
+	.dwendtag DW$364
+
+
+DW$369	.dwtag  DW_TAG_loop
+	.dwattr DW$369, DW_AT_name("C:\algo\main\algo.asm:L52:1:1773144227")
+	.dwattr DW$369, DW_AT_begin_file("algo.c")
+	.dwattr DW$369, DW_AT_begin_line(0x555)
+	.dwattr DW$369, DW_AT_end_line(0x57a)
+DW$370	.dwtag  DW_TAG_loop_range
+	.dwattr DW$370, DW_AT_low_pc(DW$L$_RunPathMake$2$B)
+	.dwattr DW$370, DW_AT_high_pc(DW$L$_RunPathMake$2$E)
+DW$371	.dwtag  DW_TAG_loop_range
+	.dwattr DW$371, DW_AT_low_pc(DW$L$_RunPathMake$3$B)
+	.dwattr DW$371, DW_AT_high_pc(DW$L$_RunPathMake$3$E)
+DW$372	.dwtag  DW_TAG_loop_range
+	.dwattr DW$372, DW_AT_low_pc(DW$L$_RunPathMake$17$B)
+	.dwattr DW$372, DW_AT_high_pc(DW$L$_RunPathMake$17$E)
+DW$373	.dwtag  DW_TAG_loop_range
+	.dwattr DW$373, DW_AT_low_pc(DW$L$_RunPathMake$18$B)
+	.dwattr DW$373, DW_AT_high_pc(DW$L$_RunPathMake$18$E)
+DW$374	.dwtag  DW_TAG_loop_range
+	.dwattr DW$374, DW_AT_low_pc(DW$L$_RunPathMake$19$B)
+	.dwattr DW$374, DW_AT_high_pc(DW$L$_RunPathMake$19$E)
+
+DW$375	.dwtag  DW_TAG_loop
+	.dwattr DW$375, DW_AT_name("C:\algo\main\algo.asm:L53:2:1773144227")
+	.dwattr DW$375, DW_AT_begin_file("algo.c")
+	.dwattr DW$375, DW_AT_begin_line(0x55c)
+	.dwattr DW$375, DW_AT_end_line(0x578)
+DW$376	.dwtag  DW_TAG_loop_range
+	.dwattr DW$376, DW_AT_low_pc(DW$L$_RunPathMake$4$B)
+	.dwattr DW$376, DW_AT_high_pc(DW$L$_RunPathMake$4$E)
+DW$377	.dwtag  DW_TAG_loop_range
+	.dwattr DW$377, DW_AT_low_pc(DW$L$_RunPathMake$5$B)
+	.dwattr DW$377, DW_AT_high_pc(DW$L$_RunPathMake$5$E)
+DW$378	.dwtag  DW_TAG_loop_range
+	.dwattr DW$378, DW_AT_low_pc(DW$L$_RunPathMake$6$B)
+	.dwattr DW$378, DW_AT_high_pc(DW$L$_RunPathMake$6$E)
+DW$379	.dwtag  DW_TAG_loop_range
+	.dwattr DW$379, DW_AT_low_pc(DW$L$_RunPathMake$7$B)
+	.dwattr DW$379, DW_AT_high_pc(DW$L$_RunPathMake$7$E)
+DW$380	.dwtag  DW_TAG_loop_range
+	.dwattr DW$380, DW_AT_low_pc(DW$L$_RunPathMake$8$B)
+	.dwattr DW$380, DW_AT_high_pc(DW$L$_RunPathMake$8$E)
+DW$381	.dwtag  DW_TAG_loop_range
+	.dwattr DW$381, DW_AT_low_pc(DW$L$_RunPathMake$9$B)
+	.dwattr DW$381, DW_AT_high_pc(DW$L$_RunPathMake$9$E)
+DW$382	.dwtag  DW_TAG_loop_range
+	.dwattr DW$382, DW_AT_low_pc(DW$L$_RunPathMake$10$B)
+	.dwattr DW$382, DW_AT_high_pc(DW$L$_RunPathMake$10$E)
+DW$383	.dwtag  DW_TAG_loop_range
+	.dwattr DW$383, DW_AT_low_pc(DW$L$_RunPathMake$11$B)
+	.dwattr DW$383, DW_AT_high_pc(DW$L$_RunPathMake$11$E)
+DW$384	.dwtag  DW_TAG_loop_range
+	.dwattr DW$384, DW_AT_low_pc(DW$L$_RunPathMake$12$B)
+	.dwattr DW$384, DW_AT_high_pc(DW$L$_RunPathMake$12$E)
+DW$385	.dwtag  DW_TAG_loop_range
+	.dwattr DW$385, DW_AT_low_pc(DW$L$_RunPathMake$13$B)
+	.dwattr DW$385, DW_AT_high_pc(DW$L$_RunPathMake$13$E)
+DW$386	.dwtag  DW_TAG_loop_range
+	.dwattr DW$386, DW_AT_low_pc(DW$L$_RunPathMake$14$B)
+	.dwattr DW$386, DW_AT_high_pc(DW$L$_RunPathMake$14$E)
+DW$387	.dwtag  DW_TAG_loop_range
+	.dwattr DW$387, DW_AT_low_pc(DW$L$_RunPathMake$15$B)
+	.dwattr DW$387, DW_AT_high_pc(DW$L$_RunPathMake$15$E)
+DW$388	.dwtag  DW_TAG_loop_range
+	.dwattr DW$388, DW_AT_low_pc(DW$L$_RunPathMake$16$B)
+	.dwattr DW$388, DW_AT_high_pc(DW$L$_RunPathMake$16$E)
+	.dwendtag DW$375
+
+	.dwendtag DW$369
+
+	.dwattr DW$234, DW_AT_end_file("algo.c")
+	.dwattr DW$234, DW_AT_end_line(0x7e3)
+	.dwattr DW$234, DW_AT_end_column(0x01)
+	.dwendentry
+	.dwendtag DW$234
+
+	.sect	".text"
+	.global	_RunPath90Make
+
+DW$389	.dwtag  DW_TAG_subprogram, DW_AT_name("RunPath90Make"), DW_AT_symbol_name("_RunPath90Make")
+	.dwattr DW$389, DW_AT_low_pc(_RunPath90Make)
+	.dwattr DW$389, DW_AT_high_pc(0x00)
+	.dwattr DW$389, DW_AT_begin_file("algo.c")
+	.dwattr DW$389, DW_AT_begin_line(0x33f)
+	.dwattr DW$389, DW_AT_begin_column(0x06)
+	.dwpsn	"algo.c",832,1
+
+	.dwfde DW$CIE
+
+;***************************************************************
+;* FNAME: _RunPath90Make                FR SIZE:  44           *
+;*                                                             *
+;* FUNCTION ENVIRONMENT                                        *
+;*                                                             *
+;* FUNCTION PROPERTIES                                         *
+;*                            7 Parameter, 31 Auto,  6 SOE     *
+;***************************************************************
+
+
+;***************************************************************
+;*                                                             *
+;* Using -g (debug) with optimization (-o3) may disable key op *
+;*                                                             *
+;***************************************************************
+_RunPath90Make:
+;*** 835	-----------------------    Goal[] = {...};
+;*** 858	-----------------------    K$4 = &gMazeMap[0];
+;*** 858	-----------------------    memset((void *)K$4, 0, 256uL);
+;*** 859	-----------------------    K$5 = &gMazeMapBackUp;
+;*** 859	-----------------------    memset(K$5, 0, 256uL);
+;*** 861	-----------------------    SpiReadRom(5u, 0u, 256u, (unsigned *)K$5);
+;***  	-----------------------    U$9 = (volatile unsigned *)K$5;
+;***  	-----------------------    U$12 = K$4;
+;***  	-----------------------    K$19 = &gMoveTable[0];
+;*** 863	-----------------------    cnt = 0u;
+	.dwcfa	0x1d, -2
+	.dwcfa	0x1c, 26, 0
+	.dwcfa	0x09, 40, 26
+        MOVL      *SP++,XAR1
+	.dwcfa	0x80, 7, 2
+	.dwcfa	0x1d, -4
+        MOVL      *SP++,XAR2
+	.dwcfa	0x80, 9, 4
+	.dwcfa	0x1d, -6
+        MOVL      *SP++,XAR3
+	.dwcfa	0x80, 11, 6
+	.dwcfa	0x1d, -8
+        ADDB      SP,#38
+	.dwcfa	0x1d, -46
+;* AR6   assigned to C$20
+DW$390	.dwtag  DW_TAG_variable, DW_AT_name("C$20"), DW_AT_symbol_name("C$20")
+	.dwattr DW$390, DW_AT_type(*DW$T$92)
+	.dwattr DW$390, DW_AT_location[DW_OP_reg16]
+;* AR5   assigned to C$21
+DW$391	.dwtag  DW_TAG_variable, DW_AT_name("C$21"), DW_AT_symbol_name("C$21")
+	.dwattr DW$391, DW_AT_type(*DW$T$92)
+	.dwattr DW$391, DW_AT_location[DW_OP_reg14]
+;* AR4   assigned to C$22
+DW$392	.dwtag  DW_TAG_variable, DW_AT_name("C$22"), DW_AT_symbol_name("C$22")
+	.dwattr DW$392, DW_AT_type(*DW$T$92)
+	.dwattr DW$392, DW_AT_location[DW_OP_reg12]
+;* AR5   assigned to C$23
+DW$393	.dwtag  DW_TAG_variable, DW_AT_name("C$23"), DW_AT_symbol_name("C$23")
+	.dwattr DW$393, DW_AT_type(*DW$T$92)
+	.dwattr DW$393, DW_AT_location[DW_OP_reg14]
+;* AR4   assigned to C$24
+DW$394	.dwtag  DW_TAG_variable, DW_AT_name("C$24"), DW_AT_symbol_name("C$24")
+	.dwattr DW$394, DW_AT_type(*DW$T$92)
+	.dwattr DW$394, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to C$25
+DW$395	.dwtag  DW_TAG_variable, DW_AT_name("C$25"), DW_AT_symbol_name("C$25")
+	.dwattr DW$395, DW_AT_type(*DW$T$92)
+	.dwattr DW$395, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to C$26
+DW$396	.dwtag  DW_TAG_variable, DW_AT_name("C$26"), DW_AT_symbol_name("C$26")
+	.dwattr DW$396, DW_AT_type(*DW$T$92)
+	.dwattr DW$396, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to C$27
+DW$397	.dwtag  DW_TAG_variable, DW_AT_name("C$27"), DW_AT_symbol_name("C$27")
+	.dwattr DW$397, DW_AT_type(*DW$T$92)
+	.dwattr DW$397, DW_AT_location[DW_OP_reg12]
+;* AR6   assigned to C$28
+DW$398	.dwtag  DW_TAG_variable, DW_AT_name("C$28"), DW_AT_symbol_name("C$28")
+	.dwattr DW$398, DW_AT_type(*DW$T$92)
+	.dwattr DW$398, DW_AT_location[DW_OP_reg16]
+;* AR5   assigned to C$29
+DW$399	.dwtag  DW_TAG_variable, DW_AT_name("C$29"), DW_AT_symbol_name("C$29")
+	.dwattr DW$399, DW_AT_type(*DW$T$92)
+	.dwattr DW$399, DW_AT_location[DW_OP_reg14]
+;* AR4   assigned to C$30
+DW$400	.dwtag  DW_TAG_variable, DW_AT_name("C$30"), DW_AT_symbol_name("C$30")
+	.dwattr DW$400, DW_AT_type(*DW$T$92)
+	.dwattr DW$400, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to C$31
+DW$401	.dwtag  DW_TAG_variable, DW_AT_name("C$31"), DW_AT_symbol_name("C$31")
+	.dwattr DW$401, DW_AT_type(*DW$T$92)
+	.dwattr DW$401, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to C$32
+DW$402	.dwtag  DW_TAG_variable, DW_AT_name("C$32"), DW_AT_symbol_name("C$32")
+	.dwattr DW$402, DW_AT_type(*DW$T$92)
+	.dwattr DW$402, DW_AT_location[DW_OP_reg12]
+;* PL    assigned to C$33
+DW$403	.dwtag  DW_TAG_variable, DW_AT_name("C$33"), DW_AT_symbol_name("C$33")
+	.dwattr DW$403, DW_AT_type(*DW$T$11)
+	.dwattr DW$403, DW_AT_location[DW_OP_reg2]
+;* AR4   assigned to C$34
+DW$404	.dwtag  DW_TAG_variable, DW_AT_name("C$34"), DW_AT_symbol_name("C$34")
+	.dwattr DW$404, DW_AT_type(*DW$T$92)
+	.dwattr DW$404, DW_AT_location[DW_OP_reg12]
+DW$405	.dwtag  DW_TAG_variable, DW_AT_name("K$19"), DW_AT_symbol_name("K$19")
+	.dwattr DW$405, DW_AT_type(*DW$T$92)
+	.dwattr DW$405, DW_AT_location[DW_OP_breg20 -32]
+DW$406	.dwtag  DW_TAG_variable, DW_AT_name("K$57"), DW_AT_symbol_name("K$57")
+	.dwattr DW$406, DW_AT_type(*DW$T$135)
+	.dwattr DW$406, DW_AT_location[DW_OP_breg20 -36]
+;* AR5   assigned to U$47
+DW$407	.dwtag  DW_TAG_variable, DW_AT_name("U$47"), DW_AT_symbol_name("U$47")
+	.dwattr DW$407, DW_AT_type(*DW$T$77)
+	.dwattr DW$407, DW_AT_location[DW_OP_reg14]
+DW$408	.dwtag  DW_TAG_variable, DW_AT_name("K$71"), DW_AT_symbol_name("K$71")
+	.dwattr DW$408, DW_AT_type(*DW$T$111)
+	.dwattr DW$408, DW_AT_location[DW_OP_breg20 -38]
+;* PH    assigned to U$117
+DW$409	.dwtag  DW_TAG_variable, DW_AT_name("U$117"), DW_AT_symbol_name("U$117")
+	.dwattr DW$409, DW_AT_type(*DW$T$11)
+	.dwattr DW$409, DW_AT_location[DW_OP_reg3]
+;* AR7   assigned to U$138
+DW$410	.dwtag  DW_TAG_variable, DW_AT_name("U$138"), DW_AT_symbol_name("U$138")
+	.dwattr DW$410, DW_AT_type(*DW$T$92)
+	.dwattr DW$410, DW_AT_location[DW_OP_reg18]
+;* AR4   assigned to K$177
+DW$411	.dwtag  DW_TAG_variable, DW_AT_name("K$177"), DW_AT_symbol_name("K$177")
+	.dwattr DW$411, DW_AT_type(*DW$T$75)
+	.dwattr DW$411, DW_AT_location[DW_OP_reg12]
+;* PH    assigned to U$31
+DW$412	.dwtag  DW_TAG_variable, DW_AT_name("U$31"), DW_AT_symbol_name("U$31")
+	.dwattr DW$412, DW_AT_type(*DW$T$11)
+	.dwattr DW$412, DW_AT_location[DW_OP_reg3]
+DW$413	.dwtag  DW_TAG_variable, DW_AT_name("K$5"), DW_AT_symbol_name("K$5")
+	.dwattr DW$413, DW_AT_type(*DW$T$3)
+	.dwattr DW$413, DW_AT_location[DW_OP_breg20 -30]
+;* AR6   assigned to U$125
+DW$414	.dwtag  DW_TAG_variable, DW_AT_name("U$125"), DW_AT_symbol_name("U$125")
+	.dwattr DW$414, DW_AT_type(*DW$T$11)
+	.dwattr DW$414, DW_AT_location[DW_OP_reg16]
+;* AL    assigned to P$15
+DW$415	.dwtag  DW_TAG_variable, DW_AT_name("P$15"), DW_AT_symbol_name("P$15")
+	.dwattr DW$415, DW_AT_type(*DW$T$10)
+	.dwattr DW$415, DW_AT_location[DW_OP_reg0]
+;* AL    assigned to P$16
+DW$416	.dwtag  DW_TAG_variable, DW_AT_name("P$16"), DW_AT_symbol_name("P$16")
+	.dwattr DW$416, DW_AT_type(*DW$T$10)
+	.dwattr DW$416, DW_AT_location[DW_OP_reg0]
+;* AR7   assigned to P$17
+DW$417	.dwtag  DW_TAG_variable, DW_AT_name("P$17"), DW_AT_symbol_name("P$17")
+	.dwattr DW$417, DW_AT_type(*DW$T$10)
+	.dwattr DW$417, DW_AT_location[DW_OP_reg18]
+;* AL    assigned to P$18
+DW$418	.dwtag  DW_TAG_variable, DW_AT_name("P$18"), DW_AT_symbol_name("P$18")
+	.dwattr DW$418, DW_AT_type(*DW$T$10)
+	.dwattr DW$418, DW_AT_location[DW_OP_reg0]
+;* AL    assigned to P$19
+DW$419	.dwtag  DW_TAG_variable, DW_AT_name("P$19"), DW_AT_symbol_name("P$19")
+	.dwattr DW$419, DW_AT_type(*DW$T$10)
+	.dwattr DW$419, DW_AT_location[DW_OP_reg0]
+;* AR6   assigned to L$3
+DW$420	.dwtag  DW_TAG_variable, DW_AT_name("L$3"), DW_AT_symbol_name("L$3")
+	.dwattr DW$420, DW_AT_type(*DW$T$10)
+	.dwattr DW$420, DW_AT_location[DW_OP_reg16]
+;* AR6   assigned to L$4
+DW$421	.dwtag  DW_TAG_variable, DW_AT_name("L$4"), DW_AT_symbol_name("L$4")
+	.dwattr DW$421, DW_AT_type(*DW$T$10)
+	.dwattr DW$421, DW_AT_location[DW_OP_reg16]
+;* AR6   assigned to L$5
+DW$422	.dwtag  DW_TAG_variable, DW_AT_name("L$5"), DW_AT_symbol_name("L$5")
+	.dwattr DW$422, DW_AT_type(*DW$T$10)
+	.dwattr DW$422, DW_AT_location[DW_OP_reg16]
+;* AR6   assigned to L$6
+DW$423	.dwtag  DW_TAG_variable, DW_AT_name("L$6"), DW_AT_symbol_name("L$6")
+	.dwattr DW$423, DW_AT_type(*DW$T$10)
+	.dwattr DW$423, DW_AT_location[DW_OP_reg16]
+;* AR6   assigned to L$7
+DW$424	.dwtag  DW_TAG_variable, DW_AT_name("L$7"), DW_AT_symbol_name("L$7")
+	.dwattr DW$424, DW_AT_type(*DW$T$10)
+	.dwattr DW$424, DW_AT_location[DW_OP_reg16]
+DW$425	.dwtag  DW_TAG_variable, DW_AT_name("LastPath"), DW_AT_symbol_name("_LastPath")
+	.dwattr DW$425, DW_AT_type(*DW$T$19)
+	.dwattr DW$425, DW_AT_location[DW_OP_breg20 -25]
+;* AR6   assigned to _YetMouseHead
+DW$426	.dwtag  DW_TAG_variable, DW_AT_name("YetMouseHead"), DW_AT_symbol_name("_YetMouseHead")
+	.dwattr DW$426, DW_AT_type(*DW$T$19)
+	.dwattr DW$426, DW_AT_location[DW_OP_reg16]
+;* AR5   assigned to _YetTurnState
+DW$427	.dwtag  DW_TAG_variable, DW_AT_name("YetTurnState"), DW_AT_symbol_name("_YetTurnState")
+	.dwattr DW$427, DW_AT_type(*DW$T$19)
+	.dwattr DW$427, DW_AT_location[DW_OP_reg14]
+;* PL    assigned to _BlockCnt
+DW$428	.dwtag  DW_TAG_variable, DW_AT_name("BlockCnt"), DW_AT_symbol_name("_BlockCnt")
+	.dwattr DW$428, DW_AT_type(*DW$T$19)
+	.dwattr DW$428, DW_AT_location[DW_OP_reg2]
+DW$429	.dwtag  DW_TAG_variable, DW_AT_name("NextPos"), DW_AT_symbol_name("_NextPos")
+	.dwattr DW$429, DW_AT_type(*DW$T$19)
+	.dwattr DW$429, DW_AT_location[DW_OP_breg20 -27]
+DW$430	.dwtag  DW_TAG_variable, DW_AT_name("NextTurn"), DW_AT_symbol_name("_NextTurn")
+	.dwattr DW$430, DW_AT_type(*DW$T$19)
+	.dwattr DW$430, DW_AT_location[DW_OP_breg20 -28]
+;* AR2   assigned to _AbsoluteDir
+DW$431	.dwtag  DW_TAG_variable, DW_AT_name("AbsoluteDir"), DW_AT_symbol_name("_AbsoluteDir")
+	.dwattr DW$431, DW_AT_type(*DW$T$19)
+	.dwattr DW$431, DW_AT_location[DW_OP_reg8]
+DW$432	.dwtag  DW_TAG_variable, DW_AT_name("GoalPosition"), DW_AT_symbol_name("_GoalPosition")
+	.dwattr DW$432, DW_AT_type(*DW$T$19)
+	.dwattr DW$432, DW_AT_location[DW_OP_breg20 -24]
+;* AR7   assigned to _LowWeight
+DW$433	.dwtag  DW_TAG_variable, DW_AT_name("LowWeight"), DW_AT_symbol_name("_LowWeight")
+	.dwattr DW$433, DW_AT_type(*DW$T$19)
+	.dwattr DW$433, DW_AT_location[DW_OP_reg18]
+;* AR5   assigned to S$14
+DW$434	.dwtag  DW_TAG_variable, DW_AT_name("S$14"), DW_AT_symbol_name("S$14")
+	.dwattr DW$434, DW_AT_type(*DW$T$113)
+	.dwattr DW$434, DW_AT_location[DW_OP_reg14]
+;* AR4   assigned to S$13
+DW$435	.dwtag  DW_TAG_variable, DW_AT_name("S$13"), DW_AT_symbol_name("S$13")
+	.dwattr DW$435, DW_AT_type(*DW$T$111)
+	.dwattr DW$435, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to S$12
+DW$436	.dwtag  DW_TAG_variable, DW_AT_name("S$12"), DW_AT_symbol_name("S$12")
+	.dwattr DW$436, DW_AT_type(*DW$T$111)
+	.dwattr DW$436, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to S$11
+DW$437	.dwtag  DW_TAG_variable, DW_AT_name("S$11"), DW_AT_symbol_name("S$11")
+	.dwattr DW$437, DW_AT_type(*DW$T$111)
+	.dwattr DW$437, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to S$10
+DW$438	.dwtag  DW_TAG_variable, DW_AT_name("S$10"), DW_AT_symbol_name("S$10")
+	.dwattr DW$438, DW_AT_type(*DW$T$113)
+	.dwattr DW$438, DW_AT_location[DW_OP_reg12]
+;* AR5   assigned to S$9
+DW$439	.dwtag  DW_TAG_variable, DW_AT_name("S$9"), DW_AT_symbol_name("S$9")
+	.dwattr DW$439, DW_AT_type(*DW$T$113)
+	.dwattr DW$439, DW_AT_location[DW_OP_reg14]
+;* AR4   assigned to S$8
+DW$440	.dwtag  DW_TAG_variable, DW_AT_name("S$8"), DW_AT_symbol_name("S$8")
+	.dwattr DW$440, DW_AT_type(*DW$T$111)
+	.dwattr DW$440, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to S$7
+DW$441	.dwtag  DW_TAG_variable, DW_AT_name("S$7"), DW_AT_symbol_name("S$7")
+	.dwattr DW$441, DW_AT_type(*DW$T$111)
+	.dwattr DW$441, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to S$6
+DW$442	.dwtag  DW_TAG_variable, DW_AT_name("S$6"), DW_AT_symbol_name("S$6")
+	.dwattr DW$442, DW_AT_type(*DW$T$111)
+	.dwattr DW$442, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to S$5
+DW$443	.dwtag  DW_TAG_variable, DW_AT_name("S$5"), DW_AT_symbol_name("S$5")
+	.dwattr DW$443, DW_AT_type(*DW$T$111)
+	.dwattr DW$443, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to S$4
+DW$444	.dwtag  DW_TAG_variable, DW_AT_name("S$4"), DW_AT_symbol_name("S$4")
+	.dwattr DW$444, DW_AT_type(*DW$T$111)
+	.dwattr DW$444, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to S$3
+DW$445	.dwtag  DW_TAG_variable, DW_AT_name("S$3"), DW_AT_symbol_name("S$3")
+	.dwattr DW$445, DW_AT_type(*DW$T$111)
+	.dwattr DW$445, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to S$2
+DW$446	.dwtag  DW_TAG_variable, DW_AT_name("S$2"), DW_AT_symbol_name("S$2")
+	.dwattr DW$446, DW_AT_type(*DW$T$111)
+	.dwattr DW$446, DW_AT_location[DW_OP_reg12]
+;* AR7   assigned to U$9
+DW$447	.dwtag  DW_TAG_variable, DW_AT_name("U$9"), DW_AT_symbol_name("U$9")
+	.dwattr DW$447, DW_AT_type(*DW$T$92)
+	.dwattr DW$447, DW_AT_location[DW_OP_reg18]
+;* AR4   assigned to U$9
+DW$448	.dwtag  DW_TAG_variable, DW_AT_name("U$9"), DW_AT_symbol_name("U$9")
+	.dwattr DW$448, DW_AT_type(*DW$T$92)
+	.dwattr DW$448, DW_AT_location[DW_OP_reg12]
+;* AR6   assigned to U$12
+DW$449	.dwtag  DW_TAG_variable, DW_AT_name("U$12"), DW_AT_symbol_name("U$12")
+	.dwattr DW$449, DW_AT_type(*DW$T$92)
+	.dwattr DW$449, DW_AT_location[DW_OP_reg16]
+;* AR5   assigned to U$12
+DW$450	.dwtag  DW_TAG_variable, DW_AT_name("U$12"), DW_AT_symbol_name("U$12")
+	.dwattr DW$450, DW_AT_type(*DW$T$92)
+	.dwattr DW$450, DW_AT_location[DW_OP_reg14]
+;* AR3   assigned to K$4
+DW$451	.dwtag  DW_TAG_variable, DW_AT_name("K$4"), DW_AT_symbol_name("K$4")
+	.dwattr DW$451, DW_AT_type(*DW$T$92)
+	.dwattr DW$451, DW_AT_location[DW_OP_reg10]
+;* AR4   assigned to K$4
+DW$452	.dwtag  DW_TAG_variable, DW_AT_name("K$4"), DW_AT_symbol_name("K$4")
+	.dwattr DW$452, DW_AT_type(*DW$T$92)
+	.dwattr DW$452, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to K$4
+DW$453	.dwtag  DW_TAG_variable, DW_AT_name("K$4"), DW_AT_symbol_name("K$4")
+	.dwattr DW$453, DW_AT_type(*DW$T$92)
+	.dwattr DW$453, DW_AT_location[DW_OP_reg12]
+;* AR4   assigned to K$4
+DW$454	.dwtag  DW_TAG_variable, DW_AT_name("K$4"), DW_AT_symbol_name("K$4")
+	.dwattr DW$454, DW_AT_type(*DW$T$92)
+	.dwattr DW$454, DW_AT_location[DW_OP_reg12]
+DW$455	.dwtag  DW_TAG_variable, DW_AT_name("K$4"), DW_AT_symbol_name("K$4")
+	.dwattr DW$455, DW_AT_type(*DW$T$92)
+	.dwattr DW$455, DW_AT_location[DW_OP_breg20 -34]
+;* AR7   assigned to U$75
+DW$456	.dwtag  DW_TAG_variable, DW_AT_name("U$75"), DW_AT_symbol_name("U$75")
+	.dwattr DW$456, DW_AT_type(*DW$T$92)
+	.dwattr DW$456, DW_AT_location[DW_OP_reg18]
+;* AR7   assigned to U$75
+DW$457	.dwtag  DW_TAG_variable, DW_AT_name("U$75"), DW_AT_symbol_name("U$75")
+	.dwattr DW$457, DW_AT_type(*DW$T$92)
+	.dwattr DW$457, DW_AT_location[DW_OP_reg18]
+;* AR0   assigned to U$73
+DW$458	.dwtag  DW_TAG_variable, DW_AT_name("U$73"), DW_AT_symbol_name("U$73")
+	.dwattr DW$458, DW_AT_type(*DW$T$92)
+	.dwattr DW$458, DW_AT_location[DW_OP_reg4]
+;* AR1   assigned to U$73
+DW$459	.dwtag  DW_TAG_variable, DW_AT_name("U$73"), DW_AT_symbol_name("U$73")
+	.dwattr DW$459, DW_AT_type(*DW$T$92)
+	.dwattr DW$459, DW_AT_location[DW_OP_reg6]
+;* XT    assigned to U$186
+DW$460	.dwtag  DW_TAG_variable, DW_AT_name("U$186"), DW_AT_symbol_name("U$186")
+	.dwattr DW$460, DW_AT_type(*DW$T$92)
+	.dwattr DW$460, DW_AT_location[DW_OP_reg21]
+;* AR1   assigned to U$186
+DW$461	.dwtag  DW_TAG_variable, DW_AT_name("U$186"), DW_AT_symbol_name("U$186")
+	.dwattr DW$461, DW_AT_type(*DW$T$92)
+	.dwattr DW$461, DW_AT_location[DW_OP_reg6]
+;* AR1   assigned to _Position
+DW$462	.dwtag  DW_TAG_variable, DW_AT_name("Position"), DW_AT_symbol_name("_Position")
+	.dwattr DW$462, DW_AT_type(*DW$T$19)
+	.dwattr DW$462, DW_AT_location[DW_OP_reg6]
+;* PL    assigned to _Position
+DW$463	.dwtag  DW_TAG_variable, DW_AT_name("Position"), DW_AT_symbol_name("_Position")
+	.dwattr DW$463, DW_AT_type(*DW$T$19)
+	.dwattr DW$463, DW_AT_location[DW_OP_reg2]
+;* PL    assigned to _MouseDir
+DW$464	.dwtag  DW_TAG_variable, DW_AT_name("MouseDir"), DW_AT_symbol_name("_MouseDir")
+	.dwattr DW$464, DW_AT_type(*DW$T$19)
+	.dwattr DW$464, DW_AT_location[DW_OP_reg2]
+;* AR0   assigned to _MouseDir
+DW$465	.dwtag  DW_TAG_variable, DW_AT_name("MouseDir"), DW_AT_symbol_name("_MouseDir")
+	.dwattr DW$465, DW_AT_type(*DW$T$19)
+	.dwattr DW$465, DW_AT_location[DW_OP_reg4]
+;* AH    assigned to _NextWeight
+DW$466	.dwtag  DW_TAG_variable, DW_AT_name("NextWeight"), DW_AT_symbol_name("_NextWeight")
+	.dwattr DW$466, DW_AT_type(*DW$T$19)
+	.dwattr DW$466, DW_AT_location[DW_OP_reg1]
+;* AH    assigned to _NextWeight
+DW$467	.dwtag  DW_TAG_variable, DW_AT_name("NextWeight"), DW_AT_symbol_name("_NextWeight")
+	.dwattr DW$467, DW_AT_type(*DW$T$19)
+	.dwattr DW$467, DW_AT_location[DW_OP_reg1]
+DW$468	.dwtag  DW_TAG_variable, DW_AT_name("WeightMin"), DW_AT_symbol_name("_WeightMin")
+	.dwattr DW$468, DW_AT_type(*DW$T$19)
+	.dwattr DW$468, DW_AT_location[DW_OP_breg20 -26]
+;* PH    assigned to _WeightMin
+DW$469	.dwtag  DW_TAG_variable, DW_AT_name("WeightMin"), DW_AT_symbol_name("_WeightMin")
+	.dwattr DW$469, DW_AT_type(*DW$T$19)
+	.dwattr DW$469, DW_AT_location[DW_OP_reg3]
+;* AR0   assigned to _x
+DW$470	.dwtag  DW_TAG_variable, DW_AT_name("x"), DW_AT_symbol_name("_x")
+	.dwattr DW$470, DW_AT_type(*DW$T$19)
+	.dwattr DW$470, DW_AT_location[DW_OP_reg4]
+;* AR3   assigned to _x
+DW$471	.dwtag  DW_TAG_variable, DW_AT_name("x"), DW_AT_symbol_name("_x")
+	.dwattr DW$471, DW_AT_type(*DW$T$19)
+	.dwattr DW$471, DW_AT_location[DW_OP_reg10]
+;* AR3   assigned to _x
+DW$472	.dwtag  DW_TAG_variable, DW_AT_name("x"), DW_AT_symbol_name("_x")
+	.dwattr DW$472, DW_AT_type(*DW$T$19)
+	.dwattr DW$472, DW_AT_location[DW_OP_reg10]
+;* AR0   assigned to _x
+DW$473	.dwtag  DW_TAG_variable, DW_AT_name("x"), DW_AT_symbol_name("_x")
+	.dwattr DW$473, DW_AT_type(*DW$T$19)
+	.dwattr DW$473, DW_AT_location[DW_OP_reg4]
+;* AR5   assigned to _cnt
+DW$474	.dwtag  DW_TAG_variable, DW_AT_name("cnt"), DW_AT_symbol_name("_cnt")
+	.dwattr DW$474, DW_AT_type(*DW$T$19)
+	.dwattr DW$474, DW_AT_location[DW_OP_reg14]
+;* AR0   assigned to _cnt
+DW$475	.dwtag  DW_TAG_variable, DW_AT_name("cnt"), DW_AT_symbol_name("_cnt")
+	.dwattr DW$475, DW_AT_type(*DW$T$19)
+	.dwattr DW$475, DW_AT_location[DW_OP_reg4]
+;* AR5   assigned to _cnt
+DW$476	.dwtag  DW_TAG_variable, DW_AT_name("cnt"), DW_AT_symbol_name("_cnt")
+	.dwattr DW$476, DW_AT_type(*DW$T$19)
+	.dwattr DW$476, DW_AT_location[DW_OP_reg14]
+;* AR5   assigned to _cnt
+DW$477	.dwtag  DW_TAG_variable, DW_AT_name("cnt"), DW_AT_symbol_name("_cnt")
+	.dwattr DW$477, DW_AT_type(*DW$T$19)
+	.dwattr DW$477, DW_AT_location[DW_OP_reg14]
+;* AR1   assigned to _cnt
+DW$478	.dwtag  DW_TAG_variable, DW_AT_name("cnt"), DW_AT_symbol_name("_cnt")
+	.dwattr DW$478, DW_AT_type(*DW$T$19)
+	.dwattr DW$478, DW_AT_location[DW_OP_reg6]
+;* AR2   assigned to _cnt
+DW$479	.dwtag  DW_TAG_variable, DW_AT_name("cnt"), DW_AT_symbol_name("_cnt")
+	.dwattr DW$479, DW_AT_type(*DW$T$19)
+	.dwattr DW$479, DW_AT_location[DW_OP_reg8]
+DW$480	.dwtag  DW_TAG_variable, DW_AT_name("Goal"), DW_AT_symbol_name("_Goal")
+	.dwattr DW$480, DW_AT_type(*DW$T$88)
+	.dwattr DW$480, DW_AT_location[DW_OP_breg20 -11]
+DW$481	.dwtag  DW_TAG_variable, DW_AT_name("i"), DW_AT_symbol_name("_i")
+	.dwattr DW$481, DW_AT_type(*DW$T$88)
+	.dwattr DW$481, DW_AT_location[DW_OP_breg20 -15]
+DW$482	.dwtag  DW_TAG_variable, DW_AT_name("DiagPos"), DW_AT_symbol_name("_DiagPos")
+	.dwattr DW$482, DW_AT_type(*DW$T$88)
+	.dwattr DW$482, DW_AT_location[DW_OP_breg20 -19]
+DW$483	.dwtag  DW_TAG_variable, DW_AT_name("DiagDir"), DW_AT_symbol_name("_DiagDir")
+	.dwattr DW$483, DW_AT_type(*DW$T$88)
+	.dwattr DW$483, DW_AT_location[DW_OP_breg20 -23]
+	.dwpsn	"algo.c",835,9
+        MOVZ      AR4,SP                ; |835| 
+        MOVB      ACC,#4
+        MOVL      XAR5,#_$T1$2$0        ; |835| 
+        SUBB      XAR4,#11              ; |835| 
+        LCR       #___memcpy_ff         ; |835| 
+        ; call occurs [#___memcpy_ff] ; |835| 
+	.dwpsn	"algo.c",858,2
+        MOVL      XAR3,#_gMazeMap       ; |858| 
+        MOVL      XAR4,XAR3             ; |858| 
+        MOVB      XAR5,#0
+        MOV       ACC,#1 << 8
+        LCR       #_memset              ; |858| 
+        ; call occurs [#_memset] ; |858| 
+	.dwpsn	"algo.c",859,2
+        MOVL      XAR4,#_gMazeMapBackUp ; |859| 
+        MOVL      *-SP[30],XAR4         ; |859| 
+        MOVB      XAR5,#0
+        MOV       ACC,#1 << 8
+        LCR       #_memset              ; |859| 
+        ; call occurs [#_memset] ; |859| 
+	.dwpsn	"algo.c",861,2
+        MOVL      XAR4,*-SP[30]         ; |861| 
+        MOVL      XAR5,#256             ; |861| 
+        MOVB      ACC,#5
+        LCR       #_SpiReadRom          ; |861| 
+        ; call occurs [#_SpiReadRom] ; |861| 
+        MOVL      XAR4,#_gMoveTable
+        MOVL      XAR7,*-SP[30]
+        MOVL      XAR6,XAR3
+        MOVL      *-SP[32],XAR4
+	.dwpsn	"algo.c",863,6
+        MOVB      XAR5,#0
+L147:    
+DW$L$_RunPath90Make$2$B:
+;***	-----------------------g2:
+;*** 865	-----------------------    if ( *U$9&0x10 ) goto g14;
+	.dwpsn	"algo.c",865,3
+        MOVL      XAR4,XAR7
+        TBIT      *+XAR4[0],#4          ; |865| 
+        BF        L153,TC               ; |865| 
+        ; branchcc occurs ; |865| 
+DW$L$_RunPath90Make$2$E:
+DW$L$_RunPath90Make$3$B:
+;*** 869	-----------------------    *U$12 = 15u;
+;*** 870	-----------------------    x = 0u;
+	.dwpsn	"algo.c",869,4
+        MOVL      XAR4,XAR6             ; |869| 
+        MOV       *+XAR4[0],#15         ; |869| 
+	.dwpsn	"algo.c",870,8
+        MOVB      XAR0,#0
+DW$L$_RunPath90Make$3$E:
+L148:    
+DW$L$_RunPath90Make$4$B:
+;***	-----------------------g4:
+;*** 872	-----------------------    switch ( x ) {case 0u: goto g11;, case 1u: goto g9;, case 2u: goto g7;, case 3u: goto g5;, DEFAULT goto g13};
+	.dwpsn	"algo.c",872,5
+        MOV       AL,AR0                ; |872| 
+        BF        L151,EQ               ; |872| 
+        ; branchcc occurs ; |872| 
+DW$L$_RunPath90Make$4$E:
+DW$L$_RunPath90Make$5$B:
+        CMPB      AL,#1                 ; |872| 
+        BF        L150,EQ               ; |872| 
+        ; branchcc occurs ; |872| 
+DW$L$_RunPath90Make$5$E:
+DW$L$_RunPath90Make$6$B:
+        CMPB      AL,#2                 ; |872| 
+        BF        L149,EQ               ; |872| 
+        ; branchcc occurs ; |872| 
+DW$L$_RunPath90Make$6$E:
+DW$L$_RunPath90Make$7$B:
+        CMPB      AL,#3                 ; |872| 
+        BF        L152,NEQ              ; |872| 
+        ; branchcc occurs ; |872| 
+DW$L$_RunPath90Make$7$E:
+DW$L$_RunPath90Make$8$B:
+;***	-----------------------g5:
+;*** 891	-----------------------    if ( !(cnt&0xf0u) ) goto g13;
+	.dwpsn	"algo.c",891,7
+        AND       AL,AR5,#0x00f0        ; |891| 
+        BF        L152,EQ               ; |891| 
+        ; branchcc occurs ; |891| 
+DW$L$_RunPath90Make$8$E:
+DW$L$_RunPath90Make$9$B:
+;*** 892	-----------------------    K$4[K$19[x]+cnt] |= 2u;
+;*** 892	-----------------------    goto g13;
+	.dwpsn	"algo.c",892,8
+        MOVL      XAR4,*-SP[32]
+        MOV       AL,AR5
+        MOV       PL,*+XAR4[AR0]        ; |892| 
+        ADD       PL,AL
+        MOVL      ACC,XAR3              ; |892| 
+        ADDU      ACC,PL                ; |892| 
+        MOVL      XAR4,ACC              ; |892| 
+        OR        *+XAR4[0],#0x0002     ; |892| 
+        BF        L152,UNC              ; |892| 
+        ; branch occurs ; |892| 
+DW$L$_RunPath90Make$9$E:
+L149:    
+DW$L$_RunPath90Make$10$B:
+;***	-----------------------g7:
+;*** 886	-----------------------    if ( !(cnt&0xfu) ) goto g13;
+	.dwpsn	"algo.c",886,7
+        AND       AL,AR5,#0x000f        ; |886| 
+        BF        L152,EQ               ; |886| 
+        ; branchcc occurs ; |886| 
+DW$L$_RunPath90Make$10$E:
+DW$L$_RunPath90Make$11$B:
+;*** 887	-----------------------    K$4[K$19[x]+cnt] |= 1u;
+;*** 887	-----------------------    goto g13;
+	.dwpsn	"algo.c",887,8
+        MOVL      XAR4,*-SP[32]
+        MOV       AL,AR5
+        MOV       PL,*+XAR4[AR0]        ; |887| 
+        ADD       PL,AL
+        MOVL      ACC,XAR3              ; |887| 
+        ADDU      ACC,PL                ; |887| 
+        MOVL      XAR4,ACC              ; |887| 
+        OR        *+XAR4[0],#0x0001     ; |887| 
+        BF        L152,UNC              ; |887| 
+        ; branch occurs ; |887| 
+DW$L$_RunPath90Make$11$E:
+L150:    
+DW$L$_RunPath90Make$12$B:
+;***	-----------------------g9:
+;*** 881	-----------------------    if ( (cnt&0xf0u) == 0xf0u ) goto g13;
+	.dwpsn	"algo.c",881,7
+        AND       AL,AR5,#0x00f0        ; |881| 
+        CMPB      AL,#240               ; |881| 
+        BF        L152,EQ               ; |881| 
+        ; branchcc occurs ; |881| 
+DW$L$_RunPath90Make$12$E:
+DW$L$_RunPath90Make$13$B:
+;*** 882	-----------------------    K$4[K$19[x]+cnt] |= 0x8u;
+;*** 882	-----------------------    goto g13;
+	.dwpsn	"algo.c",882,8
+        MOVL      XAR4,*-SP[32]
+        MOV       AL,AR5
+        MOV       PL,*+XAR4[AR0]        ; |882| 
+        ADD       PL,AL
+        MOVL      ACC,XAR3              ; |882| 
+        ADDU      ACC,PL                ; |882| 
+        MOVL      XAR4,ACC              ; |882| 
+        OR        *+XAR4[0],#0x0008     ; |882| 
+        BF        L152,UNC              ; |882| 
+        ; branch occurs ; |882| 
+DW$L$_RunPath90Make$13$E:
+L151:    
+DW$L$_RunPath90Make$14$B:
+;***	-----------------------g11:
+;*** 876	-----------------------    if ( (cnt&0xfu) == 0xfu ) goto g13;
+	.dwpsn	"algo.c",876,7
+        AND       AL,AR5,#0x000f        ; |876| 
+        CMPB      AL,#15                ; |876| 
+        BF        L152,EQ               ; |876| 
+        ; branchcc occurs ; |876| 
+DW$L$_RunPath90Make$14$E:
+DW$L$_RunPath90Make$15$B:
+;*** 877	-----------------------    K$4[K$19[x]+cnt] |= 4u;
+	.dwpsn	"algo.c",877,8
+        MOVL      XAR4,*-SP[32]
+        MOV       AL,AR5
+        MOV       PL,*+XAR4[AR0]        ; |877| 
+        ADD       PL,AL
+        MOVL      ACC,XAR3              ; |877| 
+        ADDU      ACC,PL                ; |877| 
+        MOVL      XAR4,ACC              ; |877| 
+        OR        *+XAR4[0],#0x0004     ; |877| 
+DW$L$_RunPath90Make$15$E:
+L152:    
+DW$L$_RunPath90Make$16$B:
+;***	-----------------------g13:
+;*** 870	-----------------------    if ( (++x) < 4u ) goto g4;
+	.dwpsn	"algo.c",870,22
+        ADDB      XAR0,#1               ; |870| 
+        MOV       AL,AR0                ; |870| 
+        CMPB      AL,#4                 ; |870| 
+        BF        L148,LO               ; |870| 
+        ; branchcc occurs ; |870| 
+DW$L$_RunPath90Make$16$E:
+DW$L$_RunPath90Make$17$B:
+;*** 870	-----------------------    goto g15;
+        BF        L154,UNC              ; |870| 
+        ; branch occurs ; |870| 
+DW$L$_RunPath90Make$17$E:
+L153:    
+DW$L$_RunPath90Make$18$B:
+;***	-----------------------g14:
+;*** 866	-----------------------    *U$12 |= *U$9&0xfu;
+	.dwpsn	"algo.c",866,4
+        MOVL      XAR4,XAR7
+        MOV       AL,*+XAR4[0]          ; |866| 
+        MOVL      XAR4,XAR6             ; |866| 
+        ANDB      AL,#0x0f              ; |866| 
+        OR        *+XAR4[0],AL          ; |866| 
+DW$L$_RunPath90Make$18$E:
+L154:    
+DW$L$_RunPath90Make$19$B:
+;***	-----------------------g15:
+;*** 863	-----------------------    ++U$9;
+;*** 863	-----------------------    ++U$12;
+;*** 863	-----------------------    if ( (++cnt) < 256u ) goto g2;
+	.dwpsn	"algo.c",863,26
+        MOVL      ACC,XAR7              ; |863| 
+        MOVB      XAR4,#1               ; |863| 
+        ADDB      XAR5,#1               ; |863| 
+        ADDU      ACC,AR4               ; |863| 
+        MOVL      XAR7,ACC              ; |863| 
+        MOVL      ACC,XAR6              ; |863| 
+        ADDU      ACC,AR4               ; |863| 
+        CMP       AR5,#256              ; |863| 
+        MOVL      XAR6,ACC              ; |863| 
+        BF        L147,LO               ; |863| 
+        ; branchcc occurs ; |863| 
+DW$L$_RunPath90Make$19$E:
+;*** 902	-----------------------    gSearchType = 2u;
+;*** 903	-----------------------    gPathWeightState = 1u;
+;*** 905	-----------------------    InitWeight();
+;*** 906	-----------------------    WriteMazeWeight();
+;*** 908	-----------------------    gPathWeightState = 0u;
+;*** 912	-----------------------    K$4 = &gMazeMap[52];
+;*** 836	-----------------------    LowWeight = 4095u;
+;*** 837	-----------------------    GoalPosition = 0u;
+;*** 855	-----------------------    LastPath = 0u;
+;*** 912	-----------------------    if ( !(*K$4&0x8) ) goto g19;
+	.dwpsn	"algo.c",902,2
+        MOVW      DP,#_gSearchType
+        MOV       @_gSearchType,#2      ; |902| 
+	.dwpsn	"algo.c",903,2
+        MOVW      DP,#_gPathWeightState
+        MOV       @_gPathWeightState,#1 ; |903| 
+	.dwpsn	"algo.c",905,2
+        LCR       #_InitWeight          ; |905| 
+        ; call occurs [#_InitWeight] ; |905| 
+	.dwpsn	"algo.c",906,2
+        LCR       #_WriteMazeWeight     ; |906| 
+        ; call occurs [#_WriteMazeWeight] ; |906| 
+	.dwpsn	"algo.c",908,2
+        MOVW      DP,#_gPathWeightState
+        MOV       @_gPathWeightState,#0 ; |908| 
+	.dwpsn	"algo.c",912,2
+        MOVL      XAR4,#_gMazeMap+52    ; |912| 
+	.dwpsn	"algo.c",836,9
+        MOVL      XAR7,#4095            ; |836| 
+	.dwpsn	"algo.c",837,9
+        MOVB      AL,#0
+        MOV       *-SP[24],AL           ; |837| 
+	.dwpsn	"algo.c",855,9
+        MOV       *-SP[25],AL           ; |855| 
+	.dwpsn	"algo.c",912,2
+        TBIT      *+XAR4[0],#3          ; |912| 
+        BF        L155,NTC              ; |912| 
+        ; branchcc occurs ; |912| 
+;*** 912	-----------------------    if ( !(*K$4&4) ) goto g19;
+        TBIT      *+XAR4[0],#2          ; |912| 
+        BF        L155,NTC              ; |912| 
+        ; branchcc occurs ; |912| 
+;*** 911	-----------------------    cnt = 0u;
+;***  	-----------------------    goto g20;
+	.dwpsn	"algo.c",911,2
+        MOVB      XAR0,#0
+        BF        L156,UNC
+        ; branch occurs
+L155:    
+;***	-----------------------g19:
+;*** 913	-----------------------    Goal[0] = 52u;
+;*** 913	-----------------------    cnt = 1u;
+	.dwpsn	"algo.c",913,3
+        MOVB      XAR0,#1               ; |913| 
+        MOV       *-SP[11],#52          ; |913| 
+L156:    
+;***	-----------------------g20:
+;*** 915	-----------------------    K$4 = &gMazeMap[120];
+;*** 915	-----------------------    if ( !(*K$4&0x8) ) goto g22;
+	.dwpsn	"algo.c",915,2
+        MOVL      XAR4,#_gMazeMap+120   ; |915| 
+        TBIT      *+XAR4[0],#3          ; |915| 
+        BF        L157,NTC              ; |915| 
+        ; branchcc occurs ; |915| 
+;*** 915	-----------------------    if ( *K$4&1u ) goto g23;
+        TBIT      *+XAR4[0],#0          ; |915| 
+        BF        L158,TC               ; |915| 
+        ; branchcc occurs ; |915| 
+L157:    
+;***	-----------------------g22:
+;*** 916	-----------------------    Goal[cnt] = 120u;
+;*** 916	-----------------------    ++cnt;
+	.dwpsn	"algo.c",916,3
+        MOVZ      AR4,SP                ; |916| 
+        SUBB      XAR4,#11              ; |916| 
+        MOV       *+XAR4[AR0],#120      ; |916| 
+        ADDB      XAR0,#1               ; |916| 
+L158:    
+;***	-----------------------g23:
+;*** 918	-----------------------    K$4 = &gMazeMap[135];
+;*** 918	-----------------------    if ( !(*K$4&2) ) goto g25;
+	.dwpsn	"algo.c",918,2
+        MOVL      XAR4,#_gMazeMap+135   ; |918| 
+        TBIT      *+XAR4[0],#1          ; |918| 
+        BF        L159,NTC              ; |918| 
+        ; branchcc occurs ; |918| 
+;*** 918	-----------------------    if ( *K$4&4 ) goto g26;
+        TBIT      *+XAR4[0],#2          ; |918| 
+        BF        L160,TC               ; |918| 
+        ; branchcc occurs ; |918| 
+L159:    
+;***	-----------------------g25:
+;*** 919	-----------------------    Goal[cnt] = 135u;
+;*** 919	-----------------------    ++cnt;
+	.dwpsn	"algo.c",919,3
+        MOVZ      AR4,SP                ; |919| 
+        SUBB      XAR4,#11              ; |919| 
+        MOV       *+XAR4[AR0],#135      ; |919| 
+        ADDB      XAR0,#1               ; |919| 
+L160:    
+;***	-----------------------g26:
+;*** 921	-----------------------    K$4 = &gMazeMap[0];
+;*** 921	-----------------------    if ( !(K$4[136]&2) ) goto g28;
+	.dwpsn	"algo.c",921,2
+        MOVL      XAR4,#_gMazeMap       ; |921| 
+        MOVB      XAR1,#136             ; |921| 
+        MOVL      *-SP[34],XAR4         ; |921| 
+        TBIT      *+XAR4[AR1],#1        ; |921| 
+        BF        L161,NTC              ; |921| 
+        ; branchcc occurs ; |921| 
+;*** 921	-----------------------    if ( K$4[136]&1u ) goto g29;
+        MOVL      XAR4,*-SP[34]         ; |921| 
+        TBIT      *+XAR4[AR1],#0        ; |921| 
+        BF        L162,TC               ; |921| 
+        ; branchcc occurs ; |921| 
+L161:    
+;***	-----------------------g28:
+;*** 922	-----------------------    Goal[cnt] = 136u;
+	.dwpsn	"algo.c",922,3
+        MOVZ      AR4,SP                ; |922| 
+        SUBB      XAR4,#11              ; |922| 
+        MOV       *+XAR4[AR0],#136      ; |922| 
+L162:    
+;***	-----------------------g29:
+;***  	-----------------------    K$57 = &gMapValue[0];
+;***  	-----------------------    U$47 = &Goal[0];
+;***  	-----------------------    L$3 = 3;
+        MOVZ      AR5,SP
+        MOVL      XAR4,#_gMapValue
+        MOVB      XAR6,#3
+        MOVL      *-SP[36],XAR4
+        SUBB      XAR5,#11
+L163:    
+DW$L$_RunPath90Make$34$B:
+;***	-----------------------g30:
+;*** 926	-----------------------    C$33 = *U$47++;
+;*** 926	-----------------------    C$34 = (long)C$33*2+(volatile struct _bit *)K$57;
+;*** 926	-----------------------    if ( *C$34 >= LowWeight || C$33 == 0u ) goto g32;
+	.dwpsn	"algo.c",926,3
+        MOVL      XAR4,*-SP[36]         ; |926| 
+        MOV       PL,*XAR5++            ; |926| 
+        MOVU      ACC,PL
+        LSL       ACC,1                 ; |926| 
+        ADDL      XAR4,ACC
+        MOV       AH,AR7
+        CMP       AH,*+XAR4[0]          ; |926| 
+        BF        L164,LOS              ; |926| 
+        ; branchcc occurs ; |926| 
+DW$L$_RunPath90Make$34$E:
+DW$L$_RunPath90Make$35$B:
+        MOV       AL,PL
+        BF        L164,EQ               ; |926| 
+        ; branchcc occurs ; |926| 
+DW$L$_RunPath90Make$35$E:
+DW$L$_RunPath90Make$36$B:
+;*** 928	-----------------------    LowWeight = *C$34;
+;*** 929	-----------------------    GoalPosition = C$33;
+	.dwpsn	"algo.c",928,4
+        MOVZ      AR7,*+XAR4[0]         ; |928| 
+	.dwpsn	"algo.c",929,4
+        MOV       *-SP[24],P            ; |929| 
+DW$L$_RunPath90Make$36$E:
+L164:    
+DW$L$_RunPath90Make$37$B:
+;***	-----------------------g32:
+;*** 924	-----------------------    if ( (--L$3) != (-1) ) goto g30;
+	.dwpsn	"algo.c",924,15
+        BANZ      L163,AR6--            ; |924| 
+        ; branchcc occurs ; |924| 
+DW$L$_RunPath90Make$37$E:
+;*** 933	-----------------------    WeightMin = *((long)GoalPosition*2+(volatile struct _bit *)K$57);
+;*** 934	-----------------------    Position = GoalPosition;
+;*** 936	-----------------------    gPathBufferHead = 0u;
+;*** 939	-----------------------    TxPrintf("\nGoal = %d\n", WeightMin);
+;*** 941	-----------------------    K$71 = &KnowBlockPath[0];
+;*** 941	-----------------------    memset((void *)K$71, 0, 512uL);
+;*** 937	-----------------------    MouseDir = 0u;
+	.dwpsn	"algo.c",933,2
+        MOVL      XAR4,*-SP[36]         ; |933| 
+        MOV       AL,*-SP[24]
+        MOVU      ACC,AL
+        LSL       ACC,1                 ; |933| 
+        ADDL      XAR4,ACC
+        MOV       AL,*+XAR4[0]          ; |933| 
+        MOV       *-SP[26],AL           ; |933| 
+	.dwpsn	"algo.c",934,2
+        MOVZ      AR1,*-SP[24]
+	.dwpsn	"algo.c",936,2
+        MOVW      DP,#_gPathBufferHead
+        MOV       @_gPathBufferHead,#0  ; |936| 
+	.dwpsn	"algo.c",939,5
+        MOVL      XAR4,#FSL12           ; |939| 
+        MOVL      *-SP[2],XAR4          ; |939| 
+        MOV       *-SP[3],AL            ; |939| 
+        LCR       #_TxPrintf            ; |939| 
+        ; call occurs [#_TxPrintf] ; |939| 
+	.dwpsn	"algo.c",941,2
+        MOVL      XAR4,#_KnowBlockPath  ; |941| 
+        MOVL      *-SP[38],XAR4         ; |941| 
+        MOVB      XAR5,#0
+        MOV       ACC,#1 << 9
+        LCR       #_memset              ; |941| 
+        ; call occurs [#_memset] ; |941| 
+	.dwpsn	"algo.c",937,2
+        MOV       PL,#0                 ; |937| 
+L165:    
+DW$L$_RunPath90Make$39$B:
+;***	-----------------------g34:
+;***  	-----------------------    U$73 = &K$4[Position];
+;***  	-----------------------    U$75 = &gHeadTable[0];
+;*** 945	-----------------------    x = 0u;
+;***  	-----------------------    L$4 = 3;
+        MOVL      ACC,*-SP[34]
+        ADDU      ACC,AR1
+        MOVL      XAR0,ACC
+        MOVL      XAR7,#_gHeadTable
+	.dwpsn	"algo.c",945,7
+        MOVB      XAR6,#3
+        MOVB      XAR3,#0
+DW$L$_RunPath90Make$39$E:
+L166:    
+DW$L$_RunPath90Make$40$B:
+;***	-----------------------g35:
+;*** 947	-----------------------    if ( *U$73&*U$75++&0xfu ) goto g38;
+	.dwpsn	"algo.c",947,4
+        MOV       AL,*XAR7++            ; |947| 
+        AND       AL,*+XAR0[0]          ; |947| 
+        ANDB      AL,#0x0f              ; |947| 
+        BF        L167,NEQ              ; |947| 
+        ; branchcc occurs ; |947| 
+DW$L$_RunPath90Make$40$E:
+DW$L$_RunPath90Make$41$B:
+;*** 949	-----------------------    C$32 = &K$19[x];
+;*** 949	-----------------------    S$14 = (volatile struct _bit *)((long)(*C$32+Position)*2+K$57);
+;*** 949	-----------------------    NextWeight = *(volatile unsigned *)S$14;
+;*** 950	-----------------------    if ( NextWeight >= WeightMin ) goto g38;
+	.dwpsn	"algo.c",949,5
+        MOVL      ACC,*-SP[32]
+        ADDU      ACC,AR3               ; |949| 
+        MOVL      XAR4,ACC              ; |949| 
+        MOVL      XAR5,*-SP[36]         ; |949| 
+        MOV       AL,*+XAR4[0]          ; |949| 
+        ADD       AL,AR1                ; |949| 
+        MOVU      ACC,AL
+        LSL       ACC,1                 ; |949| 
+        ADDL      XAR5,ACC
+        MOV       AH,*+XAR5[0]          ; |949| 
+	.dwpsn	"algo.c",950,5
+        MOV       AL,*-SP[26]
+        CMP       AL,AH                 ; |950| 
+        BF        L167,LOS              ; |950| 
+        ; branchcc occurs ; |950| 
+DW$L$_RunPath90Make$41$E:
+DW$L$_RunPath90Make$42$B:
+;*** 952	-----------------------    WeightMin = NextWeight;
+;*** 953	-----------------------    NextPos = *C$32+Position;
+;*** 954	-----------------------    AbsoluteDir = x;
+;*** 955	-----------------------    NextTurn = AbsoluteDir-MouseDir&3u;
+	.dwpsn	"algo.c",952,6
+        MOV       *-SP[26],AH           ; |952| 
+	.dwpsn	"algo.c",953,6
+        MOV       AL,*+XAR4[0]          ; |953| 
+        ADD       AL,AR1                ; |953| 
+        MOV       *-SP[27],AL           ; |953| 
+	.dwpsn	"algo.c",954,6
+        MOVZ      AR2,AR3               ; |954| 
+	.dwpsn	"algo.c",955,6
+        MOV       AL,AR2                ; |955| 
+        SUB       AL,PL                 ; |955| 
+        ANDB      AL,#0x03              ; |955| 
+        MOV       *-SP[28],AL           ; |955| 
+DW$L$_RunPath90Make$42$E:
+L167:    
+DW$L$_RunPath90Make$43$B:
+;***	-----------------------g38:
+;*** 945	-----------------------    ++x;
+;*** 945	-----------------------    if ( (--L$4) != (-1) ) goto g35;
+	.dwpsn	"algo.c",945,21
+        ADDB      XAR3,#1               ; |945| 
+	.dwpsn	"algo.c",945,14
+        BANZ      L166,AR6--            ; |945| 
+        ; branchcc occurs ; |945| 
+DW$L$_RunPath90Make$43$E:
+DW$L$_RunPath90Make$44$B:
+;*** 961	-----------------------    S$13 = &K$71[(long)gPathBufferHead];
+;*** 961	-----------------------    *(volatile unsigned *)S$13 = *(volatile unsigned *)S$13&0xff00u|Position&0xffu;
+;*** 962	-----------------------    Position = NextPos;
+;*** 963	-----------------------    MouseDir = AbsoluteDir;
+;*** 964	-----------------------    ++gPathBufferHead;
+;*** 966	-----------------------    if ( P$15 = gPathBufferHead > 255u ) goto g122;
+	.dwpsn	"algo.c",961,3
+        MOVL      XAR4,*-SP[38]         ; |961| 
+        MOVW      DP,#_gPathBufferHead
+        MOVU      ACC,@_gPathBufferHead
+        LSL       ACC,1                 ; |961| 
+        ADDL      XAR4,ACC
+        MOV       AL,AR1                ; |961| 
+        MOV       AH,*+XAR4[0]          ; |961| 
+        MOVB      AH,AL.LSB             ; |961| 
+        MOV       *+XAR4[0],AH          ; |961| 
+	.dwpsn	"algo.c",962,3
+        MOVZ      AR1,*-SP[27]
+	.dwpsn	"algo.c",963,3
+        MOV       PL,AR2                ; |963| 
+	.dwpsn	"algo.c",964,3
+        INC       @_gPathBufferHead     ; |964| 
+	.dwpsn	"algo.c",966,3
+        MOVB      AL,#0
+        MOV       AH,@_gPathBufferHead  ; |966| 
+        CMPB      AH,#255               ; |966| 
+        BF        L168,LOS              ; |966| 
+        ; branchcc occurs ; |966| 
+DW$L$_RunPath90Make$44$E:
+DW$L$_RunPath90Make$45$B:
+        MOVB      AL,#1                 ; |966| 
+DW$L$_RunPath90Make$45$E:
+L168:    
+DW$L$_RunPath90Make$46$B:
+        CMPB      AL,#0                 ; |966| 
+        BF        L214,NEQ              ; |966| 
+        ; branchcc occurs ; |966| 
+DW$L$_RunPath90Make$46$E:
+DW$L$_RunPath90Make$47$B:
+;*** 976	-----------------------    if ( Position ) goto g34;
+	.dwpsn	"algo.c",976,3
+        MOV       AL,AR1
+        BF        L165,NEQ              ; |976| 
+        ; branchcc occurs ; |976| 
+DW$L$_RunPath90Make$47$E:
+;*** 978	-----------------------    S$12 = &K$71[(long)gPathBufferHead];
+;*** 978	-----------------------    ++gPathBufferHead;
+;*** 978	-----------------------    *(volatile unsigned *)S$12 &= 0xff00u;
+;*** 979	-----------------------    cnt = 0u;
+;***  	-----------------------    L$5 = 255;
+	.dwpsn	"algo.c",978,4
+        MOVL      XAR4,*-SP[38]         ; |978| 
+        MOVU      ACC,@_gPathBufferHead
+        LSL       ACC,1                 ; |978| 
+        ADDL      XAR4,ACC
+        INC       @_gPathBufferHead     ; |978| 
+        AND       *+XAR4[0],#0xff00     ; |978| 
+	.dwpsn	"algo.c",979,4
+        MOVB      XAR5,#0
+        MOVB      XAR6,#255
+L169:    
+DW$L$_RunPath90Make$49$B:
+;***	-----------------------g42:
+;*** 985	-----------------------    *((long)cnt*2+(volatile struct _bit *)K$57) |= 0xffffu;
+;*** 984	-----------------------    ++cnt;
+;*** 984	-----------------------    if ( (--L$5) != (-1) ) goto g42;
+	.dwpsn	"algo.c",985,3
+        MOVL      XAR4,*-SP[36]         ; |985| 
+        MOVU      ACC,AR5
+        LSL       ACC,1                 ; |985| 
+        ADDL      XAR4,ACC
+        OR        *+XAR4[0],#0xffff     ; |985| 
+	.dwpsn	"algo.c",984,26
+        ADDB      XAR5,#1               ; |984| 
+	.dwpsn	"algo.c",984,15
+        BANZ      L169,AR6--            ; |984| 
+        ; branchcc occurs ; |984| 
+DW$L$_RunPath90Make$49$E:
+;*** 987	-----------------------    if ( !gPathBufferHead ) goto g46;
+	.dwpsn	"algo.c",987,15
+        MOVW      DP,#_gPathBufferHead
+        MOV       AL,@_gPathBufferHead  ; |987| 
+        BF        L171,EQ               ; |987| 
+        ; branchcc occurs ; |987| 
+;*** 987	-----------------------    cnt = 0u;
+	.dwpsn	"algo.c",987,6
+        MOVB      XAR5,#0
+L170:    
+DW$L$_RunPath90Make$52$B:
+;***	-----------------------g45:
+;*** 989	-----------------------    S$11 = &K$71[(long)(gPathBufferHead-cnt-1u)];
+;*** 989	-----------------------    S$10 = (volatile struct _bit *)((long)(*(volatile unsigned *)S$11&0xffu)*2+K$57);
+;*** 989	-----------------------    *(volatile unsigned *)S$10;
+;*** 989	-----------------------    *(volatile unsigned *)S$10 = 4095u-cnt;
+;*** 987	-----------------------    if ( gPathBufferHead > (++cnt) ) goto g45;
+	.dwpsn	"algo.c",989,3
+        MOV       AL,@_gPathBufferHead  ; |989| 
+        SUB       AL,AR5                ; |989| 
+        MOVL      XAR4,*-SP[38]         ; |989| 
+        ADDB      AL,#-1
+        MOVU      ACC,AL
+        LSL       ACC,1                 ; |989| 
+        ADDL      XAR4,ACC
+        MOV       AL,*+XAR4[0]          ; |989| 
+        MOVL      XAR4,*-SP[36]         ; |989| 
+        ANDB      AL,#0xff              ; |989| 
+        MOVU      ACC,AL
+        LSL       ACC,1                 ; |989| 
+        ADDL      XAR4,ACC
+        MOV       AL,*+XAR4[0]          ; |989| 
+        MOV       AL,#4095              ; |989| 
+        SUB       AL,AR5                ; |989| 
+        MOV       *+XAR4[0],AL          ; |989| 
+	.dwpsn	"algo.c",987,15
+        ADDB      XAR5,#1               ; |987| 
+        MOV       AL,AR5                ; |987| 
+        CMP       AL,@_gPathBufferHead  ; |987| 
+        BF        L170,LO               ; |987| 
+        ; branchcc occurs ; |987| 
+DW$L$_RunPath90Make$52$E:
+L171:    
+;***	-----------------------g46:
+;*** 993	-----------------------    gPathBufferHead = 0u;
+;*** 996	-----------------------    memset((void *)K$71, 0, 512uL);
+;*** 992	-----------------------    WeightMin = 4095u;
+;*** 994	-----------------------    Position = 0u;
+;*** 995	-----------------------    MouseDir = 0u;
+	.dwpsn	"algo.c",993,2
+        MOV       @_gPathBufferHead,#0  ; |993| 
+	.dwpsn	"algo.c",996,2
+        MOVL      XAR4,*-SP[38]
+        MOV       ACC,#1 << 9
+        MOVB      XAR5,#0
+        LCR       #_memset              ; |996| 
+        ; call occurs [#_memset] ; |996| 
+	.dwpsn	"algo.c",992,2
+        MOV       PH,#4095              ; |992| 
+	.dwpsn	"algo.c",994,2
+        MOV       PL,#0                 ; |994| 
+	.dwpsn	"algo.c",995,2
+        MOVB      XAR0,#0
+L172:    
+DW$L$_RunPath90Make$54$B:
+;***	-----------------------g47:
+;***  	-----------------------    U$73 = &K$4[Position];
+;***  	-----------------------    U$75 = &gHeadTable[0];
+;** 1000	-----------------------    x = 0u;
+;***  	-----------------------    L$6 = 3;
+        MOVL      ACC,*-SP[34]
+        ADDU      ACC,PL
+        MOVL      XAR1,ACC
+        MOVL      XAR7,#_gHeadTable
+	.dwpsn	"algo.c",1000,7
+        MOVB      XAR6,#3
+        MOVB      XAR3,#0
+DW$L$_RunPath90Make$54$E:
+L173:    
+DW$L$_RunPath90Make$55$B:
+;***	-----------------------g48:
+;** 1002	-----------------------    if ( *U$73&*U$75++&0xfu ) goto g51;
+	.dwpsn	"algo.c",1002,4
+        MOV       AL,*XAR7++            ; |1002| 
+        AND       AL,*+XAR1[0]          ; |1002| 
+        ANDB      AL,#0x0f              ; |1002| 
+        BF        L174,NEQ              ; |1002| 
+        ; branchcc occurs ; |1002| 
+DW$L$_RunPath90Make$55$E:
+DW$L$_RunPath90Make$56$B:
+;** 1004	-----------------------    C$31 = &K$19[x];
+;** 1004	-----------------------    S$9 = (volatile struct _bit *)((long)(*C$31+Position)*2+K$57);
+;** 1004	-----------------------    NextWeight = *(volatile unsigned *)S$9;
+;** 1005	-----------------------    if ( NextWeight >= WeightMin ) goto g51;
+	.dwpsn	"algo.c",1004,5
+        MOVL      ACC,*-SP[32]
+        ADDU      ACC,AR3               ; |1004| 
+        MOVL      XAR4,ACC              ; |1004| 
+        MOVL      XAR5,*-SP[36]         ; |1004| 
+        MOV       AL,*+XAR4[0]          ; |1004| 
+        ADD       AL,PL                 ; |1004| 
+        MOVU      ACC,AL
+        LSL       ACC,1                 ; |1004| 
+        ADDL      XAR5,ACC
+        MOV       AH,*+XAR5[0]          ; |1004| 
+	.dwpsn	"algo.c",1005,5
+        MOV       AL,PH
+        CMP       AL,AH                 ; |1005| 
+        BF        L174,LOS              ; |1005| 
+        ; branchcc occurs ; |1005| 
+DW$L$_RunPath90Make$56$E:
+DW$L$_RunPath90Make$57$B:
+;** 1007	-----------------------    WeightMin = NextWeight;
+;** 1008	-----------------------    NextPos = *C$31+Position;
+;** 1009	-----------------------    AbsoluteDir = x;
+;** 1010	-----------------------    NextTurn = AbsoluteDir-MouseDir&3u;
+	.dwpsn	"algo.c",1007,6
+        MOV       PH,AH                 ; |1007| 
+	.dwpsn	"algo.c",1008,6
+        MOV       AL,*+XAR4[0]          ; |1008| 
+        ADD       AL,PL                 ; |1008| 
+        MOV       *-SP[27],AL           ; |1008| 
+	.dwpsn	"algo.c",1009,6
+        MOVZ      AR2,AR3               ; |1009| 
+	.dwpsn	"algo.c",1010,6
+        MOV       AL,AR2                ; |1010| 
+        SUB       AL,AR0                ; |1010| 
+        ANDB      AL,#0x03              ; |1010| 
+        MOV       *-SP[28],AL           ; |1010| 
+DW$L$_RunPath90Make$57$E:
+L174:    
+DW$L$_RunPath90Make$58$B:
+;***	-----------------------g51:
+;** 1000	-----------------------    ++x;
+;** 1000	-----------------------    if ( (--L$6) != (-1) ) goto g48;
+	.dwpsn	"algo.c",1000,21
+        ADDB      XAR3,#1               ; |1000| 
+	.dwpsn	"algo.c",1000,14
+        BANZ      L173,AR6--            ; |1000| 
+        ; branchcc occurs ; |1000| 
+DW$L$_RunPath90Make$58$E:
+DW$L$_RunPath90Make$59$B:
+;** 1016	-----------------------    S$8 = &K$71[(long)gPathBufferHead];
+;** 1016	-----------------------    *(volatile unsigned *)S$8 = *(volatile unsigned *)S$8&0xff00u|Position&0xffu;
+;** 1017	-----------------------    Position = NextPos;
+;** 1018	-----------------------    S$7 = &K$71[(long)gPathBufferHead];
+;** 1018	-----------------------    *(volatile unsigned *)S$7 = *(volatile unsigned *)S$7&0xfffu|MouseDir<<12;
+;** 1019	-----------------------    MouseDir = AbsoluteDir;
+;** 1020	-----------------------    S$6 = &K$71[(long)gPathBufferHead];
+;** 1020	-----------------------    *(volatile unsigned *)S$6 = *(volatile unsigned *)S$6&0xf0ffu|(NextTurn&0xfu)<<8;
+;** 1021	-----------------------    ++gPathBufferHead;
+;** 1024	-----------------------    if ( P$16 = gPathBufferHead > 255u ) goto g120;
+	.dwpsn	"algo.c",1016,3
+        MOVL      XAR4,*-SP[38]         ; |1016| 
+        MOVW      DP,#_gPathBufferHead
+        MOVU      ACC,@_gPathBufferHead
+        LSL       ACC,1                 ; |1016| 
+        ADDL      XAR4,ACC
+        MOV       AL,PL                 ; |1016| 
+        MOV       AH,*+XAR4[0]          ; |1016| 
+        MOVB      AH,AL.LSB             ; |1016| 
+        MOV       *+XAR4[0],AH          ; |1016| 
+	.dwpsn	"algo.c",1017,3
+        MOV       PL,*-SP[27]
+	.dwpsn	"algo.c",1018,3
+        MOVL      XAR4,*-SP[38]         ; |1018| 
+        MOVU      ACC,@_gPathBufferHead
+        LSL       ACC,1                 ; |1018| 
+        ADDL      XAR4,ACC
+        AND       AL,*+XAR4[0],#0x0fff  ; |1018| 
+        MOVZ      AR6,AL                ; |1018| 
+        MOV       ACC,AR0 << #12        ; |1018| 
+        OR        AL,AR6                ; |1018| 
+        MOV       *+XAR4[0],AL          ; |1018| 
+	.dwpsn	"algo.c",1019,3
+        MOVZ      AR0,AR2               ; |1019| 
+	.dwpsn	"algo.c",1020,3
+        MOVL      XAR4,*-SP[38]         ; |1020| 
+        MOVU      ACC,@_gPathBufferHead
+        LSL       ACC,1                 ; |1020| 
+        ADDL      XAR4,ACC
+        MOV       AL,*-SP[28]           ; |1020| 
+        ANDB      AL,#15                ; |1020| 
+        LSL       AL,8                  ; |1020| 
+        AND       AH,*+XAR4[0],#0xf0ff  ; |1020| 
+        OR        AL,AH                 ; |1020| 
+        MOV       *+XAR4[0],AL          ; |1020| 
+	.dwpsn	"algo.c",1021,3
+        INC       @_gPathBufferHead     ; |1021| 
+	.dwpsn	"algo.c",1024,3
+        MOVB      AL,#0
+        MOV       AH,@_gPathBufferHead  ; |1024| 
+        CMPB      AH,#255               ; |1024| 
+        BF        L175,LOS              ; |1024| 
+        ; branchcc occurs ; |1024| 
+DW$L$_RunPath90Make$59$E:
+DW$L$_RunPath90Make$60$B:
+        MOVB      AL,#1                 ; |1024| 
+DW$L$_RunPath90Make$60$E:
+L175:    
+DW$L$_RunPath90Make$61$B:
+        CMPB      AL,#0                 ; |1024| 
+        BF        L212,NEQ              ; |1024| 
+        ; branchcc occurs ; |1024| 
+DW$L$_RunPath90Make$61$E:
+DW$L$_RunPath90Make$62$B:
+;** 1034	-----------------------    if ( Position != GoalPosition ) goto g47;
+	.dwpsn	"algo.c",1034,3
+        MOV       AL,*-SP[24]
+        CMP       AL,PL                 ; |1034| 
+        BF        L172,NEQ              ; |1034| 
+        ; branchcc occurs ; |1034| 
+DW$L$_RunPath90Make$62$E:
+;** 1036	-----------------------    S$5 = &K$71[(long)gPathBufferHead];
+;** 1036	-----------------------    *(volatile unsigned *)S$5 = *(volatile unsigned *)S$5&0xff00u|GoalPosition&0xffu;
+;** 1037	-----------------------    S$4 = &K$71[(long)gPathBufferHead];
+;** 1037	-----------------------    *(volatile unsigned *)S$4 = *(volatile unsigned *)S$4&0xfffu|MouseDir<<12;
+;** 1038	-----------------------    S$3 = &K$71[(long)gPathBufferHead];
+;** 1038	-----------------------    ++gPathBufferHead;
+;** 1038	-----------------------    *(volatile unsigned *)S$3 &= 0xf0ffu;
+;** 1039	-----------------------    gMouseDir = MouseDir;
+;** 1045	-----------------------    gMousePosition = K$19[MouseDir]+GoalPosition;
+;** 1047	-----------------------    TxPrintf("%x %x\n", gMouseDir, gMousePosition);
+;** 1049	-----------------------    gMouseHead = 0;
+;** 1052	-----------------------    gTurnState = 2;
+;** 1050	-----------------------    x = 0u;
+;** 1051	-----------------------    cnt = 0u;
+;***  	-----------------------    if ( gPathBufferHead <= 3u ) goto g105;
+	.dwpsn	"algo.c",1036,4
+        MOVL      XAR4,*-SP[38]         ; |1036| 
+        MOVU      ACC,@_gPathBufferHead
+        LSL       ACC,1                 ; |1036| 
+        ADDL      XAR4,ACC
+        MOV       AL,*-SP[24]           ; |1036| 
+        MOV       AH,*+XAR4[0]          ; |1036| 
+        MOVB      AH,AL.LSB             ; |1036| 
+        MOV       *+XAR4[0],AH          ; |1036| 
+	.dwpsn	"algo.c",1037,4
+        MOVL      XAR4,*-SP[38]         ; |1037| 
+        MOVU      ACC,@_gPathBufferHead
+        LSL       ACC,1                 ; |1037| 
+        ADDL      XAR4,ACC
+        AND       AL,*+XAR4[0],#0x0fff  ; |1037| 
+        MOVZ      AR6,AL                ; |1037| 
+        MOV       ACC,AR0 << #12        ; |1037| 
+        OR        AL,AR6                ; |1037| 
+        MOV       *+XAR4[0],AL          ; |1037| 
+	.dwpsn	"algo.c",1038,4
+        MOVL      XAR4,*-SP[38]         ; |1038| 
+        MOVU      ACC,@_gPathBufferHead
+        LSL       ACC,1                 ; |1038| 
+        ADDL      XAR4,ACC
+        INC       @_gPathBufferHead     ; |1038| 
+        AND       *+XAR4[0],#0xf0ff     ; |1038| 
+	.dwpsn	"algo.c",1039,4
+        MOVW      DP,#_gMouseDir
+        MOV       @_gMouseDir,AR0       ; |1039| 
+	.dwpsn	"algo.c",1045,2
+        MOVL      XAR4,*-SP[32]
+        MOV       AL,*+XAR4[AR0]        ; |1045| 
+        MOVW      DP,#_gMousePosition
+        ADD       AL,*-SP[24]           ; |1045| 
+        MOV       @_gMousePosition,AL   ; |1045| 
+	.dwpsn	"algo.c",1047,2
+        MOVW      DP,#_gMouseDir
+        MOVL      XAR4,#FSL7            ; |1047| 
+        MOV       AL,@_gMouseDir        ; |1047| 
+        MOVL      *-SP[2],XAR4          ; |1047| 
+        MOVW      DP,#_gMousePosition
+        MOV       *-SP[3],AL            ; |1047| 
+        MOV       AL,@_gMousePosition   ; |1047| 
+        MOV       *-SP[4],AL            ; |1047| 
+        LCR       #_TxPrintf            ; |1047| 
+        ; call occurs [#_TxPrintf] ; |1047| 
+	.dwpsn	"algo.c",1049,2
+        MOVW      DP,#_gMouseHead
+        MOV       @_gMouseHead,#0       ; |1049| 
+	.dwpsn	"algo.c",1052,2
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#2       ; |1052| 
+	.dwpsn	"algo.c",1050,2
+        MOVB      XAR0,#0
+	.dwpsn	"algo.c",1051,2
+        MOVW      DP,#_gPathBufferHead
+        MOV       AL,@_gPathBufferHead
+        CMPB      AL,#3
+        MOVB      XAR1,#0
+        BF        L201,LOS
+        ; branchcc occurs
+;***  	-----------------------    U$138 = (volatile unsigned *)K$71;
+;***  	-----------------------    U$186 = U$138;
+;***  	-----------------------    U$117 = 3u;
+        MOVL      XAR7,*-SP[38]
+        MOVB      AL,#3
+        MOV       PH,AL
+        MOVL      XT,XAR7
+L176:    
+;***	-----------------------g56:
+;** 1058	-----------------------    C$30 = &((volatile unsigned *)K$71)[2*(long)U$117];
+;** 1058	-----------------------    i[3] = *C$30>>8&0xfu;
+;** 1059	-----------------------    C$29 = &((volatile unsigned *)K$71)[2*(long)(x+2u)];
+;** 1059	-----------------------    i[2] = *C$29>>8&0xfu;
+;** 1060	-----------------------    C$28 = &((volatile unsigned *)K$71)[2*(long)(x+1u)];
+;** 1060	-----------------------    i[1] = *C$28>>8&0xfu;
+;** 1061	-----------------------    i[0] = *U$138>>8&0xfu;
+;** 1063	-----------------------    DiagPos[3] = *C$30&0xffu;
+;** 1064	-----------------------    DiagPos[2] = *C$29&0xffu;
+;** 1065	-----------------------    DiagPos[1] = *C$28&0xffu;
+;** 1066	-----------------------    DiagPos[0] = *U$138&0xffu;
+;** 1068	-----------------------    DiagDir[3] = *C$30>>12;
+;** 1069	-----------------------    DiagDir[2] = *C$29>>12;
+;** 1070	-----------------------    DiagDir[1] = *C$28>>12;
+;** 1071	-----------------------    DiagDir[0] = *U$138>>12;
+	.dwpsn	"algo.c",1058,4
+        MOVL      XAR4,*-SP[38]         ; |1058| 
+        MOVU      ACC,PH
+        LSL       ACC,1                 ; |1058| 
+        ADDL      XAR4,ACC
+        AND       AL,*+XAR4[0],#0x0f00  ; |1058| 
+        LSR       AL,8                  ; |1058| 
+        MOV       *-SP[12],AL           ; |1058| 
+	.dwpsn	"algo.c",1059,4
+        MOVB      AL,#2                 ; |1059| 
+        MOVL      XAR5,*-SP[38]         ; |1059| 
+        ADD       AL,AR0                ; |1059| 
+        MOVU      ACC,AL
+        LSL       ACC,1                 ; |1059| 
+        ADDL      XAR5,ACC
+        AND       AL,*+XAR5[0],#0x0f00  ; |1059| 
+        LSR       AL,8                  ; |1059| 
+        MOV       *-SP[13],AL           ; |1059| 
+	.dwpsn	"algo.c",1060,4
+        MOVB      AL,#1                 ; |1060| 
+        MOVL      XAR6,*-SP[38]         ; |1060| 
+        ADD       AL,AR0                ; |1060| 
+        MOVU      ACC,AL
+        LSL       ACC,1                 ; |1060| 
+        ADDL      XAR6,ACC
+        AND       AL,*+XAR6[0],#0x0f00  ; |1060| 
+        LSR       AL,8                  ; |1060| 
+        MOV       *-SP[14],AL           ; |1060| 
+	.dwpsn	"algo.c",1061,4
+        AND       AL,*+XAR7[0],#0x0f00  ; |1061| 
+        LSR       AL,8                  ; |1061| 
+        MOV       *-SP[15],AL           ; |1061| 
+	.dwpsn	"algo.c",1063,4
+        MOV       AL,*+XAR4[0]          ; |1063| 
+        ANDB      AL,#0xff              ; |1063| 
+        MOV       *-SP[16],AL           ; |1063| 
+	.dwpsn	"algo.c",1064,4
+        MOV       AL,*+XAR5[0]          ; |1064| 
+        ANDB      AL,#0xff              ; |1064| 
+        MOV       *-SP[17],AL           ; |1064| 
+	.dwpsn	"algo.c",1065,4
+        MOV       AL,*+XAR6[0]          ; |1065| 
+        ANDB      AL,#0xff              ; |1065| 
+        MOV       *-SP[18],AL           ; |1065| 
+	.dwpsn	"algo.c",1066,4
+        MOV       AL,*+XAR7[0]          ; |1066| 
+        ANDB      AL,#0xff              ; |1066| 
+        MOV       *-SP[19],AL           ; |1066| 
+	.dwpsn	"algo.c",1068,4
+        MOV       AL,*+XAR4[0]          ; |1068| 
+        LSR       AL,12                 ; |1068| 
+        MOV       *-SP[20],AL           ; |1068| 
+	.dwpsn	"algo.c",1069,4
+        MOV       AL,*+XAR5[0]          ; |1069| 
+        LSR       AL,12                 ; |1069| 
+        MOV       *-SP[21],AL           ; |1069| 
+	.dwpsn	"algo.c",1070,4
+        MOV       AL,*+XAR6[0]          ; |1070| 
+        LSR       AL,12                 ; |1070| 
+        MOV       *-SP[22],AL           ; |1070| 
+	.dwpsn	"algo.c",1071,4
+        MOVL      XAR4,XAR7
+        MOV       AL,*+XAR4[0]          ; |1071| 
+        LSR       AL,12                 ; |1071| 
+        MOV       *-SP[23],AL           ; |1071| 
+L177:    
+;***	-----------------------g57:
+;** 1127	-----------------------    YetTurnState = gTurnState;
+;** 1128	-----------------------    YetMouseHead = gMouseHead;
+;** 1130	-----------------------    if ( *&gMouseHead ) goto g80;
+	.dwpsn	"algo.c",1127,3
+        MOVW      DP,#_gTurnState
+        MOVZ      AR5,@_gTurnState      ; |1127| 
+	.dwpsn	"algo.c",1128,3
+        MOVW      DP,#_gMouseHead
+        MOVZ      AR6,@_gMouseHead      ; |1128| 
+	.dwpsn	"algo.c",1130,3
+        MOV       AL,@_gMouseHead       ; |1130| 
+        BF        L188,NEQ              ; |1130| 
+        ; branchcc occurs ; |1130| 
+;** 1132	-----------------------    if ( i[0]|LastPath ) goto g77;
+	.dwpsn	"algo.c",1132,4
+        MOV       AL,*-SP[15]           ; |1132| 
+        OR        AL,*-SP[25]           ; |1132| 
+        BF        L186,NEQ              ; |1132| 
+        ; branchcc occurs ; |1132| 
+;** 1134	-----------------------    if ( i[1] == 1u ) goto g71;
+	.dwpsn	"algo.c",1134,5
+        MOV       AL,*-SP[14]           ; |1134| 
+        CMPB      AL,#1                 ; |1134| 
+        BF        L183,EQ               ; |1134| 
+        ; branchcc occurs ; |1134| 
+;** 1140	-----------------------    if ( i[1] == 3u ) goto g70;
+	.dwpsn	"algo.c",1140,10
+        CMPB      AL,#3                 ; |1140| 
+        BF        L182,EQ               ; |1140| 
+        ; branchcc occurs ; |1140| 
+;** 1148	-----------------------    if ( i[1] ) goto g67;
+	.dwpsn	"algo.c",1148,10
+        CMPB      AL,#0                 ; |1148| 
+        BF        L180,NEQ              ; |1148| 
+        ; branchcc occurs ; |1148| 
+;** 1150	-----------------------    gMouseHead = 0;
+;** 1151	-----------------------    gTurnState = 0;
+;** 1153	-----------------------    if ( i[2] ) goto g66;
+	.dwpsn	"algo.c",1150,6
+        MOV       @_gMouseHead,#0       ; |1150| 
+	.dwpsn	"algo.c",1151,6
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#0       ; |1151| 
+	.dwpsn	"algo.c",1153,6
+        MOV       AL,*-SP[13]           ; |1153| 
+        BF        L179,NEQ              ; |1153| 
+        ; branchcc occurs ; |1153| 
+;** 1155	-----------------------    if ( i[3] ) goto g65;
+	.dwpsn	"algo.c",1155,7
+        MOV       AL,*-SP[12]           ; |1155| 
+        BF        L178,NEQ              ; |1155| 
+        ; branchcc occurs ; |1155| 
+;** 1157	-----------------------    U$138 += 6;
+;** 1157	-----------------------    x += 3u;
+;** 1158	-----------------------    BlockCnt = 3u;
+;** 1159	-----------------------    goto g72;
+	.dwpsn	"algo.c",1157,8
+        MOVL      ACC,XAR7              ; |1157| 
+        MOVB      XAR4,#6               ; |1157| 
+        ADDU      ACC,AR4               ; |1157| 
+        MOVL      XAR7,ACC              ; |1157| 
+        ADDB      XAR0,#3               ; |1157| 
+	.dwpsn	"algo.c",1158,8
+        MOVB      AL,#3                 ; |1158| 
+        MOV       PL,AL                 ; |1158| 
+	.dwpsn	"algo.c",1159,7
+        BF        L184,UNC              ; |1159| 
+        ; branch occurs ; |1159| 
+L178:    
+;***	-----------------------g65:
+;** 1162	-----------------------    U$138 += 4;
+;** 1162	-----------------------    x += 2u;
+;** 1163	-----------------------    BlockCnt = 2u;
+;** 1163	-----------------------    goto g72;
+	.dwpsn	"algo.c",1162,8
+        MOVL      ACC,XAR7              ; |1162| 
+        MOVB      XAR4,#4               ; |1162| 
+        ADDU      ACC,AR4               ; |1162| 
+        MOVL      XAR7,ACC              ; |1162| 
+        ADDB      XAR0,#2               ; |1162| 
+	.dwpsn	"algo.c",1163,8
+        MOVB      AL,#2                 ; |1163| 
+        MOV       PL,AL                 ; |1163| 
+        BF        L184,UNC              ; |1163| 
+        ; branch occurs ; |1163| 
+L179:    
+;***	-----------------------g66:
+;** 1169	-----------------------    U$138 += 2;
+;** 1169	-----------------------    ++x;
+;** 1170	-----------------------    BlockCnt = 1u;
+;** 1170	-----------------------    goto g72;
+	.dwpsn	"algo.c",1169,7
+        MOVL      ACC,XAR7              ; |1169| 
+        MOVB      XAR4,#2               ; |1169| 
+        ADDU      ACC,AR4               ; |1169| 
+        MOVL      XAR7,ACC              ; |1169| 
+        ADDB      XAR0,#1               ; |1169| 
+	.dwpsn	"algo.c",1170,7
+        MOVB      AL,#1                 ; |1170| 
+        MOV       PL,AL                 ; |1170| 
+        BF        L184,UNC              ; |1170| 
+        ; branch occurs ; |1170| 
+L180:    
+;***	-----------------------g67:
+;** 1179	-----------------------    gMouseHead = 0;
+;** 1180	-----------------------    gTurnState = 0;
+;** 1181	-----------------------    U$138 += 2;
+;** 1181	-----------------------    ++x;
+;** 1182	-----------------------    BlockCnt = 1u;
+;** 1183	-----------------------    if ( YetTurnState ) goto g69;
+	.dwpsn	"algo.c",1179,6
+        MOV       @_gMouseHead,#0       ; |1179| 
+	.dwpsn	"algo.c",1180,6
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#0       ; |1180| 
+	.dwpsn	"algo.c",1181,6
+        MOVL      ACC,XAR7              ; |1181| 
+        MOVB      XAR4,#2               ; |1181| 
+        ADDU      ACC,AR4               ; |1181| 
+        MOVL      XAR7,ACC              ; |1181| 
+        ADDB      XAR0,#1               ; |1181| 
+	.dwpsn	"algo.c",1182,6
+        MOVB      AL,#1                 ; |1182| 
+        MOV       PL,AL                 ; |1182| 
+	.dwpsn	"algo.c",1183,6
+        MOV       AL,AR5
+        BF        L181,NEQ              ; |1183| 
+        ; branchcc occurs ; |1183| 
+;** 1185	-----------------------    C$27 = &((volatile unsigned *)K$71)[2*(long)(cnt-1u)];
+;** 1185	-----------------------    *C$27 = *C$27&0xff00u|DiagPos[0]&0xffu;
+;** 1186	-----------------------    *C$27 = *C$27&0xfffu|DiagDir[0]<<12;
+;** 1188	-----------------------    goto g72;
+	.dwpsn	"algo.c",1185,7
+        MOV       AL,AR1                ; |1185| 
+        MOVL      XAR4,*-SP[38]         ; |1185| 
+        ADDB      AL,#-1
+        MOVU      ACC,AL
+        LSL       ACC,1                 ; |1185| 
+        ADDL      XAR4,ACC
+        MOV       AL,*-SP[19]           ; |1185| 
+        MOV       AH,*+XAR4[0]          ; |1185| 
+        MOVB      AH,AL.LSB             ; |1185| 
+        MOV       *+XAR4[0],AH          ; |1185| 
+	.dwpsn	"algo.c",1186,7
+        AND       AL,*+XAR4[0],#0x0fff  ; |1186| 
+        MOV       PH,AL                 ; |1186| 
+        MOV       ACC,*-SP[23] << #12   ; |1186| 
+        OR        AL,PH                 ; |1186| 
+        MOV       *+XAR4[0],AL          ; |1186| 
+	.dwpsn	"algo.c",1188,6
+        BF        L184,UNC              ; |1188| 
+        ; branch occurs ; |1188| 
+L181:    
+;***	-----------------------g69:
+;** 1191	-----------------------    *U$186 = *U$186&0xff00u|DiagPos[0]&0xffu;
+;** 1192	-----------------------    *U$186 = *U$186&0xfffu|DiagDir[0]<<12;
+;** 1192	-----------------------    goto g72;
+	.dwpsn	"algo.c",1191,7
+        MOVL      XAR4,XT               ; |1191| 
+        MOV       AH,*+XAR4[0]          ; |1191| 
+        MOVL      XAR4,XT               ; |1191| 
+        MOV       AL,*-SP[19]           ; |1191| 
+        MOVB      AH,AL.LSB             ; |1191| 
+        MOV       *+XAR4[0],AH          ; |1191| 
+	.dwpsn	"algo.c",1192,7
+        MOVL      XAR4,XT
+        AND       AL,*+XAR4[0],#0x0fff  ; |1192| 
+        MOVL      XAR4,XT               ; |1192| 
+        MOV       PH,AL                 ; |1192| 
+        MOV       ACC,*-SP[23] << #12   ; |1192| 
+        OR        AL,PH                 ; |1192| 
+        MOV       *+XAR4[0],AL          ; |1192| 
+        BF        L184,UNC              ; |1192| 
+        ; branch occurs ; |1192| 
+L182:    
+;***	-----------------------g70:
+;** 1143	-----------------------    gMouseHead = 0;
+;** 1144	-----------------------    gTurnState = 3;
+;** 1145	-----------------------    U$138 += 4;
+;** 1145	-----------------------    x += 2u;
+;** 1147	-----------------------    goto g72;
+	.dwpsn	"algo.c",1143,6
+        MOV       @_gMouseHead,#0       ; |1143| 
+	.dwpsn	"algo.c",1144,6
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#3       ; |1144| 
+	.dwpsn	"algo.c",1145,6
+        MOVL      ACC,XAR7              ; |1145| 
+        MOVB      XAR4,#4               ; |1145| 
+        ADDU      ACC,AR4               ; |1145| 
+        MOVL      XAR7,ACC              ; |1145| 
+        ADDB      XAR0,#2               ; |1145| 
+	.dwpsn	"algo.c",1147,5
+        BF        L184,UNC              ; |1147| 
+        ; branch occurs ; |1147| 
+L183:    
+;***	-----------------------g71:
+;** 1136	-----------------------    gMouseHead = 0;
+;** 1137	-----------------------    gTurnState = 1;
+;** 1138	-----------------------    U$138 += 4;
+;** 1138	-----------------------    x += 2u;
+	.dwpsn	"algo.c",1136,6
+        MOV       @_gMouseHead,#0       ; |1136| 
+	.dwpsn	"algo.c",1137,6
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#1       ; |1137| 
+	.dwpsn	"algo.c",1138,6
+        MOVL      ACC,XAR7              ; |1138| 
+        MOVB      XAR4,#4               ; |1138| 
+        ADDU      ACC,AR4               ; |1138| 
+        ADDB      XAR0,#2               ; |1138| 
+        MOVL      XAR7,ACC              ; |1138| 
+L184:    
+;***	-----------------------g72:
+;** 1139	-----------------------    if ( !*&gTurnState ) goto g84;
+	.dwpsn	"algo.c",1139,5
+        MOV       AL,@_gTurnState       ; |1139| 
+        BF        L190,EQ               ; |1139| 
+        ; branchcc occurs ; |1139| 
+;** 1199	-----------------------    if ( YetTurnState ) goto g76;
+	.dwpsn	"algo.c",1199,6
+        MOV       AL,AR5
+        BF        L185,NEQ              ; |1199| 
+        ; branchcc occurs ; |1199| 
+;** 1201	-----------------------    C$26 = &((volatile unsigned *)K$71)[2*(long)(cnt-1u)];
+;** 1201	-----------------------    C$26[1] = C$26[1]&0xff00u|C$26[1]+1u&0xffu;
+;** 1202	-----------------------    *C$26 = *C$26&0xfffu|DiagDir[0]<<12;
+;** 1204	-----------------------    if ( !(*C$26&0xffu) ) goto g84;
+	.dwpsn	"algo.c",1201,7
+        MOV       AL,AR1                ; |1201| 
+        MOVL      XAR4,*-SP[38]         ; |1201| 
+        ADDB      AL,#-1
+        MOVU      ACC,AL
+        LSL       ACC,1                 ; |1201| 
+        ADDL      XAR4,ACC
+        MOV       AL,*+XAR4[1]          ; |1201| 
+        ADDB      AL,#1                 ; |1201| 
+        MOV       AH,*+XAR4[1]          ; |1201| 
+        MOVB      AH,AL.LSB             ; |1201| 
+        MOV       *+XAR4[1],AH          ; |1201| 
+	.dwpsn	"algo.c",1202,7
+        AND       AL,*+XAR4[0],#0x0fff  ; |1202| 
+        MOV       PH,AL                 ; |1202| 
+        MOV       ACC,*-SP[23] << #12   ; |1202| 
+        OR        AL,PH                 ; |1202| 
+        MOV       *+XAR4[0],AL          ; |1202| 
+	.dwpsn	"algo.c",1204,7
+        MOV       AL,*+XAR4[0]          ; |1204| 
+        ANDB      AL,#0xff              ; |1204| 
+        BF        L190,EQ               ; |1204| 
+        ; branchcc occurs ; |1204| 
+;** 1207	-----------------------    *C$26 = *C$26&0xff00u|DiagPos[0]&0xffu;
+;***  	-----------------------    U$117 = x+3u;
+;** 1207	-----------------------    goto g86;
+	.dwpsn	"algo.c",1207,8
+        MOV       AL,*-SP[19]           ; |1207| 
+        MOV       AH,*+XAR4[0]          ; |1207| 
+        MOVB      AH,AL.LSB             ; |1207| 
+        MOVB      AL,#3
+        ADD       AL,AR0
+        MOV       *+XAR4[0],AH          ; |1207| 
+        MOV       PH,AL
+        BF        L192,UNC              ; |1207| 
+        ; branch occurs ; |1207| 
+L185:    
+;***	-----------------------g76:
+;** 1212	-----------------------    U$186[1] &= 0xffu;
+;** 1213	-----------------------    *U$186 = *U$186&0xff00u|DiagPos[0]&0xffu;
+;** 1214	-----------------------    *U$186 = *U$186&0xfffu|DiagDir[0]<<12;
+;** 1215	-----------------------    S$2 = (volatile struct _Path *)(U$186+1L);
+;** 1215	-----------------------    U$186 += 2;
+;** 1215	-----------------------    ++cnt;
+;** 1215	-----------------------    *(volatile unsigned *)S$2 = *(volatile unsigned *)S$2&0xff00u|1u;
+;***  	-----------------------    U$117 = x+3u;
+;** 1215	-----------------------    goto g89;
+	.dwpsn	"algo.c",1212,7
+        MOVL      XAR4,XT
+        AND       *+XAR4[1],#0x00ff     ; |1212| 
+	.dwpsn	"algo.c",1213,7
+        MOVL      XAR4,XT               ; |1213| 
+        MOV       AH,*+XAR4[0]          ; |1213| 
+        MOVL      XAR4,XT               ; |1213| 
+        MOV       AL,*-SP[19]           ; |1213| 
+        MOVB      AH,AL.LSB             ; |1213| 
+        MOV       *+XAR4[0],AH          ; |1213| 
+	.dwpsn	"algo.c",1214,7
+        MOVL      XAR4,XT
+        AND       AL,*+XAR4[0],#0x0fff  ; |1214| 
+        MOVL      XAR4,XT               ; |1214| 
+        MOV       PH,AL                 ; |1214| 
+        MOV       ACC,*-SP[23] << #12   ; |1214| 
+        OR        AL,PH                 ; |1214| 
+        MOV       *+XAR4[0],AL          ; |1214| 
+	.dwpsn	"algo.c",1215,7
+        MOVB      ACC,#1
+        ADDL      ACC,XT
+        MOVL      XAR4,ACC              ; |1215| 
+        MOVB      XAR5,#2               ; |1215| 
+        MOVL      ACC,XT                ; |1215| 
+        ADDU      ACC,AR5               ; |1215| 
+        MOVL      XT,ACC                ; |1215| 
+        AND       AL,*+XAR4[0],#0xff00  ; |1215| 
+        ORB       AL,#0x01              ; |1215| 
+        MOV       *+XAR4[0],AL          ; |1215| 
+        MOVB      AL,#3
+        ADD       AL,AR0
+        ADDB      XAR1,#1               ; |1215| 
+        MOV       PH,AL
+        BF        L193,UNC              ; |1215| 
+        ; branch occurs ; |1215| 
+L186:    
+;***	-----------------------g77:
+;** 1224	-----------------------    gMouseHead = 0;
+;** 1225	-----------------------    gTurnState = 22;
+;** 1226	-----------------------    if ( i[0] ) goto g79;
+	.dwpsn	"algo.c",1224,5
+        MOV       @_gMouseHead,#0       ; |1224| 
+	.dwpsn	"algo.c",1225,5
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#22      ; |1225| 
+	.dwpsn	"algo.c",1226,5
+        MOV       AL,*-SP[15]           ; |1226| 
+        BF        L187,NEQ              ; |1226| 
+        ; branchcc occurs ; |1226| 
+;** 1228	-----------------------    gTurnState = 0;
+;** 1229	-----------------------    BlockCnt = 1u;
+	.dwpsn	"algo.c",1228,6
+        MOV       @_gTurnState,#0       ; |1228| 
+	.dwpsn	"algo.c",1229,6
+        MOVB      AL,#1                 ; |1229| 
+        MOV       PL,AL                 ; |1229| 
+L187:    
+;***	-----------------------g79:
+;** 1234	-----------------------    U$138 += 2;
+;***  	-----------------------    U$117 = (++x)+3u;
+;** 1234	-----------------------    goto g85;
+	.dwpsn	"algo.c",1234,5
+        MOVL      ACC,XAR7              ; |1234| 
+        MOVB      XAR4,#2               ; |1234| 
+        ADDB      XAR0,#1
+        ADDU      ACC,AR4               ; |1234| 
+        MOVL      XAR7,ACC              ; |1234| 
+        MOVB      AL,#3
+        ADD       AL,AR0
+        MOV       PH,AL
+        BF        L191,UNC              ; |1234| 
+        ; branch occurs ; |1234| 
+L188:    
+;***	-----------------------g80:
+;** 1238	-----------------------    if ( i[0] == 1u ) goto g83;
+	.dwpsn	"algo.c",1238,8
+        MOV       AL,*-SP[15]           ; |1238| 
+        CMPB      AL,#1                 ; |1238| 
+        BF        L189,EQ               ; |1238| 
+        ; branchcc occurs ; |1238| 
+;** 1238	-----------------------    if ( i[0] != 3u ) goto g84;
+        CMPB      AL,#3                 ; |1238| 
+        BF        L190,NEQ              ; |1238| 
+        ; branchcc occurs ; |1238| 
+;** 1249	-----------------------    gMouseHead = 0;
+;** 1250	-----------------------    gTurnState = 3;
+;** 1251	-----------------------    U$138 += 2;
+;***  	-----------------------    U$117 = (++x)+3u;
+;** 1252	-----------------------    BlockCnt = 1u;
+;** 1252	-----------------------    goto g85;
+	.dwpsn	"algo.c",1249,5
+        MOV       @_gMouseHead,#0       ; |1249| 
+	.dwpsn	"algo.c",1250,5
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#3       ; |1250| 
+	.dwpsn	"algo.c",1251,5
+        MOVL      ACC,XAR7              ; |1251| 
+        MOVB      XAR4,#2               ; |1251| 
+        ADDU      ACC,AR4               ; |1251| 
+        ADDB      XAR0,#1
+        MOVL      XAR7,ACC              ; |1251| 
+        MOVB      AL,#3
+        ADD       AL,AR0
+        MOV       PH,AL
+	.dwpsn	"algo.c",1252,5
+        MOVB      AL,#1                 ; |1252| 
+        MOV       PL,AL                 ; |1252| 
+        BF        L191,UNC              ; |1252| 
+        ; branch occurs ; |1252| 
+L189:    
+;***	-----------------------g83:
+;** 1242	-----------------------    gMouseHead = 0;
+;** 1243	-----------------------    gTurnState = 1;
+;** 1244	-----------------------    U$138 += 2;
+;** 1244	-----------------------    ++x;
+;** 1245	-----------------------    BlockCnt = 1u;
+	.dwpsn	"algo.c",1242,5
+        MOV       @_gMouseHead,#0       ; |1242| 
+	.dwpsn	"algo.c",1243,5
+        MOVW      DP,#_gTurnState
+        MOV       @_gTurnState,#1       ; |1243| 
+	.dwpsn	"algo.c",1244,5
+        MOVL      ACC,XAR7              ; |1244| 
+        MOVB      XAR4,#2               ; |1244| 
+        ADDU      ACC,AR4               ; |1244| 
+        MOVL      XAR7,ACC              ; |1244| 
+        ADDB      XAR0,#1               ; |1244| 
+	.dwpsn	"algo.c",1245,5
+        MOVB      AL,#1                 ; |1245| 
+        MOV       PL,AL                 ; |1245| 
+L190:    
+;***	-----------------------g84:
+;***  	-----------------------    U$117 = x+3u;
+        MOVB      AL,#3
+        ADD       AL,AR0
+        MOV       PH,AL
+L191:    
+;***	-----------------------g85:
+;** 1258	-----------------------    if ( YetTurnState ) goto g89;
+	.dwpsn	"algo.c",1258,3
+        MOV       AL,AR5
+        BF        L193,NEQ              ; |1258| 
+        ; branchcc occurs ; |1258| 
+L192:    
+;***	-----------------------g86:
+;** 1258	-----------------------    if ( *&gTurnState ) goto g89;
+        MOVW      DP,#_gTurnState
+        MOV       AL,@_gTurnState       ; |1258| 
+        BF        L193,NEQ              ; |1258| 
+        ; branchcc occurs ; |1258| 
+;** 1260	-----------------------    --cnt;
+;** 1260	-----------------------    U$186 -= 2;
+;** 1260	-----------------------    U$186[1] = U$186[1]&0xff00u|U$186[1]+BlockCnt&0xffu;
+;** 1261	-----------------------    if ( !(*U$186&0xffu) ) goto g104;
+	.dwpsn	"algo.c",1260,4
+        MOVL      ACC,XT                ; |1260| 
+        SUBB      ACC,#2                ; |1260| 
+        MOVL      XAR4,ACC              ; |1260| 
+        MOVL      XT,ACC                ; |1260| 
+        MOV       AL,*+XAR4[1]          ; |1260| 
+        MOVL      XAR4,XT               ; |1260| 
+        MOV       AH,*+XAR4[1]          ; |1260| 
+        MOVL      XAR4,XT               ; |1260| 
+        ADD       AL,PL                 ; |1260| 
+        MOVB      AH,AL.LSB             ; |1260| 
+        MOV       *+XAR4[1],AH          ; |1260| 
+        SUBB      XAR1,#1               ; |1260| 
+	.dwpsn	"algo.c",1261,4
+        MOVL      XAR4,XT
+        MOV       AL,*+XAR4[0]          ; |1261| 
+        ANDB      AL,#0xff              ; |1261| 
+        BF        L200,EQ               ; |1261| 
+        ; branchcc occurs ; |1261| 
+;** 1264	-----------------------    *U$186 = *U$186&0xff00u|DiagPos[0]&0xffu;
+;** 1264	-----------------------    goto g104;
+	.dwpsn	"algo.c",1264,5
+        MOVL      XAR4,XT               ; |1264| 
+        MOV       AH,*+XAR4[0]          ; |1264| 
+        MOVL      XAR4,XT               ; |1264| 
+        MOV       AL,*-SP[19]           ; |1264| 
+        MOVB      AH,AL.LSB             ; |1264| 
+        MOV       *+XAR4[0],AH          ; |1264| 
+        BF        L200,UNC              ; |1264| 
+        ; branch occurs ; |1264| 
+L193:    
+;***	-----------------------g89:
+;** 1266	-----------------------    K$177 = &gTurnState;
+;** 1266	-----------------------    if ( !*K$177 ) goto g103;
+	.dwpsn	"algo.c",1266,8
+        MOVL      XAR4,#_gTurnState     ; |1266| 
+        MOV       AL,*+XAR4[0]          ; |1266| 
+        BF        L199,EQ               ; |1266| 
+        ; branchcc occurs ; |1266| 
+;** 1274	-----------------------    U$186[1] = U$186[1]&0xffu|*K$177<<8;
+;** 1276	-----------------------    if ( YetMouseHead ) goto g104;
+	.dwpsn	"algo.c",1274,4
+        MOVL      XAR5,XT               ; |1274| 
+        MOV       AH,*+XAR4[0]          ; |1274| 
+        MOV       AL,*+XAR5[1]          ; |1274| 
+        MOVL      XAR5,XT               ; |1274| 
+        MOVB      AL.MSB,AH             ; |1274| 
+        MOV       *+XAR5[1],AL          ; |1274| 
+	.dwpsn	"algo.c",1276,4
+        MOV       AL,AR6
+        BF        L200,NEQ              ; |1276| 
+        ; branchcc occurs ; |1276| 
+;** 1278	-----------------------    if ( *K$177 == 22 ) goto g96;
+	.dwpsn	"algo.c",1278,5
+        MOV       AL,*+XAR4[0]          ; |1278| 
+        CMPB      AL,#22                ; |1278| 
+        BF        L195,EQ               ; |1278| 
+        ; branchcc occurs ; |1278| 
+;** 1292	-----------------------    if ( *K$177 == 4 ) goto g95;
+	.dwpsn	"algo.c",1292,6
+        MOV       AL,*+XAR4[0]          ; |1292| 
+        CMPB      AL,#4                 ; |1292| 
+        BF        L194,EQ               ; |1292| 
+        ; branchcc occurs ; |1292| 
+;** 1292	-----------------------    if ( *K$177 == 5 ) goto g95;
+        MOV       AL,*+XAR4[0]          ; |1292| 
+        CMPB      AL,#5                 ; |1292| 
+        BF        L194,EQ               ; |1292| 
+        ; branchcc occurs ; |1292| 
+;** 1299	-----------------------    *U$186 = *U$186&0xff00u|DiagPos[1]&0xffu;
+;** 1300	-----------------------    *U$186 = *U$186&0xfffu|DiagDir[1]<<12;
+;** 1300	-----------------------    goto g104;
+	.dwpsn	"algo.c",1299,7
+        MOVL      XAR4,XT               ; |1299| 
+        MOV       AH,*+XAR4[0]          ; |1299| 
+        MOVL      XAR4,XT               ; |1299| 
+        MOV       AL,*-SP[18]           ; |1299| 
+        MOVB      AH,AL.LSB             ; |1299| 
+        MOV       *+XAR4[0],AH          ; |1299| 
+	.dwpsn	"algo.c",1300,7
+        MOVL      XAR4,XT
+        AND       AL,*+XAR4[0],#0x0fff  ; |1300| 
+        MOVZ      AR6,AL                ; |1300| 
+        MOVL      XAR4,XT               ; |1300| 
+        MOV       ACC,*-SP[22] << #12   ; |1300| 
+        OR        AL,AR6                ; |1300| 
+        MOV       *+XAR4[0],AL          ; |1300| 
+        BF        L200,UNC              ; |1300| 
+        ; branch occurs ; |1300| 
+L194:    
+;***	-----------------------g95:
+;** 1294	-----------------------    *U$186 = *U$186&0xff00u|DiagPos[2]&0xffu;
+;** 1295	-----------------------    *U$186 = *U$186&0xfffu|DiagDir[2]<<12;
+;** 1296	-----------------------    goto g104;
+	.dwpsn	"algo.c",1294,7
+        MOVL      XAR4,XT               ; |1294| 
+        MOV       AH,*+XAR4[0]          ; |1294| 
+        MOVL      XAR4,XT               ; |1294| 
+        MOV       AL,*-SP[17]           ; |1294| 
+        MOVB      AH,AL.LSB             ; |1294| 
+        MOV       *+XAR4[0],AH          ; |1294| 
+	.dwpsn	"algo.c",1295,7
+        MOVL      XAR4,XT
+        AND       AL,*+XAR4[0],#0x0fff  ; |1295| 
+        MOVZ      AR6,AL                ; |1295| 
+        MOVL      XAR4,XT               ; |1295| 
+        MOV       ACC,*-SP[21] << #12   ; |1295| 
+        OR        AL,AR6                ; |1295| 
+        MOV       *+XAR4[0],AL          ; |1295| 
+	.dwpsn	"algo.c",1296,6
+        BF        L200,UNC              ; |1296| 
+        ; branch occurs ; |1296| 
+L195:    
+;***	-----------------------g96:
+;** 1280	-----------------------    if ( i[0] == 3u ) goto g101;
+	.dwpsn	"algo.c",1280,6
+        MOV       AL,*-SP[15]           ; |1280| 
+        CMPB      AL,#3                 ; |1280| 
+        BF        L197,EQ               ; |1280| 
+        ; branchcc occurs ; |1280| 
+;** 1282	-----------------------    if ( i[0] == 1u ) goto g100;
+	.dwpsn	"algo.c",1282,11
+        CMPB      AL,#1                 ; |1282| 
+        BF        L196,EQ               ; |1282| 
+        ; branchcc occurs ; |1282| 
+;** 1284	-----------------------    if ( i[0] != 2u ) goto g102;
+	.dwpsn	"algo.c",1284,11
+        CMPB      AL,#2                 ; |1284| 
+        BF        L198,NEQ              ; |1284| 
+        ; branchcc occurs ; |1284| 
+;** 1285	-----------------------    U$186[1] = U$186[1]&0xffu|0x200u;
+;** 1285	-----------------------    goto g102;
+	.dwpsn	"algo.c",1285,7
+        MOVL      XAR4,XT
+        MOV       AL,*+XAR4[1]          ; |1285| 
+        MOVL      XAR4,XT               ; |1285| 
+        ANDB      AL,#0xff              ; |1285| 
+        OR        AL,#0x0200            ; |1285| 
+        MOV       *+XAR4[1],AL          ; |1285| 
+        BF        L198,UNC              ; |1285| 
+        ; branch occurs ; |1285| 
+L196:    
+;***	-----------------------g100:
+;** 1283	-----------------------    U$186[1] = U$186[1]&0xffu|0x100u;
+;** 1283	-----------------------    goto g102;
+	.dwpsn	"algo.c",1283,7
+        MOVL      XAR4,XT
+        MOV       AL,*+XAR4[1]          ; |1283| 
+        MOVL      XAR4,XT               ; |1283| 
+        ANDB      AL,#0xff              ; |1283| 
+        OR        AL,#0x0100            ; |1283| 
+        MOV       *+XAR4[1],AL          ; |1283| 
+        BF        L198,UNC              ; |1283| 
+        ; branch occurs ; |1283| 
+L197:    
+;***	-----------------------g101:
+;** 1281	-----------------------    U$186[1] = U$186[1]&0xffu|0x300u;
+	.dwpsn	"algo.c",1281,7
+        MOVL      XAR4,XT
+        MOV       AL,*+XAR4[1]          ; |1281| 
+        MOVL      XAR4,XT               ; |1281| 
+        ANDB      AL,#0xff              ; |1281| 
+        OR        AL,#0x0300            ; |1281| 
+        MOV       *+XAR4[1],AL          ; |1281| 
+L198:    
+;***	-----------------------g102:
+;** 1287	-----------------------    *U$186 = *U$186&0xff00u|DiagPos[0]&0xffu;
+;** 1288	-----------------------    *U$186 = *U$186&0xfffu|DiagDir[0]<<12;
+;** 1289	-----------------------    goto g104;
+	.dwpsn	"algo.c",1287,6
+        MOVL      XAR4,XT               ; |1287| 
+        MOV       AH,*+XAR4[0]          ; |1287| 
+        MOVL      XAR4,XT               ; |1287| 
+        MOV       AL,*-SP[19]           ; |1287| 
+        MOVB      AH,AL.LSB             ; |1287| 
+        MOV       *+XAR4[0],AH          ; |1287| 
+	.dwpsn	"algo.c",1288,6
+        MOVL      XAR4,XT
+        AND       AL,*+XAR4[0],#0x0fff  ; |1288| 
+        MOVZ      AR6,AL                ; |1288| 
+        MOVL      XAR4,XT               ; |1288| 
+        MOV       ACC,*-SP[23] << #12   ; |1288| 
+        OR        AL,AR6                ; |1288| 
+        MOV       *+XAR4[0],AL          ; |1288| 
+	.dwpsn	"algo.c",1289,5
+        BF        L200,UNC              ; |1289| 
+        ; branch occurs ; |1289| 
+L199:    
+;***	-----------------------g103:
+;** 1268	-----------------------    U$186[1] = U$186[1]&0xffu|*K$177<<8;
+;** 1269	-----------------------    U$186[1] = U$186[1]&0xff00u|BlockCnt&0xffu;
+;** 1270	-----------------------    *U$186 = *U$186&0xff00u|DiagPos[0]&0xffu;
+	.dwpsn	"algo.c",1268,4
+        MOV       AH,*+XAR4[0]          ; |1268| 
+        MOVL      XAR4,XT               ; |1268| 
+        MOV       AL,*+XAR4[1]          ; |1268| 
+        MOVL      XAR4,XT               ; |1268| 
+        MOVB      AL.MSB,AH             ; |1268| 
+        MOV       *+XAR4[1],AL          ; |1268| 
+	.dwpsn	"algo.c",1269,4
+        MOVL      XAR4,XT
+        MOV       AH,*+XAR4[1]          ; |1269| 
+        MOVL      XAR4,XT               ; |1269| 
+        MOV       AL,PL                 ; |1269| 
+        MOVB      AH,AL.LSB             ; |1269| 
+        MOV       *+XAR4[1],AH          ; |1269| 
+	.dwpsn	"algo.c",1270,4
+        MOVL      XAR4,XT               ; |1270| 
+        MOV       AH,*+XAR4[0]          ; |1270| 
+        MOVL      XAR4,XT               ; |1270| 
+        MOV       AL,*-SP[19]           ; |1270| 
+        MOVB      AH,AL.LSB             ; |1270| 
+        MOV       *+XAR4[0],AH          ; |1270| 
+L200:    
+;***	-----------------------g104:
+;** 1309	-----------------------    U$186 += 2;
+;** 1309	-----------------------    ++cnt;
+;** 1054	-----------------------    if ( U$117 < gPathBufferHead ) goto g56;
+	.dwpsn	"algo.c",1309,3
+        MOVL      ACC,XT                ; |1309| 
+        MOVB      XAR4,#2               ; |1309| 
+        ADDU      ACC,AR4               ; |1309| 
+        MOVL      XT,ACC                ; |1309| 
+        ADDB      XAR1,#1               ; |1309| 
+	.dwpsn	"algo.c",1054,8
+        MOVW      DP,#_gPathBufferHead
+        MOV       AL,PH
+        CMP       AL,@_gPathBufferHead  ; |1054| 
+        BF        L176,LO               ; |1054| 
+        ; branchcc occurs ; |1054| 
+L201:    
+;***	-----------------------g105:
+;** 1074	-----------------------    U$125 = x+2u;
+;** 1074	-----------------------    P$17 = U$125 < gPathBufferHead;
+	.dwpsn	"algo.c",1074,8
+        MOVB      AL,#2                 ; |1074| 
+        MOVB      XAR7,#0
+        ADD       AL,AR0                ; |1074| 
+        CMP       AL,@_gPathBufferHead  ; |1074| 
+        MOVZ      AR6,AL                ; |1074| 
+        BF        L202,HIS              ; |1074| 
+        ; branchcc occurs ; |1074| 
+        MOVB      XAR7,#1               ; |1074| 
+L202:    
+;***  	-----------------------    U$31 = x+1u;
+;***  	-----------------------    U$186 = &((volatile unsigned *)K$71)[2*(long)cnt];
+;** 1074	-----------------------    if ( P$17 ) goto g116;
+        MOVB      AL,#1
+        ADD       AL,AR0
+        MOVL      XT,*-SP[38]
+        MOV       PH,AL
+        MOVU      ACC,AR1
+        LSL       ACC,1
+        ADDL      XT,ACC
+        MOV       AH,AR7
+        BF        L210,NEQ              ; |1074| 
+        ; branchcc occurs ; |1074| 
+;** 1093	-----------------------    if ( U$31 < gPathBufferHead ) goto g115;
+	.dwpsn	"algo.c",1093,8
+        MOV       AL,PH
+        CMP       AL,@_gPathBufferHead  ; |1093| 
+        BF        L208,LO               ; |1093| 
+        ; branchcc occurs ; |1093| 
+;** 1108	-----------------------    if ( x < gPathBufferHead ) goto g114;
+	.dwpsn	"algo.c",1108,8
+        MOV       AH,AR0
+        CMP       AH,@_gPathBufferHead  ; |1108| 
+        BF        L206,LO               ; |1108| 
+        ; branchcc occurs ; |1108| 
+;** 1122	-----------------------    gPathBufferHead = cnt;
+;** 1123	-----------------------    U$186[1] &= 0xffu;
+;** 1315	-----------------------    if ( !gPathBufferHead ) goto g111;
+	.dwpsn	"algo.c",1122,4
+        MOV       @_gPathBufferHead,AR1 ; |1122| 
+	.dwpsn	"algo.c",1123,4
+        MOVL      XAR4,XT
+        AND       *+XAR4[1],#0x00ff     ; |1123| 
+	.dwpsn	"algo.c",1315,15
+        MOV       AL,@_gPathBufferHead  ; |1315| 
+        BF        L204,EQ               ; |1315| 
+        ; branchcc occurs ; |1315| 
+;***  	-----------------------    U$186 = (volatile unsigned *)K$71;
+;** 1124	-----------------------    cnt = 0u;
+        MOVL      XAR1,*-SP[38]
+	.dwpsn	"algo.c",1124,4
+        MOVB      XAR2,#0
+L203:    
+DW$L$_RunPath90Make$121$B:
+;***	-----------------------g110:
+;** 1316	-----------------------    TxPrintf("%d  TURN : %d  DIR : %d  POS : %x CNT : %d\n", cnt, U$186[1]>>8, *U$186>>12, *U$186&0xffu, U$186[1]&0xffu);
+;** 1315	-----------------------    U$186 += 2;
+;** 1315	-----------------------    if ( gPathBufferHead > (++cnt) ) goto g110;
+	.dwpsn	"algo.c",1316,4
+        MOVL      XAR4,#FSL8            ; |1316| 
+        MOVL      *-SP[2],XAR4          ; |1316| 
+        MOV       *-SP[3],AR2           ; |1316| 
+        MOV       AL,*+XAR1[1]          ; |1316| 
+        LSR       AL,8                  ; |1316| 
+        MOV       *-SP[4],AL            ; |1316| 
+        MOV       AL,*+XAR1[0]          ; |1316| 
+        LSR       AL,12                 ; |1316| 
+        MOV       *-SP[5],AL            ; |1316| 
+        MOV       AL,*+XAR1[0]          ; |1316| 
+        ANDB      AL,#0xff              ; |1316| 
+        MOV       *-SP[6],AL            ; |1316| 
+        MOV       AL,*+XAR1[1]          ; |1316| 
+        ANDB      AL,#0xff              ; |1316| 
+        MOV       *-SP[7],AL            ; |1316| 
+        LCR       #_TxPrintf            ; |1316| 
+        ; call occurs [#_TxPrintf] ; |1316| 
+	.dwpsn	"algo.c",1315,38
+        MOVB      XAR4,#2               ; |1315| 
+        MOVL      ACC,XAR1              ; |1315| 
+        ADDU      ACC,AR4               ; |1315| 
+        MOVL      XAR1,ACC              ; |1315| 
+	.dwpsn	"algo.c",1315,15
+        ADDB      XAR2,#1               ; |1315| 
+        MOVW      DP,#_gPathBufferHead
+        MOV       AL,AR2                ; |1315| 
+        CMP       AL,@_gPathBufferHead  ; |1315| 
+        BF        L203,LO               ; |1315| 
+        ; branchcc occurs ; |1315| 
+DW$L$_RunPath90Make$121$E:
+L204:    
+;***	-----------------------g111:
+;** 1320	-----------------------    memset((void *)K$4, 0, 256uL);
+;** 1321	-----------------------    memset(K$5, 0, 256uL);
+;** 1323	-----------------------    SpiReadRom(5u, 0u, 256u, (unsigned *)K$5);
+;***  	-----------------------    U$9 = (volatile unsigned *)K$5;
+;***  	-----------------------    U$12 = K$4;
+;***  	-----------------------    L$7 = 255;
+	.dwpsn	"algo.c",1320,2
+        MOVL      XAR4,*-SP[34]
+        MOV       ACC,#1 << 8
+        MOVB      XAR5,#0
+        LCR       #_memset              ; |1320| 
+        ; call occurs [#_memset] ; |1320| 
+	.dwpsn	"algo.c",1321,2
+        MOVL      XAR4,*-SP[30]
+        MOVB      XAR5,#0
+        MOV       ACC,#1 << 8
+        LCR       #_memset              ; |1321| 
+        ; call occurs [#_memset] ; |1321| 
+	.dwpsn	"algo.c",1323,2
+        MOVL      XAR4,*-SP[30]         ; |1323| 
+        MOVL      XAR5,#256             ; |1323| 
+        MOVB      ACC,#5
+        LCR       #_SpiReadRom          ; |1323| 
+        ; call occurs [#_SpiReadRom] ; |1323| 
+        MOVL      XAR4,*-SP[30]
+        MOVB      XAR6,#255
+        MOVL      XAR5,*-SP[34]
+L205:    
+DW$L$_RunPath90Make$123$B:
+;***	-----------------------g112:
+;** 1327	-----------------------    *U$12++ = *U$9++;
+;** 1326	-----------------------    if ( (--L$7) != (-1) ) goto g112;
+	.dwpsn	"algo.c",1327,3
+        MOV       AL,*XAR4++            ; |1327| 
+        MOV       *XAR5++,AL            ; |1327| 
+	.dwpsn	"algo.c",1326,15
+        BANZ      L205,AR6--            ; |1326| 
+        ; branchcc occurs ; |1326| 
+DW$L$_RunPath90Make$123$E:
+;***  	-----------------------    return;
+        BF        L216,UNC
+        ; branch occurs
+L206:    
+;***	-----------------------g114:
+;** 1110	-----------------------    i[3] = 4095u;
+;** 1111	-----------------------    i[2] = 4095u;
+;** 1112	-----------------------    i[1] = 4095u;
+;** 1113	-----------------------    C$25 = &((volatile unsigned *)K$71)[2*(long)x];
+;** 1113	-----------------------    i[0] = *C$25>>8&0xfu;
+;** 1114	-----------------------    DiagPos[0] = *C$25&0xffu;
+;** 1115	-----------------------    U$138 = C$25;
+;** 1115	-----------------------    DiagDir[0] = *U$138>>12;
+;** 1117	-----------------------    if ( !(P$18 = gPathBufferHead == U$31) ) goto g57;
+	.dwpsn	"algo.c",1110,4
+        MOV       *-SP[12],#4095        ; |1110| 
+	.dwpsn	"algo.c",1111,4
+        MOV       *-SP[13],#4095        ; |1111| 
+	.dwpsn	"algo.c",1112,4
+        MOV       *-SP[14],#4095        ; |1112| 
+	.dwpsn	"algo.c",1113,4
+        MOVL      XAR4,*-SP[38]         ; |1113| 
+        MOVU      ACC,AR0
+        LSL       ACC,1                 ; |1113| 
+        ADDL      XAR4,ACC
+        AND       AH,*+XAR4[0],#0x0f00  ; |1113| 
+        LSR       AH,8                  ; |1113| 
+        MOV       *-SP[15],AH           ; |1113| 
+	.dwpsn	"algo.c",1114,4
+        MOV       AH,*+XAR4[0]          ; |1114| 
+        ANDB      AH,#0xff              ; |1114| 
+        MOV       *-SP[19],AH           ; |1114| 
+	.dwpsn	"algo.c",1115,4
+        MOV       AH,*+XAR4[0]          ; |1115| 
+        LSR       AH,12                 ; |1115| 
+        MOV       *-SP[23],AH           ; |1115| 
+        MOVL      XAR7,XAR4             ; |1115| 
+	.dwpsn	"algo.c",1117,4
+        MOVB      AH,#0
+        MOV       AL,PH                 ; |1117| 
+        CMP       AL,@_gPathBufferHead  ; |1117| 
+        BF        L207,NEQ              ; |1117| 
+        ; branchcc occurs ; |1117| 
+        MOVB      AH,#1                 ; |1117| 
+L207:    
+        MOV       AL,AH                 ; |1117| 
+        BF        L177,EQ               ; |1117| 
+        ; branchcc occurs ; |1117| 
+;** 1117	-----------------------    goto g119;
+        BF        L211,UNC              ; |1117| 
+        ; branch occurs ; |1117| 
+L208:    
+;***	-----------------------g115:
+;** 1096	-----------------------    i[3] = 4095u;
+;** 1097	-----------------------    i[2] = 4095u;
+;** 1098	-----------------------    C$24 = &((volatile unsigned *)K$71)[2*(long)U$31];
+;** 1098	-----------------------    i[1] = *C$24>>8&0xfu;
+;** 1099	-----------------------    C$23 = &((volatile unsigned *)K$71)[2*(long)x];
+;** 1099	-----------------------    i[0] = *C$23>>8&0xfu;
+;** 1100	-----------------------    DiagPos[1] = *C$24&0xffu;
+;** 1101	-----------------------    DiagPos[0] = *C$23&0xffu;
+;** 1102	-----------------------    DiagDir[1] = *C$24>>12;
+;** 1103	-----------------------    U$138 = C$23;
+;** 1103	-----------------------    DiagDir[0] = *U$138>>12;
+;** 1105	-----------------------    if ( !(P$19 = gPathBufferHead == U$125) ) goto g57;
+	.dwpsn	"algo.c",1096,4
+        MOV       *-SP[12],#4095        ; |1096| 
+	.dwpsn	"algo.c",1097,4
+        MOV       *-SP[13],#4095        ; |1097| 
+	.dwpsn	"algo.c",1098,4
+        MOVL      XAR4,*-SP[38]         ; |1098| 
+        MOVU      ACC,PH
+        LSL       ACC,1                 ; |1098| 
+        ADDL      XAR4,ACC
+        AND       AL,*+XAR4[0],#0x0f00  ; |1098| 
+        LSR       AL,8                  ; |1098| 
+        MOV       *-SP[14],AL           ; |1098| 
+	.dwpsn	"algo.c",1099,4
+        MOVL      XAR5,*-SP[38]         ; |1099| 
+        MOVU      ACC,AR0
+        LSL       ACC,1                 ; |1099| 
+        ADDL      XAR5,ACC
+        AND       AL,*+XAR5[0],#0x0f00  ; |1099| 
+        LSR       AL,8                  ; |1099| 
+        MOV       *-SP[15],AL           ; |1099| 
+	.dwpsn	"algo.c",1100,4
+        MOV       AL,*+XAR4[0]          ; |1100| 
+        ANDB      AL,#0xff              ; |1100| 
+        MOV       *-SP[18],AL           ; |1100| 
+	.dwpsn	"algo.c",1101,4
+        MOV       AL,*+XAR5[0]          ; |1101| 
+        ANDB      AL,#0xff              ; |1101| 
+        MOV       *-SP[19],AL           ; |1101| 
+	.dwpsn	"algo.c",1102,4
+        MOV       AL,*+XAR4[0]          ; |1102| 
+        LSR       AL,12                 ; |1102| 
+        MOV       *-SP[22],AL           ; |1102| 
+	.dwpsn	"algo.c",1103,4
+        MOVL      XAR4,XAR5             ; |1103| 
+        MOV       AL,*+XAR4[0]          ; |1103| 
+        LSR       AL,12                 ; |1103| 
+        MOV       *-SP[23],AL           ; |1103| 
+        MOVL      XAR7,XAR5             ; |1103| 
+	.dwpsn	"algo.c",1105,4
+        MOVB      AH,#0
+        MOV       AL,AR6                ; |1105| 
+        CMP       AL,@_gPathBufferHead  ; |1105| 
+        BF        L209,NEQ              ; |1105| 
+        ; branchcc occurs ; |1105| 
+        MOVB      AH,#1                 ; |1105| 
+L209:    
+        MOV       AL,AH                 ; |1105| 
+        BF        L177,EQ               ; |1105| 
+        ; branchcc occurs ; |1105| 
+;** 1105	-----------------------    goto g119;
+        BF        L211,UNC              ; |1105| 
+        ; branch occurs ; |1105| 
+L210:    
+;***	-----------------------g116:
+;** 1076	-----------------------    i[3] = 4095u;
+;** 1077	-----------------------    C$22 = &((volatile unsigned *)K$71)[2*(long)U$125];
+;** 1077	-----------------------    i[2] = *C$22>>8&0xfu;
+;** 1078	-----------------------    C$21 = &((volatile unsigned *)K$71)[2*(long)U$31];
+;** 1078	-----------------------    i[1] = *C$21>>8&0xfu;
+;** 1079	-----------------------    C$20 = &((volatile unsigned *)K$71)[2*(long)x];
+;** 1079	-----------------------    i[0] = *C$20>>8&0xfu;
+;** 1081	-----------------------    DiagPos[2] = *C$22&0xffu;
+;** 1082	-----------------------    DiagPos[1] = *C$21&0xffu;
+;** 1083	-----------------------    DiagPos[0] = *C$20&0xffu;
+;** 1085	-----------------------    DiagDir[2] = *C$22>>12;
+;** 1086	-----------------------    DiagDir[1] = *C$21>>12;
+;** 1087	-----------------------    U$138 = C$20;
+;** 1087	-----------------------    DiagDir[0] = *U$138>>12;
+;** 1089	-----------------------    if ( !i[2] ) goto g57;
+	.dwpsn	"algo.c",1076,4
+        MOV       *-SP[12],#4095        ; |1076| 
+	.dwpsn	"algo.c",1077,4
+        MOVL      XAR4,*-SP[38]         ; |1077| 
+        MOVU      ACC,AR6
+        LSL       ACC,1                 ; |1077| 
+        ADDL      XAR4,ACC
+        AND       AH,*+XAR4[0],#0x0f00  ; |1077| 
+        LSR       AH,8                  ; |1077| 
+        MOV       *-SP[13],AH           ; |1077| 
+	.dwpsn	"algo.c",1078,4
+        MOVL      XAR5,*-SP[38]         ; |1078| 
+        MOVU      ACC,PH
+        LSL       ACC,1                 ; |1078| 
+        ADDL      XAR5,ACC
+        AND       AL,*+XAR5[0],#0x0f00  ; |1078| 
+        LSR       AL,8                  ; |1078| 
+        MOV       *-SP[14],AL           ; |1078| 
+	.dwpsn	"algo.c",1079,4
+        MOVL      XAR6,*-SP[38]         ; |1079| 
+        MOVU      ACC,AR0
+        LSL       ACC,1                 ; |1079| 
+        ADDL      XAR6,ACC
+        AND       AL,*+XAR6[0],#0x0f00  ; |1079| 
+        LSR       AL,8                  ; |1079| 
+        MOV       *-SP[15],AL           ; |1079| 
+	.dwpsn	"algo.c",1081,4
+        MOV       AL,*+XAR4[0]          ; |1081| 
+        ANDB      AL,#0xff              ; |1081| 
+        MOV       *-SP[17],AL           ; |1081| 
+	.dwpsn	"algo.c",1082,4
+        MOV       AL,*+XAR5[0]          ; |1082| 
+        ANDB      AL,#0xff              ; |1082| 
+        MOV       *-SP[18],AL           ; |1082| 
+	.dwpsn	"algo.c",1083,4
+        MOV       AL,*+XAR6[0]          ; |1083| 
+        ANDB      AL,#0xff              ; |1083| 
+        MOV       *-SP[19],AL           ; |1083| 
+	.dwpsn	"algo.c",1085,4
+        MOV       AL,*+XAR4[0]          ; |1085| 
+        LSR       AL,12                 ; |1085| 
+        MOV       *-SP[21],AL           ; |1085| 
+	.dwpsn	"algo.c",1086,4
+        MOV       AL,*+XAR5[0]          ; |1086| 
+        LSR       AL,12                 ; |1086| 
+        MOV       *-SP[22],AL           ; |1086| 
+	.dwpsn	"algo.c",1087,4
+        MOVL      XAR4,XAR6             ; |1087| 
+        MOV       AL,*+XAR4[0]          ; |1087| 
+        LSR       AL,12                 ; |1087| 
+        MOV       *-SP[23],AL           ; |1087| 
+        MOVL      XAR7,XAR6             ; |1087| 
+	.dwpsn	"algo.c",1089,4
+        MOV       AL,*-SP[13]           ; |1089| 
+        BF        L177,EQ               ; |1089| 
+        ; branchcc occurs ; |1089| 
+;** 1089	-----------------------    if ( gPathBufferHead != x+3u ) goto g57;
+        MOV       AL,AR0                ; |1089| 
+        ADDB      AL,#3                 ; |1089| 
+        CMP       AL,@_gPathBufferHead  ; |1089| 
+        BF        L177,NEQ              ; |1089| 
+        ; branchcc occurs ; |1089| 
+;** 1089	-----------------------    if ( *&gMouseHead ) goto g57;
+        MOVW      DP,#_gMouseHead
+        MOV       AL,@_gMouseHead       ; |1089| 
+        BF        L177,NEQ              ; |1089| 
+        ; branchcc occurs ; |1089| 
+L211:    
+;***	-----------------------g119:
+;** 1090	-----------------------    LastPath = 1u;
+;** 1090	-----------------------    goto g57;
+	.dwpsn	"algo.c",1090,5
+        MOV       *-SP[25],#1           ; |1090| 
+        BF        L177,UNC              ; |1090| 
+        ; branch occurs ; |1090| 
+L212:    
+;***	-----------------------g120:
+;** 1026	-----------------------    TxPrintf("error\n");
+	.dwpsn	"algo.c",1026,4
+        MOVL      XAR4,#FSL13           ; |1026| 
+        MOVL      *-SP[2],XAR4          ; |1026| 
+        LCR       #_TxPrintf            ; |1026| 
+        ; call occurs [#_TxPrintf] ; |1026| 
+L213:    
+DW$L$_RunPath90Make$138$B:
+;***	-----------------------g121:
+;** 1029	-----------------------    VFDPrintf("E2nd");
+;** 1027	-----------------------    goto g121;
+	.dwpsn	"algo.c",1029,5
+        MOVL      XAR4,#FSL14           ; |1029| 
+        MOVL      *-SP[2],XAR4          ; |1029| 
+        LCR       #_VFDPrintf           ; |1029| 
+        ; call occurs [#_VFDPrintf] ; |1029| 
+	.dwpsn	"algo.c",1027,10
+        BF        L213,UNC              ; |1027| 
+        ; branch occurs ; |1027| 
+DW$L$_RunPath90Make$138$E:
+L214:    
+;***	-----------------------g122:
+;*** 968	-----------------------    TxPrintf("error\n");
+	.dwpsn	"algo.c",968,4
+        MOVL      XAR4,#FSL13           ; |968| 
+        MOVL      *-SP[2],XAR4          ; |968| 
+        LCR       #_TxPrintf            ; |968| 
+        ; call occurs [#_TxPrintf] ; |968| 
+L215:    
+DW$L$_RunPath90Make$140$B:
+;***	-----------------------g123:
+;*** 971	-----------------------    VFDPrintf("E2nd");
+;*** 969	-----------------------    goto g123;
+	.dwpsn	"algo.c",971,5
+        MOVL      XAR4,#FSL14           ; |971| 
+        MOVL      *-SP[2],XAR4          ; |971| 
+        LCR       #_VFDPrintf           ; |971| 
+        ; call occurs [#_VFDPrintf] ; |971| 
+	.dwpsn	"algo.c",969,10
+        BF        L215,UNC              ; |969| 
+        ; branch occurs ; |969| 
+DW$L$_RunPath90Make$140$E:
+L216:    
+	.dwpsn	"algo.c",1329,1
+        SUBB      SP,#38
+	.dwcfa	0x1d, -8
+        MOVL      XAR3,*--SP
+	.dwcfa	0x1d, -6
+	.dwcfa	0xc0, 11
+        MOVL      XAR2,*--SP
+	.dwcfa	0x1d, -4
+	.dwcfa	0xc0, 9
+        MOVL      XAR1,*--SP
+	.dwcfa	0x1d, -2
+	.dwcfa	0xc0, 7
+        LRETR
+        ; return occurs
+
+DW$484	.dwtag  DW_TAG_loop
+	.dwattr DW$484, DW_AT_name("C:\algo\main\algo.asm:L215:1:1773144227")
+	.dwattr DW$484, DW_AT_begin_file("algo.c")
+	.dwattr DW$484, DW_AT_begin_line(0x3c9)
+	.dwattr DW$484, DW_AT_end_line(0x3cc)
+DW$485	.dwtag  DW_TAG_loop_range
+	.dwattr DW$485, DW_AT_low_pc(DW$L$_RunPath90Make$140$B)
+	.dwattr DW$485, DW_AT_high_pc(DW$L$_RunPath90Make$140$E)
+	.dwendtag DW$484
+
+
+DW$486	.dwtag  DW_TAG_loop
+	.dwattr DW$486, DW_AT_name("C:\algo\main\algo.asm:L213:1:1773144227")
+	.dwattr DW$486, DW_AT_begin_file("algo.c")
+	.dwattr DW$486, DW_AT_begin_line(0x403)
+	.dwattr DW$486, DW_AT_end_line(0x406)
+DW$487	.dwtag  DW_TAG_loop_range
+	.dwattr DW$487, DW_AT_low_pc(DW$L$_RunPath90Make$138$B)
+	.dwattr DW$487, DW_AT_high_pc(DW$L$_RunPath90Make$138$E)
+	.dwendtag DW$486
+
+
+DW$488	.dwtag  DW_TAG_loop
+	.dwattr DW$488, DW_AT_name("C:\algo\main\algo.asm:L205:1:1773144227")
+	.dwattr DW$488, DW_AT_begin_file("algo.c")
+	.dwattr DW$488, DW_AT_begin_line(0x52e)
+	.dwattr DW$488, DW_AT_end_line(0x52f)
+DW$489	.dwtag  DW_TAG_loop_range
+	.dwattr DW$489, DW_AT_low_pc(DW$L$_RunPath90Make$123$B)
+	.dwattr DW$489, DW_AT_high_pc(DW$L$_RunPath90Make$123$E)
+	.dwendtag DW$488
+
+
+DW$490	.dwtag  DW_TAG_loop
+	.dwattr DW$490, DW_AT_name("C:\algo\main\algo.asm:L203:1:1773144227")
+	.dwattr DW$490, DW_AT_begin_file("algo.c")
+	.dwattr DW$490, DW_AT_begin_line(0x523)
+	.dwattr DW$490, DW_AT_end_line(0x524)
+DW$491	.dwtag  DW_TAG_loop_range
+	.dwattr DW$491, DW_AT_low_pc(DW$L$_RunPath90Make$121$B)
+	.dwattr DW$491, DW_AT_high_pc(DW$L$_RunPath90Make$121$E)
+	.dwendtag DW$490
+
+
+DW$492	.dwtag  DW_TAG_loop
+	.dwattr DW$492, DW_AT_name("C:\algo\main\algo.asm:L172:1:1773144227")
+	.dwattr DW$492, DW_AT_begin_file("algo.c")
+	.dwattr DW$492, DW_AT_begin_line(0x3e6)
+	.dwattr DW$492, DW_AT_end_line(0x412)
+DW$493	.dwtag  DW_TAG_loop_range
+	.dwattr DW$493, DW_AT_low_pc(DW$L$_RunPath90Make$54$B)
+	.dwattr DW$493, DW_AT_high_pc(DW$L$_RunPath90Make$54$E)
+DW$494	.dwtag  DW_TAG_loop_range
+	.dwattr DW$494, DW_AT_low_pc(DW$L$_RunPath90Make$59$B)
+	.dwattr DW$494, DW_AT_high_pc(DW$L$_RunPath90Make$59$E)
+DW$495	.dwtag  DW_TAG_loop_range
+	.dwattr DW$495, DW_AT_low_pc(DW$L$_RunPath90Make$60$B)
+	.dwattr DW$495, DW_AT_high_pc(DW$L$_RunPath90Make$60$E)
+DW$496	.dwtag  DW_TAG_loop_range
+	.dwattr DW$496, DW_AT_low_pc(DW$L$_RunPath90Make$61$B)
+	.dwattr DW$496, DW_AT_high_pc(DW$L$_RunPath90Make$61$E)
+DW$497	.dwtag  DW_TAG_loop_range
+	.dwattr DW$497, DW_AT_low_pc(DW$L$_RunPath90Make$62$B)
+	.dwattr DW$497, DW_AT_high_pc(DW$L$_RunPath90Make$62$E)
+
+DW$498	.dwtag  DW_TAG_loop
+	.dwattr DW$498, DW_AT_name("C:\algo\main\algo.asm:L173:2:1773144227")
+	.dwattr DW$498, DW_AT_begin_file("algo.c")
+	.dwattr DW$498, DW_AT_begin_line(0x3e8)
+	.dwattr DW$498, DW_AT_end_line(0x3f6)
+DW$499	.dwtag  DW_TAG_loop_range
+	.dwattr DW$499, DW_AT_low_pc(DW$L$_RunPath90Make$55$B)
+	.dwattr DW$499, DW_AT_high_pc(DW$L$_RunPath90Make$55$E)
+DW$500	.dwtag  DW_TAG_loop_range
+	.dwattr DW$500, DW_AT_low_pc(DW$L$_RunPath90Make$56$B)
+	.dwattr DW$500, DW_AT_high_pc(DW$L$_RunPath90Make$56$E)
+DW$501	.dwtag  DW_TAG_loop_range
+	.dwattr DW$501, DW_AT_low_pc(DW$L$_RunPath90Make$57$B)
+	.dwattr DW$501, DW_AT_high_pc(DW$L$_RunPath90Make$57$E)
+DW$502	.dwtag  DW_TAG_loop_range
+	.dwattr DW$502, DW_AT_low_pc(DW$L$_RunPath90Make$58$B)
+	.dwattr DW$502, DW_AT_high_pc(DW$L$_RunPath90Make$58$E)
+	.dwendtag DW$498
+
+	.dwendtag DW$492
+
+
+DW$503	.dwtag  DW_TAG_loop
+	.dwattr DW$503, DW_AT_name("C:\algo\main\algo.asm:L170:1:1773144227")
+	.dwattr DW$503, DW_AT_begin_file("algo.c")
+	.dwattr DW$503, DW_AT_begin_line(0x3db)
+	.dwattr DW$503, DW_AT_end_line(0x3de)
+DW$504	.dwtag  DW_TAG_loop_range
+	.dwattr DW$504, DW_AT_low_pc(DW$L$_RunPath90Make$52$B)
+	.dwattr DW$504, DW_AT_high_pc(DW$L$_RunPath90Make$52$E)
+	.dwendtag DW$503
+
+
+DW$505	.dwtag  DW_TAG_loop
+	.dwattr DW$505, DW_AT_name("C:\algo\main\algo.asm:L169:1:1773144227")
+	.dwattr DW$505, DW_AT_begin_file("algo.c")
+	.dwattr DW$505, DW_AT_begin_line(0x3d8)
+	.dwattr DW$505, DW_AT_end_line(0x3d9)
+DW$506	.dwtag  DW_TAG_loop_range
+	.dwattr DW$506, DW_AT_low_pc(DW$L$_RunPath90Make$49$B)
+	.dwattr DW$506, DW_AT_high_pc(DW$L$_RunPath90Make$49$E)
+	.dwendtag DW$505
+
+
+DW$507	.dwtag  DW_TAG_loop
+	.dwattr DW$507, DW_AT_name("C:\algo\main\algo.asm:L165:1:1773144227")
+	.dwattr DW$507, DW_AT_begin_file("algo.c")
+	.dwattr DW$507, DW_AT_begin_line(0x3af)
+	.dwattr DW$507, DW_AT_end_line(0x3d6)
+DW$508	.dwtag  DW_TAG_loop_range
+	.dwattr DW$508, DW_AT_low_pc(DW$L$_RunPath90Make$39$B)
+	.dwattr DW$508, DW_AT_high_pc(DW$L$_RunPath90Make$39$E)
+DW$509	.dwtag  DW_TAG_loop_range
+	.dwattr DW$509, DW_AT_low_pc(DW$L$_RunPath90Make$44$B)
+	.dwattr DW$509, DW_AT_high_pc(DW$L$_RunPath90Make$44$E)
+DW$510	.dwtag  DW_TAG_loop_range
+	.dwattr DW$510, DW_AT_low_pc(DW$L$_RunPath90Make$45$B)
+	.dwattr DW$510, DW_AT_high_pc(DW$L$_RunPath90Make$45$E)
+DW$511	.dwtag  DW_TAG_loop_range
+	.dwattr DW$511, DW_AT_low_pc(DW$L$_RunPath90Make$46$B)
+	.dwattr DW$511, DW_AT_high_pc(DW$L$_RunPath90Make$46$E)
+DW$512	.dwtag  DW_TAG_loop_range
+	.dwattr DW$512, DW_AT_low_pc(DW$L$_RunPath90Make$47$B)
+	.dwattr DW$512, DW_AT_high_pc(DW$L$_RunPath90Make$47$E)
+
+DW$513	.dwtag  DW_TAG_loop
+	.dwattr DW$513, DW_AT_name("C:\algo\main\algo.asm:L166:2:1773144227")
+	.dwattr DW$513, DW_AT_begin_file("algo.c")
+	.dwattr DW$513, DW_AT_begin_line(0x3b1)
+	.dwattr DW$513, DW_AT_end_line(0x3bf)
+DW$514	.dwtag  DW_TAG_loop_range
+	.dwattr DW$514, DW_AT_low_pc(DW$L$_RunPath90Make$40$B)
+	.dwattr DW$514, DW_AT_high_pc(DW$L$_RunPath90Make$40$E)
+DW$515	.dwtag  DW_TAG_loop_range
+	.dwattr DW$515, DW_AT_low_pc(DW$L$_RunPath90Make$41$B)
+	.dwattr DW$515, DW_AT_high_pc(DW$L$_RunPath90Make$41$E)
+DW$516	.dwtag  DW_TAG_loop_range
+	.dwattr DW$516, DW_AT_low_pc(DW$L$_RunPath90Make$42$B)
+	.dwattr DW$516, DW_AT_high_pc(DW$L$_RunPath90Make$42$E)
+DW$517	.dwtag  DW_TAG_loop_range
+	.dwattr DW$517, DW_AT_low_pc(DW$L$_RunPath90Make$43$B)
+	.dwattr DW$517, DW_AT_high_pc(DW$L$_RunPath90Make$43$E)
+	.dwendtag DW$513
+
+	.dwendtag DW$507
+
+
+DW$518	.dwtag  DW_TAG_loop
+	.dwattr DW$518, DW_AT_name("C:\algo\main\algo.asm:L163:1:1773144227")
+	.dwattr DW$518, DW_AT_begin_file("algo.c")
+	.dwattr DW$518, DW_AT_begin_line(0x39c)
+	.dwattr DW$518, DW_AT_end_line(0x3a3)
+DW$519	.dwtag  DW_TAG_loop_range
+	.dwattr DW$519, DW_AT_low_pc(DW$L$_RunPath90Make$34$B)
+	.dwattr DW$519, DW_AT_high_pc(DW$L$_RunPath90Make$34$E)
+DW$520	.dwtag  DW_TAG_loop_range
+	.dwattr DW$520, DW_AT_low_pc(DW$L$_RunPath90Make$35$B)
+	.dwattr DW$520, DW_AT_high_pc(DW$L$_RunPath90Make$35$E)
+DW$521	.dwtag  DW_TAG_loop_range
+	.dwattr DW$521, DW_AT_low_pc(DW$L$_RunPath90Make$36$B)
+	.dwattr DW$521, DW_AT_high_pc(DW$L$_RunPath90Make$36$E)
+DW$522	.dwtag  DW_TAG_loop_range
+	.dwattr DW$522, DW_AT_low_pc(DW$L$_RunPath90Make$37$B)
+	.dwattr DW$522, DW_AT_high_pc(DW$L$_RunPath90Make$37$E)
+	.dwendtag DW$518
+
+
+DW$523	.dwtag  DW_TAG_loop
+	.dwattr DW$523, DW_AT_name("C:\algo\main\algo.asm:L147:1:1773144227")
+	.dwattr DW$523, DW_AT_begin_file("algo.c")
+	.dwattr DW$523, DW_AT_begin_line(0x35f)
+	.dwattr DW$523, DW_AT_end_line(0x384)
+DW$524	.dwtag  DW_TAG_loop_range
+	.dwattr DW$524, DW_AT_low_pc(DW$L$_RunPath90Make$2$B)
+	.dwattr DW$524, DW_AT_high_pc(DW$L$_RunPath90Make$2$E)
+DW$525	.dwtag  DW_TAG_loop_range
+	.dwattr DW$525, DW_AT_low_pc(DW$L$_RunPath90Make$3$B)
+	.dwattr DW$525, DW_AT_high_pc(DW$L$_RunPath90Make$3$E)
+DW$526	.dwtag  DW_TAG_loop_range
+	.dwattr DW$526, DW_AT_low_pc(DW$L$_RunPath90Make$17$B)
+	.dwattr DW$526, DW_AT_high_pc(DW$L$_RunPath90Make$17$E)
+DW$527	.dwtag  DW_TAG_loop_range
+	.dwattr DW$527, DW_AT_low_pc(DW$L$_RunPath90Make$18$B)
+	.dwattr DW$527, DW_AT_high_pc(DW$L$_RunPath90Make$18$E)
+DW$528	.dwtag  DW_TAG_loop_range
+	.dwattr DW$528, DW_AT_low_pc(DW$L$_RunPath90Make$19$B)
+	.dwattr DW$528, DW_AT_high_pc(DW$L$_RunPath90Make$19$E)
+
+DW$529	.dwtag  DW_TAG_loop
+	.dwattr DW$529, DW_AT_name("C:\algo\main\algo.asm:L148:2:1773144227")
+	.dwattr DW$529, DW_AT_begin_file("algo.c")
+	.dwattr DW$529, DW_AT_begin_line(0x366)
+	.dwattr DW$529, DW_AT_end_line(0x382)
+DW$530	.dwtag  DW_TAG_loop_range
+	.dwattr DW$530, DW_AT_low_pc(DW$L$_RunPath90Make$4$B)
+	.dwattr DW$530, DW_AT_high_pc(DW$L$_RunPath90Make$4$E)
+DW$531	.dwtag  DW_TAG_loop_range
+	.dwattr DW$531, DW_AT_low_pc(DW$L$_RunPath90Make$5$B)
+	.dwattr DW$531, DW_AT_high_pc(DW$L$_RunPath90Make$5$E)
+DW$532	.dwtag  DW_TAG_loop_range
+	.dwattr DW$532, DW_AT_low_pc(DW$L$_RunPath90Make$6$B)
+	.dwattr DW$532, DW_AT_high_pc(DW$L$_RunPath90Make$6$E)
+DW$533	.dwtag  DW_TAG_loop_range
+	.dwattr DW$533, DW_AT_low_pc(DW$L$_RunPath90Make$7$B)
+	.dwattr DW$533, DW_AT_high_pc(DW$L$_RunPath90Make$7$E)
+DW$534	.dwtag  DW_TAG_loop_range
+	.dwattr DW$534, DW_AT_low_pc(DW$L$_RunPath90Make$8$B)
+	.dwattr DW$534, DW_AT_high_pc(DW$L$_RunPath90Make$8$E)
+DW$535	.dwtag  DW_TAG_loop_range
+	.dwattr DW$535, DW_AT_low_pc(DW$L$_RunPath90Make$9$B)
+	.dwattr DW$535, DW_AT_high_pc(DW$L$_RunPath90Make$9$E)
+DW$536	.dwtag  DW_TAG_loop_range
+	.dwattr DW$536, DW_AT_low_pc(DW$L$_RunPath90Make$10$B)
+	.dwattr DW$536, DW_AT_high_pc(DW$L$_RunPath90Make$10$E)
+DW$537	.dwtag  DW_TAG_loop_range
+	.dwattr DW$537, DW_AT_low_pc(DW$L$_RunPath90Make$11$B)
+	.dwattr DW$537, DW_AT_high_pc(DW$L$_RunPath90Make$11$E)
+DW$538	.dwtag  DW_TAG_loop_range
+	.dwattr DW$538, DW_AT_low_pc(DW$L$_RunPath90Make$12$B)
+	.dwattr DW$538, DW_AT_high_pc(DW$L$_RunPath90Make$12$E)
+DW$539	.dwtag  DW_TAG_loop_range
+	.dwattr DW$539, DW_AT_low_pc(DW$L$_RunPath90Make$13$B)
+	.dwattr DW$539, DW_AT_high_pc(DW$L$_RunPath90Make$13$E)
+DW$540	.dwtag  DW_TAG_loop_range
+	.dwattr DW$540, DW_AT_low_pc(DW$L$_RunPath90Make$14$B)
+	.dwattr DW$540, DW_AT_high_pc(DW$L$_RunPath90Make$14$E)
+DW$541	.dwtag  DW_TAG_loop_range
+	.dwattr DW$541, DW_AT_low_pc(DW$L$_RunPath90Make$15$B)
+	.dwattr DW$541, DW_AT_high_pc(DW$L$_RunPath90Make$15$E)
+DW$542	.dwtag  DW_TAG_loop_range
+	.dwattr DW$542, DW_AT_low_pc(DW$L$_RunPath90Make$16$B)
+	.dwattr DW$542, DW_AT_high_pc(DW$L$_RunPath90Make$16$E)
+	.dwendtag DW$529
+
+	.dwendtag DW$523
+
+	.dwattr DW$389, DW_AT_end_file("algo.c")
+	.dwattr DW$389, DW_AT_end_line(0x531)
+	.dwattr DW$389, DW_AT_end_column(0x01)
+	.dwendentry
+	.dwendtag DW$389
 
 	.sect	".text"
 	.global	_SmoothRun
@@ -8760,6 +8760,7 @@ DW$L$_SmoothRun$16$B:
 DW$L$_SmoothRun$16$E:
 ;*** 677	-----------------------    gUserTurnSpeed = U$22;
 ;*** 678	-----------------------    Delay(1048576uL);
+;*** 702	-----------------------    InitAlgorithm();
 	.dwpsn	"algo.c",677,4
         MOVW      DP,#_gUserTurnSpeed
         MOV       @_gUserTurnSpeed,AL   ; |677| 
@@ -8768,244 +8769,243 @@ DW$L$_SmoothRun$16$E:
         MOV       AH,#16
         LCR       #_Delay               ; |678| 
         ; call occurs [#_Delay] ; |678| 
+	.dwpsn	"algo.c",702,2
+        LCR       #_InitAlgorithm       ; |702| 
+        ; call occurs [#_InitAlgorithm] ; |702| 
 L224:    
 DW$L$_SmoothRun$18$B:
 ;***	-----------------------g15:
-;*** 705	-----------------------    VFDPrintf("DIAG/SMT");
-;*** 706	-----------------------    K$7 = &GpioDataRegs;
-;*** 706	-----------------------    if ( !(*K$7&0x4000u) ) goto g18;
-	.dwpsn	"algo.c",705,3
-        MOVL      XAR4,#FSL20           ; |705| 
-        MOVL      *-SP[2],XAR4          ; |705| 
-        LCR       #_VFDPrintf           ; |705| 
-        ; call occurs [#_VFDPrintf] ; |705| 
-	.dwpsn	"algo.c",706,4
-        MOVL      XAR4,#_GpioDataRegs   ; |706| 
-        TBIT      *+XAR4[0],#14         ; |706| 
-        BF        L225,NTC              ; |706| 
-        ; branchcc occurs ; |706| 
+;*** 706	-----------------------    VFDPrintf("DIAG/SMT");
+;*** 707	-----------------------    K$7 = &GpioDataRegs;
+;*** 707	-----------------------    if ( !(*K$7&0x4000u) ) goto g18;
+	.dwpsn	"algo.c",706,3
+        MOVL      XAR4,#FSL20           ; |706| 
+        MOVL      *-SP[2],XAR4          ; |706| 
+        LCR       #_VFDPrintf           ; |706| 
+        ; call occurs [#_VFDPrintf] ; |706| 
+	.dwpsn	"algo.c",707,4
+        MOVL      XAR4,#_GpioDataRegs   ; |707| 
+        TBIT      *+XAR4[0],#14         ; |707| 
+        BF        L225,NTC              ; |707| 
+        ; branchcc occurs ; |707| 
 DW$L$_SmoothRun$18$E:
 DW$L$_SmoothRun$19$B:
-;*** 714	-----------------------    if ( *K$7&0x8000u ) goto g15;
-	.dwpsn	"algo.c",714,9
-        TBIT      *+XAR4[0],#15         ; |714| 
-        BF        L224,TC               ; |714| 
-        ; branchcc occurs ; |714| 
+;*** 715	-----------------------    if ( *K$7&0x8000u ) goto g15;
+	.dwpsn	"algo.c",715,9
+        TBIT      *+XAR4[0],#15         ; |715| 
+        BF        L224,TC               ; |715| 
+        ; branchcc occurs ; |715| 
 DW$L$_SmoothRun$19$E:
-;*** 716	-----------------------    directvelacc_change();
-;*** 717	-----------------------    DSP28x_usDelay(9999998uL);
-;*** 718	-----------------------    diagvelacc_change();
-;*** 719	-----------------------    VFDPrintf("__DIAG__");
-;*** 720	-----------------------    RunPathMake();
-;*** 721	-----------------------    DSP28x_usDelay(9999998uL);
-;*** 722	-----------------------    goto g19;
-	.dwpsn	"algo.c",716,17
-        LCR       #_directvelacc_change ; |716| 
-        ; call occurs [#_directvelacc_change] ; |716| 
+;*** 717	-----------------------    directvelacc_change();
+;*** 718	-----------------------    DSP28x_usDelay(9999998uL);
+;*** 719	-----------------------    diagvelacc_change();
+;*** 720	-----------------------    VFDPrintf("__DIAG__");
+;*** 721	-----------------------    RunPathMake();
+;*** 722	-----------------------    DSP28x_usDelay(9999998uL);
+;*** 723	-----------------------    goto g19;
 	.dwpsn	"algo.c",717,17
-        MOV       AL,#38526
-        MOV       AH,#152
-        LCR       #_DSP28x_usDelay      ; |717| 
-        ; call occurs [#_DSP28x_usDelay] ; |717| 
+        LCR       #_directvelacc_change ; |717| 
+        ; call occurs [#_directvelacc_change] ; |717| 
 	.dwpsn	"algo.c",718,17
-        LCR       #_diagvelacc_change   ; |718| 
-        ; call occurs [#_diagvelacc_change] ; |718| 
-	.dwpsn	"algo.c",719,5
-        MOVL      XAR4,#FSL21           ; |719| 
-        MOVL      *-SP[2],XAR4          ; |719| 
-        LCR       #_VFDPrintf           ; |719| 
-        ; call occurs [#_VFDPrintf] ; |719| 
-	.dwpsn	"algo.c",720,17
-        LCR       #_RunPathMake         ; |720| 
-        ; call occurs [#_RunPathMake] ; |720| 
-	.dwpsn	"algo.c",721,5
         MOV       AL,#38526
         MOV       AH,#152
-        LCR       #_DSP28x_usDelay      ; |721| 
-        ; call occurs [#_DSP28x_usDelay] ; |721| 
+        LCR       #_DSP28x_usDelay      ; |718| 
+        ; call occurs [#_DSP28x_usDelay] ; |718| 
+	.dwpsn	"algo.c",719,17
+        LCR       #_diagvelacc_change   ; |719| 
+        ; call occurs [#_diagvelacc_change] ; |719| 
+	.dwpsn	"algo.c",720,5
+        MOVL      XAR4,#FSL21           ; |720| 
+        MOVL      *-SP[2],XAR4          ; |720| 
+        LCR       #_VFDPrintf           ; |720| 
+        ; call occurs [#_VFDPrintf] ; |720| 
+	.dwpsn	"algo.c",721,17
+        LCR       #_RunPathMake         ; |721| 
+        ; call occurs [#_RunPathMake] ; |721| 
 	.dwpsn	"algo.c",722,5
-        BF        L226,UNC              ; |722| 
-        ; branch occurs ; |722| 
+        MOV       AL,#38526
+        MOV       AH,#152
+        LCR       #_DSP28x_usDelay      ; |722| 
+        ; call occurs [#_DSP28x_usDelay] ; |722| 
+	.dwpsn	"algo.c",723,5
+        BF        L226,UNC              ; |723| 
+        ; branch occurs ; |723| 
 L225:    
 ;***	-----------------------g18:
-;*** 708	-----------------------    directvelacc_change();
-;*** 709	-----------------------    VFDPrintf("_SMOOTH_");
-;*** 710	-----------------------    RunPath90Make();
-;*** 711	-----------------------    DSP28x_usDelay(9999998uL);
-	.dwpsn	"algo.c",708,17
-        LCR       #_directvelacc_change ; |708| 
-        ; call occurs [#_directvelacc_change] ; |708| 
-	.dwpsn	"algo.c",709,5
-        MOVL      XAR4,#FSL22           ; |709| 
-        MOVL      *-SP[2],XAR4          ; |709| 
-        LCR       #_VFDPrintf           ; |709| 
-        ; call occurs [#_VFDPrintf] ; |709| 
-	.dwpsn	"algo.c",710,17
-        LCR       #_RunPath90Make       ; |710| 
-        ; call occurs [#_RunPath90Make] ; |710| 
-	.dwpsn	"algo.c",711,5
+;*** 709	-----------------------    directvelacc_change();
+;*** 710	-----------------------    VFDPrintf("_SMOOTH_");
+;*** 711	-----------------------    RunPath90Make();
+;*** 712	-----------------------    DSP28x_usDelay(9999998uL);
+	.dwpsn	"algo.c",709,17
+        LCR       #_directvelacc_change ; |709| 
+        ; call occurs [#_directvelacc_change] ; |709| 
+	.dwpsn	"algo.c",710,5
+        MOVL      XAR4,#FSL22           ; |710| 
+        MOVL      *-SP[2],XAR4          ; |710| 
+        LCR       #_VFDPrintf           ; |710| 
+        ; call occurs [#_VFDPrintf] ; |710| 
+	.dwpsn	"algo.c",711,17
+        LCR       #_RunPath90Make       ; |711| 
+        ; call occurs [#_RunPath90Make] ; |711| 
+	.dwpsn	"algo.c",712,5
         MOV       AL,#38526
         MOV       AH,#152
-        LCR       #_DSP28x_usDelay      ; |711| 
-        ; call occurs [#_DSP28x_usDelay] ; |711| 
+        LCR       #_DSP28x_usDelay      ; |712| 
+        ; call occurs [#_DSP28x_usDelay] ; |712| 
 L226:    
 ;***	-----------------------g19:
-;*** 727	-----------------------    if ( !(*(&GpioDataRegs+1)&0x8000u) ) goto g21;
-	.dwpsn	"algo.c",727,2
+;*** 728	-----------------------    if ( !(*(&GpioDataRegs+1)&0x8000u) ) goto g21;
+	.dwpsn	"algo.c",728,2
         MOVW      DP,#_GpioDataRegs+1
-        TBIT      @_GpioDataRegs+1,#15  ; |727| 
-        BF        L228,NTC              ; |727| 
-        ; branchcc occurs ; |727| 
+        TBIT      @_GpioDataRegs+1,#15  ; |728| 
+        BF        L228,NTC              ; |728| 
+        ; branchcc occurs ; |728| 
 L227:    
 DW$L$_SmoothRun$23$B:
 ;***	-----------------------g20:
-;*** 729	-----------------------    VFDPrintf("L: %f", _IQ17toF((*pLSS).q17Position));
-;*** 730	-----------------------    Delay(65536uL);
-;*** 730	-----------------------    if ( *(&GpioDataRegs+1)&0x8000u ) goto g20;
-	.dwpsn	"algo.c",729,3
-        MOVW      DP,#_pLSS
-        MOVL      XAR4,@_pLSS           ; |729| 
-        MOVL      ACC,*+XAR4[2]         ; |729| 
-        LCR       #__IQ17toF            ; |729| 
-        ; call occurs [#__IQ17toF] ; |729| 
-        MOVL      XAR4,#FSL23           ; |729| 
-        MOVL      *-SP[2],XAR4          ; |729| 
-        MOVL      *-SP[4],ACC           ; |729| 
-        LCR       #_VFDPrintf           ; |729| 
-        ; call occurs [#_VFDPrintf] ; |729| 
+;*** 730	-----------------------    VFDPrintf("L: %f", _IQ17toF((*pLSS).q17Position));
+;*** 731	-----------------------    Delay(65536uL);
+;*** 731	-----------------------    if ( *(&GpioDataRegs+1)&0x8000u ) goto g20;
 	.dwpsn	"algo.c",730,3
+        MOVW      DP,#_pLSS
+        MOVL      XAR4,@_pLSS           ; |730| 
+        MOVL      ACC,*+XAR4[2]         ; |730| 
+        LCR       #__IQ17toF            ; |730| 
+        ; call occurs [#__IQ17toF] ; |730| 
+        MOVL      XAR4,#FSL23           ; |730| 
+        MOVL      *-SP[2],XAR4          ; |730| 
+        MOVL      *-SP[4],ACC           ; |730| 
+        LCR       #_VFDPrintf           ; |730| 
+        ; call occurs [#_VFDPrintf] ; |730| 
+	.dwpsn	"algo.c",731,3
         MOV       AL,#0
         MOV       AH,#1
-        LCR       #_Delay               ; |730| 
-        ; call occurs [#_Delay] ; |730| 
+        LCR       #_Delay               ; |731| 
+        ; call occurs [#_Delay] ; |731| 
         MOVW      DP,#_GpioDataRegs+1
-        TBIT      @_GpioDataRegs+1,#15  ; |730| 
-        BF        L227,TC               ; |730| 
-        ; branchcc occurs ; |730| 
+        TBIT      @_GpioDataRegs+1,#15  ; |731| 
+        BF        L227,TC               ; |731| 
+        ; branchcc occurs ; |731| 
 DW$L$_SmoothRun$23$E:
 L228:    
 ;***	-----------------------g21:
-;*** 733	-----------------------    Delay(1048576uL);
-;*** 735	-----------------------    if ( !(*(&GpioDataRegs+1)&0x8000u) ) goto g23;
-	.dwpsn	"algo.c",733,2
+;*** 734	-----------------------    Delay(1048576uL);
+;*** 736	-----------------------    if ( !(*(&GpioDataRegs+1)&0x8000u) ) goto g23;
+	.dwpsn	"algo.c",734,2
         MOV       AL,#0
         MOV       AH,#16
-        LCR       #_Delay               ; |733| 
-        ; call occurs [#_Delay] ; |733| 
-	.dwpsn	"algo.c",735,2
+        LCR       #_Delay               ; |734| 
+        ; call occurs [#_Delay] ; |734| 
+	.dwpsn	"algo.c",736,2
         MOVW      DP,#_GpioDataRegs+1
-        TBIT      @_GpioDataRegs+1,#15  ; |735| 
-        BF        L230,NTC              ; |735| 
-        ; branchcc occurs ; |735| 
+        TBIT      @_GpioDataRegs+1,#15  ; |736| 
+        BF        L230,NTC              ; |736| 
+        ; branchcc occurs ; |736| 
 L229:    
 DW$L$_SmoothRun$25$B:
 ;***	-----------------------g22:
-;*** 737	-----------------------    VFDPrintf("R: %f", _IQ17toF((*pRSS).q17Position));
-;*** 738	-----------------------    Delay(65536uL);
-;*** 738	-----------------------    if ( *(&GpioDataRegs+1)&0x8000u ) goto g22;
-	.dwpsn	"algo.c",737,3
-        MOVW      DP,#_pRSS
-        MOVL      XAR4,@_pRSS           ; |737| 
-        MOVL      ACC,*+XAR4[2]         ; |737| 
-        LCR       #__IQ17toF            ; |737| 
-        ; call occurs [#__IQ17toF] ; |737| 
-        MOVL      XAR4,#FSL24           ; |737| 
-        MOVL      *-SP[2],XAR4          ; |737| 
-        MOVL      *-SP[4],ACC           ; |737| 
-        LCR       #_VFDPrintf           ; |737| 
-        ; call occurs [#_VFDPrintf] ; |737| 
+;*** 738	-----------------------    VFDPrintf("R: %f", _IQ17toF((*pRSS).q17Position));
+;*** 739	-----------------------    Delay(65536uL);
+;*** 739	-----------------------    if ( *(&GpioDataRegs+1)&0x8000u ) goto g22;
 	.dwpsn	"algo.c",738,3
+        MOVW      DP,#_pRSS
+        MOVL      XAR4,@_pRSS           ; |738| 
+        MOVL      ACC,*+XAR4[2]         ; |738| 
+        LCR       #__IQ17toF            ; |738| 
+        ; call occurs [#__IQ17toF] ; |738| 
+        MOVL      XAR4,#FSL24           ; |738| 
+        MOVL      *-SP[2],XAR4          ; |738| 
+        MOVL      *-SP[4],ACC           ; |738| 
+        LCR       #_VFDPrintf           ; |738| 
+        ; call occurs [#_VFDPrintf] ; |738| 
+	.dwpsn	"algo.c",739,3
         MOV       AL,#0
         MOV       AH,#1
-        LCR       #_Delay               ; |738| 
-        ; call occurs [#_Delay] ; |738| 
+        LCR       #_Delay               ; |739| 
+        ; call occurs [#_Delay] ; |739| 
         MOVW      DP,#_GpioDataRegs+1
-        TBIT      @_GpioDataRegs+1,#15  ; |738| 
-        BF        L229,TC               ; |738| 
-        ; branchcc occurs ; |738| 
+        TBIT      @_GpioDataRegs+1,#15  ; |739| 
+        BF        L229,TC               ; |739| 
+        ; branchcc occurs ; |739| 
 DW$L$_SmoothRun$25$E:
 L230:    
 ;***	-----------------------g23:
-;*** 741	-----------------------    Delay(1048576uL);
-;*** 742	-----------------------    VFDPrintf("    GO!!");
-	.dwpsn	"algo.c",741,2
+;*** 742	-----------------------    Delay(1048576uL);
+;*** 743	-----------------------    VFDPrintf("    GO!!");
+	.dwpsn	"algo.c",742,2
         MOV       AL,#0
         MOV       AH,#16
-        LCR       #_Delay               ; |741| 
-        ; call occurs [#_Delay] ; |741| 
-	.dwpsn	"algo.c",742,2
-        MOVL      XAR4,#FSL25           ; |742| 
-        MOVL      *-SP[2],XAR4          ; |742| 
-        LCR       #_VFDPrintf           ; |742| 
-        ; call occurs [#_VFDPrintf] ; |742| 
+        LCR       #_Delay               ; |742| 
+        ; call occurs [#_Delay] ; |742| 
+	.dwpsn	"algo.c",743,2
+        MOVL      XAR4,#FSL25           ; |743| 
+        MOVL      *-SP[2],XAR4          ; |743| 
+        LCR       #_VFDPrintf           ; |743| 
+        ; call occurs [#_VFDPrintf] ; |743| 
 L231:    
 DW$L$_SmoothRun$27$B:
 ;***	-----------------------g24:
-;*** 743	-----------------------    if ( *&GpioDataRegs&0x4000u ) goto g24;
-	.dwpsn	"algo.c",743,8
+;*** 744	-----------------------    if ( *&GpioDataRegs&0x4000u ) goto g24;
+	.dwpsn	"algo.c",744,8
         MOVW      DP,#_GpioDataRegs
-        TBIT      @_GpioDataRegs,#14    ; |743| 
-        BF        L231,TC               ; |743| 
-        ; branchcc occurs ; |743| 
+        TBIT      @_GpioDataRegs,#14    ; |744| 
+        BF        L231,TC               ; |744| 
+        ; branchcc occurs ; |744| 
 DW$L$_SmoothRun$27$E:
-;*** 745	-----------------------    Delay(1048576uL);
-;*** 746	-----------------------    VFDPrintf("        ");
-;*** 748	-----------------------    Delay(3145728uL);
-;*** 750	-----------------------    InitAlgorithm();
-;*** 752	-----------------------    InitMotor(&R_Motor);
-;*** 753	-----------------------    InitMotor(&L_Motor);
-;*** 755	-----------------------    gAlgoState = 0u;
-;*** 756	-----------------------    gPosAdjF = 1u;
-;*** 757	-----------------------    gAngleDirectflag = 1u;
-;*** 761	-----------------------    RunCnt = gPathBufferHead;
-;*** 762	-----------------------    gPathBufferHead = 0u;
-;*** 763	-----------------------    gUserTimeCnt = 0uL;
+;*** 746	-----------------------    Delay(1048576uL);
+;*** 747	-----------------------    VFDPrintf("        ");
+;*** 749	-----------------------    Delay(3145728uL);
+;*** 753	-----------------------    InitMotor(&R_Motor);
+;*** 754	-----------------------    InitMotor(&L_Motor);
+;*** 756	-----------------------    gAlgoState = 0u;
+;*** 757	-----------------------    gPosAdjF = 1u;
+;*** 758	-----------------------    gAngleDirectflag = 1u;
+;*** 762	-----------------------    RunCnt = gPathBufferHead;
+;*** 763	-----------------------    gPathBufferHead = 0u;
+;*** 764	-----------------------    gUserTimeCnt = 0uL;
 ;***  	-----------------------    K$54 = &pPathFuntion[0];
 ;***  	-----------------------    U$50 = RunCnt-1u;
 ;***  	-----------------------    K$44 = &KnowBlockPath[0];
 ;***  	-----------------------    goto g27;
-	.dwpsn	"algo.c",745,2
+	.dwpsn	"algo.c",746,2
         MOV       AL,#0
         MOV       AH,#16
-        LCR       #_Delay               ; |745| 
-        ; call occurs [#_Delay] ; |745| 
-	.dwpsn	"algo.c",746,2
-        MOVL      XAR4,#FSL26           ; |746| 
-        MOVL      *-SP[2],XAR4          ; |746| 
-        LCR       #_VFDPrintf           ; |746| 
-        ; call occurs [#_VFDPrintf] ; |746| 
-	.dwpsn	"algo.c",748,2
+        LCR       #_Delay               ; |746| 
+        ; call occurs [#_Delay] ; |746| 
+	.dwpsn	"algo.c",747,2
+        MOVL      XAR4,#FSL26           ; |747| 
+        MOVL      *-SP[2],XAR4          ; |747| 
+        LCR       #_VFDPrintf           ; |747| 
+        ; call occurs [#_VFDPrintf] ; |747| 
+	.dwpsn	"algo.c",749,2
         MOV       AL,#0
         MOV       AH,#48
-        LCR       #_Delay               ; |748| 
-        ; call occurs [#_Delay] ; |748| 
-	.dwpsn	"algo.c",750,2
-        LCR       #_InitAlgorithm       ; |750| 
-        ; call occurs [#_InitAlgorithm] ; |750| 
-	.dwpsn	"algo.c",752,2
-        MOVL      XAR4,#_R_Motor        ; |752| 
-        LCR       #_InitMotor           ; |752| 
-        ; call occurs [#_InitMotor] ; |752| 
+        LCR       #_Delay               ; |749| 
+        ; call occurs [#_Delay] ; |749| 
 	.dwpsn	"algo.c",753,2
-        MOVL      XAR4,#_L_Motor        ; |753| 
+        MOVL      XAR4,#_R_Motor        ; |753| 
         LCR       #_InitMotor           ; |753| 
         ; call occurs [#_InitMotor] ; |753| 
-	.dwpsn	"algo.c",755,2
-        MOVW      DP,#_gAlgoState
-        MOV       @_gAlgoState,#0       ; |755| 
+	.dwpsn	"algo.c",754,2
+        MOVL      XAR4,#_L_Motor        ; |754| 
+        LCR       #_InitMotor           ; |754| 
+        ; call occurs [#_InitMotor] ; |754| 
 	.dwpsn	"algo.c",756,2
-        MOVW      DP,#_gPosAdjF
-        MOVB      AL,#1                 ; |756| 
-        MOV       @_gPosAdjF,AL         ; |756| 
+        MOVW      DP,#_gAlgoState
+        MOV       @_gAlgoState,#0       ; |756| 
 	.dwpsn	"algo.c",757,2
+        MOVW      DP,#_gPosAdjF
+        MOVB      AL,#1                 ; |757| 
+        MOV       @_gPosAdjF,AL         ; |757| 
+	.dwpsn	"algo.c",758,2
         MOVW      DP,#_gAngleDirectflag
-        MOV       @_gAngleDirectflag,AL ; |757| 
-	.dwpsn	"algo.c",761,2
-        MOVW      DP,#_gPathBufferHead
-        MOV       AL,@_gPathBufferHead  ; |761| 
+        MOV       @_gAngleDirectflag,AL ; |758| 
 	.dwpsn	"algo.c",762,2
-        MOV       @_gPathBufferHead,#0  ; |762| 
-	.dwpsn	"algo.c",763,5
+        MOVW      DP,#_gPathBufferHead
+        MOV       AL,@_gPathBufferHead  ; |762| 
+	.dwpsn	"algo.c",763,2
+        MOV       @_gPathBufferHead,#0  ; |763| 
+	.dwpsn	"algo.c",764,5
         MOVL      XAR4,#_KnowBlockPath
         ADDB      AL,#-1
         MOVW      DP,#_gUserTimeCnt
@@ -9013,178 +9013,178 @@ DW$L$_SmoothRun$27$E:
         MOVL      XAR3,#_pPathFuntion
         MOVL      XAR2,XAR4
         MOV       *-SP[9],AL
-        MOVL      @_gUserTimeCnt,XAR6   ; |763| 
+        MOVL      @_gUserTimeCnt,XAR6   ; |764| 
         BF        L233,UNC
         ; branch occurs
 L232:    
 DW$L$_SmoothRun$29$B:
 ;***	-----------------------g26:
-;*** 786	-----------------------    (*K$54[(long)TurnType])();
-;*** 788	-----------------------    ++gPathBufferHead;
-	.dwpsn	"algo.c",786,3
-        MOVL      XAR4,XAR3             ; |786| 
+;*** 787	-----------------------    (*K$54[(long)TurnType])();
+;*** 789	-----------------------    ++gPathBufferHead;
+	.dwpsn	"algo.c",787,3
+        MOVL      XAR4,XAR3             ; |787| 
         MOVU      ACC,AR1
-        LSL       ACC,1                 ; |786| 
+        LSL       ACC,1                 ; |787| 
         ADDL      XAR4,ACC
-        MOVL      XAR7,*+XAR4[0]        ; |786| 
-        LCR       *XAR7                 ; |786| 
-        ; call occurs [XAR7] ; |786| 
-	.dwpsn	"algo.c",788,3
+        MOVL      XAR7,*+XAR4[0]        ; |787| 
+        LCR       *XAR7                 ; |787| 
+        ; call occurs [XAR7] ; |787| 
+	.dwpsn	"algo.c",789,3
         MOVW      DP,#_gPathBufferHead
-        INC       @_gPathBufferHead     ; |788| 
+        INC       @_gPathBufferHead     ; |789| 
 DW$L$_SmoothRun$29$E:
 L233:    
 DW$L$_SmoothRun$30$B:
 ;***	-----------------------g27:
-;*** 771	-----------------------    S$2 = &K$44[(long)gPathBufferHead];
-;*** 771	-----------------------    TurnType = *((volatile unsigned *)S$2+1)>>8;
-;*** 774	-----------------------    if ( gPathBufferHead != U$50 ) goto g26;
-	.dwpsn	"algo.c",771,3
-        MOVL      XAR4,XAR2             ; |771| 
+;*** 772	-----------------------    S$2 = &K$44[(long)gPathBufferHead];
+;*** 772	-----------------------    TurnType = *((volatile unsigned *)S$2+1)>>8;
+;*** 775	-----------------------    if ( gPathBufferHead != U$50 ) goto g26;
+	.dwpsn	"algo.c",772,3
+        MOVL      XAR4,XAR2             ; |772| 
         MOVW      DP,#_gPathBufferHead
         MOVU      ACC,@_gPathBufferHead
-        LSL       ACC,1                 ; |771| 
+        LSL       ACC,1                 ; |772| 
         ADDL      XAR4,ACC
-        MOV       AL,*+XAR4[1]          ; |771| 
-        LSR       AL,8                  ; |771| 
-        MOVZ      AR1,AL                ; |771| 
-	.dwpsn	"algo.c",774,3
+        MOV       AL,*+XAR4[1]          ; |772| 
+        LSR       AL,8                  ; |772| 
+        MOVZ      AR1,AL                ; |772| 
+	.dwpsn	"algo.c",775,3
         MOV       AL,*-SP[9]
-        CMP       AL,@_gPathBufferHead  ; |774| 
-        BF        L232,NEQ              ; |774| 
-        ; branchcc occurs ; |774| 
+        CMP       AL,@_gPathBufferHead  ; |775| 
+        BF        L232,NEQ              ; |775| 
+        ; branchcc occurs ; |775| 
 DW$L$_SmoothRun$30$E:
-;*** 777	-----------------------    gAlgoState = 1u;
-;*** 779	-----------------------    gSecondRunGoal = 1u;
-;*** 780	-----------------------    fasttime = gUserTimeCnt;
-;*** 781	-----------------------    (*K$54[(long)TurnType])();
-	.dwpsn	"algo.c",777,4
-        MOVB      AL,#1                 ; |777| 
+;*** 778	-----------------------    gAlgoState = 1u;
+;*** 780	-----------------------    gSecondRunGoal = 1u;
+;*** 781	-----------------------    fasttime = gUserTimeCnt;
+;*** 782	-----------------------    (*K$54[(long)TurnType])();
+	.dwpsn	"algo.c",778,4
+        MOVB      AL,#1                 ; |778| 
         MOVW      DP,#_gAlgoState
-        MOV       @_gAlgoState,AL       ; |777| 
-	.dwpsn	"algo.c",779,4
-        MOVW      DP,#_gSecondRunGoal
-        MOV       @_gSecondRunGoal,AL   ; |779| 
+        MOV       @_gAlgoState,AL       ; |778| 
 	.dwpsn	"algo.c",780,4
-        MOVW      DP,#_gUserTimeCnt
-        MOVL      ACC,@_gUserTimeCnt    ; |780| 
-        MOVW      DP,#_fasttime
-        MOVL      @_fasttime,ACC        ; |780| 
+        MOVW      DP,#_gSecondRunGoal
+        MOV       @_gSecondRunGoal,AL   ; |780| 
 	.dwpsn	"algo.c",781,4
-        MOVL      XAR4,XAR3             ; |781| 
+        MOVW      DP,#_gUserTimeCnt
+        MOVL      ACC,@_gUserTimeCnt    ; |781| 
+        MOVW      DP,#_fasttime
+        MOVL      @_fasttime,ACC        ; |781| 
+	.dwpsn	"algo.c",782,4
+        MOVL      XAR4,XAR3             ; |782| 
         MOVU      ACC,AR1
-        LSL       ACC,1                 ; |781| 
+        LSL       ACC,1                 ; |782| 
         ADDL      XAR4,ACC
-        MOVL      XAR7,*+XAR4[0]        ; |781| 
-        LCR       *XAR7                 ; |781| 
-        ; call occurs [XAR7] ; |781| 
+        MOVL      XAR7,*+XAR4[0]        ; |782| 
+        LCR       *XAR7                 ; |782| 
+        ; call occurs [XAR7] ; |782| 
 L234:    
 DW$L$_SmoothRun$32$B:
 ;***	-----------------------g29:
-;*** 796	-----------------------    if ( TurnType != 2u ) goto g34;
-	.dwpsn	"algo.c",796,8
+;*** 797	-----------------------    if ( TurnType != 2u ) goto g34;
+	.dwpsn	"algo.c",797,8
         MOV       AL,AR1
-        CMPB      AL,#2                 ; |796| 
-        BF        L236,NEQ              ; |796| 
-        ; branchcc occurs ; |796| 
+        CMPB      AL,#2                 ; |797| 
+        BF        L236,NEQ              ; |797| 
+        ; branchcc occurs ; |797| 
 DW$L$_SmoothRun$32$E:
 DW$L$_SmoothRun$33$B:
-;*** 796	-----------------------    if ( gSearchEndState != 1u ) goto g34;
+;*** 797	-----------------------    if ( gSearchEndState != 1u ) goto g34;
         MOVW      DP,#_gSearchEndState
-        MOV       AL,@_gSearchEndState  ; |796| 
-        CMPB      AL,#1                 ; |796| 
-        BF        L236,NEQ              ; |796| 
-        ; branchcc occurs ; |796| 
+        MOV       AL,@_gSearchEndState  ; |797| 
+        CMPB      AL,#1                 ; |797| 
+        BF        L236,NEQ              ; |797| 
+        ; branchcc occurs ; |797| 
 DW$L$_SmoothRun$33$E:
 DW$L$_SmoothRun$34$B:
-;*** 796	-----------------------    if ( gMouseYetPosition ) goto g34;
+;*** 797	-----------------------    if ( gMouseYetPosition ) goto g34;
         MOVW      DP,#_gMouseYetPosition
-        MOV       AL,@_gMouseYetPosition ; |796| 
-        BF        L236,NEQ              ; |796| 
-        ; branchcc occurs ; |796| 
+        MOV       AL,@_gMouseYetPosition ; |797| 
+        BF        L236,NEQ              ; |797| 
+        ; branchcc occurs ; |797| 
 DW$L$_SmoothRun$34$E:
 L235:    
 DW$L$_SmoothRun$35$B:
 ;***	-----------------------g33:
-;*** 825	-----------------------    goto g33;
-	.dwpsn	"algo.c",825,8
-        BF        L235,UNC              ; |825| 
-        ; branch occurs ; |825| 
+;*** 826	-----------------------    goto g33;
+	.dwpsn	"algo.c",826,8
+        BF        L235,UNC              ; |826| 
+        ; branch occurs ; |826| 
 DW$L$_SmoothRun$35$E:
 L236:    
 DW$L$_SmoothRun$36$B:
 ;***	-----------------------g34:
-;*** 798	-----------------------    RunCnt = gPathBufferHead;
-;*** 799	-----------------------    gPathBufferHead = 0u;
+;*** 799	-----------------------    RunCnt = gPathBufferHead;
+;*** 800	-----------------------    gPathBufferHead = 0u;
 ;***  	-----------------------    U$50 = RunCnt-1u;
-	.dwpsn	"algo.c",798,3
-        MOVW      DP,#_gPathBufferHead
-        MOV       AL,@_gPathBufferHead  ; |798| 
 	.dwpsn	"algo.c",799,3
+        MOVW      DP,#_gPathBufferHead
+        MOV       AL,@_gPathBufferHead  ; |799| 
+	.dwpsn	"algo.c",800,3
         ADDB      AL,#-1
-        MOV       @_gPathBufferHead,#0  ; |799| 
+        MOV       @_gPathBufferHead,#0  ; |800| 
         MOV       *-SP[9],AL
 DW$L$_SmoothRun$36$E:
 L237:    
 DW$L$_SmoothRun$37$B:
 ;***	-----------------------g35:
-;*** 804	-----------------------    S$1 = &K$44[(long)gPathBufferHead];
-;*** 804	-----------------------    TurnType = *((volatile unsigned *)S$1+1)>>8;
-;*** 808	-----------------------    if ( gPathBufferHead != U$50 ) goto g38;
-	.dwpsn	"algo.c",804,4
-        MOVL      XAR4,XAR2             ; |804| 
+;*** 805	-----------------------    S$1 = &K$44[(long)gPathBufferHead];
+;*** 805	-----------------------    TurnType = *((volatile unsigned *)S$1+1)>>8;
+;*** 809	-----------------------    if ( gPathBufferHead != U$50 ) goto g38;
+	.dwpsn	"algo.c",805,4
+        MOVL      XAR4,XAR2             ; |805| 
         MOVU      ACC,@_gPathBufferHead
-        LSL       ACC,1                 ; |804| 
+        LSL       ACC,1                 ; |805| 
         ADDL      XAR4,ACC
-        MOV       AL,*+XAR4[1]          ; |804| 
-        LSR       AL,8                  ; |804| 
-        MOVZ      AR1,AL                ; |804| 
-	.dwpsn	"algo.c",808,4
+        MOV       AL,*+XAR4[1]          ; |805| 
+        LSR       AL,8                  ; |805| 
+        MOVZ      AR1,AL                ; |805| 
+	.dwpsn	"algo.c",809,4
         MOV       AL,*-SP[9]
-        CMP       AL,@_gPathBufferHead  ; |808| 
-        BF        L238,NEQ              ; |808| 
-        ; branchcc occurs ; |808| 
+        CMP       AL,@_gPathBufferHead  ; |809| 
+        BF        L238,NEQ              ; |809| 
+        ; branchcc occurs ; |809| 
 DW$L$_SmoothRun$37$E:
 DW$L$_SmoothRun$38$B:
-;*** 808	-----------------------    if ( gAlgoState ) goto g38;
+;*** 809	-----------------------    if ( gAlgoState ) goto g38;
         MOVW      DP,#_gAlgoState
-        MOV       AL,@_gAlgoState       ; |808| 
-        BF        L238,NEQ              ; |808| 
-        ; branchcc occurs ; |808| 
+        MOV       AL,@_gAlgoState       ; |809| 
+        BF        L238,NEQ              ; |809| 
+        ; branchcc occurs ; |809| 
 DW$L$_SmoothRun$38$E:
 DW$L$_SmoothRun$39$B:
-;*** 810	-----------------------    gAlgoState = 1u;
-	.dwpsn	"algo.c",810,5
-        MOV       @_gAlgoState,#1       ; |810| 
+;*** 811	-----------------------    gAlgoState = 1u;
+	.dwpsn	"algo.c",811,5
+        MOV       @_gAlgoState,#1       ; |811| 
 DW$L$_SmoothRun$39$E:
 L238:    
 DW$L$_SmoothRun$40$B:
 ;***	-----------------------g38:
-;*** 814	-----------------------    (*K$54[(long)TurnType])();
-;*** 817	-----------------------    if ( gAlgoState == 1u ) goto g29;
-	.dwpsn	"algo.c",814,4
-        MOVL      XAR4,XAR3             ; |814| 
+;*** 815	-----------------------    (*K$54[(long)TurnType])();
+;*** 818	-----------------------    if ( gAlgoState == 1u ) goto g29;
+	.dwpsn	"algo.c",815,4
+        MOVL      XAR4,XAR3             ; |815| 
         MOVU      ACC,AR1
-        LSL       ACC,1                 ; |814| 
+        LSL       ACC,1                 ; |815| 
         ADDL      XAR4,ACC
-        MOVL      XAR7,*+XAR4[0]        ; |814| 
-        LCR       *XAR7                 ; |814| 
-        ; call occurs [XAR7] ; |814| 
-	.dwpsn	"algo.c",817,5
+        MOVL      XAR7,*+XAR4[0]        ; |815| 
+        LCR       *XAR7                 ; |815| 
+        ; call occurs [XAR7] ; |815| 
+	.dwpsn	"algo.c",818,5
         MOVW      DP,#_gAlgoState
-        MOV       AL,@_gAlgoState       ; |817| 
-        CMPB      AL,#1                 ; |817| 
-        BF        L234,EQ               ; |817| 
-        ; branchcc occurs ; |817| 
+        MOV       AL,@_gAlgoState       ; |818| 
+        CMPB      AL,#1                 ; |818| 
+        BF        L234,EQ               ; |818| 
+        ; branchcc occurs ; |818| 
 DW$L$_SmoothRun$40$E:
 DW$L$_SmoothRun$41$B:
-;*** 819	-----------------------    ++gPathBufferHead;
-;*** 819	-----------------------    goto g35;
-	.dwpsn	"algo.c",819,5
+;*** 820	-----------------------    ++gPathBufferHead;
+;*** 820	-----------------------    goto g35;
+	.dwpsn	"algo.c",820,5
         MOVW      DP,#_gPathBufferHead
-        INC       @_gPathBufferHead     ; |819| 
-        BF        L237,UNC              ; |819| 
-        ; branch occurs ; |819| 
+        INC       @_gPathBufferHead     ; |820| 
+        BF        L237,UNC              ; |820| 
+        ; branch occurs ; |820| 
 DW$L$_SmoothRun$41$E:
 	.dwcfa	0x1d, -8
 	.dwcfa	0x1d, -6
@@ -9195,10 +9195,10 @@ DW$L$_SmoothRun$41$E:
 	.dwcfa	0xc0, 7
 
 DW$558	.dwtag  DW_TAG_loop
-	.dwattr DW$558, DW_AT_name("C:\algo\main\algo.asm:L235:1:1755591079")
+	.dwattr DW$558, DW_AT_name("C:\algo\main\algo.asm:L235:1:1773144227")
 	.dwattr DW$558, DW_AT_begin_file("algo.c")
-	.dwattr DW$558, DW_AT_begin_line(0x339)
-	.dwattr DW$558, DW_AT_end_line(0x339)
+	.dwattr DW$558, DW_AT_begin_line(0x33a)
+	.dwattr DW$558, DW_AT_end_line(0x33a)
 DW$559	.dwtag  DW_TAG_loop_range
 	.dwattr DW$559, DW_AT_low_pc(DW$L$_SmoothRun$35$B)
 	.dwattr DW$559, DW_AT_high_pc(DW$L$_SmoothRun$35$E)
@@ -9206,10 +9206,10 @@ DW$559	.dwtag  DW_TAG_loop_range
 
 
 DW$560	.dwtag  DW_TAG_loop
-	.dwattr DW$560, DW_AT_name("C:\algo\main\algo.asm:L234:1:1755591079")
+	.dwattr DW$560, DW_AT_name("C:\algo\main\algo.asm:L234:1:1773144227")
 	.dwattr DW$560, DW_AT_begin_file("algo.c")
-	.dwattr DW$560, DW_AT_begin_line(0x31c)
-	.dwattr DW$560, DW_AT_end_line(0x337)
+	.dwattr DW$560, DW_AT_begin_line(0x31d)
+	.dwattr DW$560, DW_AT_end_line(0x338)
 DW$561	.dwtag  DW_TAG_loop_range
 	.dwattr DW$561, DW_AT_low_pc(DW$L$_SmoothRun$32$B)
 	.dwattr DW$561, DW_AT_high_pc(DW$L$_SmoothRun$32$E)
@@ -9224,10 +9224,10 @@ DW$564	.dwtag  DW_TAG_loop_range
 	.dwattr DW$564, DW_AT_high_pc(DW$L$_SmoothRun$36$E)
 
 DW$565	.dwtag  DW_TAG_loop
-	.dwattr DW$565, DW_AT_name("C:\algo\main\algo.asm:L237:2:1755591079")
+	.dwattr DW$565, DW_AT_name("C:\algo\main\algo.asm:L237:2:1773144227")
 	.dwattr DW$565, DW_AT_begin_file("algo.c")
-	.dwattr DW$565, DW_AT_begin_line(0x322)
-	.dwattr DW$565, DW_AT_end_line(0x335)
+	.dwattr DW$565, DW_AT_begin_line(0x323)
+	.dwattr DW$565, DW_AT_end_line(0x336)
 DW$566	.dwtag  DW_TAG_loop_range
 	.dwattr DW$566, DW_AT_low_pc(DW$L$_SmoothRun$37$B)
 	.dwattr DW$566, DW_AT_high_pc(DW$L$_SmoothRun$37$E)
@@ -9249,10 +9249,10 @@ DW$570	.dwtag  DW_TAG_loop_range
 
 
 DW$571	.dwtag  DW_TAG_loop
-	.dwattr DW$571, DW_AT_name("C:\algo\main\algo.asm:L233:1:1755591079")
+	.dwattr DW$571, DW_AT_name("C:\algo\main\algo.asm:L233:1:1773144227")
 	.dwattr DW$571, DW_AT_begin_file("algo.c")
-	.dwattr DW$571, DW_AT_begin_line(0x303)
-	.dwattr DW$571, DW_AT_end_line(0x314)
+	.dwattr DW$571, DW_AT_begin_line(0x304)
+	.dwattr DW$571, DW_AT_end_line(0x315)
 DW$572	.dwtag  DW_TAG_loop_range
 	.dwattr DW$572, DW_AT_low_pc(DW$L$_SmoothRun$30$B)
 	.dwattr DW$572, DW_AT_high_pc(DW$L$_SmoothRun$30$E)
@@ -9263,10 +9263,10 @@ DW$573	.dwtag  DW_TAG_loop_range
 
 
 DW$574	.dwtag  DW_TAG_loop
-	.dwattr DW$574, DW_AT_name("C:\algo\main\algo.asm:L231:1:1755591079")
+	.dwattr DW$574, DW_AT_name("C:\algo\main\algo.asm:L231:1:1773144227")
 	.dwattr DW$574, DW_AT_begin_file("algo.c")
-	.dwattr DW$574, DW_AT_begin_line(0x2e7)
-	.dwattr DW$574, DW_AT_end_line(0x2e7)
+	.dwattr DW$574, DW_AT_begin_line(0x2e8)
+	.dwattr DW$574, DW_AT_end_line(0x2e8)
 DW$575	.dwtag  DW_TAG_loop_range
 	.dwattr DW$575, DW_AT_low_pc(DW$L$_SmoothRun$27$B)
 	.dwattr DW$575, DW_AT_high_pc(DW$L$_SmoothRun$27$E)
@@ -9274,10 +9274,10 @@ DW$575	.dwtag  DW_TAG_loop_range
 
 
 DW$576	.dwtag  DW_TAG_loop
-	.dwattr DW$576, DW_AT_name("C:\algo\main\algo.asm:L229:1:1755591079")
+	.dwattr DW$576, DW_AT_name("C:\algo\main\algo.asm:L229:1:1773144227")
 	.dwattr DW$576, DW_AT_begin_file("algo.c")
-	.dwattr DW$576, DW_AT_begin_line(0x2df)
-	.dwattr DW$576, DW_AT_end_line(0x2e3)
+	.dwattr DW$576, DW_AT_begin_line(0x2e0)
+	.dwattr DW$576, DW_AT_end_line(0x2e4)
 DW$577	.dwtag  DW_TAG_loop_range
 	.dwattr DW$577, DW_AT_low_pc(DW$L$_SmoothRun$25$B)
 	.dwattr DW$577, DW_AT_high_pc(DW$L$_SmoothRun$25$E)
@@ -9285,10 +9285,10 @@ DW$577	.dwtag  DW_TAG_loop_range
 
 
 DW$578	.dwtag  DW_TAG_loop
-	.dwattr DW$578, DW_AT_name("C:\algo\main\algo.asm:L227:1:1755591079")
+	.dwattr DW$578, DW_AT_name("C:\algo\main\algo.asm:L227:1:1773144227")
 	.dwattr DW$578, DW_AT_begin_file("algo.c")
-	.dwattr DW$578, DW_AT_begin_line(0x2d7)
-	.dwattr DW$578, DW_AT_end_line(0x2db)
+	.dwattr DW$578, DW_AT_begin_line(0x2d8)
+	.dwattr DW$578, DW_AT_end_line(0x2dc)
 DW$579	.dwtag  DW_TAG_loop_range
 	.dwattr DW$579, DW_AT_low_pc(DW$L$_SmoothRun$23$B)
 	.dwattr DW$579, DW_AT_high_pc(DW$L$_SmoothRun$23$E)
@@ -9296,10 +9296,10 @@ DW$579	.dwtag  DW_TAG_loop_range
 
 
 DW$580	.dwtag  DW_TAG_loop
-	.dwattr DW$580, DW_AT_name("C:\algo\main\algo.asm:L224:1:1755591079")
+	.dwattr DW$580, DW_AT_name("C:\algo\main\algo.asm:L224:1:1773144227")
 	.dwattr DW$580, DW_AT_begin_file("algo.c")
-	.dwattr DW$580, DW_AT_begin_line(0x2bf)
-	.dwattr DW$580, DW_AT_end_line(0x2d4)
+	.dwattr DW$580, DW_AT_begin_line(0x2c0)
+	.dwattr DW$580, DW_AT_end_line(0x2d5)
 DW$581	.dwtag  DW_TAG_loop_range
 	.dwattr DW$581, DW_AT_low_pc(DW$L$_SmoothRun$18$B)
 	.dwattr DW$581, DW_AT_high_pc(DW$L$_SmoothRun$18$E)
@@ -9310,7 +9310,7 @@ DW$582	.dwtag  DW_TAG_loop_range
 
 
 DW$583	.dwtag  DW_TAG_loop
-	.dwattr DW$583, DW_AT_name("C:\algo\main\algo.asm:L221:1:1755591079")
+	.dwattr DW$583, DW_AT_name("C:\algo\main\algo.asm:L221:1:1773144227")
 	.dwattr DW$583, DW_AT_begin_file("algo.c")
 	.dwattr DW$583, DW_AT_begin_line(0x297)
 	.dwattr DW$583, DW_AT_end_line(0x2b9)
@@ -9362,7 +9362,7 @@ DW$598	.dwtag  DW_TAG_loop_range
 	.dwendtag DW$583
 
 	.dwattr DW$543, DW_AT_end_file("algo.c")
-	.dwattr DW$543, DW_AT_end_line(0x33b)
+	.dwattr DW$543, DW_AT_end_line(0x33c)
 	.dwattr DW$543, DW_AT_end_column(0x01)
 	.dwendentry
 	.dwendtag DW$543
@@ -10408,7 +10408,7 @@ L268:
         ; return occurs
 
 DW$635	.dwtag  DW_TAG_loop
-	.dwattr DW$635, DW_AT_name("C:\algo\main\algo.asm:L267:1:1755591079")
+	.dwattr DW$635, DW_AT_name("C:\algo\main\algo.asm:L267:1:1773144227")
 	.dwattr DW$635, DW_AT_begin_file("algo.c")
 	.dwattr DW$635, DW_AT_begin_line(0x147)
 	.dwattr DW$635, DW_AT_end_line(0x147)
@@ -10419,7 +10419,7 @@ DW$636	.dwtag  DW_TAG_loop_range
 
 
 DW$637	.dwtag  DW_TAG_loop
-	.dwattr DW$637, DW_AT_name("C:\algo\main\algo.asm:L263:1:1755591079")
+	.dwattr DW$637, DW_AT_name("C:\algo\main\algo.asm:L263:1:1773144227")
 	.dwattr DW$637, DW_AT_begin_file("algo.c")
 	.dwattr DW$637, DW_AT_begin_line(0x15a)
 	.dwattr DW$637, DW_AT_end_line(0x15a)
@@ -10430,7 +10430,7 @@ DW$638	.dwtag  DW_TAG_loop_range
 
 
 DW$639	.dwtag  DW_TAG_loop
-	.dwattr DW$639, DW_AT_name("C:\algo\main\algo.asm:L261:1:1755591079")
+	.dwattr DW$639, DW_AT_name("C:\algo\main\algo.asm:L261:1:1773144227")
 	.dwattr DW$639, DW_AT_begin_file("algo.c")
 	.dwattr DW$639, DW_AT_begin_line(0x12d)
 	.dwattr DW$639, DW_AT_end_line(0x12d)
@@ -10441,7 +10441,7 @@ DW$640	.dwtag  DW_TAG_loop_range
 
 
 DW$641	.dwtag  DW_TAG_loop
-	.dwattr DW$641, DW_AT_name("C:\algo\main\algo.asm:L258:1:1755591079")
+	.dwattr DW$641, DW_AT_name("C:\algo\main\algo.asm:L258:1:1773144227")
 	.dwattr DW$641, DW_AT_begin_file("algo.c")
 	.dwattr DW$641, DW_AT_begin_line(0x110)
 	.dwattr DW$641, DW_AT_end_line(0x11f)
@@ -10461,7 +10461,7 @@ DW$645	.dwtag  DW_TAG_loop_range
 
 
 DW$646	.dwtag  DW_TAG_loop
-	.dwattr DW$646, DW_AT_name("C:\algo\main\algo.asm:L250:1:1755591079")
+	.dwattr DW$646, DW_AT_name("C:\algo\main\algo.asm:L250:1:1773144227")
 	.dwattr DW$646, DW_AT_begin_file("algo.c")
 	.dwattr DW$646, DW_AT_begin_line(0xe0)
 	.dwattr DW$646, DW_AT_end_line(0x101)
@@ -10943,7 +10943,7 @@ L279:
         ; return occurs
 
 DW$668	.dwtag  DW_TAG_loop
-	.dwattr DW$668, DW_AT_name("C:\algo\main\algo.asm:L275:1:1755591079")
+	.dwattr DW$668, DW_AT_name("C:\algo\main\algo.asm:L275:1:1773144227")
 	.dwattr DW$668, DW_AT_begin_file("algo.c")
 	.dwattr DW$668, DW_AT_begin_line(0x227)
 	.dwattr DW$668, DW_AT_end_line(0x240)
@@ -10961,7 +10961,7 @@ DW$672	.dwtag  DW_TAG_loop_range
 	.dwattr DW$672, DW_AT_high_pc(DW$L$_SearchMaze$15$E)
 
 DW$673	.dwtag  DW_TAG_loop
-	.dwattr DW$673, DW_AT_name("C:\algo\main\algo.asm:L277:2:1755591079")
+	.dwattr DW$673, DW_AT_name("C:\algo\main\algo.asm:L277:2:1773144227")
 	.dwattr DW$673, DW_AT_begin_file("algo.c")
 	.dwattr DW$673, DW_AT_begin_line(0x22d)
 	.dwattr DW$673, DW_AT_end_line(0x23f)
@@ -10986,7 +10986,7 @@ DW$678	.dwtag  DW_TAG_loop_range
 
 
 DW$679	.dwtag  DW_TAG_loop
-	.dwattr DW$679, DW_AT_name("C:\algo\main\algo.asm:L274:1:1755591079")
+	.dwattr DW$679, DW_AT_name("C:\algo\main\algo.asm:L274:1:1773144227")
 	.dwattr DW$679, DW_AT_begin_file("algo.c")
 	.dwattr DW$679, DW_AT_begin_line(0x214)
 	.dwattr DW$679, DW_AT_end_line(0x214)
@@ -10997,7 +10997,7 @@ DW$680	.dwtag  DW_TAG_loop_range
 
 
 DW$681	.dwtag  DW_TAG_loop
-	.dwattr DW$681, DW_AT_name("C:\algo\main\algo.asm:L272:1:1755591079")
+	.dwattr DW$681, DW_AT_name("C:\algo\main\algo.asm:L272:1:1773144227")
 	.dwattr DW$681, DW_AT_begin_file("algo.c")
 	.dwattr DW$681, DW_AT_begin_line(0x20d)
 	.dwattr DW$681, DW_AT_end_line(0x20f)
@@ -11008,7 +11008,7 @@ DW$682	.dwtag  DW_TAG_loop_range
 
 
 DW$683	.dwtag  DW_TAG_loop
-	.dwattr DW$683, DW_AT_name("C:\algo\main\algo.asm:L269:1:1755591079")
+	.dwattr DW$683, DW_AT_name("C:\algo\main\algo.asm:L269:1:1773144227")
 	.dwattr DW$683, DW_AT_begin_file("algo.c")
 	.dwattr DW$683, DW_AT_begin_line(0x1f4)
 	.dwattr DW$683, DW_AT_end_line(0x205)
@@ -12206,14 +12206,14 @@ DW$873	.dwtag  DW_TAG_member, DW_AT_type(*DW$T$19)
 
 
 	.dwattr DW$603, DW_AT_external(0x01)
-	.dwattr DW$528, DW_AT_external(0x01)
+	.dwattr DW$208, DW_AT_external(0x01)
 	.dwattr DW$686, DW_AT_external(0x01)
 	.dwattr DW$207, DW_AT_external(0x01)
-	.dwattr DW$208, DW_AT_external(0x01)
+	.dwattr DW$223, DW_AT_external(0x01)
 	.dwattr DW$148, DW_AT_external(0x01)
 	.dwattr DW$162, DW_AT_external(0x01)
-	.dwattr DW$374, DW_AT_external(0x01)
-	.dwattr DW$219, DW_AT_external(0x01)
+	.dwattr DW$389, DW_AT_external(0x01)
+	.dwattr DW$234, DW_AT_external(0x01)
 	.dwattr DW$661, DW_AT_external(0x01)
 	.dwattr DW$599, DW_AT_external(0x01)
 	.dwattr DW$543, DW_AT_external(0x01)
